@@ -5,6 +5,34 @@ const state = {
   field: null,
 };
 
+const FIELD_LABELS = {
+  Meta: "メタ",
+  Learning: "学習",
+  Perception: "知覚",
+  Emotion: "感情",
+  Design: "デザイン",
+  UI: "UI",
+  Web: "Web",
+  UX: "UX",
+  "Information Architecture": "情報設計",
+  Cognition: "認知",
+  "Graphic Design": "グラフィックデザイン",
+  Art: "美術",
+  Photography: "写真",
+  Linguistics: "言語学",
+  Phonetics: "音声学",
+  Psychology: "心理学",
+  Games: "ゲーム",
+  Speech: "音声",
+  Writing: "文章",
+  Music: "音楽",
+  Communication: "コミュニケーション",
+  "Academic Writing": "学術文章",
+  Rhetoric: "修辞学",
+  Language: "言語",
+  Sound: "音響",
+};
+
 const builtInItems = [
   {
     id: "differentiation",
@@ -16,7 +44,7 @@ const builtInItems = [
     why_selected: "この1週間の振り返りを一語でまとめたとき、いちばん近かった言葉。『使いづらい』がVisual HierarchyやInformation Scentに、『なんか嫌』がより細かな感情に分かれていく。その変化自体に名前を付けるために選んだ。",
     feelings: ["違うのは分かる", "うまく説明できない", "解像度を上げたい", "見分けたい"],
     before: "前と違うのは分かるけど、何が違うのか説明できない。",
-    after: "Differentiationが進んで、以前は同じに見えていた差を別々の概念として捉えられるようになった。",
+    after: "分化が進んで、以前は同じに見えていた差を別々の概念として捉えられるようになった。",
     related: ["emotional-granularity", "categorical-perception", "visual-hierarchy"],
     opposites: [],
     sources: ["https://pmc.ncbi.nlm.nih.gov/articles/PMC8355493/"],
@@ -48,8 +76,14 @@ function escapeAttribute(value) {
   return escapeHtml(value);
 }
 
+function fieldLabel(field) {
+  return FIELD_LABELS[field] ?? field;
+}
+
 function uniqueSorted(values) {
-  return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, "ja"));
+  return [...new Set(values.filter(Boolean))].sort((a, b) => {
+    return fieldLabel(a).localeCompare(fieldLabel(b), "ja");
+  });
 }
 
 function mergeItems(primary, extras) {
@@ -60,12 +94,13 @@ function mergeItems(primary, extras) {
 
 function buildSearchText(item) {
   return normalize([
-    item.term,
     item.ja,
+    item.term,
     item.one_liner,
     item.description,
     item.why_selected,
     ...(item.fields ?? []),
+    ...(item.fields ?? []).map(fieldLabel),
     ...(item.feelings ?? []),
   ].join(" "));
 }
@@ -81,7 +116,10 @@ function filteredItems() {
 }
 
 function renderFeelingChips() {
-  const feelings = uniqueSorted(state.items.flatMap((item) => item.feelings ?? []));
+  const feelings = [...new Set(state.items.flatMap((item) => item.feelings ?? []))]
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b, "ja"));
+
   feelingChips.innerHTML = feelings
     .map((feeling) => {
       const activeClass = state.feeling === feeling ? " is-active" : "";
@@ -101,28 +139,28 @@ function renderFieldFilters() {
       const pressed = state.field === field ? "true" : "false";
       return '<button class="field-button' + activeClass + '" type="button" data-field="' +
         escapeAttribute(field) + '" aria-pressed="' + pressed + '">' +
-        escapeHtml(field) + '</button>';
+        escapeHtml(fieldLabel(field)) + '</button>';
     })
     .join("");
 }
 
 function renderCard(item) {
   const fields = (item.fields ?? [])
-    .map((field) => '<span class="mini-tag">' + escapeHtml(field) + '</span>')
+    .map((field) => '<span class="mini-tag">' + escapeHtml(fieldLabel(field)) + '</span>')
     .join("");
 
   const feelings = (item.feelings ?? [])
-    .slice(0, 4)
-    .map((feeling) => '<span class="mini-tag">' + escapeHtml(feeling) + '</span>')
+    .slice(0, 3)
+    .map((feeling) => '<span class="mini-tag mini-tag-feeling">' + escapeHtml(feeling) + '</span>')
     .join("");
 
   const sources = (item.sources ?? [])
-    .map((source, index) => '<li><a href="' + escapeAttribute(source) + '" target="_blank" rel="noopener noreferrer">Source ' + (index + 1) + '</a></li>')
+    .map((source, index) => '<li><a href="' + escapeAttribute(source) + '" target="_blank" rel="noopener noreferrer">出典 ' + (index + 1) + '</a></li>')
     .join("");
 
   const selectionContext = item.why_selected
     ? '<section class="selection-context" aria-label="この言葉を選んだ背景">' +
-      '<p class="detail-kicker">Why this word</p>' +
+      '<p class="detail-kicker">選定背景</p>' +
       '<h4>この言葉を選んだ背景</h4>' +
       '<p>' + escapeHtml(item.why_selected) + '</p>' +
       '</section>'
@@ -135,8 +173,8 @@ function renderCard(item) {
       '<summary>' +
         '<div class="card-topline">' +
           '<div>' +
-            '<h3 class="card-term">' + escapeHtml(item.term) + '</h3>' +
-            '<p class="card-ja">' + escapeHtml(item.ja) + '</p>' +
+            '<h3 class="card-term">' + escapeHtml(item.ja || item.term) + '</h3>' +
+            '<p class="card-en">' + escapeHtml(item.term) + '</p>' +
           '</div>' +
           '<span class="expand-mark" aria-hidden="true">＋</span>' +
         '</div>' +
@@ -147,10 +185,10 @@ function renderCard(item) {
         '<p class="description">' + escapeHtml(item.description) + '</p>' +
         selectionContext +
         '<div class="example-box">' +
-          '<span class="example-label">Before</span>' +
+          '<span class="example-label">もとの言い方</span>' +
           '<p>' + escapeHtml(item.before) + '</p>' +
           '<div class="after">' +
-            '<span class="example-label">After</span>' +
+            '<span class="example-label">言い換えると</span>' +
             '<p>' + escapeHtml(item.after) + '</p>' +
           '</div>' +
         '</div>' +
