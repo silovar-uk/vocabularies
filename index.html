@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="うまく言葉にできない感覚から、より精密な概念・専門語へたどり着く語彙集。" />
   <title>Vocabularies — なんか、を言葉にする</title>
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="./favicon.svg?v=20260810-0036" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css?v=20260810-0036" />
 </head>
 <body>
   <header class="site-header">
@@ -34,13 +34,20 @@
       </div>
     </section>
 
+    <section class="manifesto" aria-labelledby="manifestoTitle">
+      <p class="eyebrow">Why vocabulary?</p>
+      <h2 id="manifestoTitle">「違うのは分かる。でも、何が違うのかをもう一段正確に言いたい。」</h2>
+      <p>感覚自体は、もうかなり細かい。足りないのは感覚ではなく、その差に名前を与えるためのラベルかもしれない。この語彙集では、Webの使いづらさ、文章の声、音の質感、場の空気、感情の粒度まで、領域をまたいで言葉を集める。</p>
+      <p class="manifesto-note">「なんかダサい」「論文っぽくない」「声が冷たい」「モヤモヤする」から始めて、見えていた差を、使える言葉へ。</p>
+    </section>
+
     <section class="browse-section" aria-labelledby="fieldTitle">
       <div class="section-heading-row">
         <div>
           <p class="eyebrow">Browse by field</p>
           <h2 id="fieldTitle">分野から探す</h2>
         </div>
-        <p id="resultCount" class="result-count"></p>
+        <p id="resultCount" class="result-count">読み込み中…</p>
       </div>
       <div id="fieldFilters" class="field-list" aria-label="分野で絞り込む"></div>
     </section>
@@ -58,6 +65,6 @@
     <p>知ったあと、世界の差が少し見える語彙を集める。</p>
   </footer>
 
-  <script src="./app.js" defer></script>
+  <script src="./app.js?v=20260810-0036" defer></script>
 </body>
 </html>
