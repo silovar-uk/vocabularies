@@ -97,12 +97,14 @@ p {
 }
 
 h1 {
-  max-width: 780px;
-  margin-bottom: 24px;
-  font-size: clamp(3rem, 8vw, 6.6rem);
-  line-height: 0.98;
-  letter-spacing: -0.075em;
+  max-width: 1040px;
+  margin-bottom: 26px;
+  font-size: clamp(3rem, 7.2vw, 6.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.072em;
   font-weight: 800;
+  text-wrap: balance;
+  word-break: auto-phrase;
 }
 
 .lead {
@@ -110,6 +112,7 @@ h1 {
   margin-bottom: 42px;
   color: #555b56;
   font-size: clamp(1rem, 2vw, 1.18rem);
+  text-wrap: pretty;
 }
 
 .search-wrap {
@@ -323,6 +326,36 @@ details[open] .expand-mark {
   font-size: 0.92rem;
 }
 
+.selection-context {
+  margin-top: 20px;
+  padding: 18px 18px 17px;
+  border-left: 2px solid rgba(47, 93, 80, 0.42);
+  border-radius: 0 14px 14px 0;
+  background: var(--accent-soft);
+}
+
+.detail-kicker {
+  margin-bottom: 4px;
+  color: var(--accent);
+  font-size: 0.64rem;
+  font-weight: 780;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.selection-context h4 {
+  margin: 0 0 8px;
+  font-size: 0.88rem;
+  letter-spacing: -0.02em;
+}
+
+.selection-context p:last-child {
+  margin-bottom: 0;
+  color: #4f5751;
+  font-size: 0.86rem;
+  line-height: 1.72;
+}
+
 .example-box {
   margin-top: 18px;
   padding: 18px;
@@ -391,7 +424,10 @@ details[open] .expand-mark {
   }
 
   h1 {
-    font-size: clamp(3.2rem, 16vw, 5.2rem);
+    max-width: 9.2em;
+    font-size: clamp(2.85rem, 13.5vw, 4.8rem);
+    line-height: 1.04;
+    letter-spacing: -0.065em;
   }
 
   .lead {
