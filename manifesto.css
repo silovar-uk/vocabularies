@@ -1,0 +1,46 @@
+.manifesto {
+  max-width: 880px;
+  margin: 0 0 72px;
+  padding: 30px 32px 28px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.46);
+}
+
+.manifesto h2 {
+  max-width: 760px;
+  margin: 0 0 16px;
+  font-size: clamp(1.45rem, 3.2vw, 2.15rem);
+  line-height: 1.42;
+  letter-spacing: -0.035em;
+  text-wrap: pretty;
+}
+
+.manifesto > p:not(.eyebrow) {
+  max-width: 740px;
+  margin-bottom: 12px;
+  color: #4f5650;
+}
+
+.manifesto .manifesto-note {
+  margin-bottom: 0;
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.load-warning {
+  grid-column: 1 / -1;
+  padding: 18px 20px;
+  border: 1px solid rgba(132, 92, 35, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 245, 226, 0.76);
+  color: #675234;
+  font-size: 0.86rem;
+}
+
+@media (max-width: 760px) {
+  .manifesto {
+    margin-bottom: 54px;
+    padding: 23px 20px 21px;
+  }
+}
