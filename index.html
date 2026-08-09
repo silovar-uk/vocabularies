@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="デザイン、文章、音、感情などを横断して、ものの見え方を少し細かくする言葉を集めた語彙集。" />
   <title>Vocabularies — 語彙集</title>
-  <link rel="icon" href="./favicon.svg?v=20260810-0114" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=20260810-0114" />
-  <link rel="stylesheet" href="./manifesto.css?v=20260810-0114" />
+  <link rel="icon" href="./favicon.svg?v=20260810-0118" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css?v=20260810-0118" />
+  <link rel="stylesheet" href="./manifesto.css?v=20260810-0118" />
 </head>
 <body>
   <header class="site-header">
@@ -27,14 +27,18 @@
     </section>
 
     <section class="browse-section" aria-labelledby="fieldTitle">
-      <div class="section-heading-row">
-        <div>
-          <p class="eyebrow">領域から絞り込む</p>
-          <h2 id="fieldTitle">分野から探す</h2>
+      <details class="feeling-disclosure field-disclosure">
+        <summary>
+          <span class="feeling-summary-copy">
+            <span class="feeling-summary-title" id="fieldTitle">分野から探す</span>
+            <span id="resultCount" class="feeling-summary-note">読み込み中…</span>
+          </span>
+          <span class="feeling-summary-mark" aria-hidden="true">＋</span>
+        </summary>
+        <div class="feeling-panel">
+          <div id="fieldFilters" class="field-list" aria-label="分野で絞り込む"></div>
         </div>
-        <p id="resultCount" class="result-count">読み込み中…</p>
-      </div>
-      <div id="fieldFilters" class="field-list" aria-label="分野で絞り込む"></div>
+      </details>
     </section>
 
     <section class="results-section" aria-live="polite">
@@ -76,6 +80,6 @@
     <p>知ったあと、世界の差が少し見える語彙を集める。</p>
   </footer>
 
-  <script src="./app-v2.js?v=20260810-0114" defer></script>
+  <script src="./app-v2.js?v=20260810-0118" defer></script>
 </body>
 </html>
