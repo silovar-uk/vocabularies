@@ -33,6 +33,14 @@ const FIELD_LABELS = {
   Sound: "音響",
 };
 
+// 日本語訳が説明的になりやすく、実務では英語名で扱う方が自然な語だけ英語を主表記にする。
+// それ以外は日本語を主表記とし、英語は索引として添える。
+const PREFER_ENGLISH_IDS = new Set([
+  "information-scent",
+  "recognition-over-recall",
+  "rhetorical-move",
+]);
+
 const builtInItems = [
   {
     id: "differentiation",
@@ -78,6 +86,26 @@ function escapeAttribute(value) {
 
 function fieldLabel(field) {
   return FIELD_LABELS[field] ?? field;
+}
+
+function displayNames(item) {
+  const hasJapanese = Boolean(String(item.ja ?? "").trim());
+  const hasEnglish = Boolean(String(item.term ?? "").trim());
+  const englishFirst = PREFER_ENGLISH_IDS.has(item.id) || !hasJapanese;
+
+  if (englishFirst) {
+    return {
+      primary: item.term,
+      secondary: hasJapanese ? item.ja : "",
+      primaryLanguage: "en",
+    };
+  }
+
+  return {
+    primary: item.ja,
+    secondary: hasEnglish ? item.term : "",
+    primaryLanguage: "ja",
+  };
 }
 
 function uniqueSorted(values) {
@@ -145,6 +173,9 @@ function renderFieldFilters() {
 }
 
 function renderCard(item) {
+  const names = displayNames(item);
+  const primaryClass = names.primaryLanguage === "en" ? " card-term-en" : "";
+
   const fields = (item.fields ?? [])
     .map((field) => '<span class="mini-tag">' + escapeHtml(fieldLabel(field)) + '</span>')
     .join("");
@@ -161,20 +192,22 @@ function renderCard(item) {
   const selectionContext = item.why_selected
     ? '<section class="selection-context" aria-label="この言葉を選んだ背景">' +
       '<p class="detail-kicker">選定背景</p>' +
-      '<h4>この言葉を選んだ背景</h4>' +
       '<p>' + escapeHtml(item.why_selected) + '</p>' +
       '</section>'
     : "";
 
   const sourceList = sources ? '<ul class="source-list">' + sources + '</ul>' : "";
+  const secondaryName = names.secondary
+    ? '<p class="card-en">' + escapeHtml(names.secondary) + '</p>'
+    : "";
 
   return '<article class="vocab-card" id="' + escapeAttribute(item.id) + '">' +
     '<details>' +
       '<summary>' +
         '<div class="card-topline">' +
           '<div>' +
-            '<h3 class="card-term">' + escapeHtml(item.ja || item.term) + '</h3>' +
-            '<p class="card-en">' + escapeHtml(item.term) + '</p>' +
+            '<h3 class="card-term' + primaryClass + '">' + escapeHtml(names.primary) + '</h3>' +
+            secondaryName +
           '</div>' +
           '<span class="expand-mark" aria-hidden="true">＋</span>' +
         '</div>' +
