@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vocabularies">
+  <rect width="64" height="64" rx="16" fill="#f6f4ef"/>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#2f5d50" stroke-width="5" stroke-opacity="0.16"/>
+  <circle cx="32" cy="32" r="13" fill="none" stroke="#2f5d50" stroke-width="5" stroke-opacity="0.42"/>
+  <circle cx="32" cy="32" r="5.5" fill="#2f5d50"/>
+</svg>
