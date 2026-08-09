@@ -26,6 +26,7 @@ function buildSearchText(item) {
     item.ja,
     item.one_liner,
     item.description,
+    item.why_selected,
     ...(item.fields ?? []),
     ...(item.feelings ?? []),
   ].join(" "));
@@ -86,6 +87,16 @@ function renderCard(item) {
     .map((source, index) => `<li><a href="${escapeAttribute(source)}" target="_blank" rel="noopener noreferrer">Source ${index + 1}</a></li>`)
     .join("");
 
+  const selectionContext = item.why_selected
+    ? `
+      <section class="selection-context" aria-label="この言葉を選んだ背景">
+        <p class="detail-kicker">Why this word</p>
+        <h4>この言葉を選んだ背景</h4>
+        <p>${escapeHtml(item.why_selected)}</p>
+      </section>
+    `
+    : "";
+
   return `
     <article class="vocab-card" id="${escapeAttribute(item.id)}">
       <details>
@@ -102,6 +113,7 @@ function renderCard(item) {
         </summary>
         <div class="card-detail">
           <p class="description">${escapeHtml(item.description)}</p>
+          ${selectionContext}
           <div class="example-box">
             <span class="example-label">Before</span>
             <p>${escapeHtml(item.before)}</p>
