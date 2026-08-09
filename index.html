@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="うまく言葉にできない感覚から、より精密な概念・専門語へたどり着く語彙集。" />
+  <title>Vocabularies — なんか、を言葉にする</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./">Vocabularies</a>
+    <button id="randomButton" class="quiet-button" type="button">ランダムに1語</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">A vocabulary for vague feelings</p>
+      <h1>「なんか」を、<br />もう少し正確に。</h1>
+      <p class="lead">うまく言えない違和感や印象から、デザイン・文章・音楽・心理・芸術などの専門語へたどり着くための語彙集。</p>
+
+      <label class="search-wrap" for="searchInput">
+        <span class="search-label">感覚・用語から探す</span>
+        <input id="searchInput" type="search" autocomplete="off" placeholder="例：ごちゃごちゃ / 余韻 / 論文っぽくない / Prosody" />
+      </label>
+
+      <div class="feeling-section" aria-labelledby="feelingTitle">
+        <div class="section-heading-row">
+          <h2 id="feelingTitle">感覚から探す</h2>
+          <button id="clearFilters" class="text-button" type="button">絞り込みを解除</button>
+        </div>
+        <div id="feelingChips" class="chip-list" aria-label="感覚で絞り込む"></div>
+      </div>
+    </section>
+
+    <section class="browse-section" aria-labelledby="fieldTitle">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">Browse by field</p>
+          <h2 id="fieldTitle">分野から探す</h2>
+        </div>
+        <p id="resultCount" class="result-count"></p>
+      </div>
+      <div id="fieldFilters" class="field-list" aria-label="分野で絞り込む"></div>
+    </section>
+
+    <section class="results-section" aria-live="polite">
+      <div id="emptyState" class="empty-state" hidden>
+        <p>その言い方ではまだ見つからへんかった。</p>
+        <p>別の感覚語に言い換えるか、絞り込みを外してみて。</p>
+      </div>
+      <div id="vocabularyGrid" class="vocabulary-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>知ったあと、世界の差が少し見える語彙を集める。</p>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
