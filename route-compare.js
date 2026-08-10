@@ -37,6 +37,21 @@
       }).join('')+'</article>';
   }
 
+  function annotationContrast(items){
+    if(!items.length) return '<p class="compare-loading">共通概念がないため、注釈の直接比較はありません。</p>';
+    return '<div class="annotation-contrast-list">'+items.map(item=>{
+      const indexA=idsA.indexOf(item.id), indexB=idsB.indexOf(item.id);
+      const noteA=note(a,indexA), noteB=note(b,indexB);
+      let state='両方とも注釈なし';
+      if(noteA&&noteB) state=noteA===noteB?'同じ注釈':'注釈が異なる';
+      else if(noteA||noteB) state='片方のみ注釈あり';
+      return '<article class="annotation-contrast-card"><div class="annotation-contrast-head"><a href="'+href(item)+'">'+escapeHtml(label(item))+'</a><span>'+escapeHtml(state)+'</span></div><div class="annotation-pair">'+
+        '<div><b>'+escapeHtml(a.name)+'</b><p class="'+(noteA?'':'is-empty')+'">'+escapeHtml(noteA||'注釈なし')+'</p></div>'+
+        '<div><b>'+escapeHtml(b.name)+'</b><p class="'+(noteB?'':'is-empty')+'">'+escapeHtml(noteB||'注釈なし')+'</p></div>'+
+      '</div></article>';
+    }).join('')+'</div>';
+  }
+
   const commonOrdered = a.items.filter(item=>commonSet.has(item.id));
   const divergenceLabel = divergence
     ? (prefix===0 ? '起点から異なる' : (prefix < a.items.length && prefix < b.items.length ? label(a.items[prefix-1])+'の次で分岐' : '一方のルートが先に終わる'))
@@ -46,5 +61,6 @@
   page.innerHTML='<header><p class="compare-kicker">ROUTE COMPARE</p><h1 class="compare-title">'+escapeHtml(a.name)+'<br>× '+escapeHtml(b.name)+'</h1><p class="compare-lead">同じ概念を使っていても、順番や注釈が変われば思考の形は変わる。2本のルートを「何が同じか」ではなく「どこから違っていくか」で読む。</p>'+
     '<div class="compare-summary"><div class="compare-stat"><span>COMMON</span><strong>'+commonSet.size+'</strong></div><div class="compare-stat"><span>FIRST DIVERGENCE</span><strong style="font-size:15px">'+escapeHtml(divergenceLabel)+'</strong></div><div class="compare-stat"><span>UNIQUE</span><strong>'+uniqueA+' / '+uniqueB+'</strong></div></div></header>'+
     '<section class="compare-common"><p class="compare-kicker">SHARED CONCEPTS</p><h2>共通して通った言葉</h2>'+(commonOrdered.length?'<div class="common-path">'+path(commonOrdered)+'</div>':'<p class="compare-loading">共通する概念はありません。</p>')+'</section>'+
+    '<section class="compare-annotations"><p class="compare-kicker">ANNOTATION CONTRAST</p><h2>同じ言葉を、どう違って読んだか</h2>'+annotationContrast(commonOrdered)+'</section>'+
     '<section class="compare-split"><p class="compare-kicker">SIDE BY SIDE</p><h2>二つの道筋を並べる</h2><div class="split-grid">'+column(a,idsB)+column(b,idsA)+'</div></section>';
 })();
