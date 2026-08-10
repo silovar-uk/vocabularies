@@ -272,23 +272,37 @@
   const observer = new MutationObserver(() => renderReaderDiscovery());
   observer.observe(readerContent, { childList: true });
 
-  async function loadRelations() {
-    const urls = [
-      "./data/relations.json?v=" + Date.now(),
-      "https://raw.githubusercontent.com/silovar-uk/vocabularies/main/data/relations.json",
-    ];
-    for (const url of urls) {
-      try {
-        const response = await fetch(url, { cache: "no-store" });
-        if (!response.ok) throw new Error("HTTP " + response.status);
-        const data = await response.json();
-        if (!data || Array.isArray(data) || typeof data !== "object") throw new Error("Invalid relation data");
-        relationMap = data;
-        renderReaderDiscovery();
-        return;
-      } catch (error) {
-        console.warn("Discovery relation load failed:", url, error);
+  function mergeRelationMaps(maps) {
+    const merged = {};
+    for (const map of maps) {
+      for (const [sourceId, edges] of Object.entries(map ?? {})) {
+        if (!Array.isArray(edges)) continue;
+        const byTarget = new Map((merged[sourceId] ?? []).map((edge) => [edge.id, edge]));
+        for (const edge of edges) {
+          if (edge?.id) byTarget.set(edge.id, edge);
+        }
+        merged[sourceId] = [...byTarget.values()];
       }
+    }
+    return merged;
+  }
+
+  async function loadRelations() {
+    const paths = state.catalog.relation_datasets?.length
+      ? state.catalog.relation_datasets
+      : ["data/relations.json"];
+    try {
+      const maps = await Promise.all(paths.map(async (path) => {
+        const data = await loadJson(path);
+        if (!data || Array.isArray(data) || typeof data !== "object") {
+          throw new Error(path + " is not an object");
+        }
+        return data;
+      }));
+      relationMap = mergeRelationMaps(maps);
+      renderReaderDiscovery();
+    } catch (error) {
+      console.warn("Discovery relation load failed:", error);
     }
   }
 
