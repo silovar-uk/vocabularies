@@ -1,0 +1,34 @@
+name: Validate vocabulary data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "scripts/validate-data.mjs"
+      - ".github/workflows/validate-data.yml"
+  pull_request:
+    paths:
+      - "data/**"
+      - "scripts/validate-data.mjs"
+      - ".github/workflows/validate-data.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate vocabulary data
+        run: node scripts/validate-data.mjs
