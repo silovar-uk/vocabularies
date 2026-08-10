@@ -1,9 +1,14 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "datasets": [
     "data/vocabularies.json",
     "data/research-20260810-semiotics-complexity.json",
-    "data/meta-vocabularies.json"
+    "data/meta-vocabularies.json",
+    "data/research-20260810-editorial.json"
+  ],
+  "relation_datasets": [
+    "data/relations.json",
+    "data/relations-20260810-editorial.json"
   ],
   "defaults": {
     "primary_language": "ja",
@@ -212,6 +217,21 @@
       "ids": ["visual-hierarchy", "salience"],
       "title": "設計と、実際の目立ち方を分けて考えられます。",
       "note": "視覚的階層は情報の優先順位を設計し、顕著性は実際にどれだけ注意を引くかを見ます。"
+    },
+    {
+      "ids": ["perceptual-set", "salience"],
+      "title": "『目に入る』理由を、観察者側と刺激側に分けます。",
+      "note": "知覚的構えは期待・課題によるトップダウンの準備状態、Salienceは刺激や配置がどれだけ目立つかを見る概念です。"
+    },
+    {
+      "ids": ["feedforward", "signifier", "visibility-system-status"],
+      "title": "同じ『分かりやすくする』でも、知らせる内容と時間が違います。",
+      "note": "Signifierは操作の手掛かり、Feedforwardは操作前の結果予告、状態の可視性は実行中・実行後の状態理解を支えます。"
+    },
+    {
+      "ids": ["information-foraging", "information-scent"],
+      "title": "探索全体の理論と、次へ進む局所的な手掛かりです。",
+      "note": "Information Foragingは情報価値と探索コストのトレードオフ全体、Information Scentは次の場所に価値がありそうかを判断する手掛かりです。"
     }
   ]
 }
