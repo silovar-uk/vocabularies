@@ -7,12 +7,16 @@ on:
       - "data/**"
       - "scripts/validate-data.mjs"
       - "scripts/validate-intake.mjs"
+      - "editorial.js"
+      - "editorial-protection.js"
       - ".github/workflows/validate-data.yml"
   pull_request:
     paths:
       - "data/**"
       - "scripts/validate-data.mjs"
       - "scripts/validate-intake.mjs"
+      - "editorial.js"
+      - "editorial-protection.js"
       - ".github/workflows/validate-data.yml"
   workflow_dispatch:
 
@@ -37,3 +41,8 @@ jobs:
 
       - name: Validate editorial intake
         run: node scripts/validate-intake.mjs
+
+      - name: Check editorial scripts
+        run: |
+          node --check editorial.js
+          node --check editorial-protection.js
