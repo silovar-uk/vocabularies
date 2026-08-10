@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Vocabulariesに収録する候補語を、調査・判定・関係づけ・採用まで管理する編集画面。" />
+  <title>Editorial Intake — Vocabularies</title>
+  <link rel="icon" href="./favicon.svg?v=20260810-1350" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles-v3.css?v=20260810-1350" />
+  <link rel="stylesheet" href="./editorial.css?v=20260810-1350" />
+</head>
+<body class="editorial-body">
+  <header class="site-header editorial-header">
+    <a class="brand" href="./">Vocabularies</a>
+    <a class="editorial-back" href="./">語彙集へ戻る</a>
+  </header>
+
+  <main class="editorial-main">
+    <section class="editorial-hero">
+      <p class="eyebrow">Editorial Intake</p>
+      <h1>候補を拾い、<br />採用できるところまで育てる。</h1>
+      <p class="lead">思いついた語をすぐ完成させず、候補 → 調査 → 判定 → 関係 → 採用準備の順に通します。最初に必要なのは、言葉そのものと「何をうまく言えなかったか」だけです。</p>
+      <p id="intakeStatus" class="editorial-status" role="status" aria-live="polite">この編集キューは、このブラウザ内に保存されます。</p>
+    </section>
+
+    <div class="editorial-layout">
+      <section class="editorial-compose" aria-labelledby="formTitle">
+        <div class="editorial-section-head">
+          <div>
+            <p class="eyebrow">Candidate</p>
+            <h2 id="formTitle">候補を拾う</h2>
+          </div>
+        </div>
+
+        <form id="intakeForm" class="intake-form">
+          <input id="candidateId" type="hidden" />
+
+          <label class="editorial-field editorial-field-wide">
+            <span>候補語</span>
+            <input id="candidateTerm" type="text" required placeholder="例：Feedforward / フィードフォワード" />
+          </label>
+
+          <label class="editorial-field editorial-field-wide">
+            <span>何をうまく言えなかった？</span>
+            <textarea id="candidateTrigger" required rows="3" placeholder="例：操作する前に、押した後どうなるかまで分かる感じを言いたい。"></textarea>
+          </label>
+
+          <label class="editorial-field editorial-field-wide">
+            <span>なぜ今、この語が気になる？</span>
+            <textarea id="candidateWhyNow" rows="2" placeholder="直近の出来事・UI・文章・会話など"></textarea>
+          </label>
+
+          <details id="advancedFields" class="editorial-details">
+            <summary>
+              <span>調査・採用情報</span>
+              <span aria-hidden="true">＋</span>
+            </summary>
+
+            <div class="editorial-details-body">
+              <div class="editorial-grid editorial-grid-2">
+                <label class="editorial-field">
+                  <span>日本語名</span>
+                  <input id="candidateJa" type="text" placeholder="フィードフォワード" />
+                </label>
+                <label class="editorial-field">
+                  <span>英語名</span>
+                  <input id="candidateEn" type="text" placeholder="Feedforward" />
+                </label>
+                <label class="editorial-field">
+                  <span>採用ID</span>
+                  <input id="candidateProposedId" type="text" placeholder="feedforward" />
+                </label>
+                <label class="editorial-field">
+                  <span>工程</span>
+                  <select id="candidateStage">
+                    <option value="captured">候補</option>
+                    <option value="researching">調査</option>
+                    <option value="qualified">判定</option>
+                    <option value="related">関係</option>
+                    <option value="ready">採用準備</option>
+                    <option value="adopted">採用済み</option>
+                    <option value="rejected">見送り</option>
+                  </select>
+                </label>
+                <label class="editorial-field">
+                  <span>A / B / C</span>
+                  <select id="candidateGrade">
+                    <option value="">未判定</option>
+                    <option value="A">A — Strong</option>
+                    <option value="B">B — Qualified</option>
+                    <option value="C">C — Editorial</option>
+                  </select>
+                </label>
+                <label class="editorial-field">
+                  <span>主表記</span>
+                  <select id="candidatePrimaryLanguage">
+                    <option value="ja">日本語</option>
+                    <option value="en">英語</option>
+                  </select>
+                </label>
+                <label class="editorial-field editorial-field-wide">
+                  <span>位置づけ</span>
+                  <select id="candidateFormalStatus">
+                    <option value="established_term">専門語</option>
+                    <option value="design_principle">設計原則</option>
+                    <option value="heuristic">ヒューリスティック</option>
+                    <option value="editorial_principle">編集・制作原理</option>
+                    <option value="project_meta">この語彙集でのメタ概念</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="editorial-grid editorial-grid-2">
+                <label class="editorial-field">
+                  <span>分野 <small>カンマ区切り</small></span>
+                  <input id="candidateFields" type="text" placeholder="Design, UX" />
+                </label>
+                <label class="editorial-field">
+                  <span>別名 <small>カンマ区切り</small></span>
+                  <input id="candidateAliases" type="text" placeholder="予告情報, 操作前フィードバック" />
+                </label>
+                <label class="editorial-field editorial-field-wide">
+                  <span>感覚の手掛かり <small>カンマ区切り</small></span>
+                  <input id="candidateFeelings" type="text" placeholder="押す前に結果を知りたい, 先が読める" />
+                </label>
+              </div>
+
+              <label class="editorial-field editorial-field-wide">
+                <span>一文説明</span>
+                <input id="candidateOneLiner" type="text" />
+              </label>
+
+              <label class="editorial-field editorial-field-wide">
+                <span>定義</span>
+                <textarea id="candidateDescription" rows="4"></textarea>
+              </label>
+
+              <label class="editorial-field editorial-field-wide">
+                <span>用法メモ</span>
+                <textarea id="candidateUsageNote" rows="3" placeholder="正式用法と、この語彙集での拡張の境界など"></textarea>
+              </label>
+
+              <label class="editorial-field editorial-field-wide">
+                <span>なぜ、この言葉か</span>
+                <textarea id="candidateWhySelected" rows="4"></textarea>
+              </label>
+
+              <div class="editorial-grid editorial-grid-2">
+                <label class="editorial-field">
+                  <span>Before</span>
+                  <textarea id="candidateBefore" rows="3"></textarea>
+                </label>
+                <label class="editorial-field">
+                  <span>After</span>
+                  <textarea id="candidateAfter" rows="3"></textarea>
+                </label>
+              </div>
+
+              <label class="editorial-field editorial-field-wide">
+                <span>出典URL <small>1行1件</small></span>
+                <textarea id="candidateSources" rows="4" placeholder="https://..."></textarea>
+              </label>
+
+              <label class="editorial-field editorial-field-wide">
+                <span>Relations <small>1行1件：id | type | note</small></span>
+                <textarea id="candidateRelations" rows="5" placeholder="signifier | 補完 | 操作後ではなく、操作前に結果を予告する。"></textarea>
+              </label>
+
+              <label class="editorial-field editorial-field-wide">
+                <span>採否メモ</span>
+                <textarea id="candidateDecisionNote" rows="3" placeholder="B判定の理由、見送り理由など"></textarea>
+              </label>
+            </div>
+          </details>
+
+          <div class="editorial-form-actions">
+            <button id="saveCandidate" class="editorial-primary" type="submit">候補に追加</button>
+            <button id="copyResearchPrompt" class="editorial-secondary" type="button">調査プロンプトをコピー</button>
+            <button id="resetCandidate" class="editorial-secondary" type="button" hidden>新規入力に戻る</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="editorial-queue" aria-labelledby="queueTitle">
+        <div class="editorial-section-head editorial-queue-head">
+          <div>
+            <p class="eyebrow">Queue</p>
+            <h2 id="queueTitle">編集キュー</h2>
+          </div>
+          <span id="queueCount" class="editorial-count">0件</span>
+        </div>
+
+        <div class="editorial-toolbar">
+          <label>
+            <span>工程</span>
+            <select id="stageFilter">
+              <option value="all">すべて</option>
+              <option value="captured">候補</option>
+              <option value="researching">調査</option>
+              <option value="qualified">判定</option>
+              <option value="related">関係</option>
+              <option value="ready">採用準備</option>
+              <option value="adopted">採用済み</option>
+              <option value="rejected">見送り</option>
+            </select>
+          </label>
+          <button id="exportIntake" class="editorial-secondary" type="button">JSONで出力</button>
+          <label class="editorial-file-button">
+            JSONを取り込む
+            <input id="importIntake" type="file" accept="application/json,.json" />
+          </label>
+        </div>
+
+        <div id="intakeEmpty" class="editorial-empty">
+          <p>まだ候補はありません。</p>
+          <p>言えなかった差を一つ拾うところから始めます。</p>
+        </div>
+        <div id="intakeQueue" class="intake-queue"></div>
+      </section>
+    </div>
+
+    <section class="editorial-note">
+      <p class="eyebrow">Quality gate</p>
+      <h2>採用は、「知っている語」ではなく「差が見える語」だけ。</h2>
+      <p>工程を進めるには、その段階で必要な情報が揃っている必要があります。出典がないまま判定へ進めたり、Relationsがないまま採用準備へ進めたりはできません。</p>
+      <div class="editorial-gates">
+        <span>候補：語＋きっかけ</span>
+        <span>調査：出典</span>
+        <span>判定：A/B/C＋定義</span>
+        <span>関係：近接語との差</span>
+        <span>採用準備：Before/After＋選定背景</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer editorial-footer">
+    <p>編集キューは本体データと分離。採用準備を通った語だけをVocabulariesへ移す。</p>
+  </footer>
+
+  <script src="./editorial.js?v=20260810-1350" defer></script>
+</body>
+</html>
