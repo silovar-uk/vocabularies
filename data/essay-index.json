@@ -10,6 +10,11 @@
       "status": "published",
       "path": "data/essays/cognitive-offloading.json",
       "updated_at": "2026-08-10"
+    },
+    "epistemic-action": {
+      "status": "published",
+      "path": "data/essays/epistemic-action.json",
+      "updated_at": "2026-08-10"
     }
   }
 }
