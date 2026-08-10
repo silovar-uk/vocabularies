@@ -1,0 +1,48 @@
+{
+  "perceptual-set": [
+    {"id":"salience","type":"トップダウン／目立ち","note":"知覚的構えは期待や課題によって何を拾いやすくなるか、Salienceは刺激や配置がどれだけ注意を引くかを見る。"},
+    {"id":"categorical-perception","type":"期待／カテゴリー化","note":"知覚的構えは何を探すかの準備状態、範疇知覚は刺激をカテゴリー境界に沿って区別する現象。"},
+    {"id":"differentiation","type":"メタ接続","note":"観点や語彙を持つことで特定の差に注意が向き、分化の入口になることがある。"}
+  ],
+  "salience": [
+    {"id":"perceptual-set","type":"目立ち／トップダウン","note":"Salienceが刺激側の目立ちやすさを扱うのに対し、知覚的構えは観察者側の期待・課題による準備状態を扱う。"}
+  ],
+  "categorical-perception": [
+    {"id":"perceptual-set","type":"区別","note":"カテゴリー境界による知覚の変化と、期待によって特定対象を知覚しやすくなる構えは別の現象。"}
+  ],
+  "differentiation": [
+    {"id":"perceptual-set","type":"入口","note":"『何を見るか』という構えを持つことが、これまで一まとまりだった差を見つけるきっかけになる。"}
+  ],
+  "feedforward": [
+    {"id":"signifier","type":"区別","note":"Signifierは何が操作できるかを発見させ、Feedforwardはその操作で何が起きるかを事前に予測させる。"},
+    {"id":"gulfs-of-action","type":"実行側","note":"実行前の情報を増やすことで、意図から操作へ移る実行の淵を小さくする。"},
+    {"id":"visibility-system-status","type":"事前／事後","note":"Feedforwardが実行前の予告なら、状態の可視性は主に実行中・実行後の状態理解を支える。"},
+    {"id":"conceptual-model","type":"予測支援","note":"結果を事前に理解できることは、システムがどう振る舞うかという概念モデルの形成を助ける。"}
+  ],
+  "signifier": [
+    {"id":"feedforward","type":"手掛かり／予告","note":"操作できることを知らせるだけでなく、操作後の結果まで予告できるかをFeedforwardで切り分けられる。"}
+  ],
+  "gulfs-of-action": [
+    {"id":"feedforward","type":"実行の淵","note":"何をすれば何が起きるかを事前に示すFeedforwardは、実行の淵を縮める設計手段になる。"}
+  ],
+  "visibility-system-status": [
+    {"id":"feedforward","type":"事後／事前","note":"状態の可視性が現在・結果を理解させるのに対し、Feedforwardは実行前の予測を支える。"}
+  ],
+  "conceptual-model": [
+    {"id":"feedforward","type":"予測材料","note":"適切なFeedforwardは、操作と結果の関係を学び、概念モデルを更新する材料になる。"}
+  ],
+  "information-foraging": [
+    {"id":"information-scent","type":"理論／手掛かり","note":"Information Foragingが探索全体の価値とコストを扱うのに対し、Information Scentは次の場所に価値がありそうかを判断する局所的な手掛かり。"},
+    {"id":"discoverability","type":"探索条件","note":"情報や機能を発見できることは、探索コストを下げる重要な条件になる。"},
+    {"id":"progressive-disclosure","type":"設計上の緊張","note":"段階的に隠すことで同時表示は減るが、必要情報へ到達する探索コストは増えうる。"}
+  ],
+  "information-scent": [
+    {"id":"information-foraging","type":"構成概念","note":"情報の匂いは、Information Foragingで次の情報源へ移るかを判断する重要な手掛かりとして位置づけられる。"}
+  ],
+  "discoverability": [
+    {"id":"information-foraging","type":"探索コスト","note":"必要なものを発見しやすい構造は、情報探索にかかる時間や試行のコストを下げる。"}
+  ],
+  "progressive-disclosure": [
+    {"id":"information-foraging","type":"トレードオフ","note":"一度に見せる量を減らすことと、目的情報までの探索コストを抑えることの両方を見る必要がある。"}
+  ]
+}
