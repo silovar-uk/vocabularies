@@ -5,6 +5,11 @@
       "status": "published",
       "path": "data/essays/attention-residue.json",
       "updated_at": "2026-08-10"
+    },
+    "cognitive-offloading": {
+      "status": "published",
+      "path": "data/essays/cognitive-offloading.json",
+      "updated_at": "2026-08-10"
     }
   }
 }
