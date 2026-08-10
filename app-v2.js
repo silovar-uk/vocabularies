@@ -31,6 +31,9 @@ const FIELD_LABELS = {
   Rhetoric: "修辞学",
   Language: "言語",
   Sound: "音響",
+  Semiotics: "記号論",
+  Philosophy: "哲学",
+  "Software Engineering": "ソフトウェア工学",
 };
 
 // 日本語訳が説明的になりやすく、実務では英語名で扱う方が自然な語だけ英語を主表記にする。
@@ -175,60 +178,32 @@ function renderFieldFilters() {
 function renderCard(item) {
   const names = displayNames(item);
   const primaryClass = names.primaryLanguage === "en" ? " card-term-en" : "";
-
   const fields = (item.fields ?? [])
+    .slice(0, 4)
     .map((field) => '<span class="mini-tag">' + escapeHtml(fieldLabel(field)) + '</span>')
     .join("");
-
-  const feelings = (item.feelings ?? [])
-    .slice(0, 3)
-    .map((feeling) => '<span class="mini-tag mini-tag-feeling">' + escapeHtml(feeling) + '</span>')
-    .join("");
-
-  const sources = (item.sources ?? [])
-    .map((source, index) => '<li><a href="' + escapeAttribute(source) + '" target="_blank" rel="noopener noreferrer">出典 ' + (index + 1) + '</a></li>')
-    .join("");
-
-  const selectionContext = item.why_selected
-    ? '<section class="selection-context" aria-label="この言葉を選んだ背景">' +
-      '<p class="detail-kicker">選定背景</p>' +
-      '<p>' + escapeHtml(item.why_selected) + '</p>' +
-      '</section>'
+  const related = (item.related ?? []).slice(0, 3);
+  const relatedLine = related.length
+    ? '<p class="card-related"><span>周辺</span>' + related.map((id) => escapeHtml(id)).join(" ・ ") + '</p>'
     : "";
-
-  const sourceList = sources ? '<ul class="source-list">' + sources + '</ul>' : "";
   const secondaryName = names.secondary
     ? '<p class="card-en">' + escapeHtml(names.secondary) + '</p>'
     : "";
 
-  return '<article class="vocab-card" id="' + escapeAttribute(item.id) + '">' +
-    '<details>' +
-      '<summary>' +
-        '<div class="card-topline">' +
-          '<div>' +
-            '<h3 class="card-term' + primaryClass + '">' + escapeHtml(names.primary) + '</h3>' +
-            secondaryName +
-          '</div>' +
-          '<span class="expand-mark" aria-hidden="true">＋</span>' +
+  return '<article class="vocab-card" id="' + escapeAttribute(item.id) +
+    '" role="button" tabindex="0" data-open-term="' + escapeAttribute(item.id) +
+    '" aria-label="' + escapeAttribute(names.primary) + 'を読む">' +
+      '<div class="card-topline">' +
+        '<div>' +
+          '<h3 class="card-term' + primaryClass + '">' + escapeHtml(names.primary) + '</h3>' +
+          secondaryName +
         '</div>' +
-        '<p class="one-liner">' + escapeHtml(item.one_liner) + '</p>' +
-        '<div class="mini-tags">' + fields + feelings + '</div>' +
-      '</summary>' +
-      '<div class="card-detail">' +
-        '<p class="description">' + escapeHtml(item.description) + '</p>' +
-        selectionContext +
-        '<div class="example-box">' +
-          '<span class="example-label">もとの言い方</span>' +
-          '<p>' + escapeHtml(item.before) + '</p>' +
-          '<div class="after">' +
-            '<span class="example-label">言い換えると</span>' +
-            '<p>' + escapeHtml(item.after) + '</p>' +
-          '</div>' +
-        '</div>' +
-        sourceList +
+        '<span class="read-mark" aria-hidden="true">↗</span>' +
       '</div>' +
-    '</details>' +
-  '</article>';
+      '<p class="one-liner">' + escapeHtml(item.one_liner) + '</p>' +
+      '<div class="mini-tags">' + fields + '</div>' +
+      relatedLine +
+    '</article>';
 }
 
 function renderResults() {
@@ -265,9 +240,7 @@ function openRandomItem() {
     return;
   }
 
-  const details = card.querySelector("details");
-  if (details) details.open = true;
-  card.scrollIntoView({ behavior: "smooth", block: "center" });
+  card.click();
 }
 
 searchInput.addEventListener("input", (event) => {
