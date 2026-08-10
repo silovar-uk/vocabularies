@@ -2,40 +2,6 @@
   const searchAssist = document.querySelector("#searchAssist");
   if (!searchAssist) return;
 
-  const SEARCH_ALIASES = {
-    signifier: ["シグニファイヤー", "しぐにふぁいあ", "操作の手掛かり", "操作の手がかり"],
-    signifiant: ["シグニフィアン", "しぐにふぃあん", "記号表現"],
-    signified: ["シニフィエ", "記号内容"],
-    "conservation-of-complexity": ["テスラー", "テスラーの法則", "複雑性保存則"],
-    "essential-accidental-complexity": ["本質的複雑性", "偶発的複雑性", "essential complexity", "accidental complexity"],
-    "intrinsic-extraneous-load": ["内在的認知負荷", "外在的認知負荷"],
-    "recognition-over-recall": ["再認", "想起", "想起より再認"],
-    "information-scent": ["情報の匂い", "情報のにおい"],
-  };
-
-  const CONTRAST_GROUPS = [
-    {
-      ids: ["signifier", "signifiant"],
-      title: "名前は似ていますが、別の概念です。",
-      note: "シグニファイアはUXで行為を発見させる手掛かり。シニフィアンは記号論で、意味を担う表現側を指します。",
-    },
-    {
-      ids: ["conservation-of-complexity", "essential-accidental-complexity", "cognitive-load"],
-      title: "同じ「複雑さ」でも、見ている場所が違います。",
-      note: "テスラーは負担先、Brooksは複雑さの由来、認知負荷は人の作業記憶を見ます。",
-    },
-    {
-      ids: ["signifier", "affordance"],
-      title: "よく混同される二つです。",
-      note: "アフォーダンスは行為の可能性。シグニファイアは、その可能性を発見させる知覚可能な手掛かりです。",
-    },
-    {
-      ids: ["visual-hierarchy", "salience"],
-      title: "設計と、実際の目立ち方を分けて考えられます。",
-      note: "視覚的階層は情報の優先順位を設計し、顕著性は実際にどれだけ注意を引くかを見ます。",
-    },
-  ];
-
   function foldKana(value) {
     return String(value ?? "")
       .normalize("NFKC")
@@ -47,17 +13,28 @@
 
   function valuesFor(item) {
     const names = displayNames(item);
+    const groupLabels = (item.fields ?? [])
+      .map(fieldGroup)
+      .filter(Boolean)
+      .map((group) => group.label);
+
     return {
       primary: foldKana(names.primary),
       secondary: foldKana(names.secondary),
       ja: foldKana(item.ja),
       term: foldKana(item.term),
-      aliases: (SEARCH_ALIASES[item.id] ?? []).map(foldKana),
-      fields: [...(item.fields ?? []), ...(item.fields ?? []).map(fieldLabel)].map(foldKana),
+      aliases: (item.aliases ?? []).map(foldKana),
+      fields: [
+        ...(item.fields ?? []),
+        ...(item.fields ?? []).map(fieldLabel),
+        ...groupLabels,
+      ].map(foldKana),
       feelings: (item.feelings ?? []).map(foldKana),
+      status: foldKana(formalStatusLabel(item)),
       oneLiner: foldKana(item.one_liner),
       description: foldKana(item.description),
       why: foldKana(item.why_selected),
+      usage: foldKana(item.usage_note),
     };
   }
 
@@ -78,9 +55,10 @@
 
     if (values.fields.some((value) => value.includes(token))) return { score: 500, reason: "分野" };
     if (values.feelings.some((value) => value.includes(token))) return { score: 450, reason: "感覚" };
+    if (values.status.includes(token)) return { score: 400, reason: "種別" };
     if (values.oneLiner.includes(token)) return { score: 350, reason: "一文説明" };
     if (values.description.includes(token)) return { score: 250, reason: "定義" };
-    if (values.why.includes(token)) return { score: 200, reason: "選定背景" };
+    if (values.why.includes(token) || values.usage.includes(token)) return { score: 200, reason: "背景" };
 
     return { score: 0, reason: "" };
   }
@@ -123,22 +101,22 @@
   function candidateMarkup(item) {
     const names = displayNames(item);
     const match = matchInfo(item, state.query);
-    const field = (item.fields ?? [])[0];
     return '<button class="search-candidate" type="button" data-search-term="' + escapeAttribute(item.id) + '">' +
       '<span class="search-candidate-copy">' +
         '<strong>' + escapeHtml(names.primary) + '</strong>' +
         (names.secondary ? '<span class="search-candidate-secondary">' + escapeHtml(names.secondary) + '</span>' : '') +
       '</span>' +
-      '<span class="search-candidate-meta">' + escapeHtml(match.reason || (field ? fieldLabel(field) : "候補")) + '</span>' +
+      '<span class="search-candidate-meta">' + escapeHtml(match.reason || formalStatusLabel(item) || "候補") + '</span>' +
     '</button>';
   }
 
   function contrastMarkup(items) {
     const ids = new Set(items.map((item) => item.id));
-    const group = CONTRAST_GROUPS.find((candidate) => candidate.ids.filter((id) => ids.has(id)).length >= 2);
+    const contrasts = state.catalog.search_contrasts ?? [];
+    const group = contrasts.find((candidate) => (candidate.ids ?? []).filter((id) => ids.has(id)).length >= 2);
     if (!group) return "";
 
-    const visibleTerms = group.ids
+    const visibleTerms = (group.ids ?? [])
       .map((id) => state.items.find((item) => item.id === id))
       .filter(Boolean)
       .filter((item) => ids.has(item.id))
