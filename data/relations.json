@@ -36,6 +36,21 @@
     {"id":"langue-parole","type":"分析軸","note":"体系／使用とは別に、現在の構造／歴史的変化を分ける。"},
     {"id":"register","type":"応用","note":"現在のレジスターと、その歴史的変化を切り分けられる。"}
   ],
+  "register": [
+    {"id":"langue-parole","type":"使用の層","note":"ラング／パロールが体系と個別使用を分けるのに対し、レジスターは状況に結びついた言語選択のまとまりを見る。"},
+    {"id":"rhetorical-move","type":"区別","note":"レジスターは言語形式の選ばれ方、ムーブは文章部分が果たす修辞的な仕事を見る。"},
+    {"id":"epistemic-stance","type":"実現手段","note":"確信度や根拠の示し方は、学術・会話などレジスターごとに異なる形式で現れうる。"},
+    {"id":"synchrony-diachrony","type":"分析軸","note":"ある時点のレジスター差と、レジスターの歴史的変化は別に分析できる。"}
+  ],
+  "rhetorical-move": [
+    {"id":"epistemic-stance","type":"機能／態度","note":"ムーブは文章部分の機能、認識的スタンスはそこで主張をどの強さ・根拠で位置づけるかを見る。"},
+    {"id":"register","type":"区別","note":"ムーブは修辞機能、レジスターは状況に応じた言語選択の傾向。"},
+    {"id":"composition","type":"構造レベル","note":"Compositionが全体の配置を広く見るのに対し、Rhetorical Moveは各部分の修辞機能を明示する。"}
+  ],
+  "epistemic-stance": [
+    {"id":"rhetorical-move","type":"機能／態度","note":"同じムーブでも、断定・留保・根拠提示の仕方によって認識的スタンスは変わる。"},
+    {"id":"register","type":"文脈依存","note":"認識的スタンスを表す形式や許容される強さは、レジスターによって変わりうる。"}
+  ],
   "signifier": [
     {"id":"affordance","type":"区別","note":"アフォーダンスは行為の可能性、シグニファイアはそれを発見させる手掛かり。"},
     {"id":"discoverability","type":"補完","note":"適切なシグニファイアは機能の発見可能性を支える。"},
@@ -43,6 +58,11 @@
     {"id":"information-scent","type":"近接概念","note":"どちらも次の行為を予測させるが、情報の匂いは行き先の情報価値に焦点を置く。"},
     {"id":"signifiant","type":"混同注意","note":"記号論のシニフィアンとは別概念。"},
     {"id":"salience","type":"調整軸","note":"手掛かりは見える必要があるが、必要以上に顕著である必要はない。"}
+  ],
+  "information-scent": [
+    {"id":"signifier","type":"区別","note":"シグニファイアは行為可能性の手掛かり、Information Scentはその先にどんな情報価値がありそうかを予測させる手掛かり。"},
+    {"id":"discoverability","type":"探索支援","note":"行き先を予測できるラベルは、目的の情報を発見しやすくする。"},
+    {"id":"recognition-over-recall","type":"補完","note":"行き先を画面上の手掛かりから判断できれば、記憶だけに頼る必要が減る。"}
   ],
   "affordance": [
     {"id":"signifier","type":"区別","note":"行為可能性そのものと、その可能性を知らせる手掛かりを分ける。"},
@@ -53,7 +73,8 @@
     {"id":"signifier","type":"支える要素","note":"操作可能性を知覚可能にする。"},
     {"id":"recognition-over-recall","type":"近接原則","note":"見れば分かる状態は、機能を発見しやすくする。"},
     {"id":"progressive-disclosure","type":"緊張関係","note":"隠すことで静かになる一方、発見可能性を失わない設計が必要。"},
-    {"id":"gulfs-of-action","type":"実行側","note":"発見できない機能は実行の淵を大きくする。"}
+    {"id":"gulfs-of-action","type":"実行側","note":"発見できない機能は実行の淵を大きくする。"},
+    {"id":"information-scent","type":"探索支援","note":"存在を見つけるだけでなく、その先に何があるか予測できると探索が進みやすい。"}
   ],
   "conceptual-model": [
     {"id":"signifier","type":"局所／全体","note":"シグニファイアが局所的な手掛かりなら、概念モデルは仕組み全体の理解。"},
@@ -70,6 +91,26 @@
     {"id":"visibility-system-status","type":"評価の淵","note":"結果や現在状態を見せて評価側の隔たりを縮める。"},
     {"id":"conceptual-model","type":"横断","note":"仕組みへの理解は実行・評価の両方を助ける。"}
   ],
+  "automaticity": [
+    {"id":"cognitive-load","type":"処理負担","note":"処理が自動化されると、同じ課題でも意識的な注意や作業記憶への要求を減らせる場合がある。"},
+    {"id":"categorical-perception","type":"学習との接点","note":"知覚カテゴリーを区別できることと、その識別を素早く自動的に行えることは別の学習段階。"}
+  ],
+  "categorical-perception": [
+    {"id":"differentiation","type":"区切り／細分化","note":"範疇知覚は連続刺激をカテゴリー境界で区切る現象、分化は一まとまりだった経験の差をより細かく捉えるメタ概念。"},
+    {"id":"emotional-granularity","type":"類似構図","note":"どちらも経験をカテゴリーとして区別するが、感情粒度は感情カテゴリーの細かさの個人差に焦点を置く。"},
+    {"id":"automaticity","type":"学習との接点","note":"カテゴリーを知覚できることと、その識別が自動化されていることは同じではない。"}
+  ],
+  "emotional-granularity": [
+    {"id":"differentiation","type":"具体例","note":"Vocabulariesでいう分化を、感情経験の領域で具体化した概念として捉えられる。"},
+    {"id":"categorical-perception","type":"区別","note":"範疇知覚は刺激を離散カテゴリーとして知覚する現象、感情粒度は感情経験をどれだけ細かく区別するかを見る。"}
+  ],
+  "cognitive-load": [
+    {"id":"intrinsic-extraneous-load","type":"内訳","note":"認知負荷を課題由来と提示由来に分けて考える。"},
+    {"id":"conservation-of-complexity","type":"比較","note":"誰が複雑さを引き受けるかと、頭に何を処理させるかは別の問い。"},
+    {"id":"recognition-over-recall","type":"低減手段","note":"想起要求を減らし、作業記憶への負担を抑える。"},
+    {"id":"progressive-disclosure","type":"低減手段","note":"同時に処理する情報を絞ることで負荷を調整できる。"},
+    {"id":"automaticity","type":"処理負担","note":"熟達による自動性は、意識的に処理する要素を減らしうる。"}
+  ],
   "conservation-of-complexity": [
     {"id":"essential-accidental-complexity","type":"比較","note":"テスラーは複雑さの負担先、Brooksは複雑さの由来を問う。"},
     {"id":"cognitive-load","type":"観察対象が違う","note":"テスラーはシステム全体、認知負荷は利用者の作業記憶を見る。"},
@@ -81,12 +122,6 @@
     {"id":"cognitive-load","type":"近似構図","note":"問題側の複雑さと、人間側の処理負荷は区別して扱う。"},
     {"id":"intrinsic-extraneous-load","type":"類似区分","note":"本質／偶発と似た二分法だが、こちらは認知負荷の由来を扱う。"}
   ],
-  "cognitive-load": [
-    {"id":"intrinsic-extraneous-load","type":"内訳","note":"認知負荷を課題由来と提示由来に分けて考える。"},
-    {"id":"conservation-of-complexity","type":"比較","note":"誰が複雑さを引き受けるかと、頭に何を処理させるかは別の問い。"},
-    {"id":"recognition-over-recall","type":"低減手段","note":"想起要求を減らし、作業記憶への負担を抑える。"},
-    {"id":"progressive-disclosure","type":"低減手段","note":"同時に処理する情報を絞ることで負荷を調整できる。"}
-  ],
   "intrinsic-extraneous-load": [
     {"id":"cognitive-load","type":"内訳","note":"認知負荷をより細かく診断するための区分。"},
     {"id":"essential-accidental-complexity","type":"類似区分","note":"構図は似るが、こちらは作業記憶への負荷を扱う。"},
@@ -94,15 +129,28 @@
   ],
   "visual-hierarchy": [
     {"id":"salience","type":"設計／結果","note":"視覚的階層は優先順位を設計し、顕著性は実際の注意の引かれ方を見る。"},
-    {"id":"negative-space","type":"設計手段","note":"余白によって重要度やまとまりを形成できる。"}
+    {"id":"negative-space","type":"設計手段","note":"余白によって重要度やまとまりを形成できる。"},
+    {"id":"composition","type":"部分／全体","note":"視覚的階層は何を先に見せるか、Compositionは要素同士の配置関係をより広く扱う。"}
   ],
   "salience": [
     {"id":"visual-hierarchy","type":"結果／設計","note":"目立ち方を、情報上の優先順位と照合する。"},
     {"id":"signifier","type":"調整軸","note":"操作の手掛かりは見つかる程度の顕著性が必要。"}
   ],
+  "timbre": [
+    {"id":"prosody","type":"区別","note":"Timbreは声や音の質的特徴、Prosodyはイントネーション・強勢・リズムなど時間的パターンを扱う。"},
+    {"id":"composition","type":"素材／配置","note":"Timbreが個々の音の質を扱うのに対し、Compositionはそれらを作品全体でどう配置・関係づけるかを見る。"}
+  ],
+  "composition": [
+    {"id":"visual-hierarchy","type":"構成原理","note":"Compositionが全体配置を扱う中で、Visual Hierarchyは重要度に応じた視線の順序を設計する。"},
+    {"id":"negative-space","type":"構成要素","note":"何も置かない空間もCompositionの一部として、分離や重心に作用する。"},
+    {"id":"visual-rhythm","type":"構成原理","note":"反復と変化がCompositionの中に視覚的な流れを作る。"},
+    {"id":"curation","type":"選択／配置","note":"Curationは何を選び文脈化するか、Compositionは選ばれた要素をどう配置し全体化するかを見る。"},
+    {"id":"rhetorical-move","type":"構造レベル","note":"文章全体の構成と、各部分が担う修辞機能を分けて考えられる。"}
+  ],
   "curation": [
     {"id":"selection-elimination","type":"編集原理","note":"何を集めるかだけでなく、何を除き、何を強調するかを決める。"},
-    {"id":"composition","type":"配置","note":"選んだ要素をどう関係づけて全体を作るか。"}
+    {"id":"composition","type":"選択／配置","note":"Curationは選択と文脈化、Compositionは選ばれた要素の配置と全体構成に焦点を置く。"},
+    {"id":"visual-hierarchy","type":"提示設計","note":"選んだ対象を受け手にどう優先して読ませるかは、視覚的階層の問題として別に設計できる。"}
   ],
   "selection-elimination": [
     {"id":"curation","type":"編集原理","note":"選択・除去・強調を、知識の編集へ適用する。"},
