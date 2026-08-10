@@ -55,7 +55,11 @@
 }
 
 .editorial-protection-list {
+  max-height: 360px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   border-top: 1px solid var(--line-soft);
+  scrollbar-gutter: stable;
 }
 
 .editorial-protection-item {
@@ -116,6 +120,10 @@
 @media (max-width: 760px) {
   .editorial-protection > summary {
     min-height: 48px;
+  }
+
+  .editorial-protection-list {
+    max-height: 300px;
   }
 
   .editorial-protection-item {
