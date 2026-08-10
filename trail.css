@@ -3,7 +3,7 @@
   z-index: 90;
   right: 18px;
   bottom: 14px;
-  width: min(680px, calc(100vw - 36px));
+  width: min(720px, calc(100vw - 36px));
   color: var(--ink, #1e211f);
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
   pointer-events: none;
@@ -58,6 +58,8 @@
   margin-top: 7px;
   padding: 15px 16px 14px;
   border-radius: 15px;
+  max-height: min(72vh, 640px);
+  overflow-y: auto;
 }
 
 .concept-trail-panel[hidden] {
@@ -72,22 +74,33 @@
   margin-bottom: 12px;
 }
 
-.concept-trail-head > div {
+.concept-trail-head > div:first-child {
   display: grid;
   gap: 2px;
 }
 
-.concept-trail-head strong {
+.concept-trail-head strong,
+.concept-routes-head strong {
   font-size: 12px;
 }
 
 .concept-trail-head span,
-.concept-trail-empty {
+.concept-trail-empty,
+.concept-routes-empty,
+.concept-routes-head span {
   color: var(--muted, #6f746f);
   font-size: 10px;
 }
 
-.concept-trail-clear {
+.concept-trail-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.concept-route-start,
+.concept-trail-clear,
+.concept-route-card-head button {
   padding: 0;
   border: 0;
   background: transparent;
@@ -99,12 +112,22 @@
   text-underline-offset: 3px;
 }
 
+.concept-route-start {
+  color: var(--accent, #2f5d50);
+  font-weight: 680;
+}
+
+.concept-route-start:disabled {
+  opacity: .4;
+  cursor: default;
+}
+
 .concept-trail-list {
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scrollbar-width: thin;
   white-space: nowrap;
-  padding: 8px 0 2px;
+  padding: 8px 0 4px;
 }
 
 .concept-trail-step {
@@ -113,7 +136,8 @@
   gap: 7px;
 }
 
-.concept-trail-step a {
+.concept-trail-step a,
+.concept-trail-route-choice {
   display: inline-flex;
   align-items: center;
   min-height: 32px;
@@ -122,6 +146,7 @@
   border-radius: 999px;
   background: rgba(255,255,255,.48);
   color: inherit;
+  font: inherit;
   font-size: 11px;
   font-weight: 650;
   text-decoration: none;
@@ -129,10 +154,37 @@
 }
 
 .concept-trail-step a:hover,
-.concept-trail-step a:focus-visible {
+.concept-trail-step a:focus-visible,
+.concept-trail-route-choice:hover,
+.concept-trail-route-choice:focus-visible {
   border-color: rgba(47,93,80,.34);
   background: rgba(255,255,255,.75);
   color: var(--accent, #2f5d50);
+}
+
+.concept-trail-route-choice {
+  cursor: pointer;
+  gap: 7px;
+}
+
+.concept-trail-route-choice.is-selected {
+  border-color: rgba(47,93,80,.42);
+  background: rgba(47,93,80,.09);
+  color: var(--accent, #2f5d50);
+}
+
+.concept-route-check {
+  width: 15px;
+  height: 15px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(30,33,31,.20);
+  border-radius: 50%;
+  font-size: 9px;
+}
+
+.concept-trail-route-choice.is-selected .concept-route-check {
+  border-color: currentColor;
 }
 
 .concept-trail-arrow {
@@ -140,10 +192,169 @@
   font-size: 10px;
 }
 
-.concept-trail-empty {
+.concept-trail-empty,
+.concept-routes-empty {
   margin: 4px 0 2px;
   white-space: normal;
   line-height: 1.6;
+}
+
+.concept-route-builder {
+  margin: 4px 0 10px;
+  padding: 12px;
+  border: 1px solid rgba(47,93,80,.16);
+  border-radius: 12px;
+  background: rgba(47,93,80,.045);
+}
+
+.concept-route-builder[hidden] {
+  display: none;
+}
+
+.concept-route-builder-copy {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 9px;
+}
+
+.concept-route-builder-copy strong {
+  font-size: 11px;
+}
+
+.concept-route-builder-copy span {
+  color: var(--muted, #6f746f);
+  font-size: 10px;
+}
+
+.concept-route-form {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto auto auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.concept-route-name {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--line, rgba(30,33,31,.14));
+  border-radius: 9px;
+  background: rgba(255,255,255,.78);
+  color: inherit;
+  font: inherit;
+  font-size: 11px;
+}
+
+.concept-route-name:focus {
+  outline: 2px solid rgba(47,93,80,.12);
+  border-color: rgba(47,93,80,.38);
+}
+
+.concept-route-name[aria-invalid="true"] {
+  border-color: rgba(159,29,45,.52);
+}
+
+.concept-route-selected-count {
+  color: var(--muted, #6f746f);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.concept-route-form button {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--line, rgba(30,33,31,.14));
+  border-radius: 9px;
+  background: rgba(255,255,255,.62);
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.concept-route-form button[data-save-route] {
+  border-color: rgba(47,93,80,.30);
+  color: var(--accent, #2f5d50);
+}
+
+.concept-route-form button:disabled {
+  opacity: .42;
+  cursor: default;
+}
+
+.concept-routes {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line, rgba(30,33,31,.10));
+}
+
+.concept-routes-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.concept-routes-list {
+  display: grid;
+  gap: 7px;
+}
+
+.concept-route-card {
+  padding: 10px 11px;
+  border: 1px solid var(--line, rgba(30,33,31,.10));
+  border-radius: 11px;
+  background: rgba(255,255,255,.35);
+}
+
+.concept-route-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 7px;
+}
+
+.concept-route-card-head strong {
+  font-size: 11px;
+}
+
+.concept-route-card-head button {
+  opacity: .72;
+}
+
+.concept-route-path {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  padding-bottom: 2px;
+}
+
+.concept-route-path span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.concept-route-path i {
+  color: var(--muted, #6f746f);
+  font-size: 9px;
+  font-style: normal;
+}
+
+.concept-route-path a {
+  color: var(--muted, #6f746f);
+  font-size: 10px;
+  font-weight: 620;
+  text-decoration: none;
+}
+
+.concept-route-path a:hover,
+.concept-route-path a:focus-visible {
+  color: var(--accent, #2f5d50);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 640px) {
@@ -158,11 +369,35 @@
   }
 
   .concept-trail-panel {
-    max-height: min(34vh, 220px);
+    max-height: min(58vh, 430px);
     padding: 13px 14px 12px;
   }
 
-  .concept-trail-head span {
+  .concept-trail-head {
+    gap: 10px;
+  }
+
+  .concept-trail-head > div:first-child > span {
     display: none;
+  }
+
+  .concept-trail-head-actions {
+    gap: 8px;
+  }
+
+  .concept-route-form {
+    grid-template-columns: 1fr auto;
+  }
+
+  .concept-route-name {
+    grid-column: 1 / -1;
+  }
+
+  .concept-route-selected-count {
+    justify-self: start;
+  }
+
+  .concept-route-form button {
+    min-width: 58px;
   }
 }
