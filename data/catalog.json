@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "datasets": [
     "data/vocabularies.json",
     "data/research-20260810-semiotics-complexity.json",
@@ -9,6 +9,17 @@
     "primary_language": "ja",
     "formal_status": "established_term",
     "aliases": []
+  },
+  "quality_audit": {
+    "version": 1,
+    "reviewed_at": "2026-08-10",
+    "dimensions": [
+      "term_status",
+      "japanese_label",
+      "source_strength",
+      "selection_context",
+      "relations"
+    ]
   },
   "formal_status_labels": {
     "established_term": "専門語",
@@ -80,31 +91,91 @@
     }
   ],
   "terms": {
-    "progressive-disclosure": {"formal_status":"design_principle","aliases":["段階的開示"]},
+    "progressive-disclosure": {
+      "ja": "段階的開示",
+      "formal_status": "design_principle",
+      "aliases": ["漸進的開示"],
+      "usage_note": "アコーディオンなどのUI部品そのものではなく、情報や機能をいつ開示するかを設計する原則として扱う。"
+    },
     "information-scent": {"primary_language":"en","aliases":["情報のにおい"]},
-    "recognition-over-recall": {"primary_language":"en","formal_status":"design_principle","aliases":["再認優位","想起より再認"]},
+    "recognition-over-recall": {
+      "primary_language":"en",
+      "formal_status":"heuristic",
+      "aliases":["再認優位","想起より再認"],
+      "usage_note":"Nielsenのユーザビリティ・ヒューリスティック『Recognition rather than recall』としての位置づけを優先する。"
+    },
     "visual-hierarchy": {"aliases":["視覚階層"]},
-    "negative-space": {"aliases":["余白","ネガティブスペース"]},
-    "visual-rhythm": {"aliases":["視覚リズム"]},
-    "visibility-system-status": {"formal_status":"design_principle","aliases":["状態の可視性","システム状態の可視性"]},
-    "categorical-perception": {"aliases":["カテゴリー知覚"]},
-    "automaticity": {"aliases":["自動性"]},
-    "prosody": {"aliases":["韻律"],"usage_note":"音声学では正式な専門語。文章のリズムへの適用は比喩的な拡張を含む。"},
+    "negative-space": {
+      "ja":"余白 / ネガティブスペース",
+      "aliases":["余白","ネガティブスペース"]
+    },
+    "visual-rhythm": {
+      "aliases":["視覚リズム"],
+      "usage_note":"美術・グラフィックデザインの構成原理としての用法を基礎にし、UIへの適用は視覚構成の応用として扱う。",
+      "sources":["https://www.getty.edu/education/teachers/building_lessons/formal_analysis2.html"]
+    },
+    "visibility-system-status": {
+      "formal_status":"heuristic",
+      "aliases":["状態の可視性","システム状態の可視性"],
+      "usage_note":"Nielsenのユーザビリティ・ヒューリスティック第1原則としての位置づけを優先する。"
+    },
+    "categorical-perception": {
+      "aliases":["カテゴリー知覚"],
+      "sources":["https://pubmed.ncbi.nlm.nih.gov/13481283/","https://doi.org/10.1037/h0044417"]
+    },
+    "automaticity": {
+      "ja":"自動性",
+      "aliases":["自動化"],
+      "usage_note":"Automaticityは処理が少ない注意資源で遂行される『自動性』を指す。システムや作業を自動化するAutomationとは区別する。"
+    },
+    "prosody": {
+      "aliases":["韻律"],
+      "usage_note":"音声学・音韻論では正式な専門語。文章のリズム全般への適用は、文学研究での用法を除けば比喩的な拡張を含む。",
+      "sources":["https://doi.org/10.1093/acrefore/9780199384655.013.411","https://academic.oup.com/edited-volume/34870"]
+    },
     "register": {"aliases":["言語使用域"]},
-    "rhetorical-move": {"primary_language":"en","aliases":["修辞的ムーブ","ムーブ分析"]},
-    "epistemic-stance": {"aliases":["認識的スタンス"]},
+    "rhetorical-move": {
+      "primary_language":"en",
+      "ja":"修辞的ムーブ / ムーブ",
+      "aliases":["修辞的ムーブ","ムーブ分析"],
+      "sources":["https://doi.org/10.1002/9781405198431.wbeal1485.pub2","https://owl.purdue.edu/owl/general_writing/the_writing_process/organization_CARS_Model.html"]
+    },
+    "epistemic-stance": {
+      "aliases":["認識的スタンス"],
+      "one_liner":"その主張をどれくらい確かだと位置づけ、どんな根拠で語るか。",
+      "description":"命題への確信度やコミットメント、根拠の位置づけなどを通じて、話し手・書き手が知識に対してどの立場を取るかを示すこと。",
+      "usage_note":"確信度だけの概念ではなく、evidentialityや命題へのコミットメントも含む広い概念として扱う。",
+      "sources":["https://doi.org/10.1515/text.1.1989.9.1.93","https://doi.org/10.1093/applin/amv055"]
+    },
     "emotional-granularity": {"aliases":["感情粒度","感情の粒度"]},
-    "timbre": {"aliases":["音色"],"usage_note":"音響・音楽では正式な専門語。他領域の『質感』への適用は比喩的な拡張。"},
-    "composition": {"aliases":["構図","構成"]},
+    "timbre": {
+      "aliases":["音色"],
+      "usage_note":"音響・音楽では正式な専門語。他領域の『質感』に使う場合は比喩的な拡張。",
+      "sources":["https://asastandards.org/terms/timbre/"]
+    },
+    "composition": {
+      "aliases":["構図","構成"],
+      "usage_note":"美術・写真・音楽・文章で定着した広い概念。UIで使う場合は、画面内要素の配置と相互関係を考えるための応用として扱う。",
+      "sources":["https://www.getty.edu/vow/AATFullDisplay?find=&logic=AND&note=&subjectid=300056255"]
+    },
     "salience": {"aliases":["顕著性","サリエンス"]},
-    "signifier": {"aliases":["シグニファイヤー","しぐにふぁいあ","操作の手掛かり","操作の手がかり"]},
+    "signifier": {
+      "aliases":["シグニファイヤー","しぐにふぁいあ","操作の手掛かり","操作の手がかり"],
+      "sources":["https://jnd.org/signifiers-not-affordances/","https://jnd.org/opportunities-and-challenges-for-touch-and-gesture-based-systems/"]
+    },
     "conservation-of-complexity": {"formal_status":"heuristic","aliases":["テスラー","テスラーの法則","複雑性保存則"],"usage_note":"『法則』と呼ばれるが、自然科学上の法則ではなく設計上のヒューリスティックとして扱う。"},
-    "curation": {"aliases":["キュレーション"]},
-    "selection-elimination": {"formal_status":"editorial_principle","aliases":["選択と除去","選択・除去・強調"],"usage_note":"Georgia O’Keeffeの制作上の言葉を、編集・デザインの原理として接続している。"},
+    "curation": {
+      "aliases":["キュレーション"],
+      "usage_note":"美術館・博物館の専門実践としてのcurationを起点に、Vocabulariesでは情報・知識を選び、配置し、文脈化する編集行為へ拡張して使う。"
+    },
+    "selection-elimination": {"formal_status":"editorial_principle","aliases":["選択と除去","選択・除去・強調"],"usage_note":"Georgia O’Keeffeの制作上の言葉を、編集・デザインの原理として接続している。単独の標準的な学術用語としては扱わない。"},
     "differentiation": {"formal_status":"project_meta","aliases":["分化","差異化"],"usage_note":"単一分野の厳密な術語としてではなく、Vocabularies全体を貫くメタ概念として使用。"},
     "signifiant": {"aliases":["シグニフィアン","しぐにふぃあん","記号表現"]},
     "signified": {"aliases":["シニフィエ","記号内容"]},
-    "linguistic-sign": {"aliases":["言語記号","シーニュ"]},
+    "linguistic-sign": {
+      "ja":"言語記号 / シーニュ",
+      "aliases":["言語記号","シーニュ","記号"]
+    },
     "arbitrariness-of-sign": {"aliases":["記号の恣意性"]},
     "linguistic-value": {"aliases":["言語的価値","差異による価値"]},
     "langue-parole": {"aliases":["ラングとパロール","ラング","パロール"]},
@@ -113,7 +184,10 @@
     "discoverability": {"aliases":["発見可能性"]},
     "conceptual-model": {"aliases":["概念モデル"]},
     "constraints": {"formal_status":"design_principle","aliases":["制約"]},
-    "gulfs-of-action": {"aliases":["実行の淵","評価の淵","実行の湾","評価の湾"]},
+    "gulfs-of-action": {
+      "aliases":["実行の淵","評価の淵","実行の湾","評価の湾"],
+      "sources":["https://doi.org/10.1201/b15703-3","https://books.google.com/books?id=IR9FAAAAYAAJ"]
+    },
     "essential-accidental-complexity": {"aliases":["本質的複雑性","偶発的複雑性","essential complexity","accidental complexity"]},
     "cognitive-load": {"aliases":["認知負荷"]},
     "intrinsic-extraneous-load": {"aliases":["内在的認知負荷","外在的認知負荷"]}
