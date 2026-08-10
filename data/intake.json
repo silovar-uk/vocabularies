@@ -9,5 +9,156 @@
     "adopted",
     "rejected"
   ],
-  "candidates": []
+  "candidates": [
+    {
+      "id": "candidate-20260810-perceptual-set",
+      "term": "Perceptual Set / 知覚的構え",
+      "trigger": "テーマや観点を先に決めると、それまで気づかなかった特徴が急に見える現象を言いたい。",
+      "why_now": "『テーマ設定をすると、モノが見えるようになる』感覚をフレーミング効果と区別したかった。",
+      "ja": "知覚的構え",
+      "en": "Perceptual Set",
+      "proposed_id": "perceptual-set",
+      "stage": "adopted",
+      "grade": "A",
+      "primary_language": "ja",
+      "formal_status": "established_term",
+      "fields": ["Psychology", "Perception", "Cognition"],
+      "aliases": ["知覚セット", "知覚の構え"],
+      "feelings": ["テーマを決めると急に見える", "同じものを見ても気づく場所が違う"],
+      "one_liner": "何を探すつもりで見るかが、実際に見つけやすいものを変える。",
+      "description": "期待、課題、文脈、既有知識などによって、特定の対象や出来事を他より知覚しやすくなる一時的な準備状態。",
+      "usage_note": "意思決定の選択肢の提示方法が判断を変えるフレーミング効果とは区別する。",
+      "why_selected": "観点を置くことで、それまで背景だった差が急に見える感覚を直接説明できる。",
+      "before": "テーマを決めたら、急に同じ特徴ばかり見えるようになった。フレーミング効果？",
+      "after": "判断の提示方法ではなく、何を知覚しやすくなるかの話なので、知覚的構えに近い。",
+      "sources": ["https://dictionary.apa.org/perceptual-set", "https://doi.org/10.14947/psychono.KJ00004347120"],
+      "relations": [
+        {"id":"salience","type":"トップダウン／目立ち","note":"観察者側の構えと、刺激側の目立ちやすさを分ける。"},
+        {"id":"categorical-perception","type":"期待／カテゴリー化","note":"準備状態とカテゴリー境界による知覚を分ける。"},
+        {"id":"differentiation","type":"メタ接続","note":"観点を持つことが差の発見の入口になる。"}
+      ],
+      "decision_note": "A。標準的な心理学用語で、今回の『テーマを置くと見える』に直接効くため採用。"
+    },
+    {
+      "id": "candidate-20260810-feedforward",
+      "term": "Feedforward / フィードフォワード",
+      "trigger": "押せることは分かるのに、押した後どうなるか分からず不安なUIを言い分けたい。",
+      "why_now": "Signifier、Feedback、Discoverabilityとの違いをReader上で精密にしたい。",
+      "ja": "フィードフォワード",
+      "en": "Feedforward",
+      "proposed_id": "feedforward",
+      "stage": "adopted",
+      "grade": "A",
+      "primary_language": "en",
+      "formal_status": "design_principle",
+      "fields": ["Design", "UX", "UI"],
+      "aliases": ["フィードフォワード", "事前情報", "操作前の予告"],
+      "feelings": ["押すまで結果が分からない", "操作前に結果を知りたい", "先が読めない"],
+      "one_liner": "操作する前に、その操作で何が起きるかを予告する。",
+      "description": "インタラクションの実行前に、可能な行為やその結果についての情報を与え、次の行動を予測・選択しやすくする設計原理。",
+      "usage_note": "Feedbackは事後、Feedforwardは事前。Signifierとは『操作できる』と『操作すると何が起きる』の差で見る。",
+      "why_selected": "UIの不安を、操作可能性ではなく結果予測の不足として言えるため。",
+      "before": "押せることは分かるけど、押したら何が起こるか分からない。",
+      "after": "Signifierは操作可能性を示せているが、Feedforwardが弱く結果を予測できない。",
+      "sources": ["https://doi.org/10.1145/2470654.2466255", "https://research.tue.nl/en/publications/crossing-the-bridge-over-normans-gulf-of-execution-revealing-feed/"],
+      "relations": [
+        {"id":"signifier","type":"区別","note":"操作可能性の手掛かりと結果の事前予告を分ける。"},
+        {"id":"gulfs-of-action","type":"実行側","note":"実行前の予測を助けて実行の淵を縮める。"},
+        {"id":"visibility-system-status","type":"事前／事後","note":"予告と現在・結果の可視化を分ける。"}
+      ],
+      "decision_note": "A。CHI研究で周辺概念との差が明確で、既存UX語彙をつなぐため採用。"
+    },
+    {
+      "id": "candidate-20260810-information-foraging",
+      "term": "Information Foraging / 情報採餌理論",
+      "trigger": "リンクや分類単体ではなく、ユーザーがどこまで探し続けるかを価値とコストで説明したい。",
+      "why_now": "既存のInformation Scentを、情報探索全体の理論へ接続したい。",
+      "ja": "情報採餌理論 / 情報フォラジング",
+      "en": "Information Foraging",
+      "proposed_id": "information-foraging",
+      "stage": "adopted",
+      "grade": "A",
+      "primary_language": "en",
+      "formal_status": "established_term",
+      "fields": ["Information Architecture", "UX", "Cognition", "Web"],
+      "aliases": ["情報採餌", "情報採餌理論", "インフォメーション・フォーラジング", "情報フォラジング"],
+      "feelings": ["探すのに疲れる", "どこまで探すか迷う", "この先に価値があるか分からない"],
+      "one_liner": "人は、得られそうな情報価値と探索コストを比べながら、次にどこを見るかを選ぶ。",
+      "description": "動物の採餌理論を情報探索に応用し、時間や労力などのコストに対して得られる情報価値を高めるよう探索経路を選ぶと捉える理論。",
+      "usage_note": "Information Scentは局所的な手掛かり、Information Foragingは探索全体の価値とコストを扱う。",
+      "why_selected": "検索・一覧・分類・離脱・深掘りを、同じ探索モデルで考えられるため。",
+      "before": "リンク名は分かるけど、ユーザーがなぜここで離脱するのか説明しづらい。",
+      "after": "Information Scentだけでなく、得られる価値と探索コストのInformation Foragingとして見る。",
+      "sources": ["https://doi.org/10.1145/223904.223911", "https://chi1996.acm.org/proceedings/papers/Card/skc1txt.html"],
+      "relations": [
+        {"id":"information-scent","type":"理論／手掛かり","note":"探索全体と局所的な手掛かりを分ける。"},
+        {"id":"discoverability","type":"探索条件","note":"発見しやすさは探索コストを左右する。"},
+        {"id":"progressive-disclosure","type":"設計上の緊張","note":"隠すことと到達コストのトレードオフを見る。"}
+      ],
+      "decision_note": "A。Information Scentの理論的な親に当たり、IA/UXの探索を一段広く言語化できるため採用。"
+    },
+    {
+      "id": "candidate-20260810-figure-ground",
+      "term": "Figure–Ground / 図と地",
+      "trigger": "主役と背景のどちらが前に出るか、余白やコントラストだけでは説明しきれない構図の感覚を言いたい。",
+      "why_now": "Negative SpaceやVisual Hierarchyとの違いを整理できそう。",
+      "stage": "captured"
+    },
+    {
+      "id": "candidate-20260810-change-blindness",
+      "term": "Change Blindness / 変化盲",
+      "trigger": "画面が変わったのにユーザーがその変更自体に気づかない現象を言いたい。",
+      "why_now": "状態の可視性や差分UIの設計判断に使える可能性がある。",
+      "stage": "captured"
+    },
+    {
+      "id": "candidate-20260810-inattentional-blindness",
+      "term": "Inattentional Blindness / 非注意盲",
+      "trigger": "画面には出ているのに、別のことへ注意を向けているせいで存在自体を見落とす現象を言いたい。",
+      "why_now": "SalienceやPerceptual Setと並べると『見えない』原因を切り分けられそう。",
+      "stage": "captured"
+    },
+    {
+      "id": "candidate-20260810-chunking",
+      "term": "Chunking / チャンキング",
+      "trigger": "情報量そのものは減らさず、意味のまとまりにして扱いやすくすることを言いたい。",
+      "why_now": "認知負荷やチャンクリーディング、UIの情報整理を横断できる可能性がある。",
+      "stage": "captured"
+    },
+    {
+      "id": "candidate-20260810-processing-fluency",
+      "term": "Processing Fluency / 処理流暢性",
+      "trigger": "内容が正しいかとは別に、すっと処理できることで『分かりやすい・自然』と感じる質を言いたい。",
+      "why_now": "文章・UI・視覚デザインを横断できそうだが、適用範囲を要調査。",
+      "stage": "captured"
+    },
+    {
+      "id": "candidate-20260810-conceptual-metaphor",
+      "term": "Conceptual Metaphor / 概念メタファー",
+      "trigger": "比喩が単なる言い換えではなく、そもそもの考え方や分類の仕方を形づくっている状態を言いたい。",
+      "why_now": "OSやインターフェースなど、技術概念を別領域へ移す説明を精密にできそう。",
+      "stage": "captured"
+    },
+    {
+      "id": "candidate-20260810-defamiliarization",
+      "term": "Defamiliarization / 異化",
+      "trigger": "見慣れたものをあえて違う見せ方にして、もう一度ちゃんと見せる表現技法を言いたい。",
+      "why_now": "文章・広告・映像・デザインで横断的に効く可能性がある。",
+      "stage": "captured"
+    },
+    {
+      "id": "candidate-20260810-signal-detection-theory",
+      "term": "Signal Detection Theory / 信号検出理論",
+      "trigger": "見落としと誤検出を、単純な正答率ではなく判断基準と感度に分けて考えたい。",
+      "why_now": "通知・監視・校正・チェックUIなどの『気づく』設計に使えるか検討したい。",
+      "stage": "captured"
+    },
+    {
+      "id": "candidate-20260810-preattentive-processing",
+      "term": "Preattentive Processing / 前注意過程",
+      "trigger": "意識して一つずつ探す前に、色や向きなどの差が瞬時に飛び込んでくる感じを言いたい。",
+      "why_now": "SalienceやVisual Hierarchyと近いため、本当に別語として必要かを調査したい。",
+      "stage": "captured"
+    }
+  ]
 }
