@@ -88,22 +88,37 @@ Cは低品質という意味ではない。**専門語と同じ顔をさせな�
 - Composition → Getty Art & Architecture Thesaurus
 - Gulf of Execution / Evaluation → Norman (1986), *Cognitive Engineering*
 
-## 次にRelationsを厚くしたい語
+### Relations補強
 
-内容の正確さは十分だが、周辺語との関係がまだ薄い語がある。次の優先順位でRelationsを増やす。
+監査時に関係が薄かった10語について、単なるリンクではなく「差が一文で分かる関係」を追加した。
 
-1. Register
-2. Rhetorical Move
-3. Epistemic Stance
-4. Automaticity
-5. Emotional Granularity
-6. Timbre
-7. Composition
-8. Information Scent
-9. Categorical Perception
-10. Curation
+- Register → Langue / Parole、Rhetorical Move、Epistemic Stance
+- Rhetorical Move → Epistemic Stance、Register、Composition
+- Epistemic Stance → Rhetorical Move、Register
+- Automaticity → Cognitive Load、Categorical Perception
+- Emotional Granularity → Differentiation、Categorical Perception
+- Timbre → Prosody、Composition
+- Composition → Visual Hierarchy、Negative Space、Visual Rhythm、Curation、Rhetorical Move
+- Information Scent → Signifier、Discoverability、Recognition over Recall
+- Categorical Perception → Differentiation、Emotional Granularity、Automaticity
+- Curation → Selection / Elimination / Emphasis、Composition、Visual Hierarchy
 
-ここでは単にリンク数を増やさず、**「何が違うかを一文で説明できる関係だけ」**追加する。
+ここでも数を増やすこと自体を目的にせず、**「何が違うか／どの観点が違うか」を説明できる関係だけ**を採用した。
+
+## Readerへの反映
+
+品質上の位置づけは、一覧カードにバッジとして増やさない。
+
+Reader内でのみ、`established_term`以外を小さく表示する。
+
+- 設計原則
+- ヒューリスティック
+- 編集・制作原理
+- この語彙集でのメタ概念
+
+また、拡張的な使い方や混同注意がある語だけ、定義直後に**用法メモ**を表示する。
+
+これにより、通常の閲覧では静けさを保ちつつ、詳しく読むと「どの強さでこの言葉を使ってよいか」が分かる。
 
 ## 運用原則
 
