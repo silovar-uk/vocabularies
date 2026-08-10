@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="デザイン、文章、音、感情などを横断して、ものの見え方を少し細かくする言葉を集めた語彙集。" />
   <title>Vocabularies — 語彙集</title>
-  <link rel="icon" href="./favicon.svg?v=20260810-1217-r1" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=20260810-1217-r1" />
-  <link rel="stylesheet" href="./manifesto.css?v=20260810-1217-r1" />
-  <link rel="stylesheet" href="./reader.css?v=20260810-1217-r1" />
-  <link rel="stylesheet" href="./relations.css?v=20260810-1217-r1" />
+  <link rel="icon" href="./favicon.svg?v=20260810-1232" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css?v=20260810-1232" />
+  <link rel="stylesheet" href="./manifesto.css?v=20260810-1232" />
+  <link rel="stylesheet" href="./reader.css?v=20260810-1232" />
+  <link rel="stylesheet" href="./relations.css?v=20260810-1232" />
+  <link rel="stylesheet" href="./search-v2.css?v=20260810-1232" />
 </head>
 <body>
   <header class="site-header">
@@ -24,8 +25,9 @@
 
       <label class="search-wrap" for="searchInput">
         <span class="search-label">用語を探す</span>
-        <input id="searchInput" type="search" autocomplete="off" placeholder="例：余白 / 韻律 / 感情粒度 / 視覚的階層" />
+        <input id="searchInput" type="search" autocomplete="off" placeholder="例：余白 / 韻律 / 感情粒度 / しぐ" />
       </label>
+      <div id="searchAssist" class="search-assist" role="status" aria-live="polite" hidden></div>
     </section>
 
     <section class="browse-section" aria-labelledby="fieldTitle">
@@ -90,8 +92,9 @@
     <div id="readerContent" class="reader-content"></div>
   </aside>
 
-  <script src="./app-v2.js?v=20260810-1217-r1" defer></script>
-  <script src="./reader.js?v=20260810-1217-r1" defer></script>
-  <script src="./research-loader.js?v=20260810-1217-r1" defer></script>
+  <script src="./app-v2.js?v=20260810-1232" defer></script>
+  <script src="./reader.js?v=20260810-1232" defer></script>
+  <script src="./search-v2.js?v=20260810-1232" defer></script>
+  <script src="./research-loader.js?v=20260810-1232" defer></script>
 </body>
 </html>
