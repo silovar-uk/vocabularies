@@ -178,6 +178,8 @@
         (essay.thesis ? '<p class="term-thesis">' + escapeHtml(essay.thesis) + '</p>' : '') +
         '</header><section class="term-section term-definition"><p class="term-kicker">30秒で掴む</p><p>' + escapeHtml(item.description) + '</p></section>' +
         renderDistinctions(essay, items, catalog) + renderSections(essay) + renderLenses(essay) + renderQuestions(essay) + renderRelations(essay, items, catalog, essayIndex) + renderSources(essay, item) + '</article>';
+
+      window.VocabularyTrail?.record(id, names.primary);
     } catch (error) {
       console.error(error);
       renderError("読み込みに失敗しました。", "ページを再読み込みするか、語彙集へ戻ってください。");
