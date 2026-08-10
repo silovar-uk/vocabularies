@@ -6,11 +6,13 @@ on:
     paths:
       - "data/**"
       - "scripts/validate-data.mjs"
+      - "scripts/validate-intake.mjs"
       - ".github/workflows/validate-data.yml"
   pull_request:
     paths:
       - "data/**"
       - "scripts/validate-data.mjs"
+      - "scripts/validate-intake.mjs"
       - ".github/workflows/validate-data.yml"
   workflow_dispatch:
 
@@ -32,3 +34,6 @@ jobs:
 
       - name: Validate vocabulary data
         run: node scripts/validate-data.mjs
+
+      - name: Validate editorial intake
+        run: node scripts/validate-intake.mjs
