@@ -1,3 +1,154 @@
+.thought-portal {
+  margin: 4px 0 36px;
+  padding: 28px 0 32px;
+  border-top: 1px solid var(--line, rgba(0,0,0,.12));
+  border-bottom: 1px solid var(--line, rgba(0,0,0,.12));
+}
+
+.thought-portal-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 18px;
+}
+
+.thought-portal-head h2 {
+  margin: 2px 0 5px;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  letter-spacing: -0.03em;
+}
+
+.thought-portal-head > div > p:last-child {
+  margin: 0;
+  color: var(--muted, #6d6b64);
+  font-size: .82rem;
+  line-height: 1.65;
+}
+
+.thought-shuffle {
+  flex: 0 0 auto;
+}
+
+.thought-question-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.thought-question-card {
+  min-height: 164px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--line, rgba(0,0,0,.12));
+  border-radius: 14px;
+  background: rgba(255,255,255,.34);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color .15s ease, background .15s ease, transform .15s ease;
+}
+
+.thought-question-card:hover,
+.thought-question-card:focus-visible {
+  border-color: rgba(47,93,80,.34);
+  background: rgba(255,255,255,.6);
+  transform: translateY(-1px);
+}
+
+.thought-question-card:focus-visible {
+  outline: 2px solid rgba(47,93,80,.12);
+  outline-offset: 2px;
+}
+
+.thought-question-term {
+  color: var(--muted, #6d6b64);
+  font-size: .7rem;
+  font-weight: 650;
+}
+
+.thought-question-card strong {
+  font-size: .94rem;
+  line-height: 1.65;
+  font-weight: 680;
+  text-wrap: pretty;
+}
+
+.thought-question-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+  color: var(--accent, #2f5d50);
+  font-size: .72rem;
+  font-weight: 650;
+}
+
+.thought-loading {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted, #6d6b64);
+  font-size: .78rem;
+}
+
+.vocab-card[data-essay-enhanced="true"] {
+  padding: 0;
+  cursor: default;
+}
+
+.card-reader-button {
+  width: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 14px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.card-reader-button:focus-visible {
+  outline: 2px solid rgba(47,93,80,.16);
+  outline-offset: -3px;
+  border-radius: inherit;
+}
+
+.card-reader-button .mini-tags {
+  width: 100%;
+}
+
+.card-essay-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 24px 15px;
+  border-top: 1px solid var(--line-soft, rgba(0,0,0,.07));
+  color: var(--muted, #6d6b64);
+  font-size: .72rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: color .15s ease, background .15s ease;
+}
+
+.card-essay-action:hover,
+.card-essay-action:focus-visible {
+  color: var(--accent, #2f5d50);
+  background: rgba(47,93,80,.035);
+}
+
+.card-essay-action:focus-visible {
+  outline: 2px solid rgba(47,93,80,.14);
+  outline-offset: -3px;
+}
+
 .reader-concept-essay {
   padding-top: 26px;
 }
@@ -39,4 +190,34 @@
 .concept-essay-link:hover .concept-essay-arrow,
 .concept-essay-link:focus-visible .concept-essay-arrow {
   transform: translateX(3px);
+}
+
+@media (max-width: 760px) {
+  .thought-portal {
+    margin-top: 0;
+    padding: 22px 0 26px;
+  }
+
+  .thought-portal-head {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .thought-portal-head > div > p:last-child {
+    max-width: 20em;
+  }
+
+  .thought-question-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .thought-question-card {
+    min-height: 0;
+    padding: 15px 16px;
+  }
+
+  .thought-question-action {
+    margin-top: 2px;
+  }
 }
