@@ -36,6 +36,17 @@ function isHttpUrl(value) {
   }
 }
 
+function validateSourceList(sources, at, { required = true } = {}) {
+  if (sources == null && !required) return;
+  if (!Array.isArray(sources) || (required && sources.length === 0)) {
+    error(`${at}: sources ${required ? "がありません" : "は配列で指定してください"}`);
+    return;
+  }
+  for (const source of sources) {
+    if (!isNonEmptyString(source) || !isHttpUrl(source)) error(`${at}: 不正な source URL: ${String(source)}`);
+  }
+}
+
 const catalog = await readJson("data/catalog.json");
 const relations = await readJson("data/relations.json");
 
@@ -50,6 +61,7 @@ if (!catalog || !relations) {
   if (!Array.isArray(catalog.taxonomy)) error("catalog.json: taxonomy は配列で指定してください");
   if (!catalog.terms || typeof catalog.terms !== "object") error("catalog.json: terms がありません");
   if (!Array.isArray(catalog.search_contrasts)) error("catalog.json: search_contrasts は配列で指定してください");
+  if (catalog.quality_audit != null && typeof catalog.quality_audit !== "object") error("catalog.json: quality_audit はオブジェクトで指定してください");
 
   const datasetPaths = Array.isArray(catalog.datasets) ? catalog.datasets : [];
   const duplicateDatasets = datasetPaths.filter((path, index) => datasetPaths.indexOf(path) !== index);
@@ -119,17 +131,12 @@ if (!catalog || !relations) {
       if (item.related != null && !Array.isArray(item.related)) error(`${at} (${id}): related は配列で指定してください`);
       if (item.opposites != null && !Array.isArray(item.opposites)) error(`${at} (${id}): opposites は配列で指定してください`);
 
-      if (!Array.isArray(item.sources) || item.sources.length === 0) {
-        error(`${at} (${id}): sources がありません`);
-      } else {
-        for (const source of item.sources) {
-          if (!isNonEmptyString(source) || !isHttpUrl(source)) error(`${at} (${id}): 不正な source URL: ${String(source)}`);
-        }
-      }
+      validateSourceList(item.sources, `${at} (${id})`);
+      validateSourceList(merged.sources, `${at} (${id}) effective`);
 
       if (!["ja", "en"].includes(merged.primary_language)) error(`${at} (${id}): primary_language が不正です: ${merged.primary_language}`);
-      if (merged.primary_language === "ja" && !isNonEmptyString(item.ja)) error(`${at} (${id}): primary_language=ja ですが ja がありません`);
-      if (merged.primary_language === "en" && !isNonEmptyString(item.term)) error(`${at} (${id}): primary_language=en ですが term がありません`);
+      if (merged.primary_language === "ja" && !isNonEmptyString(merged.ja)) error(`${at} (${id}): primary_language=ja ですが有効な ja がありません`);
+      if (merged.primary_language === "en" && !isNonEmptyString(merged.term)) error(`${at} (${id}): primary_language=en ですが有効な term がありません`);
       if (!Object.hasOwn(catalog.formal_status_labels ?? {}, merged.formal_status)) error(`${at} (${id}): formal_status が未定義です: ${merged.formal_status}`);
 
       if (!Array.isArray(merged.aliases)) {
@@ -178,10 +185,15 @@ if (!catalog || !relations) {
   }
 
   for (const [id, metadata] of Object.entries(catalog.terms ?? {})) {
-    if (!ids.has(id)) error(`catalog.json: terms.${id} は存在しない語彙IDを参照しています`);
-    if (metadata?.primary_language != null && !["ja", "en"].includes(metadata.primary_language)) error(`catalog.json: terms.${id}.primary_language が不正です`);
-    if (metadata?.formal_status != null && !Object.hasOwn(catalog.formal_status_labels ?? {}, metadata.formal_status)) error(`catalog.json: terms.${id}.formal_status が未定義です: ${metadata.formal_status}`);
-    if (metadata?.aliases != null && !Array.isArray(metadata.aliases)) error(`catalog.json: terms.${id}.aliases は配列で指定してください`);
+    const at = `catalog.json: terms.${id}`;
+    if (!ids.has(id)) error(`${at} は存在しない語彙IDを参照しています`);
+    if (metadata?.primary_language != null && !["ja", "en"].includes(metadata.primary_language)) error(`${at}.primary_language が不正です`);
+    if (metadata?.formal_status != null && !Object.hasOwn(catalog.formal_status_labels ?? {}, metadata.formal_status)) error(`${at}.formal_status が未定義です: ${metadata.formal_status}`);
+    if (metadata?.aliases != null && !Array.isArray(metadata.aliases)) error(`${at}.aliases は配列で指定してください`);
+    if (metadata?.sources != null) validateSourceList(metadata.sources, at, { required: false });
+    for (const key of ["term", "ja", "one_liner", "description", "usage_note"]) {
+      if (metadata?.[key] != null && !isNonEmptyString(metadata[key])) error(`${at}.${key} は空でない文字列にしてください`);
+    }
   }
 
   for (const item of allItems) {
