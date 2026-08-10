@@ -176,6 +176,8 @@
   }
 
   function gate(candidate, stage = candidate.stage) {
+    const hasDisplayName = Boolean(candidate.ja || candidate.en);
+    const primaryNameExists = candidate.primary_language === "en" ? Boolean(candidate.en) : Boolean(candidate.ja);
     const checks = {
       captured: [
         ["候補語", Boolean(candidate.term)],
@@ -185,9 +187,10 @@
         ["出典が1件以上", (candidate.sources ?? []).length > 0],
       ],
       qualified: [
+        ["正式な表記名", hasDisplayName],
         ["A/B/C判定", GRADES.includes(candidate.grade) && Boolean(candidate.grade)],
         ["formal status", Boolean(candidate.formal_status)],
-        ["主表記言語", ["ja", "en"].includes(candidate.primary_language)],
+        ["主表記言語", ["ja", "en"].includes(candidate.primary_language) && primaryNameExists],
         ["一文説明", Boolean(candidate.one_liner)],
         ["定義", Boolean(candidate.description)],
       ],
@@ -218,17 +221,16 @@
   }
 
   function canAdvance(candidate) {
-    if (["adopted", "rejected"].includes(candidate.stage)) return false;
+    if (["ready", "adopted", "rejected"].includes(candidate.stage)) return false;
     const currentIndex = STAGES.indexOf(candidate.stage);
-    const nextStage = STAGES[currentIndex + 1];
-    if (!nextStage) return false;
-    const checks = gate(candidate, nextStage);
-    return checks.every(([, ok]) => ok);
+    const next = STAGES[currentIndex + 1];
+    if (!next) return false;
+    return gate(candidate, next).every(([, ok]) => ok);
   }
 
   function nextStage(candidate) {
     const index = STAGES.indexOf(candidate.stage);
-    return STAGES[Math.min(index + 1, STAGES.indexOf("ready"))];
+    return STAGES[index + 1] || candidate.stage;
   }
 
   function researchPrompt(candidate) {
@@ -417,7 +419,7 @@ ${candidate.why_now || "未記入"}
       .filter(Boolean)
       .join(" · ");
     const advance = canAdvance(candidate);
-    const terminal = ["adopted", "rejected"].includes(candidate.stage);
+    const terminal = ["ready", "adopted", "rejected"].includes(candidate.stage);
 
     return `<article class="intake-card" data-candidate="${escapeHtml(candidate.id)}">
       <div class="intake-card-head">
