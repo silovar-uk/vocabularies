@@ -1,0 +1,71 @@
+[
+  {
+    "id": "perceptual-set",
+    "term": "Perceptual Set",
+    "ja": "知覚的構え",
+    "primary_language": "ja",
+    "formal_status": "established_term",
+    "aliases": ["知覚セット", "知覚の構え", "perceptual set"],
+    "fields": ["Psychology", "Perception", "Cognition"],
+    "one_liner": "何を探すつもりで見るかが、実際に見つけやすいものを変える。",
+    "description": "期待、課題、文脈、既有知識などによって、特定の対象や出来事を他より知覚しやすくなる一時的な準備状態。",
+    "why_selected": "テーマや観点を先に置くと、それまで背景に埋もれていた特徴が急に見えるようになる感覚を、フレーミング効果より直接的に説明できる。語彙を持つこと自体が見え方を変えるというVocabulariesの思想にも近い。",
+    "usage_note": "意思決定の選択肢の提示方法が判断を変える『フレーミング効果』とは区別し、何を知覚しやすくなるかという知覚・注意の構えとして扱う。",
+    "feelings": ["テーマを決めると急に見える", "同じものを見ても気づく場所が違う", "探していたものばかり目に入る", "フレーミング効果とは少し違う"],
+    "before": "テーマを決めたら、急に同じ特徴ばかり見えるようになった。フレーミング効果？",
+    "after": "判断の提示方法ではなく、何を知覚しやすくなるかの話なので、知覚的構えに近い。",
+    "related": ["salience", "categorical-perception", "differentiation"],
+    "opposites": [],
+    "sources": [
+      "https://dictionary.apa.org/perceptual-set",
+      "https://doi.org/10.14947/psychono.KJ00004347120"
+    ],
+    "status": "researched"
+  },
+  {
+    "id": "feedforward",
+    "term": "Feedforward",
+    "ja": "フィードフォワード",
+    "primary_language": "en",
+    "formal_status": "design_principle",
+    "aliases": ["フィードフォワード", "事前情報", "操作前の予告"],
+    "fields": ["Design", "UX", "UI"],
+    "one_liner": "操作する前に、その操作で何が起きるかを予告する。",
+    "description": "インタラクションの実行前に、可能な行為やその結果についての情報を与え、ユーザーが次の行動を予測・選択しやすくする設計原理。",
+    "why_selected": "『押せることは分かるが、押した後どうなるか分からない』という違和感を、SignifierやFeedbackと分けて言える。ボタン名、遷移予告、ジェスチャー、アニメーションなどを評価するときに時間軸を持ち込める。",
+    "usage_note": "Feedbackが行為の結果を事後に返すのに対し、Feedforwardは行為の前に情報を与える。Signifierとも重なるが、特に『行うと何が起きるか』の予測を扱う。",
+    "feelings": ["押すまで結果が分からない", "操作前に結果を知りたい", "怖くて押せない", "先が読めない"],
+    "before": "押せることは分かるけど、押したら何が起こるか分からない。",
+    "after": "Signifierは操作可能性を示せているが、Feedforwardが弱く結果を予測できない。",
+    "related": ["signifier", "gulfs-of-action", "visibility-system-status", "conceptual-model"],
+    "opposites": [],
+    "sources": [
+      "https://doi.org/10.1145/2470654.2466255",
+      "https://research.tue.nl/en/publications/crossing-the-bridge-over-normans-gulf-of-execution-revealing-feed/"
+    ],
+    "status": "researched"
+  },
+  {
+    "id": "information-foraging",
+    "term": "Information Foraging",
+    "ja": "情報採餌理論 / 情報フォラジング",
+    "primary_language": "en",
+    "formal_status": "established_term",
+    "aliases": ["情報採餌", "情報採餌理論", "インフォメーション・フォーラジング", "情報フォラジング"],
+    "fields": ["Information Architecture", "UX", "Cognition", "Web"],
+    "one_liner": "人は、得られそうな情報価値と探索コストを比べながら、次にどこを見るかを選ぶ。",
+    "description": "動物の採餌理論を情報探索に応用し、ユーザーが時間や労力などのコストに対して得られる情報の価値を高めるよう探索経路を選ぶと捉える理論。",
+    "why_selected": "Information Scentを単なるリンク文言の良し悪しではなく、探索全体の意思決定へ接続できる。検索、一覧、分類、離脱、深掘りなどを『どれだけ価値がありそうで、どれだけ探すのが大変か』という同じ軸で考えられる。",
+    "usage_note": "Information Scentは局所的な手掛かり、Information Foragingは情報探索全体の価値とコストのトレードオフを扱う理論として区別する。",
+    "feelings": ["探すのに疲れる", "どこまで探すか迷う", "検索結果を行ったり来たりする", "この先に価値があるか分からない"],
+    "before": "リンク名は分かるけど、ユーザーがなぜここで離脱するのか説明しづらい。",
+    "after": "Information Scentだけでなく、得られる価値と探索コストのInformation Foragingとして見る。",
+    "related": ["information-scent", "discoverability", "progressive-disclosure"],
+    "opposites": [],
+    "sources": [
+      "https://doi.org/10.1145/223904.223911",
+      "https://chi1996.acm.org/proceedings/papers/Card/skc1txt.html"
+    ],
+    "status": "researched"
+  }
+]
