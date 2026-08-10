@@ -1,0 +1,70 @@
+.concept-route-card.is-compare-selected {
+  border-color: rgba(47,93,80,.38);
+  background: rgba(47,93,80,.055);
+}
+
+.route-annotation-head-actions [data-compare-route] {
+  color: var(--muted, #6f746f);
+}
+
+.route-annotation-head-actions [data-compare-route][aria-pressed="true"] {
+  color: var(--accent, #2f5d50);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.route-compare-bar {
+  position: fixed;
+  z-index: 120;
+  left: 50%;
+  bottom: 18px;
+  width: min(520px, calc(100vw - 32px));
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px 12px 10px 15px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(30,33,31,.14);
+  border-radius: 14px;
+  background: rgba(250,249,245,.97);
+  box-shadow: 0 14px 42px rgba(20,20,18,.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: var(--ink, #1e211f);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+}
+.route-compare-bar[hidden] { display: none; }
+.route-compare-bar-copy { display: grid; gap: 1px; }
+.route-compare-bar-copy strong { font-size: 11px; }
+.route-compare-bar-copy span { color: var(--muted, #6f746f); font-size: 9.5px; }
+.route-compare-bar-actions { display: flex; align-items: center; gap: 7px; }
+.route-compare-bar-actions button,
+.route-compare-go {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  border: 1px solid rgba(30,33,31,.12);
+  border-radius: 9px;
+  background: rgba(255,255,255,.58);
+  color: var(--muted, #6f746f);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+}
+.route-compare-go:not([aria-disabled="true"]) {
+  border-color: rgba(47,93,80,.28);
+  color: var(--accent, #2f5d50);
+}
+.route-compare-go[aria-disabled="true"] { opacity: .42; cursor: default; }
+
+@media (max-width: 640px) {
+  .route-compare-bar { bottom: 10px; width: calc(100vw - 20px); gap: 8px; }
+  .route-compare-bar-copy span { max-width: 140px; line-height: 1.35; }
+  .route-compare-bar-actions button { display: none; }
+}
