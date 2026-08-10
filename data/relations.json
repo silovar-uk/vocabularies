@@ -1,0 +1,112 @@
+{
+  "signifiant": [
+    {"id":"signified","type":"対概念","note":"表現する側と、意味される概念側。"},
+    {"id":"linguistic-sign","type":"構成","note":"シニフィアンとシニフィエが結びついて記号を成す。"},
+    {"id":"signifier","type":"混同注意","note":"名前は似ているが、こちらはUXで行為を発見させる手掛かり。"},
+    {"id":"arbitrariness-of-sign","type":"成立原理","note":"表現と意味の結びつきに自然必然性はない。"},
+    {"id":"linguistic-value","type":"理解の鍵","note":"記号の価値は他の項との差異から輪郭を持つ。"}
+  ],
+  "signified": [
+    {"id":"signifiant","type":"対概念","note":"概念側に対する表現側。"},
+    {"id":"linguistic-sign","type":"構成","note":"シニフィアンとの結合として記号を成す。"},
+    {"id":"arbitrariness-of-sign","type":"成立原理","note":"シニフィアンとの対応は自然必然ではない。"},
+    {"id":"linguistic-value","type":"理解の鍵","note":"意味内容も体系内の差異によって定まる。"}
+  ],
+  "linguistic-sign": [
+    {"id":"signifiant","type":"構成要素","note":"記号の表現側。"},
+    {"id":"signified","type":"構成要素","note":"記号の概念側。"},
+    {"id":"arbitrariness-of-sign","type":"成立原理","note":"両者の結びつきは自然必然ではない。"},
+    {"id":"linguistic-value","type":"理解の鍵","note":"体系内の差異によって価値が生じる。"}
+  ],
+  "arbitrariness-of-sign": [
+    {"id":"signifiant","type":"適用対象","note":"シニフィアンとシニフィエの結びつきを考える原理。"},
+    {"id":"signified","type":"適用対象","note":"表現と概念の対応関係を考える原理。"},
+    {"id":"constraints","type":"対照","note":"恣意的な記号でも、成立後は文化的・社会的制約の中で使われる。"}
+  ],
+  "linguistic-value": [
+    {"id":"differentiation","type":"メタ接続","note":"差を区別できるようになるという語彙集全体の思想につながる。"},
+    {"id":"signifiant","type":"理解の鍵","note":"シニフィアンも単独ではなく他項との差から価値を持つ。"},
+    {"id":"signified","type":"理解の鍵","note":"意味内容も関係体系の中で輪郭を持つ。"}
+  ],
+  "langue-parole": [
+    {"id":"register","type":"近接概念","note":"共有体系と具体的使用を分けると、場面ごとの言語使用も見やすくなる。"},
+    {"id":"synchrony-diachrony","type":"分析軸","note":"体系と使用に加え、時間軸を分ける別の基本区分。"}
+  ],
+  "synchrony-diachrony": [
+    {"id":"langue-parole","type":"分析軸","note":"体系／使用とは別に、現在の構造／歴史的変化を分ける。"},
+    {"id":"register","type":"応用","note":"現在のレジスターと、その歴史的変化を切り分けられる。"}
+  ],
+  "signifier": [
+    {"id":"affordance","type":"区別","note":"アフォーダンスは行為の可能性、シグニファイアはそれを発見させる手掛かり。"},
+    {"id":"discoverability","type":"補完","note":"適切なシグニファイアは機能の発見可能性を支える。"},
+    {"id":"gulfs-of-action","type":"実行側","note":"実行の淵を小さくする主要な手掛かりになる。"},
+    {"id":"information-scent","type":"近接概念","note":"どちらも次の行為を予測させるが、情報の匂いは行き先の情報価値に焦点を置く。"},
+    {"id":"signifiant","type":"混同注意","note":"記号論のシニフィアンとは別概念。"},
+    {"id":"salience","type":"調整軸","note":"手掛かりは見える必要があるが、必要以上に顕著である必要はない。"}
+  ],
+  "affordance": [
+    {"id":"signifier","type":"区別","note":"行為可能性そのものと、その可能性を知らせる手掛かりを分ける。"},
+    {"id":"discoverability","type":"補完","note":"可能でも発見できなければ利用されにくい。"},
+    {"id":"constraints","type":"補完","note":"可能な行為を示すだけでなく、不適切な行為を狭める。"}
+  ],
+  "discoverability": [
+    {"id":"signifier","type":"支える要素","note":"操作可能性を知覚可能にする。"},
+    {"id":"recognition-over-recall","type":"近接原則","note":"見れば分かる状態は、機能を発見しやすくする。"},
+    {"id":"progressive-disclosure","type":"緊張関係","note":"隠すことで静かになる一方、発見可能性を失わない設計が必要。"},
+    {"id":"gulfs-of-action","type":"実行側","note":"発見できない機能は実行の淵を大きくする。"}
+  ],
+  "conceptual-model": [
+    {"id":"signifier","type":"局所／全体","note":"シグニファイアが局所的な手掛かりなら、概念モデルは仕組み全体の理解。"},
+    {"id":"visibility-system-status","type":"補完","note":"状態の可視化は、利用者の概念モデルを更新する材料になる。"},
+    {"id":"gulfs-of-action","type":"横断","note":"適切な概念モデルは実行・評価双方の隔たりを小さくする。"}
+  ],
+  "constraints": [
+    {"id":"signifier","type":"補完","note":"何ができるかを示す手掛かりと、何ができないかを限定する仕組み。"},
+    {"id":"affordance","type":"補完","note":"行為可能性の集合を適切に絞る。"},
+    {"id":"discoverability","type":"補完","note":"選択肢を狭めることで適切な操作を発見しやすくする。"}
+  ],
+  "gulfs-of-action": [
+    {"id":"signifier","type":"実行の淵","note":"何をすればよいかを示して実行側の隔たりを縮める。"},
+    {"id":"visibility-system-status","type":"評価の淵","note":"結果や現在状態を見せて評価側の隔たりを縮める。"},
+    {"id":"conceptual-model","type":"横断","note":"仕組みへの理解は実行・評価の両方を助ける。"}
+  ],
+  "conservation-of-complexity": [
+    {"id":"essential-accidental-complexity","type":"比較","note":"テスラーは複雑さの負担先、Brooksは複雑さの由来を問う。"},
+    {"id":"cognitive-load","type":"観察対象が違う","note":"テスラーはシステム全体、認知負荷は利用者の作業記憶を見る。"},
+    {"id":"progressive-disclosure","type":"設計手段","note":"不可避な複雑さを必要な瞬間へ移す方法の一つ。"},
+    {"id":"recognition-over-recall","type":"負担調整","note":"ユーザーに記憶させる複雑さを画面側へ引き取る。"}
+  ],
+  "essential-accidental-complexity": [
+    {"id":"conservation-of-complexity","type":"比較","note":"複雑さの由来を分けた上で、その負担先を考えると整理しやすい。"},
+    {"id":"cognitive-load","type":"近似構図","note":"問題側の複雑さと、人間側の処理負荷は区別して扱う。"},
+    {"id":"intrinsic-extraneous-load","type":"類似区分","note":"本質／偶発と似た二分法だが、こちらは認知負荷の由来を扱う。"}
+  ],
+  "cognitive-load": [
+    {"id":"intrinsic-extraneous-load","type":"内訳","note":"認知負荷を課題由来と提示由来に分けて考える。"},
+    {"id":"conservation-of-complexity","type":"比較","note":"誰が複雑さを引き受けるかと、頭に何を処理させるかは別の問い。"},
+    {"id":"recognition-over-recall","type":"低減手段","note":"想起要求を減らし、作業記憶への負担を抑える。"},
+    {"id":"progressive-disclosure","type":"低減手段","note":"同時に処理する情報を絞ることで負荷を調整できる。"}
+  ],
+  "intrinsic-extraneous-load": [
+    {"id":"cognitive-load","type":"内訳","note":"認知負荷をより細かく診断するための区分。"},
+    {"id":"essential-accidental-complexity","type":"類似区分","note":"構図は似るが、こちらは作業記憶への負荷を扱う。"},
+    {"id":"progressive-disclosure","type":"設計手段","note":"提示由来の余計な処理を減らすために使える。"}
+  ],
+  "visual-hierarchy": [
+    {"id":"salience","type":"設計／結果","note":"視覚的階層は優先順位を設計し、顕著性は実際の注意の引かれ方を見る。"},
+    {"id":"negative-space","type":"設計手段","note":"余白によって重要度やまとまりを形成できる。"}
+  ],
+  "salience": [
+    {"id":"visual-hierarchy","type":"結果／設計","note":"目立ち方を、情報上の優先順位と照合する。"},
+    {"id":"signifier","type":"調整軸","note":"操作の手掛かりは見つかる程度の顕著性が必要。"}
+  ],
+  "curation": [
+    {"id":"selection-elimination","type":"編集原理","note":"何を集めるかだけでなく、何を除き、何を強調するかを決める。"},
+    {"id":"composition","type":"配置","note":"選んだ要素をどう関係づけて全体を作るか。"}
+  ],
+  "selection-elimination": [
+    {"id":"curation","type":"編集原理","note":"選択・除去・強調を、知識の編集へ適用する。"},
+    {"id":"visual-hierarchy","type":"強調","note":"残した要素の中で何を優先して見せるかを決める。"},
+    {"id":"negative-space","type":"除去の効果","note":"何も置かないこと自体が構成に働く。"}
+  ]
+}
