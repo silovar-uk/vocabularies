@@ -189,12 +189,8 @@
   searchAssist.addEventListener("click", (event) => {
     const button = event.target.closest("[data-search-term]");
     if (!button) return;
-    const id = button.dataset.searchTerm;
-    if (window.VocabulariesReader?.open) {
-      window.VocabulariesReader.open(id, { trigger: button });
-      return;
-    }
-    window.location.hash = "term=" + encodeURIComponent(id);
+    const card = document.getElementById(button.dataset.searchTerm);
+    if (card) card.click();
   });
 
   renderResults();
