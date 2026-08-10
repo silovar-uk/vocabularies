@@ -64,7 +64,7 @@
 .route-compare-go[aria-disabled="true"] { opacity: .42; cursor: default; }
 
 @media (max-width: 640px) {
-  .route-compare-bar { bottom: 10px; width: calc(100vw - 20px); gap: 8px; }
+  .route-compare-bar { bottom: 56px; width: calc(100vw - 20px); gap: 8px; }
   .route-compare-bar-copy span { max-width: 140px; line-height: 1.35; }
   .route-compare-bar-actions button { display: none; }
 }
