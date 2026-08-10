@@ -21,17 +21,22 @@
 
   function syncEssayLink() {
     if (!ready) return;
-    const existing = readerContent.querySelector("[data-concept-essay-link]");
-    if (existing) existing.remove();
 
     const id = state?.activeItemId;
-    if (!id || !essayEntry(id) || !readerContent.children.length) return;
+    const existing = readerContent.querySelector("[data-concept-essay-link]");
+    if (!id || !essayEntry(id) || !readerContent.children.length) {
+      if (existing) existing.remove();
+      return;
+    }
+    if (existing?.dataset.termId === id) return;
+    if (existing) existing.remove();
 
     const item = state.items?.find((candidate) => candidate.id === id);
     const name = item ? displayNames(item).primary : id;
     const section = document.createElement("section");
     section.className = "reader-section reader-concept-essay";
     section.setAttribute("data-concept-essay-link", "");
+    section.dataset.termId = id;
     section.innerHTML =
       '<p class="reader-kicker">この言葉で考える</p>' +
       '<a class="concept-essay-link" href="./term.html?id=' + encodeURIComponent(id) + '">' +
@@ -47,9 +52,7 @@
     else readerContent.appendChild(section);
   }
 
-  const observer = new MutationObserver(() => {
-    queueMicrotask(syncEssayLink);
-  });
+  const observer = new MutationObserver(() => queueMicrotask(syncEssayLink));
   observer.observe(readerContent, { childList: true, subtree: false });
 
   loadJson("data/essay-index.json")
