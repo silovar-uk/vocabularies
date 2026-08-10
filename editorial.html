@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Vocabulariesに収録する候補語を、調査・判定・関係づけ・採用まで管理する編集画面。" />
   <title>Editorial Intake — Vocabularies</title>
-  <link rel="icon" href="./favicon.svg?v=20260810-1410" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles-v3.css?v=20260810-1410" />
-  <link rel="stylesheet" href="./editorial.css?v=20260810-1410" />
-  <link rel="stylesheet" href="./editorial-protection.css?v=20260810-1410" />
+  <link rel="icon" href="./favicon.svg?v=20260810-1412" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles-v3.css?v=20260810-1412" />
+  <link rel="stylesheet" href="./editorial.css?v=20260810-1412" />
+  <link rel="stylesheet" href="./editorial-protection.css?v=20260810-1412" />
 </head>
 <body class="editorial-body">
   <header class="site-header editorial-header">
@@ -21,7 +21,7 @@
       <p class="eyebrow">Editorial Intake</p>
       <h1>候補を拾い、<br />採用できるところまで育てる。</h1>
       <p class="lead">思いついた語をすぐ完成させず、候補 → 調査 → 判定 → 関係 → 採用準備の順に通します。最初に必要なのは、言葉そのものと「何をうまく言えなかったか」だけです。</p>
-      <p id="intakeStatus" class="editorial-status" role="status" aria-live="polite">この編集キューは、このブラウザ内に保存されます。</p>
+      <p id="intakeStatus" class="editorial-status" role="status" aria-live="polite">入力中は自動保存。キュー変更前は最大12世代、削除候補はごみ箱に保護します。</p>
     </section>
 
     <div class="editorial-layout">
@@ -238,7 +238,7 @@
     <p>編集キューは本体データと分離。採用準備を通った語だけをVocabulariesへ移す。</p>
   </footer>
 
-  <script src="./editorial.js?v=20260810-1410" defer></script>
-  <script src="./editorial-protection.js?v=20260810-1410" defer></script>
+  <script src="./editorial-protection-v2.js?v=20260810-1412" defer></script>
+  <script src="./editorial.js?v=20260810-1412" defer></script>
 </body>
 </html>
