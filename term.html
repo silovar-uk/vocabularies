@@ -11,7 +11,10 @@
 <body>
   <header class="term-site-header">
     <a class="term-brand" href="./">Vocabularies</a>
-    <a class="term-back" href="./">語彙集へ戻る</a>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a class="term-back" id="termMapLink" href="./concept-map.html">概念地図</a>
+      <a class="term-back" href="./">語彙集へ戻る</a>
+    </div>
   </header>
 
   <main id="termPage" class="term-page" aria-live="polite">
@@ -19,9 +22,18 @@
   </main>
 
   <footer class="term-footer">
-    <a href="./">感覚から、言葉へ。言葉から、思考へ。</a>
+    <a id="termMapFooterLink" href="./concept-map.html">この言葉から、概念地図へ。</a>
   </footer>
 
+  <script>
+    (() => {
+      const id = new URLSearchParams(location.search).get('id');
+      if (!id) return;
+      const href = './concept-map.html?term=' + encodeURIComponent(id);
+      document.querySelector('#termMapLink')?.setAttribute('href', href);
+      document.querySelector('#termMapFooterLink')?.setAttribute('href', href);
+    })();
+  </script>
   <script src="./term.js?v=20260810-2155" defer></script>
 </body>
 </html>
