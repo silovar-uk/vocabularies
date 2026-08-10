@@ -1,0 +1,18 @@
+[
+  {
+    "id": "differentiation",
+    "term": "Differentiation",
+    "ja": "分化 / 差異化",
+    "fields": ["Meta", "Learning", "Perception", "Emotion"],
+    "one_liner": "同じに見えていたものの中に、違いが見えてくる。",
+    "description": "ひとまとまりに捉えていた経験や知覚を、より細かな違いとして区別できるようになること。この語彙集では、厳密な単一分野の専門語というより、学習全体を貫くメタ概念として使う。",
+    "why_selected": "この語彙集で起きていることを一語でまとめたとき、いちばん近かった言葉。『使いづらい』が視覚的階層や情報の匂いに、『なんか嫌』がより細かな感情に分かれていく。その変化自体に名前を付けるために選んだ。",
+    "feelings": ["違うのは分かる", "うまく説明できない", "解像度を上げたい", "見分けたい"],
+    "before": "前と違うのは分かるけど、何が違うのか説明できない。",
+    "after": "分化が進んで、以前は同じに見えていた差を別々の概念として捉えられるようになった。",
+    "related": ["emotional-granularity", "categorical-perception", "visual-hierarchy", "linguistic-value"],
+    "opposites": [],
+    "sources": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC8355493/"],
+    "status": "meta"
+  }
+]
