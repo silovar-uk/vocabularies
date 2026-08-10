@@ -1,0 +1,189 @@
+.route-annotation-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.route-annotation-head-actions button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted, #6f746f);
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.route-annotation-head-actions [data-edit-annotations] {
+  color: var(--accent, #2f5d50);
+  font-weight: 680;
+}
+
+.route-annotation-section {
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 1px solid var(--line, rgba(30,33,31,.08));
+}
+
+.route-annotation-empty {
+  margin: 0;
+  color: var(--muted, #6f746f);
+  font-size: 9.5px;
+  line-height: 1.6;
+}
+
+.route-annotation-read {
+  display: grid;
+  gap: 6px;
+}
+
+.route-annotation-read-row {
+  display: grid;
+  grid-template-columns: minmax(90px, 140px) minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+}
+
+.route-annotation-term {
+  color: var(--accent, #2f5d50);
+  font-size: 9.5px;
+  font-weight: 680;
+  line-height: 1.55;
+}
+
+.route-annotation-read-row p {
+  margin: 0;
+  color: #4f514c;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.route-annotation-editor {
+  display: grid;
+  gap: 10px;
+}
+
+.route-annotation-editor-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.route-annotation-editor-head > div {
+  display: grid;
+  gap: 2px;
+}
+
+.route-annotation-editor-head strong {
+  font-size: 10.5px;
+}
+
+.route-annotation-editor-head span {
+  color: var(--muted, #6f746f);
+  font-size: 9px;
+}
+
+.route-annotation-fields {
+  display: grid;
+  gap: 7px;
+}
+
+.route-annotation-field {
+  display: grid;
+  grid-template-columns: minmax(100px, 150px) minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+}
+
+.route-annotation-field > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 7px;
+  color: var(--muted, #6f746f);
+  font-size: 9.5px;
+  line-height: 1.5;
+}
+
+.route-annotation-field b {
+  width: 17px;
+  height: 17px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: rgba(47,93,80,.08);
+  color: var(--accent, #2f5d50);
+  font-size: 8px;
+}
+
+.route-annotation-field textarea {
+  width: 100%;
+  min-height: 54px;
+  resize: vertical;
+  padding: 8px 9px;
+  border: 1px solid var(--line, rgba(30,33,31,.14));
+  border-radius: 8px;
+  background: rgba(255,255,255,.72);
+  color: inherit;
+  font: inherit;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.route-annotation-field textarea:focus {
+  outline: 2px solid rgba(47,93,80,.10);
+  border-color: rgba(47,93,80,.34);
+}
+
+.route-annotation-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.route-annotation-actions button {
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--line, rgba(30,33,31,.14));
+  border-radius: 8px;
+  background: rgba(255,255,255,.58);
+  color: var(--muted, #6f746f);
+  cursor: pointer;
+  font: inherit;
+  font-size: 9.5px;
+  font-weight: 650;
+}
+
+.route-annotation-actions [data-save-annotations] {
+  border-color: rgba(47,93,80,.28);
+  color: var(--accent, #2f5d50);
+}
+
+.concept-route-card.is-annotating {
+  border-color: rgba(47,93,80,.22);
+  background: rgba(47,93,80,.025);
+}
+
+@media (max-width: 640px) {
+  .route-annotation-read-row,
+  .route-annotation-field {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .route-annotation-field > span {
+    padding-top: 0;
+  }
+
+  .route-annotation-editor-head > span {
+    display: none;
+  }
+
+  .route-annotation-field textarea {
+    min-height: 62px;
+  }
+}
