@@ -91,9 +91,16 @@ for (const [index, candidate] of (intake.candidates ?? []).entries()) {
     error(`${at}: researching以降はsourcesが1件以上必要です`);
   }
   if (stageIndex >= STAGES.indexOf("qualified")) {
+    if (!hasText(candidate.ja) && !hasText(candidate.en)) error(`${at}: qualified以降はjaまたはenの正式表記が必要です`);
     if (!GRADES.includes(candidate.grade)) error(`${at}: qualified以降はA/B/C判定が必要です`);
     if (!FORMAL_STATUSES.includes(candidate.formal_status)) error(`${at}: qualified以降はformal_statusが必要です`);
-    if (!["ja", "en"].includes(candidate.primary_language)) error(`${at}: qualified以降はprimary_languageが必要です`);
+    if (!["ja", "en"].includes(candidate.primary_language)) {
+      error(`${at}: qualified以降はprimary_languageが必要です`);
+    } else if (candidate.primary_language === "ja" && !hasText(candidate.ja)) {
+      error(`${at}: primary_language=ja ですがjaがありません`);
+    } else if (candidate.primary_language === "en" && !hasText(candidate.en)) {
+      error(`${at}: primary_language=en ですがenがありません`);
+    }
     if (!hasText(candidate.one_liner)) error(`${at}: qualified以降はone_linerが必要です`);
     if (!hasText(candidate.description)) error(`${at}: qualified以降はdescriptionが必要です`);
   }
