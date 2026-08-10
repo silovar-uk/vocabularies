@@ -9,14 +9,21 @@
   if (!readerPanel || !readerContent || !readerClose || !readerBackdrop) return;
 
   let lastReaderTrigger = null;
+  let relationMap = {};
 
   function itemById(id) {
     return state.items.find((item) => item.id === id) ?? null;
   }
 
+  function typedRelations(item) {
+    const typed = relationMap[item.id];
+    if (Array.isArray(typed) && typed.length) return typed;
+    return (item.related ?? []).map((id) => ({ id, type: "関連", note: "" }));
+  }
+
   function relatedPreview(item) {
-    return (item.related ?? [])
-      .map(itemById)
+    return typedRelations(item)
+      .map((relation) => itemById(relation.id))
       .filter(Boolean)
       .slice(0, 3)
       .map((relatedItem) => displayNames(relatedItem).primary);
@@ -55,17 +62,28 @@
   };
 
   function renderRelatedItems(item) {
-    const relatedItems = (item.related ?? []).map(itemById).filter(Boolean);
-    if (!relatedItems.length) return "";
+    const relations = typedRelations(item)
+      .map((relation) => ({ ...relation, item: itemById(relation.id) }))
+      .filter((relation) => relation.item);
+
+    if (!relations.length) return "";
 
     return '<section class="reader-section reader-relations">' +
-      '<p class="reader-kicker">この言葉のまわり</p>' +
+      '<div class="relation-heading">' +
+        '<p class="reader-kicker">この言葉のまわり</p>' +
+        '<span class="relation-count">' + relations.length + 'の関係</span>' +
+      '</div>' +
       '<div class="relation-list">' +
-        relatedItems.map((relatedItem) => {
-          const names = displayNames(relatedItem);
+        relations.map((relation) => {
+          const names = displayNames(relation.item);
           return '<button class="relation-link" type="button" data-reader-term="' +
-            escapeAttribute(relatedItem.id) + '">' +
-            '<span class="relation-name">' + escapeHtml(names.primary) + '</span>' +
+            escapeAttribute(relation.item.id) + '">' +
+            '<span class="relation-copy">' +
+              '<span class="relation-type">' + escapeHtml(relation.type || "関連") + '</span>' +
+              '<span class="relation-name">' + escapeHtml(names.primary) + '</span>' +
+              (relation.note ? '<span class="relation-note">' + escapeHtml(relation.note) + '</span>' : '') +
+            '</span>' +
+            '<span class="relation-arrow" aria-hidden="true">→</span>' +
           '</button>';
         }).join("") +
       '</div>' +
@@ -180,6 +198,33 @@
     renderReader();
   }
 
+  async function loadRelations() {
+    const urls = [
+      "./data/relations.json?v=" + Date.now(),
+      "https://raw.githubusercontent.com/silovar-uk/vocabularies/main/data/relations.json",
+    ];
+
+    let lastError;
+    for (const url of urls) {
+      try {
+        const response = await fetch(url, { cache: "no-store" });
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        const data = await response.json();
+        if (!data || Array.isArray(data) || typeof data !== "object") {
+          throw new Error("Relation data is not an object");
+        }
+        relationMap = data;
+        renderResults();
+        renderReader();
+        return;
+      } catch (error) {
+        lastError = error;
+        console.warn("Relation data load failed:", url, error);
+      }
+    }
+    console.error("Relation data could not be loaded:", lastError);
+  }
+
   vocabularyGrid.addEventListener("click", (event) => {
     const card = event.target.closest("[data-open-term]");
     if (!card) return;
@@ -219,4 +264,5 @@
 
   renderResults();
   syncReaderFromLocation();
+  loadRelations();
 })();
