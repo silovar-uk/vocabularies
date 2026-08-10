@@ -31,7 +31,7 @@ Vocabularies は「辞書 × 編集された知識誌 × 小さな美術館」�
 
 表示順は原則として、
 
-**定義 → なぜこの言葉か → Before / After → この言葉のまわり → 発見 → 感覚 → 出典**
+**定義 → 用法メモ → なぜこの言葉か → Before / After → この言葉のまわり → 発見 → 感覚 → 出典**
 
 です。
 
@@ -46,6 +46,39 @@ Vocabularies は「辞書 × 編集された知識誌 × 小さな美術館」�
 - **3歩だけ寄り道** — 現在語から関係を3回だけたどる短い知識散歩
 
 Discovery は主役にせず、Readerの読後に置く設計です。
+
+## Editorial Intake
+
+新しい語は、思いついた時点で本体データへ入れません。
+
+`editorial.html` で、
+
+**候補 → 調査 → 判定 → 関係 → 採用準備**
+
+の工程を通します。
+
+最初に必要なのは、
+
+- 候補語
+- その語を知らなかったために、何をうまく言えなかったか
+
+の2点だけです。
+
+調査が進んだら、A / B / C、formal status、主表記、定義、出典、Relations、Before / Afterを追加します。
+
+編集画面では、
+
+- ブラウザ内への候補保存
+- 工程ごとのquality gate
+- 調査プロンプト生成
+- JSON入出力
+- 採用時の `dataset_item / catalog_metadata / relations` bundle生成
+
+ができます。
+
+候補キューは本体の検索データとは分離し、`ready`になった語だけを本体へ移します。
+
+詳細は [`docs/EDITORIAL_INTAKE.md`](docs/EDITORIAL_INTAKE.md) を参照してください。
 
 ## Visual principles
 
@@ -71,24 +104,32 @@ Discovery は主役にせず、Readerの読後に置く設計です。
 ```text
 /
 ├─ index.html
-├─ styles-v3.css          # 現行デザインシステムを集約
+├─ editorial.html         # 候補語の編集・採用フロー
+├─ styles-v3.css          # 現行デザインシステム
+├─ catalog.css            # 分野taxonomyの補助レイアウト
+├─ editorial.css          # Editorial Intake専用UI
 ├─ app-v2.js              # Catalog読込・状態・絞り込み・カード
 ├─ reader.js              # Reader と関係表示
 ├─ search-v2.js           # 順位付き検索・類似概念の差分提示
 ├─ discovery.js           # 今日の一語・寄り道
+├─ editorial.js           # 編集キュー・quality gate・採用bundle
 ├─ favicon.svg
 ├─ data/
 │  ├─ catalog.json        # データセット・表記・分類・正式度・検索設計
 │  ├─ vocabularies.json
 │  ├─ research-20260810-semiotics-complexity.json
 │  ├─ meta-vocabularies.json
-│  └─ relations.json
+│  ├─ relations.json
+│  └─ intake.json         # Git管理する候補キュー
 ├─ scripts/
-│  └─ validate-data.mjs   # データ構造と参照整合性の検証
+│  ├─ validate-data.mjs
+│  └─ validate-intake.mjs
 ├─ .github/workflows/
-│  └─ validate-data.yml   # push / PR 時の自動検証
+│  └─ validate-data.yml   # 本体データ＋編集キューを検証
 └─ docs/
    ├─ DATA_SCHEMA.md
+   ├─ QUALITY_AUDIT.md
+   ├─ EDITORIAL_INTAKE.md
    └─ PLANNING.md
 ```
 
@@ -114,30 +155,20 @@ Discovery は主役にせず、Readerの読後に置く設計です。
 
 ## Data validation
 
-語彙データを変更すると、GitHub Actions の **Validate vocabulary data** が自動実行されます。
+語彙データまたは編集キューを変更すると、GitHub Actions の **Validate vocabulary data** が自動実行されます。
 
 ローカルでは次で同じ検証を実行できます。
 
 ```bash
 node scripts/validate-data.mjs
+node scripts/validate-intake.mjs
 ```
 
-主なエラー検出対象：
+本体側ではID重複、必須項目、出典、formal status、taxonomy、Relationsなどを検証します。
 
-- 語彙IDの重複・不正なID形式
-- 必須フィールドや出典URLの欠落
-- 未定義の `formal_status` / `primary_language`
-- `field_labels` や taxonomy に登録されていない分野
-- `related` / `opposites` / Relations のリンク切れ
-- Catalog metadata が存在しない語彙IDを参照している状態
-- Search contrast の参照切れ
-- データセットファイルの欠落・JSON構文エラー
-
-複数語で同じaliasを使う、特殊なformal_statusに `usage_note` がない、といった品質上の注意は **warning** として出し、CI自体は止めません。
+Editorial Intake側では、工程が進むほど必須項目を増やします。たとえば、調査以降は出典、判定以降はA/B/Cと定義、関係以降はRelations、採用準備以降はBefore / Afterと選定背景が必要です。
 
 ## Current design system
-
-CSSは `styles-v3.css` に統合しています。
 
 主要トークンは、
 
@@ -152,12 +183,12 @@ CSSは `styles-v3.css` に統合しています。
 
 ## Development direction
 
-次の重点は、機能数より**語彙コレクションとしての質と運用性**です。
+次の重点は、機能数より**語彙コレクションとしての質と編集運用**です。
 
-1. Relations の関係タイプと説明を精密化する
-2. formal_status / usage_note の精度を語彙ごとに監査する
-3. 新しい語彙セットを増やしてもValidationを通る状態を維持する
-4. モバイル実機でのReader・検索・Discoveryを継続的に磨く
-5. 語彙数が増えても静けさを失わない情報設計を維持する
+1. Editorial Intakeから実際の新語採用を回して工程を検証する
+2. Relations の関係タイプと説明を精密化する
+3. formal_status / usage_note の精度を語彙ごとに監査する
+4. 語彙数が増えてもValidationを通る状態を維持する
+5. モバイル実機でのReader・検索・Discoveryを継続的に磨く
 
 詳細な初期計画は [`docs/PLANNING.md`](docs/PLANNING.md) に残しています。
