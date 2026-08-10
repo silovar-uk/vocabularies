@@ -1,0 +1,172 @@
+{
+  "progressive-disclosure": {
+    "term_id":"progressive-disclosure","status":"published",
+    "question":"シンプルさとは、情報を減らすことか、それとも見せる時間を設計することか。",
+    "thesis":"複雑さを消せないなら、いつ誰にどこまで見せるかを設計することで、体験上の複雑さは組み替えられる。",
+    "distinctions":[{"term_id":"discoverability","label":"発見可能性","difference":"段階的開示は見せる時機を設計する。発見可能性は、隠した機能でも存在や入口に気づけるかを見る。"}],
+    "sections":[{"type":"argument","heading":"隠すことと、消すことは違う","body":["画面から要素を畳むと、見た目は静かになる。しかし、その情報が不要になったわけではない。複雑さは後の操作へ移動しただけかもしれない。","段階的開示を使うときの問いは『何を隠すか』ではなく、『利用者が必要になる瞬間を予測できるか』にある。シンプルさは情報量ではなく、情報との出会う順序として設計できる。"]}],
+    "lenses":[{"label":"UI","before":"項目が多いから全部アコーディオンにする。","after":"初心者が最初に判断する情報と、必要時だけ開く情報を分ける。"}],
+    "open_questions":["隠された情報を必要だと判断するための手掛かりは十分か。","熟練者にとって段階的開示が余計な操作になっていないか。"],
+    "relations":[{"term_id":"discoverability","verb":"発見を守る"},{"term_id":"conservation-of-complexity","verb":"複雑さの行き先を見る"},{"term_id":"recognition-over-recall","verb":"記憶要求を調整する"}]
+  },
+  "information-scent": {
+    "term_id":"information-scent","status":"published",
+    "question":"リンク先を開く前に、なぜ人は『この先にありそう』と判断できるのか。",
+    "thesis":"導線の品質は、到達後の内容だけでなく、到達前に得られる予測の精度で決まる。",
+    "distinctions":[{"term_id":"signifier","label":"シグニファイア","difference":"シグニファイアは何が操作できるかを示す。情報の匂いは、その先にどんな情報価値がありそうかを予測させる。"}],
+    "sections":[{"type":"argument","heading":"探索は、毎回小さな賭けである","body":["人はリンクを押すたびに時間を払っている。見出し、ラベル、周辺文脈は、その支払いに見合う情報がありそうかを判断する材料になる。","『詳しくはこちら』が弱いのは抽象的だからだけではない。行き先の価値をほとんど予測できず、探索の賭けを利用者側へ押しつけるからだ。"]}],
+    "lenses":[{"label":"Web","before":"リンク先は良い内容だから、押してもらえれば伝わる。","after":"押す前に価値を予測できるラベルへ変える。"}],
+    "open_questions":["短いラベルで、どこまで行き先の価値を予告できるか。","情報の匂いを強くしすぎると、説明過多にならないか。"],
+    "relations":[{"term_id":"information-foraging","verb":"探索全体へ広げる"},{"term_id":"signifier","verb":"操作の手掛かりと分ける"},{"term_id":"discoverability","verb":"見つけやすさへつなぐ"}]
+  },
+  "recognition-over-recall": {
+    "term_id":"recognition-over-recall","status":"published",
+    "question":"覚えられる人に合わせたUIは、使いやすいと言えるか。",
+    "thesis":"使い方を記憶から取り出させるより、現在の画面から再認できる手掛かりを残すことで、能力差を操作負担へ変換しにくくできる。",
+    "distinctions":[{"term_id":"cognitive-offloading","label":"認知的オフローディング","difference":"再認優位は画面上の手掛かりで記憶要求を減らす設計原則。認知的オフローディングは記憶や処理を外部資源へ預ける、より広い行為を扱う。"}],
+    "sections":[{"type":"argument","heading":"『慣れれば分かる』は設計判断である","body":["ショートカットや隠し操作は、熟練後には速い。しかし初見時の負担が消えたわけではなく、利用者の記憶へ移された。","すべてを常時表示すればよいわけでもない。再認できる最低限の手掛かりをどこに残すかが、静かさと使いやすさの接点になる。"]}],
+    "lenses":[{"label":"分類UI","before":"分類名を覚えている人なら絞り込める。","after":"候補を見れば再認できる状態を残す。"}],
+    "open_questions":["熟練者の速度と初心者の再認性を同時に成立させられるか。","何を画面に残し、何を記憶へ委ねるべきか。"],
+    "relations":[{"term_id":"cognitive-load","verb":"負担を測る"},{"term_id":"discoverability","verb":"存在を見つける"},{"term_id":"progressive-disclosure","verb":"表示量と両立させる"}]
+  },
+  "visual-hierarchy": {
+    "term_id":"visual-hierarchy","status":"published",
+    "question":"重要なものと、目立つものは同じか。",
+    "thesis":"視覚的階層は、情報の優先順位を大きさ・位置・余白・コントラストへ翻訳する設計であり、単なる派手さの調整ではない。",
+    "distinctions":[{"term_id":"salience","label":"顕著性","difference":"視覚的階層は設計した優先順位。顕著性は実際に注意を奪う強さで、意図と結果が一致しないこともある。"}],
+    "sections":[{"type":"argument","heading":"目立たせるほど、他が背景になる","body":["すべてを重要そうにすると、階層は消える。強調は要素単体の属性ではなく、周囲との差によって成立する。","だから階層設計とは、何を大きくするか以上に、何を二次的に扱うかを決める仕事でもある。"]}],
+    "lenses":[{"label":"Web","before":"重要な情報は全部太字にする。","after":"一番先に判断してほしいものだけPrimaryに置く。"}],
+    "open_questions":["情報上の優先順位と視覚上の優先順位は一致しているか。","補助情報を弱めても発見可能性を保てるか。"],
+    "relations":[{"term_id":"salience","verb":"目立ち方と比べる"},{"term_id":"negative-space","verb":"余白で支える"},{"term_id":"composition","verb":"全体へ広げる"}]
+  },
+  "negative-space": {
+    "term_id":"negative-space","status":"published",
+    "question":"何も置かないことは、何もしないことか。",
+    "thesis":"余白は空きではなく、要素を分け、結び、主役を浮かせる能動的な構成要素である。",
+    "distinctions":[{"term_id":"composition","label":"構図 / 構成","difference":"構成は要素同士の配置全体を見る。余白は、その関係を作る『置かれていない領域』に焦点を当てる。"}],
+    "sections":[{"type":"argument","heading":"余白は、関係を編集する","body":["二つの要素の距離を変えるだけで、別グループにも同じまとまりにも見える。そこに新しい内容は追加されていない。","余白が扱うのは情報そのものではなく、情報同士の関係である。削除ではなく、読む単位を作る編集と考えると使いやすい。"]}],
+    "lenses":[{"label":"UI","before":"余っている場所を詰める。","after":"区切りや呼吸として機能している空間かを先に見る。"}],
+    "open_questions":["余白を減らすことで失われる関係情報は何か。","広い余白と情報密度の高さを両立できるか。"],
+    "relations":[{"term_id":"visual-hierarchy","verb":"主役を支える"},{"term_id":"composition","verb":"構図へ広げる"},{"term_id":"visual-rhythm","verb":"間を作る"}]
+  },
+  "visual-rhythm": {
+    "term_id":"visual-rhythm","status":"published",
+    "question":"静止した画面に、なぜテンポを感じるのか。",
+    "thesis":"反復と変化、間隔の規則性は、目が次にどこへ進むかを時間的に組織し、静止画にも読む速度を生む。",
+    "distinctions":[{"term_id":"visual-hierarchy","label":"視覚的階層","difference":"階層は何から見るかという優先順位、視覚的リズムはどういうテンポで視線が進むかを見る。"}],
+    "sections":[{"type":"argument","heading":"整列しているだけでは、気持ちよく読めない","body":["同じサイズのカードが均等に並んでも、変化がなければ単調になる。逆に変化ばかりなら流れが途切れる。","リズムは規則と例外の組み合わせで生まれる。UIでも文章でも、反復が期待を作り、変化が節目を作る。"]}],
+    "lenses":[{"label":"一覧","before":"カード間隔は全部同じなら整っている。","after":"まとまりごとの間と反復が、読むテンポを作れているかを見る。"}],
+    "open_questions":["どこで反復を崩すと、節目として機能するか。","視覚的リズムはスクロール速度にも影響するか。"],
+    "relations":[{"term_id":"prosody","verb":"言葉のリズムへ渡る"},{"term_id":"negative-space","verb":"間で整える"},{"term_id":"composition","verb":"全体を組む"}]
+  },
+  "visibility-system-status": {
+    "term_id":"visibility-system-status","status":"published",
+    "question":"システムが正しく動いていても、見えなければ信頼できるか。",
+    "thesis":"処理結果だけでなく、現在の状態を適切なタイミングで見せることが、利用者の次の判断と信頼を支える。",
+    "distinctions":[{"term_id":"feedforward","label":"フィードフォワード","difference":"状態の可視性は主に現在・事後を理解させる。フィードフォワードは操作前に何が起きるかを予告する。"}],
+    "sections":[{"type":"argument","heading":"沈黙は、失敗と区別できない","body":["保存ボタンを押して何も変わらなければ、処理が成功したのか、押せていないのか、待つべきなのか判断できない。","状態表示は装飾的な安心感ではなく、次の行動を決める情報である。見えない内部状態を、人が評価できる形へ翻訳する必要がある。"]}],
+    "lenses":[{"label":"保存","before":"裏では保存済みだから問題ない。","after":"保存中・完了・失敗を区別できる状態にする。"}],
+    "open_questions":["何を表示すれば十分で、何を見せると逆にうるさくなるか。","処理時間が短い場合も状態表示は必要か。"],
+    "relations":[{"term_id":"gulfs-of-action","verb":"評価の淵を縮める"},{"term_id":"conceptual-model","verb":"仕組み理解を支える"},{"term_id":"feedforward","verb":"操作前後をつなぐ"}]
+  },
+  "salience": {
+    "term_id":"salience","status":"published",
+    "question":"目立たせれば伝わる、は本当か。",
+    "thesis":"注意は有限なので、ある要素の顕著性を上げることは、同時に別の要素から注意を奪う配分判断でもある。",
+    "distinctions":[{"term_id":"visual-hierarchy","label":"視覚的階層","difference":"視覚的階層は優先順位の設計、顕著性は刺激としてどれだけ注意を引くか。目立つものが重要とは限らない。"}],
+    "sections":[{"type":"argument","heading":"強調は足し算ではなく、競争である","body":["赤くする、大きくする、動かす。どれも注意を取りやすくするが、画面の注意総量が増えるわけではない。","複数箇所を同時に強調すると、最終的には全部がノイズになる。顕著性は要素単体ではなく、注意資源の配分として考える必要がある。"]}],
+    "lenses":[{"label":"CTA","before":"重要だからもっと派手にする。","after":"他の判断要素を押しのけるほどの顕著性が必要かを見る。"}],
+    "open_questions":["目立つが重要ではないものをどう弱めるか。","動きによる顕著性は静的な強調より強すぎないか。"],
+    "relations":[{"term_id":"visual-hierarchy","verb":"優先順位と比べる"},{"term_id":"perceptual-set","verb":"注意の準備状態へ渡る"},{"term_id":"negative-space","verb":"静かな強調を見る"}]
+  },
+  "signifier": {
+    "term_id":"signifier","status":"published",
+    "question":"操作可能性は、存在するだけで十分か。",
+    "thesis":"できる行為があっても、その存在や使い方を知覚できなければ、利用者にとっては実質的に存在しない。",
+    "distinctions":[{"term_id":"affordance","label":"アフォーダンス","difference":"アフォーダンスは行為の可能性そのもの。シグニファイアは、その可能性を発見させる手掛かり。"}],
+    "sections":[{"type":"argument","heading":"『押せる』と『押せると分かる』を分ける","body":["透明な領域にクリック処理を付けても技術的には押せる。しかし利用者が知らなければ操作は起きない。","シグニファイアは機能を増やさずに、機能との関係を可視化する。静かなUIでは、主張を弱めながら手掛かりだけ残す設計が重要になる。"]}],
+    "lenses":[{"label":"アイコン","before":"アイコンだから意味は伝わる。","after":"形・ラベル・配置が、実際の操作を発見させているかを見る。"}],
+    "open_questions":["文化的に学習されたシグニファイアへどこまで依存できるか。","顕著性を抑えながら操作可能性を示せるか。"],
+    "relations":[{"term_id":"affordance","verb":"可能性と区別する"},{"term_id":"discoverability","verb":"発見へつなぐ"},{"term_id":"feedforward","verb":"結果予測へ進む"}]
+  },
+  "conservation-of-complexity": {
+    "term_id":"conservation-of-complexity","status":"published",
+    "question":"シンプルにするとき、複雑さは本当に消えているか。",
+    "thesis":"消せない複雑さがあるなら、設計の仕事は削除ではなく、利用者・システム・設計者のどこがそれを引き受けるかを決めることになる。",
+    "distinctions":[{"term_id":"essential-accidental-complexity","label":"本質的 / 偶発的複雑性","difference":"複雑性保存則は負担の行き先を見る。本質的／偶発的複雑性は、その複雑さが問題由来か実装由来かを見る。"}],
+    "sections":[{"type":"argument","heading":"簡単になった場所の裏側を見る","body":["ワンクリック化は利用者を楽にするが、その判断や例外処理をシステム側へ移している。複雑さが消えたとは限らない。","良い設計は複雑さを利用者へ返さない。しかし、隠した結果として制御不能になるなら、それもまた別の負担である。"]}],
+    "lenses":[{"label":"業務ツール","before":"入力項目を減らせばシンプルになる。","after":"減らした判断を誰が代わりに引き受けるかまで設計する。"}],
+    "open_questions":["専門家と初心者で複雑さの負担先を変えるべきか。","自動化が新しい例外処理を生んでいないか。"],
+    "relations":[{"term_id":"essential-accidental-complexity","verb":"由来を分ける"},{"term_id":"cognitive-load","verb":"頭の負担を見る"},{"term_id":"progressive-disclosure","verb":"時間へ分散する"}]
+  },
+  "affordance": {
+    "term_id":"affordance","status":"published",
+    "question":"『押せそうな見た目』と『押せること』は同じか。",
+    "thesis":"行為の可能性そのものと、その可能性を知らせる見た目を分けると、デザインの問題をより正確に診断できる。",
+    "distinctions":[{"term_id":"signifier","label":"シグニファイア","difference":"アフォーダンスは可能な行為、シグニファイアはそれを人へ知らせる知覚可能な手掛かり。"}],
+    "sections":[{"type":"argument","heading":"見た目だけ直しても、可能性は変わらない","body":["影を付ければボタンらしく見える。しかし、それはクリック可能性を作ったのではなく、既にある可能性を伝えただけである。","この区別ができると、問題が機能不足なのか、発見不足なのかを切り分けられる。"]}],
+    "lenses":[{"label":"タッチUI","before":"押せそうな見た目がアフォーダンス。","after":"タップ可能性と、それを知らせるシグニファイアを分ける。"}],
+    "open_questions":["デジタル環境の行為可能性は何によって成立するか。","慣習だけでシグニファイアを成立させてよいか。"],
+    "relations":[{"term_id":"signifier","verb":"手掛かりと分ける"},{"term_id":"constraints","verb":"可能性を絞る"},{"term_id":"discoverability","verb":"発見へ渡る"}]
+  },
+  "discoverability": {
+    "term_id":"discoverability","status":"published",
+    "question":"存在する機能と、見つけられる機能は同じか。",
+    "thesis":"利用可能な機能でも、現在の画面から入口を発見できなければ、実用上の選択肢にはなりにくい。",
+    "distinctions":[{"term_id":"progressive-disclosure","label":"段階的開示","difference":"段階的開示は必要時まで情報を畳む。発見可能性は、畳まれていても存在や開き方が分かるかを見る。"}],
+    "sections":[{"type":"argument","heading":"静かな画面は、能力を隠しやすい","body":["UIを洗練しようとしてラベルや補助線を消すと、機能の存在まで見えなくなることがある。","発見可能性は『全部出す』ことではない。入口、シグニファイア、文脈を使い、必要な人が必要な瞬間に見つけられる状態を作ることだ。"]}],
+    "lenses":[{"label":"折りたたみ","before":"＋があるから十分。","after":"何が開くかまで予測でき、必要時に入口を発見できるかを見る。"}],
+    "open_questions":["静けさと発見可能性の最小接点はどこか。","熟練者向け機能はどこまで隠してよいか。"],
+    "relations":[{"term_id":"signifier","verb":"手掛かりを置く"},{"term_id":"information-scent","verb":"行き先を予告する"},{"term_id":"recognition-over-recall","verb":"再認を支える"}]
+  },
+  "conceptual-model": {
+    "term_id":"conceptual-model","status":"published",
+    "question":"操作できることと、仕組みを理解できることは同じか。",
+    "thesis":"平常時に操作できても、保存場所や状態遷移の概念モデルが弱ければ、例外が起きた瞬間に利用者は復旧できなくなる。",
+    "distinctions":[{"term_id":"signifier","label":"シグニファイア","difference":"シグニファイアは局所的な操作手掛かり。概念モデルはシステム全体がどう動くかという理解の枠組み。"}],
+    "sections":[{"type":"argument","heading":"『使える』と『分かっている』の差は、失敗時に現れる","body":["通常の導線をなぞるだけなら、仕組みを理解しなくても操作できる。しかしデータが見つからない、戻したい、同期されないといった例外では内部の見取り図が必要になる。","良い概念モデルは技術仕様をそのまま教えることではない。利用者が次の状態を予測し、誤りから戻れるだけの一貫した説明を提供することだ。"]}],
+    "lenses":[{"label":"保存","before":"保存ボタンが分かれば十分。","after":"どこに、いつ、何が保存されるかを一貫して理解できるかを見る。"}],
+    "open_questions":["自動化が進むほど概念モデルは不要になるのか。","内部実装と異なる比喩モデルをどこまで許容できるか。"],
+    "relations":[{"term_id":"visibility-system-status","verb":"状態から学ぶ"},{"term_id":"gulfs-of-action","verb":"実行と評価をつなぐ"},{"term_id":"common-ground","verb":"共有理解へ広げる"}]
+  },
+  "constraints": {
+    "term_id":"constraints","status":"published",
+    "question":"自由度を減らすことは、必ず不親切か。",
+    "thesis":"適切な制約は選択肢を奪うのではなく、誤った選択肢を先に除き、判断すべき空間を小さくする。",
+    "distinctions":[{"term_id":"affordance","label":"アフォーダンス","difference":"アフォーダンスは可能な行為を広く捉える。制約は、その可能性の中から不適切な行為を除く。"}],
+    "sections":[{"type":"argument","heading":"何でもできる画面は、何をすべきか分かりにくい","body":["自由度が高いほど柔軟だが、その分だけ利用者は候補を評価しなければならない。","入力形式、順序、無効状態などの制約は、設計者が判断の一部を先に引き受ける方法でもある。重要なのは制約の存在ではなく、その理由が利用者の目的と一致しているかだ。"]}],
+    "lenses":[{"label":"フォーム","before":"自由入力の方が柔軟。","after":"誤りやすい形式だけを制約し、必要な自由は残す。"}],
+    "open_questions":["制約が利用者の例外ケースを塞いでいないか。","エラーで止める前に、そもそも誤操作を選べなくできるか。"],
+    "relations":[{"term_id":"affordance","verb":"可能性を絞る"},{"term_id":"cognitive-load","verb":"選択負担を減らす"},{"term_id":"signifier","verb":"正しい行為を示す"}]
+  },
+  "gulfs-of-action": {
+    "term_id":"gulfs-of-action","status":"published",
+    "question":"分かりにくさは、操作前と操作後で同じ問題か。",
+    "thesis":"『何をすればいいか分からない』実行の淵と、『何が起きたか分からない』評価の淵を分けると、対処すべき設計要素が変わる。",
+    "distinctions":[{"term_id":"visibility-system-status","label":"システム状態の可視性","difference":"状態可視性は評価の淵を縮める代表的手段。二つの淵は、実行前と結果解釈の両方を含む上位の診断枠組み。"}],
+    "sections":[{"type":"argument","heading":"同じ『迷う』でも、迷っている場所が違う","body":["操作前に止まっているなら、入口や手掛かりが足りない。操作後に止まっているなら、結果や状態の読み取りが難しい。","両方を一括して『UIが分かりにくい』と呼ぶと、ボタンを派手にしたのに問題が解けない、といった修正のずれが起こる。"]}],
+    "lenses":[{"label":"診断","before":"なんとなく使いにくい。","after":"実行の淵か、評価の淵かを先に特定する。"}],
+    "open_questions":["一つの操作で二つの淵が連鎖する場面はどう扱うか。","AIチャットのような曖昧な操作系では淵はどう変わるか。"],
+    "relations":[{"term_id":"signifier","verb":"実行を支える"},{"term_id":"visibility-system-status","verb":"評価を支える"},{"term_id":"conceptual-model","verb":"両方を横断する"}]
+  },
+  "feedforward": {
+    "term_id":"feedforward","status":"published",
+    "question":"押した後のフィードバックだけで十分か。",
+    "thesis":"安心して操作するには、結果を事後に知らせるだけでなく、操作前に何が起きるかを予測できる必要がある。",
+    "distinctions":[{"term_id":"visibility-system-status","label":"システム状態の可視性","difference":"フィードフォワードは行為前の予測を支える。状態可視性やフィードバックは行為後・現在の理解を支える。"}],
+    "sections":[{"type":"argument","heading":"取り返しのつかない操作ほど、未来を見せる","body":["削除、上書き、公開といった操作では、押してから結果が分かっても遅い。","確認ダイアログだけでなく、ラベル、プレビュー、影響範囲の表示などによって、行為前に未来の状態を想像できることが重要になる。"]}],
+    "lenses":[{"label":"削除","before":"削除後に完了通知を出す。","after":"削除前に対象と影響範囲を予告する。"}],
+    "open_questions":["予告が長すぎて操作を遅くしていないか。","可逆な操作ならフィードフォワードをどこまで省けるか。"],
+    "relations":[{"term_id":"gulfs-of-action","verb":"実行の淵を縮める"},{"term_id":"information-scent","verb":"先を予測する"},{"term_id":"visibility-system-status","verb":"事後へつなぐ"}]
+  },
+  "information-foraging": {
+    "term_id":"information-foraging","status":"published",
+    "question":"なぜ人は『ここにはもう無さそう』と見切るのか。",
+    "thesis":"情報探索は網羅ではなく、得られそうな価値と探索コストを比べながら、次の場所へ移る連続的な判断として捉えられる。",
+    "distinctions":[{"term_id":"information-scent","label":"情報の匂い","difference":"情報の匂いは局所的な手掛かり。情報採餌理論は、その手掛かりを使って探索先を選び続ける全体行動を見る。"}],
+    "sections":[{"type":"argument","heading":"離脱は、興味がないからとは限らない","body":["欲しい情報があると思っていても、見つかる確率が低そうで探索コストが高ければ、人は別の場所へ移る。","検索、分類、リンク、一覧は、情報を置く箱ではなく『次に探し続ける価値がある』と判断させる環境でもある。"]}],
+    "lenses":[{"label":"検索","before":"情報は全部載っているから問題ない。","after":"目的情報へ近づいている感覚と探索コストを見る。"}],
+    "open_questions":["情報量が増えるほど探索価値は本当に上がるか。","AI検索は探索コストを下げる一方、情報源の匂いを弱めないか。"],
+    "relations":[{"term_id":"information-scent","verb":"局所手掛かりを見る"},{"term_id":"discoverability","verb":"入口を見つける"},{"term_id":"progressive-disclosure","verb":"探索段階を設計する"}]
+  }
+}
