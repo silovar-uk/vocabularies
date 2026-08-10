@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Vocabulariesの概念を、分野ではなく関係の動詞から辿る概念地図。" />
+  <title>概念地図 — Vocabularies</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./concept-map.css?v=20260810-2217" />
+</head>
+<body>
+  <header class="map-site-header">
+    <a class="map-brand" href="./">Vocabularies</a>
+    <nav class="map-header-nav" aria-label="ページ移動">
+      <a href="./">語彙集</a>
+      <span aria-current="page">概念地図</span>
+    </nav>
+  </header>
+
+  <main class="map-shell">
+    <section class="map-hero">
+      <p class="map-eyebrow">CONCEPT MAP</p>
+      <h1>言葉ではなく、<br>言葉の「あいだ」を読む。</h1>
+      <p class="map-lead">似ている、区別する、広げる、支える。概念同士の関係を動詞で辿る。</p>
+    </section>
+
+    <section class="map-controls" aria-label="概念地図の操作">
+      <label class="map-search" for="mapSearch">
+        <span>起点となる言葉を探す</span>
+        <input id="mapSearch" type="search" autocomplete="off" placeholder="例：認知負荷 / 余白 / 共通基盤" />
+      </label>
+      <button id="randomFocus" class="map-quiet-button" type="button">ランダムな起点</button>
+    </section>
+
+    <div id="mapSearchResults" class="map-search-results" hidden></div>
+
+    <section class="focus-map" aria-labelledby="focusTitle">
+      <div class="focus-heading">
+        <div>
+          <p class="map-eyebrow">FOCUS MAP</p>
+          <h2 id="focusTitle">一語から、周辺へ。</h2>
+        </div>
+        <p id="focusCount" class="focus-count">読み込み中…</p>
+      </div>
+      <div id="focusMap" class="focus-map-stage" aria-live="polite">
+        <p class="map-loading">概念を読み込み中…</p>
+      </div>
+    </section>
+
+    <section class="verb-index" aria-labelledby="verbTitle">
+      <div class="verb-index-head">
+        <div>
+          <p class="map-eyebrow">RELATION VERBS</p>
+          <h2 id="verbTitle">関係の動詞から辿る。</h2>
+        </div>
+        <button id="clearVerb" class="map-text-button" type="button" hidden>すべて見る</button>
+      </div>
+      <div id="verbFilters" class="verb-filters" aria-label="関係の動詞で絞り込む"></div>
+      <div id="routeList" class="route-list"></div>
+    </section>
+  </main>
+
+  <footer class="map-footer">
+    <a href="./">感覚から、言葉へ。</a>
+    <span>→</span>
+    <a href="./concept-map.html">言葉から、関係へ。</a>
+  </footer>
+
+  <script src="./concept-map.js?v=20260810-2217" defer></script>
+</body>
+</html>
