@@ -2,6 +2,12 @@ const DEFAULT_DATASETS = [
   "data/vocabularies.json",
   "data/research-20260810-semiotics-complexity.json",
   "data/meta-vocabularies.json",
+  "data/research-20260810-editorial.json",
+];
+
+const DEFAULT_RELATION_DATASETS = [
+  "data/relations.json",
+  "data/relations-20260810-editorial.json",
 ];
 
 const state = {
@@ -13,6 +19,7 @@ const state = {
   catalog: {
     schema_version: 1,
     datasets: DEFAULT_DATASETS,
+    relation_datasets: DEFAULT_RELATION_DATASETS,
     defaults: { primary_language: "ja", formal_status: "established_term", aliases: [] },
     formal_status_labels: {},
     field_labels: {},
