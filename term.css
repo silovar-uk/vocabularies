@@ -1,0 +1,215 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f6f2;
+  --paper: #fff;
+  --ink: #171714;
+  --muted: #6d6b64;
+  --line: #dedcd4;
+  --soft: #efede6;
+  --accent: #9f1d2d;
+  --measure: 720px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  line-height: 1.9;
+}
+a { color: inherit; }
+
+.term-site-header,
+.term-footer {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.term-site-header {
+  min-height: 68px;
+  border-bottom: 1px solid var(--line);
+}
+.term-brand {
+  font-weight: 750;
+  letter-spacing: -.02em;
+  text-decoration: none;
+}
+.term-back,
+.term-footer a {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+.term-back:hover,
+.term-footer a:hover { color: var(--ink); }
+
+.term-page {
+  width: min(var(--measure), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 72px 0 112px;
+}
+.term-loading,
+.term-error {
+  padding: 72px 0;
+  color: var(--muted);
+}
+.term-error h1 { color: var(--ink); }
+
+.term-hero {
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--line);
+}
+.term-meta {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.term-title {
+  margin: 0;
+  font-size: clamp(40px, 8vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -.055em;
+  font-weight: 760;
+}
+.term-title-en {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(18px, 3vw, 24px);
+}
+.term-question {
+  margin: 48px 0 0;
+  max-width: 680px;
+  font-family: ui-serif, "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(27px, 5vw, 42px);
+  font-weight: 500;
+  line-height: 1.48;
+  letter-spacing: -.025em;
+}
+.term-thesis {
+  margin: 28px 0 0;
+  padding-left: 18px;
+  border-left: 2px solid var(--ink);
+  font-size: 16px;
+}
+
+.term-section {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
+}
+.term-kicker {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.term-section h2 {
+  margin: 0 0 24px;
+  font-size: clamp(25px, 4vw, 34px);
+  line-height: 1.4;
+  letter-spacing: -.025em;
+}
+.term-section h3 {
+  margin: 38px 0 14px;
+  font-size: 21px;
+  line-height: 1.5;
+}
+.term-section p { margin: 0 0 1.25em; }
+.term-definition {
+  font-size: 17px;
+}
+
+.distinction-list,
+.lens-list,
+.relation-grid {
+  display: grid;
+  gap: 12px;
+}
+.distinction-card,
+.lens-card,
+.relation-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.52);
+}
+.distinction-name,
+.lens-label,
+.relation-verb {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.distinction-card p,
+.lens-card p { margin: 0; }
+.lens-card .lens-after {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.question-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.question-list li {
+  padding: 18px 0 18px 30px;
+  position: relative;
+  border-top: 1px solid var(--line);
+  font-family: ui-serif, "Yu Mincho", serif;
+  font-size: 18px;
+}
+.question-list li::before {
+  content: "?";
+  position: absolute;
+  left: 2px;
+  top: 17px;
+  color: var(--muted);
+  font-family: inherit;
+}
+
+.relation-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.relation-card {
+  text-decoration: none;
+  transition: transform .15s ease, border-color .15s ease;
+}
+.relation-card:hover {
+  transform: translateY(-2px);
+  border-color: #aaa79d;
+}
+.relation-name { font-size: 17px; font-weight: 700; }
+.source-list { margin: 0; padding-left: 1.25em; }
+.source-list a { text-underline-offset: 3px; }
+
+.term-footer {
+  min-height: 100px;
+  border-top: 1px solid var(--line);
+  justify-content: flex-start;
+}
+
+@media (max-width: 640px) {
+  .term-site-header,
+  .term-footer,
+  .term-page { width: min(100% - 28px, var(--measure)); }
+  .term-site-header { min-height: 58px; }
+  .term-back { font-size: 12px; }
+  .term-page { padding: 48px 0 80px; }
+  .term-question { margin-top: 36px; }
+  .term-section { padding: 42px 0; }
+  .relation-grid { grid-template-columns: 1fr; }
+  .distinction-card,
+  .lens-card,
+  .relation-card { padding: 18px; }
+}
