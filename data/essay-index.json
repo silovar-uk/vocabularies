@@ -1,20 +1,61 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "essays": {
-    "attention-residue": {
-      "status": "published",
-      "path": "data/essays/attention-residue.json",
-      "updated_at": "2026-08-10"
-    },
-    "cognitive-offloading": {
-      "status": "published",
-      "path": "data/essays/cognitive-offloading.json",
-      "updated_at": "2026-08-10"
-    },
-    "epistemic-action": {
-      "status": "published",
-      "path": "data/essays/epistemic-action.json",
-      "updated_at": "2026-08-10"
-    }
+    "attention-residue":{"status":"published","path":"data/essays/attention-residue.json","updated_at":"2026-08-10"},
+    "cognitive-offloading":{"status":"published","path":"data/essays/cognitive-offloading.json","updated_at":"2026-08-10"},
+    "epistemic-action":{"status":"published","path":"data/essays/epistemic-action.json","updated_at":"2026-08-10"},
+
+    "progressive-disclosure":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "information-scent":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "recognition-over-recall":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "visual-hierarchy":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "negative-space":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "visual-rhythm":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "visibility-system-status":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "salience":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "signifier":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "conservation-of-complexity":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "affordance":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "discoverability":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "conceptual-model":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "constraints":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "gulfs-of-action":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "feedforward":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+    "information-foraging":{"status":"published","bundle_path":"data/essays/bundle-design.json","updated_at":"2026-08-10"},
+
+    "prosody":{"status":"published","bundle_path":"data/essays/bundle-language.json","updated_at":"2026-08-10"},
+    "register":{"status":"published","bundle_path":"data/essays/bundle-language.json","updated_at":"2026-08-10"},
+    "rhetorical-move":{"status":"published","bundle_path":"data/essays/bundle-language.json","updated_at":"2026-08-10"},
+    "epistemic-stance":{"status":"published","bundle_path":"data/essays/bundle-language.json","updated_at":"2026-08-10"},
+    "signifiant":{"status":"published","bundle_path":"data/essays/bundle-language.json","updated_at":"2026-08-10"},
+    "signified":{"status":"published","bundle_path":"data/essays/bundle-language.json","updated_at":"2026-08-10"},
+    "linguistic-sign":{"status":"published","bundle_path":"data/essays/bundle-language.json","updated_at":"2026-08-10"},
+    "arbitrariness-of-sign":{"status":"published","bundle_path":"data/essays/bundle-language.json","updated_at":"2026-08-10"},
+    "linguistic-value":{"status":"published","bundle_path":"data/essays/bundle-language.json","updated_at":"2026-08-10"},
+    "langue-parole":{"status":"published","bundle_path":"data/essays/bundle-language.json","updated_at":"2026-08-10"},
+    "synchrony-diachrony":{"status":"published","bundle_path":"data/essays/bundle-language.json","updated_at":"2026-08-10"},
+
+    "differentiation":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+    "prospective-memory":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+    "implementation-intention":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+    "distributed-cognition":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+    "external-cognition":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+    "task-switching":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+    "perceptual-set":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+    "categorical-perception":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+    "automaticity":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+    "emotional-granularity":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+    "cognitive-load":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+    "intrinsic-extraneous-load":{"status":"published","bundle_path":"data/essays/bundle-cognition.json","updated_at":"2026-08-10"},
+
+    "timbre":{"status":"published","bundle_path":"data/essays/bundle-expression.json","updated_at":"2026-08-10"},
+    "composition":{"status":"published","bundle_path":"data/essays/bundle-expression.json","updated_at":"2026-08-10"},
+    "curation":{"status":"published","bundle_path":"data/essays/bundle-expression.json","updated_at":"2026-08-10"},
+    "selection-elimination":{"status":"published","bundle_path":"data/essays/bundle-expression.json","updated_at":"2026-08-10"},
+
+    "boundary-object":{"status":"published","bundle_path":"data/essays/bundle-collaboration.json","updated_at":"2026-08-10"},
+    "common-ground":{"status":"published","bundle_path":"data/essays/bundle-collaboration.json","updated_at":"2026-08-10"},
+    "transactive-memory":{"status":"published","bundle_path":"data/essays/bundle-collaboration.json","updated_at":"2026-08-10"},
+    "essential-accidental-complexity":{"status":"published","bundle_path":"data/essays/bundle-collaboration.json","updated_at":"2026-08-10"}
   }
 }
