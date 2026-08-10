@@ -72,19 +72,68 @@ Discovery は主役にせず、Readerの読後に置く設計です。
 /
 ├─ index.html
 ├─ styles-v3.css          # 現行デザインシステムを集約
-├─ app-v2.js              # 基本状態・データ・絞り込み・カード
+├─ app-v2.js              # Catalog読込・状態・絞り込み・カード
 ├─ reader.js              # Reader と関係表示
 ├─ search-v2.js           # 順位付き検索・類似概念の差分提示
-├─ research-loader.js     # 追加調査語の統合
 ├─ discovery.js           # 今日の一語・寄り道
 ├─ favicon.svg
 ├─ data/
+│  ├─ catalog.json        # データセット・表記・分類・正式度・検索設計
 │  ├─ vocabularies.json
 │  ├─ research-20260810-semiotics-complexity.json
+│  ├─ meta-vocabularies.json
 │  └─ relations.json
+├─ scripts/
+│  └─ validate-data.mjs   # データ構造と参照整合性の検証
+├─ .github/workflows/
+│  └─ validate-data.yml   # push / PR 時の自動検証
 └─ docs/
+   ├─ DATA_SCHEMA.md
    └─ PLANNING.md
 ```
+
+## Data model
+
+`data/catalog.json` を語彙集全体の設計図として扱います。
+
+ここで、
+
+- 読み込む語彙データセット
+- 日本語 / 英語の主表記
+- aliases
+- formal_status
+- usage_note
+- 分野ラベルと上位taxonomy
+- 検索時に比較する概念群
+
+を管理します。
+
+語彙本文へ表示上の例外を増やしたり、JSへ個別語をハードコードしたりしないことを基本にします。
+
+詳細は [`docs/DATA_SCHEMA.md`](docs/DATA_SCHEMA.md) を参照してください。
+
+## Data validation
+
+語彙データを変更すると、GitHub Actions の **Validate vocabulary data** が自動実行されます。
+
+ローカルでは次で同じ検証を実行できます。
+
+```bash
+node scripts/validate-data.mjs
+```
+
+主なエラー検出対象：
+
+- 語彙IDの重複・不正なID形式
+- 必須フィールドや出典URLの欠落
+- 未定義の `formal_status` / `primary_language`
+- `field_labels` や taxonomy に登録されていない分野
+- `related` / `opposites` / Relations のリンク切れ
+- Catalog metadata が存在しない語彙IDを参照している状態
+- Search contrast の参照切れ
+- データセットファイルの欠落・JSON構文エラー
+
+複数語で同じaliasを使う、特殊なformal_statusに `usage_note` がない、といった品質上の注意は **warning** として出し、CI自体は止めません。
 
 ## Current design system
 
@@ -103,11 +152,12 @@ CSSは `styles-v3.css` に統合しています。
 
 ## Development direction
 
-次の重点は、機能を増やすことよりも以下です。
+次の重点は、機能数より**語彙コレクションとしての質と運用性**です。
 
-1. 語と語の関係タイプをさらに精密化する
-2. 日本語 / 英語 / 別名のデータ構造を明示化する
-3. モバイル実機でのReader・検索・Discoveryを継続的に磨く
-4. 語彙数が増えても静けさを失わない情報設計を維持する
+1. Relations の関係タイプと説明を精密化する
+2. formal_status / usage_note の精度を語彙ごとに監査する
+3. 新しい語彙セットを増やしてもValidationを通る状態を維持する
+4. モバイル実機でのReader・検索・Discoveryを継続的に磨く
+5. 語彙数が増えても静けさを失わない情報設計を維持する
 
 詳細な初期計画は [`docs/PLANNING.md`](docs/PLANNING.md) に残しています。
