@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "workflow": [
+    "captured",
+    "researching",
+    "qualified",
+    "related",
+    "ready",
+    "adopted",
+    "rejected"
+  ],
+  "candidates": []
+}
