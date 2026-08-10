@@ -1,0 +1,248 @@
+import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
+
+const ROOT = process.cwd();
+const errors = [];
+const warnings = [];
+
+function error(message) {
+  errors.push(message);
+}
+
+function warn(message) {
+  warnings.push(message);
+}
+
+async function readJson(path) {
+  try {
+    const text = await readFile(resolve(ROOT, path), "utf8");
+    return JSON.parse(text);
+  } catch (cause) {
+    error(`${path}: JSONを読み込めません (${cause.message})`);
+    return null;
+  }
+}
+
+function isNonEmptyString(value) {
+  return typeof value === "string" && value.trim().length > 0;
+}
+
+function isHttpUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" || url.protocol === "http:";
+  } catch {
+    return false;
+  }
+}
+
+const catalog = await readJson("data/catalog.json");
+const relations = await readJson("data/relations.json");
+
+if (!catalog || !relations) {
+  process.exitCode = 1;
+} else {
+  if (!Number.isInteger(catalog.schema_version)) error("catalog.json: schema_version は整数で指定してください");
+  if (!Array.isArray(catalog.datasets) || catalog.datasets.length === 0) error("catalog.json: datasets が空です");
+  if (!catalog.defaults || typeof catalog.defaults !== "object") error("catalog.json: defaults がありません");
+  if (!catalog.formal_status_labels || typeof catalog.formal_status_labels !== "object") error("catalog.json: formal_status_labels がありません");
+  if (!catalog.field_labels || typeof catalog.field_labels !== "object") error("catalog.json: field_labels がありません");
+  if (!Array.isArray(catalog.taxonomy)) error("catalog.json: taxonomy は配列で指定してください");
+  if (!catalog.terms || typeof catalog.terms !== "object") error("catalog.json: terms がありません");
+  if (!Array.isArray(catalog.search_contrasts)) error("catalog.json: search_contrasts は配列で指定してください");
+
+  const datasetPaths = Array.isArray(catalog.datasets) ? catalog.datasets : [];
+  const duplicateDatasets = datasetPaths.filter((path, index) => datasetPaths.indexOf(path) !== index);
+  for (const path of new Set(duplicateDatasets)) error(`catalog.json: datasets に重複があります: ${path}`);
+
+  const datasets = [];
+  for (const path of datasetPaths) {
+    const data = await readJson(path);
+    if (data && !Array.isArray(data)) {
+      error(`${path}: 語彙データは配列である必要があります`);
+      continue;
+    }
+    if (Array.isArray(data)) datasets.push({ path, items: data });
+  }
+
+  const allItems = [];
+  const byId = new Map();
+  const usedFields = new Set();
+  const aliasOwners = new Map();
+
+  for (const { path, items } of datasets) {
+    items.forEach((item, index) => {
+      const at = `${path}[${index}]`;
+      if (!item || typeof item !== "object" || Array.isArray(item)) {
+        error(`${at}: 語彙項目はオブジェクトである必要があります`);
+        return;
+      }
+
+      const id = item.id;
+      if (!isNonEmptyString(id)) {
+        error(`${at}: id がありません`);
+        return;
+      }
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) error(`${at}: id は kebab-case にしてください: ${id}`);
+      if (byId.has(id)) error(`${at}: id が重複しています: ${id} (${byId.get(id).__source})`);
+
+      const merged = {
+        ...(catalog.defaults ?? {}),
+        ...item,
+        ...(catalog.terms?.[id] ?? {}),
+      };
+      merged.aliases = [...new Set([
+        ...(catalog.defaults?.aliases ?? []),
+        ...(item.aliases ?? []),
+        ...(catalog.terms?.[id]?.aliases ?? []),
+      ].filter(Boolean))];
+      merged.__source = path;
+
+      byId.set(id, merged);
+      allItems.push(merged);
+
+      if (!isNonEmptyString(item.term) && !isNonEmptyString(item.ja)) error(`${at} (${id}): term または ja のどちらかが必要です`);
+      for (const key of ["one_liner", "description", "why_selected", "before", "after", "status"]) {
+        if (!isNonEmptyString(item[key])) error(`${at} (${id}): ${key} がありません`);
+      }
+
+      if (!Array.isArray(item.fields) || item.fields.length === 0) {
+        error(`${at} (${id}): fields が空です`);
+      } else {
+        for (const field of item.fields) {
+          if (!isNonEmptyString(field)) error(`${at} (${id}): fields に空の値があります`);
+          else usedFields.add(field);
+        }
+      }
+
+      if (!Array.isArray(item.feelings)) error(`${at} (${id}): feelings は配列で指定してください`);
+      if (item.related != null && !Array.isArray(item.related)) error(`${at} (${id}): related は配列で指定してください`);
+      if (item.opposites != null && !Array.isArray(item.opposites)) error(`${at} (${id}): opposites は配列で指定してください`);
+
+      if (!Array.isArray(item.sources) || item.sources.length === 0) {
+        error(`${at} (${id}): sources がありません`);
+      } else {
+        for (const source of item.sources) {
+          if (!isNonEmptyString(source) || !isHttpUrl(source)) error(`${at} (${id}): 不正な source URL: ${String(source)}`);
+        }
+      }
+
+      if (!["ja", "en"].includes(merged.primary_language)) error(`${at} (${id}): primary_language が不正です: ${merged.primary_language}`);
+      if (merged.primary_language === "ja" && !isNonEmptyString(item.ja)) error(`${at} (${id}): primary_language=ja ですが ja がありません`);
+      if (merged.primary_language === "en" && !isNonEmptyString(item.term)) error(`${at} (${id}): primary_language=en ですが term がありません`);
+      if (!Object.hasOwn(catalog.formal_status_labels ?? {}, merged.formal_status)) error(`${at} (${id}): formal_status が未定義です: ${merged.formal_status}`);
+
+      if (!Array.isArray(merged.aliases)) {
+        error(`${at} (${id}): aliases は配列で指定してください`);
+      } else {
+        for (const alias of merged.aliases) {
+          if (!isNonEmptyString(alias)) {
+            error(`${at} (${id}): aliases に空の値があります`);
+            continue;
+          }
+          const key = alias.normalize("NFKC").toLocaleLowerCase("ja");
+          if (!aliasOwners.has(key)) aliasOwners.set(key, new Set());
+          aliasOwners.get(key).add(id);
+        }
+      }
+
+      if (["heuristic", "editorial_principle", "project_meta"].includes(merged.formal_status) && !isNonEmptyString(merged.usage_note)) {
+        warn(`${id}: formal_status=${merged.formal_status} なので usage_note があると位置づけがより明確です`);
+      }
+    });
+  }
+
+  const ids = new Set(byId.keys());
+  const fieldLabels = catalog.field_labels ?? {};
+  const taxonomy = Array.isArray(catalog.taxonomy) ? catalog.taxonomy : [];
+
+  const taxonomyMembership = new Map();
+  for (const group of taxonomy) {
+    if (!isNonEmptyString(group?.id)) error("catalog.json: taxonomy group に id がありません");
+    if (!isNonEmptyString(group?.label)) error(`catalog.json: taxonomy group ${group?.id ?? "?"} に label がありません`);
+    if (!Array.isArray(group?.fields)) {
+      error(`catalog.json: taxonomy group ${group?.id ?? "?"} の fields が配列ではありません`);
+      continue;
+    }
+    for (const field of group.fields) {
+      if (!taxonomyMembership.has(field)) taxonomyMembership.set(field, []);
+      taxonomyMembership.get(field).push(group.id);
+    }
+  }
+
+  for (const field of usedFields) {
+    if (!Object.hasOwn(fieldLabels, field)) error(`catalog.json: 使用中の分野 ${field} に field_labels がありません`);
+    const groups = taxonomyMembership.get(field) ?? [];
+    if (groups.length === 0) error(`catalog.json: 使用中の分野 ${field} が taxonomy に属していません`);
+    if (groups.length > 1) warn(`catalog.json: 分野 ${field} が複数taxonomyに属しています: ${groups.join(", ")}`);
+  }
+
+  for (const [id, metadata] of Object.entries(catalog.terms ?? {})) {
+    if (!ids.has(id)) error(`catalog.json: terms.${id} は存在しない語彙IDを参照しています`);
+    if (metadata?.primary_language != null && !["ja", "en"].includes(metadata.primary_language)) error(`catalog.json: terms.${id}.primary_language が不正です`);
+    if (metadata?.formal_status != null && !Object.hasOwn(catalog.formal_status_labels ?? {}, metadata.formal_status)) error(`catalog.json: terms.${id}.formal_status が未定義です: ${metadata.formal_status}`);
+    if (metadata?.aliases != null && !Array.isArray(metadata.aliases)) error(`catalog.json: terms.${id}.aliases は配列で指定してください`);
+  }
+
+  for (const item of allItems) {
+    for (const related of item.related ?? []) {
+      if (!ids.has(related)) error(`${item.id}: related が存在しない語彙IDを参照しています: ${related}`);
+      if (related === item.id) warn(`${item.id}: related が自分自身を参照しています`);
+    }
+    for (const opposite of item.opposites ?? []) {
+      if (!ids.has(opposite)) error(`${item.id}: opposites が存在しない語彙IDを参照しています: ${opposite}`);
+    }
+  }
+
+  if (!relations || typeof relations !== "object" || Array.isArray(relations)) {
+    error("data/relations.json: オブジェクトである必要があります");
+  } else {
+    for (const [sourceId, edges] of Object.entries(relations)) {
+      if (!ids.has(sourceId)) error(`relations.json: 存在しない起点ID: ${sourceId}`);
+      if (!Array.isArray(edges)) {
+        error(`relations.json: ${sourceId} の関係は配列である必要があります`);
+        continue;
+      }
+      const seenTargets = new Set();
+      for (const [index, edge] of edges.entries()) {
+        if (!edge || typeof edge !== "object") {
+          error(`relations.json: ${sourceId}[${index}] がオブジェクトではありません`);
+          continue;
+        }
+        if (!ids.has(edge.id)) error(`relations.json: ${sourceId} → ${edge.id} は存在しない語彙IDです`);
+        if (!isNonEmptyString(edge.type)) error(`relations.json: ${sourceId} → ${edge.id} に type がありません`);
+        if (!isNonEmptyString(edge.note)) warn(`relations.json: ${sourceId} → ${edge.id} に note がありません`);
+        if (seenTargets.has(edge.id)) warn(`relations.json: ${sourceId} → ${edge.id} が重複しています`);
+        seenTargets.add(edge.id);
+      }
+    }
+  }
+
+  for (const [index, contrast] of (catalog.search_contrasts ?? []).entries()) {
+    if (!Array.isArray(contrast?.ids) || contrast.ids.length < 2) error(`catalog.json: search_contrasts[${index}].ids は2件以上必要です`);
+    for (const id of contrast?.ids ?? []) {
+      if (!ids.has(id)) error(`catalog.json: search_contrasts[${index}] が存在しない語彙IDを参照しています: ${id}`);
+    }
+    if (!isNonEmptyString(contrast?.title)) error(`catalog.json: search_contrasts[${index}].title がありません`);
+    if (!isNonEmptyString(contrast?.note)) error(`catalog.json: search_contrasts[${index}].note がありません`);
+  }
+
+  for (const [alias, owners] of aliasOwners) {
+    if (owners.size > 1) warn(`alias「${alias}」が複数語に割り当てられています: ${[...owners].join(", ")}`);
+  }
+
+  console.log(`Vocabularies validation: ${allItems.length}語 / ${Object.values(relations).reduce((sum, edges) => sum + (Array.isArray(edges) ? edges.length : 0), 0)}関係`);
+}
+
+if (warnings.length) {
+  console.log(`\nWARNINGS (${warnings.length})`);
+  for (const message of warnings) console.log(`- ${message}`);
+}
+
+if (errors.length) {
+  console.error(`\nERRORS (${errors.length})`);
+  for (const message of errors) console.error(`- ${message}`);
+  process.exitCode = 1;
+} else {
+  console.log(`\nOK: 構造上のエラーはありません${warnings.length ? `（警告 ${warnings.length}件）` : ""}。`);
+}
