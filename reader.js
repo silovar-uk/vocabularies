@@ -216,31 +216,39 @@
     renderReader();
   }
 
-  async function loadRelations() {
-    const urls = [
-      "./data/relations.json?v=" + Date.now(),
-      "https://raw.githubusercontent.com/silovar-uk/vocabularies/main/data/relations.json",
-    ];
-
-    let lastError;
-    for (const url of urls) {
-      try {
-        const response = await fetch(url, { cache: "no-store" });
-        if (!response.ok) throw new Error("HTTP " + response.status);
-        const data = await response.json();
-        if (!data || Array.isArray(data) || typeof data !== "object") {
-          throw new Error("Relation data is not an object");
+  function mergeRelationMaps(maps) {
+    const merged = {};
+    for (const map of maps) {
+      for (const [sourceId, edges] of Object.entries(map ?? {})) {
+        if (!Array.isArray(edges)) continue;
+        const byTarget = new Map((merged[sourceId] ?? []).map((edge) => [edge.id, edge]));
+        for (const edge of edges) {
+          if (edge?.id) byTarget.set(edge.id, edge);
         }
-        relationMap = data;
-        renderResults();
-        renderReader();
-        return;
-      } catch (error) {
-        lastError = error;
-        console.warn("Relation data load failed:", url, error);
+        merged[sourceId] = [...byTarget.values()];
       }
     }
-    console.error("Relation data could not be loaded:", lastError);
+    return merged;
+  }
+
+  async function loadRelations() {
+    const paths = state.catalog.relation_datasets?.length
+      ? state.catalog.relation_datasets
+      : ["data/relations.json"];
+    try {
+      const maps = await Promise.all(paths.map(async (path) => {
+        const data = await loadJson(path);
+        if (!data || Array.isArray(data) || typeof data !== "object") {
+          throw new Error(path + " is not an object");
+        }
+        return data;
+      }));
+      relationMap = mergeRelationMaps(maps);
+      renderResults();
+      renderReader();
+    } catch (error) {
+      console.error("Relation data could not be loaded:", error);
+    }
   }
 
   vocabularyGrid.addEventListener("click", (event) => {
