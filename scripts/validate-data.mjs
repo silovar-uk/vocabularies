@@ -48,13 +48,13 @@ function validateSourceList(sources, at, { required = true } = {}) {
 }
 
 const catalog = await readJson("data/catalog.json");
-const relations = await readJson("data/relations.json");
 
-if (!catalog || !relations) {
+if (!catalog) {
   process.exitCode = 1;
 } else {
   if (!Number.isInteger(catalog.schema_version)) error("catalog.json: schema_version は整数で指定してください");
   if (!Array.isArray(catalog.datasets) || catalog.datasets.length === 0) error("catalog.json: datasets が空です");
+  if (!Array.isArray(catalog.relation_datasets) || catalog.relation_datasets.length === 0) error("catalog.json: relation_datasets が空です");
   if (!catalog.defaults || typeof catalog.defaults !== "object") error("catalog.json: defaults がありません");
   if (!catalog.formal_status_labels || typeof catalog.formal_status_labels !== "object") error("catalog.json: formal_status_labels がありません");
   if (!catalog.field_labels || typeof catalog.field_labels !== "object") error("catalog.json: field_labels がありません");
@@ -67,6 +67,10 @@ if (!catalog || !relations) {
   const duplicateDatasets = datasetPaths.filter((path, index) => datasetPaths.indexOf(path) !== index);
   for (const path of new Set(duplicateDatasets)) error(`catalog.json: datasets に重複があります: ${path}`);
 
+  const relationPaths = Array.isArray(catalog.relation_datasets) ? catalog.relation_datasets : [];
+  const duplicateRelationDatasets = relationPaths.filter((path, index) => relationPaths.indexOf(path) !== index);
+  for (const path of new Set(duplicateRelationDatasets)) error(`catalog.json: relation_datasets に重複があります: ${path}`);
+
   const datasets = [];
   for (const path of datasetPaths) {
     const data = await readJson(path);
@@ -75,6 +79,16 @@ if (!catalog || !relations) {
       continue;
     }
     if (Array.isArray(data)) datasets.push({ path, items: data });
+  }
+
+  const relationDatasets = [];
+  for (const path of relationPaths) {
+    const data = await readJson(path);
+    if (data && (typeof data !== "object" || Array.isArray(data))) {
+      error(`${path}: 関係データはオブジェクトである必要があります`);
+      continue;
+    }
+    if (data && typeof data === "object" && !Array.isArray(data)) relationDatasets.push({ path, relations: data });
   }
 
   const allItems = [];
@@ -206,26 +220,31 @@ if (!catalog || !relations) {
     }
   }
 
-  if (!relations || typeof relations !== "object" || Array.isArray(relations)) {
-    error("data/relations.json: オブジェクトである必要があります");
-  } else {
+  const seenTypedEdges = new Set();
+  let relationCount = 0;
+  for (const { path, relations } of relationDatasets) {
     for (const [sourceId, edges] of Object.entries(relations)) {
-      if (!ids.has(sourceId)) error(`relations.json: 存在しない起点ID: ${sourceId}`);
+      if (!ids.has(sourceId)) error(`${path}: 存在しない起点ID: ${sourceId}`);
       if (!Array.isArray(edges)) {
-        error(`relations.json: ${sourceId} の関係は配列である必要があります`);
+        error(`${path}: ${sourceId} の関係は配列である必要があります`);
         continue;
       }
       const seenTargets = new Set();
       for (const [index, edge] of edges.entries()) {
+        relationCount += 1;
         if (!edge || typeof edge !== "object") {
-          error(`relations.json: ${sourceId}[${index}] がオブジェクトではありません`);
+          error(`${path}: ${sourceId}[${index}] がオブジェクトではありません`);
           continue;
         }
-        if (!ids.has(edge.id)) error(`relations.json: ${sourceId} → ${edge.id} は存在しない語彙IDです`);
-        if (!isNonEmptyString(edge.type)) error(`relations.json: ${sourceId} → ${edge.id} に type がありません`);
-        if (!isNonEmptyString(edge.note)) warn(`relations.json: ${sourceId} → ${edge.id} に note がありません`);
-        if (seenTargets.has(edge.id)) warn(`relations.json: ${sourceId} → ${edge.id} が重複しています`);
+        if (!ids.has(edge.id)) error(`${path}: ${sourceId} → ${edge.id} は存在しない語彙IDです`);
+        if (!isNonEmptyString(edge.type)) error(`${path}: ${sourceId} → ${edge.id} に type がありません`);
+        if (!isNonEmptyString(edge.note)) warn(`${path}: ${sourceId} → ${edge.id} に note がありません`);
+        if (seenTargets.has(edge.id)) warn(`${path}: ${sourceId} → ${edge.id} が同一ファイル内で重複しています`);
         seenTargets.add(edge.id);
+
+        const globalKey = `${sourceId}→${edge.id}`;
+        if (seenTypedEdges.has(globalKey)) warn(`${path}: ${globalKey} は別のrelation datasetにも定義されています。後の定義がUIで優先されます`);
+        seenTypedEdges.add(globalKey);
       }
     }
   }
@@ -243,7 +262,7 @@ if (!catalog || !relations) {
     if (owners.size > 1) warn(`alias「${alias}」が複数語に割り当てられています: ${[...owners].join(", ")}`);
   }
 
-  console.log(`Vocabularies validation: ${allItems.length}語 / ${Object.values(relations).reduce((sum, edges) => sum + (Array.isArray(edges) ? edges.length : 0), 0)}関係`);
+  console.log(`Vocabularies validation: ${allItems.length}語 / ${relationCount}関係 / ${relationDatasets.length} relation datasets`);
 }
 
 if (warnings.length) {
