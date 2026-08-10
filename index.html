@@ -8,7 +8,7 @@
   <link rel="icon" href="./favicon.svg?v=20260810-1605" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles-v3.css?v=20260810-1605" />
   <link rel="stylesheet" href="./catalog.css?v=20260810-1605" />
-  <link rel="stylesheet" href="./essay-bridge.css?v=20260810-2136" />
+  <link rel="stylesheet" href="./essay-bridge.css?v=20260810-2208" />
 </head>
 <body>
   <header class="site-header">
@@ -26,6 +26,20 @@
         <input id="searchInput" type="search" autocomplete="off" placeholder="例：余白 / 韻律 / 感情粒度 / しぐ" />
       </label>
       <div id="searchAssist" class="search-assist" role="status" aria-live="polite" hidden></div>
+    </section>
+
+    <section id="thoughtPortal" class="thought-portal" aria-labelledby="thoughtPortalTitle">
+      <div class="thought-portal-head">
+        <div>
+          <p class="eyebrow">THINK WITH WORDS</p>
+          <h2 id="thoughtPortalTitle">問いから、言葉へ。</h2>
+          <p>定義を探すのではなく、気になる問いから概念へ入る。</p>
+        </div>
+        <button id="shuffleQuestions" class="text-button thought-shuffle" type="button">問いを入れ替える</button>
+      </div>
+      <div id="thoughtQuestions" class="thought-question-grid" aria-live="polite">
+        <p class="thought-loading">問いを読み込み中…</p>
+      </div>
     </section>
 
     <section class="browse-section" aria-labelledby="fieldTitle">
@@ -92,7 +106,7 @@
 
   <script src="./app-v2.js?v=20260810-1605" defer></script>
   <script src="./reader.js?v=20260810-1605" defer></script>
-  <script src="./essay-bridge.js?v=20260810-2136" defer></script>
+  <script src="./essay-bridge.js?v=20260810-2208" defer></script>
   <script src="./search-v2.js?v=20260810-1605" defer></script>
   <script src="./discovery.js?v=20260810-1605" defer></script>
 </body>
