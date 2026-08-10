@@ -29,6 +29,15 @@
       .map((relatedItem) => displayNames(relatedItem).primary);
   }
 
+  function sourceLabel(source, index) {
+    try {
+      const hostname = new URL(source).hostname.replace(/^www\./, "");
+      return hostname || "出典 " + (index + 1);
+    } catch {
+      return "出典 " + (index + 1);
+    }
+  }
+
   renderCard = function readerCard(item) {
     const names = displayNames(item);
     const primaryClass = names.primaryLanguage === "en" ? " card-term-en" : "";
@@ -100,15 +109,19 @@
     }
 
     const names = displayNames(item);
-    const fields = (item.fields ?? [])
-      .map((field) => '<span class="reader-field">' + escapeHtml(fieldLabel(field)) + '</span>')
-      .join("");
+    const status = formalStatusLabel(item);
+    const fields = [
+      ...(item.fields ?? []).map((field) => '<span class="reader-field">' + escapeHtml(fieldLabel(field)) + '</span>'),
+      ...(item.formal_status && item.formal_status !== "established_term" && status
+        ? ['<span class="reader-field reader-status">' + escapeHtml(status) + '</span>']
+        : []),
+    ].join("");
     const feelings = (item.feelings ?? [])
       .map((feeling) => '<span class="reader-feeling">' + escapeHtml(feeling) + '</span>')
       .join("");
     const sources = (item.sources ?? [])
       .map((source, index) => '<li><a href="' + escapeAttribute(source) +
-        '" target="_blank" rel="noopener noreferrer">出典 ' + (index + 1) + '</a></li>')
+        '" target="_blank" rel="noopener noreferrer">' + escapeHtml(sourceLabel(source, index)) + '</a></li>')
       .join("");
 
     readerContent.innerHTML =
@@ -119,6 +132,11 @@
         '<p class="reader-lead">' + escapeHtml(item.one_liner) + '</p>' +
       '</header>' +
       '<section class="reader-section reader-definition"><p>' + escapeHtml(item.description) + '</p></section>' +
+      (item.usage_note ?
+        '<section class="reader-section reader-usage-note">' +
+          '<p class="reader-kicker">用法メモ</p>' +
+          '<p>' + escapeHtml(item.usage_note) + '</p>' +
+        '</section>' : '') +
       (item.why_selected ?
         '<section class="reader-section reader-selection">' +
           '<p class="reader-kicker">なぜ、この言葉か</p>' +
