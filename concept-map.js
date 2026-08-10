@@ -106,6 +106,7 @@
   function setFocus(id, updateUrl = true) {
     if (!state.items.has(id)) return;
     state.focusId = id;
+    window.VocabularyTrail?.record(id, nameById(id));
     if (updateUrl) {
       const url = new URL(window.location.href);
       url.searchParams.set('term', id);
@@ -261,9 +262,11 @@
       state.edges = buildEdges();
 
       const requested = new URLSearchParams(window.location.search).get('term');
-      state.focusId = requested && state.items.has(requested) ? requested : (state.items.has('differentiation') ? 'differentiation' : [...state.items.keys()][0]);
+      const initialId = requested && state.items.has(requested)
+        ? requested
+        : (state.items.has('differentiation') ? 'differentiation' : [...state.items.keys()][0]);
 
-      renderFocus();
+      setFocus(initialId, false);
       renderVerbFilters();
       renderRoutes();
     } catch (error) {
