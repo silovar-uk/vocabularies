@@ -15,6 +15,12 @@
     return state.items.find((item) => item.id === id) ?? null;
   }
 
+  function recordTrail(id) {
+    const item = itemById(id);
+    if (!item || !window.VocabularyTrail) return;
+    window.VocabularyTrail.record(id, displayNames(item).primary);
+  }
+
   function typedRelations(item) {
     const typed = relationMap[item.id];
     if (Array.isArray(typed) && typed.length) return typed;
@@ -180,6 +186,7 @@
   function openReader(id, options = {}) {
     if (!itemById(id)) return;
     state.activeItemId = id;
+    recordTrail(id);
     if (options.trigger) lastReaderTrigger = options.trigger;
     renderResults();
     renderReader();
@@ -212,6 +219,7 @@
     }
     if (!itemById(id) || state.activeItemId === id) return;
     state.activeItemId = id;
+    recordTrail(id);
     renderResults();
     renderReader();
   }
