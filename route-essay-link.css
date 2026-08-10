@@ -1,0 +1,12 @@
+.route-annotation-head-actions .route-essay-open {
+  color: var(--accent, #2f5d50);
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.route-annotation-head-actions .route-essay-open:hover,
+.route-annotation-head-actions .route-essay-open:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
