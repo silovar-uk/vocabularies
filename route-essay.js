@@ -15,9 +15,7 @@
     try {
       const value = JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback));
       return value ?? fallback;
-    } catch {
-      return fallback;
-    }
+    } catch { return fallback; }
   }
 
   function routeById(id) {
@@ -30,22 +28,16 @@
     return all && typeof all === 'object' && !Array.isArray(all) ? (all[id] ?? {}) : {};
   }
 
-  function conceptHref(item) {
-    return './concept-map.html?term=' + encodeURIComponent(item.id);
-  }
+  function conceptHref(item) { return './concept-map.html?term=' + encodeURIComponent(item.id); }
 
   function formatDate(timestamp) {
     if (!timestamp) return '';
     try {
       return new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(timestamp));
-    } catch {
-      return '';
-    }
+    } catch { return ''; }
   }
 
-  function noteAt(notes, index) {
-    return String(notes?.[index] ?? '').trim();
-  }
+  function noteAt(notes, index) { return String(notes?.[index] ?? '').trim(); }
 
   function markdownFor(route, notes) {
     const lines = ['# ' + route.name, '', route.items.map((item) => item.label || item.id).join(' → '), ''];
@@ -65,9 +57,11 @@
   function render(route, notes) {
     const annotatedCount = route.items.filter((_, index) => noteAt(notes, index)).length;
     const date = formatDate(route.createdAt);
-    const firstNote = route.items.map((_, index) => noteAt(notes, index)).find(Boolean);
-
     document.title = route.name + ' — Route Essay — Vocabularies';
+
+    const intro = annotatedCount
+      ? 'このページは、保存した概念の順番と自分の注釈だけで構成した思考ノートです。説明を補わず、どこで視点が移ったかをそのまま読み返します。'
+      : 'このルートにはまだ注釈がありません。概念の順番だけを、そのまま思考の骨格として表示しています。';
 
     page.innerHTML = '<article>' +
       '<header class="route-essay-hero">' +
@@ -77,27 +71,23 @@
         '<div class="route-essay-path">' + route.items.map((item, index) =>
           (index ? '<i aria-hidden="true">→</i>' : '') + '<a href="' + conceptHref(item) + '">' + escapeHtml(item.label || item.id) + '</a>'
         ).join('') + '</div>' +
-        '<p class="route-essay-intro' + (firstNote ? '' : ' is-empty') + '">' +
-          (firstNote ? escapeHtml(firstNote) : 'このルートにはまだ注釈がありません。概念の順番だけを、そのまま思考の骨格として表示しています。') +
-        '</p>' +
+        '<p class="route-essay-intro' + (annotatedCount ? '' : ' is-empty') + '">' + escapeHtml(intro) + '</p>' +
         '<div class="route-essay-tools">' +
           '<button id="copyRouteEssay" type="button">Markdownでコピー</button>' +
           '<a href="./concept-map.html?term=' + encodeURIComponent(route.items[0]?.id || '') + '">最初の概念から地図を開く</a>' +
           '<span id="copyRouteStatus" class="route-essay-copy-status" aria-live="polite"></span>' +
         '</div>' +
       '</header>' +
-      '<div class="route-essay-body">' +
-        route.items.map((item, index) => {
-          const note = noteAt(notes, index);
-          const next = route.items[index + 1];
-          return '<section class="route-essay-step">' +
-            '<span class="route-essay-number">' + (index + 1) + '</span>' +
-            '<h2><a href="' + conceptHref(item) + '">' + escapeHtml(item.label || item.id) + '</a></h2>' +
-            '<p class="route-essay-note' + (note ? '' : ' is-empty') + '">' + (note ? escapeHtml(note) : '注釈なし') + '</p>' +
-            (next ? '<p class="route-essay-transition">NEXT → ' + escapeHtml(next.label || next.id) + '</p>' : '') +
-          '</section>';
-        }).join('') +
-      '</div>' +
+      '<div class="route-essay-body">' + route.items.map((item, index) => {
+        const note = noteAt(notes, index);
+        const next = route.items[index + 1];
+        return '<section class="route-essay-step">' +
+          '<span class="route-essay-number">' + (index + 1) + '</span>' +
+          '<h2><a href="' + conceptHref(item) + '">' + escapeHtml(item.label || item.id) + '</a></h2>' +
+          '<p class="route-essay-note' + (note ? '' : ' is-empty') + '">' + (note ? escapeHtml(note) : '注釈なし') + '</p>' +
+          (next ? '<p class="route-essay-transition">NEXT → ' + escapeHtml(next.label || next.id) + '</p>' : '') +
+        '</section>';
+      }).join('') + '</div>' +
     '</article>';
 
     document.querySelector('#copyRouteEssay')?.addEventListener('click', async () => {
