@@ -1,0 +1,34 @@
+.field-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 34px;
+}
+
+.field-group {
+  min-width: 0;
+}
+
+.field-group-label {
+  margin: 0 0 7px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.015em;
+}
+
+.field-group-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 8px;
+}
+
+@media (max-width: 760px) {
+  .field-list {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .field-group-buttons {
+    gap: 6px;
+  }
+}
