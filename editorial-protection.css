@@ -1,0 +1,128 @@
+.editorial-protection {
+  margin: 0 0 14px;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.editorial-protection > summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  padding: 10px 2px;
+  list-style: none;
+  cursor: pointer;
+  color: var(--text-soft);
+  font-size: 0.72rem;
+  font-weight: 680;
+}
+
+.editorial-protection > summary::-webkit-details-marker {
+  display: none;
+}
+
+.editorial-protection > summary span:last-child {
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 480;
+}
+
+.editorial-protection-body {
+  display: grid;
+  gap: 20px;
+  padding: 5px 0 18px;
+}
+
+.editorial-protection-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.editorial-protection-head h3 {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: -0.02em;
+}
+
+.editorial-protection-head p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 0.66rem;
+  line-height: 1.55;
+}
+
+.editorial-protection-list {
+  border-top: 1px solid var(--line-soft);
+}
+
+.editorial-protection-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 8px 2px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.editorial-protection-item > span {
+  min-width: 0;
+  display: grid;
+  gap: 1px;
+}
+
+.editorial-protection-item strong {
+  overflow: hidden;
+  color: var(--text-soft);
+  font-size: 0.72rem;
+  font-weight: 620;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.editorial-protection-item small {
+  color: var(--muted);
+  font-size: 0.62rem;
+}
+
+.editorial-protection-item button {
+  min-height: 32px;
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.44);
+  color: var(--muted);
+  font-size: 0.64rem;
+  cursor: pointer;
+}
+
+.editorial-protection-item button:hover,
+.editorial-protection-item button:focus-visible {
+  border-color: rgba(47, 93, 80, 0.34);
+  color: var(--accent);
+  outline: none;
+}
+
+.editorial-protection-empty {
+  margin: 0;
+  padding: 10px 2px;
+  color: var(--muted);
+  font-size: 0.66rem;
+}
+
+@media (max-width: 760px) {
+  .editorial-protection > summary {
+    min-height: 48px;
+  }
+
+  .editorial-protection-item {
+    min-height: 50px;
+  }
+
+  .editorial-protection-item button {
+    min-height: 40px;
+  }
+}
