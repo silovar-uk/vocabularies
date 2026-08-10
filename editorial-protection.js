@@ -273,7 +273,7 @@
       : "保存エラー";
 
     backupList.innerHTML = backups.length
-      ? backups.slice(0, 6).map((backup) => `
+      ? backups.map((backup) => `
         <div class="editorial-protection-item" data-backup="${escapeHtml(backup.id)}">
           <span><strong>${escapeHtml(dateLabel(backup.created_at))}</strong><small>${escapeHtml(backup.reason || "変更前")} · ${backup.candidates?.length ?? 0}件</small></span>
           <button type="button" data-protect-action="restore-backup">復元</button>
@@ -281,7 +281,7 @@
       : '<p class="editorial-protection-empty">まだ履歴はありません。</p>';
 
     trashList.innerHTML = trash.length
-      ? trash.slice(0, 8).map((entry) => `
+      ? trash.map((entry) => `
         <div class="editorial-protection-item" data-trash="${escapeHtml(entry.trash_id)}">
           <span><strong>${escapeHtml(entry.candidate?.term || "名称未設定")}</strong><small>${escapeHtml(dateLabel(entry.deleted_at))}</small></span>
           <button type="button" data-protect-action="restore-trash">戻す</button>
