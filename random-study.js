@@ -15,18 +15,9 @@
   mobileNext.hidden = true;
   document.body.appendChild(mobileNext);
 
-  function items() {
-    return Array.isArray(window.vocabularyStudyItems) ? window.vocabularyStudyItems : [];
-  }
-
-  function esc(v) {
-    return String(v ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
-  }
-
-  function getCurrentItem() {
-    return items().find(item => item.id === currentId) ?? null;
-  }
-
+  function items() { return Array.isArray(window.vocabularyStudyItems) ? window.vocabularyStudyItems : []; }
+  function esc(v) { return String(v ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+  function getCurrentItem() { return items().find(item => item.id === currentId) ?? null; }
   function chooseNext() {
     const pool = items();
     if (!pool.length) return null;
@@ -36,16 +27,13 @@
     if (!candidates.length) candidates = pool;
     return candidates[Math.floor(Math.random() * candidates.length)];
   }
-
   function renderItem(item) {
-    if (!item) {
-      panel.innerHTML = '<p class="random-study-placeholder">語彙を読み込み中…</p>';
-      return;
-    }
+    if (!item) { panel.innerHTML = '<p class="random-study-placeholder">語彙を読み込み中…</p>'; return; }
     currentId = item.id;
     history.push(item.id);
     if (history.length > 40) history.shift();
     started = true;
+    document.body.classList.add('random-study-active');
     mobileNext.hidden = false;
     start.textContent = '次の一語 →';
     const ja = item.ja || item.term || '';
@@ -56,7 +44,6 @@
       panel.classList.remove('is-changing');
     }, 70);
   }
-
   function next(options = {}) {
     const item = chooseNext();
     if (!item) return null;
@@ -64,46 +51,34 @@
     window.dispatchEvent(new CustomEvent('random-study-changed', { detail: { item, openReader: Boolean(options.openReader) } }));
     return item;
   }
-
   function openCurrent() {
     const item = getCurrentItem();
     if (!item) return;
     document.querySelector(`[data-open-term="${CSS.escape(item.id)}"]`)?.click();
   }
-
   function isTypingTarget(target) {
     return target instanceof HTMLElement && (target.matches('input, textarea, select, [contenteditable="true"]') || Boolean(target.closest('input, textarea, select, [contenteditable="true"]')));
   }
 
   start.addEventListener('click', () => next());
   mobileNext.addEventListener('click', () => next());
-
   panel.addEventListener('click', e => {
     if (e.target.closest('.random-study-next')) return next();
     const open = e.target.closest('[data-study-open]');
     if (!open) return;
     openCurrent();
   });
-
   window.addEventListener('keydown', event => {
-    if (isTypingTarget(event.target)) return;
-    if (document.body.classList.contains('reader-open')) return;
+    if (isTypingTarget(event.target) || document.body.classList.contains('reader-open')) return;
     if (event.key === 'Enter' || event.key === ' ') {
       if (event.target instanceof HTMLElement && event.target.closest('button, a')) return;
-      event.preventDefault();
-      next();
+      event.preventDefault(); next();
     }
-    if (event.key.toLowerCase() === 'd' && started) {
-      event.preventDefault();
-      openCurrent();
-    }
+    if (event.key.toLowerCase() === 'd' && started) { event.preventDefault(); openCurrent(); }
   });
 
   window.VocabularyRandomStudy = { next, openCurrent, getCurrentItem };
-
-  const initialize = () => {
-    if (items().length && !started) next();
-  };
+  const initialize = () => { if (items().length && !started) next(); };
   window.addEventListener('vocabulary-items-ready', initialize, { once: true });
   initialize();
 })();
