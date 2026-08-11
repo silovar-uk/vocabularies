@@ -1,6 +1,9 @@
 (() => {
   const nativeFetch = window.fetch.bind(window);
-  const extraDataset = "data/research-20260811-relational-judgment.json";
+  const extraDatasets = [
+    "data/research-20260811-relational-judgment.json",
+    "data/research-20260811-judgment-process.json",
+  ];
 
   window.fetch = async (...args) => {
     const response = await nativeFetch(...args);
@@ -10,7 +13,9 @@
     try {
       const catalog = await response.clone().json();
       if (!Array.isArray(catalog.datasets)) catalog.datasets = [];
-      if (!catalog.datasets.includes(extraDataset)) catalog.datasets.push(extraDataset);
+      for (const extraDataset of extraDatasets) {
+        if (!catalog.datasets.includes(extraDataset)) catalog.datasets.push(extraDataset);
+      }
       return new Response(JSON.stringify(catalog), {
         status: response.status,
         statusText: response.statusText,
