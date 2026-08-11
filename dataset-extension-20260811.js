@@ -3,6 +3,7 @@
   const extraDatasets = [
     "data/research-20260811-relational-judgment.json",
     "data/research-20260811-judgment-process.json",
+    "data/research-20260812-learning-judgment.json",
   ];
 
   window.fetch = async (...args) => {
