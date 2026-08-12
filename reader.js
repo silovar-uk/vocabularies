@@ -17,6 +17,64 @@
   function relatedPreview(item) { return typedRelations(item).map((relation) => itemById(relation.id)).filter(Boolean).slice(0, 3).map((relatedItem) => displayNames(relatedItem).primary); }
   function sourceLabel(source, index) { try { const hostname = new URL(source).hostname.replace(/^www\./, ""); return hostname || "出典 " + (index + 1); } catch { return "出典 " + (index + 1); } }
 
+  async function copyText(text) {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    textarea.remove();
+  }
+
+  function ensureCopyButtonStyles() {
+    if (document.querySelector("#readerCopyButtonStyles")) return;
+    const style = document.createElement("style");
+    style.id = "readerCopyButtonStyles";
+    style.textContent = `
+      .reader-copy-row {
+        display: flex;
+        justify-content: flex-start;
+        margin: 0 0 18px;
+      }
+      .reader-copy-button {
+        min-height: 38px;
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-pill);
+        background: rgba(255, 255, 255, 0.52);
+        color: var(--ink);
+        font: inherit;
+        font-size: var(--text-sm);
+        font-weight: 650;
+        cursor: pointer;
+        transition: background var(--motion-fast) ease, border-color var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease);
+      }
+      .reader-copy-button:hover,
+      .reader-copy-button:focus-visible {
+        border-color: rgba(47, 93, 80, 0.34);
+        background: var(--accent-soft);
+      }
+      .reader-copy-button:active {
+        transform: translateY(1px);
+      }
+      .reader-copy-button.is-copied {
+        border-color: rgba(47, 93, 80, 0.4);
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  ensureCopyButtonStyles();
+
   renderCard = function readerCard(item) {
     const names = displayNames(item);
     const primaryClass = names.primaryLanguage === "en" ? " card-term-en" : "";
@@ -43,7 +101,7 @@
     const sources = (item.sources ?? []).map((source, index) => '<li><a href="' + escapeAttribute(source) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(sourceLabel(source, index)) + '</a></li>').join("");
     const randomControls = window.VocabularyRandomStudy ? '<section class="reader-section reader-random"><button class="reader-random-next" type="button" data-reader-random-next>次の一語 →</button><p class="reader-random-hint">Enter / Spaceでも次へ</p></section>' : '';
 
-    readerContent.innerHTML = '<header class="reader-head"><div class="reader-fields">' + fields + '</div><h2 class="reader-title">' + escapeHtml(names.primary) + '</h2>' + (names.secondary ? '<p class="reader-subtitle">' + escapeHtml(names.secondary) + '</p>' : '') + '<p class="reader-lead">' + escapeHtml(item.one_liner) + '</p></header><section class="reader-section reader-definition"><p>' + escapeHtml(item.description) + '</p></section>' + (item.usage_note ? '<section class="reader-section reader-usage-note"><p class="reader-kicker">用法メモ</p><p>' + escapeHtml(item.usage_note) + '</p></section>' : '') + (item.why_selected ? '<section class="reader-section reader-selection"><p class="reader-kicker">なぜ、この言葉か</p><p>' + escapeHtml(item.why_selected) + '</p></section>' : '') + '<section class="reader-section reader-example"><div class="reader-example-row"><span class="reader-kicker">もとの言い方</span><p>' + escapeHtml(item.before) + '</p></div><div class="reader-example-row is-after"><span class="reader-kicker">言い換えると</span><p>' + escapeHtml(item.after) + '</p></div></section>' + renderRelatedItems(item) + (feelings ? '<section class="reader-section reader-feelings"><p class="reader-kicker">感覚の手掛かり</p><div class="reader-feeling-list">' + feelings + '</div></section>' : '') + (sources ? '<section class="reader-section reader-sources"><p class="reader-kicker">出典</p><ul>' + sources + '</ul></section>' : '') + randomControls;
+    readerContent.innerHTML = '<header class="reader-head"><div class="reader-copy-row"><button class="reader-copy-button" type="button" data-copy-vocabulary="' + escapeAttribute(names.primary) + '" aria-label="' + escapeAttribute(names.primary) + 'をコピー">この語彙をコピー</button></div><div class="reader-fields">' + fields + '</div><h2 class="reader-title">' + escapeHtml(names.primary) + '</h2>' + (names.secondary ? '<p class="reader-subtitle">' + escapeHtml(names.secondary) + '</p>' : '') + '<p class="reader-lead">' + escapeHtml(item.one_liner) + '</p></header><section class="reader-section reader-definition"><p>' + escapeHtml(item.description) + '</p></section>' + (item.usage_note ? '<section class="reader-section reader-usage-note"><p class="reader-kicker">用法メモ</p><p>' + escapeHtml(item.usage_note) + '</p></section>' : '') + (item.why_selected ? '<section class="reader-section reader-selection"><p class="reader-kicker">なぜ、この言葉か</p><p>' + escapeHtml(item.why_selected) + '</p></section>' : '') + '<section class="reader-section reader-example"><div class="reader-example-row"><span class="reader-kicker">もとの言い方</span><p>' + escapeHtml(item.before) + '</p></div><div class="reader-example-row is-after"><span class="reader-kicker">言い換えると</span><p>' + escapeHtml(item.after) + '</p></div></section>' + renderRelatedItems(item) + (feelings ? '<section class="reader-section reader-feelings"><p class="reader-kicker">感覚の手掛かり</p><div class="reader-feeling-list">' + feelings + '</div></section>' : '') + (sources ? '<section class="reader-section reader-sources"><p class="reader-kicker">出典</p><ul>' + sources + '</ul></section>' : '') + randomControls;
     readerPanel.setAttribute("aria-hidden", "false"); document.body.classList.add("reader-open");
   }
 
@@ -60,7 +118,23 @@
 
   vocabularyGrid.addEventListener("click", (event) => { const card = event.target.closest("[data-open-term]"); if (!card) return; openReader(card.dataset.openTerm, { trigger: card }); });
   vocabularyGrid.addEventListener("keydown", (event) => { const card = event.target.closest("[data-open-term]"); if (!card || (event.key !== "Enter" && event.key !== " ")) return; event.preventDefault(); openReader(card.dataset.openTerm, { trigger: card }); });
-  readerContent.addEventListener("click", (event) => {
+  readerContent.addEventListener("click", async (event) => {
+    const copyButton = event.target.closest("[data-copy-vocabulary]");
+    if (copyButton) {
+      try {
+        await copyText(copyButton.dataset.copyVocabulary || "");
+        copyButton.textContent = "コピーしました";
+        copyButton.classList.add("is-copied");
+        window.setTimeout(() => {
+          if (!copyButton.isConnected) return;
+          copyButton.textContent = "この語彙をコピー";
+          copyButton.classList.remove("is-copied");
+        }, 1400);
+      } catch (error) {
+        console.error("Vocabulary copy failed:", error);
+      }
+      return;
+    }
     const next = event.target.closest("[data-reader-random-next]");
     if (next && window.VocabularyRandomStudy) { const item = window.VocabularyRandomStudy.next({ openReader: true }); if (item) openReader(item.id, { trigger: next, historyMode: "replace" }); return; }
     const button = event.target.closest("[data-reader-term]"); if (!button) return; openReader(button.dataset.readerTerm, { trigger: button });
