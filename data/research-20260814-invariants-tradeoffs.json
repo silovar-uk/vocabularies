@@ -96,38 +96,6 @@
     "status": "seed"
   },
   {
-    "id": "affordance",
-    "term": "Affordance",
-    "ja": "可供性 / アフォーダンス",
-    "fields": ["Perception", "UX", "Design"],
-    "one_liner": "その物や環境が、どんな行為を可能にしているか。",
-    "description": "環境や対象が行為者に提供する行為可能性。James J. Gibsonの知覚心理学に由来し、後にデザイン分野でも広く用いられるようになった。",
-    "why_selected": "『実装上は押せる』と『押せそうに見える』を分けて考える必要があるUI改善が多く、操作可能性そのものを説明する語が有効なため。",
-    "feelings": ["押せるのに押せるように見えない", "どう操作するか分からない", "ボタンらしくない"],
-    "before": "押せることを分かりやすくする。",
-    "after": "操作のアフォーダンスが知覚できる表現にする。",
-    "related": ["signifier", "closeness-of-mapping"],
-    "opposites": [],
-    "sources": ["https://www.interaction-design.org/literature/topics/affordances"],
-    "status": "seed"
-  },
-  {
-    "id": "signifier",
-    "term": "Signifier",
-    "ja": "シグニファイア",
-    "fields": ["UX", "UI", "Design"],
-    "one_liner": "何ができるかを、利用者へ知らせる手掛かり。",
-    "description": "操作可能性や操作方法を利用者へ伝える視覚・音・文字などの手掛かり。アフォーダンスそのものではなく、その存在を知らせる側に焦点を当てる。",
-    "why_selected": "＋ボタン、スクロール可能性、選択中状態など、機能はあるのに存在や意味へ気づけない問題が繰り返し出ているため。",
-    "feelings": ["操作自体はあるのに気づかない", "押せる場所が分からない", "何をすればいいか手掛かりがない"],
-    "before": "ボタンを目立たせる。",
-    "after": "操作可能性を伝えるシグニファイアが弱い。",
-    "related": ["affordance", "information-scent", "redundancy"],
-    "opposites": [],
-    "sources": ["https://www.nngroup.com/articles/norman-three-design-levels/"],
-    "status": "seed"
-  },
-  {
     "id": "reference-dependence",
     "term": "Reference Dependence",
     "ja": "基準点依存",
