@@ -5,6 +5,7 @@
     "data/research-20260811-judgment-process.json",
     "data/research-20260812-learning-judgment.json",
     "data/research-20260812-perception-expression.json",
+    "data/research-20260813-cognitive-environment.json",
   ];
 
   window.fetch = async (...args) => {
