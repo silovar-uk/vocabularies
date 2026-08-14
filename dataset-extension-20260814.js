@@ -1,6 +1,9 @@
 (() => {
   const previousFetch = window.fetch.bind(window);
-  const extraDataset = "data/research-20260814-invariants-tradeoffs.json";
+  const extraDatasets = [
+    "data/research-20260814-invariants-tradeoffs.json",
+    "data/research-20260814-perspective-context-metrics.json",
+  ];
 
   window.fetch = async (...args) => {
     const response = await previousFetch(...args);
@@ -10,7 +13,9 @@
     try {
       const catalog = await response.clone().json();
       if (!Array.isArray(catalog.datasets)) catalog.datasets = [];
-      if (!catalog.datasets.includes(extraDataset)) catalog.datasets.push(extraDataset);
+      for (const extraDataset of extraDatasets) {
+        if (!catalog.datasets.includes(extraDataset)) catalog.datasets.push(extraDataset);
+      }
       return new Response(JSON.stringify(catalog), {
         status: response.status,
         statusText: response.statusText,
