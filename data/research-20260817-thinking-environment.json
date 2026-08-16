@@ -1,0 +1,50 @@
+[
+  {
+    "id": "information-foraging-theory",
+    "term": "Information Foraging Theory",
+    "ja": "情報採餌理論",
+    "fields": ["HCI", "Cognition", "Information Architecture", "UX"],
+    "one_liner": "人は、価値がありそうな情報の手掛かりと探索コストを見ながら、次に進む場所を選ぶ。",
+    "description": "人間の情報探索を、環境の中で餌を探す行動になぞらえて捉える理論。ユーザーは情報の価値そのものを直接知るのではなく、リンク名や見出し、周辺文脈などから得られる『情報の匂い』を手掛かりに、次へ進むか離脱するかを判断する。",
+    "why_selected": "Vocabulariesで『次の一語→詳しく見る→関連語→ChatGPTで深掘り』という探索導線が育ってきており、検索結果へ一直線に進む以外の知識探索を説明する語として有効なため。",
+    "feelings": ["何を知りたいかまだ決まっていない", "面白そうな方向へ進みたい", "次にどこを掘ればいいか分かる手掛かりがほしい"],
+    "before": "関連情報を見せる。",
+    "after": "情報の匂いを残し、探索コストと期待価値を見ながら次の一手を選べるようにする。",
+    "related": ["information-scent", "search-space", "recognition-over-recall"],
+    "opposites": [],
+    "sources": ["https://www.nngroup.com/articles/information-foraging/"],
+    "status": "seed"
+  },
+  {
+    "id": "epistemic-action",
+    "term": "Epistemic Action",
+    "ja": "認識論的行為",
+    "fields": ["Cognition", "HCI", "Interaction Design", "Philosophy"],
+    "one_liner": "世界を直接変えるためではなく、考えやすくするために行う操作。",
+    "description": "KirshとMaglioが、目的対象を直接変える実用的行為（pragmatic action）と区別して論じた概念。物を並べ替える、書き出す、比較のために表示を切り替えるなど、外部環境を操作することで探索や推論の負荷を下げる行為を指す。",
+    "why_selected": "『前の一語へ戻る』『詳しく見る』『比較する』『ChatGPTへ文脈ごと渡す』といった操作が、単なる移動ではなく、考えること自体を支える機能になっているため。",
+    "feelings": ["戻って見比べると考えやすい", "操作しているうちに整理される", "クリックが思考の一部になっている"],
+    "before": "操作性を上げる。",
+    "after": "認識論的行為を支援し、操作そのものを思考の補助として使えるようにする。",
+    "related": ["cognitive-offloading", "external-representation", "situated-cognition"],
+    "opposites": [],
+    "sources": ["https://doi.org/10.1207/s15516709cog1804_1"],
+    "status": "seed"
+  },
+  {
+    "id": "external-cognition",
+    "term": "External Cognition",
+    "ja": "外部認知",
+    "fields": ["Cognition", "HCI", "Design", "Knowledge Work"],
+    "one_liner": "図・文章・配置・UIなどの外部表現を使うことで、比較や推論そのものを支える。",
+    "description": "認知を頭の中だけで完結する処理として捉えず、図、メモ、画面配置、インターフェースなどの外部表現が、情報の再配置、計算負荷の軽減、パターン発見といった思考活動を支えると考える枠組み。外部表現は単なる保存先ではなく、考えるための媒体になる。",
+    "why_selected": "Vocabulariesやメモ、リファレンス集などが、情報を保管する場所から『並べることで関係が見える思考環境』へ変わってきていることを言語化するため。",
+    "feelings": ["頭の中だけより並べた方が分かる", "書いた瞬間に関係が見える", "保存ではなく考えるために置いている"],
+    "before": "知識を整理するWebを作る。",
+    "after": "外部認知を支える、思考のための環境を設計する。",
+    "related": ["external-representation", "cognitive-offloading", "epistemic-action"],
+    "opposites": [],
+    "sources": ["https://doi.org/10.1006/ijhc.1996.0017"],
+    "status": "seed"
+  }
+]
