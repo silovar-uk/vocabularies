@@ -1,0 +1,34 @@
+[
+  {
+    "id": "juxtaposability",
+    "term": "Juxtaposability",
+    "ja": "並置可能性",
+    "fields": ["HCI", "Cognition", "Interaction Design", "Information Design"],
+    "one_liner": "比べたい情報を同時に視野へ置けるほど、記憶に頼らず比較しやすくなる。",
+    "description": "Cognitive Dimensions of Notationsで扱われる観点の一つ。複数の表現や情報を同時に並べて参照・比較できる性質を指す。片方を閉じたり覚えたりしてから別の情報を見る必要が少ないほど、比較や照合に伴う認知負荷を下げやすい。",
+    "why_selected": "複数欄のメモ、原文と返信案、前後の語彙など、最近のUI設計で『覚えて比較するのではなく、並べて見比べたい』という判断が繰り返し出ているため。",
+    "feelings": ["片方を覚えてからもう片方を見るのがしんどい", "横に並べたら一瞬で違いが分かる", "比較のために画面を行き来したくない"],
+    "before": "比較しやすくしたい。",
+    "after": "並置可能性を高め、比較対象を同じ視野で参照できるようにする。",
+    "related": ["external-cognition", "external-representation", "hidden-dependencies", "epistemic-action"],
+    "opposites": [],
+    "sources": ["https://www.cl.cam.ac.uk/~afb21/publications/PPIG99.html"],
+    "status": "seed"
+  },
+  {
+    "id": "secondary-notation",
+    "term": "Secondary Notation",
+    "ja": "二次表記",
+    "fields": ["HCI", "Information Design", "Typography", "Interaction Design"],
+    "one_liner": "正式な記号の意味だけでなく、余白・配置・色・インデントなどでも意味を伝える。",
+    "description": "記法が正式に定める意味とは別に、余白、配置、インデント、色、整列、コメントなどの補助的な表現を使って、構造や意図を伝えること。Cognitive Dimensionsでは、こうした非公式な手掛かりを表現力として捉える。装飾ではなく、読み手の理解や探索を助ける情報になりうる。",
+    "why_selected": "『ボタンらしさを影や厚みで出す』『色や濃淡で切り替えを伝える』『余白でまとまりを示す』など、説明文ではなく見た目そのものに意味を担わせる改善が増えているため。",
+    "feelings": ["説明しなくても配置で分かってほしい", "色や余白にも意味を持たせたい", "見た瞬間に構造が伝わってほしい"],
+    "before": "色や配置で分かりやすくする。",
+    "after": "色・余白・配置を二次表記として使い、正式なラベル以外からも構造や意図を読めるようにする。",
+    "related": ["signifier", "visual-hierarchy", "proximity", "common-region"],
+    "opposites": [],
+    "sources": ["https://www.cl.cam.ac.uk/~afb21/publications/book-chapter.html", "https://www.cl.cam.ac.uk/~afb21/publications/PPIG99.html"],
+    "status": "seed"
+  }
+]
