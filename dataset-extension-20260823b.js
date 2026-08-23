@@ -1,6 +1,9 @@
 (() => {
   const previousFetch = window.fetch.bind(window);
-  const extraDataset = "data/research-20260823-typography-cluster.json";
+  const extraDatasets = [
+    "data/research-20260823-typography-cluster.json",
+    "data/research-20260823-evening-vocabulary.json",
+  ];
 
   window.fetch = async (...args) => {
     const response = await previousFetch(...args);
@@ -10,14 +13,16 @@
     try {
       const catalog = await response.clone().json();
       if (!Array.isArray(catalog.datasets)) catalog.datasets = [];
-      if (!catalog.datasets.includes(extraDataset)) catalog.datasets.push(extraDataset);
+      for (const extraDataset of extraDatasets) {
+        if (!catalog.datasets.includes(extraDataset)) catalog.datasets.push(extraDataset);
+      }
       return new Response(JSON.stringify(catalog), {
         status: response.status,
         statusText: response.statusText,
         headers: response.headers,
       });
     } catch (error) {
-      console.warn("August 23 typography cluster extension failed:", error);
+      console.warn("August 23 vocabulary extensions failed:", error);
       return response;
     }
   };
