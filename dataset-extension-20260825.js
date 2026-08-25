@@ -2,6 +2,7 @@
   const previousFetch = window.fetch.bind(window);
   const extraDatasets = [
     "data/research-20260825-bbc-ai-vocabulary.json",
+    "data/research-20260825-evening-vocabulary.json",
   ];
 
   window.fetch = async (...args) => {
@@ -21,7 +22,7 @@
         headers: response.headers,
       });
     } catch (error) {
-      console.warn("August 25 BBC AI vocabulary extension failed:", error);
+      console.warn("August 25 vocabulary extension failed:", error);
       return response;
     }
   };
