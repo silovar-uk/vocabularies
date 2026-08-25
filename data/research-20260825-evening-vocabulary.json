@@ -1,0 +1,50 @@
+[
+  {
+    "id": "scroll-anchoring",
+    "term": "Scroll Anchoring",
+    "ja": "スクロールアンカリング",
+    "fields": ["Web", "CSS", "Frontend", "UX"],
+    "one_liner": "レイアウト変化が起きても、いま読んでいる位置が跳ばないようスクロール位置を補正する仕組み。",
+    "description": "画像や遅延コンテンツの読み込みなどで表示領域より上のレイアウトが変化したとき、ブラウザーが基準となるアンカーノードを選び、その移動量に応じてスクロール位置を補正し、閲覧位置をなるべく安定させる仕組み。",
+    "why_selected": "『読み込み途中で本文がガクッとずれる』を、単なるレイアウト崩れではなくスクロール位置の安定性として切り分けられるため。",
+    "feelings": ["読んでいた位置が急にずれる", "画像読み込み後に本文が跳ぶ", "長いページで位置を失いたくない"],
+    "before": "読み込み途中でページがズレるのを直して。",
+    "after": "レイアウトシフト発生時にScroll Anchoringが効く構造になっているか確認し、必要な箇所だけoverflow-anchorを調整する。",
+    "related": ["cumulative-layout-shift", "scroll-chaining", "reflow"],
+    "opposites": [],
+    "sources": ["https://drafts.csswg.org/css-scroll-anchoring/", "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_anchoring"],
+    "status": "seed"
+  },
+  {
+    "id": "css-anchor-positioning",
+    "term": "CSS Anchor Positioning",
+    "ja": "CSSアンカーポジショニング",
+    "fields": ["CSS", "UI", "Frontend", "Interaction Design"],
+    "one_liner": "ツールチップやポップオーバーを、特定の要素を基準点として配置するCSSの仕組み。",
+    "description": "絶対座標を直接指定するのではなく、別の要素をアンカーとして位置やサイズを決めるCSSの仕組み。ツールチップ、メニュー、吹き出しなどをトリガー要素に追従させつつ、画面端では別位置へ逃がすフォールバックも設計できる。",
+    "why_selected": "『ボタンの近くにいい感じで出して』を、座標ベタ書きではなく基準要素とフォールバックを含む具体的な実装指示へ変えられるため。",
+    "feelings": ["吹き出しをボタンに追従させたい", "スマホでポップオーバーが画面外へ出る", "座標のベタ書きを減らしたい"],
+    "before": "説明をボタンの近くに出して。",
+    "after": "トリガー要素をanchorにして配置し、viewport外へ出る場合はposition-tryで別位置へフォールバックする。",
+    "related": ["intrinsic-sizing", "hit-slop", "reflow"],
+    "opposites": [],
+    "sources": ["https://drafts.csswg.org/css-anchor-position/", "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_anchor_positioning"],
+    "status": "seed"
+  },
+  {
+    "id": "administrative-legibility",
+    "term": "Legibility (James C. Scott)",
+    "ja": "可読化／レジビリティ（管理のための可視化）",
+    "fields": ["Political Sociology", "Organization", "Public Administration", "Measurement"],
+    "one_liner": "複雑な現実を分類・数値・地図・標準形式へ変換し、把握・比較・管理しやすくすること。",
+    "description": "James C. Scottが『Seeing Like a State』で論じた観点。国家や大組織は、複雑で局所的な現実を標準的な分類、指標、地図、帳票などへ単純化することで、それを見えるもの・比較できるもの・管理できるものにする。一方、その単純化では現場の文脈や例外が失われうる。",
+    "why_selected": "KPIや管理表を『現実そのもの』ではなく、現実を組織にとって見える形へ変換した結果として観察できるため。",
+    "feelings": ["数字にした瞬間に事情が消える", "管理表では同じでも現場条件は違う", "何を見えるようにして何を捨てたか確認したい"],
+    "before": "全部KPIにして管理しよう。",
+    "after": "何をLegibleにするための指標なのか、その単純化で失われる文脈も確認する。",
+    "related": ["path-dependence", "boundary-object", "raci"],
+    "opposites": [],
+    "sources": ["https://yalebooks.yale.edu/book/9780300246759/seeing-like-a-state/"],
+    "status": "seed"
+  }
+]
