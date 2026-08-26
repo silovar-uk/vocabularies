@@ -2,6 +2,8 @@
   const searchAssist = document.querySelector("#searchAssist");
   if (!searchAssist) return;
 
+  const searchValueCache = new WeakMap();
+
   function foldKana(value) {
     return String(value ?? "")
       .normalize("NFKC")
@@ -12,13 +14,16 @@
   }
 
   function valuesFor(item) {
+    const cached = searchValueCache.get(item);
+    if (cached) return cached;
+
     const names = displayNames(item);
     const groupLabels = (item.fields ?? [])
       .map(fieldGroup)
       .filter(Boolean)
       .map((group) => group.label);
 
-    return {
+    const values = {
       primary: foldKana(names.primary),
       secondary: foldKana(names.secondary),
       ja: foldKana(item.ja),
@@ -36,6 +41,9 @@
       why: foldKana(item.why_selected),
       usage: foldKana(item.usage_note),
     };
+
+    searchValueCache.set(item, values);
+    return values;
   }
 
   function scoreToken(item, token) {

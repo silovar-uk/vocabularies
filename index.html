@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="./route-essay-link.css?v=20260810-2254" />
   <link rel="stylesheet" href="./route-compare-selector.css?v=20260810-2321" />
   <link rel="stylesheet" href="./random-study.css?v=20260826-1120" />
+  <link rel="stylesheet" href="./interaction-polish.css?v=20260826-1215" />
 </head>
 <body>
   <header class="site-header">
@@ -74,7 +75,7 @@
         <summary>
           <span class="feeling-summary-copy">
             <span class="feeling-summary-title" id="fieldTitle">分野から探す</span>
-            <span id="resultCount" class="feeling-summary-note">読み込み中…</span>
+            <span class="feeling-summary-note">一覧を分野で絞り込む</span>
           </span>
           <span class="feeling-summary-mark" aria-hidden="true">＋</span>
         </summary>
@@ -84,7 +85,11 @@
       </details>
     </section>
 
-    <section class="results-section" aria-live="polite">
+    <section class="results-section">
+      <div class="results-meta">
+        <span class="results-meta-label">語彙一覧</span>
+        <span id="resultCount" class="results-count" role="status" aria-live="polite">読み込み中…</span>
+      </div>
       <div id="emptyState" class="empty-state" hidden>
         <p>その言い方ではまだ見つからなかった。</p>
         <p>別の言葉に言い換えるか、絞り込みを外してみてください。</p>
@@ -130,14 +135,14 @@
   </aside>
 
   <script src="./dataset-manifest.js?v=20260826-1120"></script>
-  <script src="./app-v2.js?v=20260826-1120" defer></script>
-  <script src="./random-study.js?v=20260817-0737" defer></script>
+  <script src="./app-v2.js?v=20260826-1215" defer></script>
+  <script src="./random-study.js?v=20260826-1215" defer></script>
   <script src="./trail.js?v=20260810-2231" defer></script>
   <script src="./route-annotation.js?v=20260810-2254" defer></script>
   <script src="./route-compare-selector.js?v=20260810-2320" defer></script>
   <script src="./reader.js?v=20260817-0743" defer></script>
   <script src="./essay-bridge.js?v=20260810-2208" defer></script>
-  <script src="./search-v2.js?v=20260810-1605" defer></script>
+  <script src="./search-v2.js?v=20260826-1215" defer></script>
   <script src="./discovery.js?v=20260810-1605" defer></script>
 </body>
 </html>
