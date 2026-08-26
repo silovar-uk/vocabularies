@@ -165,7 +165,7 @@
       '</div>' +
       '<article class="focus-center">' +
         '<p class="focus-center-fields">' + escapeHtml(fields) + '</p>' +
-        '<h3>' + escapeHtml(names.primary) + '</h3>' +
+        '<h3 tabindex="-1">' + escapeHtml(names.primary) + '</h3>' +
         (names.secondary ? '<p class="focus-center-en">' + escapeHtml(names.secondary) + '</p>' : '') +
         '<p class="focus-center-copy">' + escapeHtml(essay?.question || item.one_liner || '') + '</p>' +
         '<div class="focus-center-actions">' +
@@ -238,11 +238,17 @@
   function focusFromEvent(event) {
     const target = event.target.closest('[data-focus-term]');
     if (!target) return false;
+    const keyboardActivation = event.detail === 0;
     event.preventDefault();
     setFocus(target.dataset.focusTerm, { historyMode: 'push' });
     searchInput.value = '';
     searchResults.hidden = true;
     scrollFocusMap();
+    if (keyboardActivation) {
+      requestAnimationFrame(() => {
+        focusMap.querySelector('.focus-center h3')?.focus({ preventScroll: true });
+      });
+    }
     return true;
   }
 
