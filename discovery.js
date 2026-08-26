@@ -58,14 +58,12 @@
   }
 
   function openTerm(id, trigger) {
-    const bridge = document.createElement("button");
-    bridge.type = "button";
-    bridge.hidden = true;
-    bridge.dataset.readerTerm = id;
-    readerContent.appendChild(bridge);
-    bridge.click();
-    bridge.remove();
-    if (trigger instanceof HTMLElement) trigger.blur();
+    if (window.VocabularyReader?.open) {
+      window.VocabularyReader.open(id, { trigger });
+      return;
+    }
+    const card = document.querySelector('[data-open-term="' + CSS.escape(id) + '"]');
+    if (card instanceof HTMLElement) card.click();
   }
 
   function surprisingNeighbor(startId) {
