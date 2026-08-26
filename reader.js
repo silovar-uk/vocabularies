@@ -10,6 +10,7 @@
 
   let readerOrigin = null;
   let relationMap = {};
+  let relationLoadStarted = false;
 
   function itemById(id) { return state.items.find((item) => item.id === id) ?? null; }
   function recordTrail(id) { const item = itemById(id); if (!item || !window.VocabularyTrail) return; window.VocabularyTrail.record(id, displayNames(item).primary); }
@@ -69,6 +70,44 @@
     if (target instanceof HTMLElement) target.focus({ preventScroll: true });
   }
 
+  function cardForId(id) {
+    if (!id) return null;
+    return document.querySelector('[data-open-term="' + CSS.escape(id) + '"]');
+  }
+
+  function syncActiveCardState(previousId, nextId) {
+    if (previousId && previousId !== nextId) cardForId(previousId)?.classList.remove("is-reader-active");
+    if (nextId) cardForId(nextId)?.classList.add("is-reader-active");
+  }
+
+  function syncCardRelationPreviews() {
+    vocabularyGrid.querySelectorAll("[data-open-term]").forEach((card) => {
+      const item = itemById(card.dataset.openTerm);
+      if (!item) return;
+      const related = relatedPreview(item);
+      const existing = card.querySelector(".card-related");
+      if (!related.length) {
+        existing?.remove();
+        return;
+      }
+      const markup = '<span>周辺</span>' + escapeHtml(related.join(" ・ "));
+      if (existing) {
+        existing.innerHTML = markup;
+        return;
+      }
+      const line = document.createElement("p");
+      line.className = "card-related";
+      line.innerHTML = markup;
+      card.appendChild(line);
+    });
+  }
+
+  function emitReaderChanged() {
+    window.dispatchEvent(new CustomEvent("vocabulary-reader-changed", {
+      detail: { id: state.activeItemId },
+    }));
+  }
+
   renderCard = function readerCard(item) {
     const names = displayNames(item);
     const primaryClass = names.primaryLanguage === "en" ? " card-term-en" : "";
@@ -101,37 +140,67 @@
   }
 
   const originalRender = render;
-  render = function readerAwareRender() { originalRender(); renderReader(); syncReaderFromLocation(); };
+  render = function readerAwareRender() { originalRender(); syncReaderFromLocation(); };
   function hashFor(id) { return id ? "#term=" + encodeURIComponent(id) : ""; }
   function setHash(id, mode = "push") { const url = new URL(window.location.href); url.hash = hashFor(id); history[mode === "replace" ? "replaceState" : "pushState"](null, "", url); }
   function openReader(id, options = {}) {
     if (!itemById(id)) return false;
-    const openingFromClosed = !state.activeItemId;
+    const previousId = state.activeItemId;
+    const openingFromClosed = !previousId;
     if (openingFromClosed) readerOrigin = captureReaderOrigin(options.trigger);
     state.activeItemId = id;
     recordTrail(id);
-    renderResults();
+    syncActiveCardState(previousId, id);
     renderReader();
     readerPanel.scrollTop = 0;
     if (options.updateHistory !== false) setHash(id, options.historyMode ?? "push");
+    emitReaderChanged();
     if (options.focusClose !== false) requestAnimationFrame(() => readerClose.focus({ preventScroll: true }));
     return true;
   }
   function closeReader(options = {}) {
     if (!state.activeItemId) return false;
     const origin = readerOrigin;
+    const previousId = state.activeItemId;
     readerOrigin = null;
     state.activeItemId = null;
-    renderResults();
+    syncActiveCardState(previousId, null);
     renderReader();
     if (options.updateHistory !== false) setHash(null, options.historyMode ?? "push");
+    emitReaderChanged();
     if (options.restoreFocus !== false) requestAnimationFrame(() => restoreReaderOrigin(origin));
     return true;
   }
   function requestedTerm() { const match = window.location.hash.match(/^#term=(.+)$/); return match ? decodeURIComponent(match[1]) : null; }
-  function syncReaderFromLocation() { const id = requestedTerm(); if (!id) { if (state.activeItemId) closeReader({ updateHistory: false, restoreFocus: false }); return; } if (!itemById(id) || state.activeItemId === id) return; state.activeItemId = id; recordTrail(id); renderResults(); renderReader(); }
+  function syncReaderFromLocation() {
+    const id = requestedTerm();
+    if (!id) {
+      if (state.activeItemId) closeReader({ updateHistory: false, restoreFocus: false });
+      return;
+    }
+    if (!itemById(id) || state.activeItemId === id) return;
+    const previousId = state.activeItemId;
+    state.activeItemId = id;
+    recordTrail(id);
+    syncActiveCardState(previousId, id);
+    renderReader();
+    emitReaderChanged();
+  }
   function mergeRelationMaps(maps) { const merged = {}; for (const map of maps) for (const [sourceId, edges] of Object.entries(map ?? {})) { if (!Array.isArray(edges)) continue; const byTarget = new Map((merged[sourceId] ?? []).map((edge) => [edge.id, edge])); for (const edge of edges) if (edge?.id) byTarget.set(edge.id, edge); merged[sourceId] = [...byTarget.values()]; } return merged; }
-  async function loadRelations() { const paths = state.catalog.relation_datasets?.length ? state.catalog.relation_datasets : ["data/relations.json"]; try { const maps = await Promise.all(paths.map(async (path) => { const data = await loadJson(path); if (!data || Array.isArray(data) || typeof data !== "object") throw new Error(path + " is not an object"); return data; })); relationMap = mergeRelationMaps(maps); renderResults(); renderReader(); } catch (error) { console.error("Relation data could not be loaded:", error); } }
+  async function loadRelations() {
+    if (relationLoadStarted) return;
+    relationLoadStarted = true;
+    const paths = state.catalog.relation_datasets?.length ? state.catalog.relation_datasets : ["data/relations.json"];
+    try {
+      const maps = await Promise.all(paths.map(async (path) => { const data = await loadJson(path); if (!data || Array.isArray(data) || typeof data !== "object") throw new Error(path + " is not an object"); return data; }));
+      relationMap = mergeRelationMaps(maps);
+      syncCardRelationPreviews();
+      if (state.activeItemId) {
+        renderReader();
+        emitReaderChanged();
+      }
+    } catch (error) { console.error("Relation data could not be loaded:", error); }
+  }
 
   vocabularyGrid.addEventListener("click", (event) => { const card = event.target.closest("[data-open-term]"); if (!card) return; openReader(card.dataset.openTerm, { trigger: card }); });
   vocabularyGrid.addEventListener("keydown", (event) => { const card = event.target.closest("[data-open-term]"); if (!card || (event.key !== "Enter" && event.key !== " ")) return; event.preventDefault(); openReader(card.dataset.openTerm, { trigger: card }); });
@@ -157,7 +226,6 @@
     const button = event.target.closest("[data-reader-term]"); if (!button) return; openReader(button.dataset.readerTerm, { trigger: button });
   });
   readerClose.addEventListener("click", () => closeReader()); readerBackdrop.addEventListener("click", () => closeReader());
-  randomButton?.addEventListener("click", (event) => { event.stopImmediatePropagation(); if (window.VocabularyRandomStudy) { const item = window.VocabularyRandomStudy.next(); if (item) openReader(item.id, { trigger: randomButton }); return; } const current = filteredItems(), items = current.length ? current : state.items; if (!items.length) return; const item = items[Math.floor(Math.random() * items.length)]; openReader(item.id, { trigger: randomButton }); }, true);
 
   window.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && state.activeItemId) { closeReader(); return; }
@@ -172,5 +240,7 @@
   });
 
   window.addEventListener("popstate", syncReaderFromLocation);
-  renderResults(); syncReaderFromLocation(); loadRelations();
+  syncReaderFromLocation();
+  if (state.items.length) loadRelations();
+  else window.addEventListener("vocabulary-items-ready", loadRelations, { once: true });
 })();

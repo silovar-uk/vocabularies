@@ -8,6 +8,7 @@
   const routeList = document.querySelector('#routeList');
   const clearVerb = document.querySelector('#clearVerb');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const jsonRequestCache = new Map();
   let initialFocusId = null;
 
   const state = {
@@ -28,21 +29,33 @@
 
   async function loadJson(path) {
     const clean = String(path).replace(/^\.\//, '');
-    const urls = [
-      './' + clean + '?v=' + Date.now(),
-      'https://raw.githubusercontent.com/silovar-uk/vocabularies/main/' + clean,
-    ];
-    let lastError;
-    for (const url of urls) {
-      try {
-        const response = await fetch(url, { cache: 'no-store' });
-        if (!response.ok) throw new Error('HTTP ' + response.status);
-        return await response.json();
-      } catch (error) {
-        lastError = error;
+    if (jsonRequestCache.has(clean)) return jsonRequestCache.get(clean);
+
+    const request = (async () => {
+      const urls = [
+        './' + clean,
+        'https://raw.githubusercontent.com/silovar-uk/vocabularies/main/' + clean,
+      ];
+      let lastError;
+      for (const url of urls) {
+        try {
+          const response = await fetch(url, { cache: 'no-cache' });
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          return await response.json();
+        } catch (error) {
+          lastError = error;
+        }
       }
+      throw lastError ?? new Error('Could not load ' + clean);
+    })();
+
+    jsonRequestCache.set(clean, request);
+    try {
+      return await request;
+    } catch (error) {
+      jsonRequestCache.delete(clean);
+      throw error;
     }
-    throw lastError ?? new Error('Could not load ' + clean);
   }
 
   function applyCatalog(item) {

@@ -178,6 +178,4 @@
     const card = document.getElementById(button.dataset.searchTerm);
     if (card) card.click();
   });
-
-  renderResults();
 })();
