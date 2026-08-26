@@ -1,0 +1,43 @@
+:root {
+  --touch-target-min: 44px;
+}
+
+.results-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: var(--text-xs);
+}
+
+.results-meta-label {
+  font-weight: 680;
+  letter-spacing: 0.02em;
+}
+
+.results-count {
+  font-variant-numeric: tabular-nums;
+}
+
+.read-mark {
+  font-size: 0;
+}
+
+.read-mark::before {
+  content: "→";
+  font-size: 0.82rem;
+}
+
+.random-study-card:focus-visible {
+  outline: 2px solid rgba(47, 93, 80, 0.2);
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .field-button,
+  .chip {
+    min-height: var(--touch-target-min);
+  }
+}
