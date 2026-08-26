@@ -11,6 +11,7 @@ on:
       - "app-v2.js"
       - "reader.js"
       - "search-v2.js"
+      - "random-study.js"
       - "discovery.js"
       - "editorial.js"
       - "editorial-protection.js"
@@ -24,6 +25,7 @@ on:
       - "app-v2.js"
       - "reader.js"
       - "search-v2.js"
+      - "random-study.js"
       - "discovery.js"
       - "editorial.js"
       - "editorial-protection.js"
@@ -58,6 +60,7 @@ jobs:
           node --check app-v2.js
           node --check reader.js
           node --check search-v2.js
+          node --check random-study.js
           node --check discovery.js
 
       - name: Check editorial scripts
