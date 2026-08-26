@@ -8,7 +8,7 @@
 
   if (!readerPanel || !readerContent || !readerClose || !readerBackdrop) return;
 
-  let lastReaderTrigger = null;
+  let readerOrigin = null;
   let relationMap = {};
 
   function itemById(id) { return state.items.find((item) => item.id === id) ?? null; }
@@ -51,75 +51,23 @@
     textarea.remove();
   }
 
-  function ensureCopyButtonStyles() {
-    if (document.querySelector("#readerCopyButtonStyles")) return;
-    const style = document.createElement("style");
-    style.id = "readerCopyButtonStyles";
-    style.textContent = `
-      .reader-copy-row {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 9px;
-        justify-content: flex-start;
-        margin: 0 0 18px;
-      }
-      .reader-copy-button,
-      .reader-chatgpt-link {
-        min-height: 38px;
-        padding: 8px 12px;
-        border: 1px solid var(--line);
-        border-radius: var(--radius-pill);
-        font: inherit;
-        font-size: var(--text-sm);
-        font-weight: 650;
-        cursor: pointer;
-        transition: background var(--motion-fast) ease, border-color var(--motion-fast) ease, color var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease);
-      }
-      .reader-copy-button {
-        background: rgba(255, 255, 255, 0.52);
-        color: var(--ink);
-      }
-      .reader-chatgpt-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        border-color: rgba(47, 93, 80, 0.32);
-        background: var(--accent-soft);
-        color: var(--accent);
-        text-decoration: none;
-      }
-      .reader-copy-button:hover,
-      .reader-copy-button:focus-visible,
-      .reader-chatgpt-link:hover,
-      .reader-chatgpt-link:focus-visible {
-        border-color: rgba(47, 93, 80, 0.5);
-        background: rgba(47, 93, 80, 0.13);
-      }
-      .reader-copy-button:active,
-      .reader-chatgpt-link:active {
-        transform: translateY(1px);
-      }
-      .reader-copy-button.is-copied {
-        border-color: rgba(47, 93, 80, 0.4);
-        background: var(--accent-soft);
-        color: var(--accent);
-      }
-      @media (max-width: 560px) {
-        .reader-copy-row {
-          display: grid;
-          grid-template-columns: auto 1fr;
-        }
-        .reader-chatgpt-link {
-          width: 100%;
-        }
-      }
-    `;
-    document.head.appendChild(style);
+  function captureReaderOrigin(trigger) {
+    if (!(trigger instanceof HTMLElement)) return null;
+    const card = trigger.closest("[data-open-term]");
+    if (card?.dataset.openTerm) return { type: "term", id: card.dataset.openTerm };
+    return { type: "element", element: trigger };
   }
 
-  ensureCopyButtonStyles();
+  function restoreReaderOrigin(origin) {
+    if (!origin) return;
+    let target = null;
+    if (origin.type === "term" && origin.id) {
+      target = document.querySelector('[data-open-term="' + CSS.escape(origin.id) + '"]');
+    } else if (origin.type === "element" && origin.element?.isConnected) {
+      target = origin.element;
+    }
+    if (target instanceof HTMLElement) target.focus({ preventScroll: true });
+  }
 
   renderCard = function readerCard(item) {
     const names = displayNames(item);
@@ -156,8 +104,30 @@
   render = function readerAwareRender() { originalRender(); renderReader(); syncReaderFromLocation(); };
   function hashFor(id) { return id ? "#term=" + encodeURIComponent(id) : ""; }
   function setHash(id, mode = "push") { const url = new URL(window.location.href); url.hash = hashFor(id); history[mode === "replace" ? "replaceState" : "pushState"](null, "", url); }
-  function openReader(id, options = {}) { if (!itemById(id)) return; state.activeItemId = id; recordTrail(id); if (options.trigger) lastReaderTrigger = options.trigger; renderResults(); renderReader(); readerPanel.scrollTop = 0; if (options.updateHistory !== false) setHash(id, options.historyMode ?? "push"); requestAnimationFrame(() => readerClose.focus({ preventScroll: true })); }
-  function closeReader(options = {}) { if (!state.activeItemId) return; state.activeItemId = null; renderResults(); renderReader(); if (options.updateHistory !== false) setHash(null, options.historyMode ?? "push"); if (options.restoreFocus !== false && lastReaderTrigger?.isConnected) lastReaderTrigger.focus({ preventScroll: true }); }
+  function openReader(id, options = {}) {
+    if (!itemById(id)) return false;
+    const openingFromClosed = !state.activeItemId;
+    if (openingFromClosed) readerOrigin = captureReaderOrigin(options.trigger);
+    state.activeItemId = id;
+    recordTrail(id);
+    renderResults();
+    renderReader();
+    readerPanel.scrollTop = 0;
+    if (options.updateHistory !== false) setHash(id, options.historyMode ?? "push");
+    if (options.focusClose !== false) requestAnimationFrame(() => readerClose.focus({ preventScroll: true }));
+    return true;
+  }
+  function closeReader(options = {}) {
+    if (!state.activeItemId) return false;
+    const origin = readerOrigin;
+    readerOrigin = null;
+    state.activeItemId = null;
+    renderResults();
+    renderReader();
+    if (options.updateHistory !== false) setHash(null, options.historyMode ?? "push");
+    if (options.restoreFocus !== false) requestAnimationFrame(() => restoreReaderOrigin(origin));
+    return true;
+  }
   function requestedTerm() { const match = window.location.hash.match(/^#term=(.+)$/); return match ? decodeURIComponent(match[1]) : null; }
   function syncReaderFromLocation() { const id = requestedTerm(); if (!id) { if (state.activeItemId) closeReader({ updateHistory: false, restoreFocus: false }); return; } if (!itemById(id) || state.activeItemId === id) return; state.activeItemId = id; recordTrail(id); renderResults(); renderReader(); }
   function mergeRelationMaps(maps) { const merged = {}; for (const map of maps) for (const [sourceId, edges] of Object.entries(map ?? {})) { if (!Array.isArray(edges)) continue; const byTarget = new Map((merged[sourceId] ?? []).map((edge) => [edge.id, edge])); for (const edge of edges) if (edge?.id) byTarget.set(edge.id, edge); merged[sourceId] = [...byTarget.values()]; } return merged; }
@@ -195,6 +165,12 @@
     if (event.target instanceof HTMLElement && event.target.closest('input, textarea, select, [contenteditable="true"]')) return;
     if (event.key === "Enter" || event.key === " ") { if (event.target instanceof HTMLElement && event.target.closest('button, a')) return; event.preventDefault(); const item = window.VocabularyRandomStudy.next({ openReader: true }); if (item) openReader(item.id, { historyMode: "replace" }); }
   });
+  window.VocabularyReader = Object.freeze({
+    open: (id, options = {}) => openReader(id, options),
+    close: (options = {}) => closeReader(options),
+    activeId: () => state.activeItemId,
+  });
+
   window.addEventListener("popstate", syncReaderFromLocation);
   renderResults(); syncReaderFromLocation(); loadRelations();
 })();
