@@ -91,9 +91,13 @@
     return showCursor({ ...options, direction: 'back' });
   }
 
-  function openCurrent() {
+  function openCurrent(trigger = panel) {
     const item = getCurrentItem();
     if (!item) return;
+    if (window.VocabularyReader?.open) {
+      window.VocabularyReader.open(item.id, { trigger });
+      return;
+    }
     document.querySelector(`[data-open-term="${CSS.escape(item.id)}"]`)?.click();
   }
 
@@ -106,7 +110,7 @@
     const open = event.target.closest('[data-study-open]');
     if (!open) return;
     markEngaged();
-    openCurrent();
+    openCurrent(open);
   });
 
   panel.addEventListener('keydown', event => {
@@ -128,7 +132,7 @@
     if (event.key.toLowerCase() === 'd' && started) {
       event.preventDefault();
       markEngaged();
-      openCurrent();
+      openCurrent(panel);
     }
   });
 
