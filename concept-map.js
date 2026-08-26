@@ -7,6 +7,8 @@
   const verbFilters = document.querySelector('#verbFilters');
   const routeList = document.querySelector('#routeList');
   const clearVerb = document.querySelector('#clearVerb');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let initialFocusId = null;
 
   const state = {
     catalog: null,
@@ -103,16 +105,31 @@
     return edges;
   }
 
-  function setFocus(id, updateUrl = true) {
-    if (!state.items.has(id)) return;
+  function setFocus(id, options = {}) {
+    if (!state.items.has(id)) return false;
+    const { updateUrl = true, historyMode = 'push' } = options;
+    if (state.focusId === id) return true;
     state.focusId = id;
     window.VocabularyTrail?.record(id, nameById(id));
     if (updateUrl) {
       const url = new URL(window.location.href);
       url.searchParams.set('term', id);
-      history.replaceState(null, '', url);
+      history[historyMode === 'replace' ? 'replaceState' : 'pushState'](null, '', url);
     }
     renderFocus();
+    return true;
+  }
+
+  function focusIdFromLocation() {
+    const requested = new URLSearchParams(window.location.search).get('term');
+    return requested && state.items.has(requested) ? requested : initialFocusId;
+  }
+
+  function scrollFocusMap() {
+    document.querySelector('.focus-map')?.scrollIntoView({
+      behavior: reducedMotion.matches ? 'auto' : 'smooth',
+      block: 'start',
+    });
   }
 
   function focusEdges(direction) {
@@ -168,10 +185,19 @@
 
   function renderVerbFilters() {
     verbFilters.innerHTML = verbs().map((verb) => {
-      const active = state.activeVerb === verb ? ' is-active' : '';
+      const active = state.activeVerb === verb;
       const count = state.edges.filter((edge) => edge.verb === verb).length;
-      return '<button class="verb-chip' + active + '" type="button" data-verb="' + escapeHtml(verb) + '">' + escapeHtml(verb) + ' · ' + count + '</button>';
+      return '<button class="verb-chip' + (active ? ' is-active' : '') + '" type="button" data-verb="' + escapeHtml(verb) + '" aria-pressed="' + active + '">' + escapeHtml(verb) + ' · ' + count + '</button>';
     }).join('');
+    syncVerbFilters();
+  }
+
+  function syncVerbFilters() {
+    verbFilters.querySelectorAll('[data-verb]').forEach((button) => {
+      const active = button.dataset.verb === state.activeVerb;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
     clearVerb.hidden = !state.activeVerb;
   }
 
@@ -213,10 +239,10 @@
     const target = event.target.closest('[data-focus-term]');
     if (!target) return false;
     event.preventDefault();
-    setFocus(target.dataset.focusTerm);
+    setFocus(target.dataset.focusTerm, { historyMode: 'push' });
     searchInput.value = '';
     searchResults.hidden = true;
-    document.querySelector('.focus-map')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    scrollFocusMap();
     return true;
   }
 
@@ -229,20 +255,33 @@
     const button = event.target.closest('[data-verb]');
     if (!button) return;
     state.activeVerb = state.activeVerb === button.dataset.verb ? null : button.dataset.verb;
-    renderVerbFilters();
+    syncVerbFilters();
     renderRoutes();
   });
 
   clearVerb.addEventListener('click', () => {
+    const previousVerb = state.activeVerb;
     state.activeVerb = null;
-    renderVerbFilters();
+    syncVerbFilters();
     renderRoutes();
+    if (previousVerb) {
+      requestAnimationFrame(() => {
+        const previousButton = [...verbFilters.querySelectorAll('[data-verb]')]
+          .find((button) => button.dataset.verb === previousVerb);
+        previousButton?.focus({ preventScroll: true });
+      });
+    }
   });
 
   randomFocus.addEventListener('click', () => {
     const ids = [...state.items.keys()];
     if (!ids.length) return;
-    setFocus(ids[Math.floor(Math.random() * ids.length)]);
+    setFocus(ids[Math.floor(Math.random() * ids.length)], { historyMode: 'push' });
+  });
+
+  window.addEventListener('popstate', () => {
+    const id = focusIdFromLocation();
+    if (id) setFocus(id, { updateUrl: false });
   });
 
   async function init() {
@@ -262,11 +301,11 @@
       state.edges = buildEdges();
 
       const requested = new URLSearchParams(window.location.search).get('term');
-      const initialId = requested && state.items.has(requested)
+      initialFocusId = requested && state.items.has(requested)
         ? requested
         : (state.items.has('differentiation') ? 'differentiation' : [...state.items.keys()][0]);
 
-      setFocus(initialId, false);
+      setFocus(initialFocusId, { updateUrl: false });
       renderVerbFilters();
       renderRoutes();
     } catch (error) {
