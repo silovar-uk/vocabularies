@@ -29,7 +29,24 @@ function renderResults(){const i=filteredItems();resultCount.textContent=i.lengt
 function render(){renderFeelingChips();renderFieldFilters();renderResults()} function resetFilters(){state.query="";state.feeling=null;state.field=null;searchInput.value="";render()}
 function openRandomItem(){const c=filteredItems(),items=c.length?c:state.items;if(!items.length)return;const i=items[Math.floor(Math.random()*items.length)],card=document.getElementById(i.id);if(!card){resetFilters();requestAnimationFrame(openRandomItem);return}card.click()}
 searchInput.addEventListener("input",e=>{state.query=e.target.value;renderResults()});feelingChips.addEventListener("click",e=>{const b=e.target.closest("[data-feeling]");if(!b)return;state.feeling=state.feeling===b.dataset.feeling?null:b.dataset.feeling;render()});fieldFilters.addEventListener("click",e=>{const b=e.target.closest("[data-field]");if(!b)return;state.field=state.field===b.dataset.field?null:b.dataset.field;render()});clearFilters.addEventListener("click",resetFilters);randomButton?.addEventListener("click",openRandomItem);
-async function loadJson(path){const p=String(path).replace(/^\.\//,""),urls=["./"+p+"?v="+Date.now(),"https://raw.githubusercontent.com/silovar-uk/vocabularies/main/"+p];let last;for(const url of urls)try{const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);return await r.json()}catch(e){last=e;console.warn("Data load failed:",url,e)}throw last??new Error("Data could not be loaded: "+p)}
+
+const jsonRequestCache = new Map();
+async function loadJson(path){
+  const p=String(path).replace(/^\.\//,"");
+  if(jsonRequestCache.has(p))return jsonRequestCache.get(p);
+  const request=(async()=>{
+    const urls=["./"+p,"https://raw.githubusercontent.com/silovar-uk/vocabularies/main/"+p];
+    let last;
+    for(const url of urls)try{
+      const r=await fetch(url,{cache:"no-cache"});
+      if(!r.ok)throw new Error("HTTP "+r.status);
+      return await r.json();
+    }catch(e){last=e;console.warn("Data load failed:",url,e)}
+    throw last??new Error("Data could not be loaded: "+p);
+  })();
+  jsonRequestCache.set(p,request);
+  try{return await request}catch(error){jsonRequestCache.delete(p);throw error}
+}
 async function loadCatalog(){const c=await loadJson("data/catalog.json");if(!c||Array.isArray(c)||typeof c!=="object")throw new Error("Catalog data is not an object");return c}
 async function loadVocabularyData(){const d=state.catalog.datasets?.length?state.catalog.datasets:DEFAULT_DATASETS,c=await Promise.all(d.map(async p=>{const x=await loadJson(p);if(!Array.isArray(x))throw new Error(p+" is not an array");return x}));return mergeItems(...c).map(applyCatalogMetadata)}
 async function init(){render();try{state.catalog={...state.catalog,...(await loadCatalog())}}catch(e){console.error("Catalog load failed:",e)}try{state.items=await loadVocabularyData();window.vocabularyStudyItems=state.items;render();window.dispatchEvent(new CustomEvent('vocabulary-items-ready',{detail:{count:state.items.length}}))}catch(e){console.error(e);resultCount.textContent=state.items.length+"語（データ取得失敗）";vocabularyGrid.insertAdjacentHTML("beforeend",'<div class="load-warning"><strong>語彙データの取得に失敗しました。</strong><br>この画面を再読み込みしてください。</div>')}}init();
