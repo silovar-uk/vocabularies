@@ -5,6 +5,8 @@
 
   let relationMap = {};
   let walkSalt = 0;
+  let relationLoadStarted = false;
+  let dailyItems = null;
 
   dailyButton.textContent = "今日の一語";
   dailyButton.setAttribute("aria-label", "今日の一語を読む");
@@ -34,11 +36,13 @@
   }
 
   function dailyItem() {
-    const items = [...state.items]
-      .filter((item) => item?.id && item.one_liner)
-      .sort((a, b) => a.id.localeCompare(b.id));
-    if (!items.length) return null;
-    return items[hashString(tokyoDateKey()) % items.length];
+    if (!dailyItems) {
+      dailyItems = [...state.items]
+        .filter((item) => item?.id && item.one_liner)
+        .sort((a, b) => a.id.localeCompare(b.id));
+    }
+    if (!dailyItems.length) return null;
+    return dailyItems[hashString(tokyoDateKey()) % dailyItems.length];
   }
 
   function relationEntries(id) {
@@ -192,12 +196,12 @@
     return items.join("");
   }
 
-  function renderReaderDiscovery() {
+  function renderReaderDiscovery(options = {}) {
     const activeId = state.activeItemId;
     if (!activeId || !readerContent.children.length) return;
 
     const existing = readerContent.querySelector('.reader-discovery[data-for-id="' + CSS.escape(activeId) + '"]');
-    if (existing) return;
+    if (existing && !options.force) return;
     readerContent.querySelector(".reader-discovery")?.remove();
 
     const surprise = surprisingNeighbor(activeId);
@@ -258,17 +262,13 @@
     refreshWalk();
   });
 
-  window.addEventListener("click", (event) => {
-    const button = event.target.closest("#randomButton");
-    if (!button) return;
+  dailyButton.addEventListener("click", (event) => {
     event.preventDefault();
-    event.stopImmediatePropagation();
     const item = dailyItem();
-    if (item) openTerm(item.id, button);
-  }, true);
+    if (item) openTerm(item.id, dailyButton);
+  });
 
-  const observer = new MutationObserver(() => renderReaderDiscovery());
-  observer.observe(readerContent, { childList: true });
+  window.addEventListener("vocabulary-reader-changed", () => renderReaderDiscovery());
 
   function mergeRelationMaps(maps) {
     const merged = {};
@@ -286,6 +286,8 @@
   }
 
   async function loadRelations() {
+    if (relationLoadStarted) return;
+    relationLoadStarted = true;
     const paths = state.catalog.relation_datasets?.length
       ? state.catalog.relation_datasets
       : ["data/relations.json"];
@@ -298,11 +300,18 @@
         return data;
       }));
       relationMap = mergeRelationMaps(maps);
-      renderReaderDiscovery();
+      renderReaderDiscovery({ force: true });
     } catch (error) {
       console.warn("Discovery relation load failed:", error);
     }
   }
 
-  loadRelations();
+  function onItemsReady() {
+    dailyItems = null;
+    loadRelations();
+    renderReaderDiscovery();
+  }
+
+  if (state.items.length) onItemsReady();
+  else window.addEventListener("vocabulary-items-ready", onItemsReady, { once: true });
 })();
