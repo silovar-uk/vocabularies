@@ -4,6 +4,7 @@ const DEFAULT_DATASETS = [
   "data/meta-vocabularies.json",
   "data/research-20260810-editorial.json",
   "data/research-20260827-morning.json",
+  "data/research-20260827-evening.json",
 ];
 
 const DEFAULT_RELATION_DATASETS = [
