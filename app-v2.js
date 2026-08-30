@@ -8,6 +8,7 @@ const DEFAULT_DATASETS = [
   "data/research-20260828-morning.json",
   "data/research-20260828-evening.json",
   "data/research-20260829-evening.json",
+  "data/research-20260830-morning.json",
 ];
 
 const DEFAULT_RELATION_DATASETS = [
