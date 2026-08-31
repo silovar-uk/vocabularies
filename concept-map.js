@@ -18,7 +18,7 @@
     essays: {},
     edges: [],
     focusId: null,
-    activeVerb: null,
+    activeFamily: null,
   };
 
   const escapeHtml = (value) => String(value ?? '')
@@ -115,7 +115,15 @@
         seen.add(key);
         const semantic = relationGrammar?.classifyVerb(verb)
           ?? { kind: 'NEAR', label: '近接', symbol: '≈', exact: false };
-        edges.push({ source, target, verb, note: relation.note || '', kind: semantic.kind });
+        const family = relationGrammar?.classifyVerbFamily?.(verb) ?? null;
+        edges.push({
+          source,
+          target,
+          verb,
+          note: relation.note || '',
+          kind: semantic.kind,
+          family: family?.family ?? null,
+        });
       });
     });
     return edges;
@@ -155,10 +163,14 @@
       : state.edges.filter((edge) => edge.target === state.focusId);
   }
 
+  function familyAttribute(edge) {
+    return edge.family ? ' data-verb-family="' + escapeHtml(edge.family.toLowerCase()) + '"' : '';
+  }
+
   function renderEdge(edge, direction) {
     const otherId = direction === 'outgoing' ? edge.target : edge.source;
     const kind = String(edge.kind || 'NEAR').toLowerCase();
-    return '<a class="focus-edge" href="./concept-map.html?term=' + encodeURIComponent(otherId) + '" data-focus-term="' + escapeHtml(otherId) + '" data-relation-kind="' + escapeHtml(kind) + '">' +
+    return '<a class="focus-edge" href="./concept-map.html?term=' + encodeURIComponent(otherId) + '" data-focus-term="' + escapeHtml(otherId) + '" data-relation-kind="' + escapeHtml(kind) + '"' + familyAttribute(edge) + '>' +
       '<span class="focus-edge-verb">' + escapeHtml(direction === 'outgoing' ? edge.verb + ' →' : '← ' + edge.verb) + '</span>' +
       '<span class="focus-edge-name">' + escapeHtml(nameById(otherId)) + '</span>' +
       (edge.note ? '<span class="focus-edge-note">' + escapeHtml(edge.note) + '</span>' : '') +
@@ -196,32 +208,36 @@
       '</div>';
   }
 
-  function verbs() {
-    return [...new Set(state.edges.map((edge) => edge.verb))].sort((a, b) => a.localeCompare(b, 'ja'));
+  function families() {
+    const definitions = relationGrammar?.families ?? {};
+    return Object.entries(definitions).map(([id, definition]) => ({
+      id,
+      ...definition,
+      count: state.edges.filter((edge) => edge.family === id).length,
+    })).filter((family) => family.count > 0);
   }
 
   function renderVerbFilters() {
-    verbFilters.innerHTML = verbs().map((verb) => {
-      const active = state.activeVerb === verb;
-      const count = state.edges.filter((edge) => edge.verb === verb).length;
-      return '<button class="verb-chip' + (active ? ' is-active' : '') + '" type="button" data-verb="' + escapeHtml(verb) + '" aria-pressed="' + active + '">' + escapeHtml(verb) + ' · ' + count + '</button>';
+    verbFilters.innerHTML = families().map((family) => {
+      const active = state.activeFamily === family.id;
+      return '<button class="verb-chip' + (active ? ' is-active' : '') + '" type="button" data-family="' + escapeHtml(family.id) + '" aria-pressed="' + active + '" title="' + escapeHtml(family.description) + '">' + escapeHtml(family.label) + ' · ' + family.count + '</button>';
     }).join('');
     syncVerbFilters();
   }
 
   function syncVerbFilters() {
-    verbFilters.querySelectorAll('[data-verb]').forEach((button) => {
-      const active = button.dataset.verb === state.activeVerb;
+    verbFilters.querySelectorAll('[data-family]').forEach((button) => {
+      const active = button.dataset.family === state.activeFamily;
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-pressed', String(active));
     });
-    clearVerb.hidden = !state.activeVerb;
+    clearVerb.hidden = !state.activeFamily;
   }
 
   function renderRoutes() {
-    const routes = state.activeVerb ? state.edges.filter((edge) => edge.verb === state.activeVerb) : state.edges;
+    const routes = state.activeFamily ? state.edges.filter((edge) => edge.family === state.activeFamily) : state.edges;
     routeList.innerHTML = routes.length ? routes.map((edge) =>
-      '<div class="route-row" data-relation-kind="' + escapeHtml(String(edge.kind || 'NEAR').toLowerCase()) + '">' +
+      '<div class="route-row" data-relation-kind="' + escapeHtml(String(edge.kind || 'NEAR').toLowerCase()) + '"' + familyAttribute(edge) + '>' +
         '<button class="route-term" type="button" data-focus-term="' + escapeHtml(edge.source) + '">' + escapeHtml(nameById(edge.source)) + '</button>' +
         '<span class="route-verb">' + escapeHtml(edge.verb) + ' →</span>' +
         '<button class="route-term" type="button" data-focus-term="' + escapeHtml(edge.target) + '">' + escapeHtml(nameById(edge.target)) + '</button>' +
@@ -275,22 +291,22 @@
   routeList.addEventListener('click', focusFromEvent);
 
   verbFilters.addEventListener('click', (event) => {
-    const button = event.target.closest('[data-verb]');
+    const button = event.target.closest('[data-family]');
     if (!button) return;
-    state.activeVerb = state.activeVerb === button.dataset.verb ? null : button.dataset.verb;
+    state.activeFamily = state.activeFamily === button.dataset.family ? null : button.dataset.family;
     syncVerbFilters();
     renderRoutes();
   });
 
   clearVerb.addEventListener('click', () => {
-    const previousVerb = state.activeVerb;
-    state.activeVerb = null;
+    const previousFamily = state.activeFamily;
+    state.activeFamily = null;
     syncVerbFilters();
     renderRoutes();
-    if (previousVerb) {
+    if (previousFamily) {
       requestAnimationFrame(() => {
-        const previousButton = [...verbFilters.querySelectorAll('[data-verb]')]
-          .find((button) => button.dataset.verb === previousVerb);
+        const previousButton = [...verbFilters.querySelectorAll('[data-family]')]
+          .find((button) => button.dataset.family === previousFamily);
         previousButton?.focus({ preventScroll: true });
       });
     }
