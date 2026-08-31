@@ -13,6 +13,8 @@ on:
       - "random-study.js"
       - "discovery.js"
       - "concept-map.js"
+      - "semantic-index.js"
+      - "knowledge-landscape.css"
       - "editorial.js"
       - "editorial-protection.js"
       - ".github/workflows/validate-data.yml"
@@ -27,6 +29,8 @@ on:
       - "random-study.js"
       - "discovery.js"
       - "concept-map.js"
+      - "semantic-index.js"
+      - "knowledge-landscape.css"
       - "editorial.js"
       - "editorial-protection.js"
       - ".github/workflows/validate-data.yml"
@@ -62,6 +66,7 @@ jobs:
           node --check random-study.js
           node --check discovery.js
           node --check concept-map.js
+          node --check semantic-index.js
 
       - name: Check editorial scripts
         run: |
