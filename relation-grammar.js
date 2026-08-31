@@ -54,8 +54,6 @@
     Object.freeze({ kind: 'ACTION', terms: Object.freeze(['改善', '整える', '減らす', '調整', '使う', 'つなぐ', '渡る', '広げる', '作る', '測る']) }),
   ]);
 
-  // Editorial verbs are intentionally expressive. Families describe how a
-  // relation is read without replacing the original copy shown in Concept Map.
   const FAMILY_DEFINITIONS = Object.freeze({
     DISTINGUISHING: Object.freeze({ label: '比べる', description: '差・対立・両立を見る' }),
     SUPPORTING: Object.freeze({ label: '支える', description: '別の概念を補助・保護する' }),
@@ -71,15 +69,15 @@
 
   const FAMILY_HINTS = Object.freeze([
     Object.freeze({ family: 'DISTINGUISHING', terms: Object.freeze(['比べ', '比較', '分け', '区別', '対照', '違い', '緊張', '両立', '混同']) }),
-    Object.freeze({ family: 'SUPPORTING', terms: Object.freeze(['支える', '支援', '守る', '助け', '補う', '安全', '下支え']) }),
-    Object.freeze({ family: 'REDUCING', terms: Object.freeze(['減ら', '縮め', '抑え', '絞', '手放', '軽く', '小さく']) }),
-    Object.freeze({ family: 'TRANSFERRING', terms: Object.freeze(['預け', '移す', '移る', '外へ', '分散', '引き取', '渡す', '委ね', '置き換']) }),
-    Object.freeze({ family: 'CONNECTING', terms: Object.freeze(['つなぐ', 'つなが', '接続', '結ぶ', '橋渡', '連携', '渡る', '関連づけ']) }),
-    Object.freeze({ family: 'EXPANDING', terms: Object.freeze(['広げ', '全体へ', '展開', '発展', '深め', '先へ', '拡張', '周辺へ', '進む']) }),
-    Object.freeze({ family: 'BUILDING', terms: Object.freeze(['作る', '組む', '構成', '形成', '更新', '積み上げ', '組み立て']) }),
-    Object.freeze({ family: 'APPLYING', terms: Object.freeze(['使う', '活か', '改善', '調整', '実装', '実現', '設計', '適用', '選ぶ', '決める', '固定', '制約', '整える']) }),
-    Object.freeze({ family: 'FRAMING', terms: Object.freeze(['捉え', '位置づけ', '見方', '文脈', '焦点', '切り分け', '問い', '読み替', '考える']) }),
-    Object.freeze({ family: 'TRACING', terms: Object.freeze(['見る', '追う', 'たど', '測る', '見つけ', '気づ', '行き先', '読む', '観察', '検証', '知る', '把握', '発見', '確認']) }),
+    Object.freeze({ family: 'SUPPORTING', terms: Object.freeze(['支える', '支援', '守る', '助け', '補う', '安全', '下支え', '示す']) }),
+    Object.freeze({ family: 'REDUCING', terms: Object.freeze(['減ら', '縮め', '抑え', '絞', '狭め', '手放', '空け', '速く', '軽く', '小さく']) }),
+    Object.freeze({ family: 'TRANSFERRING', terms: Object.freeze(['預け', '移す', '移る', '外へ', '外部化', '分散', '引き取', '渡す', '委ね', '置き換']) }),
+    Object.freeze({ family: 'CONNECTING', terms: Object.freeze(['つなぐ', 'つなが', '接続', '結ぶ', '橋渡', '連携', '渡る', '横断', '関連づけ']) }),
+    Object.freeze({ family: 'EXPANDING', terms: Object.freeze(['広げ', '全体へ', '展開', '発展', '深め', '先へ', '拡張', '周辺へ', '進む', '増や', '戻る']) }),
+    Object.freeze({ family: 'BUILDING', terms: Object.freeze(['作る', '置く', '載せ', '組む', '構成', '形成', '統合', '加える', '更新', '積み上げ', '組み立て', '分解', '構造化']) }),
+    Object.freeze({ family: 'APPLYING', terms: Object.freeze(['使う', '活か', '改善', '調整', '実装', '実現', '設計', '適用', '選ぶ', '決める', '固定', '制約', '整える', '合わせ', '扱う', '自動化']) }),
+    Object.freeze({ family: 'FRAMING', terms: Object.freeze(['捉え', '位置づけ', '見方', '文脈', '焦点', '切り分け', '問い', '読み替', '考える', '具体化']) }),
+    Object.freeze({ family: 'TRACING', terms: Object.freeze(['見る', '追う', 'たど', '測る', '見つけ', '気づ', '行き先', '読む', '観察', '検証', '知る', '把握', '発見', '確認', '学ぶ', '予測']) }),
   ]);
 
   const typeToKind = new Map();
