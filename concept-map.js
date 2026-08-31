@@ -17,6 +17,7 @@
     items: new Map(),
     essays: {},
     edges: [],
+    clusters: [],
     focusId: null,
     activeFamily: null,
   };
@@ -85,6 +86,10 @@
 
   function nameById(id) {
     return displayNames(itemById(id)).primary || id;
+  }
+
+  function clustersFor(id) {
+    return state.clusters.filter((cluster) => cluster?.members?.includes(id));
   }
 
   async function loadEssayMap(index) {
@@ -185,6 +190,7 @@
     const incoming = focusEdges('incoming');
     const essay = state.essays[state.focusId];
     const fields = (item.fields ?? []).slice(0, 3).map(fieldLabel).join(' / ');
+    const clusterContext = clustersFor(state.focusId);
 
     focusCount.textContent = (incoming.length + outgoing.length) + 'の関係';
     focusMap.innerHTML =
@@ -194,6 +200,7 @@
       '</div>' +
       '<article class="focus-center">' +
         '<p class="focus-center-fields">' + escapeHtml(fields) + '</p>' +
+        (clusterContext.length ? '<p class="focus-center-fields" title="' + escapeHtml(clusterContext.map((cluster) => cluster.question).join(' / ')) + '">CONTEXT · ' + escapeHtml(clusterContext.map((cluster) => cluster.label).join(' / ')) + '</p>' : '') +
         '<h3 tabindex="-1">' + escapeHtml(names.primary) + '</h3>' +
         (names.secondary ? '<p class="focus-center-en">' + escapeHtml(names.secondary) + '</p>' : '') +
         '<p class="focus-center-copy">' + escapeHtml(essay?.question || item.one_liner || '') + '</p>' +
@@ -325,11 +332,13 @@
 
   async function init() {
     try {
-      const [catalog, essayIndex] = await Promise.all([
+      const [catalog, essayIndex, clusterData] = await Promise.all([
         loadJson('data/catalog.json'),
         loadJson('data/essay-index.json'),
+        loadJson('data/clusters.json'),
       ]);
       state.catalog = catalog;
+      state.clusters = Array.isArray(clusterData?.clusters) ? clusterData.clusters : [];
       const datasets = catalog.datasets ?? ['data/vocabularies.json'];
       const [collections, essays] = await Promise.all([
         Promise.all(datasets.map(loadJson)),
