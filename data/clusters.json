@@ -1,5 +1,30 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "role_grammar": {
+    "version": 1,
+    "roles": {
+      "DIAGNOSE": {
+        "label": "問題を見つける",
+        "description": "曖昧な違和感や状態を、観察・検討できる問題として見えるようにする。"
+      },
+      "MODEL": {
+        "label": "仕組みを説明する",
+        "description": "なぜそうなるのか、どんな構造で成り立つのかを理解するためのモデルを与える。"
+      },
+      "DISTINGUISH": {
+        "label": "混同を分ける",
+        "description": "似て見える概念や原因を分け、どこが違うのかを理解できるようにする。"
+      },
+      "INTERVENE": {
+        "label": "変える手掛かりを与える",
+        "description": "理解した状態へ実際に働きかける方法、設計レバー、安全網、実践を与える。"
+      },
+      "EVALUATE": {
+        "label": "良し悪しを確かめる",
+        "description": "状態や介入結果を、何を基準に観察・評価すればよいかを与える。"
+      }
+    }
+  },
   "clusters": [
     {
       "id": "safe-software-change",
@@ -9,7 +34,15 @@
       "members": ["technical-debt", "code-smell", "refactoring", "maintainability", "characterization-test", "legacy-code"],
       "entry": "technical-debt",
       "anchor": "refactoring",
-      "boundaries": ["technical-debt", "maintainability"]
+      "boundaries": ["technical-debt", "maintainability"],
+      "roles": {
+        "technical-debt": "DIAGNOSE",
+        "code-smell": "DIAGNOSE",
+        "legacy-code": "MODEL",
+        "characterization-test": "INTERVENE",
+        "refactoring": "INTERVENE",
+        "maintainability": "EVALUATE"
+      }
     },
     {
       "id": "predictable-interaction",
@@ -19,7 +52,17 @@
       "members": ["signifier", "affordance", "constraints", "discoverability", "feedforward", "gulfs-of-action", "visibility-system-status", "conceptual-model"],
       "entry": "signifier",
       "anchor": "discoverability",
-      "boundaries": ["signifier", "conceptual-model"]
+      "boundaries": ["signifier", "conceptual-model"],
+      "roles": {
+        "signifier": "INTERVENE",
+        "affordance": "DISTINGUISH",
+        "constraints": "INTERVENE",
+        "discoverability": "EVALUATE",
+        "feedforward": "INTERVENE",
+        "gulfs-of-action": "DIAGNOSE",
+        "visibility-system-status": "INTERVENE",
+        "conceptual-model": "MODEL"
+      }
     },
     {
       "id": "meaning-through-difference",
@@ -29,7 +72,13 @@
       "members": ["signifiant", "signified", "linguistic-sign", "arbitrariness-of-sign", "linguistic-value"],
       "entry": "linguistic-sign",
       "anchor": "linguistic-sign",
-      "boundaries": ["signifiant", "linguistic-value"]
+      "boundaries": ["signifiant", "linguistic-value"],
+      "roles": {
+        "signifiant": "DISTINGUISH",
+        "signified": "DISTINGUISH",
+        "linguistic-sign": "MODEL",
+        "arbitrariness-of-sign": "MODEL"
+      }
     },
     {
       "id": "thinking-outside-head",
@@ -39,7 +88,13 @@
       "members": ["cognitive-offloading", "external-cognition", "distributed-cognition", "epistemic-action", "composition"],
       "entry": "cognitive-offloading",
       "anchor": "external-cognition",
-      "boundaries": ["distributed-cognition", "composition"]
+      "boundaries": ["distributed-cognition", "composition"],
+      "roles": {
+        "cognitive-offloading": "INTERVENE",
+        "external-cognition": "MODEL",
+        "distributed-cognition": "MODEL",
+        "epistemic-action": "INTERVENE"
+      }
     },
     {
       "id": "placing-complexity",
@@ -49,7 +104,15 @@
       "members": ["cognitive-load", "intrinsic-extraneous-load", "essential-accidental-complexity", "conservation-of-complexity", "progressive-disclosure", "recognition-over-recall"],
       "entry": "cognitive-load",
       "anchor": "conservation-of-complexity",
-      "boundaries": ["essential-accidental-complexity", "progressive-disclosure"]
+      "boundaries": ["essential-accidental-complexity", "progressive-disclosure"],
+      "roles": {
+        "cognitive-load": "EVALUATE",
+        "intrinsic-extraneous-load": "DISTINGUISH",
+        "essential-accidental-complexity": "DISTINGUISH",
+        "conservation-of-complexity": "MODEL",
+        "progressive-disclosure": "INTERVENE",
+        "recognition-over-recall": "INTERVENE"
+      }
     },
     {
       "id": "shaping-attention",
@@ -59,7 +122,15 @@
       "members": ["composition", "visual-hierarchy", "salience", "negative-space", "selection-elimination", "curation"],
       "entry": "visual-hierarchy",
       "anchor": "composition",
-      "boundaries": ["selection-elimination", "curation"]
+      "boundaries": ["selection-elimination", "curation"],
+      "roles": {
+        "composition": "MODEL",
+        "visual-hierarchy": "EVALUATE",
+        "salience": "DIAGNOSE",
+        "negative-space": "INTERVENE",
+        "selection-elimination": "INTERVENE",
+        "curation": "INTERVENE"
+      }
     }
   ]
 }
