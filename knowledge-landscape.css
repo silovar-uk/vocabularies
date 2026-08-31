@@ -6,13 +6,13 @@
 
   Surprise budget:
   Typography 3 / Concept relationships 3.
+  Relation semantics use notation, not extra color or graph UI.
   Color, imagery and idle motion stay deliberately quiet.
 */
 
 :root {
   --display-serif: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", "YuMincho", "Noto Serif JP", Georgia, serif;
   --display-serif-latin: Georgia, "Times New Roman", serif;
-  --semantic-rail: rgba(47, 93, 80, 0.64);
   --semantic-wash: rgba(47, 93, 80, 0.045);
 }
 
@@ -95,7 +95,7 @@
   font-size: clamp(1.72rem, 3.25vw, 2.58rem);
   line-height: 1.02;
   letter-spacing: -0.05em;
-  transition: color var(--motion-connect) ease, transform var(--motion-connect) var(--motion-meaning-ease);
+  transition: color var(--motion-connect) ease;
 }
 
 .card-en {
@@ -121,7 +121,9 @@
 /*
   Semantic Index:
   pointing at one word reveals its direct neighborhood inside the same list.
-  No canvas, graph library, tooltip or new panel is introduced.
+  Semantic Index 2.0 adds a tiny relation notation beside the archive number:
+  ↔ contrast / → or ← directed action / + structure / ! signal / ≈ near.
+  Exact relation wording remains in the Reader, so no legend or extra panel is needed.
 */
 .vocab-card.is-relation-origin::before,
 .vocab-card.is-reader-active::before {
@@ -143,17 +145,17 @@
   opacity: 0.62;
 }
 
+.vocab-card.is-related-peer::after {
+  content: counter(vocabulary-index, decimal-leading-zero) " " attr(data-relation-symbol);
+  color: var(--accent);
+}
+
 .vocab-card.is-related-peer .card-term {
   color: #274c42;
-  transform: translateX(3px);
 }
 
 .vocab-card.is-related-peer .card-related {
   color: rgba(47, 93, 80, 0.72);
-}
-
-.vocabulary-grid.has-semantic-focus .vocab-card:not(.is-relation-origin):not(.is-related-peer):not(.is-reader-active) .card-term {
-  color: #505651;
 }
 
 @media (hover: hover) {
@@ -276,10 +278,6 @@
   .vocab-card.is-related-peer {
     background: transparent;
   }
-
-  .vocab-card.is-related-peer .card-term {
-    transform: none;
-  }
 }
 
 @media (max-width: 420px) {
@@ -299,9 +297,5 @@
 @media (prefers-reduced-motion: reduce) {
   .card-term {
     transition: none !important;
-  }
-
-  .vocab-card.is-related-peer .card-term {
-    transform: none;
   }
 }
