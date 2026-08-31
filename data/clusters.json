@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "clusters": [
+    {
+      "id": "safe-software-change",
+      "label": "安全にソフトウェアを変更する",
+      "question": "既存の振る舞いを壊さず、変更コストを下げながらソフトウェアを変え続けるには？",
+      "description": "負債の兆候を見つけ、安全網を置き、内部構造を改善するまでを一つのまとまりで読む。",
+      "members": ["technical-debt", "code-smell", "refactoring", "maintainability", "characterization-test", "legacy-code"],
+      "entry": "technical-debt",
+      "anchor": "refactoring",
+      "boundaries": ["technical-debt", "maintainability"]
+    },
+    {
+      "id": "predictable-interaction",
+      "label": "次の操作を予測できるUIをつくる",
+      "question": "人はどこを見て、何ができ、操作した結果どうなると予測するのか？",
+      "description": "手掛かり、制約、予告、フィードバックのつながりから、迷いにくいインタラクションを考える。",
+      "members": ["signifier", "affordance", "constraints", "discoverability", "feedforward", "gulfs-of-action", "visibility-system-status", "conceptual-model"],
+      "entry": "signifier",
+      "anchor": "discoverability",
+      "boundaries": ["signifier", "conceptual-model"]
+    },
+    {
+      "id": "meaning-through-difference",
+      "label": "記号が意味を持つ仕組みを考える",
+      "question": "言葉や記号は、それ単体ではなく差異と関係の中でどう意味を持つのか？",
+      "description": "シニフィアンとシニフィエから、恣意性と差異による価値までを一つの記号体系として読む。",
+      "members": ["signifiant", "signified", "linguistic-sign", "arbitrariness-of-sign", "linguistic-value"],
+      "entry": "linguistic-sign",
+      "anchor": "linguistic-sign",
+      "boundaries": ["signifiant", "linguistic-value"]
+    },
+    {
+      "id": "thinking-outside-head",
+      "label": "頭の外へ思考を逃がす",
+      "question": "情報や操作を外部へ置くと、なぜ考えやすくなるのか？",
+      "description": "記憶や計算を頭の中だけで抱えず、物・配置・環境との相互作用として思考を捉える。",
+      "members": ["cognitive-offloading", "external-cognition", "distributed-cognition", "epistemic-action", "composition"],
+      "entry": "cognitive-offloading",
+      "anchor": "external-cognition",
+      "boundaries": ["distributed-cognition", "composition"]
+    },
+    {
+      "id": "placing-complexity",
+      "label": "複雑さをどこへ置くか",
+      "question": "複雑さを消せないとき、どこへ移せば理解と操作の負担を減らせるか？",
+      "description": "認知負荷と本質的・偶発的複雑性をつなぎ、情報を減らす以外の設計方法を考える。",
+      "members": ["cognitive-load", "intrinsic-extraneous-load", "essential-accidental-complexity", "conservation-of-complexity", "progressive-disclosure", "recognition-over-recall"],
+      "entry": "cognitive-load",
+      "anchor": "conservation-of-complexity",
+      "boundaries": ["essential-accidental-complexity", "progressive-disclosure"]
+    },
+    {
+      "id": "shaping-attention",
+      "label": "情報を増やさず、見え方を設計する",
+      "question": "何を残し、何を引き、どこを目立たせると視線と意味の順序が生まれるか？",
+      "description": "構図、階層、余白、顕著性、選択と除去を、注意を設計する一つの仕事として読む。",
+      "members": ["composition", "visual-hierarchy", "salience", "negative-space", "selection-elimination", "curation"],
+      "entry": "visual-hierarchy",
+      "anchor": "composition",
+      "boundaries": ["selection-elimination", "curation"]
+    }
+  ]
+}
