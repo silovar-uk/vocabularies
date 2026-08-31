@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const ROOT = process.cwd();
@@ -70,6 +70,27 @@ if (!catalog) {
   const relationPaths = Array.isArray(catalog.relation_datasets) ? catalog.relation_datasets : [];
   const duplicateRelationDatasets = relationPaths.filter((path, index) => relationPaths.indexOf(path) !== index);
   for (const path of new Set(duplicateRelationDatasets)) error(`catalog.json: relation_datasets に重複があります: ${path}`);
+
+  try {
+    const entries = await readdir(resolve(ROOT, "data"), { withFileTypes: true });
+    const vocabularyFiles = entries
+      .filter((entry) => entry.isFile() && (entry.name === "vocabularies.json" || entry.name === "meta-vocabularies.json" || /^research-.*\.json$/.test(entry.name)))
+      .map((entry) => `data/${entry.name}`)
+      .sort();
+    const relationFiles = entries
+      .filter((entry) => entry.isFile() && /^relations(?:-.*)?\.json$/.test(entry.name))
+      .map((entry) => `data/${entry.name}`)
+      .sort();
+
+    for (const path of vocabularyFiles) {
+      if (!datasetPaths.includes(path)) error(`catalog.json: 未登録の語彙datasetがあります: ${path}`);
+    }
+    for (const path of relationFiles) {
+      if (!relationPaths.includes(path)) error(`catalog.json: 未登録のrelation datasetがあります: ${path}`);
+    }
+  } catch (cause) {
+    error(`data/: dataset登録状況を確認できません (${cause.message})`);
+  }
 
   const datasets = [];
   for (const path of datasetPaths) {
