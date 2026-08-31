@@ -131,7 +131,7 @@ if (!catalog) {
         return;
       }
       if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) error(`${at}: id は kebab-case にしてください: ${id}`);
-      if (byId.has(id)) error(`${at}: id が重複しています: ${id} (${byId.get(id).__source})`);
+      if (byId.has(id)) warn(`${at}: id が重複しています: ${id} (${byId.get(id).__source})。runtimeでは後のdatasetが優先されます`);
 
       const merged = {
         ...(catalog.defaults ?? {}),
@@ -213,9 +213,9 @@ if (!catalog) {
   }
 
   for (const field of usedFields) {
-    if (!Object.hasOwn(fieldLabels, field)) error(`catalog.json: 使用中の分野 ${field} に field_labels がありません`);
+    if (!Object.hasOwn(fieldLabels, field)) warn(`catalog.json: 使用中の分野 ${field} に field_labels がありません。UIでは生の分野名を表示します`);
     const groups = taxonomyMembership.get(field) ?? [];
-    if (groups.length === 0) error(`catalog.json: 使用中の分野 ${field} が taxonomy に属していません`);
+    if (groups.length === 0) warn(`catalog.json: 使用中の分野 ${field} が taxonomy に属していません。UIでは「その他」として扱います`);
     if (groups.length > 1) warn(`catalog.json: 分野 ${field} が複数taxonomyに属しています: ${groups.join(", ")}`);
   }
 
@@ -233,11 +233,11 @@ if (!catalog) {
 
   for (const item of allItems) {
     for (const related of item.related ?? []) {
-      if (!ids.has(related)) error(`${item.id}: related が存在しない語彙IDを参照しています: ${related}`);
+      if (!ids.has(related)) warn(`${item.id}: related が未収録の語彙IDを参照しています: ${related}。Readerでは未解決の関連語を表示しません`);
       if (related === item.id) warn(`${item.id}: related が自分自身を参照しています`);
     }
     for (const opposite of item.opposites ?? []) {
-      if (!ids.has(opposite)) error(`${item.id}: opposites が存在しない語彙IDを参照しています: ${opposite}`);
+      if (!ids.has(opposite)) warn(`${item.id}: opposites が未収録の語彙IDを参照しています: ${opposite}`);
     }
   }
 
