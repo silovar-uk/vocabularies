@@ -6,7 +6,9 @@ on:
     paths:
       - "data/**"
       - "scripts/validate-data.mjs"
+      - "scripts/validate-relation-grammar.mjs"
       - "scripts/validate-intake.mjs"
+      - "relation-grammar.js"
       - "app-v2.js"
       - "reader.js"
       - "search-v2.js"
@@ -22,7 +24,9 @@ on:
     paths:
       - "data/**"
       - "scripts/validate-data.mjs"
+      - "scripts/validate-relation-grammar.mjs"
       - "scripts/validate-intake.mjs"
+      - "relation-grammar.js"
       - "app-v2.js"
       - "reader.js"
       - "search-v2.js"
@@ -55,11 +59,15 @@ jobs:
       - name: Validate vocabulary data
         run: node scripts/validate-data.mjs
 
+      - name: Validate relation grammar
+        run: node scripts/validate-relation-grammar.mjs
+
       - name: Validate editorial intake
         run: node scripts/validate-intake.mjs
 
       - name: Check public scripts
         run: |
+          node --check relation-grammar.js
           node --check app-v2.js
           node --check reader.js
           node --check search-v2.js
