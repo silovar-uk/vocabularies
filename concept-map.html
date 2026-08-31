@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Vocabulariesの概念を、分野ではなく関係の動詞から辿る概念地図。" />
+  <meta name="description" content="Vocabulariesの概念を、分野ではなく関係の読み方から辿る概念地図。" />
   <title>概念地図 — Vocabularies</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./concept-map.css?v=20260810-2217" />
@@ -22,7 +22,7 @@
   </header>
 
   <main class="map-shell">
-    <section class="map-hero"><p class="map-eyebrow">CONCEPT MAP</p><h1>言葉ではなく、<br>言葉の「あいだ」を読む。</h1><p class="map-lead">似ている、区別する、広げる、支える。概念同士の関係を動詞で辿る。</p></section>
+    <section class="map-hero"><p class="map-eyebrow">CONCEPT MAP</p><h1>言葉ではなく、<br>言葉の「あいだ」を読む。</h1><p class="map-lead">比べる、支える、広げる、移す。概念同士の自由な関係表現を、いくつかの「読み方」から辿る。</p></section>
 
     <section class="map-controls" aria-label="概念地図の操作">
       <label class="map-search" for="mapSearch"><span>起点となる言葉を探す</span><input id="mapSearch" type="search" autocomplete="off" placeholder="例：認知負荷 / 余白 / 共通基盤" /></label>
@@ -36,19 +36,19 @@
     </section>
 
     <section class="verb-index" aria-labelledby="verbTitle">
-      <div class="verb-index-head"><div><p class="map-eyebrow">RELATION VERBS</p><h2 id="verbTitle">関係の動詞から辿る。</h2></div><button id="clearVerb" class="map-text-button" type="button" hidden>すべて見る</button></div>
-      <div id="verbFilters" class="verb-filters" aria-label="関係の動詞で絞り込む"></div>
+      <div class="verb-index-head"><div><p class="map-eyebrow">VERB FAMILIES</p><h2 id="verbTitle">関係の読み方から辿る。</h2></div><button id="clearVerb" class="map-text-button" type="button" hidden>すべて見る</button></div>
+      <div id="verbFilters" class="verb-filters" aria-label="関係の読み方で絞り込む"></div>
       <div id="routeList" class="route-list"></div>
     </section>
   </main>
 
   <footer class="map-footer"><a href="./">感覚から、言葉へ。</a><span>→</span><a href="./concept-map.html">言葉から、関係へ。</a></footer>
 
-  <script src="./relation-grammar.js?v=20260831-2200" defer></script>
+  <script src="./relation-grammar.js?v=20260831-2303" defer></script>
   <script src="./trail.js?v=20260810-2231" defer></script>
   <script src="./route-annotation.js?v=20260810-2254" defer></script>
   <script src="./route-compare-selector.js?v=20260810-2320" defer></script>
-  <script src="./concept-map.js?v=20260831-2200" defer></script>
+  <script src="./concept-map.js?v=20260831-2303" defer></script>
   <script src="./motion-system.js?v=20260831-1452" defer></script>
 </body>
 </html>
