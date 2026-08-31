@@ -80,5 +80,22 @@
     "opposites": [],
     "sources": ["https://plato.stanford.edu/archives/spr2013/entries/scientific-revolutions/"],
     "status": "seed"
+  },
+  {
+    "id": "shared-information-bias",
+    "term": "Shared Information Bias / Common Knowledge Effect",
+    "ja": "共有情報バイアス / 共有知識効果",
+    "fields": ["Psychology", "Communication"],
+    "one_liner": "会議では、各人しか知らない重要情報より、全員がすでに知っている情報が繰り返し話されやすい。",
+    "description": "集団意思決定で、メンバー全員が共有している情報が議論されやすく、各メンバーだけが持つ非共有情報が十分に持ち寄られにくい傾向。結果として、会議時間を使っても重要な個別情報が統合されないことがある。",
+    "why_selected": "会議の質を発言量や時間だけでなく、情報が誰に偏在しているかという分布の問題として見られるため。",
+    "feelings": ["会議で同じ話ばかり繰り返す", "最後になって担当者だけが知る重要情報が出る", "十分話したのに判断材料が揃っていない"],
+    "before": "会議では十分話した。",
+    "after": "共有済み情報ばかり再確認せず、各担当だけが持つ非共有情報を先に回収できたか確認する。",
+    "instruction": "会議冒頭で、各担当が『自分しか持っていない判断材料』を先に1つずつ出す進行にしてください。",
+    "related": ["boundary-object", "tacit-knowledge"],
+    "opposites": [],
+    "sources": ["https://doi.org/10.1037/0022-3514.48.6.1467"],
+    "status": "seed"
   }
 ]
