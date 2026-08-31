@@ -1,0 +1,220 @@
+[
+  {
+    "id": "technical-debt",
+    "term": "Technical Debt",
+    "ja": "技術的負債",
+    "fields": [
+      "Software Engineering"
+    ],
+    "one_liner": "今の速さと引き換えに、将来の変更コストを増やす内部品質上の負債。",
+    "description": "ソフトウェア内部の設計・構造・テストなどに残った不十分さを、金融上の負債になぞらえて考える比喩。短期的に価値を早く届ける判断として意図的に負う場合もあれば、当時の理解不足や後から得た学びによって非意図的に生じる場合もある。負債を残すことで、将来の機能追加や修正に余分な手間が発生し、その追加コストが「利息」に相当する。",
+    "why_selected": "「とりあえず動く」を積み重ねた結果、あとから小さな変更まで重くなる現象を、単なる『コードが汚い』ではなく、今の速度と将来コストの交換として捉えられるから。",
+    "feelings": [
+      "少し直すだけなのに時間がかかる",
+      "触るたび別の場所が壊れる",
+      "後回しが積み上がっている"
+    ],
+    "before": "昔のコードが汚いから直したい。",
+    "after": "変更のたびに余計な工数を払っている。これはTechnical Debtの利息として整理できる。",
+    "related": [
+      "code-smell",
+      "refactoring",
+      "legacy-code",
+      "maintainability",
+      "essential-accidental-complexity"
+    ],
+    "opposites": [],
+    "sources": [
+      "https://martinfowler.com/bliki/TechnicalDebt.html",
+      "https://martinfowler.com/bliki/TechnicalDebtQuadrant.html"
+    ],
+    "status": "researched",
+    "aliases": [
+      "Technical Debt",
+      "技術負債",
+      "技術的債務"
+    ],
+    "formal_status": "established_term",
+    "usage_note": "単に『古いコード』『汚いコード』の総称として使わず、内部品質の不足が将来の変更コストを増やすという負債の比喩を中心に扱う。"
+  },
+  {
+    "id": "code-smell",
+    "term": "Code Smell",
+    "ja": "コードスメル",
+    "fields": [
+      "Software Engineering"
+    ],
+    "one_liner": "深い設計問題があるかもしれない、と気づくための表面的な兆候。",
+    "description": "コードを見たときに素早く気づける、設計上の問題を示唆する特徴。長すぎるメソッドや重複などが典型例だが、スメルが見つかったからといって必ず問題があるとは限らない。重要なのは、表面的な兆候を手掛かりに、より深い構造上の問題を調べること。",
+    "why_selected": "『このコードはなんとなく嫌な感じがする』を、即断ではなく調査の入口として扱える言葉だから。技術的負債そのものと、負債を疑う兆候を分けて考えられる。",
+    "feelings": [
+      "同じ処理が何度もある",
+      "長すぎて読みづらい",
+      "直感的に危なそう"
+    ],
+    "before": "このコードは汚いから技術的負債だ。",
+    "after": "まずCode Smellとして捉え、実際に変更コストを上げる構造上の問題があるか確認したい。",
+    "related": [
+      "technical-debt",
+      "refactoring",
+      "maintainability"
+    ],
+    "opposites": [],
+    "sources": [
+      "https://martinfowler.com/bliki/CodeSmell.html"
+    ],
+    "status": "researched",
+    "aliases": [
+      "Code Smell",
+      "コードの臭い",
+      "コードの匂い"
+    ],
+    "formal_status": "established_term"
+  },
+  {
+    "id": "refactoring",
+    "term": "Refactoring",
+    "ja": "リファクタリング",
+    "fields": [
+      "Software Engineering"
+    ],
+    "one_liner": "外から見える振る舞いを変えずに、内部構造を理解・変更しやすくする。",
+    "description": "ソフトウェアの観測可能な振る舞いを保ったまま、内部構造を小さな変更の積み重ねで改善する技法。単なる大規模書き直しや機能追加とは異なり、動作を保ちながら理解しやすさ・変更しやすさを高めることが中心にある。",
+    "why_selected": "技術的負債への対処を『全部作り直す』か『放置する』かの二択にせず、小さく安全に内部構造を改善する方法として捉えられるから。",
+    "feelings": [
+      "作り直したくなる",
+      "少しずつ整理したい",
+      "壊さず改善したい"
+    ],
+    "before": "一度全部書き直した方が早そう。",
+    "after": "外部挙動を保った小さなRefactoringを重ねて、変更しやすい構造へ寄せたい。",
+    "related": [
+      "technical-debt",
+      "code-smell",
+      "legacy-code",
+      "characterization-test",
+      "maintainability"
+    ],
+    "opposites": [],
+    "sources": [
+      "https://martinfowler.com/bliki/DefinitionOfRefactoring.html",
+      "https://martinfowler.com/books/refactoring.html"
+    ],
+    "status": "researched",
+    "aliases": [
+      "Refactoring",
+      "リファクタ",
+      "コード改善"
+    ],
+    "formal_status": "established_term",
+    "usage_note": "『内部を大きく作り直すこと』一般ではなく、観測可能な振る舞いを保つ小さな構造改善という狭い意味を優先する。"
+  },
+  {
+    "id": "legacy-code",
+    "term": "Legacy Code",
+    "ja": "レガシーコード",
+    "fields": [
+      "Software Engineering"
+    ],
+    "one_liner": "古いからではなく、安全に変更するための手掛かりが乏しく、触るのが難しいコード。",
+    "description": "一般には長く使われてきた既存コードを指すが、Michael Feathersは実務上の強い定義として『テストのないコード』と捉えた。重要なのは年齢ではなく、変更した結果をすぐ確かめられず、安全に手を入れにくい状態にあること。",
+    "why_selected": "『古いコードだから悪い』という雑な見方を避け、なぜ変更が怖いのかを、テストや理解可能性の不足という具体的な問題へ分解できるから。",
+    "feelings": [
+      "誰も触りたがらない",
+      "変更が怖い",
+      "仕様がコードにしか残っていない"
+    ],
+    "before": "昔からあるコードだからレガシーだ。",
+    "after": "年齢より、安全に変更できるテストや理解の手掛かりが乏しいことがLegacy Codeの問題だ。",
+    "related": [
+      "characterization-test",
+      "refactoring",
+      "technical-debt",
+      "maintainability"
+    ],
+    "opposites": [],
+    "sources": [
+      "https://www.informit.com/articles/article.aspx?p=359417",
+      "https://michaelfeathers.silvrback.com/characterization-testing"
+    ],
+    "status": "researched",
+    "aliases": [
+      "Legacy Code",
+      "レガシーシステム",
+      "既存コード"
+    ],
+    "formal_status": "established_term",
+    "usage_note": "『古いコード』だけを意味する語として固定しない。ここではFeathersの『テストのないコード』という実務的定義を重要な視点として併記する。"
+  },
+  {
+    "id": "maintainability",
+    "term": "Maintainability",
+    "ja": "保守性",
+    "fields": [
+      "Software Engineering"
+    ],
+    "one_liner": "ソフトウェアを理解し、直し、変え、確かめやすい度合い。",
+    "description": "ソフトウェアやICT製品を、修正・改善・環境や要求の変化への適応のために、どれだけ効果的・効率的に変更できるかを表す品質特性。ISO/IEC 25010では製品品質モデルの一部として扱われ、変更しやすさを品質として評価する。",
+    "why_selected": "『コードがきれいか』ではなく、『将来の変更がどれだけ容易か』を品質として考えられるため。技術的負債の利息がどこに現れるかを見る軸にもなる。",
+    "feelings": [
+      "変更に時間がかかる",
+      "原因を追いにくい",
+      "テストしづらい"
+    ],
+    "before": "動いているから品質には問題ない。",
+    "after": "動作だけでなく、変更・分析・テストのしやすさというMaintainabilityも品質として見たい。",
+    "related": [
+      "technical-debt",
+      "refactoring",
+      "code-smell",
+      "legacy-code"
+    ],
+    "opposites": [],
+    "sources": [
+      "https://www.iso.org/standard/78176.html",
+      "https://iso25000.com/index.php/en/iso-25000standards/iso-25010/57-maintainability"
+    ],
+    "status": "researched",
+    "aliases": [
+      "Maintainability",
+      "保守容易性",
+      "メンテナビリティ"
+    ],
+    "formal_status": "established_term"
+  },
+  {
+    "id": "characterization-test",
+    "term": "Characterization Test",
+    "ja": "特性テスト / キャラクタライゼーションテスト",
+    "fields": [
+      "Software Engineering"
+    ],
+    "one_liner": "正しさを決める前に、既存システムが実際に何をしているかを固定するテスト。",
+    "description": "仕様が十分に分からない既存コードに対して、望ましい挙動ではなく『現在実際に起きている挙動』を記録するためのテスト。既存挙動を安全網として固定することで、レガシーコードの理解やリファクタリング、書き換えの際に意図せず振る舞いを変えたことへ気づきやすくする。",
+    "why_selected": "変更が怖い既存コードに対し、いきなり正しい設計へ直すのではなく、まず現在の挙動を観察して安全網を作るという実務的な順番を言語化できるから。",
+    "feelings": [
+      "仕様が分からない",
+      "直したら別の挙動が壊れそう",
+      "まず現状を固定したい"
+    ],
+    "before": "仕様が分からないので、怖くてリファクタリングできない。",
+    "after": "まずCharacterization Testで現在の挙動を固定し、その安全網の上で変更する。",
+    "related": [
+      "legacy-code",
+      "refactoring",
+      "maintainability"
+    ],
+    "opposites": [],
+    "sources": [
+      "https://michaelfeathers.silvrback.com/characterization-testing"
+    ],
+    "status": "researched",
+    "aliases": [
+      "Characterization Test",
+      "Characterization Testing",
+      "キャラクタライゼーションテスト",
+      "特性テスト"
+    ],
+    "formal_status": "established_term"
+  }
+]
