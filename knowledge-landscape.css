@@ -1,0 +1,307 @@
+/*
+  Vocabularies — Knowledge Landscape
+
+  Winning direction:
+  80% Knowledge Landscape + 20% Editorial Object.
+
+  Surprise budget:
+  Typography 3 / Concept relationships 3.
+  Color, imagery and idle motion stay deliberately quiet.
+*/
+
+:root {
+  --display-serif: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", "YuMincho", "Noto Serif JP", Georgia, serif;
+  --display-serif-latin: Georgia, "Times New Roman", serif;
+  --semantic-rail: rgba(47, 93, 80, 0.64);
+  --semantic-wash: rgba(47, 93, 80, 0.045);
+}
+
+/* Typography becomes the main identity, not another decorative surface. */
+.hero-quiet h1,
+.random-study-term,
+.card-term,
+.reader-title,
+.editorial-zone h2,
+.map-hero h1,
+.focus-center h3 {
+  font-family: var(--display-serif);
+  font-weight: 600;
+  font-feature-settings: "palt" 1;
+}
+
+.card-term-en {
+  font-family: var(--display-serif-latin);
+  font-weight: 600;
+}
+
+.hero-quiet h1 {
+  max-width: 8.7em;
+  letter-spacing: -0.065em;
+}
+
+.difference-word {
+  font-weight: 500;
+}
+
+.section-heading h2,
+.surface-heading h2,
+.thought-portal-head h2,
+.focus-heading h2,
+.verb-index-head h2 {
+  font-weight: 720;
+}
+
+/* Search stays a tool. The content gets the expressive typography. */
+#searchInput,
+.search-candidate,
+.field-button,
+.chip,
+.quiet-button,
+.text-button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+/* The library becomes an editorial index rather than a stack of cards. */
+.vocabulary-grid {
+  position: relative;
+  counter-reset: vocabulary-index;
+}
+
+.vocab-card {
+  counter-increment: vocabulary-index;
+  padding-left: clamp(42px, 4vw, 58px);
+}
+
+.vocab-card::after {
+  content: counter(vocabulary-index, decimal-leading-zero);
+  position: absolute;
+  top: 27px;
+  left: 0;
+  color: rgba(30, 33, 31, 0.38);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.62rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.vocab-card::before {
+  left: clamp(28px, 2.8vw, 40px);
+  width: 1px;
+}
+
+.card-term {
+  font-size: clamp(1.72rem, 3.25vw, 2.58rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  transition: color var(--motion-connect) ease, transform var(--motion-connect) var(--motion-meaning-ease);
+}
+
+.card-en {
+  margin-top: 7px;
+  letter-spacing: 0.015em;
+}
+
+.one-liner {
+  max-width: 38em;
+  font-size: 0.95rem;
+  line-height: 1.82;
+}
+
+.card-related {
+  color: rgba(30, 33, 31, 0.56);
+}
+
+.card-related span {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/*
+  Semantic Index:
+  pointing at one word reveals its direct neighborhood inside the same list.
+  No canvas, graph library, tooltip or new panel is introduced.
+*/
+.vocab-card.is-relation-origin::before,
+.vocab-card.is-reader-active::before {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.vocab-card.is-relation-origin .card-term,
+.vocab-card.is-reader-active .card-term {
+  color: var(--accent);
+}
+
+.vocab-card.is-related-peer {
+  background: linear-gradient(90deg, var(--semantic-wash), transparent 42%);
+}
+
+.vocab-card.is-related-peer::before {
+  transform: scaleY(0.38);
+  opacity: 0.62;
+}
+
+.vocab-card.is-related-peer .card-term {
+  color: #274c42;
+  transform: translateX(3px);
+}
+
+.vocab-card.is-related-peer .card-related {
+  color: rgba(47, 93, 80, 0.72);
+}
+
+.vocabulary-grid.has-semantic-focus .vocab-card:not(.is-relation-origin):not(.is-related-peer):not(.is-reader-active) .card-term {
+  color: #505651;
+}
+
+@media (hover: hover) {
+  .vocab-card:hover::after,
+  .vocab-card:focus-visible::after,
+  .vocab-card.is-relation-origin::after,
+  .vocab-card.is-reader-active::after {
+    color: var(--accent);
+  }
+}
+
+/* Reader: definition is calm, relationships read like a small index. */
+@media (min-width: 921px) {
+  :root {
+    --reader-width: min(700px, 56vw);
+  }
+}
+
+.reader-title {
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
+
+.reader-lead {
+  max-width: 36em;
+  font-size: clamp(1.08rem, 1.7vw, 1.24rem);
+}
+
+.reader-fields {
+  letter-spacing: 0.025em;
+}
+
+.relation-link {
+  padding-top: 18px;
+  padding-bottom: 19px;
+}
+
+.relation-type {
+  font-size: 0.6rem;
+  letter-spacing: 0.11em;
+}
+
+.relation-name {
+  font-family: var(--display-serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.relation-note {
+  margin-top: 4px;
+}
+
+/* Discovery: one large word is enough of a visual event. */
+.random-study-term {
+  font-weight: 600;
+  letter-spacing: -0.055em;
+}
+
+.thought-question-grid button,
+.thought-question-grid [role="button"] {
+  font-weight: 560;
+}
+
+/* Editorial note reads as a coda, not another product card. */
+.editorial-zone h2 {
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+/* Concept map uses the same typographic language as the library. */
+.map-hero h1 {
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+
+.focus-center h3 {
+  font-size: clamp(1.85rem, 3.2vw, 2.65rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.focus-edge-name,
+.route-term {
+  font-family: var(--display-serif);
+  font-weight: 600;
+}
+
+.focus-edge-name {
+  font-size: 1rem;
+}
+
+.route-term {
+  font-size: 0.92rem;
+}
+
+/* Narrow screens retain the index idea without stealing reading width. */
+@media (max-width: 760px) {
+  .vocab-card {
+    padding-left: 36px;
+  }
+
+  .vocab-card::before {
+    left: 24px;
+  }
+
+  .vocab-card::after {
+    top: 28px;
+    font-size: 0.56rem;
+  }
+
+  .card-term {
+    font-size: clamp(1.82rem, 8.6vw, 2.48rem);
+  }
+
+  .reader-title {
+    font-size: clamp(3.1rem, 14vw, 5.2rem);
+  }
+
+  .vocab-card.is-related-peer {
+    background: transparent;
+  }
+
+  .vocab-card.is-related-peer .card-term {
+    transform: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .vocab-card {
+    padding-left: 30px;
+  }
+
+  .vocab-card::before {
+    left: 20px;
+  }
+
+  .vocab-card::after {
+    font-size: 0.52rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-term {
+    transition: none !important;
+  }
+
+  .vocab-card.is-related-peer .card-term {
+    transform: none;
+  }
+}
