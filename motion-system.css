@@ -1,0 +1,371 @@
+:root {
+  --vocab-motion-press: 110ms;
+  --vocab-motion-fast: 140ms;
+  --vocab-motion-medium: 190ms;
+  --vocab-motion-slow: 240ms;
+  --vocab-motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/*
+  Vocabularies motion vocabulary
+  Press   = input was received
+  Advance = there is somewhere to go
+  Replace = content changed in place
+  Update  = filtering/search state changed
+*/
+
+.quiet-button,
+.text-button,
+.chip,
+.field-button,
+.random-study-button,
+.random-study-prev,
+.random-study-next,
+.random-study-read,
+.random-study-mobile-next,
+.reader-copy-button,
+.reader-chatgpt-link,
+.reader-close,
+.search-candidate,
+.relation-link,
+.discovery-surprise,
+.discovery-path button,
+.map-quiet-button,
+.map-text-button,
+.map-search-result,
+.focus-edge,
+.verb-filter,
+.route-card {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.quiet-button,
+.random-study-button,
+.random-study-prev,
+.random-study-next,
+.random-study-read,
+.random-study-mobile-next,
+.reader-copy-button,
+.reader-chatgpt-link,
+.map-quiet-button {
+  transition:
+    transform var(--vocab-motion-fast) var(--vocab-motion-ease),
+    background-color var(--vocab-motion-fast) ease,
+    border-color var(--vocab-motion-fast) ease,
+    color var(--vocab-motion-fast) ease,
+    box-shadow var(--vocab-motion-fast) ease;
+}
+
+.text-button,
+.map-text-button {
+  transition:
+    transform var(--vocab-motion-fast) var(--vocab-motion-ease),
+    color var(--vocab-motion-fast) ease,
+    text-underline-offset var(--vocab-motion-fast) var(--vocab-motion-ease);
+}
+
+.quiet-button:active,
+.random-study-button:active,
+.random-study-prev:not(:disabled):active,
+.random-study-next:active,
+.random-study-read:active,
+.random-study-mobile-next:active,
+.reader-copy-button:active,
+.reader-chatgpt-link:active,
+.map-quiet-button:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.text-button:active,
+.map-text-button:active,
+.chip:active,
+.field-button:active {
+  transform: translateY(1px);
+}
+
+.feeling-disclosure > summary {
+  border-radius: 10px;
+  transition:
+    color var(--vocab-motion-fast) ease,
+    background-color var(--vocab-motion-fast) ease,
+    transform var(--vocab-motion-press) var(--vocab-motion-ease);
+}
+
+.feeling-disclosure > summary:active {
+  transform: translateY(1px);
+}
+
+.feeling-summary-mark {
+  transform-origin: 50% 50%;
+  transition: transform var(--vocab-motion-medium) var(--vocab-motion-ease);
+}
+
+.chip,
+.field-button {
+  transition:
+    transform var(--vocab-motion-fast) var(--vocab-motion-ease),
+    background-color var(--vocab-motion-fast) ease,
+    border-color var(--vocab-motion-fast) ease,
+    color var(--vocab-motion-fast) ease,
+    box-shadow var(--vocab-motion-fast) ease;
+}
+
+.chip.is-active,
+.field-button.is-active {
+  animation: vocab-motion-select var(--vocab-motion-medium) var(--vocab-motion-ease);
+}
+
+@keyframes vocab-motion-select {
+  0% { transform: scale(0.985); }
+  100% { transform: scale(1); }
+}
+
+.vocab-card {
+  transition:
+    border-color var(--vocab-motion-fast) ease,
+    background-color var(--vocab-motion-fast) ease,
+    transform var(--vocab-motion-fast) var(--vocab-motion-ease),
+    box-shadow var(--vocab-motion-fast) ease;
+}
+
+.vocab-card:focus-visible .read-mark {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+.vocab-card:active {
+  transform: translateY(1px) scale(0.997);
+}
+
+.read-mark,
+.relation-arrow,
+.discovery-arrow {
+  transition:
+    transform var(--vocab-motion-fast) var(--vocab-motion-ease),
+    color var(--vocab-motion-fast) ease;
+}
+
+.discovery-arrow {
+  transform: translateY(-50%);
+}
+
+.search-candidate,
+.relation-link,
+.discovery-surprise,
+.discovery-path button,
+.map-search-result {
+  transition:
+    background-color var(--vocab-motion-fast) ease,
+    transform var(--vocab-motion-fast) var(--vocab-motion-ease);
+}
+
+.search-candidate:active,
+.relation-link:active,
+.discovery-surprise:active,
+.discovery-path button:active,
+.map-search-result:active {
+  transform: translateY(1px);
+}
+
+/* Replace: random study content changes in place. */
+.random-study-card {
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity var(--vocab-motion-fast) ease,
+    transform var(--vocab-motion-fast) var(--vocab-motion-ease);
+}
+
+.random-study-card.is-changing {
+  opacity: 0.28;
+  transform: translateY(-3px);
+}
+
+.random-study-card[data-motion-direction="back"].is-changing {
+  transform: translateX(3px);
+}
+
+.random-study-card.motion-random-arrive {
+  animation: vocab-motion-arrive-forward var(--vocab-motion-medium) var(--vocab-motion-ease) both;
+}
+
+.random-study-card[data-motion-direction="back"].motion-random-arrive {
+  animation-name: vocab-motion-arrive-back;
+}
+
+@keyframes vocab-motion-arrive-forward {
+  from { opacity: 0.66; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vocab-motion-arrive-back {
+  from { opacity: 0.66; transform: translateX(-3px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Update: acknowledge a changing count without animating the whole result grid. */
+.results-count.motion-update-pulse,
+.focus-count.motion-update-pulse {
+  animation: vocab-motion-update var(--vocab-motion-medium) var(--vocab-motion-ease) both;
+}
+
+@keyframes vocab-motion-update {
+  from { opacity: 0.42; transform: translateY(1px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Question shuffle: a short exchange cue, not a full-screen transition. */
+.thought-question-grid {
+  transition:
+    opacity var(--vocab-motion-fast) ease,
+    transform var(--vocab-motion-fast) var(--vocab-motion-ease);
+}
+
+.thought-question-grid.motion-replace-out {
+  opacity: 0.58;
+  transform: translateY(-2px);
+}
+
+.thought-question-grid.motion-thought-arrive {
+  animation: vocab-motion-thought-arrive var(--vocab-motion-medium) var(--vocab-motion-ease) both;
+}
+
+@keyframes vocab-motion-thought-arrive {
+  from { opacity: 0.58; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Concept map uses the same motion language. */
+.map-quiet-button,
+.map-search-result,
+.focus-edge,
+.verb-filter,
+.route-card {
+  transition:
+    transform var(--vocab-motion-fast) var(--vocab-motion-ease),
+    border-color var(--vocab-motion-fast) ease,
+    background-color var(--vocab-motion-fast) ease,
+    color var(--vocab-motion-fast) ease,
+    box-shadow var(--vocab-motion-fast) ease;
+}
+
+.focus-map-stage.motion-map-arrive,
+.route-list.motion-map-arrive {
+  animation: vocab-motion-map-update var(--vocab-motion-slow) var(--vocab-motion-ease) both;
+}
+
+@keyframes vocab-motion-map-update {
+  from { opacity: 0.72; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.focus-edge:active,
+.verb-filter:active,
+.route-card:active {
+  transform: translateY(1px);
+}
+
+@media (hover: hover) {
+  .quiet-button:hover,
+  .random-study-button:hover,
+  .random-study-prev:not(:disabled):hover,
+  .random-study-next:hover,
+  .random-study-read:hover,
+  .map-quiet-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .text-button:hover,
+  .map-text-button:hover {
+    color: var(--accent);
+    text-underline-offset: 5px;
+  }
+
+  .feeling-disclosure > summary:hover {
+    background: rgba(47, 93, 80, 0.025);
+  }
+
+  .vocab-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 11px 32px rgba(35, 38, 35, 0.045);
+  }
+
+  .vocab-card:hover .read-mark {
+    color: var(--accent);
+    transform: translateX(3px);
+  }
+
+  .relation-link:hover .relation-arrow,
+  .relation-link:focus-visible .relation-arrow {
+    transform: translateX(3px);
+  }
+
+  .discovery-surprise:hover .discovery-arrow,
+  .discovery-surprise:focus-visible .discovery-arrow {
+    color: var(--accent);
+    transform: translate(3px, -50%);
+  }
+
+  .map-search-result:hover,
+  .map-search-result:focus-visible {
+    transform: translateX(2px);
+  }
+}
+
+@media (max-width: 760px) {
+  /* Mobile should still feel responsive without relying on hover. */
+  .vocab-card:active {
+    transform: translateY(1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quiet-button,
+  .text-button,
+  .chip,
+  .field-button,
+  .feeling-disclosure > summary,
+  .feeling-summary-mark,
+  .vocab-card,
+  .read-mark,
+  .random-study-button,
+  .random-study-prev,
+  .random-study-next,
+  .random-study-read,
+  .random-study-mobile-next,
+  .random-study-card,
+  .reader-copy-button,
+  .reader-chatgpt-link,
+  .reader-close,
+  .search-candidate,
+  .relation-link,
+  .relation-arrow,
+  .discovery-surprise,
+  .discovery-arrow,
+  .discovery-path button,
+  .thought-question-grid,
+  .map-quiet-button,
+  .map-text-button,
+  .map-search-result,
+  .focus-edge,
+  .verb-filter,
+  .route-card {
+    transition: none !important;
+  }
+
+  .chip.is-active,
+  .field-button.is-active,
+  .random-study-card.motion-random-arrive,
+  .results-count.motion-update-pulse,
+  .focus-count.motion-update-pulse,
+  .thought-question-grid.motion-thought-arrive,
+  .focus-map-stage.motion-map-arrive,
+  .route-list.motion-map-arrive {
+    animation: none !important;
+  }
+
+  .random-study-card.is-changing,
+  .random-study-card[data-motion-direction="back"].is-changing,
+  .thought-question-grid.motion-replace-out {
+    transform: none !important;
+  }
+}
