@@ -8,6 +8,7 @@
   const routeList = document.querySelector('#routeList');
   const clearVerb = document.querySelector('#clearVerb');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const relationGrammar = globalThis.VocabularyRelationGrammar;
   const jsonRequestCache = new Map();
   let initialFocusId = null;
 
@@ -112,7 +113,9 @@
         const key = [source, target, verb].join('|');
         if (seen.has(key)) return;
         seen.add(key);
-        edges.push({ source, target, verb, note: relation.note || '' });
+        const semantic = relationGrammar?.classifyVerb(verb)
+          ?? { kind: 'NEAR', label: '近接', symbol: '≈', exact: false };
+        edges.push({ source, target, verb, note: relation.note || '', kind: semantic.kind });
       });
     });
     return edges;
@@ -154,7 +157,8 @@
 
   function renderEdge(edge, direction) {
     const otherId = direction === 'outgoing' ? edge.target : edge.source;
-    return '<a class="focus-edge" href="./concept-map.html?term=' + encodeURIComponent(otherId) + '" data-focus-term="' + escapeHtml(otherId) + '">' +
+    const kind = String(edge.kind || 'NEAR').toLowerCase();
+    return '<a class="focus-edge" href="./concept-map.html?term=' + encodeURIComponent(otherId) + '" data-focus-term="' + escapeHtml(otherId) + '" data-relation-kind="' + escapeHtml(kind) + '">' +
       '<span class="focus-edge-verb">' + escapeHtml(direction === 'outgoing' ? edge.verb + ' →' : '← ' + edge.verb) + '</span>' +
       '<span class="focus-edge-name">' + escapeHtml(nameById(otherId)) + '</span>' +
       (edge.note ? '<span class="focus-edge-note">' + escapeHtml(edge.note) + '</span>' : '') +
@@ -217,7 +221,7 @@
   function renderRoutes() {
     const routes = state.activeVerb ? state.edges.filter((edge) => edge.verb === state.activeVerb) : state.edges;
     routeList.innerHTML = routes.length ? routes.map((edge) =>
-      '<div class="route-row">' +
+      '<div class="route-row" data-relation-kind="' + escapeHtml(String(edge.kind || 'NEAR').toLowerCase()) + '">' +
         '<button class="route-term" type="button" data-focus-term="' + escapeHtml(edge.source) + '">' + escapeHtml(nameById(edge.source)) + '</button>' +
         '<span class="route-verb">' + escapeHtml(edge.verb) + ' →</span>' +
         '<button class="route-term" type="button" data-focus-term="' + escapeHtml(edge.target) + '">' + escapeHtml(nameById(edge.target)) + '</button>' +
