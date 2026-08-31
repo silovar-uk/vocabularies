@@ -33,6 +33,10 @@ if (grammar) {
     if (!definition?.label || !definition?.symbol) errors.push(`relation-grammar.js: ${kind} の定義が不完全です`);
   }
 
+  for (const [family, definition] of Object.entries(grammar.families ?? {})) {
+    if (!definition?.label || !definition?.description) errors.push(`relation-grammar.js: ${family} のVerb Family定義が不完全です`);
+  }
+
   for (const path of relationPaths) {
     const relations = await readJson(path);
     for (const [sourceId, edges] of Object.entries(relations)) {
@@ -56,12 +60,12 @@ if (grammar) {
   if (unusedKnownTypes.length) warnings.push(`未使用のgrammar type: ${unusedKnownTypes.join(', ')}`);
 }
 
-// Concept Map uses free-form editorial verbs. They do not need exact registration,
-// but we audit how much of them is classified by explicit shared hints versus NEAR fallback.
 let essayVerbCount = 0;
 const essayVerbCounts = new Map();
 const essayKindCounts = new Map();
 const fallbackVerbs = new Set();
+const essayFamilyCounts = new Map();
+const unclassifiedFamilyVerbs = new Set();
 
 if (grammar) {
   const essayIndex = await readJson('data/essay-index.json');
@@ -81,24 +85,44 @@ if (grammar) {
         if (!verb) continue;
         essayVerbCount += 1;
         addCount(essayVerbCounts, verb);
+
         const classified = grammar.classifyVerb(verb);
         addCount(essayKindCounts, classified.kind);
         if (classified.kind === 'NEAR' && !classified.exact) fallbackVerbs.add(verb);
+
+        const family = grammar.classifyVerbFamily?.(verb);
+        if (family?.family) addCount(essayFamilyCounts, family.family);
+        else unclassifiedFamilyVerbs.add(verb);
       }
     }
   }
+}
+
+const uniqueVerbCount = essayVerbCounts.size;
+const classifiedUniqueVerbCount = uniqueVerbCount - unclassifiedFamilyVerbs.size;
+const familyCoverage = uniqueVerbCount ? classifiedUniqueVerbCount / uniqueVerbCount : 1;
+
+if (familyCoverage < 0.9) {
+  errors.push(`Editorial Verb Family coverageが90%未満です: ${(familyCoverage * 100).toFixed(1)}% (${classifiedUniqueVerbCount}/${uniqueVerbCount})`);
 }
 
 console.log(`Relation grammar audit: ${edgeCount} typed edges / ${rawTypeCounts.size} human labels / ${Object.keys(grammar?.kinds ?? {}).length} canonical kinds`);
 if (canonicalKindCounts.size) {
   console.log('Typed relation kinds: ' + [...canonicalKindCounts.entries()].map(([kind, count]) => `${kind}=${count}`).join(' / '));
 }
-console.log(`Concept Map verb audit: ${essayVerbCount} edges / ${essayVerbCounts.size} editorial verbs`);
+console.log(`Concept Map verb audit: ${essayVerbCount} edges / ${uniqueVerbCount} editorial verbs`);
 if (essayKindCounts.size) {
   console.log('Concept Map canonical kinds: ' + [...essayKindCounts.entries()].map(([kind, count]) => `${kind}=${count}`).join(' / '));
 }
 if (fallbackVerbs.size) {
   console.log(`Concept Map NEAR fallback: ${fallbackVerbs.size} verb types (${[...fallbackVerbs].slice(0, 12).join(' / ')}${fallbackVerbs.size > 12 ? ' / …' : ''})`);
+}
+if (essayFamilyCounts.size) {
+  console.log('Verb families: ' + [...essayFamilyCounts.entries()].map(([family, count]) => `${family}=${count}`).join(' / '));
+}
+console.log(`Verb Family coverage: ${(familyCoverage * 100).toFixed(1)}% (${classifiedUniqueVerbCount}/${uniqueVerbCount} unique verbs)`);
+if (unclassifiedFamilyVerbs.size) {
+  console.log(`Unclassified Verb Families: ${unclassifiedFamilyVerbs.size} (${[...unclassifiedFamilyVerbs].slice(0, 30).join(' / ')}${unclassifiedFamilyVerbs.size > 30 ? ' / …' : ''})`);
 }
 
 if (warnings.length) {
@@ -111,5 +135,5 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exitCode = 1;
 } else {
-  console.log('\nOK: relation typeはすべてCanonical Relation Kindへ解決できます。');
+  console.log('\nOK: relation typeとEditorial Verb Familyは品質基準を満たしています。');
 }
