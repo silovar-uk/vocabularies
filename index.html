@@ -18,78 +18,149 @@
   <link rel="stylesheet" href="./random-study.css?v=20260826-1120" />
   <link rel="stylesheet" href="./interaction-polish.css?v=20260826-1305" />
   <link rel="stylesheet" href="./motion-system.css?v=20260831-1341" />
+  <link rel="stylesheet" href="./ui-hierarchy.css?v=20260831-1406" />
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="./">Vocabularies</a>
-    <div style="display:flex;align-items:center;gap:12px">
+    <div class="site-actions">
       <a class="text-button" href="./concept-map.html">概念地図</a>
       <button id="randomButton" class="quiet-button" type="button" aria-label="今日の一語を読む">今日の一語</button>
     </div>
   </header>
 
   <main>
-    <section class="hero hero-quiet">
-      <h1>語彙集</h1>
-      <p class="lead">デザイン、文章、音、感情などを横断して、ものの見え方を少し細かくする言葉を集めています。</p>
-
-      <div class="hero-search-block">
-        <p class="hero-search-kicker">名前から探す</p>
-        <label class="search-wrap" for="searchInput">
-          <span class="search-label">用語を探す</span>
-          <input id="searchInput" type="search" autocomplete="off" placeholder="例：余白 / 韻律 / 感情粒度 / しぐ" />
-        </label>
-        <div id="searchAssist" class="search-assist" role="status" aria-live="polite" hidden></div>
+    <section class="hero hero-quiet" aria-labelledby="pageTitle">
+      <div class="hero-copy">
+        <p class="eyebrow">VOCABULARIES</p>
+        <h1 id="pageTitle">語彙集</h1>
+        <p class="lead">デザイン、文章、音、感情などを横断して、ものの見え方を少し細かくする言葉を集めています。</p>
       </div>
 
-      <section class="random-study" aria-labelledby="randomStudyTitle">
-        <div class="random-study-head">
+      <section class="search-surface" aria-labelledby="searchTitle">
+        <div class="surface-heading">
           <div>
-            <p class="eyebrow">偶然から学ぶ</p>
-            <h2 id="randomStudyTitle">ランダム学習</h2>
-            <p class="random-study-intro">知らない言葉と偶然出会う。引いたら、そのまま何度でも次へ。</p>
+            <p class="surface-kicker">SEARCH</p>
+            <h2 id="searchTitle">名前から探す</h2>
+            <p>知っている言葉、気になる言い回しから最短で探す。</p>
           </div>
-          <button id="randomStudyStart" class="random-study-button" type="button">次の一語 →</button>
+          <span class="surface-badge">最短ルート</span>
         </div>
-        <div id="randomStudyCard" class="random-study-card" aria-live="polite">
-          <p class="random-study-placeholder">語彙を読み込み中…</p>
+        <div class="hero-search-block">
+          <label class="search-wrap" for="searchInput">
+            <span class="search-label">用語名・関連する言葉</span>
+            <input id="searchInput" type="search" autocomplete="off" placeholder="例：余白 / 韻律 / 感情粒度 / しぐ" />
+          </label>
+          <div id="searchAssist" class="search-assist" role="status" aria-live="polite" hidden></div>
         </div>
       </section>
     </section>
 
-    <section id="thoughtPortal" class="thought-portal" aria-labelledby="thoughtPortalTitle">
-      <div class="thought-portal-head">
-        <div>
-          <p class="eyebrow">THINK WITH WORDS</p>
-          <h2 id="thoughtPortalTitle">問いから、言葉へ。</h2>
-          <p>定義を探すのではなく、気になる問いから概念へ入る。</p>
+    <section class="discovery-zone" aria-labelledby="discoverTitle">
+      <div class="section-heading">
+        <div class="section-heading-copy">
+          <p class="section-kicker">DISCOVER</p>
+          <h2 id="discoverTitle">知らない言葉には、違う入口から出会う。</h2>
+          <p>偶然に任せるか、気になる問いから入るか。探索の仕方を選べます。</p>
         </div>
-        <button id="shuffleQuestions" class="text-button thought-shuffle" type="button">問いを入れ替える</button>
       </div>
-      <div id="thoughtQuestions" class="thought-question-grid" aria-live="polite">
-        <p class="thought-loading">問いを読み込み中…</p>
+
+      <div class="discovery-layout">
+        <section class="random-study" aria-labelledby="randomStudyTitle">
+          <div class="random-study-head">
+            <div>
+              <p class="eyebrow">RANDOM</p>
+              <h2 id="randomStudyTitle">ランダム学習</h2>
+              <p class="random-study-intro">知らない言葉と偶然出会う。引いたら、そのまま何度でも次へ。</p>
+            </div>
+            <button id="randomStudyStart" class="random-study-button" type="button">次の一語 →</button>
+          </div>
+          <div id="randomStudyCard" class="random-study-card" aria-live="polite">
+            <p class="random-study-placeholder">語彙を読み込み中…</p>
+          </div>
+        </section>
+
+        <section id="thoughtPortal" class="thought-portal" aria-labelledby="thoughtPortalTitle">
+          <div class="thought-portal-head">
+            <div>
+              <p class="eyebrow">QUESTION</p>
+              <h2 id="thoughtPortalTitle">問いから、言葉へ。</h2>
+              <p>定義を探すのではなく、気になる問いから概念へ入る。</p>
+            </div>
+            <button id="shuffleQuestions" class="text-button thought-shuffle" type="button">問いを入れ替える</button>
+          </div>
+          <div id="thoughtQuestions" class="thought-question-grid" aria-live="polite">
+            <p class="thought-loading">問いを読み込み中…</p>
+          </div>
+        </section>
       </div>
     </section>
 
-    <section class="browse-section" aria-labelledby="fieldTitle">
-      <details class="feeling-disclosure field-disclosure">
-        <summary>
-          <span class="feeling-summary-copy">
-            <span class="feeling-summary-title" id="fieldTitle">分野から探す</span>
-            <span class="feeling-summary-note">一覧を分野で絞り込む</span>
-          </span>
-          <span class="feeling-summary-mark" aria-hidden="true">＋</span>
-        </summary>
-        <div class="feeling-panel">
-          <div id="fieldFilters" class="field-list" aria-label="分野で絞り込む"></div>
+    <section class="filter-zone" aria-labelledby="filterTitle">
+      <div class="section-heading">
+        <div class="section-heading-copy">
+          <p class="section-kicker">FILTER</p>
+          <h2 id="filterTitle">条件から絞る</h2>
+          <p>分野が分かっているときも、まだ曖昧な感覚しかないときも、入口を見せたまま絞り込む。</p>
         </div>
-      </details>
+      </div>
+
+      <div class="filter-layout">
+        <section class="filter-surface">
+          <p class="filter-mode">FIELD</p>
+          <div class="browse-section" aria-labelledby="fieldTitle">
+            <details class="feeling-disclosure field-disclosure" open>
+              <summary>
+                <span class="feeling-summary-copy">
+                  <span class="feeling-summary-title" id="fieldTitle">分野から探す</span>
+                  <span class="feeling-summary-note">知っている領域から絞る</span>
+                </span>
+                <span class="feeling-summary-mark" aria-hidden="true">＋</span>
+              </summary>
+              <div class="feeling-panel">
+                <div id="fieldFilters" class="field-list" aria-label="分野で絞り込む"></div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="filter-surface">
+          <p class="filter-mode">FEELING</p>
+          <div class="feeling-section feeling-section-bottom" aria-labelledby="feelingTitle">
+            <details class="feeling-disclosure" open>
+              <summary>
+                <span class="feeling-summary-copy">
+                  <span class="feeling-summary-title" id="feelingTitle">感覚から探す</span>
+                  <span class="feeling-summary-note">言葉がまだ思い浮かばないとき</span>
+                </span>
+                <span class="feeling-summary-mark" aria-hidden="true">＋</span>
+              </summary>
+              <div class="feeling-panel">
+                <div class="feeling-panel-head">
+                  <p>「ごちゃごちゃする」「冷たい感じ」「論文っぽくない」など、曖昧な言い方から近い概念を探せます。</p>
+                  <button id="clearFilters" class="text-button" type="button">絞り込みを解除</button>
+                </div>
+                <div id="feelingChips" class="chip-list" aria-label="感覚で絞り込む"></div>
+              </div>
+            </details>
+          </div>
+        </section>
+      </div>
     </section>
 
-    <section class="results-section">
-      <div class="results-meta">
-        <span class="results-meta-label">語彙一覧</span>
-        <span id="resultCount" class="results-count" role="status" aria-live="polite">読み込み中…</span>
+    <section class="results-section library-zone" aria-labelledby="libraryTitle">
+      <div class="section-heading library-heading">
+        <div class="section-heading-copy">
+          <p class="section-kicker">LIBRARY</p>
+          <h2 id="libraryTitle">語彙を読む</h2>
+          <div id="activeFilterSummary" class="active-filter-summary" aria-live="polite">
+            <span class="filter-summary-empty">すべての語彙を表示中</span>
+          </div>
+        </div>
+        <div class="results-meta">
+          <span class="results-meta-label">表示中</span>
+          <span id="resultCount" class="results-count" role="status" aria-live="polite">読み込み中…</span>
+        </div>
       </div>
       <div id="emptyState" class="empty-state" hidden>
         <p>その言い方ではまだ見つからなかった。</p>
@@ -98,30 +169,11 @@
       <div id="vocabularyGrid" class="vocabulary-grid"></div>
     </section>
 
-    <section class="manifesto" aria-labelledby="manifestoTitle">
-      <p class="eyebrow">編集ノート</p>
+    <section class="manifesto editorial-zone" aria-labelledby="manifestoTitle">
+      <p class="eyebrow">EDITORIAL NOTE</p>
       <h2 id="manifestoTitle">見えていた差に、あとから言葉が追いつくことがある。</h2>
       <p>この語彙集では、すでに感じ取れている違和感や質感を、もう少し精密に扱える言葉を集めています。網羅することよりも、知ったあとに見え方が少し変わることを重視します。</p>
       <p class="manifesto-note">日本語で自然に定着している語は日本語を主に。英語で使う方が自然な専門語は、英語を主に。表記そのものも、語ごとに選びます。</p>
-    </section>
-
-    <section class="feeling-section feeling-section-bottom" aria-labelledby="feelingTitle">
-      <details class="feeling-disclosure">
-        <summary>
-          <span class="feeling-summary-copy">
-            <span class="feeling-summary-title" id="feelingTitle">感覚から探す</span>
-            <span class="feeling-summary-note">言葉がまだ思い浮かばないとき</span>
-          </span>
-          <span class="feeling-summary-mark" aria-hidden="true">＋</span>
-        </summary>
-        <div class="feeling-panel">
-          <div class="feeling-panel-head">
-            <p>「ごちゃごちゃする」「冷たい感じ」「論文っぽくない」など、曖昧な言い方から近い概念を探せます。</p>
-            <button id="clearFilters" class="text-button" type="button">絞り込みを解除</button>
-          </div>
-          <div id="feelingChips" class="chip-list" aria-label="感覚で絞り込む"></div>
-        </div>
-      </details>
     </section>
   </main>
 
@@ -145,5 +197,6 @@
   <script src="./search-v2.js?v=20260826-1400" defer></script>
   <script src="./discovery.js?v=20260826-1400" defer></script>
   <script src="./motion-system.js?v=20260831-1341" defer></script>
+  <script src="./ui-hierarchy.js?v=20260831-1406" defer></script>
 </body>
 </html>
