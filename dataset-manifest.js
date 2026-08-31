@@ -30,6 +30,10 @@
     "data/research-20260825-bbc-ai-vocabulary.json",
     "data/research-20260825-evening-vocabulary.json",
     "data/research-20260826-morning-vocabulary.json",
+    "data/research-20260831-technical-debt.json",
+  ];
+  const extraRelationDatasets = [
+    "data/relations-20260831-technical-debt.json",
   ];
 
   window.VocabularyDatasetManifest = Object.freeze([...extraDatasets]);
@@ -44,6 +48,10 @@
       if (!Array.isArray(catalog.datasets)) catalog.datasets = [];
       for (const dataset of extraDatasets) {
         if (!catalog.datasets.includes(dataset)) catalog.datasets.push(dataset);
+      }
+      if (!Array.isArray(catalog.relation_datasets)) catalog.relation_datasets = [];
+      for (const dataset of extraRelationDatasets) {
+        if (!catalog.relation_datasets.includes(dataset)) catalog.relation_datasets.push(dataset);
       }
       return new Response(JSON.stringify(catalog), {
         status: response.status,
