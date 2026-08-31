@@ -8,6 +8,7 @@ on:
       - "scripts/validate-data.mjs"
       - "scripts/validate-relation-grammar.mjs"
       - "scripts/validate-intake.mjs"
+      - "scripts/audit-clusters.mjs"
       - "relation-grammar.js"
       - "app-v2.js"
       - "reader.js"
@@ -26,6 +27,7 @@ on:
       - "scripts/validate-data.mjs"
       - "scripts/validate-relation-grammar.mjs"
       - "scripts/validate-intake.mjs"
+      - "scripts/audit-clusters.mjs"
       - "relation-grammar.js"
       - "app-v2.js"
       - "reader.js"
@@ -61,6 +63,9 @@ jobs:
 
       - name: Validate relation grammar
         run: node scripts/validate-relation-grammar.mjs
+
+      - name: Audit concept cluster graph
+        run: node scripts/audit-clusters.mjs
 
       - name: Validate editorial intake
         run: node scripts/validate-intake.mjs
