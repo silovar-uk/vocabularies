@@ -3,42 +3,10 @@
   if (!(grid instanceof HTMLElement)) return;
 
   const hoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const relationGrammar = globalThis.VocabularyRelationGrammar;
   let persistentId = null;
   let relationMap = {};
   let relationLoadStarted = false;
-
-  const RELATION_GRAMMAR = [
-    {
-      id: 'signal',
-      label: '兆候',
-      symbol: '!',
-      pattern: /兆候|きっかけ|入口|問題化/,
-    },
-    {
-      id: 'contrast',
-      label: '区別',
-      symbol: '↔',
-      pattern: /対概念|区別|比較|対照|混同|緊張|トレードオフ|区切り|事前|事後|トップダウン|カテゴリー化/,
-    },
-    {
-      id: 'structure',
-      label: '構成',
-      symbol: '+',
-      pattern: /構成|内訳|構造|要素|使用の層|成立原理|基盤/,
-    },
-    {
-      id: 'flow',
-      label: '作用',
-      symbol: '→',
-      pattern: /改善|手段|対応|影響|支え|補完|応用|適用|実行|評価|安全網|探索|予測|調整|実現|負担|支援|最初の一手/,
-    },
-    {
-      id: 'near',
-      label: '近接',
-      symbol: '≈',
-      pattern: /.*/,
-    },
-  ];
 
   function items() {
     return Array.isArray(window.vocabularyStudyItems) ? window.vocabularyStudyItems : [];
@@ -61,11 +29,6 @@
       }
     }
     return merged;
-  }
-
-  function classifyRelation(type) {
-    const value = String(type || '関連');
-    return RELATION_GRAMMAR.find((entry) => entry.pattern.test(value)) ?? RELATION_GRAMMAR.at(-1);
   }
 
   function outgoingRelations(id, map) {
@@ -100,10 +63,9 @@
     return [...peers.entries()].map(([peerId, relation]) => ({ id: peerId, ...relation }));
   }
 
-  function relationSymbol(relation, grammar) {
-    if (grammar.id !== 'flow') return grammar.symbol;
-    if (relation.reciprocal) return '↔';
-    return relation.direction === 'incoming' ? '←' : '→';
+  function classifyRelation(type) {
+    return relationGrammar?.classifyType(type)
+      ?? { kind: 'NEAR', label: '近接', symbol: '≈', directed: false, raw: String(type || '関連'), exact: false };
   }
 
   function clearClasses() {
@@ -138,9 +100,13 @@
       if (!(card instanceof HTMLElement) || !card.classList.contains('vocab-card')) continue;
 
       const grammar = classifyRelation(relation.type);
-      const symbol = relationSymbol(relation, grammar);
+      const symbol = relationGrammar?.notation(grammar.kind, {
+        direction: relation.direction,
+        reciprocal: relation.reciprocal,
+      }) ?? grammar.symbol;
+
       card.classList.add('is-related-peer');
-      card.dataset.relationKind = grammar.id;
+      card.dataset.relationKind = grammar.kind.toLowerCase();
       card.dataset.relationSymbol = symbol;
       card.dataset.relationDirection = relation.direction;
       card.setAttribute('aria-description', `${originName}との関係: ${relation.type || grammar.label}`);
@@ -221,7 +187,7 @@
   window.VocabularySemanticIndex = Object.freeze({
     classify: (type) => {
       const grammar = classifyRelation(type);
-      return { id: grammar.id, label: grammar.label, symbol: grammar.symbol };
+      return { id: grammar.kind.toLowerCase(), kind: grammar.kind, label: grammar.label, symbol: grammar.symbol };
     },
   });
 
