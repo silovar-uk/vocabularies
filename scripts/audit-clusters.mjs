@@ -148,12 +148,29 @@ const clusters = Array.isArray(clusterData.clusters) ? clusterData.clusters : []
 const clusterIds = new Set();
 const clusterLabels = new Set();
 const clusterQuestions = new Set();
+const roleDefinitions = clusterData?.role_grammar?.roles ?? {};
+const roleIds = Object.keys(roleDefinitions);
+const roleUsage = new Map(roleIds.map((id) => [id, { assignments: 0, clusters: new Set() }]));
+let roleSlots = 0;
+let assignedRoleSlots = 0;
+
+if (roleIds.length < 4 || roleIds.length > 7) {
+  errors.push(`Role Grammarは4〜7種類を基本とします: ${roleIds.length} roles`);
+}
+for (const [id, definition] of Object.entries(roleDefinitions)) {
+  if (!String(definition?.label ?? '').trim()) errors.push(`${id}: Role labelがありません`);
+  if (!String(definition?.description ?? '').trim()) errors.push(`${id}: Role descriptionがありません`);
+}
+
 console.log('\nCurated cluster validation:');
 for (const cluster of clusters) {
   const id = String(cluster?.id ?? '').trim();
   const clusterLabel = String(cluster?.label ?? '').trim();
   const question = String(cluster?.question ?? '').trim();
   const members = Array.isArray(cluster?.members) ? [...new Set(cluster.members)] : [];
+  const roles = cluster?.roles && typeof cluster.roles === 'object' ? cluster.roles : {};
+  roleSlots += members.length;
+
   if (!id || clusterIds.has(id)) errors.push(`cluster idが空または重複しています: ${id || '(empty)'}`);
   clusterIds.add(id);
   if (!clusterLabel || clusterLabels.has(clusterLabel)) errors.push(`${id}: labelが空または重複しています`);
@@ -167,10 +184,26 @@ for (const cluster of clusters) {
   for (const boundary of cluster.boundaries ?? []) {
     if (!members.includes(boundary)) errors.push(`${id}: boundaryはmembers内に必要です: ${boundary}`);
   }
+
+  for (const [member, roleId] of Object.entries(roles)) {
+    if (!members.includes(member)) {
+      errors.push(`${id}: Cluster外ConceptへRoleが割り当てられています: ${member}`);
+      continue;
+    }
+    if (!roleDefinitions[roleId]) {
+      errors.push(`${id}: 未知Roleです: ${member} → ${roleId}`);
+      continue;
+    }
+    assignedRoleSlots += 1;
+    const usage = roleUsage.get(roleId);
+    usage.assignments += 1;
+    usage.clusters.add(id);
+  }
+
   const metrics = clusterMetrics(members.filter((member) => items.has(member)));
   if (metrics.isolated.length) errors.push(`${id}: Cluster内で孤立したmemberがあります: ${metrics.isolated.join(', ')}`);
   if (metrics.density < 0.25) warnings.push(`${id}: relation densityが低めです: ${metrics.density.toFixed(2)}`);
-  console.log(`- ${id}: members=${members.length} density=${metrics.density.toFixed(2)} internal=${metrics.internal} external=${metrics.external} entry=${cluster.entry} anchor=${cluster.anchor}`);
+  console.log(`- ${id}: members=${members.length} density=${metrics.density.toFixed(2)} internal=${metrics.internal} external=${metrics.external} entry=${cluster.entry} anchor=${cluster.anchor} roles=${Object.keys(roles).length}`);
 }
 
 const memberships = new Map();
@@ -184,6 +217,17 @@ const overlaps = [...memberships.entries()].filter(([, ids]) => ids.length > 1);
 console.log(`Cluster coverage: ${memberships.size}/${items.size} concepts; overlapping concepts=${overlaps.length}`);
 if (overlaps.length) console.log('Overlaps: ' + overlaps.map(([id, ids]) => `${id}→${ids.join('+')}`).join(' / '));
 
+console.log('\nConcept Role Grammar:');
+for (const id of roleIds) {
+  const usage = roleUsage.get(id);
+  console.log(`- ${id} (${roleDefinitions[id]?.label ?? id}): assignments=${usage.assignments} clusters=${usage.clusters.size}`);
+  if (usage.assignments === 0) errors.push(`${id}: 未使用Roleです`);
+  if (usage.clusters.size < 3) errors.push(`${id}: 汎用Roleは3 Cluster以上で再現してください (${usage.clusters.size})`);
+}
+const roleCoverage = roleSlots ? assignedRoleSlots / roleSlots : 0;
+console.log(`Role coverage: ${(roleCoverage * 100).toFixed(1)}% (${assignedRoleSlots}/${roleSlots} cluster-member slots)`);
+if (roleCoverage < 0.7) errors.push(`Role coverageが70%未満です: ${(roleCoverage * 100).toFixed(1)}%`);
+
 if (warnings.length) {
   console.log(`\nWARNINGS (${warnings.length})`);
   for (const warning of warnings) console.log(`- ${warning}`);
@@ -193,5 +237,5 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exitCode = 1;
 } else {
-  console.log('\nOK: Concept Cluster定義は構造上の品質基準を満たしています。');
+  console.log('\nOK: Concept Cluster / Role Grammarは構造上の品質基準を満たしています。');
 }
