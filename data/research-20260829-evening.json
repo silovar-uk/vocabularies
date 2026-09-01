@@ -78,5 +78,39 @@
     "opposites": [],
     "sources": ["https://journals.sagepub.com/doi/abs/10.1177/0308518x17690531"],
     "status": "seed"
+  },
+  {
+    "id": "focus-visible",
+    "term": ":focus-visible",
+    "ja": "フォーカス・ビジブル",
+    "fields": ["UI", "Web", "Design"],
+    "one_liner": "キーボード操作など、現在位置を見せる必要がある場面でフォーカス表示を明確にする。",
+    "description": "CSSの擬似クラスで、要素がフォーカスされ、かつブラウザがフォーカスインジケーターを表示すべきだと判断した場合に一致する。マウスクリック時に常にリングを出すのではなく、キーボード操作など現在位置の可視化が必要な場面で適切なフォーカススタイルを提供できる。",
+    "why_selected": "Hit AreaやSignifierが『押せるか』を扱うのに対し、キーボード操作で『いまどこにいるか』を明確にする実装語として、入力手段の観察軸を増やせるため。",
+    "feelings": ["Tabキーで今どこにいるか分からない", "outlineを消したらキーボード操作が追えない", "マウスとキーボードでフォーカス表示を出し分けたい"],
+    "before": "キーボード操作でも分かりやすくして。",
+    "after": ":focus-visibleでフォーカスリングを明確にし、Tab移動時の現在位置を視認できるようにしたい。",
+    "instruction": "デフォルトoutlineを消すだけにせず、:focus-visibleで十分なコントラストのフォーカス表示を設定してください。",
+    "related": ["hit-area", "discoverability", "visibility-system-status"],
+    "opposites": [],
+    "sources": ["https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible"],
+    "status": "seed"
+  },
+  {
+    "id": "object-position",
+    "term": "object-position",
+    "ja": "オブジェクト・ポジション",
+    "fields": ["Web", "UI", "Graphic Design"],
+    "one_liner": "画像や動画をボックス内に収めたまま、どの位置を中心に見せるかを指定する。",
+    "description": "CSSで置換要素の内容を要素ボックス内のどこへ配置するかを指定するプロパティ。object-fit: coverなどでトリミングが発生する場合でも、主被写体や見せたい領域が残るよう表示位置を調整できる。",
+    "why_selected": "『スマホで写真の切れ方が変』という曖昧な修正を、比率やサイズを変えずに『何を中心に残すか』という具体的な実装指示へ変えられるため。",
+    "feelings": ["スマホだけ人物の顔が切れる", "coverは維持したいが見せる位置を変えたい", "主被写体がカード外へ寄ってしまう"],
+    "before": "スマホだと写真の切れ方が変。",
+    "after": "object-fit: coverは維持して、object-positionを主被写体側へ寄せたい。",
+    "instruction": "カード比率は変えず、スマホ時だけobject-positionを調整して主被写体を残してください。",
+    "related": ["composition", "intrinsic-sizing"],
+    "opposites": [],
+    "sources": ["https://developer.mozilla.org/en-US/docs/Web/CSS/object-position"],
+    "status": "seed"
   }
 ]
