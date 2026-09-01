@@ -15,6 +15,7 @@ for (const path of catalog.datasets ?? []) {
 }
 
 const edgeWeights = new Map();
+const typedRelations = [];
 const addEdge = (a, b, weight) => {
   if (!a || !b || a === b || !items.has(a) || !items.has(b)) return;
   const [x, y] = [a, b].sort();
@@ -29,6 +30,14 @@ for (const path of catalog.relation_datasets ?? []) {
     for (const edge of edges ?? []) {
       typedEdgeCount += 1;
       addEdge(source, edge?.id, 2);
+      if (source && edge?.id && items.has(source) && items.has(edge.id)) {
+        typedRelations.push({
+          source,
+          target: edge.id,
+          type: String(edge.type ?? '').trim(),
+          note: String(edge.note ?? '').trim(),
+        });
+      }
     }
   }
 }
@@ -228,6 +237,99 @@ const roleCoverage = roleSlots ? assignedRoleSlots / roleSlots : 0;
 console.log(`Role coverage: ${(roleCoverage * 100).toFixed(1)}% (${assignedRoleSlots}/${roleSlots} cluster-member slots)`);
 if (roleCoverage < 0.7) errors.push(`Role coverageが70%未満です: ${(roleCoverage * 100).toFixed(1)}%`);
 
+const softPathPilot = clusterData?.soft_path_pilot ?? {};
+const pilotClusterIds = Array.isArray(softPathPilot.cluster_ids) ? [...new Set(softPathPilot.cluster_ids)] : [];
+const maxCandidates = Number(softPathPilot.max_candidates ?? 0);
+const rolePriority = softPathPilot.role_priority ?? {};
+
+if (pilotClusterIds.length !== 2) errors.push(`Soft Path Pilotは2 Clusterに限定してください: ${pilotClusterIds.length}`);
+if (!Number.isInteger(maxCandidates) || maxCandidates < 2 || maxCandidates > 3) {
+  errors.push(`Soft Path Pilotのmax_candidatesは2〜3にしてください: ${softPathPilot.max_candidates}`);
+}
+for (const roleId of roleIds) {
+  const priorities = Array.isArray(rolePriority[roleId]) ? rolePriority[roleId] : [];
+  const unique = [...new Set(priorities)];
+  if (unique.length !== roleIds.length || roleIds.some((id) => !unique.includes(id))) {
+    errors.push(`Soft Path PilotのRole優先順は全Roleを1回ずつ含めてください: ${roleId}`);
+  }
+  for (const targetRole of unique) {
+    if (!roleDefinitions[targetRole]) errors.push(`Soft Path Pilotに未知Roleがあります: ${roleId} → ${targetRole}`);
+  }
+}
+
+function derivePilotCandidates(cluster, sourceId) {
+  const memberSet = new Set(cluster.members ?? []);
+  const roles = cluster.roles ?? {};
+  const sourceRole = roles[sourceId];
+  if (!sourceRole) return [];
+  const priorities = Array.isArray(rolePriority[sourceRole]) ? rolePriority[sourceRole] : roleIds;
+  const roleRank = (roleId) => {
+    const index = priorities.indexOf(roleId);
+    return index === -1 ? priorities.length + 1 : index;
+  };
+  const possibilities = [];
+
+  for (const relation of typedRelations) {
+    let targetId = null;
+    let direction = null;
+    if (relation.source === sourceId && memberSet.has(relation.target)) {
+      targetId = relation.target;
+      direction = 'outgoing';
+    } else if (relation.target === sourceId && memberSet.has(relation.source)) {
+      targetId = relation.source;
+      direction = 'incoming';
+    }
+    if (!targetId || !roles[targetId]) continue;
+    possibilities.push({
+      targetId,
+      targetRole: roles[targetId],
+      direction,
+      relation,
+      rank: roleRank(roles[targetId]),
+    });
+  }
+
+  possibilities.sort((a, b) =>
+    a.rank - b.rank ||
+    (a.direction === 'outgoing' ? 0 : 1) - (b.direction === 'outgoing' ? 0 : 1) ||
+    a.targetId.localeCompare(b.targetId)
+  );
+
+  const seen = new Set();
+  return possibilities.filter((candidate) => {
+    if (seen.has(candidate.targetId)) return false;
+    seen.add(candidate.targetId);
+    return true;
+  }).slice(0, maxCandidates || 3);
+}
+
+console.log('\nSoft Path Derivation Pilot:');
+let pilotSlots = 0;
+let pilotSlotsWithCandidate = 0;
+for (const pilotId of pilotClusterIds) {
+  const cluster = clusters.find((entry) => entry.id === pilotId);
+  if (!cluster) {
+    errors.push(`Soft Path Pilotに未知Clusterがあります: ${pilotId}`);
+    continue;
+  }
+  const roleMembers = Object.keys(cluster.roles ?? {});
+  let withCandidate = 0;
+  for (const member of roleMembers) {
+    pilotSlots += 1;
+    const derived = derivePilotCandidates(cluster, member);
+    if (derived.length) {
+      withCandidate += 1;
+      pilotSlotsWithCandidate += 1;
+    }
+  }
+  const entryCandidates = derivePilotCandidates(cluster, cluster.entry);
+  if (entryCandidates.length < 2) errors.push(`${pilotId}: entryから少なくとも2候補を導出できる必要があります`);
+  console.log(`- ${pilotId}: candidate coverage=${withCandidate}/${roleMembers.length}; entry suggestions=${entryCandidates.map((candidate) => `${candidate.targetId}:${candidate.targetRole}[${candidate.direction}/${candidate.relation.type}]`).join(' / ')}`);
+}
+const pilotCoverage = pilotSlots ? pilotSlotsWithCandidate / pilotSlots : 0;
+console.log(`Soft Path candidate coverage: ${(pilotCoverage * 100).toFixed(1)}% (${pilotSlotsWithCandidate}/${pilotSlots} role-assigned pilot members)`);
+if (pilotCoverage < 0.8) errors.push(`Soft Path candidate coverageが80%未満です: ${(pilotCoverage * 100).toFixed(1)}%`);
+
 if (warnings.length) {
   console.log(`\nWARNINGS (${warnings.length})`);
   for (const warning of warnings) console.log(`- ${warning}`);
@@ -237,5 +339,5 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exitCode = 1;
 } else {
-  console.log('\nOK: Concept Cluster / Role Grammarは構造上の品質基準を満たしています。');
+  console.log('\nOK: Concept Cluster / Role Grammar / Soft Path Pilotは構造上の品質基準を満たしています。');
 }
