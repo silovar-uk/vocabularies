@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "role_grammar": {
     "version": 1,
     "roles": {
@@ -23,6 +23,18 @@
         "label": "良し悪しを確かめる",
         "description": "状態や介入結果を、何を基準に観察・評価すればよいかを与える。"
       }
+    }
+  },
+  "soft_path_pilot": {
+    "version": 1,
+    "cluster_ids": ["safe-software-change", "predictable-interaction"],
+    "max_candidates": 3,
+    "role_priority": {
+      "DIAGNOSE": ["DIAGNOSE", "MODEL", "DISTINGUISH", "INTERVENE", "EVALUATE"],
+      "MODEL": ["DISTINGUISH", "INTERVENE", "EVALUATE", "DIAGNOSE", "MODEL"],
+      "DISTINGUISH": ["MODEL", "INTERVENE", "EVALUATE", "DIAGNOSE", "DISTINGUISH"],
+      "INTERVENE": ["EVALUATE", "MODEL", "DISTINGUISH", "INTERVENE", "DIAGNOSE"],
+      "EVALUATE": ["DIAGNOSE", "MODEL", "DISTINGUISH", "INTERVENE", "EVALUATE"]
     }
   },
   "clusters": [
