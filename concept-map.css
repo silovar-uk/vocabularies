@@ -265,6 +265,72 @@ button, input { font: inherit; }
 }
 .focus-center-actions a:hover { color: var(--accent); }
 
+.focus-next {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.focus-next-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+.focus-next-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 720;
+  letter-spacing: -.01em;
+}
+.focus-next-hint {
+  max-width: 380px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+  text-align: right;
+}
+.focus-next-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.focus-next-option {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: rgba(255,255,255,.38);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.focus-next-option:hover,
+.focus-next-option:focus-visible {
+  border-color: rgba(47,93,80,.3);
+  background: rgba(255,255,255,.68);
+  outline: none;
+}
+.focus-next-role {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+.focus-next-name {
+  font-size: 14px;
+  line-height: 1.45;
+}
+.focus-next-reason {
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.55;
+}
+
 .verb-filters {
   display: flex;
   flex-wrap: wrap;
@@ -334,6 +400,8 @@ button, input { font: inherit; }
   .focus-center { order: -1; position: static; }
   .focus-side[data-direction="incoming"] { order: 2; }
   .focus-side[data-direction="outgoing"] { order: 3; }
+  .focus-next { order: 4; }
+  .focus-next-options { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -347,7 +415,10 @@ button, input { font: inherit; }
   .focus-map,
   .verb-index { padding: 42px 0; }
   .focus-heading,
-  .verb-index-head { align-items: flex-start; }
+  .verb-index-head,
+  .focus-next-head { align-items: flex-start; }
+  .focus-next-head { display: grid; gap: 6px; }
+  .focus-next-hint { text-align: left; }
   .route-row { grid-template-columns: 1fr; gap: 2px; padding: 13px 0; }
   .route-term:last-child { text-align: left; }
   .route-verb { text-align: left; }
