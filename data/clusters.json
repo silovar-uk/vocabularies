@@ -9,7 +9,7 @@
       },
       "MODEL": {
         "label": "仕組みを説明する",
-        "description": "なぜそうなるのか、どんな構造で成り立つのかを理解するためのモデルを与える。"
+        "description": "なぜそうなるのか、どんな構造で成り立つかを理解するためのモデルを与える。"
       },
       "DISTINGUISH": {
         "label": "混同を分ける",
@@ -28,7 +28,7 @@
   "soft_path_pilot": {
     "version": 1,
     "cluster_ids": ["safe-software-change", "predictable-interaction"],
-    "max_candidates": 3,
+    "max_candidates": 2,
     "role_priority": {
       "DIAGNOSE": ["DIAGNOSE", "MODEL", "DISTINGUISH", "INTERVENE", "EVALUATE"],
       "MODEL": ["DISTINGUISH", "INTERVENE", "EVALUATE", "DIAGNOSE", "MODEL"],
