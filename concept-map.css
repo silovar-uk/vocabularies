@@ -294,7 +294,7 @@ button, input { font: inherit; }
 }
 .focus-next-options {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
 .focus-next-option {
@@ -315,7 +315,7 @@ button, input { font: inherit; }
   background: rgba(255,255,255,.68);
   outline: none;
 }
-.focus-next-role {
+.focus-next-relation {
   color: var(--accent);
   font-size: 10px;
   font-weight: 700;
@@ -398,9 +398,9 @@ button, input { font: inherit; }
 @media (max-width: 820px) {
   .focus-map-stage { grid-template-columns: 1fr; }
   .focus-center { order: -1; position: static; }
+  .focus-next { order: 1; }
   .focus-side[data-direction="incoming"] { order: 2; }
   .focus-side[data-direction="outgoing"] { order: 3; }
-  .focus-next { order: 4; }
   .focus-next-options { grid-template-columns: 1fr; }
 }
 
