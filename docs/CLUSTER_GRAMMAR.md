@@ -12,15 +12,19 @@ VERB FAMILY
 CLUSTER
   ↓
 ROLE
+  ↓
+SOFT PATH (derived, pilot only)
 ```
 
-RoleはLearning Pathそのものではない。現在は、Cluster内で各Conceptが理解にどんな仕事をするかを表す最小の中間層として扱う。
+RoleはLearning Pathそのものではない。Cluster内で各Conceptが理解にどんな仕事をするかを表す中間層であり、Soft Path PilotではRoleと既存Relationから「次に見ると理解が進みやすい候補」をその場で導出する。
 
 ## Source of truth
 
-Cluster定義とRole Grammarの正本は `data/clusters.json`。
+Cluster定義、Role Grammar、Soft Path Pilotの設定は `data/clusters.json` を正本とする。
 
 各語彙データへ `clusters: [...]` や固定Roleを重複保存しない。1つのConceptが複数Clusterへ属することは許可し、Roleは **Concept × Cluster** の関係として扱う。
+
+Soft Pathのedgeや順序は保存しない。Path候補は既存typed relationをその場で読む。
 
 ## Fieldとの違い
 
@@ -188,7 +192,7 @@ RoleなしConceptは許可する。coverage 100%を目的にしない。
 
 Role Grammarの目的は分類表を増やすことではなく、「なぜ次にこのConceptを見るのか」を説明できるかを検証すること。
 
-Learning Path自体はまだ保存しない。
+固定Learning Pathは保存しない。
 
 ## Pilot 1 — 安全にソフトウェアを変更する
 
@@ -247,13 +251,13 @@ Role順を強制するのではなく、Cluster Questionと実Relationによっ�
 
 ## Path Readiness decision
 
-現時点の判定：
+判定：
 
 **ROLE GRAMMAR ACCEPTED / PATH READY FOR A SMALL PILOT**
 
-大量のLearning Path生成やCourse UIはまだ行わない。
+大量のLearning Path生成やCourse UIは行わない。
 
-Pathは次の条件を満たす場合だけ候補とする。
+Path候補は次の条件を満たす場合だけ扱う。
 
 1. Cluster Questionへの理解が前進する
 2. transitionを既存Relationで説明できる
@@ -263,7 +267,7 @@ Pathは次の条件を満たす場合だけ候補とする。
 
 ## Path Readiness Score
 
-現時点の内部評価：88 / 100。
+内部評価：88 / 100。
 
 - Role Grammar Quality: 23 / 25
 - Cross-Cluster Reuse: 19 / 20
@@ -274,15 +278,79 @@ Pathは次の条件を満たす場合だけ候補とする。
 
 Role構造は十分再利用できるが、実ユーザーのprior knowledgeや探索意図によって有効な順番が変わるため、Pathを固定Courseへする段階ではない。
 
+# Soft Path Derivation Pilot
+
+Path Readinessを確認したうえで、2 ClusterだけにSoft Path Pilotを実装した。
+
+対象：
+
+- `safe-software-change`
+- `predictable-interaction`
+
+`data/clusters.json` の `soft_path_pilot` が、対象Cluster、最大候補数、現在Roleから次Roleへの優先順だけを保持する。
+
+**個々のPath edgeは保存しない。**
+
+候補は毎回次の3要素から導出する。
+
+```text
+CURRENT CONCEPT
+      +
+SAME CLUSTER
+      +
+DIRECT TYPED RELATION
+      +
+ROLE PRIORITY
+      ↓
+NEXT 2–3 CANDIDATES
+```
+
+候補の順位は、まずRole transitionの優先順を使い、同順位ならcurrent conceptから外向きのtyped relationを優先する。候補の説明文にはRoleの人間向けlabelと既存relation noteを再利用する。
+
+これにより、relation noteを別のPath説明として複製しない。
+
+## Current derivation result
+
+CI上ではPilot対象のRole割当済み14 Conceptすべてで少なくとも1つの次候補を導出できている。
+
+- candidate coverage: `14 / 14 = 100%`
+- Technical Debt entry: `Code Smell / Legacy Code / Refactoring`
+- Signifier entry: `Discoverability / Conceptual Model / Affordance`
+
+Technical Debtの手書きPilot図と、実データから導出した候補がほぼ一致しているため、Role + Relationからsoft guidanceを作れるという仮説は現在の2 Clusterでは支持されている。
+
+## Soft Path validation
+
+`scripts/audit-clusters.mjs` で次を検査する。
+
+- Pilot対象は2 Clusterに限定
+- `max_candidates` は2〜3
+- Role優先順は全Roleを重複なく含む
+- Pilot対象Cluster IDが存在する
+- Pilotのentryから2候補以上導出できる
+- Role割当済みPilot memberの80%以上で候補を導出できる
+
+候補coverageが低下した場合、UIへ例外を追加するのではなく、Role / Relation / Pilot Grammarのどこが弱くなったかを確認する。
+
 # Concept Map
 
-Concept MapではCluster専用画面を作らない。
+Concept MapではCluster専用画面やPath専用画面を作らない。
 
-Focusしている語がClusterに属する場合だけ、中心語の近くへ小さく `CONTEXT · <cluster label>` を表示する。
+Focusしている語がClusterに属する場合、中心語の近くへ `CONTEXT · <cluster label>` を表示する。
 
-現時点ではRoleを新しいUI要素として追加していない。まずデータ構造とPath説明力を検証し、画面上の情報密度を増やす必要性が確認できた場合にのみ表示を検討する。
+さらにSoft Path Pilot対象ClusterのRole割当済みConceptだけ、Focus Map下部へ `次に見るなら` を最大3件表示する。
 
-Clusterに属さない語のUIは変えない。
+各候補は、
+
+- 次Concept
+- 次ConceptのThinking Role
+- 既存typed relation noteを使った「なぜ次なのか」
+
+を示す。
+
+このUIは正解順序を示さず、`正解の順番ではなく、今の語から理解を進めやすい候補。` と明示する。
+
+Clusterに属さない語、またはPilot対象外Clusterの語のUIは変えない。
 
 # Adding a cluster
 
@@ -300,8 +368,8 @@ Concept側へCluster IDやRoleを追記しない。
 
 # Not yet: stored Learning Paths
 
-Role Grammarは成立したが、Learning Pathをデータとして保存する段階にはまだ進めない。
+Soft Path Pilotを実装しても、Learning Pathをデータとして保存しない。
 
-次のフェーズでは、2 ClusterのPilotを使って、`Role + Relation + Cluster Question` からbranching / optionalを含むsoft pathを**導出できるか**を検証する。
+現在の次の検証対象は「導出できるか」ではなく、**この候補UIが自由探索より実際に役立つか**。
 
-Pathを保存する前に、同じPathがrelation変更時にも説明可能か、既存Concept Mapの探索を邪魔しないかを確認する。
+Pilotの価値が弱い場合、Role Grammarは維持してSoft Path UIだけを撤去できる。relationやClusterデータを巻き戻す必要はない。
