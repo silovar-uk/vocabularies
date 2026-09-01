@@ -22,6 +22,7 @@
     roleDefinitions: {},
     softPathPilot: null,
     focusId: null,
+    previousFocusId: null,
     activeFamily: null,
   };
 
@@ -163,6 +164,7 @@
     if (!state.items.has(id)) return false;
     const { updateUrl = true, historyMode = 'push' } = options;
     if (state.focusId === id) return true;
+    if (state.focusId) state.previousFocusId = state.focusId;
     state.focusId = id;
     window.VocabularyTrail?.record(id, nameById(id));
     if (updateUrl) {
@@ -241,18 +243,20 @@
         role: roles[targetId],
         direction,
         relation,
+        backtrack: targetId === state.previousFocusId,
         rank: rankFor(roles[targetId]),
       });
     });
 
     possibilities.sort((a, b) =>
+      Number(a.backtrack) - Number(b.backtrack) ||
       a.rank - b.rank ||
       (a.direction === 'outgoing' ? 0 : 1) - (b.direction === 'outgoing' ? 0 : 1) ||
       a.id.localeCompare(b.id)
     );
 
     const seen = new Set();
-    const maxCandidates = Math.max(2, Math.min(3, Number(state.softPathPilot?.max_candidates ?? 3)));
+    const maxCandidates = Math.max(1, Math.min(2, Number(state.softPathPilot?.max_candidates ?? 2)));
     const candidates = possibilities.filter((candidate) => {
       if (seen.has(candidate.id)) return false;
       seen.add(candidate.id);
@@ -266,12 +270,10 @@
     const derived = deriveSoftPathCandidates(id);
     if (!derived) return '';
     const options = derived.candidates.map((candidate) => {
-      const roleLabel = state.roleDefinitions?.[candidate.role]?.label ?? candidate.role;
-      const reason = candidate.relation.note
-        ? '「' + roleLabel + '」方向へ進む。' + candidate.relation.note
-        : '「' + roleLabel + '」方向へ進む。' + candidate.relation.type + 'の関係で直接つながっている。';
+      const relationLabel = candidate.relation.type || '関連';
+      const reason = candidate.relation.note || relationLabel + 'の関係で直接つながっている。';
       return '<button class="focus-next-option" type="button" data-focus-term="' + escapeHtml(candidate.id) + '">' +
-        '<span class="focus-next-role">' + escapeHtml(roleLabel) + '</span>' +
+        '<span class="focus-next-relation">' + escapeHtml(relationLabel) + '</span>' +
         '<strong class="focus-next-name">' + escapeHtml(nameById(candidate.id)) + '</strong>' +
         '<span class="focus-next-reason">' + escapeHtml(reason) + '</span>' +
       '</button>';
@@ -279,8 +281,8 @@
 
     return '<section class="focus-next" aria-label="次に見る候補">' +
       '<div class="focus-next-head">' +
-        '<div><p class="focus-side-title">SOFT PATH PILOT · ' + escapeHtml(derived.cluster.label) + '</p><p class="focus-next-title">次に見るなら</p></div>' +
-        '<p class="focus-next-hint">正解の順番ではなく、今の語から理解を進めやすい候補。</p>' +
+        '<div><p class="focus-side-title">NEXT · ' + escapeHtml(derived.cluster.label) + '</p><p class="focus-next-title">次に見るなら</p></div>' +
+        '<p class="focus-next-hint">正解の順番ではなく、今の語から理解を先へ進めるための候補。</p>' +
       '</div>' +
       '<div class="focus-next-options">' + options + '</div>' +
     '</section>';
