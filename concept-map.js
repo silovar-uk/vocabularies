@@ -17,7 +17,10 @@
     items: new Map(),
     essays: {},
     edges: [],
+    typedEdges: [],
     clusters: [],
+    roleDefinitions: {},
+    softPathPilot: null,
     focusId: null,
     activeFamily: null,
   };
@@ -134,6 +137,28 @@
     return edges;
   }
 
+  function buildTypedEdges(relationCollections) {
+    const edges = [];
+    relationCollections.forEach((relations) => {
+      Object.entries(relations ?? {}).forEach(([source, related]) => {
+        (related ?? []).forEach((relation) => {
+          const target = relation?.id;
+          if (!source || !target || !state.items.has(source) || !state.items.has(target)) return;
+          const semantic = relationGrammar?.classifyType(relation.type)
+            ?? { kind: 'NEAR', label: '近接', symbol: '≈', exact: false };
+          edges.push({
+            source,
+            target,
+            type: String(relation.type || '関連').trim(),
+            note: String(relation.note || '').trim(),
+            kind: semantic.kind,
+          });
+        });
+      });
+    });
+    return edges;
+  }
+
   function setFocus(id, options = {}) {
     if (!state.items.has(id)) return false;
     const { updateUrl = true, historyMode = 'push' } = options;
@@ -182,6 +207,85 @@
     '</a>';
   }
 
+  function pilotClusterFor(id) {
+    const ids = new Set(state.softPathPilot?.cluster_ids ?? []);
+    return state.clusters.find((cluster) => ids.has(cluster.id) && cluster?.members?.includes(id) && cluster?.roles?.[id]) ?? null;
+  }
+
+  function deriveSoftPathCandidates(id) {
+    const cluster = pilotClusterFor(id);
+    if (!cluster) return null;
+    const roles = cluster.roles ?? {};
+    const currentRole = roles[id];
+    const priorities = state.softPathPilot?.role_priority?.[currentRole] ?? Object.keys(state.roleDefinitions);
+    const rankFor = (roleId) => {
+      const index = priorities.indexOf(roleId);
+      return index === -1 ? priorities.length + 1 : index;
+    };
+    const memberSet = new Set(cluster.members ?? []);
+    const possibilities = [];
+
+    state.typedEdges.forEach((relation) => {
+      let targetId = null;
+      let direction = null;
+      if (relation.source === id && memberSet.has(relation.target)) {
+        targetId = relation.target;
+        direction = 'outgoing';
+      } else if (relation.target === id && memberSet.has(relation.source)) {
+        targetId = relation.source;
+        direction = 'incoming';
+      }
+      if (!targetId || !roles[targetId]) return;
+      possibilities.push({
+        id: targetId,
+        role: roles[targetId],
+        direction,
+        relation,
+        rank: rankFor(roles[targetId]),
+      });
+    });
+
+    possibilities.sort((a, b) =>
+      a.rank - b.rank ||
+      (a.direction === 'outgoing' ? 0 : 1) - (b.direction === 'outgoing' ? 0 : 1) ||
+      a.id.localeCompare(b.id)
+    );
+
+    const seen = new Set();
+    const maxCandidates = Math.max(2, Math.min(3, Number(state.softPathPilot?.max_candidates ?? 3)));
+    const candidates = possibilities.filter((candidate) => {
+      if (seen.has(candidate.id)) return false;
+      seen.add(candidate.id);
+      return true;
+    }).slice(0, maxCandidates);
+
+    return candidates.length ? { cluster, currentRole, candidates } : null;
+  }
+
+  function renderSoftPath(id) {
+    const derived = deriveSoftPathCandidates(id);
+    if (!derived) return '';
+    const options = derived.candidates.map((candidate) => {
+      const roleLabel = state.roleDefinitions?.[candidate.role]?.label ?? candidate.role;
+      const reason = candidate.relation.note
+        ? '「' + roleLabel + '」方向へ進む。' + candidate.relation.note
+        : '「' + roleLabel + '」方向へ進む。' + candidate.relation.type + 'の関係で直接つながっている。';
+      return '<button class="focus-next-option" type="button" data-focus-term="' + escapeHtml(candidate.id) + '">' +
+        '<span class="focus-next-role">' + escapeHtml(roleLabel) + '</span>' +
+        '<strong class="focus-next-name">' + escapeHtml(nameById(candidate.id)) + '</strong>' +
+        '<span class="focus-next-reason">' + escapeHtml(reason) + '</span>' +
+      '</button>';
+    }).join('');
+
+    return '<section class="focus-next" aria-label="次に見る候補">' +
+      '<div class="focus-next-head">' +
+        '<div><p class="focus-side-title">SOFT PATH PILOT · ' + escapeHtml(derived.cluster.label) + '</p><p class="focus-next-title">次に見るなら</p></div>' +
+        '<p class="focus-next-hint">正解の順番ではなく、今の語から理解を進めやすい候補。</p>' +
+      '</div>' +
+      '<div class="focus-next-options">' + options + '</div>' +
+    '</section>';
+  }
+
   function renderFocus() {
     const item = itemById(state.focusId);
     if (!item) return;
@@ -212,7 +316,8 @@
       '<div class="focus-side" data-direction="outgoing">' +
         '<p class="focus-side-title">この言葉から出ていく</p>' +
         (outgoing.length ? outgoing.map((edge) => renderEdge(edge, 'outgoing')).join('') : '<p class="map-empty">出ていく関係はまだありません。</p>') +
-      '</div>';
+      '</div>' +
+      renderSoftPath(state.focusId);
   }
 
   function families() {
@@ -339,14 +444,19 @@
       ]);
       state.catalog = catalog;
       state.clusters = Array.isArray(clusterData?.clusters) ? clusterData.clusters : [];
+      state.roleDefinitions = clusterData?.role_grammar?.roles ?? {};
+      state.softPathPilot = clusterData?.soft_path_pilot ?? null;
       const datasets = catalog.datasets ?? ['data/vocabularies.json'];
-      const [collections, essays] = await Promise.all([
+      const relationDatasets = catalog.relation_datasets ?? [];
+      const [collections, essays, relationCollections] = await Promise.all([
         Promise.all(datasets.map(loadJson)),
         loadEssayMap(essayIndex),
+        Promise.all(relationDatasets.map(loadJson)),
       ]);
       collections.flat().forEach((item) => { if (item?.id) state.items.set(item.id, item); });
       state.essays = essays;
       state.edges = buildEdges();
+      state.typedEdges = buildTypedEdges(relationCollections);
 
       const requested = new URLSearchParams(window.location.search).get('term');
       initialFocusId = requested && state.items.has(requested)
