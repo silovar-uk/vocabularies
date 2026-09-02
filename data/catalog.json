@@ -41,12 +41,14 @@
     "data/research-20260829-evening.json",
     "data/research-20260830-morning.json",
     "data/research-20260831-morning.json",
-    "data/research-20260831-technical-debt.json"
+    "data/research-20260831-technical-debt.json",
+    "data/research-20260903-analogy.json"
   ],
   "relation_datasets": [
     "data/relations.json",
     "data/relations-20260810-editorial.json",
-    "data/relations-20260831-technical-debt.json"
+    "data/relations-20260831-technical-debt.json",
+    "data/relations-20260903-analogy.json"
   ],
   "defaults": {
     "primary_language": "ja",
@@ -213,7 +215,7 @@
     },
     "selection-elimination": {"formal_status":"editorial_principle","aliases":["選択と除去","選択・除去・強調"],"usage_note":"Georgia O’Keeffeの制作上の言葉を、編集・デザインの原理として接続している。単独の標準的な学術用語としては扱わない。"},
     "differentiation": {"formal_status":"project_meta","aliases":["分化","差異化"],"usage_note":"単一分野の厳密な術語としてではなく、Vocabularies全体を貫くメタ概念として使用。"},
-    "signifiant": {"aliases":["シグニフィアン","しぐにふぃあん","記号表現"]},
+    "signifiant": {"aliases":["シグニフィアン","しぐにふぁいあん","記号表現"]},
     "signified": {"aliases":["シニフィエ","記号内容"]},
     "linguistic-sign": {
       "ja":"言語記号 / シーニュ",
