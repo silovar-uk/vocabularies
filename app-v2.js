@@ -1,5 +1,6 @@
 const FALLBACK_DATASETS = ["data/vocabularies.json"];
 const FALLBACK_RELATION_DATASETS = ["data/relations.json"];
+const EXTRA_DATASETS = ["data/research-20260903-evening.json"];
 
 const state = { items: [], query: "", feeling: null, field: null, activeItemId: null, catalog: { schema_version: 1, datasets: FALLBACK_DATASETS, relation_datasets: FALLBACK_RELATION_DATASETS, defaults: { primary_language: "ja", formal_status: "established_term", aliases: [] }, formal_status_labels: {}, field_labels: {}, taxonomy: [], terms: {}, search_contrasts: [] } };
 const searchInput=document.querySelector("#searchInput"),feelingChips=document.querySelector("#feelingChips"),fieldFilters=document.querySelector("#fieldFilters"),vocabularyGrid=document.querySelector("#vocabularyGrid"),resultCount=document.querySelector("#resultCount"),emptyState=document.querySelector("#emptyState"),clearFilters=document.querySelector("#clearFilters");
@@ -46,5 +47,5 @@ async function loadJson(path){
   try{return await request}catch(error){jsonRequestCache.delete(p);throw error}
 }
 async function loadCatalog(){const c=await loadJson("data/catalog.json");if(!c||Array.isArray(c)||typeof c!=="object")throw new Error("Catalog data is not an object");return c}
-async function loadVocabularyData(){const d=state.catalog.datasets?.length?state.catalog.datasets:FALLBACK_DATASETS,c=await Promise.all(d.map(async p=>{const x=await loadJson(p);if(!Array.isArray(x))throw new Error(p+" is not an array");return x}));return mergeItems(...c).map(applyCatalogMetadata)}
+async function loadVocabularyData(){const catalogDatasets=state.catalog.datasets?.length?state.catalog.datasets:FALLBACK_DATASETS,d=[...new Set([...catalogDatasets,...EXTRA_DATASETS])],c=await Promise.all(d.map(async p=>{const x=await loadJson(p);if(!Array.isArray(x))throw new Error(p+" is not an array");return x}));return mergeItems(...c).map(applyCatalogMetadata)}
 async function init(){try{state.catalog={...state.catalog,...(await loadCatalog())}}catch(e){console.error("Catalog load failed:",e)}try{state.items=await loadVocabularyData();window.vocabularyStudyItems=state.items;render();window.dispatchEvent(new CustomEvent('vocabulary-items-ready',{detail:{count:state.items.length}}))}catch(e){console.error(e);resultCount.textContent=state.items.length+"語（データ取得失敗）";vocabularyGrid.insertAdjacentHTML("beforeend",'<div class="load-warning"><strong>語彙データの取得に失敗しました。</strong><br>この画面を再読み込みしてください。</div>')}}init();
