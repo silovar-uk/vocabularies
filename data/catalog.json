@@ -33,7 +33,7 @@
     "data/research-20260824-evening-vocabulary.json",
     "data/research-20260825-bbc-ai-vocabulary.json",
     "data/research-20260825-evening-vocabulary.json",
-    "data/research-20260826-morning-vocabulary.json",
+    "data/research-20260826-morning.json",
     "data/research-20260827-morning.json",
     "data/research-20260827-evening.json",
     "data/research-20260828-morning.json",
@@ -211,7 +211,7 @@
     },
     "salience": {"aliases":["顕著性","サリエンス"]},
     "signifier": {
-      "aliases":["シグニファイヤー","しぐにふぁいあん","操作の手掛かり","操作の手がかり"],
+      "aliases":["シグニファイヤー","しぐにふぁいあ","操作の手掛かり","操作の手がかり"],
       "sources":["https://jnd.org/signifiers-not-affordances/","https://jnd.org/opportunities-and-challenges-for-touch-and-gesture-based-systems/"]
     },
     "conservation-of-complexity": {"formal_status":"heuristic","aliases":["テスラー","テスラーの法則","複雑性保存則"],"usage_note":"『法則』と呼ばれるが、自然科学上の法則ではなく設計上のヒューリスティックとして扱う。"},
