@@ -1,0 +1,51 @@
+[
+  {
+    "id": "shape-outside",
+    "term": "shape-outside",
+    "ja": "シェイプ・アウトサイド",
+    "fields": ["Web", "Graphic Design", "Design"],
+    "one_liner": "本文を四角い画像ボックスではなく、円や多角形など実際の形状に沿って回り込ませる。",
+    "description": "CSSで、floatされた要素の周囲に本文を回り込ませる際、その回り込み境界を要素の矩形ではなくcircle()、ellipse()、polygon()、画像のアルファ形状などで指定するプロパティ。エディトリアルなレイアウトや切り抜き画像まわりの本文設計で使える。",
+    "why_selected": "最近の制作語が整列・余白・改行に寄っていたため、本文の流れそのものを形状で設計する別の実務軸を増やすため。",
+    "feelings": ["切り抜き画像の周囲に不自然な空白ができる", "本文を図版の輪郭に沿わせたい", "矩形レイアウトから少し外したい"],
+    "before": "写真の周りの文章をもう少し自然に回り込ませて。",
+    "after": "画像の矩形boxではなく、shape-outsideで切り抜き形状に沿って本文を回り込ませたい。",
+    "instruction": "円形ビジュアルの矩形boxに沿わせず、shape-outside: circle() と shape-margin で本文の回り込みを設計してください。",
+    "related": ["composition", "object-position"],
+    "opposites": [],
+    "sources": ["https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside"],
+    "status": "researched"
+  },
+  {
+    "id": "option-value",
+    "term": "Option Value",
+    "ja": "オプション価値",
+    "fields": ["Meta", "Philosophy"],
+    "one_liner": "今すぐ決め切らず、将来の選択可能性を残しておくこと自体にも価値がある。",
+    "description": "意思決定や経済学で、不確実性がある状況において、将来より多くの情報が得られた後に選択できる余地を維持すること自体に価値があると捉える考え方。不可逆な判断を急がず、選択肢を保存する意味を評価できる。",
+    "why_selected": "最適な案を今すぐ選ぶことだけでなく、まだ選ばないことや変更可能性を残すことも意思決定資産として見られる観察軸を増やすため。",
+    "feelings": ["今決めると後戻りコストが大きい", "もう少し情報が揃ってから決めたい", "変更可能性を残しておきたい"],
+    "before": "決められるなら今決めた方が早い。",
+    "after": "今固定する利益と、将来の選択肢を残すOption Valueを比較したい。",
+    "related": ["negative-capability", "path-dependence"],
+    "opposites": [],
+    "sources": ["https://www.oecd.org/en/publications/cost-benefit-analysis-and-the-environment_9789264085169-en.html"],
+    "status": "researched"
+  },
+  {
+    "id": "missing-fundamental",
+    "term": "Missing Fundamental",
+    "ja": "ミッシング・ファンダメンタル / 欠落基音",
+    "fields": ["Sound", "Music", "Perception"],
+    "one_liner": "基音そのものが鳴っていなくても、倍音の関係からその高さを知覚できる。",
+    "description": "聴覚心理・音響で、ある複合音の基本周波数成分が物理的に欠けていても、その整数倍にあたる高調波の並びから、聴覚系が欠けた基音に対応するピッチを知覚する現象。知覚された高さと、実際に存在する周波数成分が一致しないことを示す。",
+    "why_selected": "存在する情報をどう読むかという最近の語群から距離を取り、知覚系が構造から『そこにないもの』まで構成するという新しい観察軸を加えるため。",
+    "feelings": ["実際には鳴っていない低音を感じる", "スマホスピーカーでも低いピッチを感じる", "物理入力と知覚が一致しない"],
+    "before": "聞こえている音程なら、その周波数が実際に鳴っているはず。",
+    "after": "Missing Fundamentalなら、基音が物理的に欠けていても倍音構造からそのPitchを知覚できる。",
+    "related": ["timbre", "entrainment"],
+    "opposites": [],
+    "sources": ["https://www.music.mcgill.ca/~gary/307/week4/node12.html"],
+    "status": "researched"
+  }
+]
