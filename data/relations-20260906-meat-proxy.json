@@ -1,0 +1,28 @@
+{
+  "meat-proxy": [
+    {
+      "id": "ai-literacy",
+      "type": "対照",
+      "note": "AI literacyはAIの能力と限界を理解し、出力を評価して使う力。Meat Proxyは、その評価・判断工程が空洞化した中継状態を批評する語で、単純な反対語ではない。"
+    },
+    {
+      "id": "cognitive-offloading",
+      "type": "区別",
+      "note": "認知処理の一部を外部へ預けること自体はMeat Proxyではない。外部化した結果を自分の判断へ再統合せず、未検証のまま他者へ流すときに問題が生じる。"
+    }
+  ],
+  "ai-literacy": [
+    {
+      "id": "meat-proxy",
+      "type": "対照",
+      "note": "AI literacyが出力の評価や限界理解を重視するのに対し、Meat Proxyは人間が介在していても、そのレビュー機能が働いていない状態を可視化する。"
+    }
+  ],
+  "cognitive-offloading": [
+    {
+      "id": "meat-proxy",
+      "type": "区別",
+      "note": "AIや道具へ認知処理を預けても、人間が結果を理解・検証・判断へ戻していればMeat Proxyとは限らない。"
+    }
+  ]
+}
