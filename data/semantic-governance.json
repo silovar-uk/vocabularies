@@ -1,11 +1,17 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "updated_at": "2026-09-07",
+  "audit_window": {
+    "recent_terms": 30,
+    "repeat_cluster_runs": 5,
+    "cooldown_cluster_threshold": 4
+  },
   "principles": [
     "語数より意味空間の広がりを優先する",
     "分野の違いより観察軸の違いを重視する",
     "既存語の子概念・特殊ケースは原則追加しない",
-    "近接クラスタは一定期間クールダウンする"
+    "近接クラスタは一定期間クールダウンする",
+    "監査データが実在語を参照しているか毎回検証する"
   ],
   "cooldown_clusters": [
     {
@@ -13,59 +19,104 @@
       "label": "並行処理・競合・順序",
       "status": "cooldown",
       "reason": "Race Condition、Write Skew、Optimistic Concurrency Control、Vector Clock、Head-of-Line Blockingが近接して増えている。",
-      "terms": ["race-condition", "write-skew", "optimistic-concurrency-control", "vector-clock", "head-of-line-blocking"]
+      "terms": [
+        "race-condition",
+        "write-skew",
+        "optimistic-concurrency-control",
+        "vector-clock",
+        "head-of-line-blocking"
+      ]
     },
     {
       "id": "cache-resilience",
       "label": "キャッシュ・障害・耐障害",
       "status": "cooldown",
       "reason": "Cache Stampede、Stale-While-Revalidate、Backpressure、Graceful Degradation、Cache Poisoningなどが集中している。",
-      "terms": ["cache-stampede", "stale-while-revalidate", "backpressure", "graceful-degradation", "cache-poisoning"]
+      "terms": [
+        "cache-stampede",
+        "stale-while-revalidate",
+        "backpressure",
+        "graceful-degradation",
+        "cache-poisoning"
+      ]
     },
     {
       "id": "boundary-transition",
       "label": "境界・中間・移行",
       "status": "cooldown",
       "reason": "Liminality、Ecotone、Boundary Object、Boundary-workなど、境界を読む語が十分に蓄積した。",
-      "terms": ["liminality", "ecotone", "boundary-object", "boundary-work"]
+      "terms": [
+        "liminality",
+        "ecotone",
+        "boundary-object",
+        "boundary-work"
+      ]
     },
     {
       "id": "typography-line-flow",
       "label": "組版・改行・行の見え方",
       "status": "cooldown",
       "reason": "Leading、Kinsoku Shori、Hanging Punctuation、Widows / Orphansなど、行・改行周辺が厚くなっている。",
-      "terms": ["leading", "kinsoku-shori", "hanging-punctuation", "widows-orphans"]
+      "terms": [
+        "leading",
+        "kinsoku-shori",
+        "hanging-punctuation",
+        "widows-orphans"
+      ]
     },
     {
       "id": "adaptation-recovery",
       "label": "適応・回復・負荷",
-      "status": "cooldown",
-      "reason": "Allostasis、Allostatic Load、Critical Slowing Downが近接するため、新規追加は別の観察軸を優先する。",
-      "terms": ["allostasis", "allostatic-load", "critical-slowing-down"]
+      "status": "watch",
+      "reason": "AllostasisとAllostatic Loadが非常に近い。今後は同じ適応・負荷軸を細分化しない。",
+      "terms": [
+        "allostasis",
+        "allostatic-load"
+      ]
     },
     {
       "id": "context-language",
       "label": "文脈・発話・関係性",
       "status": "watch",
-      "reason": "Indexicality、Register、Speech Act、Recipient Design、Metapragmaticsなどが近い。追加時は差分説明を必須にする。",
-      "terms": ["indexicality", "register", "speech-act", "recipient-design", "metapragmatics"]
+      "reason": "Indexicality、Register、Speech Act、Metapragmaticsが近い。追加時は差分説明を必須にする。",
+      "terms": [
+        "indexicality",
+        "register",
+        "speech-act",
+        "metapragmatics"
+      ]
+    },
+    {
+      "id": "responsive-layout",
+      "label": "レスポンシブ配置・位置決め",
+      "status": "watch",
+      "reason": "Safe Area、Intrinsic Sizing、Stacking Context、Container Query、object-position、Anchor Positioning、shape-outsideが増えている。",
+      "terms": [
+        "safe-area-insets",
+        "intrinsic-sizing",
+        "stacking-context",
+        "container-query",
+        "object-position",
+        "css-anchor-positioning",
+        "shape-outside"
+      ]
     }
   ],
   "high_risk_pairs": [
     {
       "a": "allostasis",
       "b": "allostatic-load",
-      "note": "前者は適応プロセス、後者は適応を繰り返した結果の累積負担。新規語生成ではこの周辺を休ませる。"
+      "note": "前者は適応プロセス、後者は適応を繰り返した結果の累積負担。差はあるが、新規語生成ではこの近傍を休ませる。"
     },
     {
       "a": "race-condition",
       "b": "write-skew",
-      "note": "Write Skewは並行更新異常の特殊ケース寄り。今後は競合周辺を追加しない。"
+      "note": "Write SkewはRace Conditionより狭い並行更新異常。今後は競合周辺を追加しない。"
     },
     {
       "a": "boundary-object",
       "b": "boundary-work",
-      "note": "対象は異なるが境界という説明軸が近い。連続追加を避ける。"
+      "note": "対象は異なるが、境界という説明軸が近い。連続追加を避ける。"
     },
     {
       "a": "cache-stampede",
@@ -76,14 +127,358 @@
       "a": "optical-alignment",
       "b": "parallax-error",
       "note": "前者は配置補正、後者は観測位置による測定誤差。近く見えるが分析対象は異なる。"
+    },
+    {
+      "a": "taphonomy",
+      "b": "prosthetic-memory",
+      "note": "前者は証拠が残る過程、後者はメディアを介して過去が現在の記憶になる過程。過去・記憶周辺は一度休ませる。"
     }
   ],
+  "term_annotations": {
+    "race-condition": {
+      "cluster": "concurrency-ordering",
+      "axis": "実行順やタイミングの違いが結果を変えるかを見る",
+      "nearest_terms": [
+        "write-skew",
+        "optimistic-concurrency-control"
+      ]
+    },
+    "write-skew": {
+      "cluster": "concurrency-ordering",
+      "axis": "個別更新は正しくても、同時実行後に全体制約が壊れるかを見る",
+      "nearest_terms": [
+        "race-condition",
+        "optimistic-concurrency-control"
+      ]
+    },
+    "optimistic-concurrency-control": {
+      "cluster": "concurrency-ordering",
+      "axis": "競合を事前ロックせず、保存時に検出して扱う設計を見る",
+      "nearest_terms": [
+        "race-condition",
+        "write-skew",
+        "vector-clock"
+      ]
+    },
+    "vector-clock": {
+      "cluster": "concurrency-ordering",
+      "axis": "共通時計なしでイベント同士の因果順序と並行性を分ける",
+      "nearest_terms": [
+        "optimistic-concurrency-control",
+        "race-condition"
+      ]
+    },
+    "head-of-line-blocking": {
+      "cluster": "concurrency-ordering",
+      "axis": "処理量ではなく、先頭要素の順序制約が後続を止めているかを見る",
+      "nearest_terms": [
+        "backpressure"
+      ]
+    },
+    "cache-stampede": {
+      "cluster": "cache-resilience",
+      "axis": "キャッシュ失効の瞬間に同じ再生成処理が集中するかを見る",
+      "nearest_terms": [
+        "stale-while-revalidate",
+        "backpressure"
+      ]
+    },
+    "stale-while-revalidate": {
+      "cluster": "cache-resilience",
+      "axis": "鮮度と応答速度を、古い値を一時利用することで両立できるかを見る",
+      "nearest_terms": [
+        "cache-stampede"
+      ]
+    },
+    "backpressure": {
+      "cluster": "cache-resilience",
+      "axis": "下流の処理能力に合わせて上流の流量を抑える必要があるかを見る",
+      "nearest_terms": [
+        "head-of-line-blocking"
+      ]
+    },
+    "graceful-degradation": {
+      "cluster": "cache-resilience",
+      "axis": "一部が壊れたとき、何を残して価値を維持するかを見る",
+      "nearest_terms": [
+        "backpressure"
+      ]
+    },
+    "cache-poisoning": {
+      "cluster": "cache-resilience",
+      "axis": "共有キャッシュが誤った内容まで多数へ増幅する危険を見る",
+      "nearest_terms": [
+        "cache-stampede",
+        "stale-while-revalidate"
+      ]
+    },
+    "liminality": {
+      "cluster": "boundary-transition",
+      "axis": "古い状態を離れ、新しい状態へ入る途中そのものを見る",
+      "nearest_terms": [
+        "ecotone"
+      ]
+    },
+    "ecotone": {
+      "cluster": "boundary-transition",
+      "axis": "二つの生態系が接する移行帯で独自の性質が生まれるかを見る",
+      "nearest_terms": [
+        "liminality"
+      ]
+    },
+    "boundary-object": {
+      "cluster": "boundary-transition",
+      "axis": "異なる集団が理解を完全一致させずに共同作業できる共通物を見る",
+      "nearest_terms": [
+        "boundary-work"
+      ]
+    },
+    "boundary-work": {
+      "cluster": "boundary-transition",
+      "axis": "専門性や決定権の境界が、行為によって作られ維持されているかを見る",
+      "nearest_terms": [
+        "boundary-object"
+      ]
+    },
+    "leading": {
+      "cluster": "typography-line-flow",
+      "axis": "文字サイズではなく、行と行の縦方向の間隔が読みやすさを変えるかを見る",
+      "nearest_terms": [
+        "widows-orphans",
+        "kinsoku-shori"
+      ]
+    },
+    "kinsoku-shori": {
+      "cluster": "typography-line-flow",
+      "axis": "日本語の改行位置が句読点や括弧の規則を破っていないかを見る",
+      "nearest_terms": [
+        "hanging-punctuation",
+        "widows-orphans"
+      ]
+    },
+    "hanging-punctuation": {
+      "cluster": "typography-line-flow",
+      "axis": "約物を外へ逃がすことで本文文字の端を視覚的に揃えられるかを見る",
+      "nearest_terms": [
+        "kinsoku-shori",
+        "optical-alignment"
+      ]
+    },
+    "widows-orphans": {
+      "cluster": "typography-line-flow",
+      "axis": "段落の一部だけがページや段の境界に孤立していないかを見る",
+      "nearest_terms": [
+        "leading",
+        "kinsoku-shori"
+      ]
+    },
+    "indexicality": {
+      "cluster": "context-language",
+      "axis": "言葉が内容だけでなく、話者・場・関係まで指し示しているかを見る",
+      "nearest_terms": [
+        "register",
+        "metapragmatics"
+      ]
+    },
+    "register": {
+      "cluster": "context-language",
+      "axis": "場面や集団に応じて選ばれる言語使用域の違いを見る",
+      "nearest_terms": [
+        "indexicality",
+        "metapragmatics"
+      ]
+    },
+    "speech-act": {
+      "cluster": "context-language",
+      "axis": "発話が情報伝達だけでなく、約束・命令・宣言などの行為をしているかを見る",
+      "nearest_terms": [
+        "metapragmatics"
+      ]
+    },
+    "metapragmatics": {
+      "cluster": "context-language",
+      "axis": "言葉の内容ではなく、言葉の使われ方自体が評価・規範化されているかを見る",
+      "nearest_terms": [
+        "register",
+        "speech-act",
+        "indexicality"
+      ]
+    },
+    "safe-area-insets": {
+      "cluster": "responsive-layout",
+      "axis": "端末固有のノッチやホームインジケーターを避ける安全領域を見る",
+      "nearest_terms": [
+        "intrinsic-sizing"
+      ]
+    },
+    "intrinsic-sizing": {
+      "cluster": "responsive-layout",
+      "axis": "外側の固定幅ではなく、内容が本来的に必要とする寸法からサイズを考える",
+      "nearest_terms": [
+        "container-query"
+      ]
+    },
+    "stacking-context": {
+      "cluster": "responsive-layout",
+      "axis": "z-indexの数値ではなく、独立した重なり順の文脈が作られているかを見る",
+      "nearest_terms": [
+        "css-anchor-positioning"
+      ]
+    },
+    "container-query": {
+      "cluster": "responsive-layout",
+      "axis": "画面全体ではなく、コンポーネントの親サイズに応じて見た目を変える",
+      "nearest_terms": [
+        "intrinsic-sizing",
+        "css-anchor-positioning"
+      ]
+    },
+    "object-position": {
+      "cluster": "responsive-layout",
+      "axis": "画像ボックスを変えず、トリミング時にどの位置を中心に残すかを見る",
+      "nearest_terms": [
+        "shape-outside"
+      ]
+    },
+    "css-anchor-positioning": {
+      "cluster": "responsive-layout",
+      "axis": "固定座標ではなく、意味のある基準要素との関係で位置を決める",
+      "nearest_terms": [
+        "stacking-context",
+        "container-query"
+      ]
+    },
+    "shape-outside": {
+      "cluster": "responsive-layout",
+      "axis": "矩形ボックスではなく、実際の形状が本文の流れをどう変えるかを見る",
+      "nearest_terms": [
+        "object-position",
+        "composition"
+      ]
+    },
+    "taphonomy": {
+      "cluster": "mediated-past",
+      "axis": "観測された証拠だけでなく、何が残り何が消えたかの保存過程を見る",
+      "nearest_terms": [
+        "prosthetic-memory",
+        "palimpsest"
+      ]
+    },
+    "prosthetic-memory": {
+      "cluster": "mediated-past",
+      "axis": "直接経験していない過去が、メディアを介して現在の自己理解へ入る過程を見る",
+      "nearest_terms": [
+        "taphonomy",
+        "palimpsest",
+        "paratext"
+      ]
+    },
+    "palimpsest": {
+      "cluster": "mediated-past",
+      "axis": "新しい層の下に古い痕跡が消えずに重なって残っているかを見る",
+      "nearest_terms": [
+        "taphonomy",
+        "chronotope"
+      ]
+    },
+    "paratext": {
+      "cluster": "mediated-past",
+      "axis": "本文の外側にあるタイトル・表紙・序文などが読み方を方向づけるかを見る",
+      "nearest_terms": [
+        "prosthetic-memory"
+      ]
+    },
+    "chronotope": {
+      "cluster": "mediated-past",
+      "axis": "物語の時間と空間が一体となって、起こりうる出来事を形づくるかを見る",
+      "nearest_terms": [
+        "palimpsest"
+      ]
+    },
+    "categorical-perception": {
+      "cluster": "constructed-perception",
+      "axis": "連続した刺激を、知覚がカテゴリー境界で不連続に分けていないかを見る",
+      "nearest_terms": [
+        "perceptual-set"
+      ]
+    },
+    "perceptual-set": {
+      "cluster": "constructed-perception",
+      "axis": "期待や課題が、何を知覚しやすくするかを見る",
+      "nearest_terms": [
+        "categorical-perception",
+        "salience"
+      ]
+    },
+    "apophenia": {
+      "cluster": "constructed-perception",
+      "axis": "無関係な情報に意味あるパターンを見出しすぎていないかを見る",
+      "nearest_terms": [
+        "perceptual-set"
+      ]
+    },
+    "missing-fundamental": {
+      "cluster": "constructed-perception",
+      "axis": "物理的に欠けた基音を、倍音構造から知覚が補完していないかを見る",
+      "nearest_terms": [
+        "timbre",
+        "entrainment"
+      ]
+    },
+    "parallax-error": {
+      "cluster": "constructed-perception",
+      "axis": "観測者の位置や角度が読み取り値を歪めていないかを見る",
+      "nearest_terms": [
+        "optical-alignment"
+      ]
+    },
+    "allostasis": {
+      "cluster": "adaptation-recovery",
+      "axis": "状態を固定せず変化させることで、環境に対する安定を保つ仕組みを見る",
+      "nearest_terms": [
+        "allostatic-load"
+      ]
+    },
+    "allostatic-load": {
+      "cluster": "adaptation-recovery",
+      "axis": "適応を繰り返した結果として、生理的負担が累積していないかを見る",
+      "nearest_terms": [
+        "allostasis"
+      ]
+    },
+    "option-value": {
+      "cluster": "decision-optionality",
+      "axis": "今決めないことで将来の選択可能性を残す価値を見る",
+      "nearest_terms": [
+        "negative-capability",
+        "path-dependence"
+      ]
+    }
+  },
   "recent_axes": [
-    {"term": "shape-outside", "axis": "形状が本文の流れをどう変えるか"},
-    {"term": "option-value", "axis": "将来の選択可能性を残す価値"},
-    {"term": "missing-fundamental", "axis": "欠けた入力を知覚が構造から補完する"},
-    {"term": "parallax-error", "axis": "観測者の位置が読み取りを歪める"},
-    {"term": "cache-poisoning", "axis": "共有高速化が誤情報まで増幅する"},
-    {"term": "allostatic-load", "axis": "適応を繰り返すことの累積コスト"}
+    {
+      "term": "shape-outside",
+      "axis": "形状が本文の流れをどう変えるか"
+    },
+    {
+      "term": "option-value",
+      "axis": "将来の選択可能性を残す価値"
+    },
+    {
+      "term": "missing-fundamental",
+      "axis": "欠けた入力を知覚が構造から補完する"
+    },
+    {
+      "term": "parallax-error",
+      "axis": "観測者の位置が読み取りを歪める"
+    },
+    {
+      "term": "cache-poisoning",
+      "axis": "共有高速化が誤情報まで増幅する"
+    },
+    {
+      "term": "allostatic-load",
+      "axis": "適応を繰り返すことの累積コスト"
+    }
   ]
 }
