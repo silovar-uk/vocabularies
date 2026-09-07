@@ -1,0 +1,16 @@
+{
+  "red-queen-competition": [
+    {
+      "id": "path-dependence",
+      "type": "理解の鍵",
+      "note": "Red Queen Competitionでは、現在の競争力が過去にどの競争を経験し、そこから何を学んできたかに依存する。Path Dependenceは、この履歴依存性を理解する補助線になる。"
+    }
+  ],
+  "path-dependence": [
+    {
+      "id": "red-queen-competition",
+      "type": "具体例",
+      "note": "競争経験の履歴が組織学習と競争力を形づくるRed Queen Competitionは、経路依存性が企業間競争に現れる具体的な例として読める。"
+    }
+  ]
+}
