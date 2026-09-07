@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "updated_at": "2026-09-07",
   "cluster_registry": "data/semantic-clusters.json",
   "annotation_datasets": [
@@ -20,5 +20,89 @@
     "max_b_per_change": 1,
     "require_existing_nearest_term": true,
     "require_cluster_or_new_axis": true
+  },
+  "exploration_debt": {
+    "enabled": true,
+    "weights": {
+      "priority": 0.25,
+      "scarcity": 0.35,
+      "recency": 0.25,
+      "adjacent_saturation": 0.15
+    },
+    "recency_full_debt_days": 30,
+    "featured_count": 3,
+    "ensure_mode_diversity": true,
+    "status_pressure": {
+      "cooldown": 100,
+      "dense": 90,
+      "watch": 65,
+      "balanced": 25
+    },
+    "frontier_signals": {
+      "accessibility-semantics": [
+        "accessibility",
+        "accessible name",
+        "aria",
+        "screen reader",
+        "支援技術",
+        "アクセシブル",
+        "キーボード操作"
+      ],
+      "narrative-perspective": [
+        "focalization",
+        "narrator",
+        "narrative",
+        "物語",
+        "語り手",
+        "語りの視点"
+      ],
+      "embodied-orientation": [
+        "proprio",
+        "intero",
+        "kinest",
+        "固有感覚",
+        "内受容",
+        "身体位置",
+        "身体感覚"
+      ],
+      "material-behavior": [
+        "material",
+        "素材",
+        "摩耗",
+        "公差",
+        "粘弾性",
+        "creep",
+        "fatigue"
+      ],
+      "institutions-incentives": [
+        "principal-agent",
+        "agency problem",
+        "incentive",
+        "moral hazard",
+        "adverse selection",
+        "情報非対称",
+        "代理関係",
+        "契約"
+      ],
+      "spatial-social-order": [
+        "proxemics",
+        "territorial",
+        "social distance",
+        "社会的距離",
+        "空間配置",
+        "動線",
+        "領域性"
+      ],
+      "measurement-trust": [
+        "calibration",
+        "measurement uncertainty",
+        "metrology",
+        "precision",
+        "accuracy",
+        "校正",
+        "測定不確かさ",
+        "再現性"
+      ]
+    }
   }
 }
