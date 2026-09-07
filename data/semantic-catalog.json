@@ -4,7 +4,8 @@
   "cluster_registry": "data/semantic-clusters.json",
   "annotation_datasets": [
     "data/semantic-annotations-20260907-core.json",
-    "data/semantic-annotations-20260907-red-queen.json"
+    "data/semantic-annotations-20260907-red-queen.json",
+    "data/semantic-annotations-20260907-story-structure.json"
   ],
   "addition_gate": {
     "enabled": true,
