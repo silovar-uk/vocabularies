@@ -28,7 +28,10 @@ for (const path of semanticCatalog.annotation_datasets ?? []) {
   }
 }
 
-const clusterIds = new Set((clustersData.clusters ?? []).map((cluster) => cluster.id));
+const clusterIds = new Set([
+  ...(clustersData.clusters ?? []).map((cluster) => cluster.id),
+  ...(governanceBase.cooldown_clusters ?? []).map((cluster) => cluster.id),
+]);
 const knownIds = new Set(currentItems.keys());
 
 for (const [id, annotation] of Object.entries(annotations)) {
