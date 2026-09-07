@@ -46,14 +46,16 @@
     "data/research-20260903-evening.json",
     "data/research-20260904-morning.json",
     "data/research-20260906-morning.json",
-    "data/research-20260906-meat-proxy.json"
+    "data/research-20260906-meat-proxy.json",
+    "data/research-20260907-red-queen-competition.json"
   ],
   "relation_datasets": [
     "data/relations.json",
     "data/relations-20260810-editorial.json",
     "data/relations-20260831-technical-debt.json",
     "data/relations-20260903-analogy.json",
-    "data/relations-20260906-meat-proxy.json"
+    "data/relations-20260906-meat-proxy.json",
+    "data/relations-20260907-red-queen-competition.json"
   ],
   "defaults": {
     "primary_language": "ja",
@@ -107,7 +109,8 @@
     "Sound": "音響",
     "Semiotics": "記号論",
     "Philosophy": "哲学",
-    "Software Engineering": "ソフトウェア工学"
+    "Software Engineering": "ソフトウェア工学",
+    "Management": "経営学"
   },
   "taxonomy": [
     {
@@ -138,7 +141,7 @@
     {
       "id": "practice-systems",
       "label": "実践・システム",
-      "fields": ["Games", "Software Engineering"]
+      "fields": ["Games", "Software Engineering", "Management"]
     }
   ],
   "terms": {
