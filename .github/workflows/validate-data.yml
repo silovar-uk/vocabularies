@@ -9,6 +9,7 @@ on:
       - "scripts/validate-relation-grammar.mjs"
       - "scripts/validate-intake.mjs"
       - "scripts/audit-clusters.mjs"
+      - "scripts/validate-semantic-governance.mjs"
       - "relation-grammar.js"
       - "app-v2.js"
       - "reader.js"
@@ -17,6 +18,8 @@ on:
       - "discovery.js"
       - "concept-map.js"
       - "semantic-index.js"
+      - "semantic-governance-loader.js"
+      - "semantic-audit.js"
       - "knowledge-landscape.css"
       - "editorial.js"
       - "editorial-protection.js"
@@ -28,6 +31,7 @@ on:
       - "scripts/validate-relation-grammar.mjs"
       - "scripts/validate-intake.mjs"
       - "scripts/audit-clusters.mjs"
+      - "scripts/validate-semantic-governance.mjs"
       - "relation-grammar.js"
       - "app-v2.js"
       - "reader.js"
@@ -36,6 +40,8 @@ on:
       - "discovery.js"
       - "concept-map.js"
       - "semantic-index.js"
+      - "semantic-governance-loader.js"
+      - "semantic-audit.js"
       - "knowledge-landscape.css"
       - "editorial.js"
       - "editorial-protection.js"
@@ -52,6 +58,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v7
@@ -67,6 +75,11 @@ jobs:
       - name: Audit concept cluster graph
         run: node scripts/audit-clusters.mjs
 
+      - name: Validate semantic governance
+        env:
+          SEMANTIC_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node scripts/validate-semantic-governance.mjs
+
       - name: Validate editorial intake
         run: node scripts/validate-intake.mjs
 
@@ -80,6 +93,8 @@ jobs:
           node --check discovery.js
           node --check concept-map.js
           node --check semantic-index.js
+          node --check semantic-governance-loader.js
+          node --check semantic-audit.js
 
       - name: Check editorial scripts
         run: |
