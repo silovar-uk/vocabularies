@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-07",
+  "status_labels": {
+    "dense": "十分に厚い",
+    "balanced": "整理済み",
+    "watch": "要監視",
+    "cooldown": "クールダウン"
+  },
+  "clusters": [
+    {
+      "id": "safe-software-change",
+      "label": "安全にソフトウェアを変更する",
+      "kind": "learning",
+      "status": "dense",
+      "question": "既存の振る舞いを壊さず、変更コストを下げながらソフトウェアを変え続けるには？",
+      "exploration_note": "保守性・テスト・リファクタリング周辺は十分に厚い。新語より、既存語の関係理解を優先する。"
+    },
+    {
+      "id": "predictable-interaction",
+      "label": "次の操作を予測できるUIをつくる",
+      "kind": "learning",
+      "status": "dense",
+      "question": "人はどこを見て、何ができ、操作した結果どうなると予測するのか？",
+      "exploration_note": "Affordance・Signifier・Discoverability周辺は厚い。視覚的な操作手掛かりの細分化は避ける。"
+    },
+    {
+      "id": "meaning-through-difference",
+      "label": "記号が意味を持つ仕組みを考える",
+      "kind": "learning",
+      "status": "dense",
+      "question": "言葉や記号は、それ単体ではなく差異と関係の中でどう意味を持つのか？",
+      "exploration_note": "ソシュール系の基本概念はまとまっている。近い記号論語を増やすより別の言語観へ飛ぶ。"
+    },
+    {
+      "id": "thinking-outside-head",
+      "label": "頭の外へ思考を逃がす",
+      "kind": "learning",
+      "status": "balanced",
+      "question": "情報や操作を外部へ置くと、なぜ考えやすくなるのか？",
+      "exploration_note": "外部認知周辺は整理済み。身体感覚や環境知覚へ広げる余地はあるが、単なる下位概念化は避ける。"
+    },
+    {
+      "id": "placing-complexity",
+      "label": "複雑さをどこへ置くか",
+      "kind": "learning",
+      "status": "dense",
+      "question": "複雑さを消せないとき、どこへ移せば理解と操作の負担を減らせるか？",
+      "exploration_note": "認知負荷・複雑性・段階的開示は厚い。『負荷を減らす』だけの新語は追加しない。"
+    },
+    {
+      "id": "shaping-attention",
+      "label": "情報を増やさず、見え方を設計する",
+      "kind": "learning",
+      "status": "dense",
+      "question": "何を残し、何を引き、どこを目立たせると視線と意味の順序が生まれるか？",
+      "exploration_note": "視覚階層・余白・構図・顕著性は十分。次のデザイン語はアクセシビリティ意味論やモーションなど別レイヤーを優先する。"
+    },
+    {
+      "id": "concurrency-ordering",
+      "label": "並行処理・競合・順序",
+      "kind": "governance",
+      "status": "cooldown",
+      "question": "同時に進む処理では、何が競合し、何が順序を持ち、どこで整合性が壊れるのか？",
+      "exploration_note": "Race Condition、Write Skew、Optimistic Concurrency、Vector Clockなどが集中。しばらく追加しない。"
+    },
+    {
+      "id": "cache-resilience",
+      "label": "キャッシュ・障害・耐障害",
+      "kind": "governance",
+      "status": "cooldown",
+      "question": "高速化や流量制御は、どんな集中・陳腐化・障害伝播・安全性リスクを生むのか？",
+      "exploration_note": "Cache Stampede、SWR、Backpressure、Graceful Degradation、Cache Poisoningまで揃っている。"
+    },
+    {
+      "id": "boundary-transition",
+      "label": "境界・中間・移行",
+      "kind": "governance",
+      "status": "cooldown",
+      "question": "境界は通過する状態なのか、接続する物なのか、それとも権限を作る行為なのか？",
+      "exploration_note": "Liminality、Ecotone、Boundary Object、Boundary-workで説明軸が飽和。境界メタファーを休ませる。"
+    },
+    {
+      "id": "typography-line-flow",
+      "label": "組版・改行・行の見え方",
+      "kind": "governance",
+      "status": "cooldown",
+      "question": "読みやすさの違和感は、行間・改行規則・端の見え方・段落分割のどこから生まれるか？",
+      "exploration_note": "Leading、禁則、Hanging Punctuation、Widow/Orphanなどが集中。タイポグラフィ近傍は休ませる。"
+    },
+    {
+      "id": "adaptation-recovery",
+      "label": "適応・回復・負荷",
+      "kind": "governance",
+      "status": "watch",
+      "question": "適応できていることと、その適応コストが蓄積していないことをどう分けるか？",
+      "exploration_note": "AllostasisとAllostatic Loadが近い。ストレス・回復系を増やす場合は明確な分析単位の差が必要。"
+    },
+    {
+      "id": "context-language",
+      "label": "文脈・発話・関係性",
+      "kind": "governance",
+      "status": "watch",
+      "question": "発話の意味は、語義だけでなく場・関係・行為・言語使用の規範からどう変わるのか？",
+      "exploration_note": "Indexicality、Register、Speech Act、Metapragmaticsが近接。語用論の追加は差分説明を厳格にする。"
+    },
+    {
+      "id": "responsive-layout",
+      "label": "レスポンシブ配置・位置決め",
+      "kind": "governance",
+      "status": "watch",
+      "question": "端末・親要素・内容・基準要素に応じて、固定座標なしでレイアウトを成立させるには？",
+      "exploration_note": "Safe Area、Intrinsic Sizing、Container Query、Anchor Positioningなどが増えた。次のUI実務語は別レイヤーへ。"
+    },
+    {
+      "id": "mediated-past",
+      "label": "過去・痕跡・記憶の媒介",
+      "kind": "governance",
+      "status": "watch",
+      "question": "過去は、何が残るか・どう重なるか・どう媒介されるかによって現在の意味へ変わるのか？",
+      "exploration_note": "Taphonomy、Prosthetic Memory、Palimpsest、Paratext周辺は近づき始めている。"
+    },
+    {
+      "id": "constructed-perception",
+      "label": "構成される知覚・観測",
+      "kind": "governance",
+      "status": "watch",
+      "question": "人は刺激をそのまま受け取るのではなく、期待・分類・推論・観測条件から何を作り足しているのか？",
+      "exploration_note": "Categorical Perception、Perceptual Set、Apophenia、Parallax Errorなどが接近。知覚一般の細分化を避ける。"
+    }
+  ],
+  "frontiers": [
+    {
+      "id": "accessibility-semantics",
+      "label": "アクセシビリティの意味層",
+      "priority": 1,
+      "mode": "practical",
+      "target_domains": ["アクセシビリティ", "UI実装", "Web標準"],
+      "question": "見た目ではなく、支援技術やキーボード操作に『意味・状態・順序』をどう伝えるか？",
+      "why_open": "既存UI語は視覚的手掛かりやレイアウトが厚い一方、アクセシブルネーム、状態通知、フォーカス順などの意味層は薄い。",
+      "avoid_clusters": ["predictable-interaction", "responsive-layout"],
+      "selection_rule": "視覚的Affordanceの言い換えではなく、非視覚的な意味・状態・操作可能性を扱う語を優先する。"
+    },
+    {
+      "id": "narrative-perspective",
+      "label": "物語の視点と情報制御",
+      "priority": 1,
+      "mode": "distant",
+      "target_domains": ["文学", "物語論", "メディア論"],
+      "question": "誰が見ているのか、誰が語っているのか、何が読者に知らされるのかをどう分けるか？",
+      "why_open": "文章・修辞語はあるが、物語の視点・情報配分を分析する語彙は相対的に薄い。",
+      "avoid_clusters": ["context-language", "mediated-past"],
+      "selection_rule": "語用論や記憶論ではなく、語りの構造・視点・提示情報の制御を扱う語を探す。"
+    },
+    {
+      "id": "embodied-orientation",
+      "label": "身体の向き・位置・内側の感覚",
+      "priority": 1,
+      "mode": "distant",
+      "target_domains": ["身体論", "認知科学", "生理学"],
+      "question": "人は視覚以外から、自分の身体の位置・運動・内部状態をどう知るのか？",
+      "why_open": "認知・知覚語は多いが、身体そのものをセンサーとして扱う観察軸はまだ薄い。",
+      "avoid_clusters": ["adaptation-recovery", "constructed-perception"],
+      "selection_rule": "ストレス適応や一般的知覚ではなく、身体位置・運動・内部感覚の固有メカニズムを優先する。"
+    },
+    {
+      "id": "material-behavior",
+      "label": "素材が時間と力にどう応答するか",
+      "priority": 2,
+      "mode": "hybrid",
+      "target_domains": ["プロダクトデザイン", "材料", "建築", "工業設計"],
+      "question": "物は使われ、押され、擦られ、時間を経ることでどう変化し、その変化を設計へどう織り込むか？",
+      "why_open": "画面上のデザイン語に比べ、素材・公差・摩耗・経年変化を扱う制作語が少ない。",
+      "avoid_clusters": ["shaping-attention"],
+      "selection_rule": "美的な『質感』だけでなく、材料の挙動を具体的な制作・設計判断へつなげる語を優先する。"
+    },
+    {
+      "id": "institutions-incentives",
+      "label": "制度とインセンティブのずれ",
+      "priority": 2,
+      "mode": "distant",
+      "target_domains": ["経済学", "経営学", "制度論"],
+      "question": "個々人が合理的に動いても、情報差・代理関係・報酬設計によって全体が歪むのはなぜか？",
+      "why_open": "Goodhart系の指標問題はあるが、契約・情報非対称・代理関係を読む語彙は薄い。",
+      "avoid_clusters": [],
+      "selection_rule": "『指標を目標にすると歪む』の焼き直しを避け、当事者間の情報・権限・利害構造が違う語を探す。"
+    },
+    {
+      "id": "spatial-social-order",
+      "label": "空間が社会的距離をつくる",
+      "priority": 2,
+      "mode": "distant",
+      "target_domains": ["建築", "文化人類学", "地理学"],
+      "question": "距離・配置・領域・動線は、人間関係や振る舞いの規範をどう作るか？",
+      "why_open": "UI上の配置語は多いが、物理空間と社会行動をつなぐ観察軸は薄い。",
+      "avoid_clusters": ["boundary-transition", "responsive-layout"],
+      "selection_rule": "単なる『境界』や『レイアウト』ではなく、物理空間が社会的行動を組織するメカニズムを優先する。"
+    },
+    {
+      "id": "measurement-trust",
+      "label": "測定値をどこまで信じられるか",
+      "priority": 3,
+      "mode": "hybrid",
+      "target_domains": ["計測学", "統計", "科学史", "データ実務"],
+      "question": "数値が出たあと、その値の比較可能性・校正・不確かさ・再現性をどう確かめるか？",
+      "why_open": "Parallax Errorのような個別誤差はあるが、『測定体系の信頼性』を扱う語彙はまだ薄い。",
+      "avoid_clusters": ["constructed-perception"],
+      "selection_rule": "認知バイアスではなく、測定手続き・基準・不確かさ・再現性の仕組みを優先する。"
+    }
+  ]
+}
