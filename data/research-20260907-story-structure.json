@@ -1,0 +1,70 @@
+[
+  {
+    "id": "sequence-approach",
+    "term": "Sequence Approach",
+    "ja": "三幕八場構成 / シークエンス・アプローチ",
+    "fields": [
+      "Writing"
+    ],
+    "one_liner": "幕では大きすぎ、シーンでは細かすぎる物語を、複数シーンからなるシークエンスという中間単位で組み立てる脚本設計法。",
+    "description": "Sequence Approachは、長編脚本をActとSceneの二層だけで捉えず、その間に複数シーンからなるSequenceという中間単位を置いて設計・分析する方法。代表的な運用では三幕をおおむね8つのsequenceに分けるため、日本語では『三幕八場構成』などと呼ばれることがある。ただし8は絶対的な法則ではない。Paul Joseph Gulinoの分析では9 sequenceや16 sequenceの作品も扱われており、重要なのは数そのものではなく、各sequenceを一定の目的・緊張・展開・小さな到達点を持つdramatic unitとして扱うこと。特に長い第二幕を一枚岩として考えず、扱える大きさの問題へ分解できる点に実務上の価値がある。",
+    "why_selected": "『三幕構成は分かるが第二幕が大きすぎて書けない』という問題を、才能不足ではなく設計粒度の問題として見直せるから。ActとSceneの間にSequenceという中間サイズを持つと、物語構造をより操作可能な単位で考えられる。",
+    "feelings": [
+      "第二幕が長すぎて何を書けばいいか分からない",
+      "三幕構成だけだと設計が粗すぎる",
+      "シーンを並べても全体のまとまりが出ない",
+      "物語をもう少し扱いやすい塊に分けたい"
+    ],
+    "before": "三幕に分けた後は、あとはシーンを順番に埋めていけばよい。",
+    "after": "幕とシーンの間にSequenceという中間単位を置く。8という数字より、複数シーンをひとつのdramatic problemとして設計することが重要だ。",
+    "related": [],
+    "opposites": [],
+    "sources": [
+      "https://www.bloomsbury.com/us/screenwriting-9780826415684/",
+      "https://www.bloomsbury.com/us/screenwriting-9798765104651/"
+    ],
+    "status": "researched",
+    "aliases": [
+      "Eight-Sequence Structure",
+      "8-Sequence Structure",
+      "三幕八場構成",
+      "三幕八シークエンス構成",
+      "シークエンス・アプローチ"
+    ],
+    "formal_status": "established_term",
+    "usage_note": "『三幕八場構成』の『場』を8つのsceneと解釈しない。ここでのsequenceは複数sceneからなる中間的なdramatic unit。GulinoのSequence Approachは8分割だけを絶対視する方法ではなく、作品によってsequence数は変わり得る。"
+  },
+  {
+    "id": "point-of-no-return",
+    "term": "Point of No Return",
+    "ja": "帰還不能点",
+    "fields": [
+      "Writing"
+    ],
+    "one_liner": "主人公や状況が、以前の状態へ簡単には戻れなくなるほど不可逆に変わる物語上の転換機能。",
+    "description": "Point of No Returnは、物語の中で選択・状況・知識・関係・代償などが変化し、主人公が以前の日常や選択肢へ簡単には戻れなくなる転換を指す脚本術上の表現。重要なのは派手な事件の大きさではなく、物語の可能性が不可逆に狭まり、前へ進む圧力が生まれること。どの位置をPoint of No Returnと呼ぶかは脚本理論によって統一されていない。Jill ChamberlainのNutshell TechniqueではAct I末、約25%地点で主人公をAct IIへ押し出す出来事をこの名で呼ぶ一方、別のscreenwriting frameworkではMidpoint付近のfull commitmentやlock-inをPoint of No Returnと呼ぶ。そのためVocabulariesでは固定ページ位置よりもirreversibilityという機能を優先して扱う。",
+    "why_selected": "『ここで大事件を起こす』と『ここから元へ戻れなくなる』を分けて考えられるから。転換点を派手さやページ位置ではなく、選択肢がどれだけ不可逆に変わったかで観察できる。",
+    "feelings": [
+      "事件は起きたのに物語が本格的に進んだ感じがしない",
+      "主人公がまだ簡単に元の日常へ戻れそう",
+      "転換点を何ページ目に置くかばかり気になる",
+      "どこで物語が本当に後戻りできなくなったのか知りたい"
+    ],
+    "before": "物語の転換点は、決まった位置で大きな事件を起こせばよい。",
+    "after": "位置より機能を見る。この出来事によって主人公の選択肢は本当に不可逆に変わったか、なぜ以前の状態へ戻れないのかを確かめる。",
+    "related": [],
+    "opposites": [],
+    "sources": [
+      "https://utpress.utexas.edu/9781477308660/",
+      "https://www.jstor.org/stable/10.7560/303733.11",
+      "https://www.movieoutline.com/articles/screenwriting-structure-series-part-14-subplots-and-the-midpoint.html"
+    ],
+    "status": "researched",
+    "aliases": [
+      "帰還不能点",
+      "Point of No Return"
+    ],
+    "formal_status": "established_term",
+    "usage_note": "『Point of No Return＝常に25%地点』または『常にMidpoint』とは扱わない。脚本術の体系によって名称を当てる位置が異なるため、このEntryでは『以前の状態へ簡単には戻れなくなる不可逆性』を共通機能として正本にする。Inciting IncidentやMidpointと重なる場合はあるが、同義ではない。"
+  }
+]
