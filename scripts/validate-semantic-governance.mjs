@@ -60,6 +60,37 @@ for (const frontier of registry.frontiers ?? []) {
   }
 }
 
+const debt = semanticCatalog.exploration_debt ?? {};
+if (debt.enabled) {
+  const weights = debt.weights ?? {};
+  const weightKeys = ['priority', 'scarcity', 'recency', 'adjacent_saturation'];
+  let totalWeight = 0;
+  for (const key of weightKeys) {
+    const value = Number(weights[key]);
+    if (!Number.isFinite(value) || value < 0 || value > 1) errors.push(`exploration_debt.weights.${key} は0〜1の数値にしてください`);
+    else totalWeight += value;
+  }
+  if (Math.abs(totalWeight - 1) > 0.001) errors.push(`exploration_debt.weights の合計は1にしてください: ${totalWeight}`);
+  if (!(Number(debt.recency_full_debt_days) > 0)) errors.push('exploration_debt.recency_full_debt_days は正の数にしてください');
+  if (!(Number(debt.featured_count) >= 1)) errors.push('exploration_debt.featured_count は1以上にしてください');
+
+  for (const status of allowedStatuses) {
+    const value = Number(debt.status_pressure?.[status]);
+    if (!Number.isFinite(value) || value < 0 || value > 100) errors.push(`exploration_debt.status_pressure.${status} は0〜100にしてください`);
+  }
+
+  for (const [frontierId, signals] of Object.entries(debt.frontier_signals ?? {})) {
+    if (!frontierIds.has(frontierId)) errors.push(`exploration_debt.frontier_signals に未知Frontierがあります: ${frontierId}`);
+    if (!Array.isArray(signals) || !signals.length) errors.push(`${frontierId}: frontier_signals は1件以上必要です`);
+    else if (signals.some((signal) => !String(signal ?? '').trim())) errors.push(`${frontierId}: frontier_signals に空文字があります`);
+  }
+  for (const frontierId of frontierIds) {
+    if (!Array.isArray(debt.frontier_signals?.[frontierId]) || !debt.frontier_signals[frontierId].length) {
+      warnings.push(`${frontierId}: exploration debt用のfrontier_signalsが未設定です`);
+    }
+  }
+}
+
 for (const [id, annotation] of Object.entries(annotations)) {
   if (!knownIds.has(id)) {
     errors.push(`semantic annotationが未知の語を参照しています: ${id}`);
@@ -132,6 +163,7 @@ if (validBaseSha(baseSha)) {
 const annotationCoverage = knownIds.size ? Math.round((Object.keys(annotations).filter((id) => knownIds.has(id)).length / knownIds.size) * 100) : 0;
 console.log(`Semantic governance: ${knownIds.size} terms / ${Object.keys(annotations).length} annotations / coverage=${annotationCoverage}%`);
 console.log(`Semantic registry: ${clusterIds.size} clusters / ${frontierIds.size} open frontiers`);
+if (debt.enabled) console.log(`Exploration debt: enabled / ${Object.keys(debt.frontier_signals ?? {}).length} frontier signal sets`);
 if (newIds.length) console.log(`New term gate: ${newIds.length} new term(s): ${newIds.join(', ')}`);
 for (const warning of warnings) console.warn(`WARNING: ${warning}`);
 if (errors.length) {
