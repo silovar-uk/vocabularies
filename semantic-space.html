@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Vocabulariesの意味空間を、密集領域と探索余地から見るページ。" />
+  <meta name="description" content="Vocabulariesの意味空間を、密集領域・探索余地・探索負債から見るページ。" />
   <title>語彙空間 — Vocabularies</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./semantic-space.css?v=20260907" />
+  <link rel="stylesheet" href="./semantic-space.css?v=20260907-2" />
 </head>
 <body>
   <header class="space-header">
@@ -23,17 +23,20 @@
     <section class="space-hero">
       <p class="eyebrow">SEMANTIC SPACE</p>
       <h1>次の一語を、<br>空いている方向から探す。</h1>
-      <p class="lead">語彙が増えるほど、似た概念を細分化しやすくなる。ここでは「何が多いか」だけでなく、「どの観察軸がまだ薄いか」を編集対象として見ます。</p>
+      <p class="lead">語彙が増えるほど、似た概念を細分化しやすくなる。ここでは「何が多いか」だけでなく、「どこが薄く、どこを長く探索していないか」まで編集対象として見ます。</p>
       <div id="spaceSummary" class="space-summary" aria-live="polite">読み込み中…</div>
     </section>
 
     <section class="space-section" aria-labelledby="nextTitle">
       <div class="section-head">
         <div>
-          <p class="eyebrow">NEXT DIRECTIONS</p>
+          <p class="eyebrow">EXPLORATION DEBT</p>
           <h2 id="nextTitle">次に探索するなら、この方向。</h2>
         </div>
-        <p>既存語との距離、最近の密集領域、実務／遠距離のバランスから、現在の優先Frontierを上に出します。</p>
+        <div class="section-copy">
+          <p>優先度だけでは決めない。近い語の少なさ、最後に近接語が追加されてからの時間、隣の飽和領域まで含めて「探索負債」を計算します。</p>
+          <p id="debtMethod" class="method-note"></p>
+        </div>
       </div>
       <div id="nextDirections" class="frontier-grid frontier-grid-featured"></div>
     </section>
@@ -44,7 +47,7 @@
           <p class="eyebrow">OPEN FRONTIERS</p>
           <h2 id="frontierTitle">まだ薄い観察軸。</h2>
         </div>
-        <p>ここに並ぶのは「次に入れる語」ではなく、探索の入口。個別語を先に固定せず、問いから探します。</p>
+        <p>ここに並ぶのは「次に入れる語」ではなく、探索の入口。探索負債の高い順に並べ、個別語はその都度20語ほど広げてから選びます。</p>
       </div>
       <div id="frontierGrid" class="frontier-grid"></div>
     </section>
@@ -74,7 +77,7 @@
     <section class="space-note">
       <p class="eyebrow">EDITORIAL LOOP</p>
       <h2>候補を増やす前に、地図を見る。</h2>
-      <p>生成タスクは、まずこの空白とクールダウンを確認する。Frontierから候補を広げ、最寄り既存語との差分を説明できない語は落とす。その後で初めてVocabulariesへ追加する。</p>
+      <p>生成タスクは、まず探索負債とクールダウンを確認する。Frontierから候補を広げ、最寄り既存語との差分を説明できない語は落とす。その後で初めてVocabulariesへの追加候補になる。</p>
       <div class="space-actions">
         <a href="./semantic-audit.html">重複リスクを見る →</a>
         <a href="./">語彙集へ戻る →</a>
@@ -83,6 +86,6 @@
   </main>
 
   <footer class="space-footer"><a href="./">Vocabularies</a></footer>
-  <script src="./semantic-space.js?v=20260907" defer></script>
+  <script src="./semantic-space.js?v=20260907-2" defer></script>
 </body>
 </html>
