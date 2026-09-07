@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-07",
+  "batch": "red-queen-competition-01",
+  "term_annotations": {
+    "red-queen-competition": {
+      "axis": "競争相手との相互作用が、組織学習と競争力をどう自己強化的に変えていくかを見る",
+      "nearest_terms": [
+        "path-dependence",
+        "exploration-exploitation-tradeoff"
+      ],
+      "distance": "B",
+      "difference_from_nearest": "Path Dependenceが過去の経路による現在の制約・形成を広く捉えるのに対し、Red Queen Competitionは競争相手も学習することで競争圧力と組織能力が相互に強化される企業間の動態を捉える。探索と活用のトレードオフとも異なり、学習資源の配分ではなく競争相手との相互因果が中心。",
+      "new_axis": true
+    }
+  }
+}
