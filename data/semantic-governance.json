@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-07",
+  "principles": [
+    "語数より意味空間の広がりを優先する",
+    "分野の違いより観察軸の違いを重視する",
+    "既存語の子概念・特殊ケースは原則追加しない",
+    "近接クラスタは一定期間クールダウンする"
+  ],
+  "cooldown_clusters": [
+    {
+      "id": "concurrency-ordering",
+      "label": "並行処理・競合・順序",
+      "status": "cooldown",
+      "reason": "Race Condition、Write Skew、Optimistic Concurrency Control、Vector Clock、Head-of-Line Blockingが近接して増えている。",
+      "terms": ["race-condition", "write-skew", "optimistic-concurrency-control", "vector-clock", "head-of-line-blocking"]
+    },
+    {
+      "id": "cache-resilience",
+      "label": "キャッシュ・障害・耐障害",
+      "status": "cooldown",
+      "reason": "Cache Stampede、Stale-While-Revalidate、Backpressure、Graceful Degradation、Cache Poisoningなどが集中している。",
+      "terms": ["cache-stampede", "stale-while-revalidate", "backpressure", "graceful-degradation", "cache-poisoning"]
+    },
+    {
+      "id": "boundary-transition",
+      "label": "境界・中間・移行",
+      "status": "cooldown",
+      "reason": "Liminality、Ecotone、Boundary Object、Boundary-workなど、境界を読む語が十分に蓄積した。",
+      "terms": ["liminality", "ecotone", "boundary-object", "boundary-work"]
+    },
+    {
+      "id": "typography-line-flow",
+      "label": "組版・改行・行の見え方",
+      "status": "cooldown",
+      "reason": "Leading、Kinsoku Shori、Hanging Punctuation、Widows / Orphansなど、行・改行周辺が厚くなっている。",
+      "terms": ["leading", "kinsoku-shori", "hanging-punctuation", "widows-orphans"]
+    },
+    {
+      "id": "adaptation-recovery",
+      "label": "適応・回復・負荷",
+      "status": "cooldown",
+      "reason": "Allostasis、Allostatic Load、Critical Slowing Downが近接するため、新規追加は別の観察軸を優先する。",
+      "terms": ["allostasis", "allostatic-load", "critical-slowing-down"]
+    },
+    {
+      "id": "context-language",
+      "label": "文脈・発話・関係性",
+      "status": "watch",
+      "reason": "Indexicality、Register、Speech Act、Recipient Design、Metapragmaticsなどが近い。追加時は差分説明を必須にする。",
+      "terms": ["indexicality", "register", "speech-act", "recipient-design", "metapragmatics"]
+    }
+  ],
+  "high_risk_pairs": [
+    {
+      "a": "allostasis",
+      "b": "allostatic-load",
+      "note": "前者は適応プロセス、後者は適応を繰り返した結果の累積負担。新規語生成ではこの周辺を休ませる。"
+    },
+    {
+      "a": "race-condition",
+      "b": "write-skew",
+      "note": "Write Skewは並行更新異常の特殊ケース寄り。今後は競合周辺を追加しない。"
+    },
+    {
+      "a": "boundary-object",
+      "b": "boundary-work",
+      "note": "対象は異なるが境界という説明軸が近い。連続追加を避ける。"
+    },
+    {
+      "a": "cache-stampede",
+      "b": "cache-poisoning",
+      "note": "負荷集中と安全性で観察軸は違うが、キャッシュ領域自体が飽和している。"
+    },
+    {
+      "a": "optical-alignment",
+      "b": "parallax-error",
+      "note": "前者は配置補正、後者は観測位置による測定誤差。近く見えるが分析対象は異なる。"
+    }
+  ],
+  "recent_axes": [
+    {"term": "shape-outside", "axis": "形状が本文の流れをどう変えるか"},
+    {"term": "option-value", "axis": "将来の選択可能性を残す価値"},
+    {"term": "missing-fundamental", "axis": "欠けた入力を知覚が構造から補完する"},
+    {"term": "parallax-error", "axis": "観測者の位置が読み取りを歪める"},
+    {"term": "cache-poisoning", "axis": "共有高速化が誤情報まで増幅する"},
+    {"term": "allostatic-load", "axis": "適応を繰り返すことの累積コスト"}
+  ]
+}
