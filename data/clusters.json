@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 3,
   "role_grammar": {
     "version": 1,
     "roles": {
@@ -27,47 +27,14 @@
   },
   "soft_path_pilot": {
     "version": 1,
-    "cluster_ids": [
-      "safe-software-change",
-      "predictable-interaction"
-    ],
+    "cluster_ids": ["safe-software-change", "predictable-interaction"],
     "max_candidates": 2,
     "role_priority": {
-      "DIAGNOSE": [
-        "DIAGNOSE",
-        "MODEL",
-        "DISTINGUISH",
-        "INTERVENE",
-        "EVALUATE"
-      ],
-      "MODEL": [
-        "DISTINGUISH",
-        "INTERVENE",
-        "EVALUATE",
-        "DIAGNOSE",
-        "MODEL"
-      ],
-      "DISTINGUISH": [
-        "MODEL",
-        "INTERVENE",
-        "EVALUATE",
-        "DIAGNOSE",
-        "DISTINGUISH"
-      ],
-      "INTERVENE": [
-        "EVALUATE",
-        "MODEL",
-        "DISTINGUISH",
-        "INTERVENE",
-        "DIAGNOSE"
-      ],
-      "EVALUATE": [
-        "DIAGNOSE",
-        "MODEL",
-        "DISTINGUISH",
-        "INTERVENE",
-        "EVALUATE"
-      ]
+      "DIAGNOSE": ["DIAGNOSE", "MODEL", "DISTINGUISH", "INTERVENE", "EVALUATE"],
+      "MODEL": ["DISTINGUISH", "INTERVENE", "EVALUATE", "DIAGNOSE", "MODEL"],
+      "DISTINGUISH": ["MODEL", "INTERVENE", "EVALUATE", "DIAGNOSE", "DISTINGUISH"],
+      "INTERVENE": ["EVALUATE", "MODEL", "DISTINGUISH", "INTERVENE", "DIAGNOSE"],
+      "EVALUATE": ["DIAGNOSE", "MODEL", "DISTINGUISH", "INTERVENE", "EVALUATE"]
     }
   },
   "clusters": [
@@ -76,20 +43,10 @@
       "label": "安全にソフトウェアを変更する",
       "question": "既存の振る舞いを壊さず、変更コストを下げながらソフトウェアを変え続けるには？",
       "description": "負債の兆候を見つけ、安全網を置き、内部構造を改善するまでを一つのまとまりで読む。",
-      "members": [
-        "technical-debt",
-        "code-smell",
-        "refactoring",
-        "maintainability",
-        "characterization-test",
-        "legacy-code"
-      ],
+      "members": ["technical-debt", "code-smell", "refactoring", "maintainability", "characterization-test", "legacy-code"],
       "entry": "technical-debt",
       "anchor": "refactoring",
-      "boundaries": [
-        "technical-debt",
-        "maintainability"
-      ],
+      "boundaries": ["technical-debt", "maintainability"],
       "roles": {
         "technical-debt": "DIAGNOSE",
         "code-smell": "DIAGNOSE",
@@ -104,22 +61,10 @@
       "label": "次の操作を予測できるUIをつくる",
       "question": "人はどこを見て、何ができ、操作した結果どうなると予測するのか？",
       "description": "手掛かり、制約、予告、フィードバックのつながりから、迷いにくいインタラクションを考える。",
-      "members": [
-        "signifier",
-        "affordance",
-        "constraints",
-        "discoverability",
-        "feedforward",
-        "gulfs-of-action",
-        "visibility-system-status",
-        "conceptual-model"
-      ],
+      "members": ["signifier", "affordance", "constraints", "discoverability", "feedforward", "gulfs-of-action", "visibility-system-status", "conceptual-model"],
       "entry": "signifier",
       "anchor": "discoverability",
-      "boundaries": [
-        "signifier",
-        "conceptual-model"
-      ],
+      "boundaries": ["signifier", "conceptual-model"],
       "roles": {
         "signifier": "INTERVENE",
         "affordance": "DISTINGUISH",
@@ -136,25 +81,15 @@
       "label": "記号が意味を持つ仕組みを考える",
       "question": "言葉や記号は、それ単体ではなく差異と関係の中でどう意味を持つのか？",
       "description": "シニフィアンとシニフィエから、恣意性と差異による価値までを一つの記号体系として読む。",
-      "members": [
-        "signifiant",
-        "signified",
-        "linguistic-sign",
-        "arbitrariness-of-sign",
-        "linguistic-value"
-      ],
+      "members": ["signifiant", "signified", "linguistic-sign", "arbitrariness-of-sign", "linguistic-value"],
       "entry": "linguistic-sign",
       "anchor": "linguistic-sign",
-      "boundaries": [
-        "signifiant",
-        "linguistic-value"
-      ],
+      "boundaries": ["signifiant", "linguistic-value"],
       "roles": {
         "signifiant": "DISTINGUISH",
         "signified": "DISTINGUISH",
         "linguistic-sign": "MODEL",
-        "arbitrariness-of-sign": "MODEL",
-        "linguistic-value": "MODEL"
+        "arbitrariness-of-sign": "MODEL"
       }
     },
     {
@@ -162,25 +97,15 @@
       "label": "頭の外へ思考を逃がす",
       "question": "情報や操作を外部へ置くと、なぜ考えやすくなるのか？",
       "description": "記憶や計算を頭の中だけで抱えず、物・配置・環境との相互作用として思考を捉える。",
-      "members": [
-        "cognitive-offloading",
-        "external-cognition",
-        "distributed-cognition",
-        "epistemic-action",
-        "composition"
-      ],
+      "members": ["cognitive-offloading", "external-cognition", "distributed-cognition", "epistemic-action", "composition"],
       "entry": "cognitive-offloading",
       "anchor": "external-cognition",
-      "boundaries": [
-        "distributed-cognition",
-        "composition"
-      ],
+      "boundaries": ["distributed-cognition", "composition"],
       "roles": {
         "cognitive-offloading": "INTERVENE",
         "external-cognition": "MODEL",
         "distributed-cognition": "MODEL",
-        "epistemic-action": "INTERVENE",
-        "composition": "INTERVENE"
+        "epistemic-action": "INTERVENE"
       }
     },
     {
@@ -188,20 +113,10 @@
       "label": "複雑さをどこへ置くか",
       "question": "複雑さを消せないとき、どこへ移せば理解と操作の負担を減らせるか？",
       "description": "認知負荷と本質的・偶発的複雑性をつなぎ、情報を減らす以外の設計方法を考える。",
-      "members": [
-        "cognitive-load",
-        "intrinsic-extraneous-load",
-        "essential-accidental-complexity",
-        "conservation-of-complexity",
-        "progressive-disclosure",
-        "recognition-over-recall"
-      ],
+      "members": ["cognitive-load", "intrinsic-extraneous-load", "essential-accidental-complexity", "conservation-of-complexity", "progressive-disclosure", "recognition-over-recall"],
       "entry": "cognitive-load",
       "anchor": "conservation-of-complexity",
-      "boundaries": [
-        "essential-accidental-complexity",
-        "progressive-disclosure"
-      ],
+      "boundaries": ["essential-accidental-complexity", "progressive-disclosure"],
       "roles": {
         "cognitive-load": "EVALUATE",
         "intrinsic-extraneous-load": "DISTINGUISH",
@@ -216,20 +131,10 @@
       "label": "情報を増やさず、見え方を設計する",
       "question": "何を残し、何を引き、どこを目立たせると視線と意味の順序が生まれるか？",
       "description": "構図、階層、余白、顕著性、選択と除去を、注意を設計する一つの仕事として読む。",
-      "members": [
-        "composition",
-        "visual-hierarchy",
-        "salience",
-        "negative-space",
-        "selection-elimination",
-        "curation"
-      ],
+      "members": ["composition", "visual-hierarchy", "salience", "negative-space", "selection-elimination", "curation"],
       "entry": "visual-hierarchy",
       "anchor": "composition",
-      "boundaries": [
-        "selection-elimination",
-        "curation"
-      ],
+      "boundaries": ["selection-elimination", "curation"],
       "roles": {
         "composition": "MODEL",
         "visual-hierarchy": "EVALUATE",
@@ -237,212 +142,6 @@
         "negative-space": "INTERVENE",
         "selection-elimination": "INTERVENE",
         "curation": "INTERVENE"
-      }
-    },
-    {
-      "id": "concurrency-ordering",
-      "label": "同時実行と順序を分けて読む",
-      "question": "同時に進む処理では、何が競合し、何が順序を持ち、どこで整合性が壊れるのか？",
-      "description": "競合の発生、制約破壊、因果順序、競合回避を一つの近接領域として読み分ける。",
-      "members": [
-        "race-condition",
-        "write-skew",
-        "optimistic-concurrency-control",
-        "vector-clock",
-        "head-of-line-blocking"
-      ],
-      "entry": "race-condition",
-      "anchor": "vector-clock",
-      "boundaries": [
-        "write-skew",
-        "optimistic-concurrency-control"
-      ],
-      "roles": {
-        "race-condition": "DIAGNOSE",
-        "write-skew": "DIAGNOSE",
-        "optimistic-concurrency-control": "INTERVENE",
-        "vector-clock": "MODEL",
-        "head-of-line-blocking": "DIAGNOSE"
-      }
-    },
-    {
-      "id": "cache-resilience",
-      "label": "高速化と壊れ方を同時に見る",
-      "question": "キャッシュや流量制御は性能を上げる一方で、どんな集中・陳腐化・障害伝播・安全性リスクを生むのか？",
-      "description": "キャッシュ周辺の性能・鮮度・耐障害・安全性を、近接しすぎた語としてまとめて監査する。",
-      "members": [
-        "cache-stampede",
-        "stale-while-revalidate",
-        "backpressure",
-        "graceful-degradation",
-        "cache-poisoning"
-      ],
-      "entry": "cache-stampede",
-      "anchor": "stale-while-revalidate",
-      "boundaries": [
-        "graceful-degradation",
-        "cache-poisoning"
-      ],
-      "roles": {
-        "cache-stampede": "DIAGNOSE",
-        "stale-while-revalidate": "INTERVENE",
-        "backpressure": "INTERVENE",
-        "graceful-degradation": "INTERVENE",
-        "cache-poisoning": "DIAGNOSE"
-      }
-    },
-    {
-      "id": "boundary-transition",
-      "label": "境界・中間・移行を読み分ける",
-      "question": "境界は、通過する状態なのか、接続する物なのか、それとも権限を作る行為なのか？",
-      "description": "境界という似た説明軸に集まりやすい語を並べ、同じ言い換えになっていないか監査する。",
-      "members": [
-        "liminality",
-        "ecotone",
-        "boundary-object",
-        "boundary-work"
-      ],
-      "entry": "liminality",
-      "anchor": "boundary-object",
-      "boundaries": [
-        "ecotone",
-        "boundary-work"
-      ],
-      "roles": {
-        "liminality": "MODEL",
-        "ecotone": "MODEL",
-        "boundary-object": "INTERVENE",
-        "boundary-work": "DIAGNOSE"
-      }
-    },
-    {
-      "id": "typography-line-flow",
-      "label": "文章の流れを組版で整える",
-      "question": "読みやすさの違和感は、行間・改行規則・端の見え方・段落分割のどこから生まれるか？",
-      "description": "文字サイズ以外の組版実務語を、行と段落の流れという一つの近接領域として読む。",
-      "members": [
-        "leading",
-        "kinsoku-shori",
-        "hanging-punctuation",
-        "widows-orphans"
-      ],
-      "entry": "leading",
-      "anchor": "kinsoku-shori",
-      "boundaries": [
-        "hanging-punctuation",
-        "widows-orphans"
-      ],
-      "roles": {
-        "leading": "INTERVENE",
-        "kinsoku-shori": "INTERVENE",
-        "hanging-punctuation": "INTERVENE",
-        "widows-orphans": "DIAGNOSE"
-      }
-    },
-    {
-      "id": "context-language",
-      "label": "言葉と文脈の相互作用を見る",
-      "question": "発話の意味は、語義だけでなく場・関係・行為・言語使用の規範からどう変わるのか？",
-      "description": "文脈依存、言語使用域、発話行為、言語使用そのものへの評価を読み分ける。",
-      "members": [
-        "indexicality",
-        "register",
-        "speech-act",
-        "metapragmatics"
-      ],
-      "entry": "indexicality",
-      "anchor": "speech-act",
-      "boundaries": [
-        "register",
-        "metapragmatics"
-      ],
-      "roles": {
-        "indexicality": "MODEL",
-        "register": "DISTINGUISH",
-        "speech-act": "MODEL",
-        "metapragmatics": "EVALUATE"
-      }
-    },
-    {
-      "id": "responsive-layout",
-      "label": "画面サイズではなく関係でレイアウトする",
-      "question": "端末・親要素・内容・基準要素・画像の焦点に応じて、固定座標なしでレイアウトを成立させるには？",
-      "description": "レスポンシブ実装を単なるブレークポイント調整ではなく、何を基準にサイズ・位置・切り抜きを決めるかで読む。",
-      "members": [
-        "safe-area-insets",
-        "intrinsic-sizing",
-        "stacking-context",
-        "container-query",
-        "object-position",
-        "css-anchor-positioning",
-        "shape-outside"
-      ],
-      "entry": "intrinsic-sizing",
-      "anchor": "container-query",
-      "boundaries": [
-        "safe-area-insets",
-        "shape-outside"
-      ],
-      "roles": {
-        "safe-area-insets": "INTERVENE",
-        "intrinsic-sizing": "MODEL",
-        "stacking-context": "DIAGNOSE",
-        "container-query": "INTERVENE",
-        "object-position": "INTERVENE",
-        "css-anchor-positioning": "INTERVENE",
-        "shape-outside": "INTERVENE"
-      }
-    },
-    {
-      "id": "mediated-past",
-      "label": "過去が残り、読まれ、現在へ入る過程を見る",
-      "question": "過去は、何が残るか・どう重なるか・どう媒介されるかによって現在の意味へ変わるのか？",
-      "description": "保存バイアス、痕跡の重なり、周辺情報、メディアを介した記憶を一つの近接領域として読む。",
-      "members": [
-        "taphonomy",
-        "prosthetic-memory",
-        "palimpsest",
-        "paratext",
-        "chronotope"
-      ],
-      "entry": "taphonomy",
-      "anchor": "palimpsest",
-      "boundaries": [
-        "paratext",
-        "prosthetic-memory"
-      ],
-      "roles": {
-        "taphonomy": "DISTINGUISH",
-        "prosthetic-memory": "MODEL",
-        "palimpsest": "MODEL",
-        "paratext": "INTERVENE",
-        "chronotope": "MODEL"
-      }
-    },
-    {
-      "id": "constructed-perception",
-      "label": "知覚が入力をそのまま写していないことを見る",
-      "question": "人は刺激をそのまま受け取るのではなく、期待・分類・構造・観測条件から何を作り足しているのか？",
-      "description": "知覚の構成性と誤読を、刺激側・観察者側・推論側の違いから読み分ける。",
-      "members": [
-        "categorical-perception",
-        "perceptual-set",
-        "apophenia",
-        "missing-fundamental",
-        "parallax-error"
-      ],
-      "entry": "perceptual-set",
-      "anchor": "categorical-perception",
-      "boundaries": [
-        "apophenia",
-        "parallax-error"
-      ],
-      "roles": {
-        "categorical-perception": "MODEL",
-        "perceptual-set": "MODEL",
-        "apophenia": "DIAGNOSE",
-        "missing-fundamental": "MODEL",
-        "parallax-error": "DIAGNOSE"
       }
     }
   ]
