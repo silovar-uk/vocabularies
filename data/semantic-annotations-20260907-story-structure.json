@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-07",
+  "batch": "story-structure-01",
+  "term_annotations": {
+    "sequence-approach": {
+      "axis": "物語をActとSceneの二層だけでなく、その間のSequenceという設計粒度でどう組み立てるかを見る",
+      "nearest_terms": [
+        "composition",
+        "rhetorical-move"
+      ],
+      "distance": "B",
+      "difference_from_nearest": "Compositionが要素配置による全体構成を広く捉え、Rhetorical Moveが文章内の機能単位を捉えるのに対し、Sequence Approachは長編脚本を複数sceneからなるdramatic unitへ分割する物語設計上の中間粒度を扱う。",
+      "new_axis": true
+    },
+    "point-of-no-return": {
+      "axis": "物語上の出来事によって、主人公の選択肢や状況がどの程度不可逆に変わったかを見る",
+      "nearest_terms": [
+        "path-dependence",
+        "liminality"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Path Dependenceが過去の経路によって現在の選択肢が制約される一般的な仕組みを扱い、Liminalityが境界的な移行状態を扱うのに対し、Point of No Returnは物語進行の中で『以前へ簡単には戻れない』状態を生む転換機能に焦点を置く。",
+      "new_axis": true
+    }
+  }
+}
