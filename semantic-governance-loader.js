@@ -1,5 +1,6 @@
 (() => {
   let governance = null;
+  let clusterLabels = {};
 
   function annotationFor(id) {
     return governance?.term_annotations?.[id] ?? null;
@@ -12,10 +13,12 @@
       ...(item.nearest_terms ?? []),
       ...(annotation.nearest_terms ?? []),
     ].filter(Boolean))];
+    const clusterId = item.semantic_cluster || annotation.cluster || '';
     return {
       ...item,
       observation_axis: item.observation_axis || annotation.axis || '',
-      semantic_cluster: item.semantic_cluster || annotation.cluster || '',
+      semantic_cluster: clusterId,
+      semantic_cluster_label: item.semantic_cluster_label || clusterLabels[clusterId] || '',
       nearest_terms: nearest,
     };
   }
@@ -56,8 +59,9 @@
       else panel.appendChild(section);
     }
 
-    const cluster = item.semantic_cluster
-      ? `<span class="reader-field">${escapeHtml(item.semantic_cluster)}</span>`
+    const clusterName = item.semantic_cluster_label || item.semantic_cluster;
+    const cluster = clusterName
+      ? `<span class="reader-field">${escapeHtml(clusterName)}</span>`
       : '';
     section.innerHTML = `
       <p class="reader-kicker">この語で見るもの</p>
@@ -86,10 +90,13 @@
         loadJson('data/semantic-governance.json'),
         loadJson('data/semantic-catalog.json'),
       ]);
-      const annotationSources = await Promise.all(
-        (semanticCatalog?.annotation_datasets ?? []).map(loadJson)
-      );
+      const [annotationSources, registry] = await Promise.all([
+        Promise.all((semanticCatalog?.annotation_datasets ?? []).map(loadJson)),
+        semanticCatalog?.cluster_registry ? loadJson(semanticCatalog.cluster_registry) : Promise.resolve({ clusters: [] }),
+      ]);
+      clusterLabels = Object.fromEntries((registry?.clusters ?? []).map((cluster) => [cluster.id, cluster.label]));
       governance = mergeGovernance(base, annotationSources, semanticCatalog);
+      governance.cluster_registry = registry;
       applyGovernance();
     } catch (error) {
       console.error('Semantic governance data could not be loaded:', error);
