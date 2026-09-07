@@ -47,7 +47,8 @@
     "data/research-20260904-morning.json",
     "data/research-20260906-morning.json",
     "data/research-20260906-meat-proxy.json",
-    "data/research-20260907-red-queen-competition.json"
+    "data/research-20260907-red-queen-competition.json",
+    "data/research-20260907-story-structure.json"
   ],
   "relation_datasets": [
     "data/relations.json",
