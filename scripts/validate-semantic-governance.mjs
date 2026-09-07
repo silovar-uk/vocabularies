@@ -4,14 +4,14 @@ import { resolve } from 'node:path';
 
 const ROOT = process.cwd();
 const readJson = async (path) => JSON.parse(await readFile(resolve(ROOT, path), 'utf8'));
-
 const errors = [];
 const warnings = [];
 
 const catalog = await readJson('data/catalog.json');
-const clustersData = await readJson('data/clusters.json');
 const governanceBase = await readJson('data/semantic-governance.json');
 const semanticCatalog = await readJson('data/semantic-catalog.json');
+const registryPath = semanticCatalog.cluster_registry || 'data/semantic-clusters.json';
+const registry = await readJson(registryPath);
 
 const currentItems = new Map();
 for (const path of catalog.datasets ?? []) {
@@ -20,8 +20,7 @@ for (const path of catalog.datasets ?? []) {
   for (const item of rows) if (item?.id) currentItems.set(item.id, item);
 }
 
-const baseAnnotations = governanceBase.term_annotations ?? {};
-const annotations = { ...baseAnnotations };
+const annotations = { ...(governanceBase.term_annotations ?? {}) };
 for (const path of semanticCatalog.annotation_datasets ?? []) {
   const data = await readJson(path);
   for (const [id, annotation] of Object.entries(data.term_annotations ?? {})) {
@@ -29,12 +28,37 @@ for (const path of semanticCatalog.annotation_datasets ?? []) {
   }
 }
 
-const clusterIds = new Set([
-  ...(clustersData.clusters ?? []).map((cluster) => cluster.id),
-  ...(governanceBase.cooldown_clusters ?? []).map((cluster) => cluster.id),
-  ...Object.values(baseAnnotations).map((annotation) => annotation?.cluster).filter(Boolean),
-]);
 const knownIds = new Set(currentItems.keys());
+const clusterIds = new Set();
+const frontierIds = new Set();
+const allowedStatuses = new Set(['dense', 'balanced', 'watch', 'cooldown']);
+const allowedModes = new Set(['practical', 'distant', 'hybrid']);
+
+for (const cluster of registry.clusters ?? []) {
+  const id = String(cluster?.id ?? '').trim();
+  if (!id || clusterIds.has(id)) errors.push(`semantic cluster idが空または重複しています: ${id || '(empty)'}`);
+  clusterIds.add(id);
+  if (!String(cluster?.label ?? '').trim()) errors.push(`${id}: labelがありません`);
+  if (!String(cluster?.question ?? '').trim()) errors.push(`${id}: questionがありません`);
+  if (!String(cluster?.exploration_note ?? '').trim()) errors.push(`${id}: exploration_noteがありません`);
+  if (!allowedStatuses.has(cluster?.status)) errors.push(`${id}: 未知のstatusです: ${cluster?.status}`);
+}
+
+for (const frontier of registry.frontiers ?? []) {
+  const id = String(frontier?.id ?? '').trim();
+  if (!id || frontierIds.has(id) || clusterIds.has(id)) errors.push(`frontier idが空・重複・clusterと衝突しています: ${id || '(empty)'}`);
+  frontierIds.add(id);
+  if (!String(frontier?.label ?? '').trim()) errors.push(`${id}: frontier labelがありません`);
+  if (!String(frontier?.question ?? '').trim()) errors.push(`${id}: frontier questionがありません`);
+  if (!String(frontier?.why_open ?? '').trim()) errors.push(`${id}: why_openがありません`);
+  if (!String(frontier?.selection_rule ?? '').trim()) errors.push(`${id}: selection_ruleがありません`);
+  if (!allowedModes.has(frontier?.mode)) errors.push(`${id}: 未知のfrontier modeです: ${frontier?.mode}`);
+  const priority = Number(frontier?.priority);
+  if (!Number.isInteger(priority) || priority < 1 || priority > 3) errors.push(`${id}: priorityは1〜3にしてください`);
+  for (const clusterId of frontier?.avoid_clusters ?? []) {
+    if (!clusterIds.has(clusterId)) errors.push(`${id}: avoid_clustersに未知clusterがあります: ${clusterId}`);
+  }
+}
 
 for (const [id, annotation] of Object.entries(annotations)) {
   if (!knownIds.has(id)) {
@@ -42,7 +66,7 @@ for (const [id, annotation] of Object.entries(annotations)) {
     continue;
   }
   if (!String(annotation.axis ?? '').trim()) errors.push(`${id}: observation axisが空です`);
-  if (annotation.cluster && !clusterIds.has(annotation.cluster)) errors.push(`${id}: 未知のclusterです: ${annotation.cluster}`);
+  if (annotation.cluster && !clusterIds.has(annotation.cluster)) errors.push(`${id}: 未知のsemantic clusterです: ${annotation.cluster}`);
   const nearest = Array.isArray(annotation.nearest_terms) ? [...new Set(annotation.nearest_terms)] : [];
   if (nearest.length !== (annotation.nearest_terms ?? []).length) warnings.push(`${id}: nearest_termsに重複があります`);
   for (const nearId of nearest) {
@@ -52,6 +76,7 @@ for (const [id, annotation] of Object.entries(annotations)) {
 }
 
 for (const cluster of governanceBase.cooldown_clusters ?? []) {
+  if (!clusterIds.has(cluster.id)) errors.push(`cooldown clusterがregistryにありません: ${cluster.id}`);
   for (const id of cluster.terms ?? []) if (!knownIds.has(id)) errors.push(`cooldown cluster ${cluster.id}: 未知の語です: ${id}`);
 }
 for (const pair of governanceBase.high_risk_pairs ?? []) {
@@ -97,7 +122,7 @@ if (validBaseSha(baseSha)) {
         if (distance === 'B') bCount += 1;
         const nearest = Array.isArray(annotation.nearest_terms) ? annotation.nearest_terms : [];
         if (gate.require_existing_nearest_term && !nearest.some((nearId) => baseIds.has(nearId))) errors.push(`${id}: nearest_termsには追加前から存在する語を最低1語含めてください`);
-        if (gate.require_cluster_or_new_axis && !annotation.cluster && annotation.new_axis !== true) errors.push(`${id}: clusterを指定するか new_axis=true を明示してください`);
+        if (gate.require_cluster_or_new_axis && !annotation.cluster && annotation.new_axis !== true) errors.push(`${id}: registryのclusterを指定するか new_axis=true を明示してください`);
       }
       if (bCount > Number(gate.max_b_per_change ?? 1)) errors.push(`B判定の新規語が多すぎます: ${bCount}語（上限 ${gate.max_b_per_change ?? 1}）`);
     }
@@ -106,6 +131,7 @@ if (validBaseSha(baseSha)) {
 
 const annotationCoverage = knownIds.size ? Math.round((Object.keys(annotations).filter((id) => knownIds.has(id)).length / knownIds.size) * 100) : 0;
 console.log(`Semantic governance: ${knownIds.size} terms / ${Object.keys(annotations).length} annotations / coverage=${annotationCoverage}%`);
+console.log(`Semantic registry: ${clusterIds.size} clusters / ${frontierIds.size} open frontiers`);
 if (newIds.length) console.log(`New term gate: ${newIds.length} new term(s): ${newIds.join(', ')}`);
 for (const warning of warnings) console.warn(`WARNING: ${warning}`);
 if (errors.length) {
