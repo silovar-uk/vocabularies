@@ -97,6 +97,14 @@
       "exploration_note": "AllostasisとAllostatic Loadが近い。ストレス・回復系を増やす場合は明確な分析単位の差が必要。"
     },
     {
+      "id": "decision-optionality",
+      "label": "決めないことの価値・選択可能性",
+      "kind": "governance",
+      "status": "balanced",
+      "question": "いま確定しないことで、将来の選択可能性そのものにどんな価値が生まれるか？",
+      "exploration_note": "Option Valueを中心にした独立軸。Path DependenceやNegative Capabilityと近いが、将来の選択肢を保持する価値を評価する点で分ける。近接語を増やすより、別の意思決定軸を優先する。"
+    },
+    {
       "id": "context-language",
       "label": "文脈・発話・関係性",
       "kind": "governance",
