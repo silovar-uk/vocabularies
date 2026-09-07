@@ -62,12 +62,39 @@
     return map;
   }
 
+  function mergeGovernance(base, annotationSources, semanticCatalog) {
+    const termAnnotations = { ...(base?.term_annotations ?? {}) };
+    for (const source of annotationSources) {
+      for (const [id, annotation] of Object.entries(source?.term_annotations ?? {})) {
+        termAnnotations[id] = { ...(termAnnotations[id] ?? {}), ...annotation };
+      }
+    }
+    return {
+      ...base,
+      term_annotations: termAnnotations,
+      addition_gate: semanticCatalog?.addition_gate ?? null,
+      annotation_datasets: semanticCatalog?.annotation_datasets ?? [],
+    };
+  }
+
   async function loadAll() {
-    const [catalog, governance, clusterData] = await Promise.all([
+    const [catalog, governanceBase, clusterData, semanticCatalog] = await Promise.all([
       loadJson('data/catalog.json'),
       loadJson('data/semantic-governance.json'),
       loadJson('data/clusters.json'),
+      loadJson('data/semantic-catalog.json'),
     ]);
+
+    const annotationSettled = await Promise.allSettled(
+      (semanticCatalog?.annotation_datasets ?? []).map(loadJson)
+    );
+    const annotationSources = [];
+    const failedAnnotationDatasets = [];
+    annotationSettled.forEach((result, index) => {
+      if (result.status === 'fulfilled') annotationSources.push(result.value);
+      else failedAnnotationDatasets.push(semanticCatalog.annotation_datasets[index]);
+    });
+    const governance = mergeGovernance(governanceBase, annotationSources, semanticCatalog);
 
     const paths = [...new Set(catalog.datasets ?? [])];
     const settled = await Promise.allSettled(paths.map(loadJson));
@@ -82,9 +109,10 @@
     return {
       catalog,
       governance,
+      semanticCatalog,
       clusterData,
       items: mergeItems(loaded, catalog),
-      failedDatasets,
+      failedDatasets: [...failedDatasets, ...failedAnnotationDatasets],
     };
   }
 
@@ -168,6 +196,9 @@
 
     const allItems = [...data.items.values()];
     const unclassifiedItems = allItems.filter((item) => !membership.has(item.id));
+    const classifiedWithoutAxis = allItems.filter(
+      (item) => membership.has(item.id) && !explicitAxisIds.has(item.id)
+    );
 
     const combinedClusters = studyClusters.map((cluster) => {
       const validMembers = (cluster.members ?? []).filter((id) => itemIds.has(id));
@@ -205,6 +236,7 @@
       classifiedCount: membership.size,
       explicitAxisIds,
       unclassifiedItems,
+      classifiedWithoutAxis,
       combinedClusters,
       broken: uniqueBroken,
     };
@@ -254,12 +286,15 @@
     const axesCount = audit.explicitAxisIds.size;
     const unclassifiedCount = audit.unclassifiedItems.length;
     const brokenCount = audit.broken.length + data.failedDatasets.length;
+    const gateEnabled = data.semanticCatalog?.addition_gate?.enabled === true;
 
     stats.innerHTML = `
       <div><strong>${total}</strong><span>全語彙</span></div>
       <div><strong>${pct(classified, total)}%</strong><span>クラスタ被覆</span></div>
       <div><strong>${axesCount}</strong><span>観察軸を明示</span></div>
       <div><strong>${unclassifiedCount}</strong><span>未分類</span></div>
+      <div><strong>${audit.classifiedWithoutAxis.length}</strong><span>分類済み・軸未整備</span></div>
+      <div><strong>${gateEnabled ? 'ON' : 'OFF'}</strong><span>新規追加ゲート</span></div>
       <div><strong>${brokenCount}</strong><span>参照・読込警告</span></div>
     `;
 
