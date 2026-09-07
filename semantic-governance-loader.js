@@ -20,6 +20,21 @@
     };
   }
 
+  function mergeGovernance(base, annotationSources, semanticCatalog) {
+    const termAnnotations = { ...(base?.term_annotations ?? {}) };
+    for (const source of annotationSources) {
+      for (const [id, annotation] of Object.entries(source?.term_annotations ?? {})) {
+        termAnnotations[id] = { ...(termAnnotations[id] ?? {}), ...annotation };
+      }
+    }
+    return {
+      ...base,
+      term_annotations: termAnnotations,
+      addition_gate: semanticCatalog?.addition_gate ?? null,
+      annotation_datasets: semanticCatalog?.annotation_datasets ?? [],
+    };
+  }
+
   function syncReaderSection() {
     const panel = document.querySelector('#readerContent');
     if (!panel || !state?.activeItemId) return;
@@ -67,7 +82,14 @@
 
   async function load() {
     try {
-      governance = await loadJson('data/semantic-governance.json');
+      const [base, semanticCatalog] = await Promise.all([
+        loadJson('data/semantic-governance.json'),
+        loadJson('data/semantic-catalog.json'),
+      ]);
+      const annotationSources = await Promise.all(
+        (semanticCatalog?.annotation_datasets ?? []).map(loadJson)
+      );
+      governance = mergeGovernance(base, annotationSources, semanticCatalog);
       applyGovernance();
     } catch (error) {
       console.error('Semantic governance data could not be loaded:', error);
