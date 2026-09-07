@@ -1,0 +1,43 @@
+[
+  {
+    "id": "red-queen-competition",
+    "term": "Red Queen Competition",
+    "ja": "レッドクイーン型競争",
+    "fields": [
+      "Management",
+      "Learning"
+    ],
+    "one_liner": "競争が企業の学習を促し、強くなった企業がまた競合の学習を促す、自己強化的な競争―学習ループ。",
+    "description": "Red Queen Competitionは、企業間競争を単なる圧力ではなく、組織学習を通じて競争力そのものを変化させる相互因果の過程として捉える経営学・組織論の概念。企業Aが競争を受けて改善方法を探索し、学習して強くなると、その強さが企業Bへの競争圧力を高め、Bにも学習を促す。強くなったBは再びAへの圧力を高めるため、競争と学習が互いを加速する。重要なのは、各社が以前より能力を高めていても、競合も同時に強くなるため相対的な優位が広がらないことがある点。また、現在の競争力は過去にどのような競争を経験してきたかに依存する。最近の競争経験は適応を促し得る一方、古い学習への過剰適応はcompetency trapを生み、異なる環境では逆効果にもなり得る。",
+    "why_selected": "『自社は去年より良くなったのに、なぜ競争が楽にならないのか』を、自社だけの成長ではなく競合との相互学習の履歴として捉え直せるから。競合を単なる脅威ではなく、自社に学習を強いる存在として見る補助線にもなる。",
+    "feelings": [
+      "去年より商品は良いのに競争が楽にならない",
+      "競合がすぐ同じ改善をしてくる",
+      "業界全体の水準ばかり上がって差がつかない",
+      "競争を避けるより、競争で鍛えられる面もありそう"
+    ],
+    "before": "自社が改善すれば、そのぶん競争優位も広がるはずだ。",
+    "after": "自社の改善は競合にも学習を促す。絶対的な能力が上がっても、相手も強くなるなら相対的位置は変わらない。競争力は競争の履歴の中で作られている。",
+    "related": [
+      "path-dependence"
+    ],
+    "opposites": [],
+    "sources": [
+      "https://doi.org/10.1002/smj.4250171010",
+      "https://www.gsb.stanford.edu/faculty-research/publications/red-queen-history-dependent-competition-among-organizations",
+      "https://www.gsb.stanford.edu/faculty-research/books/red-queen-among-organizations-how-competitiveness-evolves",
+      "https://www.meiji.net/business/vol434_hajime-ushimaru"
+    ],
+    "status": "researched",
+    "aliases": [
+      "Red Queen Effect",
+      "Red Queen Theory",
+      "レッドクイーン競争",
+      "レッドクイーン理論",
+      "赤の女王効果",
+      "赤の女王理論"
+    ],
+    "formal_status": "established_term",
+    "usage_note": "ここでは進化生物学のRed Queen Hypothesisそのものではなく、Barnettらが組織学習と競争の相互因果として理論化した経営学上のRed Queen Competitionを指す。『止まったら負け』『変化し続けろ』という精神論ではなく、競争相手も学習することが不可欠なメカニズム。"
+  }
+]
