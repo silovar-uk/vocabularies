@@ -1,0 +1,1 @@
+{"schema_version":1,"updated_at":"2026-09-07","annotation_datasets":["data/semantic-annotations-20260907-core.json"],"addition_gate":{"enabled":true,"required_for_new_terms":["axis","nearest_terms","distance","difference_from_nearest"],"allowed_distances":["A","B"],"max_b_per_change":1,"require_existing_nearest_term":true,"require_cluster_or_new_axis":true}}
