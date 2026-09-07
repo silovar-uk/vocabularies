@@ -20,6 +20,7 @@ on:
       - "semantic-index.js"
       - "semantic-governance-loader.js"
       - "semantic-audit.js"
+      - "semantic-space.js"
       - "knowledge-landscape.css"
       - "editorial.js"
       - "editorial-protection.js"
@@ -42,6 +43,7 @@ on:
       - "semantic-index.js"
       - "semantic-governance-loader.js"
       - "semantic-audit.js"
+      - "semantic-space.js"
       - "knowledge-landscape.css"
       - "editorial.js"
       - "editorial-protection.js"
@@ -95,6 +97,7 @@ jobs:
           node --check semantic-index.js
           node --check semantic-governance-loader.js
           node --check semantic-audit.js
+          node --check semantic-space.js
 
       - name: Check editorial scripts
         run: |
