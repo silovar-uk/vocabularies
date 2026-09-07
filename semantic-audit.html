@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Vocabulariesの意味クラスタ、クールダウン、近接語を確認する編集監査ページ。" />
+  <meta name="description" content="Vocabulariesの意味クラスタ、観察軸、重複リスク、未分類語を確認する編集監査ページ。" />
   <title>観察軸の監査 — Vocabularies</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./semantic-audit.css?v=20260907" />
+  <link rel="stylesheet" href="./semantic-audit.css?v=20260907-2" />
 </head>
 <body>
   <header class="audit-header">
@@ -21,16 +21,31 @@
   <main class="audit-shell">
     <section class="audit-hero">
       <p class="eyebrow">SEMANTIC AUDIT</p>
-      <h1>近い言葉を増やしすぎないための、<br>語彙集の健康診断。</h1>
-      <p class="lead">分野が違っても、同じ観察軸を繰り返すことがある。ここでは、意味クラスタ、クールダウン中の領域、要注意の近接語を確認します。</p>
+      <h1>増やす前に、<br>近すぎないかを見る。</h1>
+      <p class="lead">分野が違っても、同じ観察軸を繰り返すことがある。既存語全体を読み込み、意味クラスタの厚み、観察軸の被覆、未分類語、壊れた参照まで監査します。</p>
     </section>
 
     <section class="audit-summary" aria-labelledby="summaryTitle">
       <div>
-        <p class="eyebrow">STATUS</p>
-        <h2 id="summaryTitle">いま、どこが厚すぎるか。</h2>
+        <p class="eyebrow">COVERAGE</p>
+        <h2 id="summaryTitle">語彙集全体の意味地図。</h2>
+        <p class="summary-note">分類率は「語の質」ではなく、重複を検知できる編集基盤の整備率です。</p>
       </div>
-      <div id="auditStats" class="audit-stats" aria-live="polite">読み込み中…</div>
+      <div>
+        <div id="auditStats" class="audit-stats" aria-live="polite">読み込み中…</div>
+        <div id="coverageMeters" class="coverage-meters"></div>
+      </div>
+    </section>
+
+    <section class="audit-section" aria-labelledby="clusterMapTitle">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">CLUSTER MAP</p>
+          <h2 id="clusterMapTitle">どの観察領域が厚いか。</h2>
+        </div>
+        <p>既存の学習クラスタと、重複防止用の監査クラスタを同時に見ます。語数が多いほど、新規追加時の距離判定を厳しくします。</p>
+      </div>
+      <div id="clusterCoverage" class="cluster-grid"></div>
     </section>
 
     <section class="audit-section" aria-labelledby="cooldownTitle">
@@ -66,6 +81,28 @@
       <div id="recentAxes" class="axis-list"></div>
     </section>
 
+    <section class="audit-section" aria-labelledby="unclassifiedTitle">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">BACKLOG</p>
+          <h2 id="unclassifiedTitle">まだ意味地図に入っていない語</h2>
+        </div>
+        <p>未分類は失敗ではなく、次に編集する順番。分野ごとにまとめ、既存クラスタへ入れるか、新しい観察軸を立てるか判断します。</p>
+      </div>
+      <div id="unclassifiedTerms" class="unclassified-list"></div>
+    </section>
+
+    <section id="integritySection" class="audit-section" aria-labelledby="integrityTitle" hidden>
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">INTEGRITY</p>
+          <h2 id="integrityTitle">データの参照切れ</h2>
+        </div>
+        <p>監査データやクラスタが、実際には存在しない語を参照している場合に表示します。</p>
+      </div>
+      <div id="integrityWarnings" class="integrity-list"></div>
+    </section>
+
     <section class="audit-note">
       <p class="eyebrow">EDITORIAL RULE</p>
       <h2>増やすより、捨てる。</h2>
@@ -74,6 +111,6 @@
   </main>
 
   <footer class="audit-footer"><a href="./">語彙集へ戻る</a></footer>
-  <script src="./semantic-audit.js?v=20260907" defer></script>
+  <script src="./semantic-audit.js?v=20260907-2" defer></script>
 </body>
 </html>
