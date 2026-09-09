@@ -4,7 +4,8 @@ const RUNTIME_EXTRA_DATASETS = [
   "data/research-20260907-evening-semantic-expansion.json",
   "data/research-20260908-morning-semantic-expansion.json",
   "data/research-20260908-evening-semantic-expansion.json",
-  "data/research-20260909-morning-semantic-expansion.json"
+  "data/research-20260909-morning-semantic-expansion.json",
+  "data/research-20260909-evening-semantic-expansion.json"
 ];
 
 const state = { items: [], query: "", feeling: null, field: null, activeItemId: null, catalog: { schema_version: 1, datasets: FALLBACK_DATASETS, relation_datasets: FALLBACK_RELATION_DATASETS, defaults: { primary_language: "ja", formal_status: "established_term", aliases: [] }, formal_status_labels: {}, field_labels: {}, taxonomy: [], terms: {}, search_contrasts: [] } };
