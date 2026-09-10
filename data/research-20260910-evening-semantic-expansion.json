@@ -1,0 +1,72 @@
+[
+  {
+    "id": "jevons-paradox",
+    "term": "Jevons Paradox",
+    "ja": "ジェボンズのパラドックス",
+    "aliases": ["Jevons effect", "ジェボンズ効果"],
+    "one_liner": "効率化が利用を増やし、総消費を押し上げることがある。",
+    "description": "資源利用の効率が上がることで単位あたりコストが下がり、その結果として需要や利用量が増え、総資源消費が減らない、あるいは増えることがあるという逆説。",
+    "observation_axis": "効率化後に、単位消費ではなく総利用量・利用回数・需要がどう変化したかを見る。",
+    "semantic_cluster": "economics-demand-rebound",
+    "nearest_terms": ["braess-paradox"],
+    "fields": ["Economics", "Environment"],
+    "feelings": ["逆説", "効率", "需要"],
+    "why_selected": "改善が行動変容を通じて逆効果を生むという、需要側の新しい観察軸を追加するため。"
+  },
+  {
+    "id": "sorites-paradox",
+    "term": "Sorites Paradox",
+    "ja": "ソリテス・パラドックス／砂山のパラドックス",
+    "aliases": ["Paradox of the Heap", "砂山のパラドックス"],
+    "one_liner": "小さな変化の連続に、どこでカテゴリー境界を置くのか。",
+    "description": "一回ごとの微小な変化では名称やカテゴリーが変わらないように見えるのに、それを積み重ねると最終的には明らかに別カテゴリーになるという、曖昧性と境界の問題。",
+    "observation_axis": "連続量に対して、どの変化点でカテゴリーを切り替えているかを見る。",
+    "semantic_cluster": "philosophy-vagueness-boundaries",
+    "nearest_terms": [],
+    "fields": ["Philosophy", "Logic"],
+    "feelings": ["曖昧", "境界", "分類"],
+    "why_selected": "原因や結果ではなく、分類境界そのものを疑う観察軸を加えるため。"
+  },
+  {
+    "id": "exaptation",
+    "term": "Exaptation",
+    "ja": "外適応／イグザプテーション",
+    "aliases": ["外適応"],
+    "one_liner": "元の目的とは別の機能へ転用される。",
+    "description": "ある形質や構造が、成立時の機能とは異なる新しい機能に転用されること。進化生物学で提唱され、技術や組織の転用を考える際にも応用できる。",
+    "observation_axis": "既存の形質・機能・資産が、本来の目的とは別の用途へ転用されていないかを見る。",
+    "semantic_cluster": "evolution-function-repurposing",
+    "nearest_terms": ["equifinality"],
+    "fields": ["Biology", "Innovation"],
+    "feelings": ["転用", "進化", "発見"],
+    "why_selected": "同じ対象が途中から別の役割を持つという、機能転用の観察軸を追加するため。"
+  },
+  {
+    "id": "catastrophic-cancellation",
+    "term": "Catastrophic Cancellation",
+    "ja": "桁落ち",
+    "aliases": ["Cancellation Error", "桁落ち誤差"],
+    "one_liner": "近い数の減算で、有効桁が一気に失われる。",
+    "description": "近い浮動小数点数同士を減算したとき、主要な有効桁が相殺され、入力に含まれる丸め誤差が結果では大きな相対誤差として現れる数値計算上の問題。",
+    "observation_axis": "入力精度だけでなく、演算手順が誤差をどれだけ増幅するかを見る。",
+    "semantic_cluster": "numerical-analysis-stability",
+    "nearest_terms": ["measurement-uncertainty"],
+    "fields": ["Computer Science", "Numerical Analysis"],
+    "feelings": ["精度", "計算", "誤差"],
+    "why_selected": "測定値の不確かさとは別に、計算方法そのものが精度を壊す観察軸を追加するため。"
+  },
+  {
+    "id": "moire-pattern",
+    "term": "Moiré Pattern",
+    "ja": "モアレ／モワレ",
+    "aliases": ["Moiré", "モワレ"],
+    "one_liner": "周期パターン同士の干渉で、元にはない模様が現れる。",
+    "description": "網点・縞・格子などの周期構造が重なったとき、元のどちらにも存在しない大きな干渉模様が現れる現象。印刷、撮影、ディスプレイ、画像縮小などで問題になる。",
+    "observation_axis": "各素材単体ではなく、周期構造同士を重ねたときの干渉パターンを見る。",
+    "semantic_cluster": "design-sampling-interference",
+    "nearest_terms": ["metamerism"],
+    "fields": ["Design", "Print", "Imaging"],
+    "feelings": ["干渉", "印刷", "撮影"],
+    "why_selected": "意味やレイアウトではなく、出力・撮影時の物理的干渉という制作現場の観察軸を追加するため。"
+  }
+]
