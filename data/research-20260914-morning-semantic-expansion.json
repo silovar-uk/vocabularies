@@ -84,5 +84,29 @@
     "fields": ["Information Theory", "Computer Science", "Communications"],
     "feelings": ["復元", "冗長性", "信頼性"],
     "practical_instruction": "再送が難しいデータは、エラー検出だけでなく、必要な範囲で訂正可能な冗長性を持たせてください。"
+  },
+  {
+    "id": "optical-size",
+    "term": "Optical Size",
+    "ja": "オプティカルサイズ",
+    "primary_language": "ja",
+    "one_liner": "文字を単純に拡大縮小せず、使用サイズに応じて字形の細部やプロポーションを最適化するタイポグラフィの考え方。",
+    "description": "小さい本文用では細部を簡略化したり線を丈夫にし、大きな見出し用ではコントラストや繊細さを活かすなど、表示サイズに応じて字形そのものを調整する。可変フォントではOpenTypeのopsz軸として実装されることがある。",
+    "observation_axis": "フォントサイズを単なる倍率として見ず、使用サイズによって最適な字形そのものが変わるかを見る。",
+    "semantic_cluster": "type-size-glyph-adaptation",
+    "nearest_terms": ["leading", "optical-alignment", "tracking"],
+    "why_selected": "行間・字間・行端ではなく、表示サイズに応じてグリフ設計そのものが変わるという別の制作観察軸を加えるため。",
+    "fields": ["Typography", "Graphic Design", "UI", "Web"],
+    "feelings": ["小さい文字が細すぎる", "大見出しが野暮ったい", "同じ書体なのにサイズで印象が変わる"],
+    "before": "本文のフォントをそのまま小さくする。",
+    "after": "小サイズ用の字形設計になっているか、opszを含めて確認する。",
+    "practical_instruction": "サイズだけを縮小せず、opsz対応フォントなら本文・見出しそれぞれの表示サイズに合うoptical sizingを確認してください。",
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/CSS/font-optical-sizing",
+      "https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg#optical-size-axis"
+    ],
+    "status": "researched",
+    "aliases": ["Optical Sizing", "opsz", "光学サイズ"],
+    "formal_status": "established_term"
   }
 ]
