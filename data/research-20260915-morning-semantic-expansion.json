@@ -42,5 +42,52 @@
     "status": "researched",
     "aliases": ["Requisite Variety", "Ashby's Law", "アシュビーの法則"],
     "formal_status": "established_term"
+  },
+  {
+    "id": "fretting",
+    "term": "Fretting",
+    "ja": "フレッティング",
+    "primary_language": "ja",
+    "one_liner": "接触している部材同士のごく小さな繰り返し相対運動によって、接触面に摩耗・損傷が生じる現象。",
+    "description": "フレッティングは、固定されているように見える接触部でも、振動などによる小振幅の相対運動が繰り返されることで摩耗や表面損傷が起きる現象。条件によっては腐食や疲労き裂とも結びつき、通常の大きな滑り運動とは異なる接触損傷として扱われる。",
+    "observation_axis": "部材が大きく動くかではなく、固定接点で微小な相対運動が繰り返され、接触面に損傷を蓄積していないかを見る。",
+    "semantic_cluster": "contact-micromotion-damage",
+    "nearest_terms": ["material-fatigue", "creep", "coefficient-of-thermal-expansion"],
+    "why_selected": "材料挙動を荷重の大きさ・継続時間・温度だけでなく、接触面で繰り返される微小変位という別の単位から観察する軸を追加するため。",
+    "fields": ["Materials Engineering", "Mechanical Engineering", "Product Design"],
+    "feelings": ["固定部なのに削れる", "振動で接点が傷む", "微小な動きが蓄積する"],
+    "before": "この部品は固定されているので摩耗しない。",
+    "after": "固定部でも微小な往復変位が繰り返され、接触面にフレッティングが起きていないかを見る。",
+    "practical_instruction": "固定部品として扱う箇所でも、振動で接触面に微小な繰り返し変位が出る場合はフレッティング摩耗を確認してください。",
+    "sources": [
+      "https://ntrs.nasa.gov/citations/20230002622",
+      "https://ntrs.nasa.gov/api/citations/20050180555/downloads/20050180555.pdf"
+    ],
+    "status": "researched",
+    "aliases": ["Fretting Wear", "フレッティング摩耗"],
+    "formal_status": "established_term"
+  },
+  {
+    "id": "chilling-effect",
+    "term": "Chilling Effect",
+    "ja": "萎縮効果",
+    "primary_language": "ja",
+    "one_liner": "制裁や規制への不安によって、明示的に禁止されていない表現や行動まで自主的に控えられる現象。",
+    "description": "萎縮効果は、法規制や制度上の制裁可能性、境界の曖昧さ、監視への不安などによって、人が本来許される表現や行動まで自己抑制する現象。直接禁止された行為だけを見るのではなく、規制の周辺でどの行動まで消えたかを観察する。",
+    "observation_axis": "ルールが直接禁止した行為ではなく、そのルールへの恐れや不確実性によって周辺の許容行動までどれだけ自己抑制されたかを見る。",
+    "semantic_cluster": "institutional-deterrence-self-censorship",
+    "nearest_terms": ["burden-of-proof", "administrative-legibility", "principal-agent-problem"],
+    "why_selected": "制度の内容や責任配分ではなく、制度の存在が禁止範囲の外側に生む自己抑制という間接効果を観察する軸を追加するため。",
+    "fields": ["Law", "Political Science", "Communication"],
+    "feelings": ["禁止されていないのに誰もやらない", "境界が曖昧で発言を控える", "制裁が怖くて萎縮する"],
+    "before": "このルールで禁止されている行為だけを確認する。",
+    "after": "禁止範囲の外側で、制裁への不安から本来許される表現まで消えていないかを見る。",
+    "sources": [
+      "https://www.law.cornell.edu/supremecourt/text/401/37",
+      "https://www.law.cornell.edu/supremecourt/text/23-156"
+    ],
+    "status": "researched",
+    "aliases": ["Chilling Effect", "萎縮的効果"],
+    "formal_status": "established_term"
   }
 ]
