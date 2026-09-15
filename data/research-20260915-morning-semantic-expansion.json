@@ -14,9 +14,7 @@
     "feelings": ["時系列通りなのに退屈", "途中で過去へ戻る", "先に結果を見せる"],
     "before": "出来事を時系列順に並べる。",
     "after": "出来事の発生順と提示順を分け、どこで過去や未来を挿入すると意味が変わるかを見る。",
-    "sources": [
-      "https://www-archiv.fdm.uni-hamburg.de/lhn/node/106.html"
-    ],
+    "sources": ["https://www-archiv.fdm.uni-hamburg.de/lhn/node/106.html"],
     "status": "researched",
     "aliases": ["Anachrony", "時間錯綜", "時間順序の逸脱"],
     "formal_status": "established_term"
@@ -36,9 +34,7 @@
     "feelings": ["例外が多すぎて一つの手順では処理できない", "ルールを統一したら現場で詰まる", "ケースごとに対応が必要"],
     "before": "対応方法を一つに統一する。",
     "after": "現実側のケースの種類に対して、対応手段の種類を削りすぎていないかを見る。",
-    "sources": [
-      "https://ashby.info/Ashby-Introduction-to-Cybernetics.pdf"
-    ],
+    "sources": ["https://ashby.info/Ashby-Introduction-to-Cybernetics.pdf"],
     "status": "researched",
     "aliases": ["Requisite Variety", "Ashby's Law", "アシュビーの法則"],
     "formal_status": "established_term"
@@ -59,10 +55,7 @@
     "before": "この部品は固定されているので摩耗しない。",
     "after": "固定部でも微小な往復変位が繰り返され、接触面にフレッティングが起きていないかを見る。",
     "practical_instruction": "固定部品として扱う箇所でも、振動で接触面に微小な繰り返し変位が出る場合はフレッティング摩耗を確認してください。",
-    "sources": [
-      "https://ntrs.nasa.gov/citations/20230002622",
-      "https://ntrs.nasa.gov/api/citations/20050180555/downloads/20050180555.pdf"
-    ],
+    "sources": ["https://ntrs.nasa.gov/citations/20230002622", "https://ntrs.nasa.gov/api/citations/20050180555/downloads/20050180555.pdf"],
     "status": "researched",
     "aliases": ["Fretting Wear", "フレッティング摩耗"],
     "formal_status": "established_term"
@@ -82,12 +75,71 @@
     "feelings": ["禁止されていないのに誰もやらない", "境界が曖昧で発言を控える", "制裁が怖くて萎縮する"],
     "before": "このルールで禁止されている行為だけを確認する。",
     "after": "禁止範囲の外側で、制裁への不安から本来許される表現まで消えていないかを見る。",
-    "sources": [
-      "https://www.law.cornell.edu/supremecourt/text/401/37",
-      "https://www.law.cornell.edu/supremecourt/text/23-156"
-    ],
+    "sources": ["https://www.law.cornell.edu/supremecourt/text/401/37", "https://www.law.cornell.edu/supremecourt/text/23-156"],
     "status": "researched",
     "aliases": ["Chilling Effect", "萎縮的効果"],
+    "formal_status": "established_term"
+  },
+  {
+    "id": "niche-construction",
+    "term": "Niche Construction",
+    "ja": "ニッチ構築",
+    "primary_language": "ja",
+    "one_liner": "生物が環境に適応するだけでなく、自ら環境を改変し、その変化が後の選択圧や行動条件を変える過程。",
+    "description": "ニッチ構築は、生物が巣作り、資源利用、道具使用、環境改変などを通じて自らの環境を変え、その結果として自分自身や後続世代が受ける選択圧や行動条件まで変化させるという進化生物学の考え方。",
+    "observation_axis": "環境が主体へ影響する一方向だけでなく、主体が環境を書き換え、その環境が次の主体へ返ってくる循環を見る。",
+    "semantic_cluster": "organism-environment-feedback",
+    "nearest_terms": ["ecological-trap", "stigmergy", "exaptation"],
+    "why_selected": "適応や環境選択ではなく、主体自身が環境条件を作り替え、その変化が次の行動や選択圧へ返る作用方向を追加するため。",
+    "fields": ["Evolutionary Biology", "Ecology", "Anthropology"],
+    "feelings": ["環境そのものが変わる", "作った仕組みが次の行動を規定する", "適応だけでは説明できない"],
+    "before": "人や生物が環境に合わせて変化する。",
+    "after": "主体が作った環境が、次の主体の行動条件や選択圧そのものを変えていないかを見る。",
+    "sources": ["https://plato.stanford.edu/entries/niche-construction/"],
+    "status": "researched",
+    "aliases": ["Niche Construction Theory", "ニッチ構築理論"],
+    "formal_status": "established_term"
+  },
+  {
+    "id": "galvanic-corrosion",
+    "term": "Galvanic Corrosion",
+    "ja": "ガルバニック腐食",
+    "primary_language": "ja",
+    "one_liner": "異種金属が電気的に接触し電解質が存在すると、電位差によって一方の金属の腐食が加速する現象。",
+    "description": "ガルバニック腐食は、異なる電位を持つ金属同士が電気的に接触し、水分や塩分などの電解質が存在することで電池のような回路が形成され、一方の金属の腐食が促進される現象。素材単体の耐食性だけでは判断できない。",
+    "observation_axis": "材料単体の耐久性ではなく、どの異種材料をどの環境で接触させたかという組み合わせによって腐食速度が変わるかを見る。",
+    "semantic_cluster": "material-electrochemical-coupling",
+    "nearest_terms": ["fretting", "material-fatigue", "coefficient-of-thermal-expansion"],
+    "why_selected": "荷重・微小運動・温度ではなく、異種材料の電位差と電解質という相互作用条件を材料設計の別軸として追加するため。",
+    "fields": ["Materials Engineering", "Corrosion Engineering", "Product Design"],
+    "feelings": ["単体では錆びにくいのに接合部だけ傷む", "異種金属を組み合わせる", "屋外で腐食する"],
+    "before": "この金属は耐食性が高いので問題ない。",
+    "after": "接触する相手材と環境を含めても、ガルバニック腐食が加速しない組み合わせかを見る。",
+    "practical_instruction": "異種金属を直接接触させる箇所は、各材料単体の耐食性だけでなく、電位差と水分環境を含めてガルバニック腐食を確認してください。",
+    "sources": ["https://ntrs.nasa.gov/citations/19950011346"],
+    "status": "researched",
+    "aliases": ["Galvanic Corrosion", "異種金属接触腐食", "電食"],
+    "formal_status": "established_term"
+  },
+  {
+    "id": "live-region",
+    "term": "Live Region",
+    "ja": "ライブリージョン",
+    "primary_language": "ja",
+    "one_liner": "画面の一部が動的に更新されたとき、フォーカスを移さなくても変更内容を支援技術へ通知する仕組み。",
+    "description": "Live Regionは、検索結果件数、保存完了、進捗、エラーなど画面内の非同期更新を、ユーザーの現在のフォーカスを奪わずスクリーンリーダーなどの支援技術へ伝えるためのアクセシビリティ上の仕組み。ARIAではaria-liveやrole=statusなどが関連する。",
+    "observation_axis": "UI要素の名前や見た目ではなく、画面上で起きた状態変化が、そこを直接見ていない利用者にも時間的に通知されるかを見る。",
+    "semantic_cluster": "accessibility-dynamic-notification",
+    "nearest_terms": ["accessible-name", "status-message"],
+    "why_selected": "静的な要素識別ではなく、非同期な状態変化を支援技術へどう伝えるかという時間方向の意味層を追加するため。",
+    "fields": ["Accessibility", "UI", "Web"],
+    "feelings": ["保存完了が見えるだけ", "検索件数が変わったことに気づけない", "フォーカスを動かさず通知したい"],
+    "before": "画面に『保存しました』と表示する。",
+    "after": "表示だけでなく、フォーカスを移さず支援技術にも保存完了が通知されるかを見る。",
+    "practical_instruction": "非同期で変わる保存結果・検索件数・進捗は、視覚表示だけでなく、role=\"status\" や aria-live で支援技術へ通知できるか確認してください。",
+    "sources": ["https://www.w3.org/WAI/ARIA/apg/practices/live-regions/", "https://www.w3.org/TR/wai-aria-1.2/#aria-live"],
+    "status": "researched",
+    "aliases": ["ARIA Live Region", "ライブ領域"],
     "formal_status": "established_term"
   }
 ]
