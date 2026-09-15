@@ -1,0 +1,46 @@
+[
+  {
+    "id": "anachrony",
+    "term": "Anachrony",
+    "ja": "アナクロニー",
+    "primary_language": "ja",
+    "one_liner": "物語内で出来事が起きた順序と、それを読者へ提示する順序が食い違う時間構成。",
+    "description": "アナクロニーは、物語世界での出来事の時間順序と、語りの中でそれらを提示する順序のずれを扱う物語論の概念。過去へ戻るanalepsisや未来を先取りするprolepsisなどを含み、時系列そのものではなく『どの順番で見せるか』を分析できる。",
+    "observation_axis": "出来事の内容や視点ではなく、実際の発生順序と読者へ提示される順序がどうずらされているかを見る。",
+    "semantic_cluster": "narrative-temporal-order",
+    "nearest_terms": ["focalization", "free-indirect-discourse", "metalepsis"],
+    "why_selected": "誰が見るか・誰の声が混ざるか・物語階層が越境するかではなく、出来事の時間順と提示順の差そのものを独立した観察軸として追加するため。",
+    "fields": ["Narratology", "Literature", "Writing"],
+    "feelings": ["時系列通りなのに退屈", "途中で過去へ戻る", "先に結果を見せる"],
+    "before": "出来事を時系列順に並べる。",
+    "after": "出来事の発生順と提示順を分け、どこで過去や未来を挿入すると意味が変わるかを見る。",
+    "sources": [
+      "https://www-archiv.fdm.uni-hamburg.de/lhn/node/106.html"
+    ],
+    "status": "researched",
+    "aliases": ["Anachrony", "時間錯綜", "時間順序の逸脱"],
+    "formal_status": "established_term"
+  },
+  {
+    "id": "law-of-requisite-variety",
+    "term": "Law of Requisite Variety",
+    "ja": "必要多様性の法則",
+    "primary_language": "ja",
+    "one_liner": "多様な擾乱を制御するには、制御する側にもそれに対応できるだけの多様性が必要だとするサイバネティクスの原理。",
+    "description": "W. Ross Ashbyのサイバネティクスで示された原理で、外部環境から来る状態や擾乱の種類が多いほど、それを制御・吸収する側にも十分な応答の種類が必要になると考える。単純化そのものを否定するのではなく、現実側の多様性に対して制御側の選択肢を削りすぎていないかを問う。",
+    "observation_axis": "問題の件数ではなく、環境側に存在する状態・擾乱の種類の多さに対して、制御側が持つ応答の種類が足りているかを見る。",
+    "semantic_cluster": "control-response-variety",
+    "nearest_terms": ["graceful-degradation", "equifinality", "common-cause-failure"],
+    "why_selected": "耐障害性や複数経路の存在そのものではなく、環境の多様性と制御側の応答多様性の対応関係を観察する軸を追加するため。",
+    "fields": ["Cybernetics", "Systems", "Management"],
+    "feelings": ["例外が多すぎて一つの手順では処理できない", "ルールを統一したら現場で詰まる", "ケースごとに対応が必要"],
+    "before": "対応方法を一つに統一する。",
+    "after": "現実側のケースの種類に対して、対応手段の種類を削りすぎていないかを見る。",
+    "sources": [
+      "https://ashby.info/Ashby-Introduction-to-Cybernetics.pdf"
+    ],
+    "status": "researched",
+    "aliases": ["Requisite Variety", "Ashby's Law", "アシュビーの法則"],
+    "formal_status": "established_term"
+  }
+]
