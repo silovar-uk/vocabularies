@@ -1,0 +1,132 @@
+[
+  {
+    "id": "free-indirect-discourse",
+    "term": "Free Indirect Discourse",
+    "ja": "自由間接話法",
+    "fields": [
+      "Literature",
+      "Narratology",
+      "Writing"
+    ],
+    "one_liner": "語り手の文法の中に、登場人物の声や評価が入り込む。",
+    "description": "引用符や報告節を使わず、三人称の語りの中へ登場人物の語彙・判断・感情を混ぜる語り方。語り手と人物の声が一つの文に同居する。",
+    "why_selected": "Narrative Perspectiveをさらに細分化するためではなく、視点ではなく『一文の中で誰の声・評価が響いているか』という別の分析単位を追加するため。",
+    "feelings": [
+      "地の文なのに本人っぽい",
+      "誰の評価なのか曖昧",
+      "語り手と人物の声が混ざる"
+    ],
+    "before": "これは語り手の説明だ。",
+    "after": "文法上は語り手でも、この評価語は登場人物の声が染み込んでいないか。",
+    "observation_axis": "一つの文の中で、文法上の語り手と評価・感情の主体がどう重なり、ずれているかを見る。",
+    "semantic_cluster": "narrative-voice",
+    "nearest_terms": [
+      "focalization",
+      "narrative-perspective"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "focalization"
+    ],
+    "sources": [
+      "https://www.lhn.uni-hamburg.de/node/53.html"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "anisotropy",
+    "term": "Anisotropy",
+    "ja": "異方性",
+    "fields": [
+      "Materials Science",
+      "Physics",
+      "Design"
+    ],
+    "one_liner": "同じ素材でも、方向が変われば性質が変わる。",
+    "description": "物質や材料の物理的性質が方向によって異なること。強度、弾性、熱伝導、光学特性などを単一値ではなく方向依存の性質として捉える。",
+    "why_selected": "材料系の既存語が損傷・接触・液体移動へ寄る中で、『方向』という独立した観察軸を追加できるため。",
+    "feelings": [
+      "縦には強いのに横から裂ける",
+      "向きで挙動が違う",
+      "素材の強さを一言で言えない"
+    ],
+    "before": "この素材は丈夫か。",
+    "after": "どの方向への荷重に対して丈夫なのか。",
+    "observation_axis": "材料の性質を一個の値ではなく、測定・荷重・構造の方向との関係として観察する。",
+    "semantic_cluster": "material-directionality",
+    "nearest_terms": [
+      "fretting",
+      "capillary-action"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "instruction": "材料強度を単一値で扱わず、荷重方向に対する異方性まで確認してください。",
+    "sources": [
+      "https://www.ctcms.nist.gov/~langer/oof2man/RegisteredClass-Anisotropic.html"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "ergodicity",
+    "term": "Ergodicity",
+    "ja": "エルゴード性",
+    "fields": [
+      "Mathematics",
+      "Statistics",
+      "Economics"
+    ],
+    "one_liner": "人を横に並べた平均と、一人を時間で追った平均は同じか。",
+    "description": "ある系について、集団をある時点で観察した平均と、一つの系を長時間観察した平均を同等に扱える性質。成立しない場合、集団平均は個体が時間の中で経験する典型像を表さない。",
+    "why_selected": "測定尺度の妥当性ではなく、『集団平均を個体の時間経験へ移してよいか』という新しい問いをVocabulariesへ入れるため。",
+    "feelings": [
+      "平均値がしっくりこない",
+      "平均的な人が実在しない",
+      "集団の数字と個人の経験が違う"
+    ],
+    "before": "平均すると年間4回来る。",
+    "after": "集団平均4回と、一人が時間の中で4回来ることは交換可能なのか。",
+    "observation_axis": "集団を横断した平均と、個体を時間方向に追った平均を交換できる条件を見る。",
+    "semantic_cluster": "time-ensemble-statistics",
+    "nearest_terms": [
+      "measurement-invariance"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [
+      "https://plato.stanford.edu/entries/statphys-statmech/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "capability-based-security",
+    "term": "Capability-Based Security",
+    "ja": "ケイパビリティベース・セキュリティ",
+    "fields": [
+      "Security",
+      "Computer Science",
+      "Systems Design"
+    ],
+    "one_liner": "『誰であるか』ではなく、『何をする権限を持っているか』を渡す。",
+    "description": "操作権限を、偽造困難かつ委譲可能なCapabilityとして主体へ渡すアクセス制御の考え方。アイデンティティ中心の判定とは異なり、具体的な操作権限そのものを設計単位にする。",
+    "why_selected": "Web UIや実装手法ではなく、権限という資源をどう表現し、どの粒度で主体へ渡すかというシステム設計上の観察軸を追加するため。",
+    "feelings": [
+      "この操作だけ許したい",
+      "管理者権限は広すぎる",
+      "限定リンクで操作させたい"
+    ],
+    "before": "この人は管理者か。",
+    "after": "この主体は、この操作を実行するCapabilityを持っているか。",
+    "observation_axis": "主体の属性ではなく、具体的な操作権限がどのように表現・保持・委譲されているかを見る。",
+    "semantic_cluster": "authority-delegation",
+    "nearest_terms": [
+      "least-privilege"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "instruction": "ユーザー属性で広い権限を付与する前に、必要な操作だけを渡すCapabilityとして設計できないか検討してください。",
+    "sources": [
+      "https://www.w3.org/TR/wot-security/"
+    ],
+    "status": "seed"
+  }
+]
