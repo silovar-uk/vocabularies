@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-18",
+  "batch": "resolution-01",
+  "term_annotations": {
+    "resolution": {
+      "axis": "量・空間・時間・スペクトルなどの軸上で、どれだけ近い二つの状態や特徴を別々に識別できるかを見る",
+      "nearest_terms": [
+        "categorical-perception",
+        "parallax-error"
+      ],
+      "distance": "B",
+      "difference_from_nearest": "Categorical Perceptionが連続した刺激を認知カテゴリーの境界で不連続に知覚する仕組み、Parallax Errorが観測位置による読み取りの歪みを扱うのに対し、Resolutionは測定・画像・時間・スペクトルなどで隣接した差を別個に識別できる最小スケール／能力を扱う。",
+      "new_axis": true
+    }
+  }
+}
