@@ -1,0 +1,123 @@
+[
+  {
+    "id": "moral-hazard",
+    "term": "Moral Hazard",
+    "ja": "モラルハザード",
+    "fields": [
+      "Economics",
+      "Institutional Design"
+    ],
+    "one_liner": "結果のコストを誰が負うかが、行動のリスクを変える。",
+    "description": "行動の結果として生じる損失を本人が全面的には負担しない状況が、よりリスキーな行動への誘因を生む現象。",
+    "why_selected": "指標による行動変容ではなく、行為者と損失負担者の分離という制度設計上の観察軸を追加するため。",
+    "feelings": [
+      "なぜそんな無茶をするのか",
+      "失敗しても本人は困らない",
+      "リスクの負担先が違う"
+    ],
+    "before": "この人はリスクを軽視している。",
+    "after": "この行動の失敗コストを払う人は、行動を決める人と同じか。",
+    "observation_axis": "行動を選ぶ主体と、その結果の損失を負担する主体が一致しているかを見る。",
+    "semantic_cluster": "institutional-incentives",
+    "nearest_terms": [
+      "goodharts-law"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [
+      "https://www.imf.org/external/pubs/ft/fandd/basics/moral.htm"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "stigmergy",
+    "term": "Stigmergy",
+    "ja": "スティグマジー",
+    "fields": [
+      "Ecology",
+      "Collective Behavior",
+      "Systems"
+    ],
+    "one_liner": "直接指示しなくても、環境に残った痕跡が次の行動を呼ぶ。",
+    "description": "個体同士が直接コミュニケーションせず、先行する行動が環境へ残した痕跡を介して、次の個体の行動が誘発され協調が形成される仕組み。",
+    "why_selected": "個人の認知や組織内指示ではなく、複数主体と環境に残る痕跡の循環を観察単位として追加するため。",
+    "feelings": [
+      "誰も指示していないのに揃う",
+      "痕跡が次の行動を呼ぶ",
+      "環境が協調を媒介する"
+    ],
+    "before": "みんな自然に同じことをしている。",
+    "after": "前の誰かが環境へ残した痕跡が、次の人の行動を誘導していないか。",
+    "observation_axis": "主体間の直接伝達ではなく、環境に残された痕跡を介して行動が連鎖する過程を見る。",
+    "semantic_cluster": "environment-mediated-coordination",
+    "nearest_terms": [
+      "external-cognition"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "prospect-refuge-theory",
+    "term": "Prospect-Refuge Theory",
+    "ja": "プロスペクト＝リフュージ理論",
+    "fields": [
+      "Environmental Psychology",
+      "Architecture",
+      "Spatial Design"
+    ],
+    "one_liner": "居場所の快適さを、見通しと守られ方の組み合わせで見る。",
+    "description": "空間における好みや滞在を、周囲を見渡せるprospectと、自分が守られ隠れられるrefugeの組み合わせから捉える考え方。",
+    "why_selected": "動線や面積ではなく、利用者から見える範囲と利用者自身の露出度の非対称性を空間評価へ持ち込むため。",
+    "feelings": [
+      "壁際の席が落ち着く",
+      "背後が通路だと落ち着かない",
+      "広いのに居場所がない"
+    ],
+    "before": "この席はなんとなく落ち着かない。",
+    "after": "見通しが足りないのか、それとも背後が守られていないのか。",
+    "observation_axis": "空間から得られる見通しと、自分自身が周囲へ露出する度合いの組み合わせを見る。",
+    "semantic_cluster": "spatial-safety-perception",
+    "nearest_terms": [
+      "defensible-space"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "instruction": "滞在場所は面積だけで決めず、利用者からの見通しと背後の守られ方をセットで確認してください。",
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "ecological-validity",
+    "term": "Ecological Validity",
+    "ja": "生態学的妥当性",
+    "fields": [
+      "Psychology",
+      "Research Design",
+      "UX Research"
+    ],
+    "one_liner": "テストで起きた行動は、実世界でも起きるのか。",
+    "description": "研究・実験・テストで得られた行動や結果が、実際の利用環境や日常条件をどの程度代表しているかを問う考え方。",
+    "why_selected": "値の精度や尺度の一貫性ではなく、測定が行われた環境と実世界との距離という観察軸を追加するため。",
+    "feelings": [
+      "調査では好評なのに本番で使われない",
+      "テスト環境がきれいすぎる",
+      "実際の状況では違いそう"
+    ],
+    "before": "テストでは80％が選んだ。",
+    "after": "その選択が起きた条件は、本番の時間制約や刺激や操作環境とどれくらい似ているか。",
+    "observation_axis": "観測された行動を生んだテスト環境と、実際にその行動が起きる環境との距離を見る。",
+    "semantic_cluster": "measurement-context-validity",
+    "nearest_terms": [
+      "measurement-invariance"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "instruction": "テスト結果だけで判断せず、実利用時の時間制約・周囲の刺激・操作環境でも同じ行動が再現するか確認してください。",
+    "sources": [
+      "https://dictionary.apa.org/ecological-validity"
+    ],
+    "status": "seed"
+  }
+]
