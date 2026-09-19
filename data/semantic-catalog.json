@@ -6,7 +6,8 @@
     "data/semantic-annotations-20260907-core.json",
     "data/semantic-annotations-20260907-red-queen.json",
     "data/semantic-annotations-20260907-story-structure.json",
-    "data/semantic-annotations-20260918-resolution.json"
+    "data/semantic-annotations-20260918-resolution.json",
+    "data/semantic-annotations-20260919-filter-bubble.json"
   ],
   "addition_gate": {
     "enabled": true,
