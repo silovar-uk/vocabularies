@@ -1,0 +1,124 @@
+[
+  {
+    "id": "accessible-name",
+    "term": "Accessible Name",
+    "ja": "アクセシブルネーム",
+    "fields": [
+      "Accessibility",
+      "Web",
+      "UI"
+    ],
+    "one_liner": "画面の見た目ではなく、支援技術にその要素が何という名前で伝わるかを見る。",
+    "description": "UI要素に対してプログラム上決定され、アクセシビリティツリーを通じて支援技術へ伝えられる名前。視覚上のラベルと、機械が取得する名前は一致するとは限らない。",
+    "why_selected": "人間向けの視覚的手掛かりではなく、アクセシビリティAPIへ渡される意味という薄い意味層を追加するため。",
+    "feelings": [
+      "アイコンだけで意味が分かると思っている",
+      "スクリーンリーダーでは何と読まれるか",
+      "見た目と意味がずれる"
+    ],
+    "before": "虫眼鏡アイコンだから検索だと分かる。",
+    "after": "この要素のAccessible Nameは『検索』になっているか。",
+    "observation_axis": "視覚表現を取り除いたとき、操作要素の目的が機械可読な名前としてどう伝達されているかを見る。",
+    "semantic_cluster": "accessibility-semantics",
+    "nearest_terms": [
+      "signifier",
+      "affordance"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "instruction": "アイコンの見た目だけで判断せず、各操作要素のAccessible Nameが目的を正しく表しているか確認してください。",
+    "sources": [
+      "https://www.w3.org/TR/accname-1.2/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "interoception",
+    "term": "Interoception",
+    "ja": "内受容感覚",
+    "fields": [
+      "Cognitive Science",
+      "Body Studies",
+      "Psychology"
+    ],
+    "one_liner": "外界ではなく、身体内部から来る信号を知覚する。",
+    "description": "心拍、呼吸、空腹、内臓状態など、身体内部から生じる信号を感知・解釈・統合する過程。",
+    "why_selected": "外界の知覚や身体位置ではなく、身体内部の状態そのものを情報源として観察する軸を追加するため。",
+    "feelings": [
+      "なんとなく落ち着かない",
+      "空腹で判断が変わる",
+      "身体の内側から感情が来る"
+    ],
+    "before": "なんか落ち着かない。",
+    "after": "心拍・呼吸・空腹など、どの内部信号を自分は拾っているのか。",
+    "observation_axis": "身体内部の生理的信号が、知覚・感情・判断へどのような入力を与えているかを見る。",
+    "semantic_cluster": "internal-body-signals",
+    "nearest_terms": [
+      "proprioception"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [
+      "https://www.nccih.nih.gov/research/research-results/interoception-research"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "equifinality",
+    "term": "Equifinality",
+    "ja": "等結果性",
+    "fields": [
+      "Systems Theory",
+      "Management",
+      "Biology"
+    ],
+    "one_liner": "違う出発点・違う経路でも、同じ結果へ到達できる。",
+    "description": "開放系において、異なる初期条件や異なる経路から同じ最終状態へ到達しうるというシステム論の概念。",
+    "why_selected": "過去の経路が現在を拘束するという見方とは逆に、異なる経路が同じ結果へ収束しうるという作用方向を追加するため。",
+    "feelings": [
+      "同じ成功でも理由が違う",
+      "勝ちパターンが一つとは限らない",
+      "同じ結果から原因を決めつける"
+    ],
+    "before": "同じ結果なら、成功理由も同じだろう。",
+    "after": "違うメカニズムが同じ結果を生んでいないか。",
+    "observation_axis": "同一の結果へ至るまでに、異なる初期条件・原因・経路が複数存在しうるかを見る。",
+    "semantic_cluster": "multiple-paths-same-outcome",
+    "nearest_terms": [
+      "path-dependence"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "allometry",
+    "term": "Allometry",
+    "ja": "アロメトリー／相対成長",
+    "fields": [
+      "Biology",
+      "Morphology",
+      "Scaling"
+    ],
+    "one_liner": "規模が変わるとき、すべてが同じ比率で変わるとは限らない。",
+    "description": "身体サイズなど一つの尺度の変化に対して、別の形態的・生理的特徴がどのようなスケール関係で変化するかを扱う考え方。",
+    "why_selected": "対象を単純に拡大縮小する見方から離れ、規模の変化に対して各性質が異なる速度で変わるという観察軸を追加するため。",
+    "feelings": [
+      "2倍なら全部2倍なのか",
+      "大きくすると比率が崩れる",
+      "規模で必要量の増え方が違う"
+    ],
+    "before": "規模が2倍なら必要量も2倍だ。",
+    "after": "規模に対して線形に増えない性質は何か。",
+    "observation_axis": "全体サイズの変化に対して、個々の形態・機能・必要量がどの比率で変化するかを見る。",
+    "semantic_cluster": "scaling-relations",
+    "nearest_terms": [],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [
+      "https://www.nature.com/scitable/knowledge/library/allometry-the-study-of-biological-scaling-13228439/"
+    ],
+    "status": "seed"
+  }
+]
