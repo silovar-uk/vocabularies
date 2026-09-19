@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-19",
+  "batch": "filter-bubble-01",
+  "term_annotations": {
+    "filter-bubble": {
+      "axis": "表示された情報ではなく、個人化された選別によって何が候補から落ち、異質な情報への接触可能性がどう変わるかを見る",
+      "nearest_terms": [
+        "curation",
+        "information-foraging"
+      ],
+      "distance": "B",
+      "difference_from_nearest": "Curationが情報を選び配置し文脈化する編集行為、Information Foragingが情報価値と探索コストのもとでユーザーがどこを探索するかを見るのに対し、Filter Bubbleは個人化された選別がユーザーごとに異なる情報環境をつくり、除外された情報そのものが見えにくくなる作用を扱う。",
+      "new_axis": true
+    }
+  }
+}
