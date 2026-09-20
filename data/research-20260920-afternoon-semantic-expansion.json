@@ -1,0 +1,121 @@
+[
+  {
+    "id": "metrological-traceability",
+    "term": "Metrological Traceability",
+    "ja": "計量トレーサビリティ",
+    "fields": [
+      "Metrology",
+      "Quality Management",
+      "Measurement"
+    ],
+    "one_liner": "測定値の根拠を、切れ目のない校正の鎖で基準まで遡る。",
+    "description": "測定結果を、文書化された切れ目のない校正の連鎖を通じて参照基準へ関連付けられる性質。機器ではなく測定結果に属する性質として扱う。",
+    "why_selected": "測定値の精度や校正作業そのものではなく、その結果から基準まで続く証拠の系譜という観察軸を追加するため。",
+    "feelings": [
+      "この数字の根拠はどこまで遡れる",
+      "校正済みなら十分なのか",
+      "測定値の系譜を確認したい"
+    ],
+    "before": "測定器を校正したから正しい。",
+    "after": "この測定結果から基準まで、校正と不確かさの鎖を切れずに説明できるか。",
+    "observation_axis": "測定結果が、どの参照基準へどの校正連鎖を通じて結び付いているかを見る。",
+    "semantic_cluster": "measurement-provenance",
+    "nearest_terms": [
+      "calibration"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "instruction": "数値だけでなく、その測定結果がどの基準へトレーサブルなのかも記録してください。",
+    "sources": [
+      "https://www.nist.gov/calibrations/metrological-traceability"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "simpsons-paradox",
+    "term": "Simpson's Paradox",
+    "ja": "シンプソンのパラドックス",
+    "fields": [
+      "Statistics",
+      "Data Analysis"
+    ],
+    "one_liner": "グループごとの傾向が、まとめた瞬間に消えたり逆転したりする。",
+    "description": "複数の群で観察される関係が、群を集約すると弱まる・消える・逆転する現象。群構成や交絡変数によって生じうる。",
+    "why_selected": "平均値の代表性ではなく、分析の集約レベルを変えることで変数間の関係の向き自体が変わるという観察軸を追加するため。",
+    "feelings": [
+      "全体と内訳で結論が逆",
+      "平均だけ見ると変だ",
+      "属性別では勝っているのに全体では負ける"
+    ],
+    "before": "全体ではBの方が良い。",
+    "after": "グループ別に分けても、その優劣は同じ向きか。",
+    "observation_axis": "データの集約・分割によって、変数間の関係の方向や強さが反転していないかを見る。",
+    "semantic_cluster": "aggregation-reversal",
+    "nearest_terms": [
+      "ergodicity"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "idempotency",
+    "term": "Idempotency",
+    "ja": "冪等性",
+    "fields": [
+      "Software Engineering",
+      "Web",
+      "Systems Design"
+    ],
+    "one_liner": "同じ操作を何度実行しても、意図した最終状態を増殖させない。",
+    "description": "同一の操作を一度実行した場合と複数回実行した場合で、意図された最終状態が同じになる性質。再送やリトライを安全に扱う設計で重要になる。",
+    "why_selected": "並行処理やキャッシュではなく、同一操作の反復に対して状態変化がどう振る舞うかという別の実装観察軸を追加するため。",
+    "feelings": [
+      "二重登録された",
+      "再送して大丈夫か",
+      "保存ボタンを2回押した"
+    ],
+    "before": "失敗したらもう一回送ればいい。",
+    "after": "同じ要求が2回来ても、状態は1回分だけ変わるか。",
+    "observation_axis": "同一操作が反復・再送されたとき、状態変化が重複せず同じ最終状態へ収束するかを見る。",
+    "semantic_cluster": "operation-repeatability",
+    "nearest_terms": [],
+    "semantic_distance": "A",
+    "related": [],
+    "instruction": "通信失敗後の再送を前提に、同一リクエストが複数回来ても結果が重複しない設計にしてください。",
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "isostasy",
+    "term": "Isostasy",
+    "ja": "アイソスタシー／地殻均衡",
+    "fields": [
+      "Geology",
+      "Geophysics",
+      "Earth Science"
+    ],
+    "one_liner": "地表の高さを、上に載る質量と地下の浮力的な均衡から見る。",
+    "description": "地殻・リソスフェアが厚さや密度に応じ、下部のより流動的な層との重力的な均衡をとるという地球物理学の考え方。荷重の増減により沈降や隆起が起こる。",
+    "why_selected": "材料や構造物の局所的挙動から離れ、地球スケールで表面形状を質量と浮力の均衡として見る観察軸を追加するため。",
+    "feelings": [
+      "地面は固定された土台ではない",
+      "氷が消えると土地が上がる",
+      "山の高さを地下から考える"
+    ],
+    "before": "氷が溶けたから海面だけ変わる。",
+    "after": "巨大な荷重が消えたことで、地殻そのものも戻ってくるのではないか。",
+    "observation_axis": "地表の標高や上下動を、上載荷重と地下の密度・厚さによる重力的補償の関係として見る。",
+    "semantic_cluster": "crustal-mass-balance",
+    "nearest_terms": [],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [
+      "https://www.usgs.gov/programs/water-resources/science/glacial-isostatic-adjustment"
+    ],
+    "status": "seed"
+  }
+]
