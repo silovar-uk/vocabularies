@@ -1,0 +1,121 @@
+[
+  {
+    "id": "creep",
+    "term": "Creep",
+    "ja": "クリープ",
+    "fields": [
+      "Materials Science",
+      "Product Design",
+      "Engineering"
+    ],
+    "one_liner": "壊れない程度の一定荷重でも、長く受け続ければ材料は少しずつ変形する。",
+    "description": "材料に一定の応力や荷重が継続して作用すると、時間とともに変形が進行する現象。特に高温環境や樹脂・金属部品の長期使用で重要になる。",
+    "why_selected": "材料の強度・方向性・履歴とは別に、一定荷重と経過時間の組み合わせで変形を観察する軸を追加するため。",
+    "feelings": [
+      "棚板が年月とともにたわむ",
+      "長期間締結された樹脂が変形する",
+      "瞬間強度だけでは不安"
+    ],
+    "before": "この素材は強度が足りているか。",
+    "after": "その荷重を長期間受け続けても形状を維持できるか。",
+    "observation_axis": "一定の応力・荷重が継続する時間に応じて、材料の変形がどのように蓄積するかを見る。",
+    "semantic_cluster": "time-dependent-material-deformation",
+    "nearest_terms": [
+      "anisotropy",
+      "hysteresis"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "instruction": "瞬間的な強度だけでなく、継続荷重によるクリープ変形を前提に厚みと支持位置を決めてください。",
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "metalepsis",
+    "term": "Metalepsis",
+    "ja": "メタレプシス",
+    "fields": [
+      "Narratology",
+      "Literature",
+      "Aesthetics"
+    ],
+    "one_liner": "語る世界と語られる世界の境界を、登場人物や語り手が越える。",
+    "description": "本来異なる物語レベルに属する語り手・登場人物・出来事などが、その階層境界を越えて別の物語レベルへ侵入する現象。",
+    "why_selected": "視点や声の混合ではなく、物語世界そのものの階層境界が越境されるかという分析単位を追加するため。",
+    "feelings": [
+      "第四の壁を越える",
+      "登場人物が作者に干渉する",
+      "作中作の階層が崩れる"
+    ],
+    "before": "メタな演出だ。",
+    "after": "どの物語レベルから、どのレベルへ越境したのか。",
+    "observation_axis": "物語内の異なる階層・世界の境界を、誰または何がどちら向きに越境しているかを見る。",
+    "semantic_cluster": "narrative-level-crossing",
+    "nearest_terms": [
+      "free-indirect-discourse",
+      "focalization"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "referential-transparency",
+    "term": "Referential Transparency",
+    "ja": "参照透過性",
+    "fields": [
+      "Computer Science",
+      "Software Engineering",
+      "Programming Languages"
+    ],
+    "one_liner": "式をその計算結果へ置き換えても、プログラムの意味が変わらない。",
+    "description": "ある式をその評価結果で置換してもプログラム全体の振る舞いが変わらない性質。副作用を分離し、コードの局所的な推論を容易にする。",
+    "why_selected": "操作の反復耐性ではなく、式と値の置換可能性および副作用の有無というプログラム意味論の観察軸を追加するため。",
+    "feelings": [
+      "同じ引数なのに結果が変わる",
+      "関数が裏で外部状態を触る",
+      "コードを局所的に理解できない"
+    ],
+    "before": "この関数は何を返すか。",
+    "after": "この関数呼び出しを戻り値そのものへ置換しても何も壊れないか。",
+    "observation_axis": "式をその評価値へ置換したときに、外部状態や文脈に依存せずプログラムの意味が保存されるかを見る。",
+    "semantic_cluster": "expression-substitutability",
+    "nearest_terms": [
+      "idempotency"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "instruction": "計算ロジックと外部状態の更新を分離し、可能な部分は参照透過な関数として切り出してください。",
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "ecological-succession",
+    "term": "Ecological Succession",
+    "ja": "生態遷移",
+    "fields": [
+      "Ecology",
+      "Environmental Science"
+    ],
+    "one_liner": "ある場所の生物群集は固定されず、環境を変えながら次の群集へ交代していく。",
+    "description": "撹乱や新しい生息地の成立後に、生物群集の構成が時間とともに変化し、別の群集へ置き換わっていく過程。現在の生物が環境条件を変え、それが次の定着を左右することもある。",
+    "why_selected": "個体の行動や環境を介した協調ではなく、群集構成そのものが長い時間軸で交代する過程を観察する軸を追加するため。",
+    "feelings": [
+      "山火事跡が森へ戻る",
+      "放棄農地が変化する",
+      "自然に戻るを一枚絵で考える"
+    ],
+    "before": "放っておけば森に戻る。",
+    "after": "いまの群集が環境をどう変え、それによって次に誰が住めるようになるのか。",
+    "observation_axis": "ある場所の生物群集が、環境改変や撹乱を介しながら時間とともにどの順序で交代するかを見る。",
+    "semantic_cluster": "community-change-over-time",
+    "nearest_terms": [
+      "stigmergy"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [],
+    "status": "seed"
+  }
+]
