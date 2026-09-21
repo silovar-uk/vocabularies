@@ -1,0 +1,119 @@
+[
+  {
+    "id": "epistemic-injustice",
+    "term": "Epistemic Injustice",
+    "ja": "認識的不正義",
+    "fields": [
+      "Philosophy",
+      "Social Epistemology",
+      "Sociology"
+    ],
+    "one_liner": "誰の知識が、知識として信用されるのかを見る。",
+    "description": "偏見などによって、ある人が知る主体として不当に低く評価されたり、経験を理解・表現するための共有概念が不足したりする不正義。",
+    "why_selected": "情報の真偽や制度的報酬ではなく、知識を語る資格・信用が誰にどう配分されているかという観察軸を追加するため。",
+    "feelings": [
+      "同じ発言でも人によって重みが変わる",
+      "現場経験が主観として片づけられる",
+      "経験を説明する言葉がない"
+    ],
+    "before": "どっちの説明が正しいか。",
+    "after": "そもそも誰の説明が、知識として聞く価値を持つものとして扱われているか。",
+    "observation_axis": "発言内容だけでなく、知る主体としての信用や解釈資源が誰にどのように配分されているかを見る。",
+    "semantic_cluster": "epistemic-authority",
+    "nearest_terms": [],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [
+      "https://iep.utm.edu/epistemic-injustice/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "modifiable-areal-unit-problem",
+    "term": "Modifiable Areal Unit Problem",
+    "ja": "可変単位地区問題",
+    "aliases": [
+      "MAUP"
+    ],
+    "fields": [
+      "Geography",
+      "Spatial Statistics",
+      "Data Analysis"
+    ],
+    "one_liner": "同じ地点データでも、地図の区切り方を変えると統計的な結論が変わりうる。",
+    "description": "空間データをどの大きさ・境界の地域単位へ集約するかによって、統計値や変数間の関係が変化する問題。",
+    "why_selected": "一般的な集約の罠ではなく、空間単位の境界と縮尺そのものが分析結果を変えるという地理固有の観察軸を追加するため。",
+    "feelings": [
+      "地域別の数字が境界で変わる",
+      "商圏の切り方で結果が違う",
+      "地図の色分けを疑いたい"
+    ],
+    "before": "この地域は平均所得が高い。",
+    "after": "この『地域』の境界を変えても、その結論は残るか。",
+    "observation_axis": "空間データの集計境界やスケールを変更したとき、統計的な傾向や関係がどの程度変化するかを見る。",
+    "semantic_cluster": "spatial-aggregation-effects",
+    "nearest_terms": [
+      "simpsons-paradox"
+    ],
+    "semantic_distance": "A",
+    "related": [],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "dot-gain",
+    "term": "Dot Gain",
+    "ja": "ドットゲイン",
+    "fields": [
+      "Print",
+      "Graphic Design",
+      "Production"
+    ],
+    "one_liner": "印刷では網点がデータ上より太り、色や画像が濃く見えることがある。",
+    "description": "印刷時に紙・インク・印刷機などの条件によって網点がデータ上より大きく再現され、階調や色が濃く見える現象。",
+    "why_selected": "色指定やインクの重なりではなく、デジタルデータから物理出力へ移る際の網点面積の変化という制作上の観察軸を追加するため。",
+    "feelings": [
+      "画面より写真が暗い",
+      "新聞紙でシャドウが潰れる",
+      "同じデータなのに紙で印象が違う"
+    ],
+    "before": "CMYK値は合っている。",
+    "after": "この紙と印刷条件で、網点はどれくらい太るか。",
+    "observation_axis": "デジタル上の網点面積が、紙・インク・印刷方式によって物理出力時にどの程度拡大するかを見る。",
+    "semantic_cluster": "print-tone-reproduction",
+    "nearest_terms": [],
+    "semantic_distance": "A",
+    "related": [],
+    "instruction": "画面上の濃度だけで決めず、使用紙と印刷条件によるドットゲインを見込んでシャドウ部を調整してください。",
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "cardinality-estimation",
+    "term": "Cardinality Estimation",
+    "ja": "カーディナリティ推定",
+    "fields": [
+      "Database",
+      "Computer Science",
+      "Software Engineering"
+    ],
+    "one_liner": "データベースは実行前に、途中結果が何行になるかを予測している。",
+    "description": "クエリオプティマイザがフィルタやJOINなど各演算から返る行数を推定し、その予測をもとに実行計画を選択する仕組み。",
+    "why_selected": "SQLの正しさや再実行性ではなく、実行前のデータ量予測が実行計画をどう左右するかという技術的観察軸を追加するため。",
+    "feelings": [
+      "単純なSQLなのに遅い",
+      "JOIN方式がおかしい",
+      "推定行数と実行行数が違う"
+    ],
+    "before": "このSQLはなぜ遅いのか。",
+    "after": "Optimizerは各段階で何行出ると予測していたか。",
+    "observation_axis": "クエリ実行前の行数推定と実際の行数の乖離が、実行計画の選択と性能にどう影響するかを見る。",
+    "semantic_cluster": "query-planning-estimation",
+    "nearest_terms": [],
+    "semantic_distance": "A",
+    "related": [],
+    "instruction": "遅いクエリは実行時間だけでなく、実行計画のEstimated RowsとActual Rowsの乖離を確認してください。",
+    "sources": [],
+    "status": "seed"
+  }
+]
