@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="./ui-hierarchy.css?v=20260831-1406" />
   <link rel="stylesheet" href="./perception-system.css?v=20260831-1452" data-perception-system="true" />
   <link rel="stylesheet" href="./knowledge-landscape.css?v=20260831-2130" />
+  <link rel="stylesheet" href="./observation-atlas.css?v=20260921-1308" />
 </head>
 <body>
   <header class="site-header">
@@ -34,6 +35,28 @@
   </header>
 
   <main>
+    <section class="atlas-hero" aria-labelledby="atlasTitle">
+      <p class="atlas-kicker">OBSERVATION ATLAS</p>
+      <h1 id="atlasTitle">今日は、何が見えるようになる？</h1>
+      <p class="atlas-lead">言葉を覚える前に、見え方をひとつ増やす。専門語は、その変化にあとから名前をつける。</p>
+      <div id="atlasToday" class="atlas-today" aria-live="polite"><p>今日の観察軸を読み込み中…</p></div>
+    </section>
+
+    <section class="atlas-zone" aria-labelledby="atlasExploreTitle">
+      <div class="atlas-head"><div><p class="atlas-kicker">OBSERVATION ATLAS</p><h2 id="atlasExploreTitle">新しく何が見えるようになる？</h2><p>定義ではなく「観察軸」から入る。横断して、気になったところだけ深く読む。</p></div></div>
+      <div id="atlasGrid" class="atlas-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="atlas-zone" aria-labelledby="frontierTitle">
+      <div class="atlas-head"><div><p class="atlas-kicker">UNEXPLORED</p><h2 id="frontierTitle">まだ言葉が少ない場所へ。</h2><p>よく歩く領域ではなく、語彙数の薄い場所から次の入口を選ぶ。</p></div></div>
+      <div class="frontier-wrap">
+        <div class="frontier-map" role="img" aria-label="語彙の少ない領域を島のように示した抽象地図">
+          <span class="frontier-label a">探索中</span><span class="frontier-label b">探索中</span><span class="frontier-label c">探索中</span><span class="frontier-label d">探索中</span>
+        </div>
+        <div class="frontier-copy"><strong>ランダムではなく、意味空間の端へ。</strong><p>収録数が少ない分野から一語を選びます。いつもの関心から、少しだけ遠くへ。</p><button id="frontierGo" class="frontier-card" type="button">未踏地へ行く →</button></div>
+      </div>
+    </section>
+
     <section class="hero hero-quiet" aria-labelledby="pageTitle">
       <div class="hero-copy">
         <p class="eyebrow">VOCABULARIES</p>
@@ -205,5 +228,6 @@
   <script src="./motion-system.js?v=20260831-1452" defer></script>
   <script src="./ui-hierarchy.js?v=20260831-1406" defer></script>
   <script src="./semantic-index.js?v=20260831-2200" defer></script>
+  <script src="./observation-atlas.js?v=20260921-1308" defer></script>
 </body>
 </html>
