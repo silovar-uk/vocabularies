@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-23",
+  "batch": "20260923-morning-semantic-expansion",
+  "term_annotations": {
+    "focalization": {
+      "axis": "物語で提示される情報が、誰の知覚・知識・経験の範囲によって選択または制限されているかを見る",
+      "nearest_terms": [
+        "free-indirect-discourse",
+        "metalepsis"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "自由間接話法が語り手と登場人物の声・文体の混交を扱い、メタレプシスが物語階層の越境を扱うのに対し、焦点化は誰の知覚・知識を通じて情報が選択・制限されるかを扱う。",
+      "new_axis": true
+    },
+    "focus-visibility": {
+      "axis": "キーボード操作中、現在フォーカスを持つUI要素が背景や状態にかかわらず視覚的に識別できるかを見る",
+      "nearest_terms": [
+        "accessible-name",
+        "signifier"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Accessible Nameが操作要素の目的を機械可読な名前として伝えるのに対し、Focus Visibilityは現在どの要素がキーボード操作の対象になっているかを視覚的に伝える。",
+      "new_axis": true
+    },
+    "unconformity": {
+      "axis": "地層の境界で、侵食や非堆積によってどの期間の地質記録が欠落しているかを見る",
+      "nearest_terms": [
+        "taphonomy",
+        "palimpsest"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Taphonomyが生物遺骸や痕跡がどのように保存・変質して残るかを扱い、Palimpsestが古い痕跡の上への重層を扱うのに対し、不整合は地層記録そのものに生じた時間の欠落を扱う。",
+      "new_axis": true
+    },
+    "ecological-trap": {
+      "axis": "生物が環境選択に使う手掛かりと、選択先で得られる実際の適応度との対応が環境変化によって崩れていないかを見る",
+      "nearest_terms": [
+        "ecological-succession",
+        "ecological-validity"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Ecological Successionが群集構成の時間的交代を扱い、Ecological Validityが手掛かりや測定が現実環境でどれほど有効かを扱うのに対し、Ecological Trapは生物の選好を導く環境手掛かりと実際の適応度が逆方向にずれる現象を扱う。",
+      "new_axis": true
+    }
+  }
+}
