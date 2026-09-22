@@ -1,13 +1,14 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-09-07",
+  "updated_at": "2026-09-23",
   "cluster_registry": "data/semantic-clusters.json",
   "annotation_datasets": [
     "data/semantic-annotations-20260907-core.json",
     "data/semantic-annotations-20260907-red-queen.json",
     "data/semantic-annotations-20260907-story-structure.json",
     "data/semantic-annotations-20260918-resolution.json",
-    "data/semantic-annotations-20260919-filter-bubble.json"
+    "data/semantic-annotations-20260919-filter-bubble.json",
+    "data/semantic-annotations-20260923-morning.json"
   ],
   "addition_gate": {
     "enabled": true,
