@@ -1,0 +1,155 @@
+[
+  {
+    "id": "focalization",
+    "term": "Focalization",
+    "ja": "焦点化",
+    "fields": [
+      "Narratology",
+      "Literature",
+      "Media Studies"
+    ],
+    "one_liner": "誰が語るかとは別に、誰の知覚・知識を通して物語世界が見えているかを見る。",
+    "description": "物語で提示される情報を、特定の人物や位置の知覚・知識に応じて選択・制限する仕組み。語り手の声と、出来事を知覚する焦点を分けて考える。",
+    "why_selected": "語り手や文体ではなく、読者がどの主体の知覚・知識の範囲までアクセスできるかという情報制御の観察軸を追加するため。",
+    "feelings": [
+      "三人称なのに主人公が知らないことは読者にも分からない",
+      "同じ事件が人物ごとに別物に見える",
+      "誰の目を通して見ているのか気になる"
+    ],
+    "before": "この小説は三人称で書かれている。",
+    "after": "三人称だが、世界は誰の知覚と知識を通して見せられている？",
+    "observation_axis": "物語で提示される情報が、誰の知覚・知識・経験の範囲によって選択または制限されているかを見る。",
+    "semantic_cluster": "narrative-information-access",
+    "nearest_terms": [
+      "free-indirect-discourse",
+      "metalepsis"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "自由間接話法が語り手と登場人物の声・文体の混交を扱い、メタレプシスが物語階層の越境を扱うのに対し、焦点化は誰の知覚・知識を通じて情報が選択・制限されるかを扱う。",
+    "related": [
+      "free-indirect-discourse",
+      "metalepsis"
+    ],
+    "sources": [
+      "https://www-archiv.fdm.uni-hamburg.de/lhn/node/18.html",
+      "https://uni-tuebingen.de/en/233930"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "focus-visibility",
+    "term": "Focus Visibility",
+    "ja": "フォーカス可視性",
+    "aliases": [
+      "Focus Visible",
+      "フォーカス表示"
+    ],
+    "fields": [
+      "Accessibility",
+      "UI",
+      "Web"
+    ],
+    "one_liner": "キーボード操作中に、現在どの要素へフォーカスがあるかを視覚的に見失わないようにする。",
+    "description": "TabキーなどでUIを移動したとき、現在キーボードフォーカスを持つ要素を視覚的に識別できる状態。キーボード利用者が次の操作対象となる現在地を把握するために重要。",
+    "why_selected": "操作対象の名前や操作可能性ではなく、キーボード操作における現在位置が視覚的に分かるかというアクセシビリティ固有の観察軸を追加するため。",
+    "feelings": [
+      "Tabを押したらどこへ行ったか分からない",
+      "outlineを消したら現在地が消えた",
+      "濃い背景でフォーカスリングが見えない"
+    ],
+    "before": "マウスならボタンが分かる。",
+    "after": "マウスを触らずTabだけで進んでも、今いる場所が常に分かる？",
+    "observation_axis": "キーボード操作中、現在フォーカスを持つUI要素が背景や状態にかかわらず視覚的に識別できるかを見る。",
+    "semantic_cluster": "keyboard-focus-location",
+    "nearest_terms": [
+      "accessible-name",
+      "signifier"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Accessible Nameが操作要素の目的を機械可読な名前として伝えるのに対し、Focus Visibilityは現在どの要素がキーボード操作の対象になっているかを視覚的に伝える。",
+    "related": [
+      "accessible-name",
+      "signifier"
+    ],
+    "instruction": "Tab操作で全要素を巡回し、背景色にかかわらず現在フォーカス中の要素を判別できる表示にしてください。",
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible",
+      "https://www.w3.org/TR/wcag/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "unconformity",
+    "term": "Unconformity",
+    "ja": "不整合",
+    "fields": [
+      "Geology",
+      "Earth Science",
+      "Stratigraphy"
+    ],
+    "one_liner": "地層の境界に、岩石として記録されなかった長い時間が隠れていることがある。",
+    "description": "侵食や堆積の中断などによって生じる地質学的な境界で、上下の地層の間に地質記録として残っていない時間の空白を含む。",
+    "why_selected": "残っている痕跡の保存過程ではなく、地質記録そのものに存在する時間的欠落を読むという遠距離の観察軸を追加するため。",
+    "feelings": [
+      "地層が連続した記録に見える",
+      "何もない場所が時間の証拠になる",
+      "層と層の間に数百万年が消えている"
+    ],
+    "before": "この層の次がこの層。",
+    "after": "次に見える層までのあいだに、どれだけの時間が記録されずに消えている？",
+    "observation_axis": "地層の境界で、侵食や非堆積によってどの期間の地質記録が欠落しているかを見る。",
+    "semantic_cluster": "stratigraphic-time-gaps",
+    "nearest_terms": [
+      "taphonomy",
+      "palimpsest"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Taphonomyが生物遺骸や痕跡がどのように保存・変質して残るかを扱い、Palimpsestが古い痕跡の上への重層を扱うのに対し、不整合は地層記録そのものに生じた時間の欠落を扱う。",
+    "related": [
+      "taphonomy",
+      "palimpsest"
+    ],
+    "sources": [
+      "https://www.usgs.gov/news/science-snippet/earthword-unconformity",
+      "https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-grand-canyon-national-park"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "ecological-trap",
+    "term": "Ecological Trap",
+    "ja": "生態学的罠",
+    "fields": [
+      "Behavioral Ecology",
+      "Ecology",
+      "Conservation Biology"
+    ],
+    "one_liner": "以前は役立った環境の手掛かりが、変化した環境では質の悪い場所を選ばせることがある。",
+    "description": "生物が環境選択に用いてきた手掛かりと実際の生存・繁殖上の利益が環境変化によってずれ、適応度の低い生息地を好んで選択してしまう現象。",
+    "why_selected": "個体数や地域間フローではなく、環境手掛かりに基づく選択と実際の適応度との対応関係が壊れるという行動生態学の観察軸を追加するため。",
+    "feelings": [
+      "人気の場所なのに繁殖成功率が低い",
+      "魅力的に見える場所ほど危険",
+      "以前なら正しかった手掛かりが裏切る"
+    ],
+    "before": "みんなここを選んでいるから良い環境なのだろう。",
+    "after": "選ばせている手掛かりは、今も本当に高い生存・繁殖成果を予告している？",
+    "observation_axis": "生物が環境選択に使う手掛かりと、選択先で得られる実際の適応度との対応が環境変化によって崩れていないかを見る。",
+    "semantic_cluster": "cue-fitness-mismatch",
+    "nearest_terms": [
+      "ecological-succession",
+      "ecological-validity"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Ecological Successionが群集構成の時間的交代を扱い、Ecological Validityが手掛かりや測定が現実環境でどれほど有効かを扱うのに対し、Ecological Trapは生物の選好を導く環境手掛かりと実際の適応度が逆方向にずれる現象を扱う。",
+    "related": [
+      "ecological-succession",
+      "ecological-validity"
+    ],
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC4760169/",
+      "https://pubmed.ncbi.nlm.nih.gov/16761584/"
+    ],
+    "status": "seed"
+  }
+]
