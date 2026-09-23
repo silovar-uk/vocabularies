@@ -1,0 +1,138 @@
+[
+  {
+    "id": "proprioception",
+    "term": "Proprioception",
+    "ja": "固有受容感覚",
+    "fields": [
+      "Physiology",
+      "Cognition",
+      "Perception"
+    ],
+    "one_liner": "視覚に頼らず、自分の身体各部がどこにあり、どう動いているかを感じ取る。",
+    "description": "筋肉・腱・関節などからの情報をもとに、身体各部の位置や運動を知覚する感覚。視覚を使わなくても姿勢や手足の配置を把握するために働く。",
+    "why_selected": "身体内部の生理状態ではなく、身体各部の位置・運動そのものを身体から知るという観察軸を追加するため。",
+    "feelings": [
+      "目を閉じても腕の位置が分かる",
+      "暗闇でも姿勢を調整できる",
+      "フォームを感覚で修正する"
+    ],
+    "before": "見えていないのに、なぜ腕の位置が分かるのだろう。",
+    "after": "身体そのものから、関節や筋肉の位置・運動情報を受け取っているのではないか。",
+    "observation_axis": "視覚に頼らず、自分の身体各部の位置・角度・運動をどの感覚情報から把握しているかを見る。",
+    "semantic_cluster": "body-position-sensing",
+    "nearest_terms": [
+      "interoception"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Interoceptionが心拍・呼吸・空腹など身体内部の生理状態を知覚するのに対し、Proprioceptionは身体各部の位置・角度・運動を知覚する。",
+    "related": [
+      "interoception"
+    ],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "proxemics",
+    "term": "Proxemics",
+    "ja": "プロクセミクス／近接学",
+    "fields": [
+      "Anthropology",
+      "Geography",
+      "Communication"
+    ],
+    "one_liner": "人と人の距離や空間の使い方を、社会関係や文化を表すコミュニケーションとして読む。",
+    "description": "対人距離、配置、領域の取り方など、空間の使い方と親密さ・社会関係・状況・文化との結びつきを扱う研究領域。",
+    "why_selected": "物理空間を単なる配置や動線としてではなく、人間関係や社会規範を表す距離として読む観察軸を追加するため。",
+    "feelings": [
+      "知らない人が近すぎると落ち着かない",
+      "電車で一席空けて座る",
+      "会議で誰の隣に座るかが気になる"
+    ],
+    "before": "この二人は1メートル離れている。",
+    "after": "この関係では、なぜその距離が自然または不自然に感じられるのか。",
+    "observation_axis": "人と人の物理的距離・配置・領域の取り方が、親密さ・権力・文化的規範をどう表現しているかを見る。",
+    "semantic_cluster": "social-distance-in-space",
+    "nearest_terms": [
+      "prospect-refuge-theory"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Prospect–Refuge Theoryが空間から得られる見通しと隠れ場所による安心感を扱うのに対し、Proxemicsは人と人の距離や配置が社会関係・文化的意味をどう表すかを扱う。",
+    "related": [
+      "prospect-refuge-theory"
+    ],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "measurement-uncertainty",
+    "term": "Measurement Uncertainty",
+    "ja": "測定不確かさ",
+    "fields": [
+      "Metrology",
+      "Measurement",
+      "Statistics"
+    ],
+    "one_liner": "測定値を一つの正解としてではなく、その値にどれほどの幅が伴うかまで含めて扱う。",
+    "description": "測定対象へ合理的に帰属しうる値のばらつきを定量的に表す考え方。測定値だけでなく、その結果についてどの程度の幅をもって知っているかを示す。",
+    "why_selected": "測定値の基準へのつながりではなく、測定結果そのものに残る知識の幅を観察する軸を追加するため。",
+    "feelings": [
+      "12.3と出ると12.3が確定値に見える",
+      "測定値の差が本当に意味あるか迷う",
+      "数字の精密さと確かさを混同する"
+    ],
+    "before": "測ったら12.3だった。",
+    "after": "12.3という推定値には、どの程度の不確かさが伴っている。",
+    "observation_axis": "測定結果について、真値として合理的に考えられる値の範囲やばらつきがどの程度残っているかを見る。",
+    "semantic_cluster": "measurement-result-uncertainty",
+    "nearest_terms": [
+      "metrological-traceability"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Metrological Traceabilityが測定結果を基準まで遡れる校正の連鎖として見るのに対し、Measurement Uncertaintyはその測定結果にどの程度の値の幅が残るかを見る。",
+    "related": [
+      "metrological-traceability"
+    ],
+    "instruction": "測定値だけを記載せず、判断に影響する場合は測定不確かさも併記してください。",
+    "sources": [
+      "https://www.nist.gov/pml/nist-technical-note-1297"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "observability",
+    "term": "Observability",
+    "ja": "オブザーバビリティ／可観測性",
+    "fields": [
+      "Software Engineering",
+      "Systems Design",
+      "Web"
+    ],
+    "one_liner": "外部へ出てくる情報から、システム内部で何が起きているかをどこまで推定できるかを見る。",
+    "description": "ログ、メトリクス、トレースなどの外部出力から、システム内部の状態や処理経路、異常の発生地点を理解・推定できる性質。",
+    "why_selected": "障害時に機能をどう残すかではなく、内部状態を外部出力からどこまで説明できるかという運用上の観察軸を追加するため。",
+    "feelings": [
+      "動かないのにConsoleにも何も出ない",
+      "本番だけ失敗する",
+      "どの処理で止まったか分からない"
+    ],
+    "before": "エラーになった。",
+    "after": "どこまで正常で、どこから異常になったかを外部出力だけで追える。",
+    "observation_axis": "ログ・メトリクス・トレースなどの外部出力から、システム内部の状態・処理経路・異常原因をどこまで推定できるかを見る。",
+    "semantic_cluster": "system-internal-inference",
+    "nearest_terms": [
+      "graceful-degradation",
+      "visibility-system-status"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Graceful Degradationが一部障害時に何を残して価値を維持するかを扱い、Visibility of System Statusが利用者へ現在状態を知らせるUI原則であるのに対し、Observabilityは運用者が外部テレメトリから内部状態を推定できる性質を扱う。",
+    "related": [
+      "graceful-degradation",
+      "visibility-system-status"
+    ],
+    "instruction": "成功・失敗だけでなく、処理段階・所要時間・失敗理由を追跡できるテレメトリを残してください。",
+    "sources": [
+      "https://opentelemetry.io/docs/concepts/observability-primer/"
+    ],
+    "status": "seed"
+  }
+]
