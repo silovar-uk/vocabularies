@@ -8,7 +8,8 @@
     "data/semantic-annotations-20260907-story-structure.json",
     "data/semantic-annotations-20260918-resolution.json",
     "data/semantic-annotations-20260919-filter-bubble.json",
-    "data/semantic-annotations-20260923-morning.json"
+    "data/semantic-annotations-20260923-morning.json",
+    "data/semantic-annotations-20260923-evening.json"
   ],
   "addition_gate": {
     "enabled": true,
