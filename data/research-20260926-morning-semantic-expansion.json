@@ -1,0 +1,113 @@
+[
+  {
+    "id": "poka-yoke",
+    "term": "Poka-yoke",
+    "ja": "ポカヨケ",
+    "aliases": [
+      "Mistake Proofing",
+      "Mistake-proofing",
+      "エラープルーフィング"
+    ],
+    "fields": [
+      "Quality Management",
+      "Design",
+      "Process Design"
+    ],
+    "one_liner": "注意を求める前に、間違えられない／間違いにすぐ気づける工程や道具を設計する。",
+    "description": "人の注意力だけに頼らず、誤った入力・組み付け・順序・選択を構造的に防ぐ、または発生直後に明確に検出できるようにする品質・工程設計の考え方。",
+    "why_selected": "『分かりやすくする』ではなく、エラーの発生可能性そのものを工程や道具の構造で減らすという制作・運用の観察軸を追加するため。",
+    "feelings": [
+      "注意書きが増え続ける",
+      "同じ入力ミスが繰り返される",
+      "人が気をつければ防げると言われる"
+    ],
+    "before": "注意書きを追加して、間違えないようにしてもらう。",
+    "after": "注意しなくても、誤った入力・順序・選択を実行できない構造にできないか。",
+    "observation_axis": "人の注意力ではなく、工程・道具・インターフェースの構造が誤操作の発生可能性をどこまで消す、または即時検出できるかを見る。",
+    "semantic_cluster": "error-proofing-by-design",
+    "nearest_terms": [
+      "constraints"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Constraintsが利用可能な行為の範囲を広く制限する設計原則なのに対し、Poka-yokeは特定のヒューマンエラーを工程・道具の構造で予防または即時検出することを目的にする。",
+    "related": [
+      "constraints",
+      "visibility-system-status"
+    ],
+    "instruction": "エラー後の警告を増やす前に、誤った入力・順序・選択そのものを実行できない設計にできるか確認してください。",
+    "sources": [
+      "https://asq.org/quality-resources/mistake-proofing"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "usufruct",
+    "term": "Usufruct",
+    "ja": "用益権",
+    "fields": [
+      "Law",
+      "Property Law"
+    ],
+    "one_liner": "所有者でなくても、他人の財産を使用し、そこから利益を得る権利を持つことがある。",
+    "description": "財産の所有権を他者に残したまま、その財産を使用し、そこから生じる利益や果実を享受する権利。所有・使用・利益享受を一つのものとして扱わず分離して捉える。",
+    "why_selected": "『誰のものか』という所有の一問だけでは見えない、所有・使用・利益享受という異なる法的権能の配分を観察する軸を追加するため。",
+    "feelings": [
+      "使っている人と持ち主が違う",
+      "所有していないのに収益を得られる",
+      "所有権を一枚岩として考えてしまう"
+    ],
+    "before": "これは誰の土地・財産なのか。",
+    "after": "所有する人、使用する人、そこから利益を得る人は、それぞれ誰なのか。",
+    "observation_axis": "一つの財産について、所有・使用・利益享受の権能が同一主体に集まっているか、それとも別々に配分されているかを見る。",
+    "semantic_cluster": "property-rights-bundle",
+    "nearest_terms": [
+      "capability-based-security"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Capability-based Securityがソフトウェア上の対象へ行為する権限を明示的なcapabilityとして委譲する設計なのに対し、Usufructは所有権を移さずに財産を使用し利益を享受する法的権利を扱う。",
+    "related": [
+      "capability-based-security"
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/wex/usufruct"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "river-avulsion",
+    "term": "River Avulsion",
+    "ja": "河道変遷／アバルション",
+    "aliases": [
+      "Avulsion",
+      "河道アバルション"
+    ],
+    "fields": [
+      "Geomorphology",
+      "Geography",
+      "Earth Science"
+    ],
+    "one_liner": "川は同じ河道を少しずつ動かすだけでなく、ある時点で別の恒久的な流路へ切り替わることがある。",
+    "description": "河川がそれまでの流路を比較的急速に放棄し、別の流路を主要河道として採用する地形学的現象。蛇行の漸進的移動とは異なり、流れの経路そのものが非連続に切り替わる。",
+    "why_selected": "連続的な変化だけでなく、蓄積した地形条件とトリガーによって流れの経路そのものが別ルートへ切り替わるという地形学固有の観察軸を追加するため。",
+    "feelings": [
+      "昔の川筋が今の川と全然違う",
+      "川が急に別方向へ流れた跡がある",
+      "少しずつでは説明できない経路変更"
+    ],
+    "before": "川は少しずつ位置を変えていく。",
+    "after": "現在の河道を維持するより、別経路へ一気に切り替わる条件や閾値はどこにあるのか。",
+    "observation_axis": "河川が既存流路を維持する状態から、どの地形条件・堆積・洪水などを契機に別の恒久流路へ非連続に切り替わるかを見る。",
+    "semantic_cluster": "abrupt-channel-relocation",
+    "nearest_terms": [
+      "path-dependence"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Path Dependenceが過去の選択や履歴によって将来の選択肢が拘束される過程を扱うのに対し、River Avulsionは河川が地形条件とトリガーによって既存流路を放棄し、別の物理的経路へ急速に切り替わる現象を扱う。",
+    "related": [
+      "path-dependence",
+      "unconformity"
+    ],
+    "sources": [],
+    "status": "seed"
+  }
+]
