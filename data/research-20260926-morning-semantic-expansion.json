@@ -109,5 +109,144 @@
     ],
     "sources": [],
     "status": "seed"
+  },
+  {
+    "id": "ecological-fallacy",
+    "term": "Ecological Fallacy",
+    "ja": "生態学的誤謬",
+    "fields": [
+      "Statistics",
+      "Sociology",
+      "Social Science"
+    ],
+    "one_liner": "集団レベルで観測された関係を、そのまま個人レベルの関係だと推論してはいけない。",
+    "description": "地域・学校・国などの集団単位で得られた相関や傾向を、その集団に属する個人にも同じように成り立つと推論してしまう誤り。分析単位をまたぐ推論の危険を示す。",
+    "why_selected": "数値の不確かさではなく、集団単位の関係を個人単位へ誤って降ろすという『分析単位』そのものの観察軸を追加するため。",
+    "feelings": [
+      "地域別データから個人の性質を語りたくなる",
+      "平均値を見ると一人ひとりも同じ傾向に思える",
+      "集団相関を個人相関として読んでしまう"
+    ],
+    "before": "この地域は購入率が高い。だからこの地域の人は買いやすい。",
+    "after": "地域単位で見えた関係を、個人単位へそのまま降ろしてよいのか。",
+    "observation_axis": "観測された関係がどの分析単位で成立しているかを確認し、集団レベルの相関を個人レベルへ誤って推論していないかを見る。",
+    "semantic_cluster": "cross-level-inference",
+    "nearest_terms": [
+      "modifiable-areal-unit-problem"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "MAUPが空間集計単位の境界や粒度を変えることで統計結果が変化する問題なのに対し、Ecological Fallacyは集団レベルで得た関係を個人レベルへ誤って推論する分析単位間の飛躍を扱う。",
+    "related": [
+      "modifiable-areal-unit-problem",
+      "simpsons-paradox"
+    ],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "demographic-transition",
+    "term": "Demographic Transition",
+    "ja": "人口転換",
+    "fields": [
+      "Demography",
+      "Population Studies",
+      "History"
+    ],
+    "one_liner": "人口の増減を、出生率と死亡率が異なるタイミングで変化する長期過程として見る。",
+    "description": "社会が高出生・高死亡の状態から、死亡率の低下を経て人口増加が加速し、その後出生率も低下して低出生・低死亡へ移行するという人口学上の長期的な変化モデル。",
+    "why_selected": "人口の増減量ではなく、出生率と死亡率という二つの率がどの順序と時間差で変わるかを観察する長期人口動態の軸を追加するため。",
+    "feelings": [
+      "人口増減を一つの数字で見てしまう",
+      "医療改善と出生率低下が同時に起こると思ってしまう",
+      "年齢構成の変化が急に見える"
+    ],
+    "before": "人口が増えている。",
+    "after": "死亡率と出生率のどちらが先に動き、その時間差が人口変化をどう作っているのか。",
+    "observation_axis": "人口規模そのものではなく、出生率と死亡率が長期的にどの順序・時間差で変化し、その差が人口増減を生むかを見る。",
+    "semantic_cluster": "population-rate-transition",
+    "nearest_terms": [
+      "ecological-succession"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Ecological Successionが生態群集の構成が時間とともに交代する過程を扱うのに対し、Demographic Transitionは人間社会における出生率と死亡率という二つの人口率の変化順序と時間差を扱う。",
+    "related": [
+      "ecological-succession"
+    ],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "acoustic-shadow",
+    "term": "Acoustic Shadow",
+    "ja": "音響陰影",
+    "fields": [
+      "Acoustics",
+      "Sound",
+      "Physics"
+    ],
+    "one_liner": "音源に近くても、遮蔽物や大気条件によって音が届きにくい空間領域が生じることがある。",
+    "description": "建物・地形などの遮蔽物や、風・温度分布による音の屈折などによって、周囲より音圧が低くなり音が届きにくくなる空間領域。",
+    "why_selected": "音を音源の特性や他音との干渉だけでなく、音源と受け手を結ぶ空間的な伝播経路として観察する軸を追加するため。",
+    "feelings": [
+      "近いのに聞こえない場所がある",
+      "建物の裏で急に音が弱くなる",
+      "遠くでは聞こえるのに途中で聞こえにくい"
+    ],
+    "before": "スピーカーから近いから十分に聞こえるはずだ。",
+    "after": "距離だけでなく、この位置まで音の伝播経路が成立しているか。",
+    "observation_axis": "音源から受け手までの空間に、遮蔽物・地形・風・温度条件などによって音が届きにくい領域が形成されていないかを見る。",
+    "semantic_cluster": "spatial-sound-propagation",
+    "nearest_terms": [
+      "auditory-masking"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Auditory Maskingが別の音によって対象音の知覚が妨げられる現象なのに対し、Acoustic Shadowは遮蔽物や大気条件によって音の物理的な伝播経路そのものが弱められる空間現象を扱う。",
+    "related": [
+      "auditory-masking"
+    ],
+    "instruction": "音源からの距離だけで判断せず、遮蔽物や地形を含めて各位置への音の伝播経路を確認してください。",
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "target-size",
+    "term": "Target Size",
+    "ja": "ターゲットサイズ",
+    "aliases": [
+      "Touch Target Size",
+      "Pointer Target Size",
+      "操作ターゲットサイズ"
+    ],
+    "fields": [
+      "Accessibility",
+      "UI",
+      "Web"
+    ],
+    "one_liner": "見た目の大きさではなく、クリックやタップで実際に狙える操作領域の大きさを見る。",
+    "description": "ボタンやリンクなど、ポインターやタッチで操作する対象の実際のヒット領域の大きさ。小さすぎるターゲットや密集したターゲットは、運動精度に制約のある利用者を含め誤操作を起こしやすい。",
+    "why_selected": "見た目や意味伝達ではなく、身体運動と操作面積の接点をアクセシビリティとして観察できる実務軸を追加するため。",
+    "feelings": [
+      "小さい×を何度も押し損ねる",
+      "隣のボタンを誤タップする",
+      "アイコンは小さいまま押しやすくしたい"
+    ],
+    "before": "アイコンを大きくしてください。",
+    "after": "見た目は維持しつつ、実際にクリック・タップできる領域を十分に確保できるか。",
+    "observation_axis": "操作対象の見た目ではなく、運動精度が低い場合でも隣接要素を誤操作せず狙える実際のクリック・タップ領域が確保されているかを見る。",
+    "semantic_cluster": "motor-access-targeting",
+    "nearest_terms": [
+      "focus-visibility"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Focus Visibilityがキーボード操作で現在フォーカス中の位置を視覚的に把握できるかを扱うのに対し、Target Sizeはポインターやタッチ操作で対象を正確に狙える物理的な操作面積を扱う。",
+    "related": [
+      "focus-visibility",
+      "accessible-name"
+    ],
+    "instruction": "見た目のアイコンサイズだけでなく、クリック／タップ可能領域を原則24×24 CSS px以上確保し、隣接ターゲットとの誤操作も確認してください。",
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+    ],
+    "status": "seed"
   }
 ]
