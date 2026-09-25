@@ -38,6 +38,42 @@
       "distance": "A",
       "difference_from_nearest": "Path Dependenceが過去の選択や履歴によって将来の選択肢が拘束される過程を扱うのに対し、River Avulsionは河川が地形条件とトリガーによって既存流路を放棄し、別の物理的経路へ急速に切り替わる現象を扱う。",
       "new_axis": true
+    },
+    "ecological-fallacy": {
+      "axis": "観測された関係がどの分析単位で成立しているかを確認し、集団レベルの相関を個人レベルへ誤って推論していないかを見る",
+      "nearest_terms": [
+        "modifiable-areal-unit-problem"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "MAUPが空間集計単位の境界や粒度を変えることで統計結果が変化する問題なのに対し、Ecological Fallacyは集団レベルで得た関係を個人レベルへ誤って推論する分析単位間の飛躍を扱う。",
+      "new_axis": true
+    },
+    "demographic-transition": {
+      "axis": "人口規模そのものではなく、出生率と死亡率が長期的にどの順序・時間差で変化し、その差が人口増減を生むかを見る",
+      "nearest_terms": [
+        "ecological-succession"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Ecological Successionが生態群集の構成が時間とともに交代する過程を扱うのに対し、Demographic Transitionは人間社会における出生率と死亡率という二つの人口率の変化順序と時間差を扱う。",
+      "new_axis": true
+    },
+    "acoustic-shadow": {
+      "axis": "音源から受け手までの空間に、遮蔽物・地形・風・温度条件などによって音が届きにくい領域が形成されていないかを見る",
+      "nearest_terms": [
+        "auditory-masking"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Auditory Maskingが別の音によって対象音の知覚が妨げられる現象なのに対し、Acoustic Shadowは遮蔽物や大気条件によって音の物理的な伝播経路そのものが弱められる空間現象を扱う。",
+      "new_axis": true
+    },
+    "target-size": {
+      "axis": "操作対象の見た目ではなく、運動精度が低い場合でも隣接要素を誤操作せず狙える実際のクリック・タップ領域が確保されているかを見る",
+      "nearest_terms": [
+        "focus-visibility"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Focus Visibilityがキーボード操作で現在フォーカス中の位置を視覚的に把握できるかを扱うのに対し、Target Sizeはポインターやタッチ操作で対象を正確に狙える物理的な操作面積を扱う。",
+      "new_axis": true
     }
   }
 }
