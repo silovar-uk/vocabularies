@@ -24,7 +24,8 @@ const RUNTIME_EXTRA_DATASETS = [
   "data/research-20260920-evening-semantic-expansion.json",
   "data/research-20260921-morning-semantic-expansion.json",
   "data/research-20260923-morning-semantic-expansion.json",
-  "data/research-20260923-evening-semantic-expansion.json"];
+  "data/research-20260923-evening-semantic-expansion.json",
+  "data/research-20260926-morning-semantic-expansion.json"];
 
 const state = { items: [], query: "", feeling: null, field: null, activeItemId: null, catalog: { schema_version: 1, datasets: FALLBACK_DATASETS, relation_datasets: FALLBACK_RELATION_DATASETS, defaults: { primary_language: "ja", formal_status: "established_term", aliases: [] }, formal_status_labels: {}, field_labels: {}, taxonomy: [], terms: {}, search_contrasts: [] } };
 const searchInput=document.querySelector("#searchInput"),feelingChips=document.querySelector("#feelingChips"),fieldFilters=document.querySelector("#fieldFilters"),vocabularyGrid=document.querySelector("#vocabularyGrid"),resultCount=document.querySelector("#resultCount"),emptyState=document.querySelector("#emptyState"),clearFilters=document.querySelector("#clearFilters");
