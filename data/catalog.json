@@ -151,7 +151,15 @@
     "Law": "法学",
     "Property Law": "財産法",
     "Geomorphology": "地形学",
-    "Earth Science": "地球科学"
+    "Earth Science": "地球科学",
+    "Sociology": "社会学",
+    "Social Science": "社会科学",
+    "Demography": "人口学",
+    "Population Studies": "人口研究",
+    "History": "歴史学",
+    "Acoustics": "音響学",
+    "Physics": "物理学",
+    "Accessibility": "アクセシビリティ"
   },
   "taxonomy": [
     {
