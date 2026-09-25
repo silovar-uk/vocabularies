@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-26",
+  "batch": "20260926-morning-semantic-expansion",
+  "term_annotations": {
+    "poka-yoke": {
+      "axis": "人の注意力ではなく、工程・道具・インターフェースの構造が誤操作の発生可能性をどこまで消す、または即時検出できるかを見る",
+      "nearest_terms": [
+        "constraints"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Constraintsが利用可能な行為の範囲を広く制限する設計原則なのに対し、Poka-yokeは特定のヒューマンエラーを工程・道具の構造で予防または即時検出することを目的にする。",
+      "new_axis": true
+    },
+    "exaptation": {
+      "axis": "現在の機能と、その性質が成立した歴史的理由を分離し、後から起きた用途転換を観察する",
+      "nearest_terms": [
+        "affordance"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Affordanceが対象と行為者の関係から現在どんな行為が可能かを見るのに対し、Exaptationは形質や仕組みが成立した歴史的理由と現在の機能が異なる、用途転換の履歴を扱う。",
+      "new_axis": true
+    },
+    "usufruct": {
+      "axis": "一つの財産について、所有・使用・利益享受の権能が同一主体に集まっているか、それとも別々に配分されているかを見る",
+      "nearest_terms": [
+        "capability-based-security"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Capability-based Securityがソフトウェア上の対象へ行為する権限を明示的なcapabilityとして委譲する設計なのに対し、Usufructは所有権を移さずに財産を使用し利益を享受する法的権利を扱う。",
+      "new_axis": true
+    },
+    "river-avulsion": {
+      "axis": "河川が既存流路を維持する状態から、どの地形条件・堆積・洪水などを契機に別の恒久流路へ非連続に切り替わるかを見る",
+      "nearest_terms": [
+        "path-dependence"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Path Dependenceが過去の選択や履歴によって将来の選択肢が拘束される過程を扱うのに対し、River Avulsionは河川が地形条件とトリガーによって既存流路を放棄し、別の物理的経路へ急速に切り替わる現象を扱う。",
+      "new_axis": true
+    }
+  }
+}
