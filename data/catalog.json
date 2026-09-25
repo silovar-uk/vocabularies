@@ -74,7 +74,8 @@
     "data/research-20260920-evening-semantic-expansion.json",
     "data/research-20260921-morning-semantic-expansion.json",
     "data/research-20260923-morning-semantic-expansion.json",
-    "data/research-20260923-evening-semantic-expansion.json"
+    "data/research-20260923-evening-semantic-expansion.json",
+    "data/research-20260926-morning-semantic-expansion.json"
   ],
   "relation_datasets": [
     "data/relations.json",
@@ -144,7 +145,13 @@
     "Geography": "地理学",
     "Metrology": "計測学",
     "Statistics": "統計",
-    "Systems Design": "システム設計"
+    "Systems Design": "システム設計",
+    "Quality Management": "品質管理",
+    "Process Design": "プロセス設計",
+    "Law": "法学",
+    "Property Law": "財産法",
+    "Geomorphology": "地形学",
+    "Earth Science": "地球科学"
   },
   "taxonomy": [
     {
