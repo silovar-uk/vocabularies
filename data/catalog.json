@@ -75,7 +75,8 @@
     "data/research-20260921-morning-semantic-expansion.json",
     "data/research-20260923-morning-semantic-expansion.json",
     "data/research-20260923-evening-semantic-expansion.json",
-    "data/research-20260926-morning-semantic-expansion.json"
+    "data/research-20260926-morning-semantic-expansion.json",
+    "data/research-20260926-evening-semantic-expansion.json"
   ],
   "relation_datasets": [
     "data/relations.json",
@@ -159,7 +160,14 @@
     "History": "歴史学",
     "Acoustics": "音響学",
     "Physics": "物理学",
-    "Accessibility": "アクセシビリティ"
+    "Accessibility": "アクセシビリティ",
+    "Cryptography": "暗号学",
+    "Security": "セキュリティ",
+    "Computer Science": "計算機科学",
+    "Geotechnical Engineering": "地盤工学",
+    "Geology": "地質学",
+    "Narratology": "物語論",
+    "Literature": "文学"
   },
   "taxonomy": [
     {
