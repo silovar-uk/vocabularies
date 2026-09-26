@@ -1,0 +1,165 @@
+[
+  {
+    "id": "status-message",
+    "term": "Status Message",
+    "ja": "ステータスメッセージ",
+    "aliases": [
+      "Status Messages",
+      "状態メッセージ"
+    ],
+    "fields": [
+      "Accessibility",
+      "Web",
+      "UI"
+    ],
+    "one_liner": "フォーカスを奪わずに、操作結果や進捗などの状態変化を支援技術にも伝える。",
+    "description": "操作結果、進捗、待機、エラーなどの動的な状態変化を、ユーザーの現在フォーカスを移動させずにスクリーンリーダー等の支援技術にも伝えられるようにするアクセシビリティ上の考え方。",
+    "why_selected": "画面上に文字が見えるかではなく、視線やフォーカスがそこにない利用者にも状態変化の意味が通知されるかという観察軸を追加するため。",
+    "feelings": [
+      "保存完了が一瞬表示される",
+      "検索結果件数が変わった",
+      "同期が終わったのに読み上げられない"
+    ],
+    "before": "保存完了の文字を画面に出した。",
+    "after": "フォーカスを動かさなくても、その状態変化が支援技術へ伝わるか。",
+    "observation_axis": "フォーカスを移動させずに起きる動的な状態変化が、視覚表示だけでなく支援技術にもプログラム的に伝達されるかを見る。",
+    "semantic_cluster": "nonfocus-status-announcement",
+    "nearest_terms": [
+      "focus-visibility",
+      "accessible-name"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Focus Visibilityが現在フォーカスされている要素の視覚的な現在地を扱い、Accessible Nameが要素の目的を名前として伝えるのに対し、Status Messageはフォーカス外で生じた動的な状態変化そのものを支援技術へ通知する。",
+    "related": [
+      "focus-visibility",
+      "accessible-name",
+      "visibility-system-status"
+    ],
+    "instruction": "保存・同期・検索結果など、フォーカスを移動させない状態変化はrole=\"status\"等を使い、支援技術にも通知してください。",
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "nonce",
+    "term": "Nonce",
+    "ja": "ノンス",
+    "aliases": [
+      "Number used once"
+    ],
+    "fields": [
+      "Cryptography",
+      "Security",
+      "Computer Science"
+    ],
+    "one_liner": "秘密かどうかだけでなく、同じ値を再利用しないこと自体が安全性になる。",
+    "description": "暗号や認証などで、同じ用途・同じ鍵のもとで再利用されないことを前提に用いられる値。ランダム値やカウンタ等で生成され、再利用が暗号安全性を損なう方式がある。",
+    "why_selected": "値の推測困難性ではなく、値の再利用そのものを危険として見るセキュリティ上の観察軸を追加するため。",
+    "feelings": [
+      "ランダムなら安全だと思う",
+      "同じ値をもう一度使ってよいか迷う",
+      "リプレイ攻撃が気になる"
+    ],
+    "before": "この値は十分ランダムで推測しにくい。",
+    "after": "推測困難性とは別に、この値が同一用途で再利用される可能性はないか。",
+    "observation_axis": "暗号・認証処理で、値の秘密性やランダム性だけでなく、同一キー・同一用途で値が再利用されない一意性条件が守られているかを見る。",
+    "semantic_cluster": "single-use-security-values",
+    "nearest_terms": [
+      "idempotency",
+      "capability-based-security"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Idempotencyが同じ操作を複数回受信しても最終状態を重複させない性質を扱い、Capability-based Securityが権限委譲を扱うのに対し、Nonceは暗号・認証処理で同じ値を再利用しないこと自体を安全性条件として扱う。",
+    "related": [
+      "idempotency",
+      "capability-based-security"
+    ],
+    "instruction": "nonceは秘密性だけで評価せず、同一キー・同一用途で再利用されない生成方式になっているか確認してください。",
+    "sources": [
+      "https://csrc.nist.gov/glossary/term/nonce"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "soil-liquefaction",
+    "term": "Soil Liquefaction",
+    "ja": "土壌液状化",
+    "aliases": [
+      "Liquefaction",
+      "地盤液状化",
+      "液状化"
+    ],
+    "fields": [
+      "Geotechnical Engineering",
+      "Geology",
+      "Earth Science"
+    ],
+    "one_liner": "固体に見える地盤でも、粒子間の支持力が失われると一時的に液体のように振る舞う。",
+    "description": "水を多く含む緩い砂質地盤などが強い揺れを受け、間隙水圧の上昇によって土粒子同士の有効応力が低下し、地盤が支持力を失って液体のように振る舞う現象。",
+    "why_selected": "地形の経路や地層記録ではなく、荷重を支える主体が土粒子骨格から間隙水圧へ移ることで支持能力が失われるという地盤力学の観察軸を追加するため。",
+    "feelings": [
+      "見た目は固い地面なのに沈む",
+      "地震後に建物が傾く",
+      "地面から砂や水が噴く"
+    ],
+    "before": "地面は固体だから建物を支えている。",
+    "after": "この地盤で荷重を支えているのは土粒子同士の接触か、それとも間隙水圧へ負担が移っているか。",
+    "observation_axis": "飽和した地盤で、揺れによる間隙水圧の上昇が土粒子間の有効応力をどこまで失わせ、支持力を低下させるかを見る。",
+    "semantic_cluster": "soil-effective-stress-loss",
+    "nearest_terms": [
+      "isostasy",
+      "creep"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Isostasyが地殻規模の上載荷重と浮力的均衡を扱い、Creepが持続荷重による材料の時間依存変形を扱うのに対し、Soil Liquefactionは飽和地盤で間隙水圧が上昇し土粒子間の有効応力が急減することで支持力を失う現象を扱う。",
+    "related": [
+      "isostasy",
+      "creep",
+      "river-avulsion"
+    ],
+    "sources": [
+      "https://www.usgs.gov/programs/earthquake-hazards/science/liquefaction"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "anachrony",
+    "term": "Anachrony",
+    "ja": "アナクロニー／物語時間の錯時",
+    "aliases": [
+      "Anachrony in Narrative"
+    ],
+    "fields": [
+      "Narratology",
+      "Literature"
+    ],
+    "one_liner": "出来事が起きた順序と、読者へ語られる順序を別々の時間軸として見る。",
+    "description": "物語世界で出来事が生起した順序と、物語内でそれらが提示される順序が一致しない時間構成。回想にあたるアナレプシスや、未来の出来事を先取りするプロレプシスなどを含む。",
+    "why_selected": "物語論を『誰が見るか』から離し、出来事の発生順序と提示順序を意図的にずらす時間配置という観察軸へ広げるため。",
+    "feelings": [
+      "結末を先に見せる映画",
+      "現在から過去へ飛ぶ小説",
+      "時系列が前後している"
+    ],
+    "before": "この作品は時系列が前後している。",
+    "after": "出来事の発生順序を、語る順序がどう組み替え、その差が情報の受け取り方をどう変えているか。",
+    "observation_axis": "物語世界で出来事が起きた順序と読者へ提示される順序を分け、そのずれがどこでどの方向に生じているかを見る。",
+    "semantic_cluster": "narrative-order-displacement",
+    "nearest_terms": [
+      "focalization",
+      "metalepsis"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Focalizationが誰の知覚・知識を通して情報が提示されるかを扱い、Metalepsisが物語階層の越境を扱うのに対し、Anachronyは出来事の発生順序と語りの提示順序のずれを扱う。",
+    "related": [
+      "focalization",
+      "metalepsis",
+      "free-indirect-discourse"
+    ],
+    "sources": [
+      "https://www-archiv.fdm.uni-hamburg.de/lhn/node/52.html"
+    ],
+    "status": "seed"
+  }
+]
