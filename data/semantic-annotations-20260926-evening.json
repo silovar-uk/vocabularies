@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-26",
+  "batch": "20260926-evening-semantic-expansion",
+  "term_annotations": {
+    "status-message": {
+      "axis": "フォーカスを移動させずに起きる動的な状態変化が、視覚表示だけでなく支援技術にもプログラム的に伝達されるかを見る",
+      "nearest_terms": [
+        "focus-visibility",
+        "accessible-name"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Focus Visibilityが現在フォーカスされている要素の視覚的な現在地を扱い、Accessible Nameが要素の目的を名前として伝えるのに対し、Status Messageはフォーカス外で生じた動的な状態変化そのものを支援技術へ通知する。",
+      "new_axis": true
+    },
+    "nonce": {
+      "axis": "暗号・認証処理で、値の秘密性やランダム性だけでなく、同一キー・同一用途で値が再利用されない一意性条件が守られているかを見る",
+      "nearest_terms": [
+        "idempotency",
+        "capability-based-security"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Idempotencyが同じ操作を複数回受信しても最終状態を重複させない性質を扱い、Capability-based Securityが権限委譲を扱うのに対し、Nonceは暗号・認証処理で同じ値を再利用しないこと自体を安全性条件として扱う。",
+      "new_axis": true
+    },
+    "soil-liquefaction": {
+      "axis": "飽和した地盤で、揺れによる間隙水圧の上昇が土粒子間の有効応力をどこまで失わせ、支持力を低下させるかを見る",
+      "nearest_terms": [
+        "isostasy",
+        "creep"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Isostasyが地殻規模の上載荷重と浮力的均衡を扱い、Creepが持続荷重による材料の時間依存変形を扱うのに対し、Soil Liquefactionは飽和地盤で間隙水圧が上昇し土粒子間の有効応力が急減することで支持力を失う現象を扱う。",
+      "new_axis": true
+    },
+    "anachrony": {
+      "axis": "物語世界で出来事が起きた順序と読者へ提示される順序を分け、そのずれがどこでどの方向に生じているかを見る",
+      "nearest_terms": [
+        "focalization",
+        "metalepsis"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Focalizationが誰の知覚・知識を通して情報が提示されるかを扱い、Metalepsisが物語階層の越境を扱うのに対し、Anachronyは出来事の発生順序と語りの提示順序のずれを扱う。",
+      "new_axis": true
+    }
+  }
+}
