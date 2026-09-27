@@ -1,165 +1,29 @@
 [
   {
-    "id": "status-message",
-    "term": "Status Message",
-    "ja": "ステータスメッセージ",
-    "aliases": [
-      "Status Messages",
-      "状態メッセージ"
-    ],
-    "fields": [
-      "Accessibility",
-      "Web",
-      "UI"
-    ],
-    "one_liner": "フォーカスを奪わずに、操作結果や進捗などの状態変化を支援技術にも伝える。",
-    "description": "操作結果、進捗、待機、エラーなどの動的な状態変化を、ユーザーの現在フォーカスを移動させずにスクリーンリーダー等の支援技術にも伝えられるようにするアクセシビリティ上の考え方。",
-    "why_selected": "画面上に文字が見えるかではなく、視線やフォーカスがそこにない利用者にも状態変化の意味が通知されるかという観察軸を追加するため。",
-    "feelings": [
-      "保存完了が一瞬表示される",
-      "検索結果件数が変わった",
-      "同期が終わったのに読み上げられない"
-    ],
-    "before": "保存完了の文字を画面に出した。",
-    "after": "フォーカスを動かさなくても、その状態変化が支援技術へ伝わるか。",
-    "observation_axis": "フォーカスを移動させずに起きる動的な状態変化が、視覚表示だけでなく支援技術にもプログラム的に伝達されるかを見る。",
-    "semantic_cluster": "nonfocus-status-announcement",
-    "nearest_terms": [
-      "focus-visibility",
-      "accessible-name"
-    ],
-    "semantic_distance": "A",
-    "difference_from_nearest": "Focus Visibilityが現在フォーカスされている要素の視覚的な現在地を扱い、Accessible Nameが要素の目的を名前として伝えるのに対し、Status Messageはフォーカス外で生じた動的な状態変化そのものを支援技術へ通知する。",
-    "related": [
-      "focus-visibility",
-      "accessible-name",
-      "visibility-system-status"
-    ],
-    "instruction": "保存・同期・検索結果など、フォーカスを移動させない状態変化はrole=\"status\"等を使い、支援技術にも通知してください。",
-    "sources": [
-      "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html"
-    ],
-    "status": "seed"
+    "id":"status-message","term":"Status Message","ja":"ステータスメッセージ","aliases":["Status Messages","状態メッセージ"],"fields":["Accessibility","Web","UI"],"one_liner":"フォーカスを奪わずに、操作結果や進捗などの状態変化を支援技術にも伝える。","description":"操作結果、進捗、待機、エラーなどの動的な状態変化を、ユーザーの現在フォーカスを移動させずにスクリーンリーダー等の支援技術にも伝えられるようにするアクセシビリティ上の考え方。","why_selected":"画面上に文字が見えるかではなく、視線やフォーカスがそこにない利用者にも状態変化の意味が通知されるかという観察軸を追加するため。","feelings":["保存完了が一瞬表示される","検索結果件数が変わった","同期が終わったのに読み上げられない"],"before":"保存完了の文字を画面に出した。","after":"フォーカスを動かさなくても、その状態変化が支援技術へ伝わるか。","observation_axis":"フォーカスを移動させずに起きる動的な状態変化が、視覚表示だけでなく支援技術にもプログラム的に伝達されるかを見る。","semantic_cluster":"nonfocus-status-announcement","nearest_terms":["focus-visibility","accessible-name"],"semantic_distance":"A","difference_from_nearest":"Focus Visibilityが現在フォーカスされている要素の視覚的な現在地を扱い、Accessible Nameが要素の目的を名前として伝えるのに対し、Status Messageはフォーカス外で生じた動的な状態変化そのものを支援技術へ通知する。","related":["focus-visibility","accessible-name","visibility-system-status"],"instruction":"保存・同期・検索結果など、フォーカスを移動させない状態変化はrole=\"status\"等を使い、支援技術にも通知してください。","sources":["https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html"],"status":"seed"
   },
   {
-    "id": "nonce",
-    "term": "Nonce",
-    "ja": "ノンス",
-    "aliases": [
-      "Number used once"
-    ],
-    "fields": [
-      "Cryptography",
-      "Security",
-      "Computer Science"
-    ],
-    "one_liner": "秘密かどうかだけでなく、同じ値を再利用しないこと自体が安全性になる。",
-    "description": "暗号や認証などで、同じ用途・同じ鍵のもとで再利用されないことを前提に用いられる値。ランダム値やカウンタ等で生成され、再利用が暗号安全性を損なう方式がある。",
-    "why_selected": "値の推測困難性ではなく、値の再利用そのものを危険として見るセキュリティ上の観察軸を追加するため。",
-    "feelings": [
-      "ランダムなら安全だと思う",
-      "同じ値をもう一度使ってよいか迷う",
-      "リプレイ攻撃が気になる"
-    ],
-    "before": "この値は十分ランダムで推測しにくい。",
-    "after": "推測困難性とは別に、この値が同一用途で再利用される可能性はないか。",
-    "observation_axis": "暗号・認証処理で、値の秘密性やランダム性だけでなく、同一キー・同一用途で値が再利用されない一意性条件が守られているかを見る。",
-    "semantic_cluster": "single-use-security-values",
-    "nearest_terms": [
-      "idempotency",
-      "capability-based-security"
-    ],
-    "semantic_distance": "A",
-    "difference_from_nearest": "Idempotencyが同じ操作を複数回受信しても最終状態を重複させない性質を扱い、Capability-based Securityが権限委譲を扱うのに対し、Nonceは暗号・認証処理で同じ値を再利用しないこと自体を安全性条件として扱う。",
-    "related": [
-      "idempotency",
-      "capability-based-security"
-    ],
-    "instruction": "nonceは秘密性だけで評価せず、同一キー・同一用途で再利用されない生成方式になっているか確認してください。",
-    "sources": [
-      "https://csrc.nist.gov/glossary/term/nonce"
-    ],
-    "status": "seed"
+    "id":"nonce","term":"Nonce","ja":"ノンス","aliases":["Number used once"],"fields":["Cryptography","Security","Computer Science"],"one_liner":"秘密かどうかだけでなく、同じ値を再利用しないこと自体が安全性になる。","description":"暗号や認証などで、同じ用途・同じ鍵のもとで再利用されないことを前提に用いられる値。ランダム値やカウンタ等で生成され、再利用が暗号安全性を損なう方式がある。","why_selected":"値の推測困難性ではなく、値の再利用そのものを危険として見るセキュリティ上の観察軸を追加するため。","feelings":["ランダムなら安全だと思う","同じ値をもう一度使ってよいか迷う","リプレイ攻撃が気になる"],"before":"この値は十分ランダムで推測しにくい。","after":"推測困難性とは別に、この値が同一用途で再利用される可能性はないか。","observation_axis":"暗号・認証処理で、値の秘密性やランダム性だけでなく、同一キー・同一用途で値が再利用されない一意性条件が守られているかを見る。","semantic_cluster":"single-use-security-values","nearest_terms":["idempotency","capability-based-security"],"semantic_distance":"A","difference_from_nearest":"Idempotencyが同じ操作を複数回受信しても最終状態を重複させない性質を扱い、Capability-based Securityが権限委譲を扱うのに対し、Nonceは暗号・認証処理で同じ値を再利用しないこと自体を安全性条件として扱う。","related":["idempotency","capability-based-security"],"instruction":"nonceは秘密性だけで評価せず、同一キー・同一用途で再利用されない生成方式になっているか確認してください。","sources":["https://csrc.nist.gov/glossary/term/nonce"],"status":"seed"
   },
   {
-    "id": "soil-liquefaction",
-    "term": "Soil Liquefaction",
-    "ja": "土壌液状化",
-    "aliases": [
-      "Liquefaction",
-      "地盤液状化",
-      "液状化"
-    ],
-    "fields": [
-      "Geotechnical Engineering",
-      "Geology",
-      "Earth Science"
-    ],
-    "one_liner": "固体に見える地盤でも、粒子間の支持力が失われると一時的に液体のように振る舞う。",
-    "description": "水を多く含む緩い砂質地盤などが強い揺れを受け、間隙水圧の上昇によって土粒子同士の有効応力が低下し、地盤が支持力を失って液体のように振る舞う現象。",
-    "why_selected": "地形の経路や地層記録ではなく、荷重を支える主体が土粒子骨格から間隙水圧へ移ることで支持能力が失われるという地盤力学の観察軸を追加するため。",
-    "feelings": [
-      "見た目は固い地面なのに沈む",
-      "地震後に建物が傾く",
-      "地面から砂や水が噴く"
-    ],
-    "before": "地面は固体だから建物を支えている。",
-    "after": "この地盤で荷重を支えているのは土粒子同士の接触か、それとも間隙水圧へ負担が移っているか。",
-    "observation_axis": "飽和した地盤で、揺れによる間隙水圧の上昇が土粒子間の有効応力をどこまで失わせ、支持力を低下させるかを見る。",
-    "semantic_cluster": "soil-effective-stress-loss",
-    "nearest_terms": [
-      "isostasy",
-      "creep"
-    ],
-    "semantic_distance": "A",
-    "difference_from_nearest": "Isostasyが地殻規模の上載荷重と浮力的均衡を扱い、Creepが持続荷重による材料の時間依存変形を扱うのに対し、Soil Liquefactionは飽和地盤で間隙水圧が上昇し土粒子間の有効応力が急減することで支持力を失う現象を扱う。",
-    "related": [
-      "isostasy",
-      "creep",
-      "river-avulsion"
-    ],
-    "sources": [
-      "https://www.usgs.gov/programs/earthquake-hazards/science/liquefaction"
-    ],
-    "status": "seed"
+    "id":"soil-liquefaction","term":"Soil Liquefaction","ja":"土壌液状化","aliases":["Liquefaction","地盤液状化","液状化"],"fields":["Geotechnical Engineering","Geology","Earth Science"],"one_liner":"固体に見える地盤でも、粒子間の支持力が失われると一時的に液体のように振る舞う。","description":"水を多く含む緩い砂質地盤などが強い揺れを受け、間隙水圧の上昇によって土粒子同士の有効応力が低下し、地盤が支持力を失って液体のように振る舞う現象。","why_selected":"地形の経路や地層記録ではなく、荷重を支える主体が土粒子骨格から間隙水圧へ移ることで支持能力が失われるという地盤力学の観察軸を追加するため。","feelings":["見た目は固い地面なのに沈む","地震後に建物が傾く","地面から砂や水が噴く"],"before":"地面は固体だから建物を支えている。","after":"この地盤で荷重を支えているのは土粒子同士の接触か、それとも間隙水圧へ負担が移っているか。","observation_axis":"飽和した地盤で、揺れによる間隙水圧の上昇が土粒子間の有効応力をどこまで失わせ、支持力を低下させるかを見る。","semantic_cluster":"soil-effective-stress-loss","nearest_terms":["isostasy","creep"],"semantic_distance":"A","difference_from_nearest":"Isostasyが地殻規模の上載荷重と浮力的均衡を扱い、Creepが持続荷重による材料の時間依存変形を扱うのに対し、Soil Liquefactionは飽和地盤で間隙水圧が上昇し土粒子間の有効応力が急減することで支持力を失う現象を扱う。","related":["isostasy","creep","river-avulsion"],"sources":["https://www.usgs.gov/programs/earthquake-hazards/science/liquefaction"],"status":"seed"
   },
   {
-    "id": "anachrony",
-    "term": "Anachrony",
-    "ja": "アナクロニー／物語時間の錯時",
-    "aliases": [
-      "Anachrony in Narrative"
-    ],
-    "fields": [
-      "Narratology",
-      "Literature"
-    ],
-    "one_liner": "出来事が起きた順序と、読者へ語られる順序を別々の時間軸として見る。",
-    "description": "物語世界で出来事が生起した順序と、物語内でそれらが提示される順序が一致しない時間構成。回想にあたるアナレプシスや、未来の出来事を先取りするプロレプシスなどを含む。",
-    "why_selected": "物語論を『誰が見るか』から離し、出来事の発生順序と提示順序を意図的にずらす時間配置という観察軸へ広げるため。",
-    "feelings": [
-      "結末を先に見せる映画",
-      "現在から過去へ飛ぶ小説",
-      "時系列が前後している"
-    ],
-    "before": "この作品は時系列が前後している。",
-    "after": "出来事の発生順序を、語る順序がどう組み替え、その差が情報の受け取り方をどう変えているか。",
-    "observation_axis": "物語世界で出来事が起きた順序と読者へ提示される順序を分け、そのずれがどこでどの方向に生じているかを見る。",
-    "semantic_cluster": "narrative-order-displacement",
-    "nearest_terms": [
-      "focalization",
-      "metalepsis"
-    ],
-    "semantic_distance": "A",
-    "difference_from_nearest": "Focalizationが誰の知覚・知識を通して情報が提示されるかを扱い、Metalepsisが物語階層の越境を扱うのに対し、Anachronyは出来事の発生順序と語りの提示順序のずれを扱う。",
-    "related": [
-      "focalization",
-      "metalepsis",
-      "free-indirect-discourse"
-    ],
-    "sources": [
-      "https://www-archiv.fdm.uni-hamburg.de/lhn/node/52.html"
-    ],
-    "status": "seed"
+    "id":"anachrony","term":"Anachrony","ja":"アナクロニー／物語時間の錯時","aliases":["Anachrony in Narrative"],"fields":["Narratology","Literature"],"one_liner":"出来事が起きた順序と、読者へ語られる順序を別々の時間軸として見る。","description":"物語世界で出来事が生起した順序と、物語内でそれらが提示される順序が一致しない時間構成。回想にあたるアナレプシスや、未来の出来事を先取りするプロレプシスなどを含む。","why_selected":"物語論を『誰が見るか』から離し、出来事の発生順序と提示順序を意図的にずらす時間配置という観察軸へ広げるため。","feelings":["結末を先に見せる映画","現在から過去へ飛ぶ小説","時系列が前後している"],"before":"この作品は時系列が前後している。","after":"出来事の発生順序を、語る順序がどう組み替え、その差が情報の受け取り方をどう変えているか。","observation_axis":"物語世界で出来事が起きた順序と読者へ提示される順序を分け、そのずれがどこでどの方向に生じているかを見る。","semantic_cluster":"narrative-order-displacement","nearest_terms":["focalization","metalepsis"],"semantic_distance":"A","difference_from_nearest":"Focalizationが誰の知覚・知識を通して情報が提示されるかを扱い、Metalepsisが物語階層の越境を扱うのに対し、Anachronyは出来事の発生順序と語りの提示順序のずれを扱う。","related":["focalization","metalepsis","free-indirect-discourse"],"sources":["https://www-archiv.fdm.uni-hamburg.de/lhn/node/52.html"],"status":"seed"
+  },
+  {
+    "id":"measurement-invariance","term":"Measurement Invariance","ja":"測定不変性","aliases":["測定等価性"],"fields":["Measurement","Statistics","Psychology"],"one_liner":"同じ尺度の得点が、集団や時点をまたいでも同じ概念を測っているかを確かめる。","description":"尺度の心理測定的性質が集団や時点をまたいで同等に保たれているかを検討する考え方。平均値などを比較する前提として、同じ構成概念が同じ意味で測定されているかを問う。","why_selected":"測定誤差の大小ではなく、比較する二群で物差しの意味そのものが同じかを見る観察軸を追加するため。","feelings":["年代別の満足度を比較する","前年と今年の調査を比べる","国別アンケートを並べる"],"before":"A層4.2、B層3.8だからA層の満足度が高い。","after":"その4点はA層とB層で同じ構成概念・同じ意味を表しているか。","observation_axis":"集団・時点間の数値比較に先立ち、尺度の構造や項目との関係が同等で、得点が同じ意味を持つかを見る。","semantic_cluster":"cross-group-measurement-equivalence","nearest_terms":["measurement-uncertainty","calibration"],"semantic_distance":"A","difference_from_nearest":"Measurement Uncertaintyが個々の測定値に伴う不確かさを扱い、Calibrationが測定器と基準の対応を扱うのに対し、Measurement Invarianceは集団や時点をまたいで尺度が同じ構成概念を同じ意味で測っているかを扱う。","related":["measurement-uncertainty","calibration"],"sources":["https://pmc.ncbi.nlm.nih.gov/articles/PMC5145197/"],"status":"seed"
+  },
+  {
+    "id":"ecological-fallacy","term":"Ecological Fallacy","ja":"生態学的誤謬","aliases":["生態学的錯誤","Ecological Inference Fallacy"],"fields":["Statistics","Social Science","Sociology"],"one_liner":"集団レベルで見えた傾向を、そのまま個人の傾向へ降ろしてはいけない。","description":"地域・組織・人口集団などの集計データで観察された関係を、その集団に属する個人にも成立すると推論してしまう誤り。","why_selected":"相関や因果ではなく、データを集計した単位と結論を適用する単位がずれていないかを見る観察軸を追加するため。","feelings":["若者の多い地域は購買額も高い","高所得地域の来場者像を作る","学校単位の平均から生徒像を語る"],"before":"若者比率が高い地域ほど購買額が高いから、若者ほどよく買う。","after":"地域レベルの関係を個人レベルの関係へ移していないか。","observation_axis":"観察・集計した分析単位と、結論を適用する分析単位が一致しているかを見る。","semantic_cluster":"cross-level-inference-error","nearest_terms":["simpsons-paradox","base-rate-neglect"],"semantic_distance":"A","difference_from_nearest":"Simpson's Paradoxが集約・層別によって関連の向きが反転しうる現象を扱うのに対し、Ecological Fallacyは集団レベルの関係を個人レベルへ推論する分析単位の越境そのものを扱う。","related":["simpsons-paradox","base-rate-neglect"],"sources":["https://pubmed.ncbi.nlm.nih.gov/17033679/"],"status":"seed"
+  },
+  {
+    "id":"proxemics","term":"Proxemics","ja":"プロクセミクス／近接学","aliases":["近接学"],"fields":["Anthropology","Sociology","Design"],"one_liner":"人と人の距離を、単なる長さではなく社会関係を伝える空間的な記号として見る。","description":"人が対人距離や空間をどのように知覚・使用し、それが文化、関係性、コミュニケーションとどう結びつくかを研究する領域。","why_selected":"空間を収容数や動線だけでなく、物理距離が社会的意味を持つものとして読む軸を追加するため。","feelings":["初対面の交流会で距離が縮まらない","相談席が近すぎて話しづらい","待機列で妙に圧迫感がある"],"before":"ここには椅子をあと4脚置ける。","after":"この対人距離は、この関係性で自然に会話できる距離か。","observation_axis":"人と人の物理的距離・向き・空間配置が、関係性や文化に応じてどんな社会的意味を伝えるかを見る。","semantic_cluster":"interpersonal-spatial-meaning","nearest_terms":["territoriality","affordance"],"semantic_distance":"A","difference_from_nearest":"Territorialityが空間の占有・防衛・領域化を扱うのに対し、Proxemicsは対人距離や配置がコミュニケーション上どんな意味を持つかを扱う。","related":["territoriality"],"instruction":"収容人数だけでなく、初対面同士が会話を始めやすい対人距離と座席角度で配置を検討してください。","sources":["https://e-edu.nbu.bg/pluginfile.php/330719/mod_resource/content/2/E-T-Hall_-_Proxemics_-_with_commentaries.pdf"],"status":"seed"
+  },
+  {
+    "id":"bloom-filter","term":"Bloom Filter","ja":"ブルームフィルタ","aliases":["ブルーム・フィルタ"],"fields":["Computer Science","Software Engineering"],"one_liner":"『ない』は確実に言い、『ある』は後で確かめるという非対称な誤りを設計する。","description":"複数のハッシュ関数とビット配列を用いて、大きな集合への所属を省メモリかつ高速に判定する確率的データ構造。標準的な構成では偽陽性はありうるが偽陰性は生じない。","why_selected":"精度を単一の正答率で見るのでなく、許容できる誤りの方向を非対称に設計するという技術的観察軸を追加するため。","feelings":["巨大集合から候補外を高速に落とす","全件照合が重い","誤判定を完全には消せない"],"before":"判定は正確か不正確か。","after":"どちら向きの誤りなら許容でき、どちらは絶対に避ける必要があるか。","observation_axis":"集合所属判定で、偽陽性と偽陰性を対称に扱わず、許容する誤りの方向とメモリ・速度の交換条件を見る。","semantic_cluster":"asymmetric-probabilistic-membership","nearest_terms":["false-positive","lossy-compression"],"semantic_distance":"A","difference_from_nearest":"False Positiveが判定結果の誤りの型を表すのに対し、Bloom Filterはその一方向の誤りを意図的に許容して空間効率と判定速度を得るデータ構造である。","related":["false-positive"],"sources":["https://xlinux.nist.gov/dads/HTML/bloomFilter.html"],"status":"seed"
+  },
+  {
+    "id":"law-of-common-fate","term":"Law of Common Fate","ja":"共通運命の法則","aliases":["Common Fate","共通運命の原理"],"fields":["Perception","Design","UI"],"one_liner":"同じ方向へ動くものは、見た目が違っても同じ集団として知覚されやすい。","description":"同じ方向や似た運動をする要素が、ひとまとまりのグループとして知覚されやすいというゲシュタルト心理学の群化原理。モーションデザインでは要素間の所属や関係を動きで示す手掛かりになる。","why_selected":"静的な色・近接・囲みではなく、時間方向の運動そのものが要素の所属関係を作るという制作上の観察軸を追加するため。","feelings":["カード展開時に要素がばらばらに動く","ドロワーの中身が別物に見える","追加項目がどこに属したか分かりにくい"],"before":"関連要素を同じ色と枠でまとめる。","after":"どの要素が一緒に動くことで、同じグループだと知覚されるか。","observation_axis":"要素の色や静的位置ではなく、方向・速度・タイミングなど共有された運動が知覚上のグループ関係を作っているかを見る。","semantic_cluster":"motion-based-perceptual-grouping","nearest_terms":["visual-rhythm","common-region"],"semantic_distance":"A","difference_from_nearest":"Visual Rhythmが静的構成を含む反復や間隔から視覚的な流れを作るのに対し、Law of Common Fateは複数要素が共有する運動そのものを群化の手掛かりとして扱う。","related":["visual-rhythm"],"instruction":"装飾として動かすのではなく、同じグループの要素は方向とタイミングを揃え、所属関係をモーションで伝えてください。","sources":["https://dictionary.apa.org/common-fate","https://isle.hanover.edu/Ch05Object/Ch05CommonFate.html"],"status":"seed"
   }
 ]
