@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-28",
+  "purpose": "Vocabulariesの価値単位を専門分野や語数ではなく、世界を見るための問い・観察軸として扱うための基盤。",
+  "principles": [
+    "語ではなく問いを増やす",
+    "分野ではなく観察軸を離す",
+    "追加より接続を優先する",
+    "違いを説明できない近接語は追加しない",
+    "語数ではなく未観察の問いを減らす"
+  ],
+  "dimensions": {
+    "target": ["human", "group", "information", "institution", "body", "material", "space", "time", "system"],
+    "operation": ["accumulate", "delay", "distort", "select", "propagate", "reverse", "synchronize", "decay", "cross-boundary", "orient", "repeat", "locate"],
+    "unit": ["individual", "relation", "group", "network", "environment", "component"]
+  },
+  "lenses": [
+    {
+      "id": "meaning-equivalence-before-comparison",
+      "label": "比較前に物差しの意味を見る",
+      "question": "比較している数値は、集団や時点が違っても同じ概念を測っているか？",
+      "target": "information",
+      "operation": "distort",
+      "unit": "group",
+      "seed_terms": ["measurement-invariance"]
+    },
+    {
+      "id": "analysis-unit-jump",
+      "label": "分析単位の飛躍を見る",
+      "question": "集団について分かったことを、個人についての結論へ飛躍させていないか？",
+      "target": "group",
+      "operation": "distort",
+      "unit": "individual",
+      "seed_terms": ["ecological-fallacy"]
+    },
+    {
+      "id": "social-distance-in-space",
+      "label": "距離が社会関係をどう作るかを見る",
+      "question": "この物理的な距離や配置は、人間関係にどんな意味を与えているか？",
+      "target": "space",
+      "operation": "orient",
+      "unit": "relation",
+      "seed_terms": ["proxemics"]
+    },
+    {
+      "id": "asymmetric-error",
+      "label": "誤りの方向の非対称性を見る",
+      "question": "二種類の間違いは、本当に同じコストで扱うべきか？",
+      "target": "system",
+      "operation": "select",
+      "unit": "component",
+      "seed_terms": ["bloom-filter"]
+    },
+    {
+      "id": "motion-reveals-membership",
+      "label": "動きから所属を見る",
+      "question": "何と何が一緒に動くことで、同じまとまりだと知覚されているか？",
+      "target": "information",
+      "operation": "synchronize",
+      "unit": "relation",
+      "seed_terms": ["law-of-common-fate"]
+    },
+    {
+      "id": "orientation-without-vision",
+      "label": "視覚以外の身体定位を見る",
+      "question": "身体は視覚なしに、重力・傾き・加速度をどう知っているか？",
+      "target": "body",
+      "operation": "orient",
+      "unit": "individual",
+      "seed_terms": ["vestibular-sense"]
+    },
+    {
+      "id": "damage-by-repetition",
+      "label": "一撃ではなく反復を見る",
+      "question": "一回なら耐えられる小さな負荷が、反復によって損傷を蓄積していないか？",
+      "target": "material",
+      "operation": "repeat",
+      "unit": "component",
+      "seed_terms": ["fatigue-failure"]
+    },
+    {
+      "id": "rules-select-participants",
+      "label": "条件が参加者を選ぶ作用を見る",
+      "question": "この条件は人の行動だけでなく、誰が参加するか自体を変えていないか？",
+      "target": "institution",
+      "operation": "select",
+      "unit": "group",
+      "seed_terms": ["adverse-selection"]
+    },
+    {
+      "id": "semantic-current-location",
+      "label": "現在地が意味として伝わるかを見る",
+      "question": "見た目を使えなくても、集合の中で自分が今どこにいるか分かるか？",
+      "target": "information",
+      "operation": "locate",
+      "unit": "component",
+      "seed_terms": ["aria-current"]
+    }
+  ],
+  "admission_review_schema": {
+    "reviewed_at": "YYYY-MM-DD",
+    "nearest_terms": [],
+    "distance": "A|B|C|D",
+    "difference_from_nearest": "",
+    "decision": "add|connect|reject"
+  }
+}
