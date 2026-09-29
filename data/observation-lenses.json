@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-29",
   "purpose": "Vocabulariesの価値単位を専門分野や語数ではなく、世界を見るための問い・観察軸として扱うための基盤。",
   "principles": [
     "語ではなく問いを増やす",
@@ -10,9 +10,39 @@
     "語数ではなく未観察の問いを減らす"
   ],
   "dimensions": {
-    "target": ["human", "group", "information", "institution", "body", "material", "space", "time", "system"],
-    "operation": ["accumulate", "delay", "distort", "select", "propagate", "reverse", "synchronize", "decay", "cross-boundary", "orient", "repeat", "locate"],
-    "unit": ["individual", "relation", "group", "network", "environment", "component"]
+    "target": [
+      "human",
+      "group",
+      "information",
+      "institution",
+      "body",
+      "material",
+      "space",
+      "time",
+      "system"
+    ],
+    "operation": [
+      "accumulate",
+      "delay",
+      "distort",
+      "select",
+      "propagate",
+      "reverse",
+      "synchronize",
+      "decay",
+      "cross-boundary",
+      "orient",
+      "repeat",
+      "locate"
+    ],
+    "unit": [
+      "individual",
+      "relation",
+      "group",
+      "network",
+      "environment",
+      "component"
+    ]
   },
   "lenses": [
     {
@@ -22,7 +52,9 @@
       "target": "information",
       "operation": "distort",
       "unit": "group",
-      "seed_terms": ["measurement-invariance"]
+      "seed_terms": [
+        "measurement-invariance"
+      ]
     },
     {
       "id": "analysis-unit-jump",
@@ -31,7 +63,9 @@
       "target": "group",
       "operation": "distort",
       "unit": "individual",
-      "seed_terms": ["ecological-fallacy"]
+      "seed_terms": [
+        "ecological-fallacy"
+      ]
     },
     {
       "id": "social-distance-in-space",
@@ -40,7 +74,9 @@
       "target": "space",
       "operation": "orient",
       "unit": "relation",
-      "seed_terms": ["proxemics"]
+      "seed_terms": [
+        "proxemics"
+      ]
     },
     {
       "id": "asymmetric-error",
@@ -49,7 +85,9 @@
       "target": "system",
       "operation": "select",
       "unit": "component",
-      "seed_terms": ["bloom-filter"]
+      "seed_terms": [
+        "bloom-filter"
+      ]
     },
     {
       "id": "motion-reveals-membership",
@@ -58,7 +96,9 @@
       "target": "information",
       "operation": "synchronize",
       "unit": "relation",
-      "seed_terms": ["law-of-common-fate"]
+      "seed_terms": [
+        "law-of-common-fate"
+      ]
     },
     {
       "id": "orientation-without-vision",
@@ -67,7 +107,9 @@
       "target": "body",
       "operation": "orient",
       "unit": "individual",
-      "seed_terms": ["vestibular-sense"]
+      "seed_terms": [
+        "vestibular-sense"
+      ]
     },
     {
       "id": "damage-by-repetition",
@@ -76,7 +118,9 @@
       "target": "material",
       "operation": "repeat",
       "unit": "component",
-      "seed_terms": ["fatigue-failure"]
+      "seed_terms": [
+        "fatigue-failure"
+      ]
     },
     {
       "id": "rules-select-participants",
@@ -85,7 +129,9 @@
       "target": "institution",
       "operation": "select",
       "unit": "group",
-      "seed_terms": ["adverse-selection"]
+      "seed_terms": [
+        "adverse-selection"
+      ]
     },
     {
       "id": "semantic-current-location",
@@ -94,7 +140,53 @@
       "target": "information",
       "operation": "locate",
       "unit": "component",
-      "seed_terms": ["aria-current"]
+      "seed_terms": [
+        "aria-current"
+      ]
+    },
+    {
+      "id": "origin-versus-current-function",
+      "label": "起源と現在機能を分けて見る",
+      "question": "いまの用途と、この性質や仕組みが生まれた歴史的理由は同じか？",
+      "target": "system",
+      "operation": "cross-boundary",
+      "unit": "component",
+      "seed_terms": [
+        "exaptation"
+      ]
+    },
+    {
+      "id": "path-switch-not-gradual-change",
+      "label": "程度ではなく経路の切替を見る",
+      "question": "同じ経路上の漸進変化ではなく、経路そのものが別ルートへ切り替わる条件は何か？",
+      "target": "space",
+      "operation": "reverse",
+      "unit": "environment",
+      "seed_terms": [
+        "river-avulsion"
+      ]
+    },
+    {
+      "id": "direction-changes-behavior",
+      "label": "方向による性質の違いを見る",
+      "question": "同じ対象でも、測る・力をかける・伝える方向を変えると性質は変わるか？",
+      "target": "material",
+      "operation": "orient",
+      "unit": "component",
+      "seed_terms": [
+        "anisotropy"
+      ]
+    },
+    {
+      "id": "visible-input-location",
+      "label": "入力地点を視覚的に追えるか見る",
+      "question": "キーボード操作中、次の入力が作用する現在地点を見失わず追えるか？",
+      "target": "information",
+      "operation": "locate",
+      "unit": "component",
+      "seed_terms": [
+        "focus-appearance"
+      ]
     }
   ],
   "admission_review_schema": {
