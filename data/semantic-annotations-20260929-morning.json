@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-29",
+  "batch": "20260929-morning-semantic-expansion",
+  "term_annotations": {
+    "anisotropy": {
+      "axis": "材料や物理系の性質を単一値として扱わず、測定・荷重・伝播の方向を変えたとき性質がどう変化するかを見る",
+      "nearest_terms": [
+        "creep"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Creepが一定荷重下で時間とともに変形が進む時間依存挙動を扱うのに対し、Anisotropyは同一時点でも方向によって強度・伝導などの性質が異なる空間方向依存性を扱う。",
+      "new_axis": true
+    },
+    "focus-appearance": {
+      "axis": "キーボード操作が可能かだけでなく、入力フォーカスの現在地点が十分な面積とコントラストで視覚的に追跡できるかを見る",
+      "nearest_terms": [
+        "focus-visibility"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Focus Visibilityがフォーカス状態を見失わないという一般的な可視性を扱うのに対し、Focus Appearanceはフォーカス表示の面積・コントラストなど、知覚可能な外観条件を具体的に観察する。",
+      "new_axis": true
+    }
+  }
+}
