@@ -1,0 +1,112 @@
+[
+  {
+    "id": "exaptation",
+    "term": "Exaptation",
+    "ja": "外適応",
+    "aliases": [
+      "前適応的転用"
+    ],
+    "fields": [
+      "Evolutionary Biology",
+      "Biology",
+      "History of Function"
+    ],
+    "one_liner": "現在役立っている機能が、その用途のために生まれたとは限らない。",
+    "description": "ある形質や仕組みが現在とは別の役割や理由で成立した後、別の用途へ転用されること。現在の機能と歴史的起源を分離して捉える。",
+    "why_selected": "現在の用途から起源を逆算せず、成立理由と現在機能の不一致・用途転換を観察する軸を追加するため。",
+    "feelings": [
+      "今の用途を見ると最初からその目的で作られたように感じる",
+      "既存機能が別用途で急に役立つ",
+      "起源と現在機能を混同する"
+    ],
+    "before": "この機能があるのは、この目的のためだ。",
+    "after": "いまの用途と、この性質が生まれた歴史的理由は同じなのか。",
+    "observation_axis": "現在の機能と、その性質が成立した歴史的理由を分離し、後から起きた用途転換を観察する。",
+    "semantic_cluster": "historical-function-repurposing",
+    "nearest_terms": [
+      "affordance"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Affordanceが対象と行為者の関係から現在どんな行為が可能かを見るのに対し、Exaptationは形質や仕組みが成立した歴史的理由と現在の機能が異なる、用途転換の履歴を扱う。",
+    "related": [
+      "affordance"
+    ],
+    "sources": [
+      "https://www.jstor.org/stable/2400563"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "anisotropy",
+    "term": "Anisotropy",
+    "ja": "異方性",
+    "fields": [
+      "Materials Science",
+      "Physics",
+      "Engineering"
+    ],
+    "one_liner": "同じ材料でも、測る方向が変われば性質が変わることがある。",
+    "description": "物質や材料の強度、弾性、熱伝導、電気的性質などが方向によって異なる性質。材料性能を単一値ではなく方向依存性として捉える。",
+    "why_selected": "材料挙動を時間変化ではなく空間方向から観察し、単一の性能値では隠れる方向依存性を見えるようにするため。",
+    "feelings": [
+      "同じ素材なのに向きで裂けやすさが違う",
+      "木目に沿うと割れやすい",
+      "積層方向で強度が変わる"
+    ],
+    "before": "この素材の強度は80MPaだ。",
+    "after": "その80MPaは、どの方向から荷重した値なのか。",
+    "observation_axis": "材料や物理系の性質を単一値として扱わず、測定・荷重・伝播の方向を変えたとき性質がどう変化するかを見る。",
+    "semantic_cluster": "direction-dependent-material-behavior",
+    "nearest_terms": [
+      "creep"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Creepが一定荷重下で時間とともに変形が進む時間依存挙動を扱うのに対し、Anisotropyは同一時点でも方向によって強度・伝導などの性質が異なる空間方向依存性を扱う。",
+    "related": [
+      "creep"
+    ],
+    "instruction": "材料性能を単一値で扱わず、繊維方向・積層方向など、実使用時の荷重方向に対する異方性を確認してください。",
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "focus-appearance",
+    "term": "Focus Appearance",
+    "ja": "フォーカス外観",
+    "aliases": [
+      "Focus Indicator Appearance",
+      "フォーカス表示"
+    ],
+    "fields": [
+      "Accessibility",
+      "UI",
+      "Web"
+    ],
+    "one_liner": "キーボードで操作できるだけでなく、いま入力が作用する場所を視覚的に追えるようにする。",
+    "description": "キーボードフォーカスを受けたUI要素について、現在位置を十分な面積とコントラストの視覚表示で認識できるようにするアクセシビリティ上の観点。",
+    "why_selected": "操作可能性そのものではなく、キーボード操作中の入力地点を視覚的に追跡できるかという実務上の観察軸を追加するため。",
+    "feelings": [
+      "Tabキーで進むと現在地を見失う",
+      "フォーカスリングが薄すぎる",
+      "キーボード操作はできるのにどこを操作しているか分からない"
+    ],
+    "before": "Tabキーですべて操作できる。",
+    "after": "操作できるだけでなく、現在フォーカスされている要素を常に視覚的に追えるか。",
+    "observation_axis": "キーボード操作が可能かだけでなく、入力フォーカスの現在地点が十分な面積とコントラストで視覚的に追跡できるかを見る。",
+    "semantic_cluster": "keyboard-focus-perception",
+    "nearest_terms": [
+      "focus-visibility"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Focus Visibilityがフォーカス状態を見失わないという一般的な可視性を扱うのに対し、Focus Appearanceはフォーカス表示の面積・コントラストなど、知覚可能な外観条件を具体的に観察する。",
+    "related": [
+      "focus-visibility",
+      "target-size"
+    ],
+    "instruction": "キーボード操作時のフォーカス表示を消さず、現在位置を十分な面積とコントラストで追えるようにしてください。",
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html"
+    ],
+    "status": "seed"
+  }
+]
