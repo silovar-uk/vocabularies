@@ -1,0 +1,149 @@
+[
+  {
+    "id": "allometry",
+    "term": "Allometry",
+    "ja": "相対成長",
+    "aliases": [
+      "アロメトリー"
+    ],
+    "fields": [
+      "Evolutionary Biology",
+      "Morphology",
+      "Scaling"
+    ],
+    "one_liner": "大きさが変わっても、各部分や機能が同じ比率で拡大・縮小するとは限らない。",
+    "description": "生物の全体サイズの変化に伴い、身体各部の大きさ・形態・機能などがどのような比率で変化するかを扱う概念。単純な相似拡大では捉えられないスケーリング関係を見る。",
+    "why_selected": "規模の変化を単純拡大として扱わず、サイズが変わることで部分間の比率や機能の関係がどう変化するかという観察軸を追加するため。",
+    "feelings": [
+      "大きくしただけなのにバランスが変わる",
+      "小型版をそのまま拡大すると成立しない",
+      "規模が変わると必要な構造が変わる"
+    ],
+    "before": "2倍の大きさなら、各部分も2倍にすればよい。",
+    "after": "規模が変わったとき、どの部分や機能が同じ比率では変化しないのか。",
+    "observation_axis": "対象の規模を変えたとき、部分・形態・機能が単純な比例ではなくどのようなスケーリング関係で変化するかを見る。",
+    "semantic_cluster": "scale-dependent-proportion",
+    "nearest_terms": [
+      "anisotropy"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Anisotropyが同じ対象でも方向によって性質が変わる空間方向依存性を扱うのに対し、Allometryは対象の全体サイズが変わることで部分の比率や機能が非比例に変化するスケール依存性を扱う。",
+    "related": [
+      "anisotropy"
+    ],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "law-of-requisite-variety",
+    "term": "Law of Requisite Variety",
+    "ja": "必要多様性の法則",
+    "aliases": [
+      "Requisite Variety",
+      "アシュビーの法則"
+    ],
+    "fields": [
+      "Cybernetics",
+      "Systems Theory",
+      "Control"
+    ],
+    "one_liner": "多様な外乱を制御するには、制御する側にも十分な応答の多様性が必要になる。",
+    "description": "W. Ross Ashbyのサイバネティクスで示された原理。環境や外乱が取りうる多様な状態を適切に制御するには、調整・制御する側にもそれに対応できるだけの状態や応答の多様性が必要だと捉える。",
+    "why_selected": "複雑さの量ではなく、環境が生む状態の種類と制御側が持つ応答レパートリーの種類を比較する観察軸を追加するため。",
+    "feelings": [
+      "例外が多すぎて一つの手順では処理できない",
+      "マニュアルにない事態で止まる",
+      "対応手段の種類が少ない"
+    ],
+    "before": "例外や外乱を減らせば制御しやすくなる。",
+    "after": "外乱の種類に対して、こちら側の応答レパートリーは十分な多様性を持っているか。",
+    "observation_axis": "環境・外乱が持つ状態の多様性に対して、制御する側が十分な種類の応答や状態を持っているかを見る。",
+    "semantic_cluster": "regulatory-variety",
+    "nearest_terms": [
+      "essential-accidental-complexity"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Essential/Accidental Complexityが問題に本質的な複雑さと実装由来の複雑さを区別するのに対し、Law of Requisite Varietyは制御対象の多様な状態に対応するため制御側に必要な応答多様性を扱う。",
+    "related": [
+      "essential-accidental-complexity"
+    ],
+    "sources": [
+      "https://ashby.info/Ashby-Introduction-to-Cybernetics.pdf"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "braess-paradox",
+    "term": "Braess's Paradox",
+    "ja": "ブライスのパラドックス",
+    "aliases": [
+      "Braess Paradox",
+      "ブライス・パラドックス"
+    ],
+    "fields": [
+      "Network Theory",
+      "Transportation",
+      "Game Theory"
+    ],
+    "one_liner": "ネットワークへ選択肢を追加すると、各人の合理的選択の結果として全体性能が悪化することがある。",
+    "description": "交通網などのネットワークで新しい経路や容量を追加したにもかかわらず、利用者が各自の所要時間などを最小化するよう経路を選び直す結果、均衡時のネットワーク全体の性能がかえって悪化しうる逆説。",
+    "why_selected": "選択肢の追加を局所的な改善として評価せず、追加後に全参加者が行動を変えた結果として生じる新しい均衡を見る観察軸を追加するため。",
+    "feelings": [
+      "道を増やしたのに渋滞が悪化する",
+      "便利な選択肢を足したのに全体が遅くなる",
+      "個々の合理性と全体最適が一致しない"
+    ],
+    "before": "経路を一つ増やせば、少なくとも悪くはならない。",
+    "after": "選択肢を追加したあと全員が選び直した均衡でも、本当に全体性能は改善するか。",
+    "observation_axis": "ネットワークへ選択肢や容量を追加したとき、個々の主体の合理的な再選択によって均衡全体の性能が逆に悪化しないかを見る。",
+    "semantic_cluster": "network-equilibrium-paradox",
+    "nearest_terms": [
+      "adverse-selection"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Adverse Selectionが情報非対称な条件によって参加者構成が偏る現象を扱うのに対し、Braess's Paradoxはネットワークの選択肢追加後に各利用者が合理的に経路を再選択することで均衡性能が悪化する現象を扱う。",
+    "related": [
+      "adverse-selection"
+    ],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "error-budget",
+    "term": "Error Budget",
+    "ja": "エラーバジェット",
+    "aliases": [
+      "エラー予算"
+    ],
+    "fields": [
+      "Site Reliability Engineering",
+      "Operations",
+      "Software Engineering"
+    ],
+    "one_liner": "失敗をゼロにするのではなく、必要な信頼性を満たす範囲で許容できる失敗量を予算として扱う。",
+    "description": "サービスレベル目標（SLO）から逆算して許容できる失敗・非可用時間などの量を定義し、その残量を信頼性改善と変更速度の意思決定に使うSREの考え方。",
+    "why_selected": "障害を防ぐ技法ではなく、必要な信頼性と変更速度の間で許容失敗量を明示的な意思決定資源として扱う観察軸を追加するため。",
+    "feelings": [
+      "壊すのが怖くて変更できない",
+      "100%を目指して過剰に慎重になる",
+      "安定性と開発速度が対立する"
+    ],
+    "before": "障害は少なければ少ないほどよい。",
+    "after": "利用者が必要とする信頼性を満たしたうえで、どれだけの失敗を変更速度のために許容できるか。",
+    "observation_axis": "失敗を単に減らす対象ではなく、必要なサービス信頼性から逆算した許容量として定義し、その消費量で変更速度と信頼性改善を判断する。",
+    "semantic_cluster": "reliability-change-tradeoff",
+    "nearest_terms": [
+      "graceful-degradation"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Graceful Degradationが障害時にも重要機能を維持する設計を扱うのに対し、Error Budgetは必要な信頼性から許容失敗量を定義し、その残量を変更可否の判断に使う運用原則を扱う。",
+    "related": [
+      "graceful-degradation"
+    ],
+    "instruction": "100%無障害を前提にせず、利用者に必要なSLOと許容エラー量を定義し、その範囲内で変更速度を最大化してください。",
+    "sources": [
+      "https://sre.google/workbook/error-budget-policy/"
+    ],
+    "status": "seed"
+  }
+]
