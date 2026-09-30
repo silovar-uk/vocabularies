@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-30",
+  "batch": "20260930-morning-semantic-expansion",
+  "term_annotations": {
+    "allometry": {
+      "axis": "対象の規模を変えたとき、部分・形態・機能が単純な比例ではなくどのようなスケーリング関係で変化するかを見る",
+      "nearest_terms": [
+        "anisotropy"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Anisotropyが同じ対象でも方向によって性質が変わる空間方向依存性を扱うのに対し、Allometryは対象の全体サイズが変わることで部分の比率や機能が非比例に変化するスケール依存性を扱う。",
+      "new_axis": true
+    },
+    "law-of-requisite-variety": {
+      "axis": "環境・外乱が持つ状態の多様性に対して、制御する側が十分な種類の応答や状態を持っているかを見る",
+      "nearest_terms": [
+        "essential-accidental-complexity"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Essential/Accidental Complexityが問題に本質的な複雑さと実装由来の複雑さを区別するのに対し、Law of Requisite Varietyは制御対象の多様な状態に対応するため制御側に必要な応答多様性を扱う。",
+      "new_axis": true
+    },
+    "braess-paradox": {
+      "axis": "ネットワークへ選択肢や容量を追加したとき、個々の主体の合理的な再選択によって均衡全体の性能が逆に悪化しないかを見る",
+      "nearest_terms": [
+        "adverse-selection"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Adverse Selectionが情報非対称な条件によって参加者構成が偏る現象を扱うのに対し、Braess's Paradoxはネットワークの選択肢追加後に各利用者が合理的に経路を再選択することで均衡性能が悪化する現象を扱う。",
+      "new_axis": true
+    },
+    "error-budget": {
+      "axis": "失敗を単に減らす対象ではなく、必要なサービス信頼性から逆算した許容量として定義し、その消費量で変更速度と信頼性改善を判断する",
+      "nearest_terms": [
+        "graceful-degradation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Graceful Degradationが障害時にも重要機能を維持する設計を扱うのに対し、Error Budgetは必要な信頼性から許容失敗量を定義し、その残量を変更可否の判断に使う運用原則を扱う。",
+      "new_axis": true
+    }
+  }
+}
