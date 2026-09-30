@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-29",
+  "updated_at": "2026-09-30",
   "purpose": "Vocabulariesの価値単位を専門分野や語数ではなく、世界を見るための問い・観察軸として扱うための基盤。",
   "principles": [
     "語ではなく問いを増やす",
@@ -41,7 +41,8 @@
       "group",
       "network",
       "environment",
-      "component"
+      "component",
+      "system"
     ]
   },
   "lenses": [
@@ -186,6 +187,50 @@
       "unit": "component",
       "seed_terms": [
         "focus-appearance"
+      ]
+    },
+    {
+      "id": "scale-changes-proportion",
+      "label": "規模で比率が変わるかを見る",
+      "question": "対象の規模を変えたとき、各部分や機能は本当に同じ比率で変化するか？",
+      "target": "system",
+      "operation": "accumulate",
+      "unit": "component",
+      "seed_terms": [
+        "allometry"
+      ]
+    },
+    {
+      "id": "response-variety-matches-disturbance",
+      "label": "外乱と応答の多様性を比べる",
+      "question": "起こりうる状態の種類に対して、こちらの応答レパートリーは十分に多様か？",
+      "target": "system",
+      "operation": "select",
+      "unit": "system",
+      "seed_terms": [
+        "law-of-requisite-variety"
+      ]
+    },
+    {
+      "id": "added-choice-changes-equilibrium",
+      "label": "選択肢追加後の均衡を見る",
+      "question": "選択肢を増やしたあと全員が選び直しても、全体性能は本当に改善するか？",
+      "target": "system",
+      "operation": "propagate",
+      "unit": "network",
+      "seed_terms": [
+        "braess-paradox"
+      ]
+    },
+    {
+      "id": "failure-as-budget",
+      "label": "失敗を許容量として見る",
+      "question": "必要な信頼性を満たしたうえで、どれだけの失敗を変更速度のために許容できるか？",
+      "target": "system",
+      "operation": "decay",
+      "unit": "system",
+      "seed_terms": [
+        "error-budget"
       ]
     }
   ],
