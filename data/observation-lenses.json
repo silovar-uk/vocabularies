@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "purpose": "Vocabulariesの価値単位を専門分野や語数ではなく、世界を見るための問い・観察軸として扱うための基盤。",
   "principles": [
     "語ではなく問いを増やす",
@@ -231,6 +231,50 @@
       "unit": "system",
       "seed_terms": [
         "error-budget"
+      ]
+    },
+    {
+      "id": "body-information-source",
+      "label": "感覚情報の内外を見る",
+      "question": "この感覚情報は、身体の外部環境と内部状態のどちらを知らせているか？",
+      "target": "body",
+      "operation": "locate",
+      "unit": "individual",
+      "seed_terms": [
+        "exteroception-interoception"
+      ]
+    },
+    {
+      "id": "evidence-context-distance",
+      "label": "実験と現実の距離を見る",
+      "question": "この結果を生んだ状況は、実際に適用したい環境をどの程度代表しているか？",
+      "target": "information",
+      "operation": "cross-boundary",
+      "unit": "environment",
+      "seed_terms": [
+        "ecological-validity"
+      ]
+    },
+    {
+      "id": "remove-cause-imagine-result",
+      "label": "原因を消した世界と比べる",
+      "question": "この原因候補が存在しなかったとしても、同じ結果は起きていただろうか？",
+      "target": "system",
+      "operation": "reverse",
+      "unit": "relation",
+      "seed_terms": [
+        "counterfactual-dependence"
+      ]
+    },
+    {
+      "id": "focus-occluded-by-layer",
+      "label": "操作地点の遮蔽を見る",
+      "question": "現在フォーカスされている対象は、別の固定UIやオーバーレイによって隠されていないか？",
+      "target": "information",
+      "operation": "locate",
+      "unit": "component",
+      "seed_terms": [
+        "focus-not-obscured"
       ]
     }
   ],
