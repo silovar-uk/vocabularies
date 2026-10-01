@@ -1,0 +1,146 @@
+[
+  {
+    "id": "exteroception-interoception",
+    "term": "Exteroception / Interoception",
+    "ja": "外受容／内受容",
+    "aliases": [
+      "外受容感覚",
+      "内受容感覚"
+    ],
+    "fields": [
+      "Physiology",
+      "Cognitive Science",
+      "Embodied Cognition"
+    ],
+    "one_liner": "感覚を器官名ではなく、身体の外側と内側のどちらの状態を受け取るかで分けて見る。",
+    "description": "外受容は身体外部の環境に由来する情報を、内受容は心拍・呼吸・内臓など身体内部の状態に由来する情報を受け取ること。感覚を五感の分類だけでなく情報源の位置から捉える。",
+    "why_selected": "感覚の種類を増やすのではなく、身体という基準に対して情報源が外か内かという別の観察軸を追加するため。",
+    "feelings": [
+      "緊張して心拍に気づく",
+      "空腹や呼吸へ注意が向く",
+      "外の音と身体内部の感覚を区別したい"
+    ],
+    "before": "いま何を感じているか。",
+    "after": "その感覚情報は、身体の外側と内側のどちらの状態を知らせているか。",
+    "observation_axis": "感覚情報を器官別に分類するのではなく、身体を基準に情報源が外部環境か内部状態かを見る。",
+    "semantic_cluster": "body-information-source",
+    "nearest_terms": [
+      "vestibular-sense"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Vestibular Senseが重力・加速度から身体の向きや運動を知る特定の感覚系を扱うのに対し、Exteroception / Interoceptionは感覚情報の由来を身体外部と身体内部に分ける分類軸を扱う。",
+    "related": [
+      "vestibular-sense"
+    ],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "ecological-validity",
+    "term": "Ecological Validity",
+    "ja": "生態学的妥当性",
+    "fields": [
+      "Psychology",
+      "Experimental Science",
+      "Research Design"
+    ],
+    "one_liner": "実験で得た結果が、実際に適用したい日常環境でも成立するかを見る。",
+    "description": "実験や評価で観察された行動・効果が、現実の環境や状況をどの程度反映しているかを考える観点。統制された条件での正確さと、現実場面への適用可能性を分けて捉える。",
+    "why_selected": "測定値そのものではなく、測定・実験した状況と適用したい現実環境との距離を観察する軸を追加するため。",
+    "feelings": [
+      "テストでは成功したのに本番で違う",
+      "実験条件が現実離れしている",
+      "ユーザーテスト結果をそのまま一般化したくなる"
+    ],
+    "before": "実験で効果が確認された。",
+    "after": "その実験環境は、実際に使われる環境をどの程度代表しているか。",
+    "observation_axis": "結果の精度だけでなく、その結果を生んだ実験・評価状況が実際に適用したい環境をどの程度代表しているかを見る。",
+    "semantic_cluster": "context-of-evidence",
+    "nearest_terms": [
+      "measurement-invariance"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Measurement Invarianceが異なる集団や時点でも尺度が同じ構成概念を測るかを見るのに対し、Ecological Validityは実験・評価の状況自体が現実の利用環境や行動条件をどの程度代表するかを見る。",
+    "related": [
+      "measurement-invariance"
+    ],
+    "instruction": "テスト結果だけで採用せず、テスト環境と実利用環境の差を列挙し、結果をそのまま一般化できるか確認してください。",
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "counterfactual-dependence",
+    "term": "Counterfactual Dependence",
+    "ja": "反実仮想依存",
+    "aliases": [
+      "反事実的依存"
+    ],
+    "fields": [
+      "Philosophy",
+      "Causation",
+      "Decision Analysis"
+    ],
+    "one_liner": "原因候補が存在しなかった世界を考え、それでも結果が起きたかを問う。",
+    "description": "ある出来事Cが起きなかったなら出来事Eも起きなかっただろう、という反実仮想による依存関係から因果を考える枠組み。単なる時間的前後や相関から原因を決めないための問いを与える。",
+    "why_selected": "観察された世界の相関ではなく、原因候補を取り除いた仮想世界との比較によって因果への依存を問う観察軸を追加するため。",
+    "feelings": [
+      "施策の直後に数字が上がった",
+      "出来事AのあとBが起きた",
+      "原因らしいものを一つ見つけた"
+    ],
+    "before": "AのあとにBが起きたから、AがBの原因だ。",
+    "after": "Aが起きなかった世界でも、Bは起きていただろうか。",
+    "observation_axis": "原因候補を取り除いた反実仮想の世界でも結果が生じるかを問い、観察された結果がその原因にどの程度依存しているかを見る。",
+    "semantic_cluster": "counterfactual-causation",
+    "nearest_terms": [
+      "equifinality"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Equifinalityが異なる複数の過程から同じ結果へ到達できることを見るのに対し、Counterfactual Dependenceは特定の原因候補を取り除いた仮想世界で結果がなお生じるかを比較し、その原因への依存を問う。",
+    "related": [
+      "equifinality"
+    ],
+    "sources": [
+      "https://plato.stanford.edu/entries/causation-counterfactual/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "focus-not-obscured",
+    "term": "Focus Not Obscured",
+    "ja": "フォーカス非遮蔽",
+    "aliases": [
+      "フォーカスが隠されないこと"
+    ],
+    "fields": [
+      "Accessibility",
+      "UI",
+      "Web"
+    ],
+    "one_liner": "キーボードフォーカスを受けた要素が、固定UIやオーバーレイの裏に隠れていないかを見る。",
+    "description": "キーボード操作でフォーカスを受けたコンポーネントが、作者が作成した固定ヘッダー、フッター、オーバーレイなどによって全部または必要以上に隠されないようにするWCAG 2.2の観点。",
+    "why_selected": "フォーカス表示自体の見えやすさではなく、別レイヤーとの空間的な重なりによって現在の操作地点が遮蔽される問題を観察するため。",
+    "feelings": [
+      "Tab移動したら対象が固定ヘッダーの裏へ入る",
+      "Cookieバナーが操作対象を覆う",
+      "フォーカスリングはあるのに対象が見えない"
+    ],
+    "before": "フォーカスリングは表示されている。",
+    "after": "フォーカス対象そのものが、固定UIやオーバーレイに隠されず見えているか。",
+    "observation_axis": "フォーカス表示の外観ではなく、キーボード操作中の対象が他の作者作成レイヤーとの重なりによって遮蔽されていないかを見る。",
+    "semantic_cluster": "focus-spatial-occlusion",
+    "nearest_terms": [
+      "focus-appearance"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Focus Appearanceがフォーカス表示そのものの面積やコントラストを扱うのに対し、Focus Not Obscuredは表示されたフォーカス対象が別の固定要素やオーバーレイによって空間的に覆われる問題を扱う。",
+    "related": [
+      "focus-appearance"
+    ],
+    "instruction": "Tab移動を全画面で確認し、フォーカス対象が固定ヘッダー・フッター・オーバーレイに隠れないようスクロール余白と重なりを調整してください。",
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html"
+    ],
+    "status": "seed"
+  }
+]
