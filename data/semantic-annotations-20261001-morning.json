@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-01",
+  "batch": "20261001-morning-semantic-expansion",
+  "term_annotations": {
+    "exteroception-interoception": {
+      "axis": "感覚情報を器官別に分類するのではなく、身体を基準に情報源が外部環境か内部状態かを見る。",
+      "nearest_terms": [
+        "vestibular-sense"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Vestibular Senseが重力・加速度から身体の向きや運動を知る特定の感覚系を扱うのに対し、Exteroception / Interoceptionは感覚情報の由来を身体外部と身体内部に分ける分類軸を扱う。",
+      "new_axis": true
+    },
+    "ecological-validity": {
+      "axis": "結果の精度だけでなく、その結果を生んだ実験・評価状況が実際に適用したい環境をどの程度代表しているかを見る。",
+      "nearest_terms": [
+        "measurement-invariance"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Measurement Invarianceが異なる集団や時点でも尺度が同じ構成概念を測るかを見るのに対し、Ecological Validityは実験・評価の状況自体が現実の利用環境や行動条件をどの程度代表するかを見る。",
+      "new_axis": true
+    },
+    "counterfactual-dependence": {
+      "axis": "原因候補を取り除いた反実仮想の世界でも結果が生じるかを問い、観察された結果がその原因にどの程度依存しているかを見る。",
+      "nearest_terms": [
+        "equifinality"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Equifinalityが異なる複数の過程から同じ結果へ到達できることを見るのに対し、Counterfactual Dependenceは特定の原因候補を取り除いた仮想世界で結果がなお生じるかを比較し、その原因への依存を問う。",
+      "new_axis": true
+    },
+    "focus-not-obscured": {
+      "axis": "フォーカス表示の外観ではなく、キーボード操作中の対象が他の作者作成レイヤーとの重なりによって遮蔽されていないかを見る。",
+      "nearest_terms": [
+        "focus-appearance"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Focus Appearanceがフォーカス表示そのものの面積やコントラストを扱うのに対し、Focus Not Obscuredは表示されたフォーカス対象が別の固定要素やオーバーレイによって空間的に覆われる問題を扱う。",
+      "new_axis": true
+    }
+  }
+}
