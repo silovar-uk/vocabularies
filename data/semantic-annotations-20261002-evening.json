@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-02",
+  "batch": "20261002-evening-semantic-expansion",
+  "term_annotations": {
+    "underdetermination": {
+      "axis": "証拠集合に対して整合する説明・理論候補が複数残っていないかを見る。",
+      "nearest_terms": [
+        "equifinality"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Equifinalityが異なる過程から同じ結果へ到達できることを扱うのに対し、Underdeterminationは同じ証拠集合と整合する複数の説明・理論が残る認識論的関係を扱う。",
+      "new_axis": true
+    },
+    "rent-seeking": {
+      "axis": "利益獲得が新しい価値の創出によるものか、制度・規制・権利を介した既存価値の配分変更によるものかを見る。",
+      "nearest_terms": [
+        "adverse-selection"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Adverse Selectionが情報非対称による参加者構成の偏りを扱うのに対し、Rent-Seekingは制度や権利への働きかけによって既存価値の取り分を獲得する活動を扱う。",
+      "new_axis": true
+    },
+    "desire-path": {
+      "axis": "設計者が用意した経路と、人々の反復行動によって実際に形成された経路との差を物理的痕跡から見る。",
+      "nearest_terms": [
+        "proxemics"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Proxemicsが対人距離と社会関係を扱うのに対し、Desire Pathは計画された空間と反復された実利用のずれが経路として残る現象を扱う。",
+      "new_axis": true
+    },
+    "concept-drift": {
+      "axis": "モデルを固定したままでも、入力と予測対象の関係が時間とともに変化していないかを見る。",
+      "nearest_terms": [
+        "calibration"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Calibrationが予測確率と実際の発生頻度の対応を見るのに対し、Concept Driftは入力と予測対象の関係そのものが時間とともに変化することを扱う。",
+      "new_axis": true
+    },
+    "target-size-minimum": {
+      "axis": "操作対象の視認性ではなく、身体的なポインティング精度の誤差を受け止められるターゲット面積と間隔があるかを見る。",
+      "nearest_terms": [
+        "focus-appearance"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Focus Appearanceがキーボードフォーカスの視覚的な面積とコントラストを扱うのに対し、Target Size (Minimum)はポインター操作に必要な物理的・運動的な命中余裕を扱う。",
+      "new_axis": true
+    }
+  }
+}
