@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-01",
+  "updated_at": "2026-10-02",
   "purpose": "Vocabulariesの価値単位を専門分野や語数ではなく、世界を見るための問い・観察軸として扱うための基盤。",
   "principles": [
     "語ではなく問いを増やす",
@@ -275,6 +275,61 @@
       "unit": "component",
       "seed_terms": [
         "focus-not-obscured"
+      ]
+    },
+    {
+      "id": "evidence-leaves-multiple-theories",
+      "label": "証拠が残す説明候補を見る",
+      "question": "この証拠と同じくらい整合する別の説明や理論は、まだいくつ残っているか？",
+      "target": "information",
+      "operation": "select",
+      "unit": "relation",
+      "seed_terms": [
+        "underdetermination"
+      ]
+    },
+    {
+      "id": "value-creation-versus-capture",
+      "label": "価値創造と取り分獲得を分ける",
+      "question": "この利益は新しい価値を増やした結果か、それとも制度を介して既存価値の取り分を増やした結果か？",
+      "target": "institution",
+      "operation": "select",
+      "unit": "group",
+      "seed_terms": [
+        "rent-seeking"
+      ]
+    },
+    {
+      "id": "use-draws-unplanned-path",
+      "label": "実利用が描く経路を見る",
+      "question": "計画された動線とは別に、反復された利用行動がどんな経路を空間へ刻んでいるか？",
+      "target": "space",
+      "operation": "repeat",
+      "unit": "environment",
+      "seed_terms": [
+        "desire-path"
+      ]
+    },
+    {
+      "id": "world-rule-changes-over-time",
+      "label": "予測関係の時間変化を見る",
+      "question": "モデルではなく、入力と予測対象を結ぶ世界側の関係が時間とともに変わっていないか？",
+      "target": "system",
+      "operation": "decay",
+      "unit": "relation",
+      "seed_terms": [
+        "concept-drift"
+      ]
+    },
+    {
+      "id": "motor-error-needs-target-tolerance",
+      "label": "操作の命中余裕を見る",
+      "question": "身体的なポインティング誤差を受け止められるだけの操作面積と間隔があるか？",
+      "target": "information",
+      "operation": "locate",
+      "unit": "component",
+      "seed_terms": [
+        "target-size-minimum"
       ]
     }
   ],
