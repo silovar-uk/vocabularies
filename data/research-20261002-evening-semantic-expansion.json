@@ -1,0 +1,188 @@
+[
+  {
+    "id": "underdetermination",
+    "term": "Underdetermination",
+    "ja": "過少決定",
+    "aliases": [
+      "理論の過少決定"
+    ],
+    "fields": [
+      "Philosophy of Science",
+      "Epistemology",
+      "Research"
+    ],
+    "one_liner": "同じ証拠と整合する説明が複数残り、証拠だけでは一意に理論を決められない。",
+    "description": "手元の証拠が複数の競合理論や説明と整合し、証拠だけではどれを採用すべきか一意に決められない状態。",
+    "why_selected": "証拠の有無ではなく、証拠が説明候補をどこまで絞り込めているかという観察軸を追加するため。",
+    "feelings": [
+      "データに合う仮説を一つ作れた",
+      "説明できたので正解だと思う",
+      "別解が残っている気がする"
+    ],
+    "before": "この仮説ならデータを説明できる。",
+    "after": "同じデータを同程度に説明できる別仮説はまだ残っていないか。",
+    "observation_axis": "証拠集合に対して整合する説明・理論候補が複数残っていないかを見る。",
+    "semantic_cluster": "evidence-theory-underdetermination",
+    "nearest_terms": [
+      "equifinality"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Equifinalityが異なる過程から同じ結果へ到達できることを扱うのに対し、Underdeterminationは同じ証拠集合と整合する複数の説明・理論が残る認識論的関係を扱う。",
+    "related": [
+      "equifinality",
+      "counterfactual-dependence"
+    ],
+    "sources": [
+      "https://plato.stanford.edu/entries/scientific-underdetermination/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "rent-seeking",
+    "term": "Rent-Seeking",
+    "ja": "レントシーキング",
+    "aliases": [
+      "レント・シーキング"
+    ],
+    "fields": [
+      "Economics",
+      "Institutional Economics",
+      "Management"
+    ],
+    "one_liner": "価値を新しく生むより、制度や権利を動かして既存価値の取り分を増やそうとする。",
+    "description": "生産性や新しい価値の創出ではなく、規制・補助・権利・制度などへ働きかけて経済的レントや既存価値の取り分を獲得しようとする活動。",
+    "why_selected": "利益増加を価値創造と同一視せず、制度を介した配分獲得を分離して観察する軸を追加するため。",
+    "feelings": [
+      "成果を作るより予算配分で勝つ方が得",
+      "制度変更への働きかけが利益源になる",
+      "取り分争いが激しい"
+    ],
+    "before": "利益が増えたなら価値も増えた。",
+    "after": "価値を増やしたのか、それとも既存価値の取り分を増やしたのか。",
+    "observation_axis": "利益獲得が新しい価値の創出によるものか、制度・規制・権利を介した既存価値の配分変更によるものかを見る。",
+    "semantic_cluster": "institutional-value-capture",
+    "nearest_terms": [
+      "adverse-selection"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Adverse Selectionが情報非対称による参加者構成の偏りを扱うのに対し、Rent-Seekingは制度や権利への働きかけによって既存価値の取り分を獲得する活動を扱う。",
+    "related": [
+      "adverse-selection"
+    ],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "desire-path",
+    "term": "Desire Path",
+    "ja": "デザイアライン",
+    "aliases": [
+      "Desire Line",
+      "Desire Path",
+      "デザイアパス"
+    ],
+    "fields": [
+      "Urban Planning",
+      "Architecture",
+      "Spatial Design"
+    ],
+    "one_liner": "設計された正式経路ではなく、人々の反復行動が空間へ刻んだ実際の経路を見る。",
+    "description": "計画された歩道や動線とは別に、人々が繰り返し通ることで形成される非公式な経路。設計意図と実利用のずれが物理的な痕跡として現れる。",
+    "why_selected": "計画された配置ではなく、反復された利用行動が空間に残す痕跡から設計と実態の差を見る軸を追加するため。",
+    "feelings": [
+      "芝生に自然な近道ができる",
+      "案内と違う道を皆が通る",
+      "想定動線が使われない"
+    ],
+    "before": "正しい動線を案内する。",
+    "after": "人々が繰り返し作った非公式動線は、設計のどんな摩擦を示しているか。",
+    "observation_axis": "設計者が用意した経路と、人々の反復行動によって実際に形成された経路との差を物理的痕跡から見る。",
+    "semantic_cluster": "emergent-spatial-use",
+    "nearest_terms": [
+      "proxemics"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Proxemicsが対人距離と社会関係を扱うのに対し、Desire Pathは計画された空間と反復された実利用のずれが経路として残る現象を扱う。",
+    "related": [
+      "proxemics"
+    ],
+    "instruction": "想定動線だけで評価せず、実利用で繰り返し発生するショートカットや迂回を記録し、正式動線との差を確認してください。",
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "concept-drift",
+    "term": "Concept Drift",
+    "ja": "コンセプトドリフト",
+    "aliases": [
+      "概念ドリフト"
+    ],
+    "fields": [
+      "Machine Learning",
+      "Data Science",
+      "MLOps"
+    ],
+    "one_liner": "モデルが同じでも、入力と予測対象の関係が時間とともに変われば予測性能は崩れる。",
+    "description": "時間の経過に伴い、入力変数と予測対象の関係が変化し、過去データで学習したモデルの前提が現実に合わなくなる現象。",
+    "why_selected": "モデル性能低下をモデル内部だけでなく、予測対象世界の関係構造の時間変化として観察する軸を追加するため。",
+    "feelings": [
+      "去年まで当たったモデルが急に外れる",
+      "モデルを変えていないのに性能が落ちる",
+      "現実側のルールが変わった"
+    ],
+    "before": "精度が落ちたのでモデルを改善する。",
+    "after": "モデルより先に、入力と目的変数の関係そのものが変わっていないか。",
+    "observation_axis": "モデルを固定したままでも、入力と予測対象の関係が時間とともに変化していないかを見る。",
+    "semantic_cluster": "changing-predictive-relationship",
+    "nearest_terms": [
+      "calibration"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Calibrationが予測確率と実際の発生頻度の対応を見るのに対し、Concept Driftは入力と予測対象の関係そのものが時間とともに変化することを扱う。",
+    "related": [
+      "calibration"
+    ],
+    "instruction": "モデル性能だけでなく、入力と目的変数の関係が学習時から変化していないかを時系列で監視してください。",
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "target-size-minimum",
+    "term": "Target Size (Minimum)",
+    "ja": "ターゲットサイズ（最小）",
+    "aliases": [
+      "Target Size Minimum",
+      "ターゲットサイズ"
+    ],
+    "fields": [
+      "Accessibility",
+      "UI",
+      "Web"
+    ],
+    "one_liner": "操作対象が見えるだけでなく、身体的なポインティング誤差を受け止められる面積や間隔があるかを見る。",
+    "description": "WCAG 2.2の達成基準2.5.8。ポインター入力の操作対象について、原則24×24 CSSピクセル以上の大きさ、または規定された間隔・例外条件を満たすことを求める。",
+    "why_selected": "視認性や意味伝達とは別に、身体的な操作精度と操作面積・間隔の関係を観察する軸を追加するため。",
+    "feelings": [
+      "小さい閉じるボタンを押し損ねる",
+      "隣のアイコンを誤タップする",
+      "見えるのに押しにくい"
+    ],
+    "before": "ボタンは見えている。",
+    "after": "指やポインターが少しずれても、隣を誤操作せず狙える面積と間隔があるか。",
+    "observation_axis": "操作対象の視認性ではなく、身体的なポインティング精度の誤差を受け止められるターゲット面積と間隔があるかを見る。",
+    "semantic_cluster": "motor-target-tolerance",
+    "nearest_terms": [
+      "focus-appearance"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Focus Appearanceがキーボードフォーカスの視覚的な面積とコントラストを扱うのに対し、Target Size (Minimum)はポインター操作に必要な物理的・運動的な命中余裕を扱う。",
+    "related": [
+      "focus-appearance"
+    ],
+    "instruction": "主要な操作対象は24×24 CSSピクセル以上を基本とし、小さい場合は隣接ターゲットとの間隔まで含めて誤操作リスクを確認してください。",
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+    ],
+    "status": "seed"
+  }
+]
