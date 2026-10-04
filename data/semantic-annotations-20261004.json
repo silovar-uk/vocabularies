@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-04",
+  "batch": "20261004-semantic-expansion",
+  "term_annotations": {
+    "aposematism": {
+      "axis": "対象が危険を隠して接触を避けるのではなく、目立つ信号によって相手の接触行動を抑えているかを見る。",
+      "nearest_terms": [
+        "salience"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Salienceが注意を引く知覚特性を扱うのに対し、Aposematismは目立つ信号が攻撃者の学習・回避行動を誘発し、防御機能を持つことを扱う。",
+      "new_axis": true
+    },
+    "stream-capture": {
+      "axis": "流路内部の変更ではなく、隣接する流域ネットワーク間で上流・流入源が取り込まれ、接続先が変わっていないかを見る。",
+      "nearest_terms": [
+        "river-avulsion"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "River Avulsionが一つの河川自身の流路切替を扱うのに対し、Stream Captureは隣接する別水系が上流域を取り込み、ネットワーク間で流入源が移ることを扱う。",
+      "new_axis": true
+    },
+    "common-knowledge": {
+      "axis": "情報を各人が保有しているかだけでなく、互いがその共有状態を知っているという高階の相互認識が成立しているかを見る。",
+      "nearest_terms": [
+        "boundary-object"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Boundary Objectが理解を完全一致させず共同作業を可能にする共通物を扱うのに対し、Common Knowledgeは互いが互いの知識状態を知っている高階の共有認識を扱う。",
+      "new_axis": true
+    },
+    "guard-band": {
+      "axis": "仕様限界と合否判定境界を分け、測定不確かさと誤判定リスクを意思決定境界へどう織り込むかを見る。",
+      "nearest_terms": [
+        "asymmetric-error"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Asymmetric Errorが二種類の誤りのコスト差を扱うのに対し、Guard Bandは測定不確かさとそのリスクを踏まえて仕様限界から判定境界をどれだけ動かすかを扱う。",
+      "new_axis": true
+    },
+    "animation-from-interactions": {
+      "axis": "ユーザー操作が非本質的な視覚運動へ変換され、その動きが身体的反応を引き起こす可能性と停止可能性を見る。",
+      "nearest_terms": [
+        "vestibular-sense"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Vestibular Senseが身体の向き・加速度を知る感覚系を扱うのに対し、Animation from InteractionsはUI操作による視覚運動が前庭系などへ身体的負担を生みうる設計上の問題を扱う。",
+      "new_axis": true
+    }
+  }
+}
