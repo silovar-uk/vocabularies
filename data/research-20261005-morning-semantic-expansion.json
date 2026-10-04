@@ -1,0 +1,148 @@
+[
+  {
+    "id": "fracture-toughness",
+    "term": "Fracture Toughness",
+    "ja": "破壊靱性",
+    "aliases": [
+      "破壊じん性"
+    ],
+    "fields": [
+      "Physics",
+      "Design"
+    ],
+    "one_liner": "既存の亀裂や鋭い欠陥が、致命的な破壊へ進展しにくいかを見る材料特性。",
+    "description": "亀裂や鋭い欠陥を含む材料が、亀裂の進展にどの程度抵抗できるかを表す特性。単純な最大強度ではなく、欠陥が存在する条件で破壊が進むしにくさを扱う。",
+    "why_selected": "材料を無傷の強さだけでなく、欠陥がすでにある状態から破壊が進展するかという別の観察軸で見るため。",
+    "feelings": [
+      "硬いのに小さな欠けから一気に割れる",
+      "傷があっても粘る材料",
+      "最大強度だけでは安全性を判断しづらい"
+    ],
+    "before": "この材料はどれくらい強い？",
+    "after": "小さな亀裂が存在しても、その亀裂は致命的破壊へ進展しにくい？",
+    "observation_axis": "既存の亀裂・鋭い欠陥を起点として、材料が亀裂進展へどの程度抵抗できるかを見る。",
+    "semantic_cluster": "crack-propagation-resistance",
+    "nearest_terms": [
+      "fatigue-failure"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Fatigue Failureが反復荷重による損傷蓄積と亀裂発生・進展を時間軸で扱うのに対し、Fracture Toughnessは既に存在する亀裂を前提に、その亀裂が不安定進展へ移る抵抗性を扱う。",
+    "related": [
+      "fatigue-failure"
+    ],
+    "instruction": "最大強度だけで材料を比較せず、欠陥が避けられない用途では破壊靱性も確認してください。",
+    "sources": [
+      "https://www.astm.org/e1820-23.html"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "allochrony",
+    "term": "Allochrony",
+    "ja": "異時性／時間的隔離",
+    "aliases": [
+      "Temporal Isolation",
+      "時間的隔離"
+    ],
+    "fields": [
+      "Biology",
+      "Ecology"
+    ],
+    "one_liner": "同じ場所にいても、繁殖や活動の時期がずれることで集団同士の接触・交配が減る。",
+    "description": "同所的または近接した集団の繁殖時期・活動時刻などが異なることで、個体間の接触や遺伝子流動が低下する時間的な分離。生殖隔離や種分化に寄与する場合がある。",
+    "why_selected": "隔離を空間距離だけでなく、同じ場所を共有したまま時間の非重複によって成立する現象として観察するため。",
+    "feelings": [
+      "同じ森にいるのに繁殖期が違って交わらない",
+      "昼型と夜型で接触しない",
+      "距離ゼロなのに実質的には分離している"
+    ],
+    "before": "同じ場所にいるなら交流できる。",
+    "after": "場所は同じでも、活動や繁殖の時間は本当に重なっている？",
+    "observation_axis": "空間距離を固定したまま、活動・繁殖時期の非重複が接触や遺伝子流動をどの程度減らしているかを見る。",
+    "semantic_cluster": "temporal-separation-without-distance",
+    "nearest_terms": [
+      "entrainment"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Entrainmentが外部周期や相互作用によってリズムが同期する現象を扱うのに対し、Allochronyは活動・繁殖時期が同期せず時間的に分離することで接触や遺伝子流動が低下することを扱う。",
+    "related": [
+      "entrainment"
+    ],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "limits-of-agreement",
+    "term": "Limits of Agreement",
+    "ja": "一致限界",
+    "aliases": [
+      "Bland–Altman Limits of Agreement",
+      "ブランド＝アルトマン一致限界"
+    ],
+    "fields": [
+      "Statistics",
+      "Measurement"
+    ],
+    "one_liner": "二つの測定方法が同じ対象を測ったとき、その差が通常どの範囲に収まるかを見る。",
+    "description": "二つの測定方法の一致度を、対象ごとの差の平均とばらつきから評価する考え方。相関の高さではなく、個々の測定における差の大きさと、その差が実務上許容できるかを扱う。",
+    "why_selected": "測定方法の比較を相関の強さではなく、実際の差と交換可能性の観点から見る軸を追加するため。",
+    "feelings": [
+      "相関は高いのに値がいつもずれる",
+      "新しい機器を旧機器の代わりに使いたい",
+      "平均では似ているが個々の値が違う"
+    ],
+    "before": "二つの測定値はよく相関している。",
+    "after": "同じ対象で両者は通常どの程度ずれ、その幅は実務上許容できる？",
+    "observation_axis": "二つの測定方法について相関ではなく対象ごとの差の分布を見て、通常生じるずれの範囲と代替可能性を評価する。",
+    "semantic_cluster": "method-agreement",
+    "nearest_terms": [
+      "measurement-uncertainty"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Measurement Uncertaintyが一つの測定結果に残る不確かさを扱うのに対し、Limits of Agreementは二つの測定方法を同じ対象へ適用した際の差の分布と交換可能性を扱う。",
+    "related": [
+      "measurement-uncertainty"
+    ],
+    "instruction": "測定方法の代替可能性を判断するときは、相関係数だけでなく差の分布と一致限界を確認してください。",
+    "sources": [
+      "https://pubmed.ncbi.nlm.nih.gov/2868172/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "kerf",
+    "term": "Kerf",
+    "ja": "切りしろ幅",
+    "aliases": [
+      "切断幅",
+      "カーフ"
+    ],
+    "fields": [
+      "Design",
+      "Manufacturing"
+    ],
+    "one_liner": "切断線を数学的な線としてではなく、加工によって実際に材料が失われる幅として見る。",
+    "description": "のこぎり、レーザー、プラズマ、水流などで材料を切断したとき、工具やビームによって除去される材料の幅。完成寸法を正確に出すには、切断線の中心ではなく切りしろ幅を考慮して経路を補正する必要がある。",
+    "why_selected": "デジタル上では幅ゼロに見える境界が、物理加工では材料を消費する帯になるという制作上の観察軸を追加するため。",
+    "feelings": [
+      "100mmで描いた部品が微妙に小さい",
+      "レーザーカットした継手が緩い",
+      "線に沿って切っただけなのに寸法がずれる"
+    ],
+    "before": "この線に沿って切れば、この寸法になる。",
+    "after": "切断そのものが何mmの材料を消す？ 欲しい寸法は切りしろのどちら側に置く？",
+    "observation_axis": "設計上の境界線を幅ゼロとして扱わず、物理的な切断工程が境界周辺の材料をどの幅だけ除去するかを見る。",
+    "semantic_cluster": "manufacturing-boundary-loss",
+    "nearest_terms": [
+      "optical-alignment"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Optical Alignmentが知覚上のずれを補正して視覚的な整列を作るのに対し、Kerfは物理加工で境界線そのものに幅が生じ材料が失われるため、完成寸法を補正する必要があることを扱う。",
+    "related": [
+      "optical-alignment"
+    ],
+    "instruction": "切断用データは図面寸法をそのまま加工線にせず、素材・板厚・加工条件ごとの切りしろ幅を確認して補正してください。",
+    "sources": [],
+    "status": "seed"
+  }
+]
