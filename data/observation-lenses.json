@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-04",
+  "updated_at": "2026-10-05",
   "purpose": "Vocabulariesの価値単位を専門分野や語数ではなく、世界を見るための問い・観察軸として扱うための基盤。",
   "principles": [
     "語ではなく問いを増やす",
@@ -385,6 +385,61 @@
       "unit": "individual",
       "seed_terms": [
         "animation-from-interactions"
+      ]
+    },
+    {
+      "id": "time-space-enables-events",
+      "label": "出来事を可能にする時空間を見る",
+      "question": "この出来事は、どんな時間と空間の組み合わせだから起こりうるのか？",
+      "target": "time",
+      "operation": "orient",
+      "unit": "environment",
+      "seed_terms": [
+        "chronotope"
+      ]
+    },
+    {
+      "id": "preexisting-crack-propagation",
+      "label": "欠陥からの破壊進展を見る",
+      "question": "小さな亀裂がすでに存在するとき、それはどこまで致命的破壊へ進展しにくいか？",
+      "target": "material",
+      "operation": "propagate",
+      "unit": "component",
+      "seed_terms": [
+        "fracture-toughness"
+      ]
+    },
+    {
+      "id": "separation-by-time-overlap",
+      "label": "距離ではなく時間の重なりを見る",
+      "question": "同じ場所にいても、活動や繁殖の時間が重ならないことで実質的に分離していないか？",
+      "target": "time",
+      "operation": "synchronize",
+      "unit": "group",
+      "seed_terms": [
+        "allochrony"
+      ]
+    },
+    {
+      "id": "method-difference-range",
+      "label": "相関ではなく測定差の範囲を見る",
+      "question": "二つの測定方法は同じ対象で通常どの程度ずれ、そのずれは実務上許容できるか？",
+      "target": "information",
+      "operation": "distort",
+      "unit": "relation",
+      "seed_terms": [
+        "limits-of-agreement"
+      ]
+    },
+    {
+      "id": "boundary-consumes-material",
+      "label": "加工境界が材料を消す幅を見る",
+      "question": "設計上は一本の線でも、加工すると境界周辺の材料がどれだけ失われるか？",
+      "target": "material",
+      "operation": "decay",
+      "unit": "component",
+      "seed_terms": [
+        "kerf"
       ]
     }
   ],
