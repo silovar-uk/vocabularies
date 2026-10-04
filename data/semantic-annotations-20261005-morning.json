@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-05",
+  "batch": "20261005-morning-semantic-expansion",
+  "term_annotations": {
+    "fracture-toughness": {
+      "axis": "既存の亀裂・鋭い欠陥を起点として、材料が亀裂進展へどの程度抵抗できるかを見る。",
+      "nearest_terms": [
+        "fatigue-failure"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Fatigue Failureが反復荷重による損傷蓄積と亀裂発生・進展を時間軸で扱うのに対し、Fracture Toughnessは既に存在する亀裂を前提に、その亀裂が不安定進展へ移る抵抗性を扱う。",
+      "new_axis": true
+    },
+    "allochrony": {
+      "axis": "空間距離を固定したまま、活動・繁殖時期の非重複が接触や遺伝子流動をどの程度減らしているかを見る。",
+      "nearest_terms": [
+        "entrainment"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Entrainmentが外部周期や相互作用によってリズムが同期する現象を扱うのに対し、Allochronyは活動・繁殖時期が同期せず時間的に分離することで接触や遺伝子流動が低下することを扱う。",
+      "new_axis": true
+    },
+    "limits-of-agreement": {
+      "axis": "二つの測定方法について相関ではなく対象ごとの差の分布を見て、通常生じるずれの範囲と代替可能性を評価する。",
+      "nearest_terms": [
+        "measurement-uncertainty"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Measurement Uncertaintyが一つの測定結果に残る不確かさを扱うのに対し、Limits of Agreementは二つの測定方法を同じ対象へ適用した際の差の分布と交換可能性を扱う。",
+      "new_axis": true
+    },
+    "kerf": {
+      "axis": "設計上の境界線を幅ゼロとして扱わず、物理的な切断工程が境界周辺の材料をどの幅だけ除去するかを見る。",
+      "nearest_terms": [
+        "optical-alignment"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Optical Alignmentが知覚上のずれを補正して視覚的な整列を作るのに対し、Kerfは物理加工で境界線そのものに幅が生じ材料が失われるため、完成寸法を補正する必要があることを扱う。",
+      "new_axis": true
+    }
+  }
+}
