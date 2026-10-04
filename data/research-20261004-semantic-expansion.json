@@ -1,0 +1,180 @@
+[
+  {
+    "id": "aposematism",
+    "term": "Aposematism",
+    "ja": "警告シグナル",
+    "aliases": [
+      "警告色",
+      "警戒色"
+    ],
+    "fields": [
+      "Evolutionary Biology",
+      "Ecology"
+    ],
+    "one_liner": "危険を隠すのではなく、目立つ信号によって相手に避けてもらう防御戦略。",
+    "description": "毒・悪臭・棘など攻撃者に不利益を与える性質を、目立つ色・模様・音などの信号によって知らせ、捕食や接触を抑える戦略。",
+    "why_selected": "可視性を単なる発見リスクではなく、相手の行動を変える防御資源として観察する軸を追加するため。",
+    "feelings": [
+      "毒ガエルの鮮やかな色",
+      "ハチの黄黒模様",
+      "目立つ方が安全になる"
+    ],
+    "before": "危険なら見つからない方が安全だ。",
+    "after": "危険性を相手に学習させるなら、目立つこと自体が防御になっていないか。",
+    "observation_axis": "対象が危険を隠して接触を避けるのではなく、目立つ信号によって相手の接触行動を抑えているかを見る。",
+    "semantic_cluster": "visibility-as-defense",
+    "nearest_terms": [
+      "salience"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Salienceが注意を引く知覚特性を扱うのに対し、Aposematismは目立つ信号が攻撃者の学習・回避行動を誘発し、防御機能を持つことを扱う。",
+    "related": [
+      "salience"
+    ],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "stream-capture",
+    "term": "Stream Capture",
+    "ja": "河川争奪",
+    "aliases": [
+      "River Piracy",
+      "Stream Piracy"
+    ],
+    "fields": [
+      "Geomorphology",
+      "Geography",
+      "Geology"
+    ],
+    "one_liner": "ある水系が侵食などによって隣接水系の上流を取り込み、水の行き先を付け替える。",
+    "description": "侵食や地形変化などによって、ある河川が別の河川の上流域を取り込み、従来とは異なる水系へ流れを導く地形現象。",
+    "why_selected": "経路内部の変化ではなく、隣接ネットワーク間で流入源そのものが移る現象を見る軸を追加するため。",
+    "feelings": [
+      "不自然に曲がる川",
+      "流向が変わった谷",
+      "隣の水系へ上流が取り込まれる"
+    ],
+    "before": "この川の流れが変わった。",
+    "after": "川自身の経路が変わったのか、それとも別水系に上流を取り込まれたのか。",
+    "observation_axis": "流路内部の変更ではなく、隣接する流域ネットワーク間で上流・流入源が取り込まれ、接続先が変わっていないかを見る。",
+    "semantic_cluster": "network-source-capture",
+    "nearest_terms": [
+      "river-avulsion"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "River Avulsionが一つの河川自身の流路切替を扱うのに対し、Stream Captureは隣接する別水系が上流域を取り込み、ネットワーク間で流入源が移ることを扱う。",
+    "related": [
+      "river-avulsion"
+    ],
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "common-knowledge",
+    "term": "Common Knowledge",
+    "ja": "共通知識",
+    "fields": [
+      "Game Theory",
+      "Epistemology",
+      "Economics"
+    ],
+    "one_liner": "全員が知るだけでなく、全員が『全員が知っている』ことを相互に知っている状態。",
+    "description": "命題が全員に知られ、さらに全員がそれを全員が知っていると知り、その高階の相互認識が反復して成立している状態。",
+    "why_selected": "情報共有を個人の保有情報だけでなく、互いの知識についての高階認識として観察する軸を追加するため。",
+    "feelings": [
+      "全員に通知したのに動けない",
+      "ルールは皆知っているはず",
+      "互いが知っていると確認できていない"
+    ],
+    "before": "全員に知らせたから共有済みだ。",
+    "after": "全員が知っているだけでなく、全員が『全員知っている』と分かっているか。",
+    "observation_axis": "情報を各人が保有しているかだけでなく、互いがその共有状態を知っているという高階の相互認識が成立しているかを見る。",
+    "semantic_cluster": "higher-order-shared-knowledge",
+    "nearest_terms": [
+      "boundary-object"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Boundary Objectが理解を完全一致させず共同作業を可能にする共通物を扱うのに対し、Common Knowledgeは互いが互いの知識状態を知っている高階の共有認識を扱う。",
+    "related": [
+      "boundary-object"
+    ],
+    "instruction": "重要な前提は個別通知だけで終えず、参加者全員が同じ前提を共有していることを相互に確認できる場を設けてください。",
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "guard-band",
+    "term": "Guard Band",
+    "ja": "ガードバンド",
+    "aliases": [
+      "Guardband"
+    ],
+    "fields": [
+      "Metrology",
+      "Quality Assurance",
+      "Manufacturing"
+    ],
+    "one_liner": "測定不確かさを踏まえ、仕様限界とは別に合否判定境界へ安全余白を設ける。",
+    "description": "測定不確かさや誤判定リスクを考慮し、仕様限界そのものではなく内側などに判定境界を設定して適合判定を行う考え方。",
+    "why_selected": "不確かさを報告するだけでなく、その不確かさを意思決定境界へどう反映するかを見る軸を追加するため。",
+    "feelings": [
+      "上限ぎりぎりの測定値",
+      "測定誤差込みなら規格外かもしれない",
+      "良品を落とすリスクと不良品を通すリスク"
+    ],
+    "before": "規格内なら合格だ。",
+    "after": "測定不確かさと誤判定コストを踏まえると、実際の合格境界はどこに置くべきか。",
+    "observation_axis": "仕様限界と合否判定境界を分け、測定不確かさと誤判定リスクを意思決定境界へどう織り込むかを見る。",
+    "semantic_cluster": "uncertainty-decision-boundary",
+    "nearest_terms": [
+      "asymmetric-error"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Asymmetric Errorが二種類の誤りのコスト差を扱うのに対し、Guard Bandは測定不確かさとそのリスクを踏まえて仕様限界から判定境界をどれだけ動かすかを扱う。",
+    "related": [
+      "asymmetric-error"
+    ],
+    "instruction": "仕様限界と合否判定境界を同一視せず、測定不確かさと誤判定コストを踏まえてガードバンドを設定してください。",
+    "sources": [],
+    "status": "seed"
+  },
+  {
+    "id": "animation-from-interactions",
+    "term": "Animation from Interactions",
+    "ja": "インタラクション起因アニメーション",
+    "aliases": [
+      "Animation from Interactions (WCAG)"
+    ],
+    "fields": [
+      "Accessibility",
+      "Motion Design",
+      "Web"
+    ],
+    "one_liner": "ユーザー操作によって起きる非本質的なモーションが、身体的な不調を引き起こしうるかを見る。",
+    "description": "WCAG 2.2の達成基準2.3.3。ユーザー操作によって始まるモーションアニメーションについて、機能や情報伝達に不可欠でない場合は無効化できることを求める。",
+    "why_selected": "UIモーションを演出品質ではなく、操作から身体反応へ至るアクセシビリティ上の因果として観察する軸を追加するため。",
+    "feelings": [
+      "スクロールで画面全体が動く",
+      "操作のたびに拡大縮小する",
+      "動きでめまいや吐き気が起こる"
+    ],
+    "before": "このアニメーションは滑らかで気持ちいい。",
+    "after": "この操作起点の動きは不可欠か。身体的に耐えられない利用者が止められるか。",
+    "observation_axis": "ユーザー操作が非本質的な視覚運動へ変換され、その動きが身体的反応を引き起こす可能性と停止可能性を見る。",
+    "semantic_cluster": "motion-physical-accessibility",
+    "nearest_terms": [
+      "vestibular-sense"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Vestibular Senseが身体の向き・加速度を知る感覚系を扱うのに対し、Animation from InteractionsはUI操作による視覚運動が前庭系などへ身体的負担を生みうる設計上の問題を扱う。",
+    "related": [
+      "vestibular-sense"
+    ],
+    "instruction": "操作起点の非本質的な移動・拡大アニメーションは prefers-reduced-motion を尊重し、停止または代替表現へ切り替えてください。",
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html"
+    ],
+    "status": "seed"
+  }
+]
