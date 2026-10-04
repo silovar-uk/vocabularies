@@ -81,7 +81,8 @@
     "data/research-20260930-morning-semantic-expansion.json",
     "data/research-20261001-morning-semantic-expansion.json",
     "data/research-20261002-evening-semantic-expansion.json",
-    "data/research-20261004-semantic-expansion.json"
+    "data/research-20261004-semantic-expansion.json",
+    "data/research-20261005-morning-semantic-expansion.json"
   ],
   "relation_datasets": [
     "data/relations.json",
@@ -172,7 +173,10 @@
     "Geotechnical Engineering": "地盤工学",
     "Geology": "地質学",
     "Narratology": "物語論",
-    "Literature": "文学"
+    "Literature": "文学",
+    "Biology": "生物学",
+    "Ecology": "生態学",
+    "Manufacturing": "製造・加工"
   },
   "taxonomy": [
     {
