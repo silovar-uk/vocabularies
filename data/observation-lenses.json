@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-02",
+  "updated_at": "2026-10-04",
   "purpose": "Vocabulariesの価値単位を専門分野や語数ではなく、世界を見るための問い・観察軸として扱うための基盤。",
   "principles": [
     "語ではなく問いを増やす",
@@ -330,6 +330,61 @@
       "unit": "component",
       "seed_terms": [
         "target-size-minimum"
+      ]
+    },
+    {
+      "id": "visibility-deters-contact",
+      "label": "目立つことの防御機能を見る",
+      "question": "この対象は危険を隠すのでなく、目立つ信号によって相手の接触行動を抑えていないか？",
+      "target": "information",
+      "operation": "propagate",
+      "unit": "relation",
+      "seed_terms": [
+        "aposematism"
+      ]
+    },
+    {
+      "id": "network-captures-source",
+      "label": "流入源の取り込みを見る",
+      "question": "経路が変わったのではなく、隣接ネットワークが流入源そのものを取り込んでいないか？",
+      "target": "system",
+      "operation": "cross-boundary",
+      "unit": "network",
+      "seed_terms": [
+        "stream-capture"
+      ]
+    },
+    {
+      "id": "knowledge-about-shared-knowledge",
+      "label": "共有を高階認識まで見る",
+      "question": "全員が知っているだけでなく、全員が『全員知っている』と分かっているか？",
+      "target": "group",
+      "operation": "synchronize",
+      "unit": "group",
+      "seed_terms": [
+        "common-knowledge"
+      ]
+    },
+    {
+      "id": "uncertainty-moves-decision-boundary",
+      "label": "不確かさを判定境界へ移す",
+      "question": "測定不確かさと誤判定コストを踏まえると、仕様限界とは別に判定境界をどこへ置くべきか？",
+      "target": "information",
+      "operation": "orient",
+      "unit": "system",
+      "seed_terms": [
+        "guard-band"
+      ]
+    },
+    {
+      "id": "interaction-motion-affects-body",
+      "label": "操作から身体反応への動きを見る",
+      "question": "ユーザー操作が非本質的な視覚運動へ変換され、身体的負担を生んでいないか？",
+      "target": "body",
+      "operation": "propagate",
+      "unit": "individual",
+      "seed_terms": [
+        "animation-from-interactions"
       ]
     }
   ],
