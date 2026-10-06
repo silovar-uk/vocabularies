@@ -1,0 +1,190 @@
+[
+  {
+    "id": "status-message",
+    "term": "Status Message",
+    "ja": "状態メッセージ",
+    "aliases": [
+      "ステータスメッセージ"
+    ],
+    "fields": [
+      "Accessibility",
+      "Web",
+      "UI"
+    ],
+    "one_liner": "フォーカスを移さずに起きた重要な状態変化を、支援技術にも通知できるようにする。",
+    "description": "検索結果件数、保存完了、処理中、エラーなど、利用者の現在位置を変えずに発生する状態変化を、視覚表示だけでなく支援技術からも認識できるようにするアクセシビリティ上の考え方。",
+    "why_selected": "UIの変化を「画面に見えているか」ではなく、その場所を見ていない利用者にも変化の発生が届くかという軸で観察するため。",
+    "feelings": [
+      "検索結果件数は変わったのに読み上げられない",
+      "保存完了が色だけで示される",
+      "処理中になったことが支援技術へ伝わらない"
+    ],
+    "before": "結果件数は画面に出ている？",
+    "after": "フォーカスを動かさなくても、状態が変わったことは支援技術へ伝わる？",
+    "observation_axis": "画面上の状態変化について、フォーカスを移動させずに支援技術へ意味として通知できているかを見る。",
+    "semantic_cluster": "accessibility-semantics",
+    "nearest_terms": [
+      "visibility-system-status"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Visibility of System Statusが一般に利用者へ現在状態を分かりやすく示す設計原則なのに対し、Status Messageはフォーカスを移さず発生した動的変化を支援技術がプログラム的に取得・通知できるかを扱う。",
+    "related": [
+      "visibility-system-status"
+    ],
+    "instruction": "検索結果件数や保存完了などの動的な状態変化は、視覚表示だけでなく role=\"status\" 等で支援技術にも通知してください。",
+    "sources": [
+      "https://www.w3.org/WAI/WCAG21/Understanding/status-messages.html"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "metrological-traceability",
+    "term": "Metrological Traceability",
+    "ja": "計量トレーサビリティ",
+    "aliases": [
+      "測定トレーサビリティ"
+    ],
+    "fields": [
+      "Metrology",
+      "Measurement"
+    ],
+    "one_liner": "測定結果を、切れ目のない校正の連鎖によって参照基準まで遡れるようにする。",
+    "description": "測定結果を、測定不確かさに寄与する校正の切れ目のない連鎖を通じて、指定された参照基準へ関連付けられる性質。機器そのものではなく、測定結果について問う。",
+    "why_selected": "数字の信頼性を精度の高さだけでなく、その値がどの基準からどんな校正連鎖でつながっているかという由来の軸で見るため。",
+    "feelings": [
+      "拠点ごとに同じ測定値の意味が違いそう",
+      "測定器は校正済みだが基準が分からない",
+      "数字の比較可能性を担保したい"
+    ],
+    "before": "この数字は正確？",
+    "after": "この測定結果は、どの参照標準へどんな校正連鎖でつながっている？",
+    "observation_axis": "測定結果が、校正の切れ目のない連鎖を通じてどの参照基準まで遡れるかを見る。",
+    "semantic_cluster": "measurement-trust",
+    "nearest_terms": [
+      "measurement-uncertainty",
+      "limits-of-agreement"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Measurement Uncertaintyが一つの測定結果に残る値の不確かさを扱い、Limits of Agreementが二手法間の差を扱うのに対し、Metrological Traceabilityは測定結果と参照基準を結ぶ校正連鎖そのものを扱う。",
+    "related": [
+      "measurement-uncertainty",
+      "limits-of-agreement"
+    ],
+    "instruction": "拠点間で測定値を比較する場合は、機器名だけでなく校正履歴・参照標準・測定不確かさまで追える状態にしてください。",
+    "sources": [
+      "https://www.nist.gov/calibrations/metrological-traceability"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "priority-effect",
+    "term": "Priority Effect",
+    "ja": "優先効果",
+    "aliases": [
+      "Priority Effects",
+      "先着効果"
+    ],
+    "fields": [
+      "Ecology",
+      "Biology"
+    ],
+    "one_liner": "同じ構成員でも、誰が先に到着したかによって後発者の定着と最終構成が変わる。",
+    "description": "生態群集で、種の到着順が後から来る種の定着・成長・繁殖に影響し、最終的な群集構成を変える現象。先行種によるニッチの先取りや環境改変などが機構になる。",
+    "why_selected": "結果を構成要素だけでなく、同じ要素でも到着順が環境条件を変えうるという履歴の作用から観察するため。",
+    "feelings": [
+      "同じ種を入れたのに植える順番で景色が変わる",
+      "先行者が資源を押さえる",
+      "後発者が入る時点では環境自体が変わっている"
+    ],
+    "before": "何を入れたか？",
+    "after": "同じものを入れても、入った順番が後発者の居場所を変えていない？",
+    "observation_axis": "構成要素を固定したまま、到着順がニッチの先取り・環境改変を通じて後発者と最終構成をどう変えるかを見る。",
+    "semantic_cluster": "arrival-order-ecology",
+    "nearest_terms": [
+      "path-dependence"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Path Dependenceが過去の選択や出来事によって将来の選択肢が制約される広い履歴依存を扱うのに対し、Priority Effectは生態群集での到着順が先取り・環境改変を通じて後発種の定着を変える具体的機構を扱う。",
+    "related": [
+      "path-dependence"
+    ],
+    "sources": [
+      "https://doi.org/10.1146/annurev-ecolsys-110411-160340"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "counterfactual-causation",
+    "term": "Counterfactual Causation",
+    "ja": "反事実的因果",
+    "aliases": [
+      "反事実因果",
+      "Counterfactual Theory of Causation"
+    ],
+    "fields": [
+      "Philosophy"
+    ],
+    "one_liner": "原因候補が存在しなかった世界と比べて、結果が変わるかから因果を考える。",
+    "description": "ある出来事が別の出来事の原因かを、原因候補が起きなかった反事実的な状況で結果がどうなったかという依存関係から捉える因果論の考え方。",
+    "why_selected": "因果を時間的な前後や共起だけでなく、原因候補を取り除いた世界との差として問う観察軸を追加するため。",
+    "feelings": [
+      "施策後に数字が伸びたが施策の効果か分からない",
+      "AのあとBが起きただけで原因と言っている",
+      "なかった場合との比較対象が必要"
+    ],
+    "before": "施策後に数字が伸びたから効いた。",
+    "after": "その施策がなかった場合と比べて、結果はどれだけ変わった？",
+    "observation_axis": "原因候補を取り除いた反事実的状況を置き、結果がそれに依存して変わるかを見る。",
+    "semantic_cluster": "counterfactual-causal-inference",
+    "nearest_terms": [
+      "correlation-causation"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Correlation ≠ Causationが相関から因果を即断しないための警告なのに対し、Counterfactual Causationは原因候補が存在しない反事実的状況と比較して因果依存を問う具体的な分析軸を与える。",
+    "related": [
+      "correlation-causation"
+    ],
+    "sources": [
+      "https://plato.stanford.edu/entries/causation-counterfactual/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "canary-release",
+    "term": "Canary Release",
+    "ja": "カナリアリリース",
+    "aliases": [
+      "Canary Deployment",
+      "カナリアデプロイ"
+    ],
+    "fields": [
+      "Software Engineering",
+      "Systems Design"
+    ],
+    "one_liner": "変更をまず限定された利用者へ公開し、実環境の結果を見ながら曝露範囲を広げる。",
+    "description": "新しいバージョンや機能を全利用者へ一括公開せず、一部のトラフィックや利用者へ先行公開し、指標や障害を観察しながら段階的に展開するリリース戦略。",
+    "why_selected": "変更の安全性をコード内部だけでなく、変更へ曝露される母集団の大きさを時間とともに制御する運用設計として見るため。",
+    "feelings": [
+      "新UIをいきなり全員へ出すのが怖い",
+      "本番環境で少人数だけ試したい",
+      "問題があれば影響人数を限定したい"
+    ],
+    "before": "本番公開して大丈夫？",
+    "after": "最初に失敗しても耐えられる人数へ限定して、結果を見ながら曝露を広げられる？",
+    "observation_axis": "変更内容そのものではなく、本番環境で変更へ曝露する利用者・トラフィックの割合を段階的に制御できるかを見る。",
+    "semantic_cluster": "progressive-exposure",
+    "nearest_terms": [
+      "feature-flag"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Feature Flagが機能の有効・無効や対象者をコード配備と切り離して制御する仕組みなのに対し、Canary Releaseは新バージョンへの本番トラフィックや利用者の曝露割合を段階的に増やし、実測結果で展開判断するリリース戦略を扱う。",
+    "related": [
+      "feature-flag"
+    ],
+    "instruction": "新機能は全ユーザーへ一括公開せず、対象を限定してエラー率と主要KPIを確認しながら段階的に展開してください。",
+    "sources": [
+      "https://cloud.google.com/deploy/docs/deployment-strategies/canary"
+    ],
+    "status": "seed"
+  }
+]
