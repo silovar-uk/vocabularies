@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-07",
+  "batch": "20261007-midnight-semantic-expansion",
+  "term_annotations": {
+    "status-message": {
+      "axis": "画面上の状態変化について、フォーカスを移動させずに支援技術へ意味として通知できているかを見る。",
+      "nearest_terms": [
+        "visibility-system-status"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Visibility of System Statusが一般に利用者へ現在状態を分かりやすく示す設計原則なのに対し、Status Messageはフォーカスを移さず発生した動的変化を支援技術がプログラム的に取得・通知できるかを扱う。",
+      "new_axis": true
+    },
+    "metrological-traceability": {
+      "axis": "測定結果が、校正の切れ目のない連鎖を通じてどの参照基準まで遡れるかを見る。",
+      "nearest_terms": [
+        "measurement-uncertainty",
+        "limits-of-agreement"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Measurement Uncertaintyが一つの測定結果に残る値の不確かさを扱い、Limits of Agreementが二手法間の差を扱うのに対し、Metrological Traceabilityは測定結果と参照基準を結ぶ校正連鎖そのものを扱う。",
+      "new_axis": true
+    },
+    "priority-effect": {
+      "axis": "構成要素を固定したまま、到着順がニッチの先取り・環境改変を通じて後発者と最終構成をどう変えるかを見る。",
+      "nearest_terms": [
+        "path-dependence"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Path Dependenceが過去の選択や出来事によって将来の選択肢が制約される広い履歴依存を扱うのに対し、Priority Effectは生態群集での到着順が先取り・環境改変を通じて後発種の定着を変える具体的機構を扱う。",
+      "new_axis": true
+    },
+    "counterfactual-causation": {
+      "axis": "原因候補を取り除いた反事実的状況を置き、結果がそれに依存して変わるかを見る。",
+      "nearest_terms": [
+        "correlation-causation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Correlation ≠ Causationが相関から因果を即断しないための警告なのに対し、Counterfactual Causationは原因候補が存在しない反事実的状況と比較して因果依存を問う具体的な分析軸を与える。",
+      "new_axis": true
+    },
+    "canary-release": {
+      "axis": "変更内容そのものではなく、本番環境で変更へ曝露する利用者・トラフィックの割合を段階的に制御できるかを見る。",
+      "nearest_terms": [
+        "feature-flag"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Feature Flagが機能の有効・無効や対象者をコード配備と切り離して制御する仕組みなのに対し、Canary Releaseは新バージョンへの本番トラフィックや利用者の曝露割合を段階的に増やし、実測結果で展開判断するリリース戦略を扱う。",
+      "new_axis": true
+    }
+  }
+}
