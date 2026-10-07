@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-07",
+  "batch": "20261007-morning-semantic-expansion",
+  "term_annotations": {
+    "focalization": {
+      "axis": "語り手の身份ではなく、物語情報が誰の知覚・認識・知識の範囲によって選別されているかを見る。",
+      "nearest_terms": [
+        "chronotope",
+        "paratext"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Chronotopeが物語の時間と空間の結びつきを扱い、Paratextが本文外部から読み方を方向づけるのに対し、Focalizationは本文内部で情報が誰の知覚・認識を通して制限されるかを扱う。",
+      "new_axis": true
+    },
+    "springback": {
+      "axis": "成形中の形状ではなく、荷重・拘束を取り除いた後の弾性回復によって最終形状がどれだけ変わるかを見る。",
+      "nearest_terms": [
+        "kerf",
+        "fracture-toughness"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Kerfが切断時に失われる材料幅、Fracture Toughnessが亀裂進展への抵抗を扱うのに対し、Springbackは成形後に荷重を除いた時点で起きる弾性的な形状回復を扱う。",
+      "new_axis": true
+    },
+    "ecological-trap": {
+      "axis": "選択主体の能力ではなく、環境選択に使われる魅力の手掛かりと実際の生存・繁殖価値が乖離していないかを見る。",
+      "nearest_terms": [
+        "priority-effect"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Priority Effectが種の到着順によって後発種の条件と群集構成が変わることを扱うのに対し、Ecological Trapは選択に使う環境手掛かりと実際の適応度の対応が崩れ、低品質環境を選好することを扱う。",
+      "new_axis": true
+    },
+    "usufruct": {
+      "axis": "財産に対する支配を一体の所有権として見ず、所有・使用・収益という権能が誰へ配分されているかを見る。",
+      "nearest_terms": [
+        "bundle-of-rights"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Bundle of Rightsが所有権を複数の権能の束として捉える一般的枠組みなのに対し、Usufructは所有権を他者に残したまま使用と収益の権能を持つ具体的な権利関係を観察する。",
+      "new_axis": true
+    },
+    "capability-based-security": {
+      "axis": "主体の身份や役割ではなく、保持しているcapabilityがどの対象へのどの操作権を具体的に付与しているかを見る。",
+      "nearest_terms": [
+        "least-privilege"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "Least Privilegeが必要最小限の権限だけを与える設計原則なのに対し、Capability-based Securityは対象への参照と操作権を結びつけた保持・委譲可能な権限としてauthorityを表現する仕組みを扱う。",
+      "new_axis": true
+    }
+  }
+}
