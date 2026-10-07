@@ -1,0 +1,193 @@
+[
+  {
+    "id": "focalization",
+    "term": "Focalization",
+    "ja": "焦点化",
+    "aliases": [
+      "焦点化",
+      "Focalisation"
+    ],
+    "fields": [
+      "Narratology",
+      "Literature"
+    ],
+    "one_liner": "物語情報が、誰の知覚・認識を通して読者へ与えられているかを見る。",
+    "description": "物語において、誰が語るかとは別に、誰の知覚・認識・知識の範囲を通して情報が提示されるかを扱う物語論の概念。",
+    "why_selected": "語り手の同定だけでは捉えられない、情報が誰の認識範囲によって制限されているかという観察軸を加えるため。",
+    "feelings": [
+      "三人称なのに一人の人物が知らないことは読者にも分からない",
+      "同じ出来事でも人物ごとに見える情報が違う",
+      "語り手と視点人物が一致しない"
+    ],
+    "before": "語り手は誰？",
+    "after": "この場面の情報は、誰の知覚・認識を通過したものだけ？",
+    "observation_axis": "語り手の身份ではなく、物語情報が誰の知覚・認識・知識の範囲によって選別されているかを見る。",
+    "semantic_cluster": "narrative-perspective",
+    "nearest_terms": [
+      "chronotope",
+      "paratext"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Chronotopeが物語の時間と空間の結びつきを扱い、Paratextが本文外部から読み方を方向づけるのに対し、Focalizationは本文内部で情報が誰の知覚・認識を通して制限されるかを扱う。",
+    "related": [
+      "chronotope",
+      "paratext"
+    ],
+    "sources": [
+      "https://www.cambridge.org/core/books/living-handbook-of-narratology/focalization/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "springback",
+    "term": "Springback",
+    "ja": "スプリングバック／弾性回復",
+    "aliases": [
+      "弾性回復"
+    ],
+    "fields": [
+      "Manufacturing",
+      "Physics",
+      "Design"
+    ],
+    "one_liner": "成形時の力を外したあと、材料が弾性的に戻って狙った形からずれる現象。",
+    "description": "板金などの塑性加工後、荷重や金型を取り除いた際に弾性ひずみが回復し、角度や曲率などの形状が加工中の状態から変化する現象。",
+    "why_selected": "加工を力を加えている瞬間で終わらせず、除荷後に材料がどこへ戻るかという時間方向の観察軸を加えるため。",
+    "feelings": [
+      "90度に曲げたのに手を離すと少し開く",
+      "型通りに加工したのに完成形状が違う",
+      "材料によって戻り量が違う"
+    ],
+    "before": "この角度に曲げれば完成。",
+    "after": "加工力を外したあと、材料はどこまで戻る？",
+    "observation_axis": "成形中の形状ではなく、荷重・拘束を取り除いた後の弾性回復によって最終形状がどれだけ変わるかを見る。",
+    "semantic_cluster": "material-behavior",
+    "nearest_terms": [
+      "kerf",
+      "fracture-toughness"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Kerfが切断時に失われる材料幅、Fracture Toughnessが亀裂進展への抵抗を扱うのに対し、Springbackは成形後に荷重を除いた時点で起きる弾性的な形状回復を扱う。",
+    "related": [
+      "kerf",
+      "fracture-toughness"
+    ],
+    "instruction": "完成角度をそのまま加工角度にせず、材料・板厚・曲げ半径によるスプリングバックを見込んで補正してください。",
+    "sources": [
+      "https://www.nist.gov/publications/springback"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "ecological-trap",
+    "term": "Ecological Trap",
+    "ja": "生態学的罠",
+    "aliases": [
+      "エコロジカル・トラップ"
+    ],
+    "fields": [
+      "Ecology",
+      "Biology"
+    ],
+    "one_liner": "魅力的に見える環境の手掛かりが、実際には生存・繁殖に不利な選択へ導く。",
+    "description": "生物が生息地選択に使う手掛かりと実際の適応度との関係が環境変化などで崩れ、低品質な環境を高品質な環境より選好してしまう現象。",
+    "why_selected": "悪い選択を個体の判断ミスとしてではなく、選択に使う手掛かりと実際の価値の対応関係が壊れた現象として見るため。",
+    "feelings": [
+      "魅力的な場所へ集まるほど生存率が下がる",
+      "昔は有効だったサインが今は危険を示さない",
+      "選好と実際の質が逆転している"
+    ],
+    "before": "なぜそんな悪い場所を選ぶ？",
+    "after": "その生物が良さの判断に使う手掛かりと、実際の生存価値の対応が壊れていない？",
+    "observation_axis": "選択主体の能力ではなく、環境選択に使われる魅力の手掛かりと実際の生存・繁殖価値が乖離していないかを見る。",
+    "semantic_cluster": "cue-fitness-mismatch",
+    "nearest_terms": [
+      "priority-effect"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Priority Effectが種の到着順によって後発種の条件と群集構成が変わることを扱うのに対し、Ecological Trapは選択に使う環境手掛かりと実際の適応度の対応が崩れ、低品質環境を選好することを扱う。",
+    "related": [
+      "priority-effect"
+    ],
+    "sources": [
+      "https://doi.org/10.1016/j.tree.2006.12.004"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "usufruct",
+    "term": "Usufruct",
+    "ja": "用益権",
+    "aliases": [
+      "用益",
+      "usufructuary right"
+    ],
+    "fields": [
+      "Law",
+      "Property Law"
+    ],
+    "one_liner": "所有権を持たなくても、他人の財産を使用し、そこから利益を得られる権利。",
+    "description": "他者が所有する財産について、その本体を毀損せずに使用し、果実や収益などの利益を享受することを認める権利。所有・使用・収益という権能を分けて考えられる。",
+    "why_selected": "財産との関係を所有するか否かの二択ではなく、所有・使用・収益の権能を分解して観察するため。",
+    "feelings": [
+      "使って収益も得ているのに所有者は別",
+      "一つの財産に複数の権利者がいる",
+      "所有せず利用価値だけを持つ"
+    ],
+    "before": "これは誰のもの？",
+    "after": "所有・使用・収益の権利は、それぞれ誰にある？",
+    "observation_axis": "財産に対する支配を一体の所有権として見ず、所有・使用・収益という権能が誰へ配分されているかを見る。",
+    "semantic_cluster": "decomposed-property-rights",
+    "nearest_terms": [
+      "bundle-of-rights"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Bundle of Rightsが所有権を複数の権能の束として捉える一般的枠組みなのに対し、Usufructは所有権を他者に残したまま使用と収益の権能を持つ具体的な権利関係を観察する。",
+    "related": [
+      "bundle-of-rights"
+    ],
+    "sources": [
+      "https://www.law.cornell.edu/wex/usufruct"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "capability-based-security",
+    "term": "Capability-based Security",
+    "ja": "ケイパビリティベース・セキュリティ",
+    "aliases": [
+      "Capability Security",
+      "ケイパビリティ方式"
+    ],
+    "fields": [
+      "Security",
+      "Computer Science",
+      "Systems Design"
+    ],
+    "one_liner": "主体の身份だけでなく、保持している偽造困難な権限トークンによって対象への操作権を与える。",
+    "description": "オブジェクトへの参照と許可された操作を結びつけた偽造困難なcapabilityを保持することによって権限を表現・委譲するアクセス制御の考え方。",
+    "why_selected": "権限を主体の役職や身份だけでなく、今どの対象へ何をする権能を保持しているかとして観察するため。",
+    "feelings": [
+      "管理者だから全部触れる状態を避けたい",
+      "処理ごとに必要な対象だけ渡したい",
+      "権限そのものを安全に委譲したい"
+    ],
+    "before": "このユーザーは何者？",
+    "after": "この主体はいま、どの対象へ何をする権能を保持している？",
+    "observation_axis": "主体の身份や役割ではなく、保持しているcapabilityがどの対象へのどの操作権を具体的に付与しているかを見る。",
+    "semantic_cluster": "authority-representation",
+    "nearest_terms": [
+      "least-privilege"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "Least Privilegeが必要最小限の権限だけを与える設計原則なのに対し、Capability-based Securityは対象への参照と操作権を結びつけた保持・委譲可能な権限としてauthorityを表現する仕組みを扱う。",
+    "related": [
+      "least-privilege"
+    ],
+    "instruction": "広い管理者権限を渡さず、処理に必要な対象と操作だけを示す権限を委譲してください。",
+    "sources": [
+      "https://www.usenix.org/legacy/events/sec99/full_papers/miller/miller.pdf"
+    ],
+    "status": "seed"
+  }
+]
