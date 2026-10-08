@@ -1,0 +1,182 @@
+[
+  {
+    "id": "sensory-reweighting",
+    "term": "Sensory Reweighting",
+    "ja": "感覚の再重みづけ",
+    "fields": [
+      "Neuroscience"
+    ],
+    "one_liner": "感覚情報源の種類ではなく、状況に応じた情報源ごとの信頼度の重みの変化を見る。",
+    "description": "感覚情報源の種類ではなく、状況に応じた情報源ごとの信頼度の重みの変化を見る。",
+    "why_selected": "既存語とは異なる観察対象・作用方向を持つため。",
+    "feelings": [
+      "目を閉じると姿勢が不安定になる。"
+    ],
+    "before": "どの感覚を使う？",
+    "after": "環境によってどの感覚をどれだけ信用する？",
+    "observation_axis": "感覚情報源の種類ではなく、状況に応じた情報源ごとの信頼度の重みの変化を見る。",
+    "semantic_cluster": "embodied-orientation",
+    "nearest_terms": [
+      "proprioception"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "proprioceptionと異なり、感覚情報源の種類ではなく、状況に応じた情報源ごとの信頼度の重みの変化を見る。",
+    "related": [
+      "proprioception"
+    ],
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7900546/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "segmentary-lineage-system",
+    "term": "Segmentary Lineage System",
+    "ja": "分節的出自体系",
+    "fields": [
+      "Anthropology"
+    ],
+    "one_liner": "対立相手の規模に応じて、親族集団のどの階層が連帯するかを見る。",
+    "description": "対立相手の規模に応じて、親族集団のどの階層が連帯するかを見る。",
+    "why_selected": "既存語とは異なる観察対象・作用方向を持つため。",
+    "feelings": [
+      "対立していた家系が外敵に対して協力する。"
+    ],
+    "before": "敵か味方か？",
+    "after": "どの対立階層では仲間になる？",
+    "observation_axis": "対立相手の規模に応じて、親族集団のどの階層が連帯するかを見る。",
+    "semantic_cluster": "segmentary-alliance",
+    "nearest_terms": [
+      "schismogenesis"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "schismogenesisと異なり、対立相手の規模に応じて、親族集団のどの階層が連帯するかを見る。",
+    "related": [
+      "schismogenesis"
+    ],
+    "sources": [
+      "https://doi.org/10.3982/ECTA11415"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "sensory-characteristics",
+    "term": "Sensory Characteristics",
+    "ja": "感覚的特徴への依存",
+    "fields": [
+      "Accessibility"
+    ],
+    "one_liner": "操作対象を説明する文章が色・形・位置・音だけに依存していないかを見る。",
+    "description": "操作対象を説明する文章が色・形・位置・音だけに依存していないかを見る。",
+    "why_selected": "既存語とは異なる観察対象・作用方向を持つため。",
+    "feelings": [
+      "スマホでは『右上の緑のボタン』が通じない。"
+    ],
+    "before": "右上の緑のボタンを押す。",
+    "after": "『保存』ボタンを押す。",
+    "observation_axis": "操作対象を説明する文章が色・形・位置・音だけに依存していないかを見る。",
+    "semantic_cluster": "accessibility-semantics",
+    "nearest_terms": [
+      "accessible-name"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "accessible-nameと異なり、操作対象を説明する文章が色・形・位置・音だけに依存していないかを見る。",
+    "related": [
+      "accessible-name"
+    ],
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "outgassing",
+    "term": "Outgassing",
+    "ja": "アウトガス",
+    "fields": [
+      "Materials"
+    ],
+    "one_liner": "材料の形状や強度ではなく、材料から周囲へ放出される揮発性物質と汚染を見る。",
+    "description": "材料の形状や強度ではなく、材料から周囲へ放出される揮発性物質と汚染を見る。",
+    "why_selected": "既存語とは異なる観察対象・作用方向を持つため。",
+    "feelings": [
+      "接着剤からの放出物が光学部品に付着する。"
+    ],
+    "before": "十分な接着強度がある？",
+    "after": "放出物が周囲の部品を汚染しない？",
+    "observation_axis": "材料の形状や強度ではなく、材料から周囲へ放出される揮発性物質と汚染を見る。",
+    "semantic_cluster": "material-behavior",
+    "nearest_terms": [
+      "creep"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "creepと異なり、材料の形状や強度ではなく、材料から周囲へ放出される揮発性物質と汚染を見る。",
+    "related": [
+      "creep"
+    ],
+    "sources": [
+      "https://outgassing.nasa.gov/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "pseudomorph",
+    "term": "Pseudomorph",
+    "ja": "偽晶",
+    "fields": [
+      "Mineralogy"
+    ],
+    "one_liner": "現在の物質組成と、その外形を作った元の鉱物が一致しているかを見る。",
+    "description": "現在の物質組成と、その外形を作った元の鉱物が一致しているかを見る。",
+    "why_selected": "既存語とは異なる観察対象・作用方向を持つため。",
+    "feelings": [
+      "別鉱物へ置換されたのに結晶形だけ残る。"
+    ],
+    "before": "この形は何の鉱物？",
+    "after": "形を作った鉱物と今の組成は同じ？",
+    "observation_axis": "現在の物質組成と、その外形を作った元の鉱物が一致しているかを見る。",
+    "semantic_cluster": "mineral-replacement",
+    "nearest_terms": [
+      "taphonomy"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "taphonomyと異なり、現在の物質組成と、その外形を作った元の鉱物が一致しているかを見る。",
+    "related": [
+      "taphonomy"
+    ],
+    "sources": [
+      "https://www.mindat.org/glossary/pseudomorph"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "taint-tracking",
+    "term": "Taint Tracking",
+    "ja": "テイント追跡",
+    "fields": [
+      "Software Security"
+    ],
+    "one_liner": "入力値の現在の形ではなく、信頼できない由来と危険な到達先への伝播を見る。",
+    "description": "入力値の現在の形ではなく、信頼できない由来と危険な到達先への伝播を見る。",
+    "why_selected": "既存語とは異なる観察対象・作用方向を持つため。",
+    "feelings": [
+      "コピーされた外部入力がSQL実行へ到達する。"
+    ],
+    "before": "直接入力していないから安全？",
+    "after": "この値は外部入力から伝播していない？",
+    "observation_axis": "入力値の現在の形ではなく、信頼できない由来と危険な到達先への伝播を見る。",
+    "semantic_cluster": "data-provenance-security",
+    "nearest_terms": [
+      "capability-based-security"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "capability-based-securityと異なり、入力値の現在の形ではなく、信頼できない由来と危険な到達先への伝播を見る。",
+    "related": [
+      "capability-based-security"
+    ],
+    "sources": [
+      "https://codeql.github.com/docs/codeql-language-guides/analyzing-data-flow-in-javascript-and-typescript/"
+    ],
+    "status": "seed"
+  }
+]
