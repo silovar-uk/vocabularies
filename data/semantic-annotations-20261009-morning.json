@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-09",
+  "batch": "20261009-morning",
+  "term_annotations": {
+    "sensory-reweighting": {
+      "axis": "感覚情報源の種類ではなく、状況に応じた情報源ごとの信頼度の重みの変化を見る。",
+      "nearest_terms": [
+        "proprioception"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "proprioceptionと異なり、感覚情報源の種類ではなく、状況に応じた情報源ごとの信頼度の重みの変化を見る。",
+      "new_axis": true
+    },
+    "segmentary-lineage-system": {
+      "axis": "対立相手の規模に応じて、親族集団のどの階層が連帯するかを見る。",
+      "nearest_terms": [
+        "schismogenesis"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "schismogenesisと異なり、対立相手の規模に応じて、親族集団のどの階層が連帯するかを見る。",
+      "new_axis": true
+    },
+    "sensory-characteristics": {
+      "axis": "操作対象を説明する文章が色・形・位置・音だけに依存していないかを見る。",
+      "nearest_terms": [
+        "accessible-name"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "accessible-nameと異なり、操作対象を説明する文章が色・形・位置・音だけに依存していないかを見る。",
+      "new_axis": true
+    },
+    "outgassing": {
+      "axis": "材料の形状や強度ではなく、材料から周囲へ放出される揮発性物質と汚染を見る。",
+      "nearest_terms": [
+        "creep"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "creepと異なり、材料の形状や強度ではなく、材料から周囲へ放出される揮発性物質と汚染を見る。",
+      "new_axis": true
+    },
+    "pseudomorph": {
+      "axis": "現在の物質組成と、その外形を作った元の鉱物が一致しているかを見る。",
+      "nearest_terms": [
+        "taphonomy"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "taphonomyと異なり、現在の物質組成と、その外形を作った元の鉱物が一致しているかを見る。",
+      "new_axis": true
+    },
+    "taint-tracking": {
+      "axis": "入力値の現在の形ではなく、信頼できない由来と危険な到達先への伝播を見る。",
+      "nearest_terms": [
+        "capability-based-security"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "capability-based-securityと異なり、入力値の現在の形ではなく、信頼できない由来と危険な到達先への伝播を見る。",
+      "new_axis": true
+    }
+  }
+}
