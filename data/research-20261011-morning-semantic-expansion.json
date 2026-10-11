@@ -1,0 +1,153 @@
+[
+  {
+    "id": "body-schema",
+    "term": "Body Schema",
+    "ja": "身体図式",
+    "fields": [
+      "Neuroscience"
+    ],
+    "one_liner": "身体の位置を感知することではなく、身体状態の表象が行為の計画・制御にどう使われるかを見る。",
+    "description": "身体の位置を感知することではなく、身体状態の表象が行為の計画・制御にどう使われるかを見る。",
+    "why_selected": "既存語とは分析対象・作用方向が異なる観察軸を導入する。",
+    "feelings": [
+      "目を閉じてもコップを口に運べる。"
+    ],
+    "before": "身体の位置をどう感じる？",
+    "after": "その情報を使って動作をどう制御する？",
+    "observation_axis": "身体の位置を感知することではなく、身体状態の表象が行為の計画・制御にどう使われるかを見る。",
+    "semantic_cluster": "embodied-action",
+    "nearest_terms": [
+      "proprioception"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "proprioceptionは別の対象を扱う。一方、身体の位置を感知することではなく、身体状態の表象が行為の計画・制御にどう使われるかを見る。",
+    "related": [
+      "proprioception"
+    ],
+    "sources": [
+      "https://plato.stanford.edu/entries/bodily-awareness/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "narrative-frequency",
+    "term": "Narrative Frequency",
+    "ja": "物語頻度",
+    "fields": [
+      "Narratology"
+    ],
+    "one_liner": "出来事が起きた回数と、それが語られた回数の対応関係を見る。",
+    "description": "出来事が起きた回数と、それが語られた回数の対応関係を見る。",
+    "why_selected": "既存語とは分析対象・作用方向が異なる観察軸を導入する。",
+    "feelings": [
+      "一度の事件が三人によって三度語られる。"
+    ],
+    "before": "事件はいつ語られた？",
+    "after": "事件は何回起き、何回語られた？",
+    "observation_axis": "出来事が起きた回数と、それが語られた回数の対応関係を見る。",
+    "semantic_cluster": "narrative-event-count",
+    "nearest_terms": [
+      "analepsis"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "analepsisは別の対象を扱う。一方、出来事が起きた回数と、それが語られた回数の対応関係を見る。",
+    "related": [
+      "analepsis"
+    ],
+    "sources": [
+      "https://www.signosemio.com/genette/narratology.asp"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "chroma-subsampling",
+    "term": "Chroma Subsampling",
+    "ja": "色差サブサンプリング",
+    "fields": [
+      "Video Production"
+    ],
+    "one_liner": "色の再現範囲ではなく、輝度と色差の空間的な記録密度の違いを見る。",
+    "description": "色の再現範囲ではなく、輝度と色差の空間的な記録密度の違いを見る。",
+    "why_selected": "既存語とは分析対象・作用方向が異なる観察軸を導入する。",
+    "feelings": [
+      "高解像度動画なのに赤い細字の輪郭がにじむ。"
+    ],
+    "before": "動画の解像度を上げる。",
+    "after": "色差情報の間引きで細部が失われていないか？",
+    "observation_axis": "色の再現範囲ではなく、輝度と色差の空間的な記録密度の違いを見る。",
+    "semantic_cluster": "color-spatial-sampling",
+    "nearest_terms": [
+      "gamut-mapping"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "gamut-mappingは別の対象を扱う。一方、色の再現範囲ではなく、輝度と色差の空間的な記録密度の違いを見る。",
+    "related": [
+      "gamut-mapping"
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Video_concepts"
+    ],
+    "status": "seed",
+    "instruction": "小さな文字や細い色境界について、4:2:0出力時の色にじみを検査し、必要なら編集用中間ファイルの色差サンプリングを見直してください。"
+  },
+  {
+    "id": "hydraulic-redistribution",
+    "term": "Hydraulic Redistribution",
+    "ja": "水理的再分配",
+    "fields": [
+      "Plant Ecology"
+    ],
+    "one_liner": "植物が吸水するだけでなく、根を介して湿った土壌から乾いた土壌へ水を移動させる作用を見る。",
+    "description": "植物が吸水するだけでなく、根を介して湿った土壌から乾いた土壌へ水を移動させる作用を見る。",
+    "why_selected": "既存語とは分析対象・作用方向が異なる観察軸を導入する。",
+    "feelings": [
+      "雨が降っていないのに表層の土壌水分が増える。"
+    ],
+    "before": "植物はどこから水を吸う？",
+    "after": "根を通じて土壌のどこへ水を運ぶ？",
+    "observation_axis": "植物が吸水するだけでなく、根を介して湿った土壌から乾いた土壌へ水を移動させる作用を見る。",
+    "semantic_cluster": "root-mediated-water-transfer",
+    "nearest_terms": [
+      "priority-effect"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "priority-effectは別の対象を扱う。一方、植物が吸水するだけでなく、根を介して湿った土壌から乾いた土壌へ水を移動させる作用を見る。",
+    "related": [
+      "priority-effect"
+    ],
+    "sources": [
+      "https://doi.org/10.1111/j.1469-8137.2004.01093.x"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "paraconsistent-logic",
+    "term": "Paraconsistent Logic",
+    "ja": "矛盾許容論理",
+    "fields": [
+      "Logic"
+    ],
+    "one_liner": "矛盾を含む命題群から任意の結論が導けるという爆発原理を拒否し、推論可能性を区別する。",
+    "description": "矛盾を含む命題群から任意の結論が導けるという爆発原理を拒否し、推論可能性を区別する。",
+    "why_selected": "既存語とは分析対象・作用方向が異なる観察軸を導入する。",
+    "feelings": [
+      "矛盾する二つの記録があっても他の判断まで無効にはならない。"
+    ],
+    "before": "矛盾があれば何でも言える？",
+    "after": "矛盾があっても正当化できる推論はどれ？",
+    "observation_axis": "矛盾を含む命題群から任意の結論が導けるという爆発原理を拒否し、推論可能性を区別する。",
+    "semantic_cluster": "inference-under-contradiction",
+    "nearest_terms": [
+      "underdetermination"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "underdeterminationは別の対象を扱う。一方、矛盾を含む命題群から任意の結論が導けるという爆発原理を拒否し、推論可能性を区別する。",
+    "related": [
+      "underdetermination"
+    ],
+    "sources": [
+      "https://plato.stanford.edu/entries/logic-paraconsistent/"
+    ],
+    "status": "seed"
+  }
+]
