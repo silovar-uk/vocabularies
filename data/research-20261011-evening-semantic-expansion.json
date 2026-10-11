@@ -1,0 +1,184 @@
+[
+  {
+    "id": "imposition",
+    "term": "Imposition",
+    "ja": "面付け",
+    "fields": [
+      "Print Production"
+    ],
+    "one_liner": "完成した読書順と、印刷・折り・製本を経て正しい順になる紙面配置の差を観察する。",
+    "description": "完成した読書順と、印刷・折り・製本を経て正しい順になる紙面配置の差を観察する。",
+    "why_selected": "bleedとは観察対象または測定条件が異なるため。",
+    "feelings": [
+      "PDFでは順番通りでも折った冊子ではページが乱れる。"
+    ],
+    "before": "PDFのページ順は正しい？",
+    "after": "製本後に正しいページ順になる？",
+    "observation_axis": "完成した読書順と、印刷・折り・製本を経て正しい順になる紙面配置の差を観察する。",
+    "semantic_cluster": "print-production-sequencing",
+    "nearest_terms": [
+      "bleed"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "bleedが扱う問いとは異なり、完成した読書順と、印刷・折り・製本を経て正しい順になる紙面配置の差を観察する。",
+    "related": [
+      "bleed"
+    ],
+    "sources": [
+      "https://helpx.adobe.com/acrobat/using/print-booklets.html"
+    ],
+    "status": "seed",
+    "instruction": "冊子の綴じ方向と製本方式を確認し、面付け後のページ順、天地、空白ページを校正する。入稿先が面付けする場合は制作側で並べ替えない。"
+  },
+  {
+    "id": "language-of-parts",
+    "term": "Language of Parts",
+    "ja": "部分ごとの言語指定",
+    "fields": [
+      "Web Accessibility"
+    ],
+    "one_liner": "文章中で言語が切り替わる箇所を支援技術が認識できるかを見る。",
+    "description": "文章中で言語が切り替わる箇所を支援技術が認識できるかを見る。",
+    "why_selected": "accessible-nameとは観察対象または測定条件が異なるため。",
+    "feelings": [
+      "英語の一文が日本語の読み上げ規則で発音される。"
+    ],
+    "before": "二つの言語が表示されている？",
+    "after": "言語の切り替わりが支援技術に伝わる？",
+    "observation_axis": "文章中で言語が切り替わる箇所を支援技術が認識できるかを見る。",
+    "semantic_cluster": "accessibility-language-metadata",
+    "nearest_terms": [
+      "accessible-name"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "accessible-nameが扱う問いとは異なり、文章中で言語が切り替わる箇所を支援技術が認識できるかを見る。",
+    "related": [
+      "accessible-name"
+    ],
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts.html"
+    ],
+    "status": "seed",
+    "instruction": "独立した英語の文章に適切なlang属性を指定し、固有名詞等の例外を確認して読み上げを検証する。"
+  },
+  {
+    "id": "space-syntax",
+    "term": "Space Syntax",
+    "ja": "空間構文論",
+    "fields": [
+      "Architecture"
+    ],
+    "one_liner": "個々の場所の形や可視域ではなく、空間相互の接続構造が移動に与える影響を見る。",
+    "description": "個々の場所の形や可視域ではなく、空間相互の接続構造が移動に与える影響を見る。",
+    "why_selected": "isovistとは観察対象または測定条件が異なるため。",
+    "feelings": [
+      "設備に特徴のない通路に人が集まりやすい。"
+    ],
+    "before": "どこが広い？",
+    "after": "どの空間が経路ネットワークの中心にある？",
+    "observation_axis": "個々の場所の形や可視域ではなく、空間相互の接続構造が移動に与える影響を見る。",
+    "semantic_cluster": "spatial-network-configuration",
+    "nearest_terms": [
+      "isovist"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "isovistが扱う問いとは異なり、個々の場所の形や可視域ではなく、空間相互の接続構造が移動に与える影響を見る。",
+    "related": [
+      "isovist"
+    ],
+    "sources": [
+      "https://www.spacesyntax.com/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "negative-control",
+    "term": "Negative Control",
+    "ja": "負の対照",
+    "fields": [
+      "Causal Inference"
+    ],
+    "one_liner": "因果効果がないと想定する対象にも関連が出るかを検査し、交絡や偏りを探る。",
+    "description": "因果効果がないと想定する対象にも関連が出るかを検査し、交絡や偏りを探る。",
+    "why_selected": "counterfactual-causationとは観察対象または測定条件が異なるため。",
+    "feelings": [
+      "因果的に無関係なはずの結果にも関連が見つかる。"
+    ],
+    "before": "予想した関連は出た？",
+    "after": "出ないはずの関連まで出ていない？",
+    "observation_axis": "因果効果がないと想定する対象にも関連が出るかを検査し、交絡や偏りを探る。",
+    "semantic_cluster": "negative-control-causal-diagnostics",
+    "nearest_terms": [
+      "counterfactual-causation"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "counterfactual-causationが扱う問いとは異なり、因果効果がないと想定する対象にも関連が出るかを検査し、交絡や偏りを探る。",
+    "related": [
+      "counterfactual-causation"
+    ],
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC3053408/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "legal-pluralism",
+    "term": "Legal Pluralism",
+    "ja": "法多元主義",
+    "fields": [
+      "Legal Anthropology"
+    ],
+    "one_liner": "単一の国家法だけでなく、複数の規範秩序が共存・競合する仕組みを見る。",
+    "description": "単一の国家法だけでなく、複数の規範秩序が共存・競合する仕組みを見る。",
+    "why_selected": "usufructとは観察対象または測定条件が異なるため。",
+    "feelings": [
+      "国家法と地域の慣習規範が異なる行動を求める。"
+    ],
+    "before": "国の法律はどうなっている？",
+    "after": "実際にはどの規範秩序が人を規律している？",
+    "observation_axis": "単一の国家法だけでなく、複数の規範秩序が共存・競合する仕組みを見る。",
+    "semantic_cluster": "coexisting-normative-orders",
+    "nearest_terms": [
+      "usufruct"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "usufructが扱う問いとは異なり、単一の国家法だけでなく、複数の規範秩序が共存・競合する仕組みを見る。",
+    "related": [
+      "usufruct"
+    ],
+    "sources": [
+      "https://www.britannica.com/topic/legal-pluralism"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "stress-relaxation",
+    "term": "Stress Relaxation",
+    "ja": "応力緩和",
+    "fields": [
+      "Materials Science"
+    ],
+    "one_liner": "材料の変形量を固定したときに、内部応力や反発力が時間とともに減少するかを見る。",
+    "description": "材料の変形量を固定したときに、内部応力や反発力が時間とともに減少するかを見る。",
+    "why_selected": "creepとは観察対象または測定条件が異なるため。",
+    "feelings": [
+      "パッキンの厚みは同じなのに密封力が低下する。"
+    ],
+    "before": "形状は変わっていない？",
+    "after": "一定の変形を保っても反発力は低下していない？",
+    "observation_axis": "材料の変形量を固定したときに、内部応力や反発力が時間とともに減少するかを見る。",
+    "semantic_cluster": "fixed-strain-force-decay",
+    "nearest_terms": [
+      "creep"
+    ],
+    "semantic_distance": "B",
+    "difference_from_nearest": "creepが扱う問いとは異なり、材料の変形量を固定したときに、内部応力や反発力が時間とともに減少するかを見る。",
+    "related": [
+      "creep"
+    ],
+    "sources": [
+      "https://www.iso.org/standard/56613.html"
+    ],
+    "status": "seed"
+  }
+]
