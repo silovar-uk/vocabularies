@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-11",
+  "batch": "20261011-evening",
+  "term_annotations": {
+    "imposition": {
+      "axis": "完成した読書順と、印刷・折り・製本を経て正しい順になる紙面配置の差を観察する。",
+      "nearest_terms": [
+        "bleed"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "bleedが扱う問いとは異なり、完成した読書順と、印刷・折り・製本を経て正しい順になる紙面配置の差を観察する。",
+      "new_axis": true
+    },
+    "language-of-parts": {
+      "axis": "文章中で言語が切り替わる箇所を支援技術が認識できるかを見る。",
+      "nearest_terms": [
+        "accessible-name"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "accessible-nameが扱う問いとは異なり、文章中で言語が切り替わる箇所を支援技術が認識できるかを見る。",
+      "new_axis": true
+    },
+    "space-syntax": {
+      "axis": "個々の場所の形や可視域ではなく、空間相互の接続構造が移動に与える影響を見る。",
+      "nearest_terms": [
+        "isovist"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "isovistが扱う問いとは異なり、個々の場所の形や可視域ではなく、空間相互の接続構造が移動に与える影響を見る。",
+      "new_axis": true
+    },
+    "negative-control": {
+      "axis": "因果効果がないと想定する対象にも関連が出るかを検査し、交絡や偏りを探る。",
+      "nearest_terms": [
+        "counterfactual-causation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "counterfactual-causationが扱う問いとは異なり、因果効果がないと想定する対象にも関連が出るかを検査し、交絡や偏りを探る。",
+      "new_axis": true
+    },
+    "legal-pluralism": {
+      "axis": "単一の国家法だけでなく、複数の規範秩序が共存・競合する仕組みを見る。",
+      "nearest_terms": [
+        "usufruct"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "usufructが扱う問いとは異なり、単一の国家法だけでなく、複数の規範秩序が共存・競合する仕組みを見る。",
+      "new_axis": true
+    },
+    "stress-relaxation": {
+      "axis": "材料の変形量を固定したときに、内部応力や反発力が時間とともに減少するかを見る。",
+      "nearest_terms": [
+        "creep"
+      ],
+      "distance": "B",
+      "difference_from_nearest": "creepが扱う問いとは異なり、材料の変形量を固定したときに、内部応力や反発力が時間とともに減少するかを見る。",
+      "new_axis": true
+    }
+  }
+}
