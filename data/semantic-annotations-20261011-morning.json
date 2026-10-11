@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-11",
+  "batch": "20261011-morning",
+  "term_annotations": {
+    "body-schema": {
+      "axis": "身体の位置を感知することではなく、身体状態の表象が行為の計画・制御にどう使われるかを見る。",
+      "nearest_terms": [
+        "proprioception"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "proprioceptionは別の対象を扱う。一方、身体の位置を感知することではなく、身体状態の表象が行為の計画・制御にどう使われるかを見る。",
+      "new_axis": true
+    },
+    "narrative-frequency": {
+      "axis": "出来事が起きた回数と、それが語られた回数の対応関係を見る。",
+      "nearest_terms": [
+        "analepsis"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "analepsisは別の対象を扱う。一方、出来事が起きた回数と、それが語られた回数の対応関係を見る。",
+      "new_axis": true
+    },
+    "chroma-subsampling": {
+      "axis": "色の再現範囲ではなく、輝度と色差の空間的な記録密度の違いを見る。",
+      "nearest_terms": [
+        "gamut-mapping"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "gamut-mappingは別の対象を扱う。一方、色の再現範囲ではなく、輝度と色差の空間的な記録密度の違いを見る。",
+      "new_axis": true
+    },
+    "hydraulic-redistribution": {
+      "axis": "植物が吸水するだけでなく、根を介して湿った土壌から乾いた土壌へ水を移動させる作用を見る。",
+      "nearest_terms": [
+        "priority-effect"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "priority-effectは別の対象を扱う。一方、植物が吸水するだけでなく、根を介して湿った土壌から乾いた土壌へ水を移動させる作用を見る。",
+      "new_axis": true
+    },
+    "paraconsistent-logic": {
+      "axis": "矛盾を含む命題群から任意の結論が導けるという爆発原理を拒否し、推論可能性を区別する。",
+      "nearest_terms": [
+        "underdetermination"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "underdeterminationは別の対象を扱う。一方、矛盾を含む命題群から任意の結論が導けるという爆発原理を拒否し、推論可能性を区別する。",
+      "new_axis": true
+    }
+  }
+}
