@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-12",
+  "batch": "20261012-morning",
+  "term_annotations": {
+    "regulatory-capture": {
+      "axis": "規制対象の利益が監督当局の判断に浸透し、規制目的と実際の受益者が乖離する過程を見る。",
+      "nearest_terms": [
+        "rent-seeking"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "rent-seekingの観察対象とは異なり、規制対象の利益が監督当局の判断に浸透し、規制目的と実際の受益者が乖離する過程を見る。",
+      "new_axis": true
+    },
+    "peripersonal-space": {
+      "axis": "身体外部の空間を単なる距離ではなく、接触・到達・防御の可能性で表象する仕組みを見る。",
+      "nearest_terms": [
+        "body-schema"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "body-schemaの観察対象とは異なり、身体外部の空間を単なる距離ではなく、接触・到達・防御の可能性で表象する仕組みを見る。",
+      "new_axis": true
+    },
+    "onion-skinning": {
+      "axis": "隣接する時点の絵を半透明で重ね、コマ間の軌道・間隔・形状差を検査する。",
+      "nearest_terms": [
+        "animation-from-interaction"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "animation-from-interactionの観察対象とは異なり、隣接する時点の絵を半透明で重ね、コマ間の軌道・間隔・形状差を検査する。",
+      "new_axis": true
+    },
+    "content-addressed-storage": {
+      "axis": "ファイル名や保存場所ではなく、データ内容から導く識別子を保存と参照に用いる。",
+      "nearest_terms": [
+        "checksum"
+      ],
+      "distance": "B",
+      "difference_from_nearest": "checksumの観察対象とは異なり、ファイル名や保存場所ではなく、データ内容から導く識別子を保存と参照に用いる。",
+      "new_axis": true
+    },
+    "suppletion": {
+      "axis": "一つの語の活用体系に異なる歴史的語根の形が組み込まれる現象を見る。",
+      "nearest_terms": [
+        "markedness"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "markednessの観察対象とは異なり、一つの語の活用体系に異なる歴史的語根の形が組み込まれる現象を見る。",
+      "new_axis": true
+    },
+    "solifluction": {
+      "axis": "寒冷地の水分条件や凍結融解に伴い、地表付近の土壌が斜面を緩慢に移動する過程を見る。",
+      "nearest_terms": [
+        "soil-liquefaction"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "soil-liquefactionの観察対象とは異なり、寒冷地の水分条件や凍結融解に伴い、地表付近の土壌が斜面を緩慢に移動する過程を見る。",
+      "new_axis": true
+    }
+  }
+}
