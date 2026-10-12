@@ -1,0 +1,184 @@
+[
+  {
+    "id": "space-time-prism",
+    "term": "Space–Time Prism",
+    "ja": "時空間プリズム",
+    "fields": [
+      "Time Geography"
+    ],
+    "one_liner": "移動時間・活動時間・帰着時刻の制約の下で、個人が到達可能な時空間範囲を調べる。",
+    "description": "移動時間・活動時間・帰着時刻の制約の下で、個人が到達可能な時空間範囲を調べる。",
+    "why_selected": "space-syntaxとは分析単位または作用方向が異なる。",
+    "feelings": [
+      "近くの施設でも往復時間が足りず利用できない。"
+    ],
+    "before": "施設は近い？",
+    "after": "その人の時間制約の中で往復できる？",
+    "observation_axis": "移動時間・活動時間・帰着時刻の制約の下で、個人が到達可能な時空間範囲を調べる。",
+    "semantic_cluster": "time-constrained-reachability",
+    "nearest_terms": [
+      "space-syntax"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "space-syntaxが対象とする現象とは異なり、移動時間・活動時間・帰着時刻の制約の下で、個人が到達可能な時空間範囲を調べる。",
+    "related": [
+      "space-syntax"
+    ],
+    "sources": [
+      "https://doi.org/10.1111/j.1538-4632.1970.tb00149.x"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "strategy-proofness",
+    "term": "Strategy-Proofness",
+    "ja": "戦略的操作不能性",
+    "fields": [
+      "Mechanism Design"
+    ],
+    "one_liner": "他者の申告にかかわらず、本人が選好を正直に申告することが最善になる制度かを見る。",
+    "description": "他者の申告にかかわらず、本人が選好を正直に申告することが最善になる制度かを見る。",
+    "why_selected": "preference-falsificationとは分析単位または作用方向が異なる。",
+    "feelings": [
+      "希望調査で本当の第一希望を隠す方が有利になる。"
+    ],
+    "before": "正直に答えてほしいと頼んだ？",
+    "after": "正直な申告が不利にならないルールか？",
+    "observation_axis": "他者の申告にかかわらず、本人が選好を正直に申告することが最善になる制度かを見る。",
+    "semantic_cluster": "incentive-compatible-reporting",
+    "nearest_terms": [
+      "preference-falsification"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "preference-falsificationが対象とする現象とは異なり、他者の申告にかかわらず、本人が選好を正直に申告することが最善になる制度かを見る。",
+    "related": [
+      "preference-falsification"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Strategyproofness"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "premultiplied-alpha",
+    "term": "Premultiplied Alpha",
+    "ja": "乗算済みアルファ",
+    "fields": [
+      "Image Processing"
+    ],
+    "one_liner": "透明度とRGB値をどのような関係で保持し、補間・合成するかを調べる。",
+    "description": "透明度とRGB値をどのような関係で保持し、補間・合成するかを調べる。",
+    "why_selected": "chroma-subsamplingとは分析単位または作用方向が異なる。",
+    "feelings": [
+      "透過素材の輪郭に黒い縁が生じる。"
+    ],
+    "before": "輪郭をきれいにする？",
+    "after": "アルファの表現方式と合成処理が一致している？",
+    "observation_axis": "透明度とRGB値をどのような関係で保持し、補間・合成するかを調べる。",
+    "semantic_cluster": "alpha-color-representation",
+    "nearest_terms": [
+      "chroma-subsampling"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "chroma-subsamplingが対象とする現象とは異なり、透明度とRGB値をどのような関係で保持し、補間・合成するかを調べる。",
+    "related": [
+      "chroma-subsampling"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/compositing-1/"
+    ],
+    "status": "seed",
+    "instruction": "透過素材の輪郭の色にじみについて、ストレートアルファと乗算済みアルファの扱いを確認し、読み込み・補間・合成・書き出しの整合性を検証する。"
+  },
+  {
+    "id": "identify-input-purpose",
+    "term": "Identify Input Purpose",
+    "ja": "入力目的の識別",
+    "fields": [
+      "Web Accessibility"
+    ],
+    "one_liner": "入力欄の表示名とは別に、要求する個人情報の種類をプログラムが識別できるかを見る。",
+    "description": "入力欄の表示名とは別に、要求する個人情報の種類をプログラムが識別できるかを見る。",
+    "why_selected": "accessible-nameとは分析単位または作用方向が異なる。",
+    "feelings": [
+      "氏名や住所の自動入力が正しく働かない。"
+    ],
+    "before": "入力欄にラベルがある？",
+    "after": "入力目的をブラウザーや支援技術が識別できる？",
+    "observation_axis": "入力欄の表示名とは別に、要求する個人情報の種類をプログラムが識別できるかを見る。",
+    "semantic_cluster": "form-purpose-metadata",
+    "nearest_terms": [
+      "accessible-name"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "accessible-nameが対象とする現象とは異なり、入力欄の表示名とは別に、要求する個人情報の種類をプログラムが識別できるかを見る。",
+    "related": [
+      "accessible-name"
+    ],
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html"
+    ],
+    "status": "seed",
+    "instruction": "本人情報を求める入力欄のautocomplete属性を入力目的に合わせて指定し、配送先と請求先も区別する。"
+  },
+  {
+    "id": "kleptoplasty",
+    "term": "Kleptoplasty",
+    "ja": "葉緑体盗用・クレプトプラスティ",
+    "fields": [
+      "Cell Biology"
+    ],
+    "one_liner": "食べた生物に由来する葉緑体を取り込み、その機能を体内で維持できるかを見る。",
+    "description": "食べた生物に由来する葉緑体を取り込み、その機能を体内で維持できるかを見る。",
+    "why_selected": "niche-constructionとは分析単位または作用方向が異なる。",
+    "feelings": [
+      "ウミウシが藻類由来の葉緑体を保持する。"
+    ],
+    "before": "この動物は何を食べる？",
+    "after": "食べた相手の細胞小器官を機能させている？",
+    "observation_axis": "食べた生物に由来する葉緑体を取り込み、その機能を体内で維持できるかを見る。",
+    "semantic_cluster": "organelle-functional-retention",
+    "nearest_terms": [
+      "niche-construction"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "niche-constructionが対象とする現象とは異なり、食べた生物に由来する葉緑体を取り込み、その機能を体内で維持できるかを見る。",
+    "related": [
+      "niche-construction"
+    ],
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC3575929/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "inharmonicity",
+    "term": "Inharmonicity",
+    "ja": "不調和度",
+    "fields": [
+      "Acoustics"
+    ],
+    "one_liner": "実際の部分音が理想的な整数倍の倍音列からどの程度ずれているかを見る。",
+    "description": "実際の部分音が理想的な整数倍の倍音列からどの程度ずれているかを見る。",
+    "why_selected": "missing-fundamentalとは分析単位または作用方向が異なる。",
+    "feelings": [
+      "ピアノのオクターブを周波数比どおりに合わせても自然に響かない。"
+    ],
+    "before": "基音の周波数比は正しい？",
+    "after": "部分音のずれを考慮するとどう響く？",
+    "observation_axis": "実際の部分音が理想的な整数倍の倍音列からどの程度ずれているかを見る。",
+    "semantic_cluster": "partial-frequency-deviation",
+    "nearest_terms": [
+      "missing-fundamental"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "missing-fundamentalが対象とする現象とは異なり、実際の部分音が理想的な整数倍の倍音列からどの程度ずれているかを見る。",
+    "related": [
+      "missing-fundamental"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Inharmonicity"
+    ],
+    "status": "seed"
+  }
+]
