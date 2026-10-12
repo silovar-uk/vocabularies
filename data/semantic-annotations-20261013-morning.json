@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-13",
+  "batch": "20261013-morning",
+  "term_annotations": {
+    "space-time-prism": {
+      "axis": "移動時間・活動時間・帰着時刻の制約の下で、個人が到達可能な時空間範囲を調べる。",
+      "nearest_terms": [
+        "space-syntax"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "space-syntaxが対象とする現象とは異なり、移動時間・活動時間・帰着時刻の制約の下で、個人が到達可能な時空間範囲を調べる。",
+      "new_axis": true
+    },
+    "strategy-proofness": {
+      "axis": "他者の申告にかかわらず、本人が選好を正直に申告することが最善になる制度かを見る。",
+      "nearest_terms": [
+        "preference-falsification"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "preference-falsificationが対象とする現象とは異なり、他者の申告にかかわらず、本人が選好を正直に申告することが最善になる制度かを見る。",
+      "new_axis": true
+    },
+    "premultiplied-alpha": {
+      "axis": "透明度とRGB値をどのような関係で保持し、補間・合成するかを調べる。",
+      "nearest_terms": [
+        "chroma-subsampling"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "chroma-subsamplingが対象とする現象とは異なり、透明度とRGB値をどのような関係で保持し、補間・合成するかを調べる。",
+      "new_axis": true
+    },
+    "identify-input-purpose": {
+      "axis": "入力欄の表示名とは別に、要求する個人情報の種類をプログラムが識別できるかを見る。",
+      "nearest_terms": [
+        "accessible-name"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "accessible-nameが対象とする現象とは異なり、入力欄の表示名とは別に、要求する個人情報の種類をプログラムが識別できるかを見る。",
+      "new_axis": true
+    },
+    "kleptoplasty": {
+      "axis": "食べた生物に由来する葉緑体を取り込み、その機能を体内で維持できるかを見る。",
+      "nearest_terms": [
+        "niche-construction"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "niche-constructionが対象とする現象とは異なり、食べた生物に由来する葉緑体を取り込み、その機能を体内で維持できるかを見る。",
+      "new_axis": true
+    },
+    "inharmonicity": {
+      "axis": "実際の部分音が理想的な整数倍の倍音列からどの程度ずれているかを見る。",
+      "nearest_terms": [
+        "missing-fundamental"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "missing-fundamentalが対象とする現象とは異なり、実際の部分音が理想的な整数倍の倍音列からどの程度ずれているかを見る。",
+      "new_axis": true
+    }
+  }
+}
