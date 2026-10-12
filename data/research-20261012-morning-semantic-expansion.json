@@ -1,0 +1,184 @@
+[
+  {
+    "id": "regulatory-capture",
+    "term": "Regulatory Capture",
+    "ja": "規制の虜",
+    "fields": [
+      "Political Economy"
+    ],
+    "one_liner": "規制対象の利益が監督当局の判断に浸透し、規制目的と実際の受益者が乖離する過程を見る。",
+    "description": "規制対象の利益が監督当局の判断に浸透し、規制目的と実際の受益者が乖離する過程を見る。",
+    "why_selected": "既存のrent-seekingと異なる観察単位・作用方向を導入するため。",
+    "feelings": [
+      "監督機関が規制対象の立場を優先する。"
+    ],
+    "before": "規制の目的は何か？",
+    "after": "実際には誰の利益を優先する判断になっているか？",
+    "observation_axis": "規制対象の利益が監督当局の判断に浸透し、規制目的と実際の受益者が乖離する過程を見る。",
+    "semantic_cluster": "regulator-interest-drift",
+    "nearest_terms": [
+      "rent-seeking"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "rent-seekingの観察対象とは異なり、規制対象の利益が監督当局の判断に浸透し、規制目的と実際の受益者が乖離する過程を見る。",
+    "related": [
+      "rent-seeking"
+    ],
+    "sources": [
+      "https://www.imf.org/external/pubs/ft/fandd/2009/09/basics.htm"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "peripersonal-space",
+    "term": "Peripersonal Space",
+    "ja": "身体近傍空間",
+    "fields": [
+      "Neuroscience"
+    ],
+    "one_liner": "身体外部の空間を単なる距離ではなく、接触・到達・防御の可能性で表象する仕組みを見る。",
+    "description": "身体外部の空間を単なる距離ではなく、接触・到達・防御の可能性で表象する仕組みを見る。",
+    "why_selected": "既存のbody-schemaと異なる観察単位・作用方向を導入するため。",
+    "feelings": [
+      "顔の近くに物が来ると触れていなくても身を引く。"
+    ],
+    "before": "物体は何センチ離れている？",
+    "after": "身体が働きかけたり防御したりする空間に入っている？",
+    "observation_axis": "身体外部の空間を単なる距離ではなく、接触・到達・防御の可能性で表象する仕組みを見る。",
+    "semantic_cluster": "body-environment-action-space",
+    "nearest_terms": [
+      "body-schema"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "body-schemaの観察対象とは異なり、身体外部の空間を単なる距離ではなく、接触・到達・防御の可能性で表象する仕組みを見る。",
+    "related": [
+      "body-schema"
+    ],
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC4011943/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "onion-skinning",
+    "term": "Onion Skinning",
+    "ja": "オニオンスキニング",
+    "fields": [
+      "Animation"
+    ],
+    "one_liner": "隣接する時点の絵を半透明で重ね、コマ間の軌道・間隔・形状差を検査する。",
+    "description": "隣接する時点の絵を半透明で重ね、コマ間の軌道・間隔・形状差を検査する。",
+    "why_selected": "既存のanimation-from-interactionと異なる観察単位・作用方向を導入するため。",
+    "feelings": [
+      "動きがぎこちないが修正すべきコマが分からない。"
+    ],
+    "before": "動きを滑らかにするには？",
+    "after": "どのコマ間で位置や軌道が飛んでいる？",
+    "observation_axis": "隣接する時点の絵を半透明で重ね、コマ間の軌道・間隔・形状差を検査する。",
+    "semantic_cluster": "frame-adjacency-visualization",
+    "nearest_terms": [
+      "animation-from-interaction"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "animation-from-interactionの観察対象とは異なり、隣接する時点の絵を半透明で重ね、コマ間の軌道・間隔・形状差を検査する。",
+    "related": [
+      "animation-from-interaction"
+    ],
+    "sources": [
+      "https://docs.krita.org/en/reference_manual/dockers/onion_skin.html"
+    ],
+    "status": "seed",
+    "instruction": "前後2〜3コマを半透明で重ね、移動軌道・間隔・方向転換時の飛びを確認してください。"
+  },
+  {
+    "id": "content-addressed-storage",
+    "term": "Content-Addressed Storage",
+    "ja": "内容アドレス方式",
+    "fields": [
+      "Computer Science"
+    ],
+    "one_liner": "ファイル名や保存場所ではなく、データ内容から導く識別子を保存と参照に用いる。",
+    "description": "ファイル名や保存場所ではなく、データ内容から導く識別子を保存と参照に用いる。",
+    "why_selected": "既存のchecksumと異なる観察単位・作用方向を導入するため。",
+    "feelings": [
+      "同じ画像が異なる名前で何度もアップロードされる。"
+    ],
+    "before": "同じ名前のファイルはある？",
+    "after": "内容が同一のデータは存在する？",
+    "observation_axis": "ファイル名や保存場所ではなく、データ内容から導く識別子を保存と参照に用いる。",
+    "semantic_cluster": "content-derived-identification",
+    "nearest_terms": [
+      "checksum"
+    ],
+    "semantic_distance": "B",
+    "difference_from_nearest": "checksumの観察対象とは異なり、ファイル名や保存場所ではなく、データ内容から導く識別子を保存と参照に用いる。",
+    "related": [
+      "checksum"
+    ],
+    "sources": [
+      "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects"
+    ],
+    "status": "seed",
+    "instruction": "アップロード時に内容ハッシュを算出し重複を確認する。衝突耐性・権限・参照情報は別途設計する。"
+  },
+  {
+    "id": "suppletion",
+    "term": "Suppletion",
+    "ja": "補充法",
+    "fields": [
+      "Linguistics"
+    ],
+    "one_liner": "一つの語の活用体系に異なる歴史的語根の形が組み込まれる現象を見る。",
+    "description": "一つの語の活用体系に異なる歴史的語根の形が組み込まれる現象を見る。",
+    "why_selected": "既存のmarkednessと異なる観察単位・作用方向を導入するため。",
+    "feelings": [
+      "goの過去形がwentになる。"
+    ],
+    "before": "なぜ不規則なのか？",
+    "after": "異なる語根の語形が活用体系に組み込まれていないか？",
+    "observation_axis": "一つの語の活用体系に異なる歴史的語根の形が組み込まれる現象を見る。",
+    "semantic_cluster": "historical-root-replacement",
+    "nearest_terms": [
+      "markedness"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "markednessの観察対象とは異なり、一つの語の活用体系に異なる歴史的語根の形が組み込まれる現象を見る。",
+    "related": [
+      "markedness"
+    ],
+    "sources": [
+      "https://www.britannica.com/topic/suppletion"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "solifluction",
+    "term": "Solifluction",
+    "ja": "ソリフラクション",
+    "fields": [
+      "Geomorphology"
+    ],
+    "one_liner": "寒冷地の水分条件や凍結融解に伴い、地表付近の土壌が斜面を緩慢に移動する過程を見る。",
+    "description": "寒冷地の水分条件や凍結融解に伴い、地表付近の土壌が斜面を緩慢に移動する過程を見る。",
+    "why_selected": "既存のsoil-liquefactionと異なる観察単位・作用方向を導入するため。",
+    "feelings": [
+      "斜面に舌状の土の起伏が形成される。"
+    ],
+    "before": "斜面は崩壊した？",
+    "after": "目立つ崩壊がなくても土壌は徐々に移動していないか？",
+    "observation_axis": "寒冷地の水分条件や凍結融解に伴い、地表付近の土壌が斜面を緩慢に移動する過程を見る。",
+    "semantic_cluster": "slow-freeze-thaw-slope-motion",
+    "nearest_terms": [
+      "soil-liquefaction"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "soil-liquefactionの観察対象とは異なり、寒冷地の水分条件や凍結融解に伴い、地表付近の土壌が斜面を緩慢に移動する過程を見る。",
+    "related": [
+      "soil-liquefaction"
+    ],
+    "sources": [
+      "https://www.britannica.com/science/solifluction"
+    ],
+    "status": "seed"
+  }
+]
