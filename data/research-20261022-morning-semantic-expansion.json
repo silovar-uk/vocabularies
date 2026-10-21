@@ -1,0 +1,159 @@
+[
+  {
+    "id": "hostile-architecture",
+    "term": "Hostile Architecture",
+    "ja": "敵対的建築",
+    "fields": [
+      "Urban Sociology",
+      "Architecture"
+    ],
+    "observation_axis": "公共空間の設備や形状が、特定の利用者や行動を物理的に排除・抑制しているかを見る。",
+    "nearest_terms": [
+      "proxemics"
+    ],
+    "semantic_cluster": "exclusion-by-spatial-design",
+    "difference_from_nearest": "近接学が人間同士の距離の社会的意味を扱うのに対し、敵対的建築は設備の形状が特定の利用行為を阻む作用を扱う。",
+    "description": "特定の人々の滞在や行動を抑制・排除するように設計された公共空間や建築の要素。",
+    "why_selected": "空間を快適さだけでなく、利用の排除という作用から読む。",
+    "feelings": [
+      "ベンチの中央の仕切りが、横になる行為を防いでいる。"
+    ],
+    "before": "このベンチはなぜ変わった形？",
+    "after": "誰のどの行動を不可能にしている？",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Hostile_architecture"
+    ],
+    "one_liner": "公共空間の設備や形状が、特定の利用者や行動を物理的に排除・抑制しているかを見る。",
+    "semantic_distance": "A",
+    "related": [
+      "proxemics"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "thixotropy",
+    "term": "Thixotropy",
+    "ja": "チキソトロピー",
+    "fields": [
+      "Rheology",
+      "Materials Science"
+    ],
+    "observation_axis": "せん断を加え続けた時間に応じて粘度が下がり、静置すると時間をかけて回復するかを見る。",
+    "nearest_terms": [
+      "stress-relaxation"
+    ],
+    "semantic_cluster": "time-dependent-shear-recovery",
+    "difference_from_nearest": "応力緩和は一定ひずみ下の応力低下を測る。チキソトロピーはせん断履歴による流動性変化と静置後の構造回復を測る。",
+    "description": "せん断の継続で粘度が時間依存的に低下し、せん断を止めると内部構造が回復する性質。",
+    "why_selected": "塗りやすさと塗布後の液だれ防止を別の時間局面として設計できる。",
+    "feelings": [
+      "塗料が塗布中は伸び、塗布後は垂れにくくなる。"
+    ],
+    "before": "粘度を低くすれば塗りやすい？",
+    "after": "塗布時の低粘度と静置後の回復速度をどう両立する？",
+    "instruction": "せん断速度と作用時間を変えて粘度低下を測定し、せん断停止後の粘度回復時間も評価してください。",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Thixotropy"
+    ],
+    "one_liner": "せん断を加え続けた時間に応じて粘度が下がり、静置すると時間をかけて回復するかを見る。",
+    "semantic_distance": "A",
+    "related": [
+      "stress-relaxation"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "archaeomagnetic-dating",
+    "term": "Archaeomagnetic Dating",
+    "ja": "考古地磁気年代測定",
+    "fields": [
+      "Archaeology",
+      "Geophysics"
+    ],
+    "observation_axis": "焼土や炉が最後に冷えた時の地磁気記録を、年代推定の物理的証拠として読めるかを見る。",
+    "nearest_terms": [
+      "taphonomy"
+    ],
+    "semantic_cluster": "geomagnetic-heating-chronology",
+    "difference_from_nearest": "タフォノミーは遺骸の保存過程を扱う。考古地磁気年代測定は熱残留磁化と地磁気変動を照合して年代を推定する。",
+    "description": "炉や窯などの磁性鉱物に残った熱残留磁化を、地域の地磁気変動記録と比較して加熱年代を推定する方法。",
+    "why_selected": "古代の焼き物を地球磁場の記録媒体として捉え直せる。",
+    "feelings": [
+      "年代不明の窯跡の焼土から最終加熱時期を推定する。"
+    ],
+    "before": "形や様式から年代を推定する？",
+    "after": "最後の加熱時に記録された地磁気から年代を推定できる？",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Archaeomagnetic_dating"
+    ],
+    "one_liner": "焼土や炉が最後に冷えた時の地磁気記録を、年代推定の物理的証拠として読めるかを見る。",
+    "semantic_distance": "A",
+    "related": [
+      "taphonomy"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "forced-colors-mode",
+    "term": "Forced Colors Mode",
+    "ja": "強制配色モード",
+    "fields": [
+      "Web Accessibility",
+      "CSS"
+    ],
+    "observation_axis": "利用者がOS側で色を上書きしても、操作対象の境界・状態・意味が失われないかを見る。",
+    "nearest_terms": [
+      "focus-appearance"
+    ],
+    "semantic_cluster": "user-overridden-color-semantics",
+    "difference_from_nearest": "フォーカス外観はフォーカス表示の視認性を扱う。強制配色モードはページ全体の作者指定色が上書きされた際の情報・操作可能性を扱う。",
+    "description": "利用者指定のシステムカラーを優先してWebコンテンツを描画するモード。CSSのforced-colorsメディア特性で検出できる。",
+    "why_selected": "通常の配色チェックだけでは見落とす、利用者側の表示設定への耐性を検証できる。",
+    "feelings": [
+      "高コントラスト設定でボタンの境界や選択状態が消える。"
+    ],
+    "before": "通常表示のコントラストは十分？",
+    "after": "利用者が色を上書きしてもUIの意味が伝わる？",
+    "instruction": "forced-colors: activeで主要画面を検証し、色や影だけに依存する境界・選択状態をシステムカラーなどで補ってください。",
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors"
+    ],
+    "one_liner": "利用者がOS側で色を上書きしても、操作対象の境界・状態・意味が失われないかを見る。",
+    "semantic_distance": "A",
+    "related": [
+      "focus-appearance"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "acousmatic-sound",
+    "term": "Acousmatic Sound",
+    "ja": "アクースマティック・サウンド",
+    "fields": [
+      "Film Sound",
+      "Aesthetics"
+    ],
+    "observation_axis": "音が聞こえる一方で発生源が視覚的に提示されないことが、想像や解釈をどう変えるかを見る。",
+    "nearest_terms": [
+      "auditory-masking"
+    ],
+    "semantic_cluster": "unseen-sound-source",
+    "difference_from_nearest": "聴覚マスキングは音同士の知覚的干渉を扱う。アクースマティック・サウンドは聞こえる音と見えない音源の関係を扱う。",
+    "description": "音源を視覚的に確認できない状態で聞かれる音。映画音響や電子音楽の分析で用いられる。",
+    "why_selected": "音の情報量ではなく、音源を見せない演出そのものを観察できる。",
+    "feelings": [
+      "画面外から足音が聞こえ、姿が見えないため不安が高まる。"
+    ],
+    "before": "なぜこの音は怖い？",
+    "after": "音源を映さないことが何を想像させる？",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Acousmatic_sound"
+    ],
+    "one_liner": "音が聞こえる一方で発生源が視覚的に提示されないことが、想像や解釈をどう変えるかを見る。",
+    "semantic_distance": "A",
+    "related": [
+      "auditory-masking"
+    ],
+    "status": "seed"
+  }
+]
