@@ -24,7 +24,8 @@
     "data/semantic-annotations-20261011-morning.json",
     "data/semantic-annotations-20261011-evening.json",
     "data/semantic-annotations-20261012-morning.json",
-    "data/semantic-annotations-20261013-morning.json"
+    "data/semantic-annotations-20261013-morning.json",
+    "data/semantic-annotations-20261022-morning.json"
   ],
   "addition_gate": {
     "enabled": true,
