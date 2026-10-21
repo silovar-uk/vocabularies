@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-22",
+  "batch": "20261022-morning",
+  "term_annotations": {
+    "hostile-architecture": {
+      "axis": "公共空間の設備や形状が、特定の利用者や行動を物理的に排除・抑制しているかを見る。",
+      "nearest_terms": [
+        "proxemics"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "近接学が人間同士の距離の社会的意味を扱うのに対し、敵対的建築は設備の形状が特定の利用行為を阻む作用を扱う。",
+      "new_axis": true
+    },
+    "thixotropy": {
+      "axis": "せん断を加え続けた時間に応じて粘度が下がり、静置すると時間をかけて回復するかを見る。",
+      "nearest_terms": [
+        "stress-relaxation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "応力緩和は一定ひずみ下の応力低下を測る。チキソトロピーはせん断履歴による流動性変化と静置後の構造回復を測る。",
+      "new_axis": true
+    },
+    "archaeomagnetic-dating": {
+      "axis": "焼土や炉が最後に冷えた時の地磁気記録を、年代推定の物理的証拠として読めるかを見る。",
+      "nearest_terms": [
+        "taphonomy"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "タフォノミーは遺骸の保存過程を扱う。考古地磁気年代測定は熱残留磁化と地磁気変動を照合して年代を推定する。",
+      "new_axis": true
+    },
+    "forced-colors-mode": {
+      "axis": "利用者がOS側で色を上書きしても、操作対象の境界・状態・意味が失われないかを見る。",
+      "nearest_terms": [
+        "focus-appearance"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "フォーカス外観はフォーカス表示の視認性を扱う。強制配色モードはページ全体の作者指定色が上書きされた際の情報・操作可能性を扱う。",
+      "new_axis": true
+    },
+    "acousmatic-sound": {
+      "axis": "音が聞こえる一方で発生源が視覚的に提示されないことが、想像や解釈をどう変えるかを見る。",
+      "nearest_terms": [
+        "auditory-masking"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "聴覚マスキングは音同士の知覚的干渉を扱う。アクースマティック・サウンドは聞こえる音と見えない音源の関係を扱う。",
+      "new_axis": true
+    }
+  }
+}
