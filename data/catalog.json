@@ -91,7 +91,8 @@
     "data/research-20261012-morning-semantic-expansion.json",
     "data/research-20261013-morning-semantic-expansion.json",
     "data/research-20261022-morning-semantic-expansion.json",
-    "data/research-20261024-evening-semantic-expansion.json"
+    "data/research-20261024-evening-semantic-expansion.json",
+    "data/research-20261025-morning-semantic-expansion.json"
   ],
   "relation_datasets": [
     "data/relations.json",
