@@ -1,0 +1,207 @@
+[
+  {
+    "id": "narrative-speed",
+    "term": "Narrative Speed",
+    "ja": "物語の速度",
+    "fields": [
+      "Narratology",
+      "Literary Studies"
+    ],
+    "observation_axis": "物語内で経過した時間と、その出来事を語るために割かれた叙述量・読書時間の比率が、どこで加速・減速しているかを見る。",
+    "nearest_terms": [
+      "narrative-frequency",
+      "anachrony"
+    ],
+    "semantic_cluster": "story-discourse-duration-ratio",
+    "difference_from_nearest": "物語頻度は出来事の発生回数と叙述回数の対応を、アナクロニーは出来事の順序と提示順のずれを扱う。物語の速度は、出来事の経過時間に対してどれほどの叙述量を割くかという持続時間の比率を扱う。",
+    "description": "物語世界の出来事が経過する時間と、それを伝える叙述の長さ・所要時間の関係。場面、要約、省略、休止によって叙述の進行速度が変化する。",
+    "why_selected": "既存語には物語の順序と反復回数がある一方、同じ出来事のどこを長く語り、どこを飛ばすかという時間配分の観察軸が欠けていた。",
+    "feelings": [
+      "登場人物の十年間が一文で終わる一方、数秒の出来事に数ページが費やされる。"
+    ],
+    "before": "この物語は時系列どおりに進む？",
+    "after": "出来事の時間に対して、どの場面へ叙述の長さが配分されている？",
+    "sources": [
+      "https://uni-tuebingen.de/en/233933",
+      "https://www-archiv.fdm.uni-hamburg.de/lhn/node/106.html"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "narrative-frequency",
+      "anachrony"
+    ],
+    "status": "seed",
+    "one_liner": "物語内で経過した時間と、その出来事を語るために割かれた叙述量・読書時間の比率が、どこで加速・減速しているかを見る。"
+  },
+  {
+    "id": "time-inconsistency",
+    "term": "Time Inconsistency",
+    "ja": "時間的不整合",
+    "fields": [
+      "Economics",
+      "Public Policy"
+    ],
+    "observation_axis": "事前には最適だった政策や計画が、実行時点では当事者の誘因・期待の変化によって守るのが最適でなくなるかを見る。",
+    "nearest_terms": [
+      "option-value",
+      "strategy-proofness"
+    ],
+    "semantic_cluster": "intertemporal-plan-reversal",
+    "difference_from_nearest": "オプション価値は決定を留保して将来の選択可能性を維持する価値。時間的不整合は、事前に選んだ計画を将来の自分や政策担当者が実行する誘因を持たない問題であり、決定の留保とは異なる。",
+    "description": "事前に最適と判断された計画が、後の時点ではその計画から逸脱することが最適となるため、一貫して実行されない問題。政策の信頼できる約束やルール設計で重要となる。",
+    "why_selected": "制度設計の語を、当事者間の情報差から『同じ意思決定主体の事前と事後で誘因が変わる』時間方向へ広げるため。",
+    "feelings": [
+      "将来は例外を認めないと宣言した政策が、実際に例外を求める局面になると覆される。"
+    ],
+    "before": "最初に最適な方針を決めれば十分？",
+    "after": "その方針を実行する時点でも、守る誘因が残っている？",
+    "sources": [
+      "https://www.journals.uchicago.edu/doi/pdf/10.1086/260580",
+      "https://www.minneapolisfed.org/article/2004/the-veil-of-discretion"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "option-value",
+      "strategy-proofness"
+    ],
+    "status": "seed",
+    "one_liner": "事前には最適だった政策や計画が、実行時点では当事者の誘因・期待の変化によって守るのが最適でなくなるかを見る。"
+  },
+  {
+    "id": "equivalence-testing",
+    "term": "Equivalence Testing",
+    "ja": "等価性検定",
+    "fields": [
+      "Statistics",
+      "Experimental Design"
+    ],
+    "observation_axis": "差が有意に検出されなかったかではなく、事前に定めた実務上無視できる差の範囲内に効果が収まると統計的に示せるかを見る。",
+    "nearest_terms": [
+      "limits-of-agreement",
+      "measurement-invariance"
+    ],
+    "semantic_cluster": "practical-negligibility-inference",
+    "difference_from_nearest": "一致限界は二つの測定方法による個体ごとの差の分布を評価する。等価性検定は、事前に定めた等価マージンの外に真の効果があるという仮説を棄却できるかを検証する。",
+    "description": "実務上許容できる差の上下限を先に定め、その範囲外の効果を統計的に棄却することで、実質的な同等性を検証する方法。代表的な手法は二つの片側検定（TOST）。",
+    "why_selected": "『有意差なし』を『同じ』と誤読する分析上の空白を、推定の目的そのものを切り替える語として補うため。",
+    "feelings": [
+      "新しい施策と従来施策の差が有意でなかったが、本当に同等と扱ってよいか判断できない。"
+    ],
+    "before": "p値が0.05を超えたから同じ？",
+    "after": "事前に決めた許容差の内側に、効果の信頼区間が十分収まっている？",
+    "instruction": "比較前に実務上許容できる差の上下限を定め、等価性検定（例：TOST）と信頼区間で検証してください。通常の有意差検定で非有意だっただけでは『同等』と結論しないでください。",
+    "sources": [
+      "https://doi.org/10.1177/1948550617697177",
+      "https://research.tue.nl/en/publications/equivalence-tests-a-practical-primer-for-t-tests-correlations-and/"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "limits-of-agreement",
+      "measurement-invariance"
+    ],
+    "status": "seed",
+    "one_liner": "差が有意に検出されなかったかではなく、事前に定めた実務上無視できる差の範囲内に効果が収まると統計的に示せるかを見る。"
+  },
+  {
+    "id": "j-cut",
+    "term": "J-Cut",
+    "ja": "Jカット",
+    "fields": [
+      "Film Editing",
+      "Audio Design"
+    ],
+    "observation_axis": "場面転換で次の場面の音を映像より先に始め、視聴者の注意や場面理解をどのタイミングで先導するかを見る。",
+    "nearest_terms": [
+      "acousmatic-sound",
+      "onion-skinning"
+    ],
+    "semantic_cluster": "audio-visual-transition-offset",
+    "difference_from_nearest": "アクースマティック・サウンドは音源が視覚的に示されない状態の意味を扱う。Jカットは二つのショットの編集点を音声と映像でずらし、次の場面の音を先行させる時間的な編集操作を扱う。",
+    "description": "次のショットや場面の音声を、映像が切り替わる前から流す分割編集の一種。会話や場面転換で、次の状況を音から予告できる。",
+    "why_selected": "制作上の『場面転換を自然に』という曖昧な指示を、音声と映像の切替時刻の差という検証可能な編集操作へ変えるため。",
+    "feelings": [
+      "次の場所の話し声が先に聞こえ、少し遅れて映像がその場所へ切り替わる。"
+    ],
+    "before": "場面転換をもっと自然にしたい。",
+    "after": "次の場面の音を映像より先に入れると、切替の理解が滑らかになる？",
+    "instruction": "次の場面の音声を映像カットより少し先に開始するJカットを試してください。音声と映像の編集点を独立に調整し、発話の切れや不自然な重なりがないか試聴してください。",
+    "sources": [
+      "https://helpx.adobe.com/jp/premiere/desktop/edit-projects/trim-clips/perform-j-cuts-and-l-cuts.html"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "acousmatic-sound",
+      "onion-skinning"
+    ],
+    "status": "seed",
+    "one_liner": "場面転換で次の場面の音を映像より先に始め、視聴者の注意や場面理解をどのタイミングで先導するかを見る。"
+  },
+  {
+    "id": "differential-privacy",
+    "term": "Differential Privacy",
+    "ja": "差分プライバシー",
+    "fields": [
+      "Privacy Engineering",
+      "Computer Science"
+    ],
+    "observation_axis": "一人分のデータの追加・除去によって公開される集計結果の確率分布がどの程度変化し、個人の寄与を推測する危険がどれだけ制限されるかを見る。",
+    "nearest_terms": [
+      "capability-based-security",
+      "measurement-uncertainty"
+    ],
+    "semantic_cluster": "individual-contribution-privacy-bound",
+    "difference_from_nearest": "ケイパビリティベース・セキュリティは誰が何を操作できるかというアクセス権を制御する。差分プライバシーは集計結果を公開した後に個人の参加有無・寄与が推測されるリスクを確率的に制限する。",
+    "description": "一人分の情報が異なる隣接データセットについて、確率的な出力の分布が大きく変わらないようにする数学的なプライバシー保護の枠組み。保証の強さはプライバシー単位、ε・δ、実装や繰り返し利用に依存する。",
+    "why_selected": "データ保護をアクセス制限だけで考える近傍から、集計を公開した後の個人推論リスクへ観察単位を移すため。",
+    "feelings": [
+      "匿名の集計表でも、ほかの公開情報との組み合わせで特定の個人について推測されるのではと不安になる。"
+    ],
+    "before": "氏名を削除して集計すれば安全？",
+    "after": "一人のデータが含まれるかどうかで、公表結果から推測できることはどれほど変わる？",
+    "sources": [
+      "https://csrc.nist.gov/pubs/sp/800/226/final",
+      "https://csrc.nist.gov/glossary/term/neighboring_datasets"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "capability-based-security",
+      "measurement-uncertainty"
+    ],
+    "status": "seed",
+    "one_liner": "一人分のデータの追加・除去によって公開される集計結果の確率分布がどの程度変化し、個人の寄与を推測する危険がどれだけ制限されるかを見る。"
+  },
+  {
+    "id": "sonoluminescence",
+    "term": "Sonoluminescence",
+    "ja": "音響発光（ソノルミネセンス）",
+    "fields": [
+      "Acoustics",
+      "Fluid Physics"
+    ],
+    "observation_axis": "液体中の気泡が音圧によって激しく収縮・崩壊するとき、音響エネルギーの集中が光の放出へ変換されるかを見る。",
+    "nearest_terms": [
+      "acoustic-shadow",
+      "inharmonicity"
+    ],
+    "semantic_cluster": "cavitation-driven-photon-emission",
+    "difference_from_nearest": "音響陰影は音が伝播する空間で届きにくい領域が生まれる現象。音響発光は音によって駆動された液中の気泡が崩壊するときに光を放つ現象で、伝播の遮蔽ではなくエネルギー変換を扱う。",
+    "description": "液体中の気泡が音波などで駆動され、急激な収縮・崩壊に伴って短い光パルスを放出する現象。光の発生機構や条件は気体・液体・音圧などに依存する。",
+    "why_selected": "音を『聞こえるか・どう響くか』という観察から切り離し、気泡内部で光が生まれる物理現象へ飛ぶため。",
+    "feelings": [
+      "水中の小さな気泡に超音波を与えると、瞬間的に発光する。"
+    ],
+    "before": "音波は物体を振動させるだけ？",
+    "after": "音圧が気泡へ集中したとき、どんな条件で光まで放出される？",
+    "sources": [
+      "https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.74.425",
+      "https://www.nature.com/articles/35038020"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "acoustic-shadow",
+      "inharmonicity"
+    ],
+    "status": "seed",
+    "one_liner": "液体中の気泡が音圧によって激しく収縮・崩壊するとき、音響エネルギーの集中が光の放出へ変換されるかを見る。"
+  }
+]
