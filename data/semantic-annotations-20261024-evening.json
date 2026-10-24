@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-24",
+  "batch": "20261024-evening",
+  "term_annotations": {
+    "narrative-speed": {
+      "axis": "物語内で経過した時間と、その出来事を語るために割かれた叙述量・読書時間の比率が、どこで加速・減速しているかを見る。",
+      "nearest_terms": [
+        "narrative-frequency",
+        "anachrony"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "物語頻度は出来事の発生回数と叙述回数の対応を、アナクロニーは出来事の順序と提示順のずれを扱う。物語の速度は、出来事の経過時間に対してどれほどの叙述量を割くかという持続時間の比率を扱う。",
+      "new_axis": true
+    },
+    "time-inconsistency": {
+      "axis": "事前には最適だった政策や計画が、実行時点では当事者の誘因・期待の変化によって守るのが最適でなくなるかを見る。",
+      "nearest_terms": [
+        "option-value",
+        "strategy-proofness"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "オプション価値は決定を留保して将来の選択可能性を維持する価値。時間的不整合は、事前に選んだ計画を将来の自分や政策担当者が実行する誘因を持たない問題であり、決定の留保とは異なる。",
+      "new_axis": true
+    },
+    "equivalence-testing": {
+      "axis": "差が有意に検出されなかったかではなく、事前に定めた実務上無視できる差の範囲内に効果が収まると統計的に示せるかを見る。",
+      "nearest_terms": [
+        "limits-of-agreement",
+        "measurement-invariance"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "一致限界は二つの測定方法による個体ごとの差の分布を評価する。等価性検定は、事前に定めた等価マージンの外に真の効果があるという仮説を棄却できるかを検証する。",
+      "new_axis": true
+    },
+    "j-cut": {
+      "axis": "場面転換で次の場面の音を映像より先に始め、視聴者の注意や場面理解をどのタイミングで先導するかを見る。",
+      "nearest_terms": [
+        "acousmatic-sound",
+        "onion-skinning"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "アクースマティック・サウンドは音源が視覚的に示されない状態の意味を扱う。Jカットは二つのショットの編集点を音声と映像でずらし、次の場面の音を先行させる時間的な編集操作を扱う。",
+      "new_axis": true
+    },
+    "differential-privacy": {
+      "axis": "一人分のデータの追加・除去によって公開される集計結果の確率分布がどの程度変化し、個人の寄与を推測する危険がどれだけ制限されるかを見る。",
+      "nearest_terms": [
+        "capability-based-security",
+        "measurement-uncertainty"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ケイパビリティベース・セキュリティは誰が何を操作できるかというアクセス権を制御する。差分プライバシーは集計結果を公開した後に個人の参加有無・寄与が推測されるリスクを確率的に制限する。",
+      "new_axis": true
+    },
+    "sonoluminescence": {
+      "axis": "液体中の気泡が音圧によって激しく収縮・崩壊するとき、音響エネルギーの集中が光の放出へ変換されるかを見る。",
+      "nearest_terms": [
+        "acoustic-shadow",
+        "inharmonicity"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "音響陰影は音が伝播する空間で届きにくい領域が生まれる現象。音響発光は音によって駆動された液中の気泡が崩壊するときに光を放つ現象で、伝播の遮蔽ではなくエネルギー変換を扱う。",
+      "new_axis": true
+    }
+  }
+}
