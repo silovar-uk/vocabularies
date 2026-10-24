@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-25",
+  "batch": "20261025-morning",
+  "term_annotations": {
+    "pointer-cancellation": {
+      "axis": "クリックやタップの開始時点で操作が確定してしまわず、押下から解放までの間に誤操作を取り消せるかを見る。",
+      "nearest_terms": [
+        "target-size-minimum",
+        "focus-order"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ターゲットサイズは操作対象の大きさ・間隔によって誤タップを防ぐ。ポインター操作の取消しは、押下と解放のどの時点で操作が確定し、意図しない入力を中止・元に戻せるかという時間的・可逆的な制御を扱う。",
+      "new_axis": true
+    },
+    "marangoni-effect": {
+      "axis": "液体表面の温度・組成差が表面張力の勾配を生み、液体を表面に沿ってどちらへ流すかを見る。",
+      "nearest_terms": [
+        "thixotropy",
+        "stress-relaxation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "チキソトロピーはせん断時間に依存する粘度低下と静置後の回復。マランゴニ効果は表面張力の空間勾配が液体を移動させる現象で、粘度の時間依存ではなく表面での駆動力を扱う。",
+      "new_axis": true
+    },
+    "evidentiality": {
+      "axis": "発話内容の確信度ではなく、その情報を直接見た・推論した・人から聞いたなどの入手経路が文法的にどう標示されるかを見る。",
+      "nearest_terms": [
+        "epistemic-stance",
+        "register"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "認識的スタンスは命題への確信・可能性・根拠への態度を言語表現で示す。証拠性は情報源の種類を文法的に区別する体系であり、話し手の確信度とは独立して標示されうる。",
+      "new_axis": true
+    },
+    "ecological-stoichiometry": {
+      "axis": "餌と消費者の炭素・窒素・リンなどの元素比の不一致が、成長効率・栄養制限・排出や再循環をどう変えるかを見る。",
+      "nearest_terms": [
+        "niche-construction",
+        "hydraulic-redistribution"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ニッチ構築は生物による環境改変とそのフィードバック。生態化学量論は、餌と消費者の元素組成比の違いが物質収支を通じて食物網の成長・栄養循環を制約するかを扱う。",
+      "new_axis": true
+    },
+    "dasymetric-mapping": {
+      "axis": "行政区画内の人口などを一様に分布すると仮定せず、土地利用・被覆などの補助データから区画内部の分布を再配分できるかを見る。",
+      "nearest_terms": [
+        "modifiable-areal-unit-problem",
+        "ecological-fallacy"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "可変地域単位問題は集計境界の設定が統計結果を変える偏り。ダシメトリック・マッピングは土地利用などの補助情報を使い、集計済み人数を区画内の居住可能領域へ再配分して空間分布を推定する方法。",
+      "new_axis": true
+    },
+    "side-channel-attack": {
+      "axis": "暗号処理の出力ではなく、処理時間・消費電力・電磁波などの副次的な物理信号から秘密情報が漏れないかを見る。",
+      "nearest_terms": [
+        "taint-tracking",
+        "differential-privacy"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "テイント追跡は信頼できない入力がプログラム内部でどこへ伝播するかを扱う。サイドチャネル攻撃は計算内容が直接公開されなくても、実行に伴う時間・電力・電磁放射などの観測から秘密を推定できるかを扱う。",
+      "new_axis": true
+    }
+  }
+}
