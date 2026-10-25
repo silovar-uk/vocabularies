@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-25",
+  "batch": "20261025-evening",
+  "term_annotations": {
+    "rolling-shutter": {
+      "axis": "一枚の映像の上部と下部が異なる時刻に読み出されることで、動く被写体やカメラの運動がどのような幾何学的歪みになるかを見る。",
+      "nearest_terms": [
+        "stroboscopic-effect",
+        "chroma-subsampling"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ストロボ効果は周期運動と観察・サンプリング周期のずれによる見かけの運動変化。ローリングシャッターは単一フレーム内の行ごとの取得時刻のずれが形状を歪めるもので、時間標本化の分析単位が異なる。",
+      "new_axis": true
+    },
+    "spectral-leakage": {
+      "axis": "有限長の信号を周波数分析するとき、観測区間の切り出しが本来一つの周波数成分のエネルギーを周辺の周波数へ広げていないかを見る。",
+      "nearest_terms": [
+        "inharmonicity",
+        "resolution"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "不調和度は実在する部分音の周波数が整数倍の倍音列からずれる性質。スペクトル漏れは有限長の時間窓で信号を切り出した結果、周波数スペクトル上に見かけの広がりが生じる分析上の現象であり、信号の物理的な倍音構造ではない。",
+      "new_axis": true
+    },
+    "triadic-closure": {
+      "axis": "二人が同じ知人とつながっているとき、その共通知人を介して二人の間に新しい関係が生まれる確率が高まるかを見る。",
+      "nearest_terms": [
+        "boundary-spanning",
+        "proxemics"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "境界横断は個人や組織が異なる集団をまたいで活動・連携する役割。三者閉包はA-BとA-Cという二本の既存のつながりからB-Cという新しい関係が形成される局所的なネットワーク生成機構で、集団をまたぐ役割とは異なる。",
+      "new_axis": true
+    },
+    "isotope-fractionation": {
+      "axis": "同じ元素の重い同位体と軽い同位体が、蒸発・凝縮・反応などの過程で異なる割合に振り分けられ、その比率に過程の痕跡が残るかを見る。",
+      "nearest_terms": [
+        "pseudomorph",
+        "archaeomagnetic-dating"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "偽晶は鉱物の成分が置換されても元の外形が保存される現象。同位体分別は同一元素の質量差などに由来する反応・相変化時の同位体比の偏りを扱い、形状ではなく同位体組成から過程を読む。",
+      "new_axis": true
+    },
+    "cultural-ratchet-effect": {
+      "axis": "ある世代の技術・知識の改良が次の世代へ失われずに伝達され、さらに改良が積み重なる仕組みがあるかを見る。",
+      "nearest_terms": [
+        "cultural-lag",
+        "transactive-memory"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "文化遅滞は技術・制度・規範など文化の構成要素の変化速度が食い違う問題。文化のラチェット効果は社会的学習と伝達によって改良が保持・蓄積される機構であり、要素間の変化速度の差ではなく世代を超える累積を扱う。",
+      "new_axis": true
+    },
+    "dead-water-phenomenon": {
+      "axis": "水面が静かに見えても、密度の異なる水層の境界で船が内部波を作り、見えない造波抵抗によって速度を失っていないかを見る。",
+      "nearest_terms": [
+        "acoustic-shadow",
+        "hysteresis"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "音響陰影は音波の伝播が遮られたり屈折したりして届きにくい領域ができる現象。死水現象は密度成層した水中で船が内部波を生み、その造波抵抗が船の進行を妨げる流体力学現象で、波の遮蔽ではなく波の生成に要するエネルギーが問題となる。",
+      "new_axis": true
+    }
+  }
+}
