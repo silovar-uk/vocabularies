@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-26",
+  "batch": "20261026-morning",
+  "term_annotations": {
+    "baumol-cost-disease": {
+      "axis": "部門間で生産性の伸びが異なるとき、労働市場を通じた賃金上昇が、生産性の伸びにくいサービスの相対コストを押し上げていないかを見る。",
+      "nearest_terms": [
+        "jevons-paradox",
+        "time-inconsistency"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ジェボンズのパラドックスは効率改善に伴う需要の増大と資源の総消費を問う。ボーモルのコスト病は部門間の生産性上昇率の違いと賃金の連動が、低生産性成長部門の相対費用を高める仕組みで、需要の反発ではなく供給費用の構造を扱う。",
+      "new_axis": true
+    },
+    "archaeological-seriation": {
+      "axis": "複数の遺跡・遺構における遺物の型式やその出現頻度の組合せから、絶対年代が分からなくても相対的な順序を推定できるかを見る。",
+      "nearest_terms": [
+        "archaeomagnetic-dating",
+        "taphonomy"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "考古地磁気年代測定は加熱された遺構に残る地磁気記録と年代曲線を照合する物理的な年代推定。セリエーションは遺物型式の有無・頻度が集合間でどう変わるかから相対順序を構成する。証拠の種類と推定される時間情報が異なる。",
+      "new_axis": true
+    },
+    "roche-limit": {
+      "axis": "小天体が大きな天体へ近づくとき、重力の位置差による潮汐力が小天体の自己重力を上回り、まとまりを保てなくなる距離があるかを見る。",
+      "nearest_terms": [
+        "isostasy"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "アイソスタシーは地殻の荷重と浮力による長期的な鉛直均衡。ロッシュ限界は別の天体へ接近する衛星などで潮汐力が自己重力を上回る破壊条件を扱い、力の空間差と天体の結合維持が問いになる。",
+      "new_axis": true
+    },
+    "rebracketing": {
+      "axis": "同じように聞こえる音の連なりが別の単語・形態素の境界で切り直され、その解釈が語形の歴史的変化につながっていないかを見る。",
+      "nearest_terms": [
+        "suppletion",
+        "markedness"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "補充法は一つの語の活用形に異なる語根が組み込まれる現象。語境界の再分析は音の連なりの区切り位置を話者が読み替え、別の語形や形態素構成が成立する現象で、活用体系ではなく分節境界が変わる。",
+      "new_axis": true
+    },
+    "audio-description": {
+      "axis": "映像にしか含まれていない重要な情報を、音だけで視聴する人にも伝わるよう、台詞や効果音との時間関係を含めて言語化できているかを見る。",
+      "nearest_terms": [
+        "sensory-characteristics",
+        "language-of-parts"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "感覚的特徴への依存は色・形・位置などだけで操作を指示していないかを問うWebの記述原則。音声解説は動画内の動作・表情・画面内文字など音声だけでは伝わらない情報を、時間に同期した音声へ変換する制作手法で、媒体と情報変換の方向が異なる。",
+      "new_axis": true
+    },
+    "z-fighting": {
+      "axis": "3D空間で重なった面の前後関係を深度バッファの精度では区別できず、描画順がちらつくように見えていないかを見る。",
+      "nearest_terms": [
+        "moire-pattern",
+        "stacking-context"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "モアレは周期構造の重ね合わせが大きな干渉模様を作る現象。Zファイティングはほぼ同一深度のポリゴンを深度バッファが安定して区別できず、表示面の前後が競合する現象で、周期構造の干渉ではなく深度の数値精度が原因となる。",
+      "new_axis": true
+    }
+  }
+}
