@@ -1,0 +1,235 @@
+[
+  {
+    "id": "baumol-cost-disease",
+    "term": "Baumol's Cost Disease",
+    "ja": "ボーモルのコスト病",
+    "aliases": [
+      "ボーモル効果",
+      "コスト病"
+    ],
+    "fields": [
+      "Economics",
+      "Cultural Economics"
+    ],
+    "observation_axis": "部門間で生産性の伸びが異なるとき、労働市場を通じた賃金上昇が、生産性の伸びにくいサービスの相対コストを押し上げていないかを見る。",
+    "nearest_terms": [
+      "jevons-paradox",
+      "time-inconsistency"
+    ],
+    "semantic_cluster": "cross-sector-productivity-cost-divergence",
+    "difference_from_nearest": "ジェボンズのパラドックスは効率改善に伴う需要の増大と資源の総消費を問う。ボーモルのコスト病は部門間の生産性上昇率の違いと賃金の連動が、低生産性成長部門の相対費用を高める仕組みで、需要の反発ではなく供給費用の構造を扱う。",
+    "description": "部門ごとの労働生産性上昇率が異なり、経済全体の賃金水準が上昇すると、単位サービスあたりの労働投入を大幅に減らしにくい部門では相対的な費用が上昇しやすいという経済学上の仕組み。弦楽四重奏の生演奏などが典型例。ただし技術導入や品質の変化により影響は部門・時代で異なり、すべてのサービス業が停滞するという意味ではない。",
+    "why_selected": "制度・インセンティブの探索を、個人の誘因ではなく産業間の生産性格差と相対価格の長期変化へ移すため。",
+    "feelings": [
+      "昔と同じ人数・時間を要する生演奏が、機械生産品に比べて高価になっていく。"
+    ],
+    "before": "価格が上がるのは、その業界の努力不足？",
+    "after": "ほかの産業で生産性と賃金が上がる一方、このサービスでは必要な労働時間を短縮しにくいことが相対費用を押し上げていない？",
+    "sources": [
+      "https://www.nber.org/papers/w12218",
+      "https://www.brookings.edu/articles/productivity-measurement-issues-in-services-industries-baumols-disease-has-been-cured/"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "jevons-paradox",
+      "time-inconsistency"
+    ],
+    "status": "seed",
+    "one_liner": "部門間で生産性の伸びが異なるとき、労働市場を通じた賃金上昇が、生産性の伸びにくいサービスの相対コストを押し上げていないかを見る。"
+  },
+  {
+    "id": "archaeological-seriation",
+    "term": "Archaeological Seriation",
+    "ja": "セリエーション（遺物型式による相対編年）",
+    "aliases": [
+      "型式編年",
+      "頻度セリエーション",
+      "Seriation"
+    ],
+    "fields": [
+      "Archaeology",
+      "Quantitative Methods"
+    ],
+    "observation_axis": "複数の遺跡・遺構における遺物の型式やその出現頻度の組合せから、絶対年代が分からなくても相対的な順序を推定できるかを見る。",
+    "nearest_terms": [
+      "archaeomagnetic-dating",
+      "taphonomy"
+    ],
+    "semantic_cluster": "artifact-type-relative-sequencing",
+    "difference_from_nearest": "考古地磁気年代測定は加熱された遺構に残る地磁気記録と年代曲線を照合する物理的な年代推定。セリエーションは遺物型式の有無・頻度が集合間でどう変わるかから相対順序を構成する。証拠の種類と推定される時間情報が異なる。",
+    "description": "土器などの遺物型式の有無や相対頻度を複数の遺物集合間で比較し、集合の相対的な時間順序を推定する考古学的方法。頻度セリエーションでは型式の流行が増減するパターンを利用するが、その仮定が常に成立するとは限らない。配列の時間方向や年代の確定には層位など独立の証拠が必要となる場合がある。",
+    "why_selected": "年代を『年号を測ること』から切り離し、人工物の種類と頻度の変化から過去の順序を復元する考古学の推論へ探索を広げるため。",
+    "feelings": [
+      "年代の記された資料がない墓地でも、出土した土器の型式を並べると変遷の順序が見えてくる。"
+    ],
+    "before": "年代測定できる試料がないなら、古い順番は分からない？",
+    "after": "遺物の型式と出現頻度の組合せから相対的な順序を推定し、層位などで検証できない？",
+    "sources": [
+      "https://www.cambridge.org/core/books/abs/quantitative-methods-in-archaeology-using-r/seriation/2C80E7B0E1130323646B4678BC841F66",
+      "https://www.cambridge.org/core/journals/american-antiquity/article/abs/seriation-superposition-and-interdigitation-a-history-of-americanist-graphic-depictions-of-culture-change/C86F742E02141422FBD4F37DACC8B055"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "archaeomagnetic-dating",
+      "taphonomy"
+    ],
+    "status": "seed",
+    "one_liner": "複数の遺跡・遺構における遺物の型式やその出現頻度の組合せから、絶対年代が分からなくても相対的な順序を推定できるかを見る。"
+  },
+  {
+    "id": "roche-limit",
+    "term": "Roche Limit",
+    "ja": "ロッシュ限界",
+    "aliases": [
+      "ロッシュ限界半径",
+      "潮汐破壊限界"
+    ],
+    "fields": [
+      "Astronomy",
+      "Celestial Mechanics"
+    ],
+    "observation_axis": "小天体が大きな天体へ近づくとき、重力の位置差による潮汐力が小天体の自己重力を上回り、まとまりを保てなくなる距離があるかを見る。",
+    "nearest_terms": [
+      "isostasy"
+    ],
+    "semantic_cluster": "tidal-self-gravity-disruption-threshold",
+    "difference_from_nearest": "アイソスタシーは地殻の荷重と浮力による長期的な鉛直均衡。ロッシュ限界は別の天体へ接近する衛星などで潮汐力が自己重力を上回る破壊条件を扱い、力の空間差と天体の結合維持が問いになる。",
+    "description": "衛星など自己重力でまとまる天体が、主天体の潮汐力によって分裂しうる臨界距離。主天体と衛星の密度や衛星の変形性によって値が変わる。流体状で材料強度を無視できる天体の理論的限界と、強度を持つ固体天体の実際の破壊条件は区別する必要がある。惑星の環や衛星の形成・崩壊を考える手掛かりになる。",
+    "why_selected": "前回の海洋流体や同位体から離れ、天体の『近づきすぎると壊れる』という重力の空間差を観察するため。",
+    "feelings": [
+      "惑星の近くでは、衛星の材料が一つの塊を保てず、破片や環へ変わりうる。"
+    ],
+    "before": "重力が強いほど、物体は引き寄せられるだけ？",
+    "after": "物体の手前と奥で重力の強さが異なり、自己重力でまとまる力を上回る距離はどこ？",
+    "sources": [
+      "https://astro-dic.jp/roche-limit/",
+      "https://science.nasa.gov/mission/cassini/faq/"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "isostasy"
+    ],
+    "status": "seed",
+    "one_liner": "小天体が大きな天体へ近づくとき、重力の位置差による潮汐力が小天体の自己重力を上回り、まとまりを保てなくなる距離があるかを見る。"
+  },
+  {
+    "id": "rebracketing",
+    "term": "Rebracketing",
+    "ja": "語境界の再分析（リブラケティング）",
+    "aliases": [
+      "再分節化",
+      "メタアナリシス",
+      "Metanalysis",
+      "Resegmentation"
+    ],
+    "fields": [
+      "Historical Linguistics",
+      "Morphology"
+    ],
+    "observation_axis": "同じように聞こえる音の連なりが別の単語・形態素の境界で切り直され、その解釈が語形の歴史的変化につながっていないかを見る。",
+    "nearest_terms": [
+      "suppletion",
+      "markedness"
+    ],
+    "semantic_cluster": "word-boundary-resegmentation",
+    "difference_from_nearest": "補充法は一つの語の活用形に異なる語根が組み込まれる現象。語境界の再分析は音の連なりの区切り位置を話者が読み替え、別の語形や形態素構成が成立する現象で、活用体系ではなく分節境界が変わる。",
+    "description": "歴史言語学で、発話中の語・形態素の境界が元とは異なる位置に再解釈され、語形や形態素構成が変わる現象。英語の a napron（前掛け）が an apron と解釈され、apron が定着した例が知られる。音が単純に脱落したというより、話者がどこを語の境界と捉えるかが変化する。",
+    "why_selected": "言語の変化を発音や意味の変化だけでなく、語の切れ目をどこに置くかという分析単位の変更として捉えるため。",
+    "feelings": [
+      "英語の apron（エプロン）の語頭の a は、かつて前の冠詞の一部ではなかった。"
+    ],
+    "before": "単語の最初の音が消えたり増えたりした？",
+    "after": "冠詞と名詞の境界が a napron から an apron へ切り直されたのでは？",
+    "sources": [
+      "https://blog.oup.com/2018/06/etymology-full-fear-really-dreadful/",
+      "https://www.etymonline.com/word/metanalysis"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "suppletion",
+      "markedness"
+    ],
+    "status": "seed",
+    "one_liner": "同じように聞こえる音の連なりが別の単語・形態素の境界で切り直され、その解釈が語形の歴史的変化につながっていないかを見る。"
+  },
+  {
+    "id": "audio-description",
+    "term": "Audio Description",
+    "ja": "音声解説（オーディオディスクリプション）",
+    "aliases": [
+      "映像音声解説",
+      "Video Description",
+      "Descriptive Narration"
+    ],
+    "fields": [
+      "Accessibility",
+      "Video Production"
+    ],
+    "observation_axis": "映像にしか含まれていない重要な情報を、音だけで視聴する人にも伝わるよう、台詞や効果音との時間関係を含めて言語化できているかを見る。",
+    "nearest_terms": [
+      "sensory-characteristics",
+      "language-of-parts"
+    ],
+    "semantic_cluster": "visual-to-audio-information-equivalence",
+    "difference_from_nearest": "感覚的特徴への依存は色・形・位置などだけで操作を指示していないかを問うWebの記述原則。音声解説は動画内の動作・表情・画面内文字など音声だけでは伝わらない情報を、時間に同期した音声へ変換する制作手法で、媒体と情報変換の方向が異なる。",
+    "description": "視覚障害者などが映像を理解できるよう、元の音声からは分からない重要な動作・場面転換・画面内文字などを追加の音声で説明する手法。通常は台詞の合間に挿入し、必要なら別音声トラックや解説付き版を用意する。WCAG 2.2の達成基準1.2.5（レベルAA）は、該当する収録済み同期メディアで音声解説を求める。ただし重要な映像情報が元の音声で全て伝わるなら追加不要。",
+    "why_selected": "アクセシビリティの探索をボタンやフォーカスから離し、時間軸を持つ映像の情報を別の感覚経路へ翻訳する制作上の課題へ広げるため。",
+    "feelings": [
+      "映像を見ずに研修動画を聞くと、説明されていないグラフや画面操作の意味が抜け落ちる。"
+    ],
+    "before": "字幕を付けたから、映像は誰でも理解できる？",
+    "after": "画面にしかない重要情報を、映像を見ない人も音声で理解できる？",
+    "instruction": "動画を音だけで再生し、意味が抜ける画面操作・グラフ・字幕以外の文字・場面転換を洗い出してください。台詞の合間に簡潔な音声解説を加え、既存音声で十分説明されている箇所は重複させず、解説付き版の再生確認まで行ってください。",
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html",
+      "https://www.w3.org/WAI/media/av/description/"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "sensory-characteristics",
+      "language-of-parts"
+    ],
+    "status": "seed",
+    "one_liner": "映像にしか含まれていない重要な情報を、音だけで視聴する人にも伝わるよう、台詞や効果音との時間関係を含めて言語化できているかを見る。"
+  },
+  {
+    "id": "z-fighting",
+    "term": "Z-Fighting",
+    "ja": "Zファイティング（深度競合）",
+    "aliases": [
+      "Zファイティング",
+      "深度競合",
+      "Z-fighting"
+    ],
+    "fields": [
+      "Computer Graphics",
+      "3D Design"
+    ],
+    "observation_axis": "3D空間で重なった面の前後関係を深度バッファの精度では区別できず、描画順がちらつくように見えていないかを見る。",
+    "nearest_terms": [
+      "moire-pattern",
+      "stacking-context"
+    ],
+    "semantic_cluster": "depth-buffer-surface-order-ambiguity",
+    "difference_from_nearest": "モアレは周期構造の重ね合わせが大きな干渉模様を作る現象。Zファイティングはほぼ同一深度のポリゴンを深度バッファが安定して区別できず、表示面の前後が競合する現象で、周期構造の干渉ではなく深度の数値精度が原因となる。",
+    "description": "3D描画で二つのポリゴンがほぼ同じ深度にあり、深度バッファの精度では前後関係を安定して判定できないため、ちらつきや不規則な模様が生じる現象。重複面の除去・位置調整、適切なニア/ファークリップ範囲、深度バイアスなどが対策となる。単なるテクスチャのモアレや映像のフレームレート不足とは原因が異なる。",
+    "why_selected": "『3Dの表面がちらつく』を感覚的な不具合報告で終わらせず、深度値の競合として診断・修正できる制作語を追加するため。",
+    "feelings": [
+      "3Dモデルの床に重ねたマークが、カメラを動かすたびにちらついて見える。"
+    ],
+    "before": "テクスチャの画質が悪い？",
+    "after": "二つの面がほぼ同じ深度にあり、深度バッファが前後関係を区別できていない？",
+    "instruction": "3Dモデルの表面のちらつきについて、重複・ほぼ同一平面のポリゴンを確認してください。不要な重複面を除去し、必要に応じて面の距離・カメラのクリップ範囲・深度バイアスを調整して、カメラ移動時にも再発しないか検証してください。",
+    "sources": [
+      "https://learnopengl.com/Advanced-OpenGL/Depth-testing",
+      "https://docs.unity3d.com/ja/6000.0/Manual/writing-shader-set-depth-bias.html"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "moire-pattern",
+      "stacking-context"
+    ],
+    "status": "seed",
+    "one_liner": "3D空間で重なった面の前後関係を深度バッファの精度では区別できず、描画順がちらつくように見えていないかを見る。"
+  }
+]
