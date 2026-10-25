@@ -1,0 +1,232 @@
+[
+  {
+    "id": "rolling-shutter",
+    "term": "Rolling Shutter",
+    "ja": "ローリングシャッター（走査歪み）",
+    "aliases": [
+      "ローリングシャッター歪み",
+      "ローリングシャッター効果"
+    ],
+    "fields": [
+      "Digital Imaging",
+      "Video Production"
+    ],
+    "observation_axis": "一枚の映像の上部と下部が異なる時刻に読み出されることで、動く被写体やカメラの運動がどのような幾何学的歪みになるかを見る。",
+    "nearest_terms": [
+      "stroboscopic-effect",
+      "chroma-subsampling"
+    ],
+    "semantic_cluster": "row-sequential-image-capture",
+    "difference_from_nearest": "ストロボ効果は周期運動と観察・サンプリング周期のずれによる見かけの運動変化。ローリングシャッターは単一フレーム内の行ごとの取得時刻のずれが形状を歪めるもので、時間標本化の分析単位が異なる。",
+    "description": "イメージセンサーが画面全体を同時に取得せず、行などを順に露光・読み出しする方式。高速移動する被写体やパン撮影では、フレーム内の取得時刻差によって直線の傾き、ゆがみ、ゼリー状の揺れが現れる場合がある。影響は主にセンサーの読み出し時間と被写体・カメラの運動に左右される。",
+    "why_selected": "映像の『歪んでいる』を単なる手ぶれやフレームレートの問題とせず、フレーム内の撮影時刻差として診断できる実務上の空白を補うため。",
+    "feelings": [
+      "速く動く被写体を撮ると、まっすぐな柱が斜めに写り、振動する物体がぐにゃぐにゃに見える。"
+    ],
+    "before": "手ぶれ補正やフレームレートを変えれば直る？",
+    "after": "センサーの行ごとの読み出し時間と被写体の移動が、画面内の位置ごとに違う歪みを作っていない？",
+    "instruction": "動く被写体やパン撮影で線が傾く・波打つ箇所を抽出し、ローリングシャッター歪みを確認してください。撮影時はカメラの急な移動とセンサー読み出し時間を見直し、編集時は専用補正を試して画質劣化も確認してください。",
+    "sources": [
+      "https://www.sony-semicon.com/ja/technology/industry/rolling-shutter.html",
+      "https://www.adobe.com/jp/creativecloud/video/discover/rolling-shutter-effect.html"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "stroboscopic-effect",
+      "chroma-subsampling"
+    ],
+    "status": "seed",
+    "one_liner": "一枚の映像の上部と下部が異なる時刻に読み出されることで、動く被写体やカメラの運動がどのような幾何学的歪みになるかを見る。"
+  },
+  {
+    "id": "spectral-leakage",
+    "term": "Spectral Leakage",
+    "ja": "スペクトル漏れ（スペクトルリーケージ）",
+    "aliases": [
+      "スペクトルリーケージ",
+      "周波数漏れ"
+    ],
+    "fields": [
+      "Signal Processing",
+      "Measurement Engineering"
+    ],
+    "observation_axis": "有限長の信号を周波数分析するとき、観測区間の切り出しが本来一つの周波数成分のエネルギーを周辺の周波数へ広げていないかを見る。",
+    "nearest_terms": [
+      "inharmonicity",
+      "resolution"
+    ],
+    "semantic_cluster": "finite-window-frequency-spreading",
+    "difference_from_nearest": "不調和度は実在する部分音の周波数が整数倍の倍音列からずれる性質。スペクトル漏れは有限長の時間窓で信号を切り出した結果、周波数スペクトル上に見かけの広がりが生じる分析上の現象であり、信号の物理的な倍音構造ではない。",
+    "description": "離散フーリエ変換で有限長の観測データを周期的に繰り返すとみなした際、区間の端点が連続しないことなどによって、特定の周波数のエネルギーが周辺の周波数ビンへ分散して見える現象。ハン窓などの窓関数で軽減できるが、周波数分解能や振幅精度とのトレードオフがある。",
+    "why_selected": "音・振動データに現れた余分な周波数を実際の異常と即断せず、測定区間の切り出しによる分析上の人工物を疑えるようにするため。",
+    "feelings": [
+      "単一の正弦波を測ったはずなのに、FFTの結果では隣の周波数にも広く成分が現れる。"
+    ],
+    "before": "周辺にも周波数成分があるから複数の振動が発生している？",
+    "after": "測定区間に整数周期が収まらず、窓の端で生じた不連続がスペクトルを広げていない？",
+    "instruction": "FFT結果のピーク周辺に広がりがある場合、まず観測時間・サンプリング周波数・信号周期と窓関数を確認してください。ハン窓などでスペクトル漏れを比較し、ピーク幅や振幅補正への影響も報告してください。",
+    "sources": [
+      "https://www.ni.com/en/shop/data-acquisition/measurement-fundamentals/analog-fundamentals/understanding-ffts-and-windowing.html",
+      "https://www.ni.com/en/shop/electronic-test-instrumentation/oscilloscopes/benefits-of-deep-memory-in-high-speed-digitizers.html"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "inharmonicity",
+      "resolution"
+    ],
+    "status": "seed",
+    "one_liner": "有限長の信号を周波数分析するとき、観測区間の切り出しが本来一つの周波数成分のエネルギーを周辺の周波数へ広げていないかを見る。"
+  },
+  {
+    "id": "triadic-closure",
+    "term": "Triadic Closure",
+    "ja": "三者閉包（トライアディック・クロージャー）",
+    "aliases": [
+      "三角閉包",
+      "トライアディック・クロージャー"
+    ],
+    "fields": [
+      "Social Network Analysis",
+      "Sociology"
+    ],
+    "observation_axis": "二人が同じ知人とつながっているとき、その共通知人を介して二人の間に新しい関係が生まれる確率が高まるかを見る。",
+    "nearest_terms": [
+      "boundary-spanning",
+      "proxemics"
+    ],
+    "semantic_cluster": "shared-neighbor-tie-formation",
+    "difference_from_nearest": "境界横断は個人や組織が異なる集団をまたいで活動・連携する役割。三者閉包はA-BとA-Cという二本の既存のつながりからB-Cという新しい関係が形成される局所的なネットワーク生成機構で、集団をまたぐ役割とは異なる。",
+    "description": "社会ネットワークで、AがBとCの双方につながっているとき、BとCの間にも関係が形成されやすい傾向。共通知人を介した接触機会や信頼などが関わり、ネットワークの三角形・集団の凝集性を生む一因となる。ただしすべての三者関係が閉じるわけではなく、同類選好などの別機構と区別する必要がある。",
+    "why_selected": "『人間関係が密になる』を個人の性格や集団への所属だけで説明せず、共通知人を通じた新規関係形成というネットワーク上の生成規則を観察するため。",
+    "feelings": [
+      "二人とも知っている友人を紹介すると、紹介された二人同士でもつながりが生まれる。"
+    ],
+    "before": "なぜこの集団は内輪の結びつきが強い？",
+    "after": "共通知人を持つ二人が新たにつながる三者閉包が、集団の密度を高めていない？",
+    "sources": [
+      "https://doi.org/10.1103/PhysRevX.12.011004",
+      "https://research.google/pubs/origins-of-homophily-in-an-evolving-social-network/"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "boundary-spanning",
+      "proxemics"
+    ],
+    "status": "seed",
+    "one_liner": "二人が同じ知人とつながっているとき、その共通知人を介して二人の間に新しい関係が生まれる確率が高まるかを見る。"
+  },
+  {
+    "id": "isotope-fractionation",
+    "term": "Isotope Fractionation",
+    "ja": "同位体分別",
+    "aliases": [
+      "同位体分別作用",
+      "同位体比の分別"
+    ],
+    "fields": [
+      "Isotope Geochemistry",
+      "Hydrology"
+    ],
+    "observation_axis": "同じ元素の重い同位体と軽い同位体が、蒸発・凝縮・反応などの過程で異なる割合に振り分けられ、その比率に過程の痕跡が残るかを見る。",
+    "nearest_terms": [
+      "pseudomorph",
+      "archaeomagnetic-dating"
+    ],
+    "semantic_cluster": "mass-dependent-isotope-partitioning",
+    "difference_from_nearest": "偽晶は鉱物の成分が置換されても元の外形が保存される現象。同位体分別は同一元素の質量差などに由来する反応・相変化時の同位体比の偏りを扱い、形状ではなく同位体組成から過程を読む。",
+    "description": "同じ元素の異なる同位体が、質量差などによって物理・化学・生物過程で異なる割合に分配される現象。例えば水の蒸発では軽い同位体を含む水分子が気相へ移りやすく、残った液体の重い同位体の比率が相対的に高まることがある。分別の方向や大きさは温度・湿度・平衡/非平衡条件などに依存する。",
+    "why_selected": "地球環境の履歴を温度や岩石の見た目から推測するだけでなく、物質の同位体比に刻まれた相変化・反応の痕跡から推定する軸を増やすため。",
+    "feelings": [
+      "同じ水でも、蒸発を繰り返した湖水と降水では重い酸素同位体の比率が違う。"
+    ],
+    "before": "水は同じH₂Oだから、蒸発しても成分比は変わらない？",
+    "after": "蒸発や凝縮で重い同位体と軽い同位体が異なる割合に分かれ、どんな履歴が比率に残る？",
+    "sources": [
+      "https://wwwrcamnl.wr.usgs.gov/isoig/res/funda.html",
+      "https://www.usgs.gov/media/images/water-cycle-and-water-isotopes"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "pseudomorph",
+      "archaeomagnetic-dating"
+    ],
+    "status": "seed",
+    "one_liner": "同じ元素の重い同位体と軽い同位体が、蒸発・凝縮・反応などの過程で異なる割合に振り分けられ、その比率に過程の痕跡が残るかを見る。"
+  },
+  {
+    "id": "cultural-ratchet-effect",
+    "term": "Cultural Ratchet Effect",
+    "ja": "文化のラチェット効果（累積的文化進化）",
+    "aliases": [
+      "文化的ラチェット効果",
+      "累積的文化進化"
+    ],
+    "fields": [
+      "Cultural Evolution",
+      "Anthropology"
+    ],
+    "observation_axis": "ある世代の技術・知識の改良が次の世代へ失われずに伝達され、さらに改良が積み重なる仕組みがあるかを見る。",
+    "nearest_terms": [
+      "cultural-lag",
+      "transactive-memory"
+    ],
+    "semantic_cluster": "intergenerational-cumulative-improvement",
+    "difference_from_nearest": "文化遅滞は技術・制度・規範など文化の構成要素の変化速度が食い違う問題。文化のラチェット効果は社会的学習と伝達によって改良が保持・蓄積される機構であり、要素間の変化速度の差ではなく世代を超える累積を扱う。",
+    "description": "文化的な技術や知識が個人による発見で終わらず、他者への学習・伝達によって保存され、後続の世代がそこからさらに改良を加える累積的文化進化の性質。模倣、教育、協力、規範などが関わる。どの動物種にどの程度の累積性があるかは研究上の論点である。",
+    "why_selected": "文化の変化を『新しいものが流行る』という瞬間的な変化ではなく、改良が消えずに世代をまたいで積み重なる仕組みとして観察するため。",
+    "feelings": [
+      "一人では作れない複雑な道具が、過去の世代の改良を引き継いで発展している。"
+    ],
+    "before": "誰かが優れた発明をしたから技術が進歩した？",
+    "after": "その改良が次世代へ失われずに伝わり、さらに積み上がる仕組みは何か？",
+    "sources": [
+      "https://pubmed.ncbi.nlm.nih.gov/19620111/",
+      "https://doi.org/10.1098/rstb.2009.0052"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "cultural-lag",
+      "transactive-memory"
+    ],
+    "status": "seed",
+    "one_liner": "ある世代の技術・知識の改良が次の世代へ失われずに伝達され、さらに改良が積み重なる仕組みがあるかを見る。"
+  },
+  {
+    "id": "dead-water-phenomenon",
+    "term": "Dead-Water Phenomenon",
+    "ja": "死水現象（デッドウォーター）",
+    "aliases": [
+      "デッドウォーター現象",
+      "死水効果"
+    ],
+    "fields": [
+      "Physical Oceanography",
+      "Fluid Dynamics"
+    ],
+    "observation_axis": "水面が静かに見えても、密度の異なる水層の境界で船が内部波を作り、見えない造波抵抗によって速度を失っていないかを見る。",
+    "nearest_terms": [
+      "acoustic-shadow",
+      "hysteresis"
+    ],
+    "semantic_cluster": "stratification-induced-internal-wave-drag",
+    "difference_from_nearest": "音響陰影は音波の伝播が遮られたり屈折したりして届きにくい領域ができる現象。死水現象は密度成層した水中で船が内部波を生み、その造波抵抗が船の進行を妨げる流体力学現象で、波の遮蔽ではなく波の生成に要するエネルギーが問題となる。",
+    "description": "密度の異なる水層が重なった海域などで、船の進行が水層境界の内部波を励起し、通常より大きな抵抗を受けて速度が低下・変動する現象。表面が穏やかでも水中に大きな内部波が存在しうる。ナンセン型とエクマン型など、異なる抵抗の現れ方が報告されている。",
+    "why_selected": "目に見える水面の波や船体の故障だけを原因とせず、水中の密度構造と見えない内部波が移動抵抗を作るという遠距離の物理現象へ探索を広げるため。",
+    "feelings": [
+      "海面は穏やかなのに、船が突然進みにくくなったり速度が揺れたりする。"
+    ],
+    "before": "水面に波がないのに船が遅いのは、エンジンや船底の問題？",
+    "after": "水の密度成層によって内部波が励起され、見えない造波抵抗が発生していない？",
+    "sources": [
+      "https://pubmed.ncbi.nlm.nih.gov/32641509/",
+      "https://doi.org/10.1088/0951-7715/24/8/008"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "acoustic-shadow",
+      "hysteresis"
+    ],
+    "status": "seed",
+    "one_liner": "水面が静かに見えても、密度の異なる水層の境界で船が内部波を作り、見えない造波抵抗によって速度を失っていないかを見る。"
+  }
+]
