@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-26",
+  "batch": "20261026-evening",
+  "term_annotations": {
+    "hit-testing": {
+      "axis": "画面上で見えている要素ではなく、ポインター座標と重なり・入力対象設定・ポインターキャプチャから、実際にどの要素へ入力イベントが届くかを見る。",
+      "nearest_terms": [
+        "stacking-context",
+        "pointer-cancellation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "スタッキングコンテキストは要素の描画上の積み重なり方を扱い、ポインター操作の取消しは押下から解放までの操作確定と撤回を扱う。ヒットテストはその座標で最初にどの要素がイベント対象となるかを決める入力経路の判定であり、表示順や確定時刻とは分析単位が異なる。",
+      "new_axis": true
+    },
+    "delamination": {
+      "axis": "材料全体の強度や変形だけでなく、積層された材料の層と層の界面が分離して損傷を進展させていないかを見る。",
+      "nearest_terms": [
+        "material-fatigue",
+        "stress-relaxation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "材料疲労は繰り返し荷重による損傷の蓄積という原因・時間経過を扱う。層間剥離は複合材や積層材の界面に沿う分離という損傷形態と伝播経路を扱い、衝撃など疲労以外でも起こりうる。応力緩和のような一定変形下での反力減少とも異なる。",
+      "new_axis": true
+    },
+    "allee-effect": {
+      "axis": "個体数が少ないと競争が減って有利になるとは限らず、低密度では交配相手の発見や協同防衛などが難しくなり、個体あたりの成長・繁殖が低下しないかを見る。",
+      "nearest_terms": [
+        "ecological-trap",
+        "niche-construction"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "生態学的罠は環境選択の手掛かりと実際の適応度の乖離。アリー効果は個体群密度そのものが個体あたりの繁殖・生存や個体群増殖率を左右する現象で、誤った環境選択ではなく密度依存性を扱う。強いアリー効果では閾値が生じうるが、すべての事例に絶滅閾値があるわけではない。",
+      "new_axis": true
+    },
+    "pseudotachylyte": {
+      "axis": "断層に残る急冷した摩擦溶融物を手掛かりに、過去の高速すべりと局所的な極端な摩擦発熱を推定できるかを見る。",
+      "nearest_terms": [
+        "solifluction",
+        "pseudomorph"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ソリフラクションは寒冷地の土壌が凍結融解・水分条件でゆっくり斜面移動する現象。シュードタキライトは高速の断層すべりなどで摩擦熱により溶けた岩石が急冷固結したものを扱い、速度・熱過程・証拠の種類が異なる。偽晶は形態保存であって摩擦溶融の証拠ではない。",
+      "new_axis": true
+    },
+    "breaching-experiment": {
+      "axis": "日常の暗黙の了解を意図的に破ったとき、人々がどのように戸惑い、説明し、元の秩序を回復しようとするかから、普段は見えない社会規範を読み取る。",
+      "nearest_terms": [
+        "proxemics",
+        "preference-falsification"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "プロクセミクスは人と人の距離や配置に付与される社会的意味を記述する。違背実験は暗黙の期待を意図的に崩し、参加者が秩序を修復する過程からその期待を可視化する方法で、空間配置の記述ではなく規範を露出させる操作と反応を扱う。",
+      "new_axis": true
+    },
+    "nonmonotonic-logic": {
+      "axis": "新しい情報を追加した結果、以前は妥当だった暫定的な推論を撤回する必要が生じるかを見る。",
+      "nearest_terms": [
+        "paraconsistent-logic",
+        "counterfactual-causation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "矛盾許容論理は矛盾する命題を含んでも任意の結論が導かれないようにする推論体系。非単調論理は前提が増えることで以前の結論が撤回されうる推論体系で、矛盾の爆発を防ぐことと、追加情報による推論の撤回は異なる性質である。",
+      "new_axis": true
+    }
+  }
+}
