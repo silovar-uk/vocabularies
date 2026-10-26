@@ -1,0 +1,231 @@
+[
+  {
+    "id": "hit-testing",
+    "term": "Hit Testing",
+    "ja": "ヒットテスト（入力対象判定）",
+    "aliases": [
+      "当たり判定",
+      "入力対象の判定"
+    ],
+    "fields": [
+      "Web",
+      "User Interface Engineering",
+      "Interaction Design"
+    ],
+    "observation_axis": "画面上で見えている要素ではなく、ポインター座標と重なり・入力対象設定・ポインターキャプチャから、実際にどの要素へ入力イベントが届くかを見る。",
+    "nearest_terms": [
+      "stacking-context",
+      "pointer-cancellation"
+    ],
+    "semantic_cluster": "pointer-target-resolution",
+    "difference_from_nearest": "スタッキングコンテキストは要素の描画上の積み重なり方を扱い、ポインター操作の取消しは押下から解放までの操作確定と撤回を扱う。ヒットテストはその座標で最初にどの要素がイベント対象となるかを決める入力経路の判定であり、表示順や確定時刻とは分析単位が異なる。",
+    "description": "ブラウザーなどがポインター位置に対応する入力対象を決める判定。画面上の重なりや要素の入力対象可否が関係し、WebではCSSのpointer-events:noneで要素自身を通常のポインター対象から外せる。ただし子要素やイベント伝播、ポインターキャプチャ、キーボードフォーカスは別に扱う必要がある。",
+    "why_selected": "見た目には押せるのに反応しないUIを、視覚階層やボタンの大きさの問題としてではなく、ブラウザーの入力対象判定という実装レイヤーから診断するため。",
+    "feelings": [
+      "ボタンは画面に見えているのに、透明なオーバーレイがタップを受け取ってしまう。"
+    ],
+    "before": "ボタンが押せないのは見た目やイベントハンドラーの問題？",
+    "after": "その座標のヒットテストで、どのDOM要素が実際にイベント対象になっている？",
+    "instruction": "押せない箇所ではdocument.elementFromPoint()と開発者ツールで最前面の入力対象を調べ、重なる要素のpointer-eventsとポインターキャプチャを確認してください。装飾オーバーレイだけを必要に応じて入力対象から外し、子要素・キーボード操作も再確認してください。",
+    "sources": [
+      "https://www.w3.org/TR/pointerevents3/",
+      "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/pointer-events"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "stacking-context",
+      "pointer-cancellation"
+    ],
+    "status": "seed",
+    "one_liner": "見えている要素と、実際にポインター入力を受け取る要素が一致しているかを見る。"
+  },
+  {
+    "id": "delamination",
+    "term": "Delamination",
+    "ja": "層間剥離（デラミネーション）",
+    "aliases": [
+      "デラミネーション"
+    ],
+    "fields": [
+      "Materials Engineering",
+      "Product Design",
+      "Composite Materials"
+    ],
+    "observation_axis": "材料全体の強度や変形だけでなく、積層された材料の層と層の界面が分離して損傷を進展させていないかを見る。",
+    "nearest_terms": [
+      "material-fatigue",
+      "stress-relaxation"
+    ],
+    "semantic_cluster": "interlayer-interface-separation",
+    "difference_from_nearest": "材料疲労は繰り返し荷重による損傷の蓄積という原因・時間経過を扱う。層間剥離は複合材や積層材の界面に沿う分離という損傷形態と伝播経路を扱い、衝撃など疲労以外でも起こりうる。応力緩和のような一定変形下での反力減少とも異なる。",
+    "description": "複合材、積層フィルム、接着構造などで隣り合う層が界面に沿って分離する損傷。衝撃・荷重・製造欠陥などで発生し、外観に大きな傷がなくても内部に進展することがある。複合材料では層間破壊靭性や損傷進展の評価が重要となる。",
+    "why_selected": "素材の不具合を『割れた・弱い』と一括りにせず、材料内部のどの界面が破壊されているかという制作・品質管理の観察軸を増やすため。",
+    "feelings": [
+      "表面はきれいな積層板なのに、軽い衝撃の後から内部の層が浮いて強度が低下する。"
+    ],
+    "before": "素材が壊れたのは全体の強度不足？",
+    "after": "積層の界面に剥離が生じ、荷重を伝えられなくなっていない？",
+    "instruction": "積層材の浮きや局所的な強度低下は層間剥離の可能性を確認してください。接着・積層条件と衝撃履歴を調べ、必要なら非破壊検査や層間破壊靭性の評価につなげてください。",
+    "sources": [
+      "https://ntrs.nasa.gov/citations/19840019766",
+      "https://ntrs.nasa.gov/citations/19880007251"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "material-fatigue",
+      "stress-relaxation"
+    ],
+    "status": "seed",
+    "one_liner": "積層材の強度低下を、材料内部の界面が離れる損傷として観察する。"
+  },
+  {
+    "id": "allee-effect",
+    "term": "Allee Effect",
+    "ja": "アリー効果",
+    "aliases": [
+      "アリー効果（正の密度依存）"
+    ],
+    "fields": [
+      "Population Ecology",
+      "Conservation Biology"
+    ],
+    "observation_axis": "個体数が少ないと競争が減って有利になるとは限らず、低密度では交配相手の発見や協同防衛などが難しくなり、個体あたりの成長・繁殖が低下しないかを見る。",
+    "nearest_terms": [
+      "ecological-trap",
+      "niche-construction"
+    ],
+    "semantic_cluster": "low-density-fitness-dependence",
+    "difference_from_nearest": "生態学的罠は環境選択の手掛かりと実際の適応度の乖離。アリー効果は個体群密度そのものが個体あたりの繁殖・生存や個体群増殖率を左右する現象で、誤った環境選択ではなく密度依存性を扱う。強いアリー効果では閾値が生じうるが、すべての事例に絶滅閾値があるわけではない。",
+    "description": "個体群密度が低い領域で、密度の上昇とともに個体あたりの繁殖成功や成長率が高まる正の密度依存。交配相手の不足、協同防衛の困難、群れの維持などが原因になりうる。強い場合は低密度で個体群が減少する臨界点が存在しうるが、実証には個体レベルと個体群レベルの効果を区別する必要がある。",
+    "why_selected": "生物が減るほど資源競争が緩和されて回復しやすいという直感を外し、希少化そのものが回復を妨げる仕組みへ探索を広げるため。",
+    "feelings": [
+      "保護対象の動物がわずかに残っているのに、餌は十分でも繁殖が回復しない。"
+    ],
+    "before": "個体数が減れば競争が弱まり、自然に増えやすくなる？",
+    "after": "密度が低すぎることで交配や協同が成立せず、個体あたりの繁殖成功が落ちていない？",
+    "sources": [
+      "https://esj-journals.onlinelibrary.wiley.com/doi/abs/10.1007/s10144-009-0152-6"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "ecological-trap",
+      "niche-construction"
+    ],
+    "status": "seed",
+    "one_liner": "希少になったこと自体が、生存・繁殖をさらに難しくする密度依存を観察する。"
+  },
+  {
+    "id": "pseudotachylyte",
+    "term": "Pseudotachylyte",
+    "ja": "シュードタキライト（断層摩擦溶融岩）",
+    "aliases": [
+      "シュードタキライト",
+      "疑似タキライト"
+    ],
+    "fields": [
+      "Structural Geology",
+      "Earthquake Science"
+    ],
+    "observation_axis": "断層に残る急冷した摩擦溶融物を手掛かりに、過去の高速すべりと局所的な極端な摩擦発熱を推定できるかを見る。",
+    "nearest_terms": [
+      "solifluction",
+      "pseudomorph"
+    ],
+    "semantic_cluster": "fault-friction-melt-record",
+    "difference_from_nearest": "ソリフラクションは寒冷地の土壌が凍結融解・水分条件でゆっくり斜面移動する現象。シュードタキライトは高速の断層すべりなどで摩擦熱により溶けた岩石が急冷固結したものを扱い、速度・熱過程・証拠の種類が異なる。偽晶は形態保存であって摩擦溶融の証拠ではない。",
+    "description": "断層帯などに見られる、急速な摩擦加熱で岩石が溶融し、急冷して形成された細粒・ガラス質の岩石。地震時の高速すべりを示唆する地質学的証拠となりうるが、すべての地震で形成されるわけではなく、産状や組織の慎重な判定が必要。",
+    "why_selected": "地震を揺れの記録だけで捉えるのではなく、過去の一瞬の摩擦発熱が岩石に物質的証拠として保存されるという地質学の問いを加えるため。",
+    "feelings": [
+      "古い断層面に、岩石が一度溶けて急冷したような暗色の細い脈が残っている。"
+    ],
+    "before": "古い断層が動いた速度や熱は、もう調べられない？",
+    "after": "断層岩に急冷した摩擦溶融物が残り、過去の高速すべりを示していない？",
+    "sources": [
+      "https://www.usgs.gov/publications/pseudotachylyte-increases-post-slip-strength-faults"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "solifluction",
+      "pseudomorph"
+    ],
+    "status": "seed",
+    "one_liner": "岩石に残る摩擦溶融の痕跡から、過去の高速断層すべりを観察する。"
+  },
+  {
+    "id": "breaching-experiment",
+    "term": "Breaching Experiment",
+    "ja": "違背実験（ブリーチング実験）",
+    "aliases": [
+      "ブリーチング実験",
+      "規範違背実験"
+    ],
+    "fields": [
+      "Sociology",
+      "Ethnomethodology"
+    ],
+    "observation_axis": "日常の暗黙の了解を意図的に破ったとき、人々がどのように戸惑い、説明し、元の秩序を回復しようとするかから、普段は見えない社会規範を読み取る。",
+    "nearest_terms": [
+      "proxemics",
+      "preference-falsification"
+    ],
+    "semantic_cluster": "norm-disruption-reveals-background-expectations",
+    "difference_from_nearest": "プロクセミクスは人と人の距離や配置に付与される社会的意味を記述する。違背実験は暗黙の期待を意図的に崩し、参加者が秩序を修復する過程からその期待を可視化する方法で、空間配置の記述ではなく規範を露出させる操作と反応を扱う。",
+    "description": "ハロルド・ガーフィンケルのエスノメソドロジーに関係する、当たり前の相互行為上の期待を破ることで背景にある規範と秩序維持の働きを観察する研究上のデモンストレーション。代表例には家族に下宿人のように振る舞う課題などがある。厳密な統制実験とは限らず、相手の不快感や倫理的負担に配慮が必要。",
+    "why_selected": "社会秩序を明示された規則からではなく、破られた瞬間の戸惑いと修復行動から逆算するという、制度研究とは異なる観察手続きを追加するため。",
+    "feelings": [
+      "家族に対して突然、見知らぬ下宿人に接するようなよそよそしい敬語で話すと、相手が困惑する。"
+    ],
+    "before": "家庭や会話の暗黙のルールは、聞けば説明してもらえる？",
+    "after": "いつもの振る舞いを崩したとき、何を元に戻そうとする反応が起きる？",
+    "sources": [
+      "https://books.google.com/books?id=0tVkAAAAIAAJ",
+      "https://communication.iresearchnet.com/language-and-social-interaction/ethnomethodology-2/"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "proxemics",
+      "preference-falsification"
+    ],
+    "status": "seed",
+    "one_liner": "当たり前を破った際の反応から、言語化されない社会の期待を観察する。"
+  },
+  {
+    "id": "nonmonotonic-logic",
+    "term": "Non-monotonic Logic",
+    "ja": "非単調論理",
+    "aliases": [
+      "非単調推論",
+      "Nonmonotonic Reasoning"
+    ],
+    "fields": [
+      "Philosophical Logic",
+      "Artificial Intelligence",
+      "Knowledge Representation"
+    ],
+    "observation_axis": "新しい情報を追加した結果、以前は妥当だった暫定的な推論を撤回する必要が生じるかを見る。",
+    "nearest_terms": [
+      "paraconsistent-logic",
+      "counterfactual-causation"
+    ],
+    "semantic_cluster": "defeasible-conclusion-retraction",
+    "difference_from_nearest": "矛盾許容論理は矛盾する命題を含んでも任意の結論が導かれないようにする推論体系。非単調論理は前提が増えることで以前の結論が撤回されうる推論体系で、矛盾の爆発を防ぐことと、追加情報による推論の撤回は異なる性質である。",
+    "description": "通常の単調な演繹論理では前提を追加しても既存の論理的帰結は失われない。一方、非単調論理は『鳥は通常飛ぶ』から暫定的に飛べると推論しても『この鳥はペンギンである』という情報が加われば撤回するような、例外や新情報に応じた取消し可能な推論を形式的に扱う。",
+    "why_selected": "情報が増えれば結論も単に増えるという見方を離れ、知識の追加が以前の結論を取り消す推論構造へ意味空間を広げるため。",
+    "feelings": [
+      "『鳥だから飛べる』と推定した後、『ペンギンだった』と分かって結論を取り消す。"
+    ],
+    "before": "情報が増えるほど、導ける結論は増えるだけ？",
+    "after": "新しい例外情報によって、以前は支持されていた推論を撤回すべきでは？",
+    "sources": [
+      "https://plato.stanford.edu/entries/logic-nonmonotonic/",
+      "https://plato.stanford.edu/entries/logic-paraconsistent/"
+    ],
+    "semantic_distance": "A",
+    "related": [
+      "paraconsistent-logic",
+      "counterfactual-causation"
+    ],
+    "status": "seed",
+    "one_liner": "新情報の追加が、過去の暫定結論を撤回させる仕組みを観察する。"
+  }
+]
