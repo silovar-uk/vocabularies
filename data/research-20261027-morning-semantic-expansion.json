@@ -1,0 +1,206 @@
+[
+  {
+    "id": "vestibulo-ocular-reflex",
+    "term": "Vestibulo-Ocular Reflex",
+    "ja": "前庭動眼反射",
+    "aliases": [
+      "VOR",
+      "前庭眼反射"
+    ],
+    "fields": [
+      "Neuroscience",
+      "Physiology",
+      "Sensorimotor Control"
+    ],
+    "one_liner": "頭が動いても景色がぶれにくいのは、頭と逆向きに眼球を動かす反射が働くからではないかと見る。",
+    "description": "頭部の回転などを内耳の前庭器官が検出し、眼球をおおむね逆向きに動かして網膜像と視線を安定させる反射。半規管・前庭神経・脳幹・外眼筋などが関与し、視覚と前庭入力のずれに応じて反射の利得が適応することもある。身体の位置を知覚することとは異なり、感覚入力を眼球運動へ変換する制御を扱う。",
+    "why_selected": "探索負債上位の身体定位から、感覚の種類や知覚の精度ではなく、頭部運動を打ち消す眼球運動の反射回路へ観察対象を移すため。",
+    "feelings": [
+      "歩きながら看板を見ても文字が大きくぶれずに読める。"
+    ],
+    "before": "頭を動かしても見えるのは、目が速く対象を追っているから？",
+    "after": "前庭入力が頭の動きを検出し、逆方向の眼球運動を自動的に起こしていない？",
+    "observation_axis": "頭部運動の感覚入力が、網膜像を安定させるための反対方向の眼球運動へ、どのように変換されるかを見る。",
+    "semantic_cluster": "vestibular-gaze-stabilization",
+    "nearest_terms": [
+      "sensory-reweighting",
+      "body-schema"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "感覚の再重みづけは複数の感覚情報源の信頼度の調整、身体図式は身体状態の表象と運動制御への利用を扱う。前庭動眼反射は頭部運動を検知した直後に眼球を反対方向へ駆動する特定の感覚運動反射であり、対象・出力・時間スケールが異なる。",
+    "related": [
+      "sensory-reweighting",
+      "proprioception",
+      "body-schema"
+    ],
+    "sources": [
+      "https://www.ncbi.nlm.nih.gov/books/NBK542281/",
+      "https://pubmed.ncbi.nlm.nih.gov/11976372/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "hold-up-problem",
+    "term": "Hold-Up Problem",
+    "ja": "ホールドアップ問題（関係特殊的投資の交渉リスク）",
+    "aliases": [
+      "ホールドアップ問題",
+      "関係特殊的投資の過少投資"
+    ],
+    "fields": [
+      "Economics",
+      "Contract Theory",
+      "Organizational Economics"
+    ],
+    "one_liner": "相手との取引専用の投資をした後で交渉力が変わり、投資前から投資が控えられていないかを見る。",
+    "description": "ある取引相手に合わせた設備・技能などの投資が他用途へ転用しにくく、契約で将来の条件を完全に定められないとき、投資後の再交渉で投資の利益が相手へ移るおそれが生じる問題。その予想から、双方に利益がある投資でも過少投資になりうる。すべての再交渉が搾取的という意味ではなく、契約の不完備性・資産特殊性・交渉力の変化が重要。",
+    "why_selected": "制度とインセンティブの探索で、依頼者と代理人の情報差から離れ、先に取り消せない投資をしたことで後の交渉条件が変わる構造を補うため。",
+    "feelings": [
+      "専用設備を納入先のために購入した後、取引条件の再交渉を求められる。"
+    ],
+    "before": "契約前に利益が出る投資なら、なぜ実行しない？",
+    "after": "投資後に転用先がなくなり、相手に条件変更を迫られると予想していない？",
+    "observation_axis": "特定の相手にしか使いにくい投資を行う前後で、代替先と交渉力がどう変わり、事前の投資意欲を削いでいないかを見る。",
+    "semantic_cluster": "asset-specific-ex-post-bargaining",
+    "nearest_terms": [
+      "principal-agent-problem",
+      "time-inconsistency"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "プリンシパル＝エージェント問題は依頼・代理の情報と利害の不一致を扱う。時間的不整合は同一の計画を将来守る誘因の変化を扱う。ホールドアップ問題は関係特殊的な埋没投資が生む事後交渉力の変化と、それを見越した事前の過少投資が分析対象である。",
+    "related": [
+      "principal-agent-problem",
+      "time-inconsistency",
+      "adverse-selection"
+    ],
+    "sources": [
+      "https://www.journals.uchicago.edu/doi/10.1086/466922",
+      "https://onlinelibrary.wiley.com/doi/10.1111/joes.12398"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "countershading",
+    "term": "Countershading",
+    "ja": "カウンターシェーディング（逆陰影による体色）",
+    "aliases": [
+      "逆陰影",
+      "対陰影"
+    ],
+    "fields": [
+      "Evolutionary Biology",
+      "Zoology",
+      "Visual Ecology"
+    ],
+    "one_liner": "動物の背と腹の色の違いが、照明による陰影を相殺し、体の立体形状を見えにくくしていないかを見る。",
+    "description": "動物の体表で通常よく光が当たる側が暗く、陰になりやすい側が明るいという色の配置。特定の光環境・姿勢では体表の明暗勾配を減らし、形状の手掛かりを弱める迷彩として機能しうる。上からと下からで背景に溶け込む説明もあり、すべての種で同じ機能が実証されているわけではない。",
+    "why_selected": "直近の地質・計測の痕跡読みから離れ、生物の色を『目立つか』ではなく、環境光が作る立体感を打ち消す物理的な配置として観察するため。",
+    "feelings": [
+      "動物の背中が濃く腹が薄いのは、単なる模様だと思っていた。"
+    ],
+    "before": "背中と腹の色が違うのは飾りや種の特徴？",
+    "after": "光の当たり方と姿勢に応じて、陰影による体の丸みを見えにくくしていない？",
+    "observation_axis": "体表の濃淡の配置が、外からの光で生じる自己陰影を相殺し、捕食者などが利用する形状の手掛かりを減らすかを見る。",
+    "semantic_cluster": "illumination-compensating-camouflage",
+    "nearest_terms": [
+      "aposematism",
+      "metamerism"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "警告シグナルは目立つ色などで相手に危険を知らせ接触を抑える。メタメリズムは照明条件による色の一致・不一致を扱う。カウンターシェーディングは光による自己陰影を体表の色配置で打ち消して形状知覚を妨げる作用で、信号の目的も光学的な因果も異なる。",
+    "related": [
+      "aposematism",
+      "metamerism",
+      "figure-ground"
+    ],
+    "sources": [
+      "https://www.nature.com/articles/s41598-017-13914-y",
+      "https://doi.org/10.1086/682570"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "inter-rater-reliability",
+    "term": "Inter-Rater Reliability",
+    "ja": "評価者間信頼性",
+    "aliases": [
+      "評価者間一致度",
+      "Inter-Observer Reliability",
+      "評定者間信頼性"
+    ],
+    "fields": [
+      "Statistics",
+      "Measurement",
+      "Research Methods"
+    ],
+    "one_liner": "同じ対象を別々の人が評価したとき、判断結果がどの程度一致・再現するかを見る。",
+    "description": "複数の独立した評価者が同一対象に分類・点数付けなどを行ったときの判断の一致・安定性。名義尺度の二者判定にはコーエンのκ係数、連続的な評定には級内相関係数（ICC）などを状況に応じて使う。単純一致率と偶然一致を調整した指標は異なり、高い一致は評価の正しさ自体を保証しない。",
+    "why_selected": "測定の信頼性を『機械の誤差』『尺度の比較可能性』から、判断する人が変わったときの再現性という別の分析単位へ広げるため。",
+    "feelings": [
+      "二人の担当者が同じ文章を読んで重要度を付けたのに、評価が食い違う。"
+    ],
+    "before": "評価ルールがあるなら、担当者が違っても同じ結果になるはず？",
+    "after": "同一サンプルを独立に評定させ、一致率と適切な信頼性指標で評価者差を測れない？",
+    "instruction": "同じ対象を少なくとも二人が独立に評価し、判定表を作ってください。分類尺度なら一致率とκ係数、連続評定なら目的に合うICCなどを確認し、不一致事例の評価基準を修正してください。",
+    "observation_axis": "同一の対象と評価基準でも、判断する人を変えると結果がどれほど変わるかを、評価者間の一致として測る。",
+    "semantic_cluster": "human-rater-reproducibility",
+    "nearest_terms": [
+      "measurement-invariance",
+      "limits-of-agreement"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "測定不変性は異なる集団や時点で尺度が同じ潜在概念を測るか、一致限界は二つの測定方法による対象ごとの差の分布を扱う。評価者間信頼性は同一基準を適用する複数の人間の判断がどれだけ再現するかを扱い、誤差源と比較単位が異なる。",
+    "related": [
+      "measurement-invariance",
+      "limits-of-agreement",
+      "measurement-uncertainty"
+    ],
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC3900052/",
+      "https://pubmed.ncbi.nlm.nih.gov/9088995/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "meaningful-sequence",
+    "term": "Meaningful Sequence",
+    "ja": "意味のある読み順（ミーニングフル・シーケンス）",
+    "aliases": [
+      "読み上げ順序",
+      "Meaningful Reading Order",
+      "正しい読み順"
+    ],
+    "fields": [
+      "Web Accessibility",
+      "Information Architecture",
+      "Web"
+    ],
+    "one_liner": "画面上の並びを外して文章を順に読んでも、意味を理解できる順序がコードから取り出せるかを見る。",
+    "description": "WCAG達成基準1.3.2に対応し、内容の順番が意味に影響する場合に、支援技術などが正しい読み順をプログラムから決定できることを求める概念。視覚的なCSS配置とDOMの順番が異なっていても、少なくとも一つの意味を保つ読み順が得られればよい。キーボードで操作可能な要素を巡るフォーカス順序とは区別される。",
+    "why_selected": "見た目の階層やボタン操作ではなく、本文・見出し・注記を音声で一列に読み下したときの意味の連続性を実務で修正できる語として選んだ。",
+    "feelings": [
+      "二段組のページを音声で読むと、左列と右列の文章が途中で交互に混ざる。"
+    ],
+    "before": "画面上では順番どおりに見えるから問題ない？",
+    "after": "CSSを無効化したり読み上げたりしても、内容の因果や手順が意味のある順番で伝わる？",
+    "instruction": "本文・見出し・注記をDOM順に一列化し、読み上げ順序が意味を保つか確認してください。CSSのorderやgrid配置だけで手順を並べ替えず、必要ならHTMLのソース順を修正してください。",
+    "observation_axis": "視覚的な配置やタブ移動の順序とは別に、文章や手順を非視覚的に直列化したとき、意味を保つ読み順がプログラムから得られるかを見る。",
+    "semantic_cluster": "programmatic-content-reading-order",
+    "nearest_terms": [
+      "focus-order",
+      "language-of-parts"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "フォーカス順序は主に操作可能な要素をキーボードで巡る順番と操作性を扱う。部分ごとの言語指定は文字列の発音言語を支援技術へ伝える。意味のある読み順は静的な本文・見出し・手順も含め、内容を一列化したときの意味の保存を問う。",
+    "related": [
+      "focus-order",
+      "language-of-parts",
+      "visual-hierarchy"
+    ],
+    "sources": [
+      "https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence",
+      "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html"
+    ],
+    "status": "seed"
+  }
+]
