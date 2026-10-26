@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-27",
+  "batch": "20261027-morning",
+  "term_annotations": {
+    "vestibulo-ocular-reflex": {
+      "axis": "頭部運動の感覚入力が、網膜像を安定させるための反対方向の眼球運動へ、どのように変換されるかを見る。",
+      "nearest_terms": [
+        "sensory-reweighting",
+        "body-schema"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "感覚の再重みづけは複数の感覚情報源の信頼度の調整、身体図式は身体状態の表象と運動制御への利用を扱う。前庭動眼反射は頭部運動を検知した直後に眼球を反対方向へ駆動する特定の感覚運動反射であり、対象・出力・時間スケールが異なる。",
+      "new_axis": true
+    },
+    "hold-up-problem": {
+      "axis": "特定の相手にしか使いにくい投資を行う前後で、代替先と交渉力がどう変わり、事前の投資意欲を削いでいないかを見る。",
+      "nearest_terms": [
+        "principal-agent-problem",
+        "time-inconsistency"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "プリンシパル＝エージェント問題は依頼・代理の情報と利害の不一致を扱う。時間的不整合は同一の計画を将来守る誘因の変化を扱う。ホールドアップ問題は関係特殊的な埋没投資が生む事後交渉力の変化と、それを見越した事前の過少投資が分析対象である。",
+      "new_axis": true
+    },
+    "countershading": {
+      "axis": "体表の濃淡の配置が、外からの光で生じる自己陰影を相殺し、捕食者などが利用する形状の手掛かりを減らすかを見る。",
+      "nearest_terms": [
+        "aposematism",
+        "metamerism"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "警告シグナルは目立つ色などで相手に危険を知らせ接触を抑える。メタメリズムは照明条件による色の一致・不一致を扱う。カウンターシェーディングは光による自己陰影を体表の色配置で打ち消して形状知覚を妨げる作用で、信号の目的も光学的な因果も異なる。",
+      "new_axis": true
+    },
+    "inter-rater-reliability": {
+      "axis": "同一の対象と評価基準でも、判断する人を変えると結果がどれほど変わるかを、評価者間の一致として測る。",
+      "nearest_terms": [
+        "measurement-invariance",
+        "limits-of-agreement"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "測定不変性は異なる集団や時点で尺度が同じ潜在概念を測るか、一致限界は二つの測定方法による対象ごとの差の分布を扱う。評価者間信頼性は同一基準を適用する複数の人間の判断がどれだけ再現するかを扱い、誤差源と比較単位が異なる。",
+      "new_axis": true
+    },
+    "meaningful-sequence": {
+      "axis": "視覚的な配置やタブ移動の順序とは別に、文章や手順を非視覚的に直列化したとき、意味を保つ読み順がプログラムから得られるかを見る。",
+      "nearest_terms": [
+        "focus-order",
+        "language-of-parts"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "フォーカス順序は主に操作可能な要素をキーボードで巡る順番と操作性を扱う。部分ごとの言語指定は文字列の発音言語を支援技術へ伝える。意味のある読み順は静的な本文・見出し・手順も含め、内容を一列化したときの意味の保存を問う。",
+      "new_axis": true
+    }
+  }
+}
