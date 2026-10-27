@@ -1,0 +1,245 @@
+[
+  {
+    "id": "third-place",
+    "term": "Third Place",
+    "ja": "第三の場所（サードプレイス）",
+    "aliases": [
+      "サードプレイス",
+      "第三の居場所"
+    ],
+    "fields": [
+      "Sociology",
+      "Geography",
+      "Architecture"
+    ],
+    "one_liner": "家でも職場でもない場所が、繰り返しの気軽な交流を支える社会的な拠点になっているかを見る。",
+    "description": "社会学者レイ・オルデンバーグが論じた、家庭（第一の場所）と職場（第二の場所）の外で、人々が比較的自由に集い、会話や常連の交流を重ねる非公式な公共的居場所。中立性、立場の平等、アクセスのしやすさ、常連の存在などが特徴として挙げられる。単に第三の施設があれば成立するわけではなく、参加の敷居や継続的な交流の仕方が重要。",
+    "why_selected": "空間と社会秩序の探索で、個人間の距離や排除装置ではなく、場所の反復利用が弱い社会的つながりを育てる条件へ分析単位を移すため。",
+    "feelings": [
+      "同じ喫茶店に通ううち、約束していない常連と自然に挨拶するようになる。"
+    ],
+    "before": "カフェや広場は、利用目的に応じて使う施設？",
+    "after": "そこは所属や義務を問わず繰り返し集まり、日常の非公式な交流が育つ第三の場所になっている？",
+    "observation_axis": "家庭・職場以外の場所で、中立性・入りやすさ・常連の反復交流が、非公式な社会的つながりをどう成立させるかを見る。",
+    "semantic_cluster": "informal-recurrent-social-gathering-place",
+    "nearest_terms": [
+      "hostile-architecture",
+      "space-syntax"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "敵対的建築は設備・形状による行動の排除、空間構文論は空間の接続構造が移動に与える影響を扱う。第三の場所は、繰り返し訪れる場の社会的役割と気軽な交流が成立する条件を扱い、分析単位が物理的形状や移動経路から社会的居場所へ移る。",
+    "related": [
+      "hostile-architecture",
+      "proxemics",
+      "space-syntax"
+    ],
+    "sources": [
+      "https://academic.oup.com/view-large/104163495"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "unreliable-narrator",
+    "term": "Unreliable Narrator",
+    "ja": "信頼できない語り手",
+    "aliases": [
+      "信用できない語り手",
+      "不可靠な語り手",
+      "Unreliable Narration"
+    ],
+    "fields": [
+      "Narratology",
+      "Literature",
+      "Writing"
+    ],
+    "one_liner": "物語の語り手が伝える事実・解釈・価値判断を、作品内の手掛かりと照らして信用できるか見る。",
+    "description": "物語の語り手の報告・解釈・評価が、作品の示す事実や規範と食い違うなどして、読者がその語りを額面どおりには受け取れない構造。故意の嘘だけでなく、記憶違い、誤解、偏った評価、情報の過少提示も含みうる。ウェイン・ブースの議論を起点とするが、何をもって不信頼と判断するかには研究上の議論がある。",
+    "why_selected": "物語の情報制御の探索で、『誰の知識の範囲で描くか』から、『その語りを読者がどの根拠で疑うか』へ問いを転換するため。",
+    "feelings": [
+      "主人公の説明は筋が通っているのに、他の人物の言動と矛盾して見える。"
+    ],
+    "before": "語り手が知っていることを、そのまま事実として受け取る？",
+    "after": "語り手の報告・解釈・評価と、作品中の別の証拠はどこで食い違う？",
+    "observation_axis": "語り手の発言を作品内の出来事や他の手掛かりと照合し、報告・解釈・評価のどの段階に信頼性のずれがあるかを見る。",
+    "semantic_cluster": "narratorial-credibility-gap",
+    "nearest_terms": [
+      "focalization",
+      "free-indirect-discourse"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "焦点化は物語情報が誰の知覚・知識に制限されるか、自由間接話法は語り手と人物の声が一文内でどう重なるかを扱う。信頼できない語り手は、提示された語りの事実・解釈・評価を作品内の別の根拠と照合し、語りの信用度を問う。",
+    "related": [
+      "focalization",
+      "free-indirect-discourse",
+      "epistemic-stance"
+    ],
+    "sources": [
+      "https://www-archiv.fdm.uni-hamburg.de/lhn/node/66/revisions/264/view.html",
+      "https://doi.org/10.34864/heteroglossia.issn.2084-1302.nr17.art05"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "thermal-bridging",
+    "term": "Thermal Bridging",
+    "ja": "熱橋（ヒートブリッジ）",
+    "aliases": [
+      "ヒートブリッジ",
+      "熱橋現象",
+      "Thermal Bridge"
+    ],
+    "fields": [
+      "Architecture",
+      "Materials Engineering",
+      "Product Design"
+    ],
+    "one_liner": "断熱材が十分でも、構造材や接合部が局所的な熱の通り道になっていないかを見る。",
+    "description": "建物の外皮などで、周囲より熱が通りやすい材料・部材や幾何学的な接合条件によって、局所的な熱流が増える現象。柱・窓周り・金属の貫通部などが典型例で、壁面の断熱材の性能だけでは建物全体の熱損失を説明できない。連続断熱や納まりの変更で低減を検討する。",
+    "why_selected": "素材の時間・力への応答という探索から、強度や寸法ではなく『材料の組合せと接合部を通る熱の経路』という建築制作の診断軸を追加するため。",
+    "feelings": [
+      "壁には断熱材を入れたのに、柱の位置だけ冬に冷たく感じる。"
+    ],
+    "before": "断熱材の厚さを増やせば熱損失は解決する？",
+    "after": "柱・金物・開口部の接合部が、断熱層をまたぐ熱橋になっていない？",
+    "instruction": "外壁の柱・金物・窓周りの納まりを確認し、断熱層を貫通する熱橋を特定してください。連続断熱などで熱流を減らせるか、熱損失と結露リスクを合わせて検討してください。",
+    "observation_axis": "平均的な断熱性能ではなく、異なる材料や部材の接合・貫通部に局所的な熱の通り道が形成されていないかを見る。",
+    "semantic_cluster": "localized-thermal-envelope-bypass",
+    "nearest_terms": [
+      "coefficient-of-thermal-expansion",
+      "galvanic-corrosion"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "熱膨張係数は温度変化に伴う寸法の変化、ガルバニック腐食は異種材料の電気化学的な接触腐食を扱う。熱橋は部材の配置・接合を通じて生じる熱流の集中と断熱の弱点を扱い、評価する物理量も原因も異なる。",
+    "related": [
+      "coefficient-of-thermal-expansion",
+      "galvanic-corrosion",
+      "tolerance-stack-up"
+    ],
+    "sources": [
+      "https://bsesc.energy.gov/energy-basics/continuous-rigid-insulation-exterior-walls",
+      "https://bsesc.energy.gov/energy-basics/wall-framing-insulated-sheathing"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "motion-blur",
+    "term": "Motion Blur",
+    "ja": "モーションブラー（動きによるぶれ）",
+    "aliases": [
+      "動体ぶれ",
+      "動きのぶれ"
+    ],
+    "fields": [
+      "Motion Design",
+      "Photography",
+      "Graphic Design"
+    ],
+    "one_liner": "速く動く物体の見え方を、一瞬の静止位置ではなく露光・時間的な位置の重なりとして考える。",
+    "description": "露光時間の間に被写体やカメラが動くことで、位置の変化が一枚のフレーム内にぶれとして記録される現象。CGやモーションデザインでは時間内の位置をサンプリングして再現する。適切なぶれは動きの連続性を伝えうるが、過剰な適用は文字や輪郭の視認性を損なう。After Effectsではレイヤーのモーションブラーとコンポジション側の設定を組み合わせて調整する。",
+    "why_selected": "Webと映像制作の対照候補から、動きの速度曲線やフレーム間の位置差ではなく、一フレーム内部に運動がどれだけ積分されるかを修正指示に使えるため。",
+    "feelings": [
+      "高速で横切るロゴが、コマごとにくっきりしすぎてパラパラ見える。"
+    ],
+    "before": "動きがカクつくので、イージングだけを調整する？",
+    "after": "一フレーム内の露光時間に相当するぶれがなく、連続した運動として見えにくくなっていない？",
+    "instruction": "高速移動する図形に必要最小限のモーションブラーを試し、シャッター角度相当の設定を調整してください。文字の可読性と停止時の輪郭を必ず確認し、UIでは動きの軽減設定にも配慮してください。",
+    "observation_axis": "フレーム間の位置や速度曲線ではなく、一フレームの露光・サンプリング時間にわたる運動が輪郭のぶれとしてどう表れるかを見る。",
+    "semantic_cluster": "within-frame-temporal-motion-integration",
+    "nearest_terms": [
+      "rolling-shutter",
+      "stroboscopic-effect"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "ローリングシャッターは画像の行ごとの取得時刻差による幾何学的歪み、ストロボ効果は運動と離散的な観測間隔の関係を扱う。モーションブラーは一つの露光区間内で動く物体の位置が重なり、輪郭の鮮明さが変化する現象を扱う。",
+    "related": [
+      "rolling-shutter",
+      "stroboscopic-effect",
+      "easing-function"
+    ],
+    "sources": [
+      "https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/assorted-animation-tools/assorted-animation-tools.html",
+      "https://www.adobe.com/learn/after-effects/web/fine-tune-animation-with-motion-blur"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "biological-carbon-pump",
+    "term": "Biological Carbon Pump",
+    "ja": "生物炭素ポンプ",
+    "aliases": [
+      "海洋生物炭素ポンプ",
+      "Biological Pump"
+    ],
+    "fields": [
+      "Oceanography",
+      "Ecology",
+      "Earth Science"
+    ],
+    "one_liner": "海面近くで固定された炭素が、生物活動によって深海へ運ばれ、どのくらい長く隔離されるかを見る。",
+    "description": "海洋表層で植物プランクトンが光合成により取り込んだ炭素が、食物網、沈降粒子、動物の鉛直移動などを通じて中深層へ輸送される過程。輸送された炭素の一部は深層で再無機化され、表層・大気へ戻るまでの時間が長くなる。すべての固定炭素が深海に届くわけではなく、輸出量と深層での保持は分けて考える。",
+    "why_selected": "最近の陸上生態学・元素比の探索から離れ、海洋の鉛直方向の炭素輸送と時間的な隔離を新しい観察対象にするため。",
+    "feelings": [
+      "海面の小さなプランクトンの活動が、遠く離れた深海の炭素貯蔵に関係している。"
+    ],
+    "before": "海の植物プランクトンは二酸化炭素をどれだけ吸収する？",
+    "after": "固定された炭素のうち、どれだけが表層で再循環せず深海へ運ばれ、どのくらい保持される？",
+    "observation_axis": "海洋表層で生物が固定した炭素の量だけでなく、食物網と沈降・鉛直輸送を経て深層へ移る割合と保持時間を見る。",
+    "semantic_cluster": "biological-vertical-ocean-carbon-export",
+    "nearest_terms": [
+      "ecological-stoichiometry",
+      "hydraulic-redistribution"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "生態化学量論は生物と餌の元素比が成長や循環を制約する仕組み、水理的再分配は植物の根を介した土壌中の水移動を扱う。生物炭素ポンプは海洋の深さ方向に炭素が輸送される量と長期隔離の時間軸を扱い、物質・空間方向・分析単位が異なる。",
+    "related": [
+      "ecological-stoichiometry",
+      "isotope-fractionation",
+      "hydraulic-redistribution"
+    ],
+    "sources": [
+      "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/cycles/biological-carbon-pump/",
+      "https://repository.library.noaa.gov/view/noaa/58379"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "hidden-curriculum",
+    "term": "Hidden Curriculum",
+    "ja": "隠れたカリキュラム",
+    "aliases": [
+      "潜在的カリキュラム",
+      "非公式カリキュラム"
+    ],
+    "fields": [
+      "Education",
+      "Sociology",
+      "Anthropology"
+    ],
+    "one_liner": "授業で教える内容とは別に、学校の規則・時間割・評価・人間関係が何を学ばせているかを見る。",
+    "description": "学校で公式に教える知識・技能とは別に、教室の規則、集団生活、評価、権力関係、日常の慣行を通じて学習者が身につける規範・態度・期待など。フィリップ・ジャクソンの『Life in Classrooms』（1968）に結びつく概念で、暗黙に学ばれるものが常に意図的・有益とは限らない。学校以外の研修などへ応用する場合は元の教育制度の文脈と区別する。",
+    "why_selected": "最近の実務用語や対人スキルから直接連想しにくい教育社会学へ進み、公式な教示ではなく制度の日常運用が教える内容を観察するため。",
+    "feelings": [
+      "授業では主体性を教えているのに、教室では黙って指示を待つ行動が褒められる。"
+    ],
+    "before": "学校で何を教えているかは、シラバスを読めば分かる？",
+    "after": "教室のルール・評価・日常の振る舞いを通じて、明文化されない何を学んでいる？",
+    "observation_axis": "公式に教えられる内容とは別に、教育機関の日常的な規則・評価・権力関係が、どんな態度や規範を暗黙に学習させているかを見る。",
+    "semantic_cluster": "institutionally-implicit-school-socialization",
+    "nearest_terms": [
+      "tacit-knowledge",
+      "habitus"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "暗黙知は明文化しにくい個人の技能・知識、ハビトゥスは社会化で形成された持続的な傾向性を扱う。隠れたカリキュラムは学校の公式授業以外の組織的な日常経験が、どんな規範・態度を学ばせるかという教育制度内の伝達経路を扱う。",
+    "related": [
+      "tacit-knowledge",
+      "habitus",
+      "institutional-isomorphism"
+    ],
+    "sources": [
+      "https://doi.org/10.4135/9781412958806.n236",
+      "https://www.tandfonline.com/doi/abs/10.1080/00220272.2025.2571096"
+    ],
+    "status": "seed"
+  }
+]
