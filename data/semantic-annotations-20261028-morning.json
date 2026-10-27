@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-28",
+  "batch": "20261028-morning",
+  "term_annotations": {
+    "baroreflex": {
+      "axis": "血圧変化に対して圧受容器の伸展信号が自律神経出力へ変換され、心拍数と末梢血管抵抗がどの向きに調整されるかを見る。",
+      "nearest_terms": [
+        "vestibulo-ocular-reflex",
+        "interoception"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "前庭動眼反射は頭部運動を眼球運動へ変換して視線を安定させる。内受容感覚は内部状態の知覚を扱う。圧受容器反射は血管壁の伸展を神経入力として血圧を自動調節する負のフィードバック回路であり、制御対象・出力器官・目的が異なる。",
+      "new_axis": true
+    },
+    "soft-budget-constraint": {
+      "axis": "資金不足時の外部救済が予想されることで、支出超過の負担を負う主体と意思決定する主体がずれ、予算規律がどの程度緩むかを見る。",
+      "nearest_terms": [
+        "moral-hazard",
+        "time-inconsistency",
+        "hold-up-problem"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "モラルハザードは一般にリスクの負担分担や観察困難な行動が誘因を変える問題。時間的不整合は事前と事後で最適行動が変わる問題。ソフトな予算制約は、資金不足時の反復的な外部救済への期待が組織の支出・価格反応・投資を緩ませる制度的症候群を問う。",
+      "new_axis": true
+    },
+    "cryptobiosis": {
+      "axis": "環境悪化への応答が活動中の恒常性維持ではなく、代謝活動の著しい可逆的な抑制と再開という状態遷移になっていないかを見る。",
+      "nearest_terms": [
+        "allostasis",
+        "ecological-trap"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "アロスタシスは状況に応じて身体の調節水準を変える適応的な生理制御。生態学的罠は生息地選択と適応度のずれ。クリプトビオシスは代謝活動そのものをほぼ検出不能な水準へ抑えてから回復する可逆的状態を扱い、対象となる状態と時間構造が異なる。",
+      "new_axis": true
+    },
+    "reference-material-commutability": {
+      "axis": "参照基準へ遡れるかではなく、標準物質と代表的な実試料が複数の測定手順の間で同等の測定値関係を示すかを見る。",
+      "nearest_terms": [
+        "metrological-traceability",
+        "limits-of-agreement",
+        "measurement-uncertainty"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "計量トレーサビリティは測定値を参照基準へ結ぶ校正の連鎖、一致限界は二測定法の実試料における差の分布を評価する。コミュータビリティは標準物質が実試料と同じ測定法間関係を保つかを問うもので、参照物の代表性という別の分析対象を持つ。",
+      "new_axis": true
+    },
+    "accessible-authentication": {
+      "axis": "操作対象の読み上げ名や表示順ではなく、認証の各段階が暗記・転記などの認知機能テストを避ける手段を提供しているかを見る。",
+      "nearest_terms": [
+        "recognition-over-recall",
+        "identify-input-purpose",
+        "accessible-name"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "再認優位は一般的な記憶負担の設計原則、入力目的の識別は入力欄の個人情報種別のプログラム上の意味づけ、アクセシブルネームは要素の名称。アクセシブル認証はログイン工程全体で認知機能テストを必須にしないことを問う規範的な達成基準で、対象と合否条件が異なる。",
+      "new_axis": true
+    },
+    "print-trapping": {
+      "axis": "インキを重ねるかどうかではなく、隣接する色版の位置誤差が境界に白い隙間を作らないよう、どの幅の重なりを設計すべきかを見る。",
+      "nearest_terms": [
+        "overprint",
+        "bleed-printing",
+        "dot-gain"
+      ],
+      "distance": "B",
+      "difference_from_nearest": "オーバープリントは重なるインキを抜かずに刷る重ね刷りの指定。トラッピングは色版の位置誤差を見越して境界の重なり幅を設計する製版処理であり、原因（見当ずれ）と分析単位（隣接色の境界）が異なる。ただし実装でオーバープリントを使うためB判定とする。",
+      "new_axis": true
+    }
+  }
+}

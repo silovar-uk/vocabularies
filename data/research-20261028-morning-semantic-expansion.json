@@ -1,0 +1,252 @@
+[
+  {
+    "id": "baroreflex",
+    "term": "Baroreflex",
+    "ja": "圧受容器反射（バロレフレックス）",
+    "aliases": [
+      "動脈圧受容器反射",
+      "Baroreceptor Reflex"
+    ],
+    "fields": [
+      "Physiology",
+      "Biology"
+    ],
+    "one_liner": "血圧が変化した瞬間に、血管の伸びを感知する受容器と自律神経が心拍・血管抵抗をどう調整するかを見る。",
+    "description": "頸動脈洞や大動脈弓の圧受容器が動脈壁の伸展を検出し、延髄の神経回路を介して交感・副交感神経活動を変え、心拍数や血管抵抗を調整する負のフィードバック機構。血圧が上がれば通常は心拍・血管抵抗を下げる方向に働く。短期的な血圧調節に重要で、長期の血圧維持をこれだけで説明することはできない。",
+    "why_selected": "身体の感覚という探索負債の高い方向から、身体の位置感覚や視線安定とは異なる『内部の物理量を自動制御する反射』を採用。直近の前庭動眼反射と異なり、制御対象は視線でなく動脈圧。",
+    "feelings": [
+      "急に立ち上がるとき、血圧を維持するため心拍や血管の状態が調整される。"
+    ],
+    "before": "血圧は心臓が強く動けば上がるだけ？",
+    "after": "血管壁の伸びを感知した神経回路が、心拍数と血管抵抗を負のフィードバックで調整していない？",
+    "observation_axis": "血圧変化に対して圧受容器の伸展信号が自律神経出力へ変換され、心拍数と末梢血管抵抗がどの向きに調整されるかを見る。",
+    "semantic_cluster": "arterial-pressure-autonomic-feedback",
+    "nearest_terms": [
+      "vestibulo-ocular-reflex",
+      "interoception"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "前庭動眼反射は頭部運動を眼球運動へ変換して視線を安定させる。内受容感覚は内部状態の知覚を扱う。圧受容器反射は血管壁の伸展を神経入力として血圧を自動調節する負のフィードバック回路であり、制御対象・出力器官・目的が異なる。",
+    "related": [
+      "vestibulo-ocular-reflex",
+      "interoception",
+      "allostasis"
+    ],
+    "sources": [
+      "https://www.ncbi.nlm.nih.gov/books/NBK538172/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "soft-budget-constraint",
+    "term": "Soft Budget Constraint",
+    "ja": "ソフトな予算制約（救済期待による予算規律の緩み）",
+    "aliases": [
+      "ソフト・バジェット・コンストレイント",
+      "軟らかい予算制約",
+      "Soft Budget Constraint Syndrome"
+    ],
+    "fields": [
+      "Management",
+      "Social Science"
+    ],
+    "one_liner": "赤字になっても外部が救済してくれるという予想が、支出・投資・価格への反応をどう変えるかを見る。",
+    "description": "経済学者ヤーノシュ・コルナイが分析した、企業などが支出超過を補助金・優遇融資・債務救済などで外部主体に肩代わりしてもらえると期待し、収支の制約が事実上緩む現象。重要なのは一度の救済の有無だけでなく、救済が繰り返されるという予想が行動に組み込まれること。国家企業に限らず他の組織でも議論されるが、単なる赤字や一度の支援を直ちに同一視しない。",
+    "why_selected": "制度とインセンティブの探索で、個人の隠れた行動ではなく、支援する側の救済期待が組織の予算規律をどう変えるかという独立した時間軸を追加するため。",
+    "feelings": [
+      "毎年赤字の組織が、翌年度も支援を前提に高い支出計画を立てる。"
+    ],
+    "before": "赤字が続くのに、なぜ支出を減らさない？",
+    "after": "赤字を誰かが埋めてくれるという期待が、支出と投資の判断を変えていない？",
+    "observation_axis": "資金不足時の外部救済が予想されることで、支出超過の負担を負う主体と意思決定する主体がずれ、予算規律がどの程度緩むかを見る。",
+    "semantic_cluster": "anticipated-bailout-budget-discipline",
+    "nearest_terms": [
+      "moral-hazard",
+      "time-inconsistency",
+      "hold-up-problem"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "モラルハザードは一般にリスクの負担分担や観察困難な行動が誘因を変える問題。時間的不整合は事前と事後で最適行動が変わる問題。ソフトな予算制約は、資金不足時の反復的な外部救済への期待が組織の支出・価格反応・投資を緩ませる制度的症候群を問う。",
+    "related": [
+      "moral-hazard",
+      "time-inconsistency",
+      "hold-up-problem"
+    ],
+    "sources": [
+      "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-6435.1986.tb01252.x",
+      "https://unipub.lib.uni-corvinus.hu/1770/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "cryptobiosis",
+    "term": "Cryptobiosis",
+    "ja": "クリプトビオシス（隠生）",
+    "aliases": [
+      "隠生",
+      "Cryptobiotic State"
+    ],
+    "fields": [
+      "Biology",
+      "Ecology",
+      "Physiology"
+    ],
+    "one_liner": "極端な環境下で代謝活動をほぼ検出できない水準まで抑え、条件が戻ると活動を再開する生存状態を観察する。",
+    "description": "一部のクマムシなどで見られる、乾燥・低温・酸素不足・高浸透圧などの条件で生命活動が著しく低下し、適切な条件に戻ると再開しうる可逆的な休眠状態。代謝が完全にゼロと断定できるわけではなく、種・条件・測定法によって程度が異なる。乾燥に対応する無水生存（anhydrobiosis）は代表的な一形態。すべてのクマムシがあらゆる極限条件に耐えるわけではない。",
+    "why_selected": "最近の人口動態や生態系の量・流れから離れ、生命活動の速度そのものをほぼ停止させるという、通常の『耐える』とは異なる生存戦略を観察するため。",
+    "feelings": [
+      "乾燥したクマムシが長期間活動を示さず、水が戻ると動き始める。"
+    ],
+    "before": "極限環境で生き残るには活動を続けて耐える？",
+    "after": "活動を続ける代わりに、代謝を極端に下げて環境の回復を待つ生存状態に入っていない？",
+    "observation_axis": "環境悪化への応答が活動中の恒常性維持ではなく、代謝活動の著しい可逆的な抑制と再開という状態遷移になっていないかを見る。",
+    "semantic_cluster": "reversible-near-dormant-metabolic-state",
+    "nearest_terms": [
+      "allostasis",
+      "ecological-trap"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "アロスタシスは状況に応じて身体の調節水準を変える適応的な生理制御。生態学的罠は生息地選択と適応度のずれ。クリプトビオシスは代謝活動そのものをほぼ検出不能な水準へ抑えてから回復する可逆的状態を扱い、対象となる状態と時間構造が異なる。",
+    "related": [
+      "allostasis",
+      "interoception",
+      "ecological-trap"
+    ],
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10620314/",
+      "https://doi.org/10.1111/j.1748-1716.2011.02252.x"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "reference-material-commutability",
+    "term": "Reference Material Commutability",
+    "ja": "標準物質のコミュータビリティ（可換性）",
+    "aliases": [
+      "Commutability",
+      "コミュータビリティ",
+      "標準物質の可換性"
+    ],
+    "fields": [
+      "Metrology",
+      "Measurement",
+      "Quality Management"
+    ],
+    "one_liner": "校正用の標準物質が、異なる測定法の間で実際の試料と同じ関係の測定値を示すかを見る。",
+    "description": "標準物質（reference material）を二つ以上の測定手順で測った際、その測定値同士の関係が、測定対象である代表的な実試料（臨床検査では患者試料）に見られる関係と指定範囲内で一致する性質。基準へのトレーサビリティが確保されていても、標準物質が実試料と異なる反応をすれば測定法間で患者結果が食い違いうる。可換性は標準物質単独の絶対的属性ではなく、対象試料・測定手順との関係で評価する。",
+    "why_selected": "測定の信頼性というFrontierで、基準までの校正連鎖では見逃す『校正用の物が本物の試料と同じように測られるか』という代表性の穴を追加するため。",
+    "feelings": [
+      "二つの検査機器が同じ標準物質で校正されているのに、患者の検体では結果が一致しない。"
+    ],
+    "before": "同じ標準物質に合わせて校正したから、測定結果は比較できる？",
+    "after": "その標準物質は、両方の測定法で患者試料と同じ関係の結果を示す？",
+    "observation_axis": "参照基準へ遡れるかではなく、標準物質と代表的な実試料が複数の測定手順の間で同等の測定値関係を示すかを見る。",
+    "semantic_cluster": "reference-material-real-sample-method-equivalence",
+    "nearest_terms": [
+      "metrological-traceability",
+      "limits-of-agreement",
+      "measurement-uncertainty"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "計量トレーサビリティは測定値を参照基準へ結ぶ校正の連鎖、一致限界は二測定法の実試料における差の分布を評価する。コミュータビリティは標準物質が実試料と同じ測定法間関係を保つかを問うもので、参照物の代表性という別の分析対象を持つ。",
+    "related": [
+      "metrological-traceability",
+      "limits-of-agreement",
+      "measurement-invariance"
+    ],
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/5832613/",
+      "https://www.nist.gov/publications/recommendations-assessing-commutability-part-1-general-experimental-design"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "accessible-authentication",
+    "term": "Accessible Authentication (Minimum)",
+    "ja": "認知負担に依存しない認証（アクセシブル認証）",
+    "aliases": [
+      "アクセシブル認証",
+      "Accessible Authentication",
+      "WCAG 3.3.8"
+    ],
+    "fields": [
+      "Accessibility",
+      "Web",
+      "UI"
+    ],
+    "one_liner": "ログインの途中で暗記・手入力による転記・パズルの解答を強制せず、支援手段や別経路を使えるかを見る。",
+    "description": "WCAG 2.2達成基準3.3.8（レベルAA）。既存アカウントへの認証の各段階で、記憶・操作・転記などの認知機能テストを原則必須にしないことを求める。別の認証方法、補助機構、物体認識、利用者が提供した非テキスト内容の認識などの例外がある。パスワード方式自体が禁止されるわけではなく、パスワードマネージャーの自動入力やコピー＆ペーストを妨げないことが重要。認証の安全性を犠牲にする趣旨ではない。",
+    "why_selected": "アクセシビリティの意味層を視覚・読み順から離し、本人確認の手順そのものが記憶や転記を強制していないかという操作可能性へ広げるため。",
+    "feelings": [
+      "長いパスワードを管理アプリに保存しているのに、貼り付けが禁止され、すべて手入力を求められる。"
+    ],
+    "before": "ログイン画面は読み上げできるし、ラベルもあるから使える？",
+    "after": "記憶や転記を強制せず、パスワード管理ツールや別の認証手段でログインを完了できる？",
+    "instruction": "ログイン・二段階認証の全手順で、パスワード管理ツールの自動入力とコピー＆ペーストを妨げていないか確認してください。記憶・転記・パズルが必要な場合は、WCAG 3.3.8に適合する補助手段または代替経路を設けてください。",
+    "observation_axis": "操作対象の読み上げ名や表示順ではなく、認証の各段階が暗記・転記などの認知機能テストを避ける手段を提供しているかを見る。",
+    "semantic_cluster": "cognition-independent-account-authentication",
+    "nearest_terms": [
+      "recognition-over-recall",
+      "identify-input-purpose",
+      "accessible-name"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "再認優位は一般的な記憶負担の設計原則、入力目的の識別は入力欄の個人情報種別のプログラム上の意味づけ、アクセシブルネームは要素の名称。アクセシブル認証はログイン工程全体で認知機能テストを必須にしないことを問う規範的な達成基準で、対象と合否条件が異なる。",
+    "related": [
+      "recognition-over-recall",
+      "identify-input-purpose",
+      "accessible-name",
+      "meaningful-sequence"
+    ],
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum",
+      "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "print-trapping",
+    "term": "Print Trapping",
+    "ja": "印刷トラッピング（見当ずれを隠す色境界の重ね）",
+    "aliases": [
+      "トラッピング",
+      "インキトラップ",
+      "Ink Trapping",
+      "Trapping (Printing)"
+    ],
+    "fields": [
+      "Graphic Design",
+      "Manufacturing",
+      "Design"
+    ],
+    "one_liner": "隣接する色版がわずかにずれても紙の白い隙間が出ないよう、色の境界に意図的な重なりを設ける。",
+    "description": "オフセット印刷などで異なる色版の位置がわずかにずれる見当ずれ（misregistration）を見越し、隣り合う色の境界に細い重なりを作って白い隙間を防ぐ製版・プリプレス技法。色の明度や形状に応じてスプレッド／チョークを使い分ける。オーバープリントは重なったインキを抜かずに印刷する設定、トラッピングは見当ずれの許容差を境界形状で吸収する目的・処理である。印刷方式によっては不要で、適用量は印刷会社と調整する。",
+    "why_selected": "デザイン語の中でも、画面上の余白や見た目ではなく『実際の印刷機がずれることを前提に境界を設計する』という具体的な修正指示を得るため。既存のオーバープリントと実装上は近いためB判定とした。",
+    "feelings": [
+      "特色の赤と青が接する印刷物で、色版がわずかにずれ、境界に細い白線が出る。"
+    ],
+    "before": "画面上では色がぴったり接しているのに、印刷すると白い線が出るのはなぜ？",
+    "after": "色版の見当ずれを吸収する細いトラップが境界に設けられている？",
+    "instruction": "特色同士が接する境界について、印刷会社に想定見当ずれと必要なトラップ幅を確認してください。必要な箇所のみスプレッド／チョークを設定し、分版校正で白い隙間と色境界の変化を確認してください。",
+    "observation_axis": "インキを重ねるかどうかではなく、隣接する色版の位置誤差が境界に白い隙間を作らないよう、どの幅の重なりを設計すべきかを見る。",
+    "semantic_cluster": "print-plate-misregistration-edge-compensation",
+    "nearest_terms": [
+      "overprint",
+      "bleed-printing",
+      "dot-gain"
+    ],
+    "semantic_distance": "B",
+    "difference_from_nearest": "オーバープリントは重なるインキを抜かずに刷る重ね刷りの指定。トラッピングは色版の位置誤差を見越して境界の重なり幅を設計する製版処理であり、原因（見当ずれ）と分析単位（隣接色の境界）が異なる。ただし実装でオーバープリントを使うためB判定とする。",
+    "related": [
+      "overprint",
+      "bleed-printing",
+      "dot-gain",
+      "imposition"
+    ],
+    "sources": [
+      "https://helpx.adobe.com/jp/indesign/desktop/print/color-output-and-separations/about-ink-trapping.html",
+      "https://helpx.adobe.com/indesign/desktop/print/color-output-and-separations/trap-a-document-or-a-book.html"
+    ],
+    "status": "seed"
+  }
+]
