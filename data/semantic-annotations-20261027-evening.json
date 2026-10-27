@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-27",
+  "batch": "20261027-evening",
+  "term_annotations": {
+    "third-place": {
+      "axis": "家庭・職場以外の場所で、中立性・入りやすさ・常連の反復交流が、非公式な社会的つながりをどう成立させるかを見る。",
+      "nearest_terms": [
+        "hostile-architecture",
+        "space-syntax"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "敵対的建築は設備・形状による行動の排除、空間構文論は空間の接続構造が移動に与える影響を扱う。第三の場所は、繰り返し訪れる場の社会的役割と気軽な交流が成立する条件を扱い、分析単位が物理的形状や移動経路から社会的居場所へ移る。",
+      "new_axis": true
+    },
+    "unreliable-narrator": {
+      "axis": "語り手の発言を作品内の出来事や他の手掛かりと照合し、報告・解釈・評価のどの段階に信頼性のずれがあるかを見る。",
+      "nearest_terms": [
+        "focalization",
+        "free-indirect-discourse"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "焦点化は物語情報が誰の知覚・知識に制限されるか、自由間接話法は語り手と人物の声が一文内でどう重なるかを扱う。信頼できない語り手は、提示された語りの事実・解釈・評価を作品内の別の根拠と照合し、語りの信用度を問う。",
+      "new_axis": true
+    },
+    "thermal-bridging": {
+      "axis": "平均的な断熱性能ではなく、異なる材料や部材の接合・貫通部に局所的な熱の通り道が形成されていないかを見る。",
+      "nearest_terms": [
+        "coefficient-of-thermal-expansion",
+        "galvanic-corrosion"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "熱膨張係数は温度変化に伴う寸法の変化、ガルバニック腐食は異種材料の電気化学的な接触腐食を扱う。熱橋は部材の配置・接合を通じて生じる熱流の集中と断熱の弱点を扱い、評価する物理量も原因も異なる。",
+      "new_axis": true
+    },
+    "motion-blur": {
+      "axis": "フレーム間の位置や速度曲線ではなく、一フレームの露光・サンプリング時間にわたる運動が輪郭のぶれとしてどう表れるかを見る。",
+      "nearest_terms": [
+        "rolling-shutter",
+        "stroboscopic-effect"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ローリングシャッターは画像の行ごとの取得時刻差による幾何学的歪み、ストロボ効果は運動と離散的な観測間隔の関係を扱う。モーションブラーは一つの露光区間内で動く物体の位置が重なり、輪郭の鮮明さが変化する現象を扱う。",
+      "new_axis": true
+    },
+    "biological-carbon-pump": {
+      "axis": "海洋表層で生物が固定した炭素の量だけでなく、食物網と沈降・鉛直輸送を経て深層へ移る割合と保持時間を見る。",
+      "nearest_terms": [
+        "ecological-stoichiometry",
+        "hydraulic-redistribution"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "生態化学量論は生物と餌の元素比が成長や循環を制約する仕組み、水理的再分配は植物の根を介した土壌中の水移動を扱う。生物炭素ポンプは海洋の深さ方向に炭素が輸送される量と長期隔離の時間軸を扱い、物質・空間方向・分析単位が異なる。",
+      "new_axis": true
+    },
+    "hidden-curriculum": {
+      "axis": "公式に教えられる内容とは別に、教育機関の日常的な規則・評価・権力関係が、どんな態度や規範を暗黙に学習させているかを見る。",
+      "nearest_terms": [
+        "tacit-knowledge",
+        "habitus"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "暗黙知は明文化しにくい個人の技能・知識、ハビトゥスは社会化で形成された持続的な傾向性を扱う。隠れたカリキュラムは学校の公式授業以外の組織的な日常経験が、どんな規範・態度を学ばせるかという教育制度内の伝達経路を扱う。",
+      "new_axis": true
+    }
+  }
+}
