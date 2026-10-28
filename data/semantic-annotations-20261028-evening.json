@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-28",
+  "batch": "20261028-evening",
+  "term_annotations": {
+    "behavior-setting": {
+      "axis": "建物の用途ではなく、特定の時間・場所で反復される協調行動と環境の組合せを、個人を超えた分析単位として識別する。",
+      "nearest_terms": [
+        "third-place",
+        "space-syntax",
+        "proxemics"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "第三の場所は非公式な交流を育てる場所の性質、空間構文論は空間の接続構造、近接学は対人距離の社会的意味を扱う。行動場面は同一の物理空間でも時間と活動によって変わる集団行動・環境のまとまりを対象とする。",
+      "new_axis": true
+    },
+    "buckling": {
+      "axis": "材料の破壊強度だけでなく、圧縮荷重と幾何形状・支持条件の組合せが平衡形状の安定性を失わせる臨界点を調べる。",
+      "nearest_terms": [
+        "fracture-toughness",
+        "material-fatigue",
+        "stress-relaxation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "破壊靱性は亀裂の進展抵抗、材料疲労は繰返し荷重による損傷、応力緩和は一定ひずみ下の応力減衰を扱う。座屈は材料が破断する前でも生じる形状の安定性喪失であり、原因と判定対象が異なる。",
+      "new_axis": true
+    },
+    "frame-pacing": {
+      "axis": "平均フレームレートではなく、隣接するフレームの実際の提示間隔と表示更新周期の不一致が動きの滑らかさを損ねていないかを見る。",
+      "nearest_terms": [
+        "motion-blur",
+        "easing-function",
+        "onion-skinning"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "モーションブラーは一枚のフレーム内の露光時間、イージングは動作の速度曲線、オニオンスキニングは隣接コマの絵の比較を扱う。フレームペーシングは表示機器に提示される時刻間隔の不均一さを扱う。",
+      "new_axis": true
+    },
+    "apparent-competition": {
+      "axis": "二種が直接資源を奪い合わなくても、共通の自然敵の個体数・行動変化を介して一方の増加が他方の生存を下げるかを見る。",
+      "nearest_terms": [
+        "allee-effect",
+        "niche-construction",
+        "ecological-trap"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "アリー効果は低密度で同種の個体あたり適応度が下がる現象、ニッチ構築は生物による環境改変、生態学的罠は環境選択の手掛かりと適応度の不一致。見かけの競争は共通の自然敵を介する異種間の間接的な負の相互作用である。",
+      "new_axis": true
+    },
+    "dramatic-irony": {
+      "axis": "物語の登場人物と観客が保有する情報の非対称性によって、同じ発言・行動に本人の知らない意味や緊張が生まれるかを見る。",
+      "nearest_terms": [
+        "focalization",
+        "unreliable-narrator",
+        "narrative-frequency"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "焦点化は誰の知覚や知識を通して情報を提示するか、信頼できない語り手は語りの信用度、物語頻度は出来事と叙述の回数を扱う。劇的アイロニーは観客と登場人物の知識差が台詞や行動の意味を変える作用を問う。",
+      "new_axis": true
+    },
+    "abscission": {
+      "axis": "葉や花の落下を外力による破断としてではなく、離層の形成と細胞分離の活性化による制御された器官脱離として観察する。",
+      "nearest_terms": [
+        "phenology",
+        "hydraulic-redistribution",
+        "cryptobiosis"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "生物季節学は季節的な現象の時期、水理的再分配は根を介した土壌水分移動、クリプトビオシスは代謝の著しい抑制と回復を扱う。器官脱離は離層で細胞を分離させて葉・花・果実を切り離す組織レベルの過程である。",
+      "new_axis": true
+    }
+  }
+}
