@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-29",
+  "batch": "20261029-morning",
+  "term_annotations": {
+    "inert-html-attribute": {
+      "axis": "領域の視覚的な表示状態とは独立に、DOMサブツリーがフォーカス・ポインター入力・アクセシビリティツリーから一貫して除外されているかを確認する。",
+      "nearest_terms": [
+        "keyboard-trap",
+        "focus-order",
+        "hit-testing"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "キーボードトラップはフォーカスが領域から出られない障害、フォーカス順序は操作対象を巡る順番、ヒットテストは座標から入力先を決める処理。inertは領域全体を操作・支援技術の対象から除外する状態指定で、作用の単位と範囲が異なる。",
+      "new_axis": true
+    },
+    "polymer-crazing": {
+      "axis": "樹脂の表面外観だけでなく、引張応力に伴う微細空隙と荷重を担うフィブリルの生成が白化や破壊の前段階になっていないかを見る。",
+      "nearest_terms": [
+        "material-fatigue",
+        "fracture-toughness",
+        "delamination"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "材料疲労は繰返し負荷による損傷蓄積、破壊靱性は亀裂進展への抵抗、層間剥離は積層界面の分離を扱う。クレージングは高分子内部の空隙・フィブリルという固有の微視構造と生成条件を対象とする。",
+      "new_axis": true
+    },
+    "mast-seeding": {
+      "axis": "個々の植物の開花・結実時期ではなく、複数個体の種子生産量が年をまたいで同調し、受粉・捕食者の反応を変えるかを見る。",
+      "nearest_terms": [
+        "phenology",
+        "allee-effect",
+        "ecological-stoichiometry"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "生物季節学は季節的な事象の発生時期、アリー効果は低密度での適応度低下、生態化学量論は元素比と栄養制約を扱う。一斉結実は個体群の年次的な種子生産の同期と繁殖・捕食の作用を対象とする。",
+      "new_axis": true
+    },
+    "boudinage": {
+      "axis": "圧縮による折れ曲がりではなく、相対的に強い岩層が伸長されるときのくびれ・分節化から、層間の変形抵抗差と伸長方向を読む。",
+      "nearest_terms": [
+        "buckling",
+        "solifluction",
+        "pseudotachylyte"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "座屈は圧縮下の形状安定性喪失、ソリフラクションは寒冷地表層土壌の緩慢な斜面移動、シュードタキライトは断層摩擦溶融の痕跡。ブーダナージュは伸長下での強弱異なる岩層のくびれ・分節化を扱う。",
+      "new_axis": true
+    },
+    "institutional-decoupling": {
+      "axis": "外部へ示す正式な制度・構造の採用と、内部の実際の業務・意思決定との結合度を区別し、正統性獲得と実務の乖離を調べる。",
+      "nearest_terms": [
+        "institutional-isomorphism",
+        "hidden-curriculum",
+        "regulatory-capture"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "制度的同型化は組織間で形式が似る過程、隠れたカリキュラムは教育制度の日常運用が教える規範、規制の虜は監督者が被規制者の利益へ傾く過程。制度的デカップリングは単一組織内の正式な制度と実践の分離を対象とする。",
+      "new_axis": true
+    },
+    "tidal-locking": {
+      "axis": "天体が同じ面を向ける状態を自転停止と捉えず、潮汐変形とエネルギー散逸が自転・公転周期の同期をもたらす時間発展として見る。",
+      "nearest_terms": [
+        "roche-limit",
+        "entrainment",
+        "isostasy"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ロッシュ限界は潮汐力による自己重力天体の破壊閾値、エントレインメントは周期現象の同調一般、アイソスタシーは地殻の浮力的な均衡。潮汐固定は潮汐変形と散逸による自転・公転の長期的同期を扱う。",
+      "new_axis": true
+    }
+  }
+}
