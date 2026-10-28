@@ -1,0 +1,256 @@
+[
+  {
+    "id": "inert-html-attribute",
+    "term": "HTML Inert Attribute",
+    "ja": "操作・読み上げ対象からの除外（inert属性）",
+    "aliases": [
+      "inert",
+      "inert属性",
+      "HTML inert",
+      "非活性サブツリー"
+    ],
+    "fields": [
+      "Web",
+      "Accessibility",
+      "Software Engineering"
+    ],
+    "one_liner": "見た目の非活性化ではなく、領域全体が操作・フォーカス・支援技術の対象から外れているかを見る。",
+    "description": "HTMLの真偽値属性inertは、指定した要素と原則そのフラットツリー配下の要素を非活性化する。通常はクリックやフォーカスができず、アクセシビリティツリーにも公開されない。単にopacityを下げたりpointer-events:noneを指定するのとは異なり、操作可能性と支援技術への露出を一体で制御する。showModal()で開いたネイティブdialogの外側は自動的にinertになる。inertは見た目を自動で変えないため、利用者が非活性状態を認識できる設計も必要。",
+    "why_selected": "アクセシビリティ意味層のFrontier。既存のフォーカス順序・キーボードトラップ・ヒットテストが扱う操作の順番や入力対象判定とは別に、領域全体を操作・支援技術の対象から外す意味上の状態を追加するため。",
+    "feelings": [
+      "画面上で閉じたはずのサイドパネルにTabキーが移り、スクリーンリーダーにも読まれてしまう。"
+    ],
+    "before": "パネルを透明にしてクリックできなければ閉じた扱いでよい？",
+    "after": "閉じた領域はフォーカス・ポインター操作・支援技術の対象からも外れている？",
+    "observation_axis": "領域の視覚的な表示状態とは独立に、DOMサブツリーがフォーカス・ポインター入力・アクセシビリティツリーから一貫して除外されているかを確認する。",
+    "semantic_cluster": "subtree-interactivity-accessibility-exclusion",
+    "nearest_terms": [
+      "keyboard-trap",
+      "focus-order",
+      "hit-testing"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "キーボードトラップはフォーカスが領域から出られない障害、フォーカス順序は操作対象を巡る順番、ヒットテストは座標から入力先を決める処理。inertは領域全体を操作・支援技術の対象から除外する状態指定で、作用の単位と範囲が異なる。",
+    "related": [
+      "focus-order",
+      "hit-testing",
+      "meaningful-sequence"
+    ],
+    "sources": [
+      "https://html.spec.whatwg.org/multipage/interaction.html#the-inert-attribute",
+      "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inert"
+    ],
+    "instruction": "非表示・閉鎖中の独自パネルにinertを設定し、開くときに解除してください。Tab移動・クリック・スクリーンリーダーで背景や閉じた領域にアクセスできないか確認し、非活性状態を視覚的にも明示してください。ネイティブのモーダルdialogではshowModal()の自動処理を優先してください。",
+    "status": "seed"
+  },
+  {
+    "id": "polymer-crazing",
+    "term": "Polymer Crazing",
+    "ja": "クレージング（高分子材料の微細空隙・フィブリル形成）",
+    "aliases": [
+      "Crazing",
+      "樹脂のクレージング",
+      "ポリマーのクレーズ"
+    ],
+    "fields": [
+      "Materials Science",
+      "Design",
+      "Manufacturing"
+    ],
+    "one_liner": "透明樹脂の白い筋を単なる表面傷ではなく、引張下で生じた微細空隙と繊維状構造の形成として見る。",
+    "description": "一部の高分子固体に引張応力などが作用すると、微細な空隙と高分子鎖のフィブリル（繊維状構造）からなるクレーズが形成される変形・損傷機構。光散乱による白化として見える場合があり、亀裂と異なってフィブリルが両側をつなぎ荷重を伝え得る。材料・温度・溶剤・残留応力などに依存し、白化のすべてをクレージングと断定してはいけない。",
+    "why_selected": "素材の物理挙動Frontier。材料疲労の繰返し負荷、層間剥離の接合面破壊、破壊靱性の亀裂進展抵抗とは異なり、樹脂内部の微細空隙とフィブリルの形成を設計上の観察単位とするため。",
+    "feelings": [
+      "透明な樹脂カバーのネジ穴付近に白い細線が現れ、単なる汚れとして拭いても消えない。"
+    ],
+    "before": "白い筋は表面の擦り傷か塗装不良？",
+    "after": "局所的な引張応力や環境条件で、樹脂内部にクレーズが形成されていない？",
+    "observation_axis": "樹脂の表面外観だけでなく、引張応力に伴う微細空隙と荷重を担うフィブリルの生成が白化や破壊の前段階になっていないかを見る。",
+    "semantic_cluster": "polymer-microvoid-fibril-craze-formation",
+    "nearest_terms": [
+      "material-fatigue",
+      "fracture-toughness",
+      "delamination"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "材料疲労は繰返し負荷による損傷蓄積、破壊靱性は亀裂進展への抵抗、層間剥離は積層界面の分離を扱う。クレージングは高分子内部の空隙・フィブリルという固有の微視構造と生成条件を対象とする。",
+    "related": [
+      "material-fatigue",
+      "fracture-toughness",
+      "stress-relaxation"
+    ],
+    "sources": [
+      "https://pubmed.ncbi.nlm.nih.gov/12443121/",
+      "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.68.011801"
+    ],
+    "instruction": "樹脂部品の白化・細線状損傷を確認したら、荷重集中・成形残留応力・薬品接触・温度履歴を調査してください。表面傷や他の白化現象と区別し、必要に応じて材料試験や顕微観察でクレージングの有無を検証してください。",
+    "status": "seed"
+  },
+  {
+    "id": "mast-seeding",
+    "term": "Mast Seeding",
+    "ja": "一斉結実（マストシーディング）",
+    "aliases": [
+      "Masting",
+      "豊凶の同期",
+      "マスティング"
+    ],
+    "fields": [
+      "Ecology",
+      "Biology",
+      "Forestry"
+    ],
+    "one_liner": "木の実の豊作を個体ごとの偶然ではなく、集団が年をまたいで同調する繁殖戦略として見る。",
+    "description": "多年生植物の個体群が、大量の種子を生産する年と少ない年を不規則または間欠的に繰り返し、個体間で結実が同期する現象。風媒受粉の効率向上、種子捕食者の飽食、資源の蓄積や気象条件など複数の機構が研究されている。すべての種・場所で同じ機構が成立するわけではない。",
+    "why_selected": "生態学の遠距離探索。生物季節学が季節現象の時期を、アリー効果が低密度の適応度を扱うのに対し、個体群全体の結実量が年をまたいで同調し、捕食者や受粉に影響する時間構造を追加するため。",
+    "feelings": [
+      "ある年は森一帯にドングリが大量に落ち、翌年はほとんど見当たらない。"
+    ],
+    "before": "木の実の豊凶は一本ずつの気まぐれ？",
+    "after": "個体群が同じ年に大量結実する同期が起き、その結果として受粉や種子捕食が変化していない？",
+    "observation_axis": "個々の植物の開花・結実時期ではなく、複数個体の種子生産量が年をまたいで同調し、受粉・捕食者の反応を変えるかを見る。",
+    "semantic_cluster": "population-synchronous-intermittent-seed-crops",
+    "nearest_terms": [
+      "phenology",
+      "allee-effect",
+      "ecological-stoichiometry"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "生物季節学は季節的な事象の発生時期、アリー効果は低密度での適応度低下、生態化学量論は元素比と栄養制約を扱う。一斉結実は個体群の年次的な種子生産の同期と繁殖・捕食の作用を対象とする。",
+    "related": [
+      "phenology",
+      "apparent-competition",
+      "ecological-stoichiometry"
+    ],
+    "sources": [
+      "https://www.annualreviews.org/content/journals/10.1146/annurev.ecolsys.33.020602.095433",
+      "https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/nyas.12465"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "boudinage",
+    "term": "Boudinage",
+    "ja": "ブーダン構造の形成（ブーダナージュ）",
+    "aliases": [
+      "ブーダン構造",
+      "ブーディナージュ",
+      "Pinch-and-Swell Structure"
+    ],
+    "fields": [
+      "Geology",
+      "Structural Geology",
+      "Physics"
+    ],
+    "one_liner": "地層が押されて曲がるのではなく、引き伸ばされてくびれ、分節化していないかを見る。",
+    "description": "周囲より変形しにくい岩層や脈が地殻変形によって伸長される際、部分的に薄くなるくびれ（pinch-and-swell）や分離した塊（boudin）を形成する現象。岩層と母岩の相対的な強度・粘性の違いを反映し、脆性的な割れや延性的な流動など複数の形成様式がある。地層の過去の伸長方向や変形条件を推定する手掛かりになる。",
+    "why_selected": "素材・地質の遠距離探索。直近の座屈は圧縮による形状不安定化だが、ブーダナージュは伸長時の層のくびれと分節化を読む。力の向きも観察する構造も異なるため。",
+    "feelings": [
+      "岩壁の白い石英脈が、ソーセージを並べたような形に途切れて見える。"
+    ],
+    "before": "岩層が最初から不規則な塊として堆積した？",
+    "after": "周囲との変形抵抗の差によって、元は連続した層が引き伸ばされ分節化したのでは？",
+    "observation_axis": "圧縮による折れ曲がりではなく、相対的に強い岩層が伸長されるときのくびれ・分節化から、層間の変形抵抗差と伸長方向を読む。",
+    "semantic_cluster": "extension-driven-competence-contrast-layer-segmentation",
+    "nearest_terms": [
+      "buckling",
+      "solifluction",
+      "pseudotachylyte"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "座屈は圧縮下の形状安定性喪失、ソリフラクションは寒冷地表層土壌の緩慢な斜面移動、シュードタキライトは断層摩擦溶融の痕跡。ブーダナージュは伸長下での強弱異なる岩層のくびれ・分節化を扱う。",
+    "related": [
+      "buckling",
+      "anisotropy",
+      "solifluction"
+    ],
+    "sources": [
+      "https://blogs.egu.eu/divisions/ts/2019/05/19/features-from-the-field-boudinage/",
+      "https://geo.libretexts.org/Bookshelves/Geology/Geological_Structures_-_A_Practical_Introduction_(Waldron_and_Snyder)/01%3A_Topics/1.06%3A_Boudinage"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "institutional-decoupling",
+    "term": "Institutional Decoupling",
+    "ja": "制度的デカップリング（形式と実践の切り離し）",
+    "aliases": [
+      "Organizational Decoupling",
+      "組織のデカップリング",
+      "形式と実態の分離"
+    ],
+    "fields": [
+      "Sociology",
+      "Organization Studies",
+      "Management"
+    ],
+    "one_liner": "制度を導入したという形式的な正統性と、現場で実際に行われる仕事が切り離されていないかを見る。",
+    "description": "組織が社会的に正統とされる制度・規則・構造を採用しながら、それらを日常の業務や意思決定とは緩やかに切り離して運用する現象。MeyerとRowan（1977）は、制度化された形式構造が正統性を獲得する一方で、実際の活動との結合が弱くなる場合を論じた。形式と実態の不一致は必ずしも意図的な欺瞞ではなく、外部の期待と実務上の要求の両立から生じ得る。",
+    "why_selected": "制度とインセンティブのずれFrontier。制度的同型化が組織間で似た形式を採用する過程を問うのに対し、制度的デカップリングは組織内で形式構造と実践が切り離される関係を問うため。",
+    "feelings": [
+      "組織には立派な評価制度や会議体があるのに、重要な意思決定は別の非公式な場で行われる。"
+    ],
+    "before": "新制度を導入したのだから、仕事の進め方も変わったはず？",
+    "after": "制度を採用した事実と、現場の判断・行動が変わった事実を分けて確認できる？",
+    "observation_axis": "外部へ示す正式な制度・構造の採用と、内部の実際の業務・意思決定との結合度を区別し、正統性獲得と実務の乖離を調べる。",
+    "semantic_cluster": "formal-structure-operational-practice-decoupling",
+    "nearest_terms": [
+      "institutional-isomorphism",
+      "hidden-curriculum",
+      "regulatory-capture"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "制度的同型化は組織間で形式が似る過程、隠れたカリキュラムは教育制度の日常運用が教える規範、規制の虜は監督者が被規制者の利益へ傾く過程。制度的デカップリングは単一組織内の正式な制度と実践の分離を対象とする。",
+    "related": [
+      "institutional-isomorphism",
+      "hidden-curriculum",
+      "administrative-legibility"
+    ],
+    "sources": [
+      "https://doi.org/10.1086/226550"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "tidal-locking",
+    "term": "Tidal Locking",
+    "ja": "潮汐固定（タイダルロッキング）",
+    "aliases": [
+      "Synchronous Rotation",
+      "同期自転",
+      "潮汐ロック"
+    ],
+    "fields": [
+      "Astronomy",
+      "Planetary Science",
+      "Physics"
+    ],
+    "one_liner": "月が同じ面を見せる理由を、回転の停止ではなく、自転と公転の周期が同期した結果として見る。",
+    "description": "天体間の潮汐力によって生じる変形と内部のエネルギー散逸が自転を進化させ、特定の自転・公転の共鳴状態に至る現象。地球の月では自転周期と公転周期がほぼ等しい1対1の同期自転となり、ほぼ同じ半球を地球へ向け続ける。潮汐固定にはほかのスピン軌道共鳴も議論され、すべての系が単純な1対1同期になるわけではない。",
+    "why_selected": "天文学の遠距離探索。ロッシュ限界が潮汐力による天体の破壊条件を扱うのに対し、潮汐固定は潮汐変形の時間差と散逸が回転周期を変える長期的な力学を扱うため。",
+    "feelings": [
+      "毎晩見える月の模様がほぼ同じなので、月は自転していないと思ってしまう。"
+    ],
+    "before": "月は自転していないから同じ面を向けている？",
+    "after": "自転と公転が同期するよう、潮汐摩擦によって回転が長期的に変化したのでは？",
+    "observation_axis": "天体が同じ面を向ける状態を自転停止と捉えず、潮汐変形とエネルギー散逸が自転・公転周期の同期をもたらす時間発展として見る。",
+    "semantic_cluster": "tidal-dissipation-spin-orbit-synchronization",
+    "nearest_terms": [
+      "roche-limit",
+      "entrainment",
+      "isostasy"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "ロッシュ限界は潮汐力による自己重力天体の破壊閾値、エントレインメントは周期現象の同調一般、アイソスタシーは地殻の浮力的な均衡。潮汐固定は潮汐変形と散逸による自転・公転の長期的同期を扱う。",
+    "related": [
+      "roche-limit",
+      "entrainment",
+      "isostasy"
+    ],
+    "sources": [
+      "https://science.nasa.gov/moon/tidal-locking/",
+      "https://moon.nasa.gov/resources/429/the-moons-orbit/"
+    ],
+    "status": "seed"
+  }
+]
