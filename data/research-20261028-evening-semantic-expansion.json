@@ -1,0 +1,249 @@
+[
+  {
+    "id": "behavior-setting",
+    "term": "Behavior Setting",
+    "ja": "行動場面（ビヘイビア・セッティング）",
+    "aliases": [
+      "行動セッティング",
+      "行動設定",
+      "Behaviour Setting"
+    ],
+    "fields": [
+      "Psychology",
+      "Sociology",
+      "Geography"
+    ],
+    "one_liner": "同じ場所でも、時間帯と参加者の協調行動によって成立する「場面」が異なるかを見る。",
+    "description": "ロジャー・バーカーの生態心理学で用いられる、一定の時間・場所で反復される集団の行動パターンと、それを支える物理的・社会的環境のまとまり。分析単位は個人の性格でも建物そのものでもなく、例えば同じ体育館で行われる授業と試合のような、活動と環境の結びついた場面である。",
+    "why_selected": "空間と社会的行動のFrontierで、交流の場所を示す「第三の場所」や接続構造を示す「空間構文論」と異なり、時間・人・設備の組合せから成立する集団行動の単位を追加するため。",
+    "feelings": [
+      "体育館が授業中は静かな学習空間になり、試合開始とともに応援や競争の場へ変わる。"
+    ],
+    "before": "この場所にはどんな機能がある？",
+    "after": "今この時間、どんな集団行動と環境の組合せが一つの場面を作っている？",
+    "observation_axis": "建物の用途ではなく、特定の時間・場所で反復される協調行動と環境の組合せを、個人を超えた分析単位として識別する。",
+    "semantic_cluster": "collective-action-environment-setting",
+    "nearest_terms": [
+      "third-place",
+      "space-syntax",
+      "proxemics"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "第三の場所は非公式な交流を育てる場所の性質、空間構文論は空間の接続構造、近接学は対人距離の社会的意味を扱う。行動場面は同一の物理空間でも時間と活動によって変わる集団行動・環境のまとまりを対象とする。",
+    "related": [
+      "third-place",
+      "space-syntax",
+      "proxemics"
+    ],
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC4287695/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11684462/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "buckling",
+    "term": "Buckling",
+    "ja": "座屈",
+    "aliases": [
+      "圧縮座屈",
+      "Structural Buckling"
+    ],
+    "fields": [
+      "Physics",
+      "Manufacturing",
+      "Design"
+    ],
+    "one_liner": "材料が圧縮で壊れる前に、細長さや支持条件によって形の安定性を失わないかを見る。",
+    "description": "柱・板・殻などに圧縮荷重が加わる際、ある臨界条件で直線・平面などの平衡形状が不安定となり、横たわみやしわが急増する現象。材料の強度だけでなく、長さ、断面二次モーメント、支持条件、初期不整が耐荷力を左右する。細長い柱のオイラー座屈式は弾性・理想条件のモデルであり、すべての構造にそのまま当てはまるわけではない。",
+    "why_selected": "素材の物理挙動Frontierから、材料の破断・疲労・応力緩和とは別の『形状が突然不安定になる』設計判断を追加するため。",
+    "feelings": [
+      "薄い定規を両端から押すと、折れる前に横へ大きくたわむ。"
+    ],
+    "before": "この部材は材料強度が十分だから安全？",
+    "after": "圧縮時の長さ・断面・支持条件で座屈が先に起きない？",
+    "observation_axis": "材料の破壊強度だけでなく、圧縮荷重と幾何形状・支持条件の組合せが平衡形状の安定性を失わせる臨界点を調べる。",
+    "semantic_cluster": "compressive-geometric-instability",
+    "nearest_terms": [
+      "fracture-toughness",
+      "material-fatigue",
+      "stress-relaxation"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "破壊靱性は亀裂の進展抵抗、材料疲労は繰返し荷重による損傷、応力緩和は一定ひずみ下の応力減衰を扱う。座屈は材料が破断する前でも生じる形状の安定性喪失であり、原因と判定対象が異なる。",
+    "related": [
+      "fracture-toughness",
+      "material-fatigue",
+      "tolerance-stack-up"
+    ],
+    "sources": [
+      "https://mechanics.ju.se/SolidMechanics/Buckling.html"
+    ],
+    "instruction": "細長い支持部材について、材料の許容応力だけでなく、圧縮方向・有効長・断面・端部拘束を確認し、座屈荷重と安全率を検証してください。",
+    "status": "seed"
+  },
+  {
+    "id": "frame-pacing",
+    "term": "Frame Pacing",
+    "ja": "フレームペーシング（表示間隔の均一化）",
+    "aliases": [
+      "フレーム表示間隔の調整",
+      "Frame Cadence"
+    ],
+    "fields": [
+      "Software Engineering",
+      "Design",
+      "Web"
+    ],
+    "one_liner": "平均FPSだけでなく、各フレームが画面へ提示される間隔のばらつきからカクつきを見抜く。",
+    "description": "動画・ゲーム・アニメーションで、描画済みフレームを表示装置の更新周期に合わせ、適切な間隔で提示すること。平均フレームレートが高くても、短い表示間隔と長い表示間隔が混在すると、ジャダーやカクつきが起きる。Androidのゲーム開発では表示タイムスタンプや同期機構を用いて改善する。Web制作では同じ観察軸をフレームタイムやドロップフレームの確認へ応用できるが、Android専用ライブラリをそのままWebへ適用するわけではない。",
+    "why_selected": "技術・モーションの対照候補から、直近のモーションブラーが扱う『1フレーム内の運動のぶれ』ではなく、連続するフレームの提示時刻という別の時間尺度を選んだ。",
+    "feelings": [
+      "アニメーションの平均FPSは高いのに、スクロールや移動が小刻みに引っかかる。"
+    ],
+    "before": "60FPSに近いなら滑らかなはず？",
+    "after": "フレームの表示間隔が不均一で、同じ絵が長く残る瞬間はない？",
+    "observation_axis": "平均フレームレートではなく、隣接するフレームの実際の提示間隔と表示更新周期の不一致が動きの滑らかさを損ねていないかを見る。",
+    "semantic_cluster": "interframe-presentation-timing-regularity",
+    "nearest_terms": [
+      "motion-blur",
+      "easing-function",
+      "onion-skinning"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "モーションブラーは一枚のフレーム内の露光時間、イージングは動作の速度曲線、オニオンスキニングは隣接コマの絵の比較を扱う。フレームペーシングは表示機器に提示される時刻間隔の不均一さを扱う。",
+    "related": [
+      "motion-blur",
+      "easing-function",
+      "cumulative-layout-shift"
+    ],
+    "sources": [
+      "https://developer.android.com/games/sdk/frame-pacing",
+      "https://web.dev/articles/animations-guide"
+    ],
+    "instruction": "アニメーションを実機で再生し、平均FPSだけでなくフレーム時間のばらつきとドロップフレームを記録してください。Webでは開発者ツールのFPS表示・Performance記録で重い処理を特定し、カクつく箇所を修正してください。",
+    "status": "seed"
+  },
+  {
+    "id": "apparent-competition",
+    "term": "Apparent Competition",
+    "ja": "見かけの競争（アパレント・コンペティション）",
+    "aliases": [
+      "見かけの競争",
+      "Apparent Competitive Interaction"
+    ],
+    "fields": [
+      "Ecology",
+      "Biology"
+    ],
+    "one_liner": "餌や場所を奪い合わない二種が、共通の捕食者を介して互いに不利になるかを見る。",
+    "description": "二つ以上の被食者種が共通の捕食者・寄生者・病原体などの自然敵を介して受ける間接的な負の影響。例えば一方の被食者が増えて捕食者の個体数を支え、その結果もう一方の被食者が減ることがある。直接の資源競争がなくても競争に似た個体群の減少が起こるため『見かけ』と呼ばれる。条件によっては逆に間接的な正の効果も起こるため、常に負の相互作用と決めつけない。",
+    "why_selected": "生態学の対照探索から、前回のアリー効果が扱う同種個体の密度ではなく、共通の自然敵を媒介した異種間の間接効果を選んだ。",
+    "feelings": [
+      "新たな獲物が増えた地域で捕食者が増え、もともといた別種の獲物が減る。"
+    ],
+    "before": "二つの動物が同じ餌を食べないなら競争しない？",
+    "after": "共通の捕食者を増やすことで、間接的に相手を減らしていない？",
+    "observation_axis": "二種が直接資源を奪い合わなくても、共通の自然敵の個体数・行動変化を介して一方の増加が他方の生存を下げるかを見る。",
+    "semantic_cluster": "shared-enemy-mediated-indirect-competition",
+    "nearest_terms": [
+      "allee-effect",
+      "niche-construction",
+      "ecological-trap"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "アリー効果は低密度で同種の個体あたり適応度が下がる現象、ニッチ構築は生物による環境改変、生態学的罠は環境選択の手掛かりと適応度の不一致。見かけの競争は共通の自然敵を介する異種間の間接的な負の相互作用である。",
+    "related": [
+      "allee-effect",
+      "niche-construction",
+      "ecological-trap"
+    ],
+    "sources": [
+      "https://doi.org/10.1146/annurev-ecolsys-110316-022628",
+      "https://pubmed.ncbi.nlm.nih.gov/19425963/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "dramatic-irony",
+    "term": "Dramatic Irony",
+    "ja": "劇的アイロニー（登場人物と観客の知識差）",
+    "aliases": [
+      "ドラマティック・アイロニー",
+      "劇的皮肉"
+    ],
+    "fields": [
+      "Narratology",
+      "Literature",
+      "Art"
+    ],
+    "one_liner": "登場人物には見えていない事実を観客だけが知っていることで、同じ台詞の意味が二重になる。",
+    "description": "劇・小説・映画などで、登場人物が知らない重要な事実や将来の成り行きを観客・読者が知っているため、登場人物の発言や行動に本人の意図しない意味や緊張が生じる表現技法。単なるどんでん返しや語り手の虚偽ではなく、観客と登場人物の知識の非対称性が成立条件となる。",
+    "why_selected": "物語の視点と情報制御Frontierから、語り手の信用度や出来事の提示回数とは異なる『登場人物と観客の知識差』という観察軸を選んだ。",
+    "feelings": [
+      "観客には部屋の奥に犯人がいると分かっているのに、主人公が安心して扉を開ける。"
+    ],
+    "before": "この台詞は登場人物の言葉どおりの意味？",
+    "after": "観客だけが知る情報によって、同じ台詞に別の意味が生まれていない？",
+    "observation_axis": "物語の登場人物と観客が保有する情報の非対称性によって、同じ発言・行動に本人の知らない意味や緊張が生まれるかを見る。",
+    "semantic_cluster": "audience-character-knowledge-asymmetry",
+    "nearest_terms": [
+      "focalization",
+      "unreliable-narrator",
+      "narrative-frequency"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "焦点化は誰の知覚や知識を通して情報を提示するか、信頼できない語り手は語りの信用度、物語頻度は出来事と叙述の回数を扱う。劇的アイロニーは観客と登場人物の知識差が台詞や行動の意味を変える作用を問う。",
+    "related": [
+      "focalization",
+      "unreliable-narrator",
+      "metalepsis"
+    ],
+    "sources": [
+      "https://www.oxfordlearnersdictionaries.com/definition/english/dramatic-irony",
+      "https://www.macmillanlearning.com/studentresources/college/english/litandcomp1e/litgloss/dramatic_irony.html"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "abscission",
+    "term": "Abscission",
+    "ja": "離層による器官脱離（アブシシオン）",
+    "aliases": [
+      "器官脱離",
+      "離層形成",
+      "Plant Organ Abscission"
+    ],
+    "fields": [
+      "Biology",
+      "Ecology"
+    ],
+    "one_liner": "葉や果実が偶然ちぎれるのでなく、植物が決まった細胞層を分離させて落としていないかを見る。",
+    "description": "植物が葉・花・果実などの器官を、あらかじめ形成された離層（abscission zone）で細胞壁の結合を緩めて切り離す生理的過程。成熟・老化・損傷・環境ストレスなどに応じ、オーキシンやエチレンなどのシグナルが器官の脱離時期を調節する。すべての落葉が単純に同一のホルモン機構で説明できるわけではない。",
+    "why_selected": "生物学の遠距離対照候補から、季節変化の時期を記録する生物季節学とは違い、器官が離れる場所と細胞分離の仕組みを追加するため。",
+    "feelings": [
+      "秋の葉が枝の付け根から落ち、枝には決まった形の葉痕が残る。"
+    ],
+    "before": "枯れた葉が弱くなって自然に落ちた？",
+    "after": "葉柄の付け根に、切り離すための細胞層が準備されていない？",
+    "observation_axis": "葉や花の落下を外力による破断としてではなく、離層の形成と細胞分離の活性化による制御された器官脱離として観察する。",
+    "semantic_cluster": "programmed-plant-organ-separation-zone",
+    "nearest_terms": [
+      "phenology",
+      "hydraulic-redistribution",
+      "cryptobiosis"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "生物季節学は季節的な現象の時期、水理的再分配は根を介した土壌水分移動、クリプトビオシスは代謝の著しい抑制と回復を扱う。器官脱離は離層で細胞を分離させて葉・花・果実を切り離す組織レベルの過程である。",
+    "related": [
+      "phenology",
+      "hydraulic-redistribution",
+      "cryptobiosis"
+    ],
+    "sources": [
+      "https://www.jstage.jst.go.jp/article/plantbiotechnology/30/3/30_13.0318a/_article/-char/en",
+      "https://academic.oup.com/jxb/article/69/4/733/4107238"
+    ],
+    "status": "seed"
+  }
+]
