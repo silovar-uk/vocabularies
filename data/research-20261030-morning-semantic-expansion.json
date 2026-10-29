@@ -1,0 +1,255 @@
+[
+  {
+    "id": "magnetoreception",
+    "term": "Magnetoreception",
+    "ja": "磁気受容（マグネトレセプション）",
+    "aliases": [
+      "磁覚",
+      "Magnetic Sense",
+      "磁場感覚"
+    ],
+    "fields": [
+      "Animal Biology",
+      "Neuroscience",
+      "Biophysics"
+    ],
+    "one_liner": "動物が地磁気の方向や傾きなどを手掛かりに、移動方向を定めることがある。",
+    "description": "磁気受容は動物が磁場の情報を検知して定位・航法などに利用する感覚能力。渡り鳥やチョウなどで行動実験があり、光依存の磁気感受性とクリプトクロムタンパク質の関係が研究されている。動物種ごとに仕組みは異なり得るため、すべての磁気受容が同じ分子機構で説明できると断定しない。",
+    "why_selected": "身体・定位Frontierを人間の固有感覚から動物の外界磁場検出へ広げる。前日の血圧反射・潮汐固定と異なり、磁場を感覚入力として利用する観察軸。",
+    "feelings": [
+      "渡りをする鳥が、目に見える目印の乏しい場所でも進行方向を選ぶ。"
+    ],
+    "before": "鳥は太陽や地形だけを手掛かりに移動している？",
+    "after": "地磁気の方向・傾きが、別の定位情報として使われていない？",
+    "observation_axis": "視覚や身体内部の位置感覚ではなく、外界の磁場を方向・航法の手掛かりとして検出する能力を調べる。",
+    "semantic_cluster": "animal-geomagnetic-orientation-sensing",
+    "nearest_terms": [
+      "proprioception",
+      "sensory-reweighting",
+      "vestibulo-ocular-reflex"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "固有感覚は筋・関節に由来する身体位置、感覚の再重みづけは複数入力の信頼度調整、前庭動眼反射は頭部運動時の視線安定。磁気受容は外部磁場の検出と定位への利用を問う。",
+    "related": [
+      "proprioception",
+      "sensory-reweighting",
+      "interoception"
+    ],
+    "sources": [
+      "https://www.nature.com/articles/s41586-021-03618-9",
+      "https://www.nature.com/articles/s41467-021-21002-z"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "auxetic-materials",
+    "term": "Auxetic Materials",
+    "ja": "オーセチック材料（負のポアソン比を示す材料・構造）",
+    "aliases": [
+      "オーセティック材料",
+      "Auxetics",
+      "負のポアソン比材料"
+    ],
+    "fields": [
+      "Materials Science",
+      "Product Design",
+      "Mechanical Engineering"
+    ],
+    "one_liner": "引っ張ると横方向にも広がる、通常とは逆向きの変形をする材料・構造。",
+    "description": "オーセチック材料・構造は、特定の変形範囲や方向で負のポアソン比を示し、引張時に荷重方向と直交する方向にも広がる。多孔質フォームや幾何学的な再入構造などで実現できる。ポアソン比は方向・ひずみ・条件に依存し、すべての条件で負になるとは限らない。",
+    "why_selected": "素材の物理挙動Frontier。前回の座屈は圧縮下の安定性、クレージングは微細損傷。今回は引張時の横ひずみの符号という独立した設計判断を追加する。",
+    "feelings": [
+      "網目状の試作品を左右へ引っ張ると、縦に縮むのではなく縦にも膨らむ。"
+    ],
+    "before": "引っ張れば幅は必ず細くなる？",
+    "after": "内部のセル形状によって、引張方向と直交する方向にも広がる設計になっていない？",
+    "observation_axis": "材料の強度や破断ではなく、引張荷重に対する横方向ひずみの符号と内部幾何の関係を見る。",
+    "semantic_cluster": "negative-poisson-ratio-geometry",
+    "nearest_terms": [
+      "anisotropy",
+      "buckling",
+      "coefficient-of-thermal-expansion"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "異方性は方向による性質の違い、座屈は圧縮時の不安定化、熱膨張係数は温度変化による寸法応答。オーセチック材料は引張・圧縮に伴う横方向ひずみの逆転を扱う。",
+    "related": [
+      "anisotropy",
+      "buckling",
+      "tolerance-stack-up"
+    ],
+    "sources": [
+      "https://pubmed.ncbi.nlm.nih.gov/17782252/",
+      "https://doi.org/10.1126/science.235.4792.1038"
+    ],
+    "instruction": "試作材の引張・圧縮試験で縦ひずみと横ひずみを同時に計測し、変形範囲・方向ごとのポアソン比を算出してください。用途の荷重条件で再現するか確認してください。",
+    "status": "seed"
+  },
+  {
+    "id": "harmonic-rhythm",
+    "term": "Harmonic Rhythm",
+    "ja": "和声リズム（コードが変わる速さ）",
+    "aliases": [
+      "ハーモニック・リズム",
+      "Harmonic Tempo",
+      "和音交替速度"
+    ],
+    "fields": [
+      "Music Theory",
+      "Music",
+      "Composition"
+    ],
+    "one_liner": "テンポや音符の細かさとは別に、和音が何拍ごとに変わるかを聴く。",
+    "description": "和声リズムは楽曲における和声・和音の変化頻度と時間的配置を指す。テンポが速くても同じ和音を長く保持すれば和声リズムは遅くなり、遅いテンポでも和音が頻繁に変われば速い。和音交替の位置や頻度は緊張・区切り・進行感の形成に関わるが、印象は音楽的文脈に依存する。",
+    "why_selected": "直近の音響・映像語は音源の所属やフレーム時刻が中心だった。今回は音楽の和声変化を独立した時間レイヤーとして捉える。",
+    "feelings": [
+      "メロディーの音数は同じでも、コードが頻繁に変わる部分だけ先へ進む感覚が強まる。"
+    ],
+    "before": "曲の勢いはBPMと音符の細かさだけで決まる？",
+    "after": "コードが変わる間隔そのものが、緊張や到達感を変えていない？",
+    "observation_axis": "拍の速度や旋律音の発音間隔ではなく、和声が切り替わる時間間隔と位置を独立して観察する。",
+    "semantic_cluster": "chord-change-temporal-rate",
+    "nearest_terms": [
+      "polyrhythm",
+      "syncopation",
+      "inharmonicity"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "ポリリズムは異なる拍周期の重なり、シンコペーションは拍節上のアクセントのずれ、不調和度は倍音周波数のずれ。和声リズムはコード交替の時間頻度を扱う。",
+    "related": [
+      "polyrhythm",
+      "syncopation",
+      "tension-release"
+    ],
+    "sources": [
+      "https://academic.oup.com/book/49091",
+      "https://shedthemusic.com/harmonic-rhythm"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "pointer-capture",
+    "term": "Pointer Capture",
+    "ja": "ポインターキャプチャ（ドラッグ中のイベント送信先の固定）",
+    "aliases": [
+      "setPointerCapture",
+      "ポインタキャプチャ",
+      "Pointer Events Capture"
+    ],
+    "fields": [
+      "Web",
+      "UI",
+      "Software Engineering"
+    ],
+    "one_liner": "ドラッグ中に指やカーソルが部品から外れても、操作イベントを同じ要素へ送り続けられる。",
+    "description": "Pointer Events仕様のポインターキャプチャは、特定のポインターのイベント送信先を、通常のヒットテスト結果ではなく指定要素へ切り替える機構。カスタムスライダーやドラッグ操作で、ポインターが部品の外へ移動しても追跡できる。setPointerCapture(pointerId)で要求し、pointerupやpointercancelの後には通常自動解除される。タッチ入力では暗黙のキャプチャが発生する場合もある。",
+    "why_selected": "Web実装の新しい観察軸。ヒットテストはその瞬間の位置から対象を決めるが、キャプチャは操作の継続中に送信先を保持する。アクセシビリティの既存操作取消し基準とも異なる。",
+    "feelings": [
+      "音量スライダーを動かす途中で指がつまみから外れても、操作が途切れずに続く。"
+    ],
+    "before": "ポインターが要素の外へ出たらドラッグが止まるのは仕方ない？",
+    "after": "押下開始後にポインターイベントの送信先を固定できている？",
+    "observation_axis": "位置ごとのヒットテスト結果ではなく、ドラッグの開始から終了までイベント送信先を継続して保持できるかを見る。",
+    "semantic_cluster": "pointer-event-target-retention",
+    "nearest_terms": [
+      "hit-testing",
+      "pointer-cancellation",
+      "hit-area"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "ヒットテストは現在位置から対象を決め、ポインター操作の取消しは誤起動の回避・取消可能性、ヒット領域は入力可能な面積を扱う。キャプチャは操作中のイベント配送先を上書きして維持する。",
+    "related": [
+      "hit-testing",
+      "pointer-cancellation",
+      "roving-tabindex"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/pointerevents3/",
+      "https://w3c.github.io/pointerevents/"
+    ],
+    "instruction": "ドラッグ開始時に対象要素へsetPointerCapture(event.pointerId)を設定し、pointermove・pointerup・pointercancel・lostpointercaptureを扱ってください。マウスとタッチの両方で要素外への移動と中断を試験してください。",
+    "status": "seed"
+  },
+  {
+    "id": "clonal-interference",
+    "term": "Clonal Interference",
+    "ja": "クローン干渉（無性生殖集団での有利な変異同士の競合）",
+    "aliases": [
+      "クローン間干渉",
+      "Clonal Competition of Beneficial Mutations"
+    ],
+    "fields": [
+      "Evolutionary Biology",
+      "Population Genetics",
+      "Microbiology"
+    ],
+    "one_liner": "どちらも有利な突然変異なのに、別々の系統で生じると一方が他方の定着を妨げることがある。",
+    "description": "無性生殖集団で異なる系統に生じた有利な変異が、組換えによって一つの系統へ統合されにくいため、系統同士が競争し、一方の変異の集団内固定を妨げる現象。変異の有利さだけでなく、別の有利な系統が出現する時期・頻度・選択係数が進化速度を左右する。",
+    "why_selected": "最近の制度・組織・文化の競争から離れ、遺伝的な適応が単独変異の足し算にならない仕組みを加える。",
+    "feelings": [
+      "細菌集団で、増殖に有利な変異を持つ系統が増え始めたのに、別の有利な系統に置き換えられる。"
+    ],
+    "before": "有利な突然変異なら、いつか必ず集団全体に広がる？",
+    "after": "同時期に生まれた別の有利な系統との競争が、その変異の固定を妨げていない？",
+    "observation_axis": "変異一つの適応度ではなく、無性生殖集団で異なる有利な変異を持つ系統が並存・競合する時間窓を見る。",
+    "semantic_cluster": "asexual-beneficial-lineage-fixation-interference",
+    "nearest_terms": [
+      "red-queen-competition",
+      "punctuated-equilibrium",
+      "cultural-ratchet-effect"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "赤の女王競争は相互作用相手との継続的な適応競争、断続平衡は進化速度の長期的な時間パターン、文化のラチェット効果は学習伝達による改良の蓄積。クローン干渉は無性生殖集団内で有利な変異を持つ別系統が固定を妨げる機構。",
+    "related": [
+      "red-queen-competition",
+      "punctuated-equilibrium",
+      "ergodicity"
+    ],
+    "sources": [
+      "https://pubmed.ncbi.nlm.nih.gov/9720276/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC2871819/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "triboluminescence",
+    "term": "Triboluminescence",
+    "ja": "摩擦・破壊発光（トライボルミネセンス）",
+    "aliases": [
+      "トライボルミネセンス",
+      "摩擦発光",
+      "Fractoluminescence"
+    ],
+    "fields": [
+      "Physics",
+      "Materials Science",
+      "Optics"
+    ],
+    "one_liner": "結晶を割る・こするなどの機械的な作用によって、光が出ることがある。",
+    "description": "トライボルミネセンスは固体を破砕・摩擦・剥離するなど機械的作用に伴う発光現象。砂糖の結晶の破砕や粘着テープの剥離などが例。発光の詳細機構は材料や環境により異なり、破壊に伴う電荷分離や気体の励起などが関与する場合がある。液体中の気泡崩壊によるソノルミネセンスとは、発光の起点と媒質を区別する。",
+    "why_selected": "材料の力学応答から光学現象への橋渡し。既存の音響発光と結果は似るが、液体の気泡ではなく固体の摩擦・破壊に起点があるため、原因・分析単位の差を明示してB判定とする。",
+    "feelings": [
+      "暗い場所で角砂糖を砕くと、小さな光が見えることがある。"
+    ],
+    "before": "光は熱や電気を加えたときにだけ出る？",
+    "after": "固体の破壊や摩擦が、光の放出につながっていない？",
+    "observation_axis": "液体の気泡崩壊ではなく、固体の摩擦・割れ・剥離という機械的作用が光を生む条件を見る。",
+    "semantic_cluster": "solid-mechanical-fracture-light-emission",
+    "nearest_terms": [
+      "sonoluminescence",
+      "fracture-toughness",
+      "polymer-crazing"
+    ],
+    "semantic_distance": "B",
+    "difference_from_nearest": "音響発光と光を放出する点は近いが、音響発光は液体の気泡の音圧駆動・崩壊、摩擦・破壊発光は固体への機械的作用。破壊靱性は亀裂進展への抵抗、クレージングは高分子の微細空隙形成。",
+    "related": [
+      "sonoluminescence",
+      "fracture-toughness",
+      "polymer-crazing"
+    ],
+    "sources": [
+      "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.21.816",
+      "https://www.nature.com/articles/nature07378"
+    ],
+    "status": "seed"
+  }
+]
