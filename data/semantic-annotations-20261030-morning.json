@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-30",
+  "batch": "20261030-morning",
+  "term_annotations": {
+    "magnetoreception": {
+      "axis": "視覚や身体内部の位置感覚ではなく、外界の磁場を方向・航法の手掛かりとして検出する能力を調べる。",
+      "nearest_terms": [
+        "proprioception",
+        "sensory-reweighting",
+        "vestibulo-ocular-reflex"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "固有感覚は筋・関節に由来する身体位置、感覚の再重みづけは複数入力の信頼度調整、前庭動眼反射は頭部運動時の視線安定。磁気受容は外部磁場の検出と定位への利用を問う。",
+      "new_axis": true
+    },
+    "auxetic-materials": {
+      "axis": "材料の強度や破断ではなく、引張荷重に対する横方向ひずみの符号と内部幾何の関係を見る。",
+      "nearest_terms": [
+        "anisotropy",
+        "buckling",
+        "coefficient-of-thermal-expansion"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "異方性は方向による性質の違い、座屈は圧縮時の不安定化、熱膨張係数は温度変化による寸法応答。オーセチック材料は引張・圧縮に伴う横方向ひずみの逆転を扱う。",
+      "new_axis": true
+    },
+    "harmonic-rhythm": {
+      "axis": "拍の速度や旋律音の発音間隔ではなく、和声が切り替わる時間間隔と位置を独立して観察する。",
+      "nearest_terms": [
+        "polyrhythm",
+        "syncopation",
+        "inharmonicity"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ポリリズムは異なる拍周期の重なり、シンコペーションは拍節上のアクセントのずれ、不調和度は倍音周波数のずれ。和声リズムはコード交替の時間頻度を扱う。",
+      "new_axis": true
+    },
+    "pointer-capture": {
+      "axis": "位置ごとのヒットテスト結果ではなく、ドラッグの開始から終了までイベント送信先を継続して保持できるかを見る。",
+      "nearest_terms": [
+        "hit-testing",
+        "pointer-cancellation",
+        "hit-area"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ヒットテストは現在位置から対象を決め、ポインター操作の取消しは誤起動の回避・取消可能性、ヒット領域は入力可能な面積を扱う。キャプチャは操作中のイベント配送先を上書きして維持する。",
+      "new_axis": true
+    },
+    "clonal-interference": {
+      "axis": "変異一つの適応度ではなく、無性生殖集団で異なる有利な変異を持つ系統が並存・競合する時間窓を見る。",
+      "nearest_terms": [
+        "red-queen-competition",
+        "punctuated-equilibrium",
+        "cultural-ratchet-effect"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "赤の女王競争は相互作用相手との継続的な適応競争、断続平衡は進化速度の長期的な時間パターン、文化のラチェット効果は学習伝達による改良の蓄積。クローン干渉は無性生殖集団内で有利な変異を持つ別系統が固定を妨げる機構。",
+      "new_axis": true
+    },
+    "triboluminescence": {
+      "axis": "液体の気泡崩壊ではなく、固体の摩擦・割れ・剥離という機械的作用が光を生む条件を見る。",
+      "nearest_terms": [
+        "sonoluminescence",
+        "fracture-toughness",
+        "polymer-crazing"
+      ],
+      "distance": "B",
+      "difference_from_nearest": "音響発光と光を放出する点は近いが、音響発光は液体の気泡の音圧駆動・崩壊、摩擦・破壊発光は固体への機械的作用。破壊靱性は亀裂進展への抵抗、クレージングは高分子の微細空隙形成。",
+      "new_axis": true
+    }
+  }
+}
