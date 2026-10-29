@@ -35,7 +35,8 @@
     "data/semantic-annotations-20261027-evening.json",
     "data/semantic-annotations-20261028-morning.json",
     "data/semantic-annotations-20261028-evening.json",
-    "data/semantic-annotations-20261029-morning.json"
+    "data/semantic-annotations-20261029-morning.json",
+    "data/semantic-annotations-20261029-evening.json"
   ],
   "addition_gate": {
     "enabled": true,

@@ -1,0 +1,263 @@
+[
+  {
+    "id": "css-starting-style",
+    "term": "CSS @starting-style",
+    "ja": "初回表示の遷移開始スタイル（CSS @starting-style）",
+    "aliases": [
+      "@starting-style",
+      "CSS Starting Style",
+      "開始スタイル規則"
+    ],
+    "fields": [
+      "Web",
+      "Design",
+      "Software Engineering"
+    ],
+    "one_liner": "初めて現れる要素にも、滑らかに表示されるための遷移開始点を定義できる。",
+    "description": "CSSの@starting-styleは、初回描画やdisplay:noneからの表示復帰など、遷移前の計算済みスタイルがない要素のCSSトランジション開始値を定義する規則。ポップオーバーの表示時にopacity:0から1へ変化させられる。退出遷移やdisplayの離散的変化にはtransition-behavior:allow-discrete等を別途適切に指定する必要がある。@keyframesとは異なる。",
+    "why_selected": "制作語として、フレームの滑らかさではなく初回表示に『遷移前のスタイルが存在しない』条件を追加する。",
+    "feelings": [
+      "開く瞬間だけ突然現れ、閉じるときだけ滑らかに消えるポップオーバー。"
+    ],
+    "before": "transitionを設定したのに初回だけ動かない？",
+    "after": "初回に遷移前スタイルがないため、@starting-styleで開始値を定義する必要がある？",
+    "observation_axis": "フレーム時間や速度曲線ではなく、初回表示・表示復帰時の遷移前スタイルの欠落を見て開始値を宣言する。",
+    "semantic_cluster": "css-initial-render-transition-origin",
+    "nearest_terms": [
+      "animation-from-interactions",
+      "easing-function",
+      "frame-pacing"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "インタラクション起因アニメーションは操作に伴う動き、イージングは速度曲線、フレームペーシングは表示間隔。@starting-styleは初回描画時の遷移開始状態の欠落を扱う。",
+    "related": [
+      "easing-function",
+      "frame-pacing",
+      "inert-html-attribute"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/css-transitions-2/",
+      "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/%40starting-style"
+    ],
+    "instruction": "新規表示するポップオーバーにtransitionと@starting-styleの開始値を設定し、displayの離散遷移に必要なallow-discreteを確認してください。開閉と動きを減らす設定を実機検証してください。",
+    "status": "seed"
+  },
+  {
+    "id": "diegetic-sound",
+    "term": "Diegetic Sound",
+    "ja": "劇中世界に属する音（ダイジェティック・サウンド）",
+    "aliases": [
+      "ダイジェティックサウンド",
+      "物語内音",
+      "劇中音",
+      "Diegetic Audio"
+    ],
+    "fields": [
+      "Film Sound",
+      "Art",
+      "Sound"
+    ],
+    "one_liner": "音源が画面に見えるかでなく、物語世界の内部に存在するかを見る。",
+    "description": "映画・映像の音のうち、登場人物が暮らす物語世界の内部に音源があるもの。会話、足音、劇中のラジオから流れる音楽などが典型で、画面外にあっても劇中世界に属する。観客向けにのみ流れる劇伴は通常、非ダイジェティックな音。作品によって境界を意図的に曖昧にする演出もある。",
+    "why_selected": "映像制作の実務語。アクースマティック・サウンドは音源が見えないこと、Jカットは音の先行タイミングを扱うが、今回は音源の物語世界への所属を区別する。",
+    "feelings": [
+      "同じ曲が、劇中ラジオから流れる音から観客だけが聞く伴奏へ切り替わる。"
+    ],
+    "before": "画面内に音源が映っているか？",
+    "after": "この音は登場人物の世界に音源が存在する？",
+    "observation_axis": "音源の可視性や編集タイミングではなく、音が物語世界の内部で発生しているかを区別する。",
+    "semantic_cluster": "storyworld-sound-source-membership",
+    "nearest_terms": [
+      "acousmatic-sound",
+      "j-cut",
+      "audio-description"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "アクースマティックは音源が見えないこと（劇中音でも成立）、Jカットは音の時間的先行、音声解説は視覚情報の言語化。劇中音は音源の物語世界への所属を問う。",
+    "related": [
+      "acousmatic-sound",
+      "j-cut",
+      "auditory-masking"
+    ],
+    "sources": [
+      "https://filmglossary.ccnmtl.columbia.edu/term/diegetic-sound/",
+      "https://www.filmmakersacademy.com/glossary/diegetic/"
+    ],
+    "instruction": "映像の音を物語世界内の音と観客向けの劇伴に分類してください。音源が画面外でも劇中世界に属するかを確認し、両者を切り替える場面では演出意図を明示してください。",
+    "status": "seed"
+  },
+  {
+    "id": "sociopetal-sociofugal-space",
+    "term": "Sociopetal / Sociofugal Space",
+    "ja": "交流を促す・遠ざける空間配置（ソシオペタル／ソシオフーガル）",
+    "aliases": [
+      "Sociopetal Space",
+      "Sociofugal Space",
+      "社会求心的配置",
+      "社会遠心的配置",
+      "ソシオペタル",
+      "ソシオフーガル"
+    ],
+    "fields": [
+      "Environmental Psychology",
+      "Architecture",
+      "Sociology"
+    ],
+    "one_liner": "椅子の向きや配置が会話を始めやすくするか、個別活動を支えるかを見る。",
+    "description": "対人交流を促しやすい空間配置（sociopetal）と、交流を抑えたり個別活動を支えたりしやすい配置（sociofugal）の対比。オズモンドの病棟設計研究やソマーらの研究で知られる。対面・小集団の椅子配置は会話機会をつくり、同方向の列は個別活動を支える場合がある。ただし配置が行動を決定するわけではなく、目的・距離・関係性にも左右される。",
+    "why_selected": "空間と社会的行動のFrontier。近接学は距離の意味、行動場面は活動単位。今回は家具の向き・配置による交流機会の増減を観察する。",
+    "feelings": [
+      "休憩室の椅子を壁沿いから円卓の周りへ移すと、会話が生まれやすくなる。"
+    ],
+    "before": "椅子の数が同じなら交流のしやすさも同じ？",
+    "after": "座る向き・視線・距離が会話を始める負担を変えていない？",
+    "observation_axis": "個人間距離や施設用途ではなく、家具の向き・視線・座席関係が交流機会をどちらへ動かすかを見る。",
+    "semantic_cluster": "seating-orientation-social-interaction",
+    "nearest_terms": [
+      "proxemics",
+      "behavior-setting",
+      "space-syntax"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "近接学は対人距離の文化的意味、行動場面は活動と環境のまとまり、空間構文論は空間の接続構造。ソシオペタル／ソシオフーガルは座席の向き・配置が交流を促進・抑制する作用を扱う。",
+    "related": [
+      "proxemics",
+      "behavior-setting",
+      "third-place"
+    ],
+    "sources": [
+      "https://psychiatryonline.org/doi/10.1176/ps.8.4.23",
+      "https://doi.org/10.1086/224402",
+      "https://www.ohno-lab.jp/PDF/lecture/EBS%20intro_JE.pdf"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "limit-of-detection",
+    "term": "Limit of Detection",
+    "ja": "検出限界（リミット・オブ・ディテクション）",
+    "aliases": [
+      "LOD",
+      "Detection Limit",
+      "分析の検出限界"
+    ],
+    "fields": [
+      "Measurement",
+      "Analytical Chemistry",
+      "Statistics"
+    ],
+    "one_liner": "『不検出』を『存在しない』と読み替えず、背景雑音との識別下限を見る。",
+    "description": "分析化学で、対象物の存在を空試験値などの背景から一定の確かさで区別できる最小の濃度や量の目安。IUPACは空試験値の平均とばらつき、および選択した信頼水準に関係づける。検出限界未満はゼロを意味しない。また検出できる水準と十分な精度で定量できる水準は異なる場合がある。閾値は測定法や試料条件に依存する。",
+    "why_selected": "測定値の信頼性Frontier。測定不確かさは値のばらつき、分解能は識別できる細かさ、一致限界は二手法間の差。検出限界は空試験との識別可能性を問う。",
+    "feelings": [
+      "水質検査の『不検出』を見て、物質が完全にゼロだと思ってしまう。"
+    ],
+    "before": "不検出なら、その物質は存在しない？",
+    "after": "この測定手順の検出限界以下で、空試験と区別できないだけでは？",
+    "observation_axis": "誤差幅や装置分解能ではなく、対象信号が空試験・背景雑音と統計的に区別可能となる下限を見る。",
+    "semantic_cluster": "analytical-signal-blank-distinguishability",
+    "nearest_terms": [
+      "measurement-uncertainty",
+      "resolution",
+      "limits-of-agreement"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "測定不確かさは報告値のばらつき、分解能は識別可能な細かさ、一致限界は二手法の差。検出限界は空試験との識別可能性という別の判定対象。",
+    "related": [
+      "measurement-uncertainty",
+      "resolution",
+      "metrological-traceability"
+    ],
+    "sources": [
+      "https://goldbook.iupac.org/terms/view/L03540",
+      "https://goldbook.iupac.org/terms/view/D01629"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "cabbeling",
+    "term": "Cabbeling",
+    "ja": "混合による海水の高密度化（キャベリング）",
+    "aliases": [
+      "キャベリング",
+      "Cabbaling",
+      "海水の混合収縮"
+    ],
+    "fields": [
+      "Oceanography",
+      "Physics",
+      "Earth Science"
+    ],
+    "one_liner": "同じ密度の海水を混ぜたのに、混合後の水が重くなって沈む場合がある。",
+    "description": "海水の密度が温度・塩分に対して非線形に変わるため、異なる温度・塩分の水塊を混ぜると、混合後の密度が元の密度の平均より高くなる現象。とくに元の二水塊が同じ密度でも混合水がより高密度となり沈降に寄与し得る。すべての混合が必ず高密度化するわけではない。",
+    "why_selected": "海洋物理学への遠距離探索。死水現象は密度成層による内部波抵抗、同位体分別は同位体比の変化。今回は混合時の密度の非線形性を加える。",
+    "feelings": [
+      "冷たく淡い水と暖かく塩辛い水が同じ密度でも、混ぜると重くなって沈む。"
+    ],
+    "before": "同じ密度の二つの水を混ぜれば密度は変わらない？",
+    "after": "温度・塩分と密度の非線形性が混合後の密度を増やしていない？",
+    "observation_axis": "混合を密度の単純平均と見ず、温度・塩分と密度の非線形関係が高密度化と沈降を生むかを見る。",
+    "semantic_cluster": "nonlinear-seawater-mixing-densification",
+    "nearest_terms": [
+      "dead-water-phenomenon",
+      "isotope-fractionation",
+      "biological-carbon-pump"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "死水現象は成層による船の抵抗、同位体分別は同位体の選択的分配、生物炭素ポンプは生物起源炭素の輸送。キャベリングは海水の状態方程式の非線形性による混合水の高密度化。",
+    "related": [
+      "dead-water-phenomenon",
+      "isotope-fractionation",
+      "biological-carbon-pump"
+    ],
+    "sources": [
+      "https://glossary.ametsoc.org/wiki/cabbeling/",
+      "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2002JC001482"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "embedded-narrative",
+    "term": "Embedded Narrative",
+    "ja": "入れ子になった物語（埋め込み物語）",
+    "aliases": [
+      "Narrative Embedding",
+      "物語の入れ子構造",
+      "物語内物語",
+      "Embedded Story",
+      "Frame Narrative"
+    ],
+    "fields": [
+      "Narratology",
+      "Literature",
+      "Writing"
+    ],
+    "one_liner": "物語の内部で別の物語が語られるとき、外側の語りが内側の意味をどう変えるかを見る。",
+    "description": "物語の内部に別の語りや物語が組み込まれる構成。主人公が別人の体験談を聞き、その話がさらに別人の証言を含む場合など、語りの階層と情報源が重なる。物語論では埋め込みと枠物語、語りの水準、語り手の交替を区別する。単なる回想や脱線がすべて別の語りの水準を作るわけではない。",
+    "why_selected": "物語の視点と情報制御Frontier。メタレプシスは語りの階層を越える侵犯、焦点化は知覚の視点。今回は語り同士の包含関係を観察する。",
+    "feelings": [
+      "主人公が読む手紙に別人の証言があり、手紙を書いた人の意図が判明すると証言の意味まで変わる。"
+    ],
+    "before": "すべて同じ語り手が直接説明している？",
+    "after": "誰の語りに誰の物語が埋め込まれ、外側の枠が解釈を変えている？",
+    "observation_axis": "語り手の信用度や視点だけでなく、語り同士の包含・従属の階層と枠組みが解釈へ及ぼす作用を見る。",
+    "semantic_cluster": "nested-story-narrative-level-framing",
+    "nearest_terms": [
+      "metalepsis",
+      "unreliable-narrator",
+      "focalization"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "メタレプシスは物語階層の侵犯、信頼できない語り手は信用度、焦点化は知覚・知識の視点。埋め込み物語は語り同士の包含関係と外側の枠による解釈の変化を扱う。",
+    "related": [
+      "metalepsis",
+      "unreliable-narrator",
+      "narrative-frequency"
+    ],
+    "sources": [
+      "https://www-archiv.fdm.uni-hamburg.de/lhn/node/32/revisions/359/view.html",
+      "https://projects.au.dk/narrativeresearchlab/unnatural/undictionary/"
+    ],
+    "status": "seed"
+  }
+]

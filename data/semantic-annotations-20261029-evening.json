@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-29",
+  "batch": "20261029-evening",
+  "term_annotations": {
+    "css-starting-style": {
+      "axis": "フレーム時間や速度曲線ではなく、初回表示・表示復帰時の遷移前スタイルの欠落を見て開始値を宣言する。",
+      "nearest_terms": [
+        "animation-from-interactions",
+        "easing-function",
+        "frame-pacing"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "インタラクション起因アニメーションは操作に伴う動き、イージングは速度曲線、フレームペーシングは表示間隔。@starting-styleは初回描画時の遷移開始状態の欠落を扱う。",
+      "new_axis": true
+    },
+    "diegetic-sound": {
+      "axis": "音源の可視性や編集タイミングではなく、音が物語世界の内部で発生しているかを区別する。",
+      "nearest_terms": [
+        "acousmatic-sound",
+        "j-cut",
+        "audio-description"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "アクースマティックは音源が見えないこと（劇中音でも成立）、Jカットは音の時間的先行、音声解説は視覚情報の言語化。劇中音は音源の物語世界への所属を問う。",
+      "new_axis": true
+    },
+    "sociopetal-sociofugal-space": {
+      "axis": "個人間距離や施設用途ではなく、家具の向き・視線・座席関係が交流機会をどちらへ動かすかを見る。",
+      "nearest_terms": [
+        "proxemics",
+        "behavior-setting",
+        "space-syntax"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "近接学は対人距離の文化的意味、行動場面は活動と環境のまとまり、空間構文論は空間の接続構造。ソシオペタル／ソシオフーガルは座席の向き・配置が交流を促進・抑制する作用を扱う。",
+      "new_axis": true
+    },
+    "limit-of-detection": {
+      "axis": "誤差幅や装置分解能ではなく、対象信号が空試験・背景雑音と統計的に区別可能となる下限を見る。",
+      "nearest_terms": [
+        "measurement-uncertainty",
+        "resolution",
+        "limits-of-agreement"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "測定不確かさは報告値のばらつき、分解能は識別可能な細かさ、一致限界は二手法の差。検出限界は空試験との識別可能性という別の判定対象。",
+      "new_axis": true
+    },
+    "cabbeling": {
+      "axis": "混合を密度の単純平均と見ず、温度・塩分と密度の非線形関係が高密度化と沈降を生むかを見る。",
+      "nearest_terms": [
+        "dead-water-phenomenon",
+        "isotope-fractionation",
+        "biological-carbon-pump"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "死水現象は成層による船の抵抗、同位体分別は同位体の選択的分配、生物炭素ポンプは生物起源炭素の輸送。キャベリングは海水の状態方程式の非線形性による混合水の高密度化。",
+      "new_axis": true
+    },
+    "embedded-narrative": {
+      "axis": "語り手の信用度や視点だけでなく、語り同士の包含・従属の階層と枠組みが解釈へ及ぼす作用を見る。",
+      "nearest_terms": [
+        "metalepsis",
+        "unreliable-narrator",
+        "focalization"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "メタレプシスは物語階層の侵犯、信頼できない語り手は信用度、焦点化は知覚・知識の視点。埋め込み物語は語り同士の包含関係と外側の枠による解釈の変化を扱う。",
+      "new_axis": true
+    }
+  }
+}
