@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-30",
+  "batch": "20261030-evening",
+  "term_annotations": {
+    "webvtt-timed-text": {
+      "axis": "映像内に文字があるかではなく、音声・動画の時間軸と結び付くテキスト情報が独立した選択可能なトラックとして提供されているかを見る。",
+      "nearest_terms": [
+        "audio-description",
+        "j-cut",
+        "sensory-characteristics"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "音声解説は視覚情報を音声へ変換する制作手法、Jカットは音と映像の場面転換タイミング、感覚的特徴は色や形だけへの依存を避ける基準。WebVTTは時間同期した文字情報をファイルとトラックとして記述・選択可能にする形式。",
+      "new_axis": true
+    },
+    "acoustic-impedance-mismatch": {
+      "axis": "受音点までの距離や遮蔽物だけでなく、媒質の境界における密度・音速の差が入射音の反射と透過をどう配分するかを見る。",
+      "nearest_terms": [
+        "acoustic-shadow",
+        "auditory-masking",
+        "thermal-bridging"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "音響陰影は空間的な遮蔽・屈折による低音圧域、聴覚マスキングは他の音による知覚妨害、熱橋は局所的な熱伝導経路。音響インピーダンス不整合は異なる媒質の接触面での波の反射・透過を扱う。",
+      "new_axis": true
+    },
+    "spatial-mismatch-hypothesis": {
+      "axis": "個人の移動可能範囲だけでなく、居住分離と雇用の立地分布が集団間の雇用機会の差を生む構造を調べる。",
+      "nearest_terms": [
+        "space-time-prism",
+        "dasymetric-mapping",
+        "hostile-architecture"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "時空間プリズムは個人の時間制約下の到達可能域、ダシメトリック・マッピングは地理的集計値の分布推定、敵対的建築は設備形状による行動排除。空間的不一致仮説は住宅選択制約と雇用立地の分離が労働機会へ及ぼす構造的影響を扱う。",
+      "new_axis": true
+    },
+    "ostwald-ripening": {
+      "axis": "単一粒子の強度や変形ではなく、粒径に依存する表面エネルギー差が粒子集団の溶解・再析出と粗大化をどう進めるかを見る。",
+      "nearest_terms": [
+        "marangoni-effect",
+        "thixotropy",
+        "isotope-fractionation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "マランゴニ効果は表面張力の空間勾配による液体流動、チキソトロピーはせん断に依存する粘度の時間変化、同位体分別は同位体比の偏り。オストワルド熟成は粒径による溶解度差を介した粒子間の物質移動。",
+      "new_axis": true
+    },
+    "stochastic-resonance": {
+      "axis": "背景雑音を一律の誤差とせず、閾値・非線形応答のある系で雑音強度が微弱信号の検出性能を改善する条件を測る。",
+      "nearest_terms": [
+        "limit-of-detection",
+        "spectral-leakage",
+        "missing-fundamental"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "検出限界は背景から区別できる下限、スペクトル漏れは有限観測窓による周波数成分の拡散、ミッシング・ファンダメンタルは欠けた基音の知覚的補完。確率共鳴は適度なランダム変動が閾値系の信号検出を改善する機構。",
+      "new_axis": true
+    },
+    "fission-fusion-dynamics": {
+      "axis": "社会的つながりの有無だけでなく、同時に行動する小集団の規模・構成が時間とともに分裂・融合する頻度と条件を見る。",
+      "nearest_terms": [
+        "triadic-closure",
+        "behavior-setting",
+        "allee-effect"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "三者閉包は共通知人を介した新規関係形成、行動場面は環境と反復的集団行動の単位、アリー効果は低密度での繁殖・成長低下。離合集散型の群れ動態は動物社会の小集団構成が反復的に分裂・合流する時間変化を扱う。",
+      "new_axis": true
+    }
+  }
+}
