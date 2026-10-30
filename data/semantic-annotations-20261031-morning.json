@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-31",
+  "batch": "20261031-morning",
+  "term_annotations": {
+    "sensory-substitution": {
+      "axis": "感覚の精度や重みづけではなく、環境情報を異なる感覚様式へ符号化して学習可能な知覚・行動の手掛かりへ変えられるかを見る。",
+      "nearest_terms": [
+        "sensory-reweighting",
+        "audio-description",
+        "magnetoreception"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "感覚の再重みづけは既存感覚の信頼度調整、音声解説は視覚情報の言語化、磁気受容は外界の磁場の検知。感覚代行はセンサー情報を別の感覚刺激へ変換し、利用者の学習を通じて知覚・行動へ結びつける。",
+      "new_axis": true
+    },
+    "prosopopoeia": {
+      "axis": "語り手の信頼性や観客との知識差ではなく、実際には発話していない存在へ声を仮構して誰の視点と権威を立ち上げるかを見る。",
+      "nearest_terms": [
+        "unreliable-narrator",
+        "dramatic-irony",
+        "speech-act"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "信頼できない語り手は語りの信用度、劇的アイロニーは観客と人物の知識差、発話行為は発話が行う社会的行為。プロソポポイアは不在者や非人間へ発話主体を割り当てる修辞的な構築行為。",
+      "new_axis": true
+    },
+    "phyllotaxis": {
+      "axis": "葉の寿命や個体群の結実量ではなく、茎頂で新たな器官原基がどの位置と開度で繰り返し形成されるかを調べる。",
+      "nearest_terms": [
+        "abscission",
+        "phenology",
+        "mast-seeding"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "器官脱離は葉や花を切り離す細胞過程、生物季節学は季節現象の時期、一斉結実は個体群の種子生産量の年次同期。葉序は器官の新生位置と角度の発生的な空間パターン。",
+      "new_axis": true
+    },
+    "pseudoreplication": {
+      "axis": "測定器の精度や評価者間一致ではなく、処置を独立に割り当てた実験単位と下位の観測単位が混同され、推論上の自由度を水増ししていないかを見る。",
+      "nearest_terms": [
+        "inter-rater-reliability",
+        "measurement-invariance",
+        "negative-control"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "評価者間信頼性は評価者を替えた一致度、測定不変性は集団間で同じ概念を測れているか、負の対照は系統誤差や交絡の検出。擬似反復は処置の独立割当単位と観測単位の取り違えに由来する誤った統計推論。",
+      "new_axis": true
+    },
+    "css-content-visibility": {
+      "axis": "領域の操作可否や見た目の隠蔽ではなく、画面外のDOM内容を保持したまま内部のレイアウト・描画作業を必要時まで延期できるかを見る。",
+      "nearest_terms": [
+        "inert-html-attribute",
+        "cumulative-layout-shift",
+        "intrinsic-sizing"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "inertはサブツリーの操作・フォーカス対象からの除外、CLSは実際のレイアウト移動量、内在サイズは内容由来の寸法。content-visibility:autoは内容の利用可能性を保ちつつ、画面外サブツリーの描画作業を省略する処理制御。",
+      "new_axis": true
+    },
+    "photobleaching": {
+      "axis": "素材の応力損傷や粒子サイズではなく、観測用の励起光が蛍光分子の発光能力を不可逆に変え、測定信号を時間とともに弱めるかを見る。",
+      "nearest_terms": [
+        "polymer-crazing",
+        "material-fatigue",
+        "outgassing"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "クレージングは引張応力による高分子微細空隙形成、材料疲労は繰返し荷重による損傷、アウトガスは材料からの揮発性成分放出。光退色は励起光による蛍光分子の不可逆な光化学変化で、観測行為自体が信号を変える。",
+      "new_axis": true
+    }
+  }
+}
