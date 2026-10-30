@@ -165,7 +165,7 @@
     "status": "seed"
   },
   {
-    "id": "css-content-visibility",
+    "id": "content-visibility",
     "term": "CSS content-visibility",
     "ja": "画面外描画の省略（CSS content-visibility）",
     "aliases": [
