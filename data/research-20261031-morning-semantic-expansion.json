@@ -1,0 +1,252 @@
+[
+  {
+    "id": "sensory-substitution",
+    "term": "Sensory Substitution",
+    "ja": "感覚代行（センソリー・サブスティテューション）",
+    "aliases": [
+      "感覚置換",
+      "Sensory Substitution Device"
+    ],
+    "fields": [
+      "Neuroscience",
+      "Assistive Technology",
+      "Perception"
+    ],
+    "one_liner": "視覚などの情報を触覚・聴覚など別の感覚経路へ変換し、訓練によって利用できるようにする。",
+    "description": "感覚代行は、ある感覚で得られる環境情報を装置などで別の感覚刺激に符号化して伝える方法。Bach-y-Ritaらの1969年の触覚視覚代行研究ではカメラ像を背中の振動刺激へ変換し、訓練によって形や動きを識別する例が報告された。感覚刺激を変換するだけで同じ知覚が生じるわけではなく、情報量、時間的連続性、学習、利用課題が重要。",
+    "why_selected": "身体・定位Frontierを、磁場検出や感覚の重みづけから、感覚情報の入力経路そのものの変換へ移す。直近の会話と無関係な遠距離語。",
+    "feelings": [
+      "カメラの像を振動パターンとして受け取り、慣れると障害物の位置を判断できる。"
+    ],
+    "before": "目で得る情報は、視覚がなければ利用できない？",
+    "after": "必要な情報を触覚や音へ符号化すれば、訓練によって別の経路から利用できる？",
+    "observation_axis": "感覚の精度や重みづけではなく、環境情報を異なる感覚様式へ符号化して学習可能な知覚・行動の手掛かりへ変えられるかを見る。",
+    "semantic_cluster": "crossmodal-environment-information-remapping",
+    "nearest_terms": [
+      "sensory-reweighting",
+      "audio-description",
+      "magnetoreception"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "感覚の再重みづけは既存感覚の信頼度調整、音声解説は視覚情報の言語化、磁気受容は外界の磁場の検知。感覚代行はセンサー情報を別の感覚刺激へ変換し、利用者の学習を通じて知覚・行動へ結びつける。",
+    "related": [
+      "sensory-reweighting",
+      "audio-description",
+      "body-schema"
+    ],
+    "sources": [
+      "https://doi.org/10.1002/j.2330-9474.1969.tb03696.x",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC5044782/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "prosopopoeia",
+    "term": "Prosopopoeia",
+    "ja": "プロソポポイア（不在者に声を与える修辞）",
+    "aliases": [
+      "Prosopopeia",
+      "プロソポペイア"
+    ],
+    "fields": [
+      "Rhetoric",
+      "Literature",
+      "Communication"
+    ],
+    "one_liner": "不在の人、死者、架空の人物や無生物に声・人格を与え、あたかも本人が語るように表現する修辞。",
+    "description": "古典修辞学のプロソポポイアは、実際にはその場で語らない人物や存在の声を作り、言葉を語らせる表現・訓練。無生物の擬人化を広く含む用法もあり、擬人法との境界は文献によって異なる。『誰に発話権を与えたか』『作者が作った声を誰の発言と受け取らせるか』を観察する。実在人物の実際の発言と誤認させない配慮が必要。",
+    "why_selected": "物語の視点と情報制御Frontierを、観客と登場人物の知識差や語りの入れ子から、発話主体を創作する修辞へ転換。最近の実務議題に依存しない遠距離語。",
+    "feelings": [
+      "『もしこの街が話せたら、何を訴えるだろう』と、建物や街に一人称で語らせる。"
+    ],
+    "before": "この言葉を発したのは、現実に存在する誰？",
+    "after": "本来は話せない存在に誰が声を与え、その借りた声が主張をどう変えている？",
+    "observation_axis": "語り手の信頼性や観客との知識差ではなく、実際には発話していない存在へ声を仮構して誰の視点と権威を立ち上げるかを見る。",
+    "semantic_cluster": "rhetorical-voice-attribution-to-absent-entities",
+    "nearest_terms": [
+      "unreliable-narrator",
+      "dramatic-irony",
+      "speech-act"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "信頼できない語り手は語りの信用度、劇的アイロニーは観客と人物の知識差、発話行為は発話が行う社会的行為。プロソポポイアは不在者や非人間へ発話主体を割り当てる修辞的な構築行為。",
+    "related": [
+      "unreliable-narrator",
+      "dramatic-irony",
+      "focalization"
+    ],
+    "sources": [
+      "https://rhetoric.byu.edu/Figures/P/prosopopoeia.htm",
+      "https://www.collinsdictionary.com/dictionary/english/prosopopoeia"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "phyllotaxis",
+    "term": "Phyllotaxis",
+    "ja": "葉序（フィロタキシス）",
+    "aliases": [
+      "葉の配列",
+      "Phyllotactic Pattern",
+      "葉序形成"
+    ],
+    "fields": [
+      "Botany",
+      "Developmental Biology",
+      "Mathematical Biology"
+    ],
+    "one_liner": "茎や成長点の周囲で、葉や花などの器官が一定の角度や規則で配置される発生上のパターン。",
+    "description": "葉序は植物の茎の周囲で葉や花などが規則的に形成・配置される現象。互生・対生・輪生などの型があり、螺旋葉序では隣接器官の開度が約137.5度になる例も多いが、すべての植物に当てはまる普遍法則ではない。茎頂分裂組織での器官原基の形成位置、オーキシンの局所的な輸送・蓄積などがパターン形成に関わる。",
+    "why_selected": "直近の植物語である器官脱離・一斉結実から、落下や繁殖量ではなく、成長点で新しい器官がどこに生まれるかへ原因と分析単位を切り替える。遠距離の発生幾何学。",
+    "feelings": [
+      "同じ茎から出る葉の位置を上から追うと、規則的な回転や対向配置が見える。"
+    ],
+    "before": "葉は日当たりのよい位置に偶然ついている？",
+    "after": "成長点での新しい葉原基の形成位置に、角度やホルモン輸送の規則がある？",
+    "observation_axis": "葉の寿命や個体群の結実量ではなく、茎頂で新たな器官原基がどの位置と開度で繰り返し形成されるかを調べる。",
+    "semantic_cluster": "shoot-apical-organ-primordia-angular-patterning",
+    "nearest_terms": [
+      "abscission",
+      "phenology",
+      "mast-seeding"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "器官脱離は葉や花を切り離す細胞過程、生物季節学は季節現象の時期、一斉結実は個体群の種子生産量の年次同期。葉序は器官の新生位置と角度の発生的な空間パターン。",
+    "related": [
+      "abscission",
+      "phenology",
+      "allometry"
+    ],
+    "sources": [
+      "https://pubmed.ncbi.nlm.nih.gov/17368962/",
+      "https://doi.org/10.1002/wdev.231"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "pseudoreplication",
+    "term": "Pseudoreplication",
+    "ja": "擬似反復（実験単位の取り違え）",
+    "aliases": [
+      "偽反復",
+      "Pseudo-replication"
+    ],
+    "fields": [
+      "Experimental Design",
+      "Statistics",
+      "Ecology"
+    ],
+    "one_liner": "独立していない観測や反復していない処置を独立の実験反復として扱い、統計的な確かさを過大評価する誤り。",
+    "description": "擬似反復は、処置が独立した実験単位で反復されていないのに、その中で採った複数のサンプルを独立反復として検定するなど、実験単位と観測単位を混同する問題。Hurlbert（1984）は処置効果の推論に対する不適切な誤差項を問題にした。各条件に1水槽ずつしかない実験で水槽内の魚を多数測っても、水槽単位の処置反復にはならない。階層モデルなどで相関構造を扱える場合はあるが、未反復の処置効果を自動的に識別できるわけではない。",
+    "why_selected": "測定値の信頼性Frontierを、検出下限・信号の雑音・評価者一致から、そもそも独立な比較単位が何かという実験計画の根本へ移す。",
+    "feelings": [
+      "各群で魚を100匹測ったのに、実は条件ごとに水槽が1つしかなく、処置の効果と水槽差を分けられない。"
+    ],
+    "before": "測定件数が多いから統計的に確かな結果？",
+    "after": "独立に処置を割り当てた実験単位はいくつあり、観測数を反復数と誤認していない？",
+    "observation_axis": "測定器の精度や評価者間一致ではなく、処置を独立に割り当てた実験単位と下位の観測単位が混同され、推論上の自由度を水増ししていないかを見る。",
+    "semantic_cluster": "experimental-unit-nonindependence-inference-error",
+    "nearest_terms": [
+      "inter-rater-reliability",
+      "measurement-invariance",
+      "negative-control"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "評価者間信頼性は評価者を替えた一致度、測定不変性は集団間で同じ概念を測れているか、負の対照は系統誤差や交絡の検出。擬似反復は処置の独立割当単位と観測単位の取り違えに由来する誤った統計推論。",
+    "related": [
+      "inter-rater-reliability",
+      "negative-control",
+      "ecological-fallacy"
+    ],
+    "sources": [
+      "https://doi.org/10.2307/1942661",
+      "https://agris.fao.org/search/en/records/65deb72a90674e46e6533b00"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "css-content-visibility",
+    "term": "CSS content-visibility",
+    "ja": "画面外描画の省略（CSS content-visibility）",
+    "aliases": [
+      "content-visibility",
+      "CSSコンテンツ可視性",
+      "描画スキップ"
+    ],
+    "fields": [
+      "Web",
+      "Frontend Engineering",
+      "Performance"
+    ],
+    "one_liner": "必要になるまで画面外の要素内部のレイアウトや描画を省き、長いページの処理負荷を抑えるCSSプロパティ。",
+    "description": "content-visibilityは要素の内部を描画するか制御するCSSプロパティ。autoでは画面外など現在ユーザーに関連しない内容の処理をブラウザーが省略でき、内容は検索やフォーカスなどの利用対象として維持される。hiddenは内容を継続的にスキップし、検索やタブ操作からも除外される。autoではスキップ中の高さ見積もりをcontain-intrinsic-sizeで補わないとスクロール位置が変動する場合がある。描画負荷の削減はページ構造と実機で測定する。",
+    "why_selected": "Web・制作の実務枠。既存のinertが操作と支援技術から領域を除外するのに対し、表示対象を保持しつつ画面外のレンダリング作業を延期する別の設計判断を追加する。",
+    "feelings": [
+      "長い記事一覧で、画面外のカードまで最初から描画すると初期表示が重くなる。"
+    ],
+    "before": "長いページを速くするには、画面外コンテンツをDOMから消す必要がある？",
+    "after": "必要になるまで描画を省略し、検索可能性とスクロール位置を保ったまま負荷を減らせる？",
+    "observation_axis": "領域の操作可否や見た目の隠蔽ではなく、画面外のDOM内容を保持したまま内部のレイアウト・描画作業を必要時まで延期できるかを見る。",
+    "semantic_cluster": "deferred-offscreen-subtree-rendering-work",
+    "nearest_terms": [
+      "inert-html-attribute",
+      "cumulative-layout-shift",
+      "intrinsic-sizing"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "inertはサブツリーの操作・フォーカス対象からの除外、CLSは実際のレイアウト移動量、内在サイズは内容由来の寸法。content-visibility:autoは内容の利用可能性を保ちつつ、画面外サブツリーの描画作業を省略する処理制御。",
+    "related": [
+      "inert-html-attribute",
+      "cumulative-layout-shift",
+      "intrinsic-sizing"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/css-contain-2/",
+      "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content-visibility"
+    ],
+    "instruction": "長い記事一覧の各カードや節にcontent-visibility: autoを試し、contain-intrinsic-size: auto 500pxなど適切な見積もりを併用してください。適用前後の初期描画時間・スクロール時のレイアウト移動を実機で測り、ページ内検索・キーボード操作・スクリーンリーダーも確認してください。",
+    "status": "seed"
+  },
+  {
+    "id": "photobleaching",
+    "term": "Photobleaching",
+    "ja": "光退色（フォトブリーチング）",
+    "aliases": [
+      "蛍光退色",
+      "Fluorophore Photobleaching"
+    ],
+    "fields": [
+      "Fluorescence Microscopy",
+      "Photochemistry",
+      "Imaging"
+    ],
+    "one_liner": "蛍光分子が光照射による化学変化で発光能力を不可逆的に失い、観測中の蛍光が弱くなる現象。",
+    "description": "光退色は、蛍光分子が励起光を繰り返し吸収する過程で光化学反応を起こし、発光能力を不可逆的に失う現象。蛍光顕微鏡では同じ標本を観察し続けると明るさが減り、量が減ったように誤認する場合がある。光退色と、衝突・分子間相互作用などで蛍光が低下する消光（quenching）は区別する。光量、露光時間、蛍光色素や試料の環境によって速度が変わる。",
+    "why_selected": "素材・物理挙動Frontierを、荷重・摩擦・粒子成長から、光照射による観測対象の不可逆な化学変化へ転換する制作・計測実務語。",
+    "feelings": [
+      "同じ蛍光標本を何度も撮影すると、細胞が減っていないのに像が暗くなる。"
+    ],
+    "before": "画像が暗くなったのは、対象物の量が減ったから？",
+    "after": "観察のための光そのものが蛍光分子を退色させ、信号を減らしていない？",
+    "observation_axis": "素材の応力損傷や粒子サイズではなく、観測用の励起光が蛍光分子の発光能力を不可逆に変え、測定信号を時間とともに弱めるかを見る。",
+    "semantic_cluster": "excitation-induced-irreversible-fluorophore-signal-loss",
+    "nearest_terms": [
+      "polymer-crazing",
+      "material-fatigue",
+      "outgassing"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "クレージングは引張応力による高分子微細空隙形成、材料疲労は繰返し荷重による損傷、アウトガスは材料からの揮発性成分放出。光退色は励起光による蛍光分子の不可逆な光化学変化で、観測行為自体が信号を変える。",
+    "related": [
+      "metamerism",
+      "spectral-leakage",
+      "measurement-uncertainty"
+    ],
+    "sources": [
+      "https://www.microscopyu.com/references/fluorophore-photobleaching",
+      "https://micro.magnet.fsu.edu/primer/techniques/fluorescence/fluorescenceintro.html"
+    ],
+    "instruction": "蛍光画像を時系列で撮る場合は、露光時間・照明強度・撮影回数を記録し、対照試料の蛍光強度低下を測定してください。対象量の変化と光退色を分け、必要なら励起光量・撮影頻度・色素・退色防止条件を見直してください。",
+    "status": "seed"
+  }
+]
