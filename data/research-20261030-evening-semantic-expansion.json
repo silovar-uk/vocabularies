@@ -1,0 +1,251 @@
+[
+  {
+    "id": "webvtt-timed-text",
+    "term": "WebVTT Timed Text Tracks",
+    "ja": "時間同期テキストトラック（WebVTT）",
+    "aliases": [
+      "WebVTT",
+      "ウェブ動画テキストトラック",
+      "Web Video Text Tracks"
+    ],
+    "fields": [
+      "Web",
+      "Accessibility",
+      "Video Production"
+    ],
+    "one_liner": "動画の字幕・効果音情報・章情報などを、再生時刻と結び付けて独立したテキストトラックとして提供する。",
+    "description": "WebVTTは動画・音声に同期するテキストの形式。各キューに開始・終了時刻を記し、字幕、キャプション、章、時間同期メタデータなどを扱える。HTMLのvideo要素のtrack子要素で.vttファイルを読み込める。音声を文字化するキャプションと、視覚情報を音声へ変換する音声解説は目的と変換方向が異なる。",
+    "why_selected": "20時の制作・Web実務枠。朝のポインターキャプチャの操作配送から離れ、時間同期するメディアの情報提供を観察する。既存の音声解説と対照的なアクセシビリティの情報変換方向を追加する。",
+    "feelings": [
+      "動画を無音再生すると、話し声だけでなく効果音や話者の違いまで失われる。"
+    ],
+    "before": "字幕は動画に文字を焼き込めば十分？",
+    "after": "時刻付きの独立したテキストトラックで、会話と重要な音情報を利用者が切り替えて読める？",
+    "observation_axis": "映像内に文字があるかではなく、音声・動画の時間軸と結び付くテキスト情報が独立した選択可能なトラックとして提供されているかを見る。",
+    "semantic_cluster": "time-aligned-selectable-media-text-tracks",
+    "nearest_terms": [
+      "audio-description",
+      "j-cut",
+      "sensory-characteristics"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "音声解説は視覚情報を音声へ変換する制作手法、Jカットは音と映像の場面転換タイミング、感覚的特徴は色や形だけへの依存を避ける基準。WebVTTは時間同期した文字情報をファイルとトラックとして記述・選択可能にする形式。",
+    "related": [
+      "audio-description",
+      "j-cut",
+      "meaningful-sequence"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/webvtt1/",
+      "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/track"
+    ],
+    "instruction": "動画にWebVTTのキャプショントラック（.vtt）を追加し、各キューの開始・終了時刻、話者、重要な効果音を点検してください。HTMLのtrack要素でkind=\"captions\"とsrclangを指定し、無音再生・切替操作・モバイル表示を実機確認してください。",
+    "status": "seed"
+  },
+  {
+    "id": "acoustic-impedance-mismatch",
+    "term": "Acoustic Impedance Mismatch",
+    "ja": "音響インピーダンス不整合（媒質境界での反射・透過）",
+    "aliases": [
+      "音響インピーダンス差",
+      "Acoustic Impedance Contrast"
+    ],
+    "fields": [
+      "Acoustics",
+      "Sound Engineering",
+      "Physics"
+    ],
+    "one_liner": "音が異なる媒質の境界に達すると、媒質の音響インピーダンス差によって反射と透過の割合が変わる。",
+    "description": "平面波が二つの均一な媒質の境界に垂直入射する単純な条件では、特性音響インピーダンスは密度と音速の積で表せ、両側の値の差が音圧の反射係数を決める。差が大きいほど反射が強くなる場合がある。実際の構造物では周波数、入射角、吸収、層構造、共振なども関係し、インピーダンス差だけで遮音性能を断定できない。",
+    "why_selected": "音響・制作実務の近距離深掘り。既存の音響陰影が『どこに音が届かないか』を見るのに対し、媒質境界の物性差が『なぜ反射・透過するか』を扱う。",
+    "feelings": [
+      "空気から別の素材へ音を伝えようとしても、境界で大きく反射してしまう。"
+    ],
+    "before": "音が伝わらないのは距離や遮蔽物だけの問題？",
+    "after": "音の通過する媒質の境界で、インピーダンス差による反射が起きていない？",
+    "observation_axis": "受音点までの距離や遮蔽物だけでなく、媒質の境界における密度・音速の差が入射音の反射と透過をどう配分するかを見る。",
+    "semantic_cluster": "acoustic-boundary-impedance-reflection",
+    "nearest_terms": [
+      "acoustic-shadow",
+      "auditory-masking",
+      "thermal-bridging"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "音響陰影は空間的な遮蔽・屈折による低音圧域、聴覚マスキングは他の音による知覚妨害、熱橋は局所的な熱伝導経路。音響インピーダンス不整合は異なる媒質の接触面での波の反射・透過を扱う。",
+    "related": [
+      "acoustic-shadow",
+      "auditory-masking",
+      "thermal-bridging"
+    ],
+    "sources": [
+      "https://230nsc1.phy-astr.gsu.edu/hbase/Sound/refltrans.html",
+      "https://staff.washington.edu/mbruce/pres/Waves.html"
+    ],
+    "instruction": "音の伝達が想定より弱い箇所では、媒質境界の材料・密度・音速と入射条件を確認し、反射・透過の寄与を評価してください。吸収・共振・漏れ経路も別途測定し、インピーダンス差だけで原因を確定しないでください。",
+    "status": "seed"
+  },
+  {
+    "id": "spatial-mismatch-hypothesis",
+    "term": "Spatial Mismatch Hypothesis",
+    "ja": "空間的不一致仮説（居住地と雇用機会の隔たり）",
+    "aliases": [
+      "空間ミスマッチ仮説",
+      "Spatial Mismatch"
+    ],
+    "fields": [
+      "Urban Economics",
+      "Urban Geography",
+      "Labor Economics"
+    ],
+    "one_liner": "働き手の居住地と仕事の立地が隔たり、住宅選択の制約や移動負担が雇用機会を狭める。",
+    "description": "都市経済学でジョン・ケインが提示した仮説。歴史的には米国の住宅市場における人種的な居住分離・差別と、郊外への雇用立地の移動が、黒人労働者の雇用・所得にどう影響するかを扱った。移動時間、交通手段、住宅選択の制約などを検討する。地域や時代により実証結果の強さは異なり、距離だけで失業を説明する理論ではない。",
+    "why_selected": "空間・社会Frontierを、座席配置や可視域から都市の住宅制約と労働機会の構造的な不一致へ移す。最近の社会的空間配置とは分析単位と因果経路が異なる。",
+    "feelings": [
+      "都市全体には求人があるのに、特定の居住地区からは通勤が難しく応募できる仕事が限られる。"
+    ],
+    "before": "都市に求人が多ければ、住民の雇用機会も多い？",
+    "after": "居住地の選択制約と仕事の立地・交通アクセスが組み合わさり、機会が届いていない？",
+    "observation_axis": "個人の移動可能範囲だけでなく、居住分離と雇用の立地分布が集団間の雇用機会の差を生む構造を調べる。",
+    "semantic_cluster": "residential-segregation-job-access-mismatch",
+    "nearest_terms": [
+      "space-time-prism",
+      "dasymetric-mapping",
+      "hostile-architecture"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "時空間プリズムは個人の時間制約下の到達可能域、ダシメトリック・マッピングは地理的集計値の分布推定、敵対的建築は設備形状による行動排除。空間的不一致仮説は住宅選択制約と雇用立地の分離が労働機会へ及ぼす構造的影響を扱う。",
+    "related": [
+      "space-time-prism",
+      "dasymetric-mapping",
+      "hostile-architecture"
+    ],
+    "sources": [
+      "https://doi.org/10.2307/1885893",
+      "https://doi.org/10.1080/10511482.1992.9521100"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "ostwald-ripening",
+    "term": "Ostwald Ripening",
+    "ja": "オストワルド熟成（小粒子から大粒子への物質移動）",
+    "aliases": [
+      "オストワルド成長",
+      "Ostwald Coarsening"
+    ],
+    "fields": [
+      "Physical Chemistry",
+      "Materials Science",
+      "Colloid Science"
+    ],
+    "one_liner": "小さな粒子が溶け、溶けた物質が大きな粒子へ再析出することで粒径分布が変わる。",
+    "description": "小さな結晶やコロイド粒子の曲率に伴う表面エネルギー・溶解度の差により、小粒子が溶解し、その物質が大粒子の表面へ再析出して粗大化する過程。単に粒子同士が衝突して合体する凝集・合一とは異なる。進行は溶解・拡散・界面反応などの条件に依存する。",
+    "why_selected": "材料Frontierの時間応答を、引張変形や破壊発光から粒子集団のサイズ分布の長期変化へ移す。朝のオーセチック材料とは原因・時間軸・分析単位が異なる。",
+    "feelings": [
+      "細かい結晶を含む材料を保存しているうちに、小さな粒が減って大きな粒が目立つ。"
+    ],
+    "before": "粒が大きくなるのは、粒同士がぶつかって合体したから？",
+    "after": "小粒子が溶解し、その成分が大粒子へ再析出していない？",
+    "observation_axis": "単一粒子の強度や変形ではなく、粒径に依存する表面エネルギー差が粒子集団の溶解・再析出と粗大化をどう進めるかを見る。",
+    "semantic_cluster": "curvature-driven-particle-dissolution-redeposition",
+    "nearest_terms": [
+      "marangoni-effect",
+      "thixotropy",
+      "isotope-fractionation"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "マランゴニ効果は表面張力の空間勾配による液体流動、チキソトロピーはせん断に依存する粘度の時間変化、同位体分別は同位体比の偏り。オストワルド熟成は粒径による溶解度差を介した粒子間の物質移動。",
+    "related": [
+      "marangoni-effect",
+      "thixotropy",
+      "material-fatigue"
+    ],
+    "sources": [
+      "https://goldbook.iupac.org/terms/view/O04348",
+      "https://doi.org/10.1351/goldbook.O04348"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "stochastic-resonance",
+    "term": "Stochastic Resonance",
+    "ja": "確率共鳴（雑音による微弱信号の検出改善）",
+    "aliases": [
+      "ストキャスティック・レゾナンス",
+      "Noise-Enhanced Signal Detection"
+    ],
+    "fields": [
+      "Nonlinear Physics",
+      "Neuroscience",
+      "Signal Processing"
+    ],
+    "one_liner": "条件によっては、適度な雑音を加えると閾値以下の微弱信号が検出しやすくなる。",
+    "description": "閾値や非線形応答を持つ系などで、適切な強度のランダムな揺らぎが弱い周期信号などの検出・伝達を改善する現象。雑音は少なければ信号が閾値を越えず、多すぎれば信号が埋もれるため、性能が雑音強度に対して非単調に変化することがある。すべての信号処理で雑音が有益とは限らない。",
+    "why_selected": "測定・信号の信頼性を『雑音を減らす』という前提から問い直す。朝の磁気受容や摩擦発光とは異なる、非線形系での検出条件を追加する。",
+    "feelings": [
+      "小さすぎて検知されなかった周期的な刺激が、わずかな揺らぎを重ねると検出される。"
+    ],
+    "before": "信号を正しく捉えるには、雑音は少なければ少ないほどよい？",
+    "after": "閾値のある系では、適度な雑音が信号の検出率を高める領域がない？",
+    "observation_axis": "背景雑音を一律の誤差とせず、閾値・非線形応答のある系で雑音強度が微弱信号の検出性能を改善する条件を測る。",
+    "semantic_cluster": "noise-assisted-nonlinear-threshold-detection",
+    "nearest_terms": [
+      "limit-of-detection",
+      "spectral-leakage",
+      "missing-fundamental"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "検出限界は背景から区別できる下限、スペクトル漏れは有限観測窓による周波数成分の拡散、ミッシング・ファンダメンタルは欠けた基音の知覚的補完。確率共鳴は適度なランダム変動が閾値系の信号検出を改善する機構。",
+    "related": [
+      "limit-of-detection",
+      "spectral-leakage",
+      "missing-fundamental"
+    ],
+    "sources": [
+      "https://doi.org/10.1103/RevModPhys.70.223",
+      "https://doi.org/10.1002/1439-7641(20020315)3:3%3C285::AID-CPHC285%3E3.0.CO;2-A"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "fission-fusion-dynamics",
+    "term": "Fission–Fusion Dynamics",
+    "ja": "離合集散型の群れ動態（フィッション・フュージョン）",
+    "aliases": [
+      "Fission-Fusion Sociality",
+      "群れの分裂・融合動態"
+    ],
+    "fields": [
+      "Behavioral Ecology",
+      "Animal Sociality",
+      "Network Science"
+    ],
+    "one_liner": "動物の群れが状況に応じて小集団に分かれ、再び集まることで、集団の人数と顔ぶれが変動する。",
+    "description": "動物社会において、個体や小集団が反復的に分かれたり合流したりし、同時に行動する集団の規模・構成が時間とともに変わる動態。資源分布、捕食リスク、社会関係などが関連する場合がある。長期的な社会単位が消滅する恒久的な分裂や、固定した階層的集団構造とは区別する。",
+    "why_selected": "集団を固定した組織図ではなく、時間と資源に応じて離合する構成として観察する。朝のクローン干渉が遺伝系統の競争であるのに対し、こちらは動物の社会的な集まりの変化を扱う。",
+    "feelings": [
+      "同じチンパンジーの地域集団でも、朝は小さな採食群に分かれ、別の時間には合流している。"
+    ],
+    "before": "この動物は何頭の固定した群れで生活している？",
+    "after": "時間帯や資源条件によって、誰と誰が分かれたり合流したりしている？",
+    "observation_axis": "社会的つながりの有無だけでなく、同時に行動する小集団の規模・構成が時間とともに分裂・融合する頻度と条件を見る。",
+    "semantic_cluster": "dynamic-animal-subgroup-fission-fusion",
+    "nearest_terms": [
+      "triadic-closure",
+      "behavior-setting",
+      "allee-effect"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "三者閉包は共通知人を介した新規関係形成、行動場面は環境と反復的集団行動の単位、アリー効果は低密度での繁殖・成長低下。離合集散型の群れ動態は動物社会の小集団構成が反復的に分裂・合流する時間変化を扱う。",
+    "related": [
+      "triadic-closure",
+      "behavior-setting",
+      "allee-effect"
+    ],
+    "sources": [
+      "https://doi.org/10.1111/ibi.12191",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC3456960/"
+    ],
+    "status": "seed"
+  }
+]
