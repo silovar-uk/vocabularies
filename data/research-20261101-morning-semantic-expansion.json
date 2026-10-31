@@ -1,0 +1,251 @@
+[
+  {
+    "id": "aria-activedescendant",
+    "term": "ARIA Active Descendant",
+    "ja": "アクティブな子要素の通知（aria-activedescendant）",
+    "aliases": [
+      "アクティブ子要素",
+      "ARIAアクティブディセンダント"
+    ],
+    "fields": [
+      "Accessibility",
+      "Web",
+      "UI"
+    ],
+    "one_liner": "実際のDOMフォーカスを親要素に保ちながら、支援技術へ現在選択・操作中の子要素をIDで伝える。",
+    "description": "WAI-ARIAのaria-activedescendant属性は、複合ウィジェットやコンボボックスなどでDOMフォーカスを親または入力欄に置いたまま、現在アクティブな子項目を支援技術へ通知する。値は適切なアクセシビリティ上の子孫要素のIDを指す必要がある。属性だけではキーボード操作・スクロール・視覚的強調は実装されず、制作者が制御する。roving tabindexとはDOMフォーカスを子項目へ移動させるか否かが異なる。",
+    "why_selected": "アクセシビリティ意味論Frontier。既存のロービングtabindexに近いが、DOMフォーカスを移動させない状態通知という別の実装戦略を比較できるためB判定で採用。",
+    "feelings": [
+      "候補一覧を矢印キーで移動しても入力欄のカーソルを保ち、読み上げが現在候補を追える。"
+    ],
+    "before": "候補を移動するたびに実際のフォーカスも子要素へ移す必要がある？",
+    "after": "DOMフォーカスは入力欄に保ち、aria-activedescendantで現在の候補IDを伝えられる？",
+    "observation_axis": "キーボード操作中にDOMフォーカスをどこへ置くかと、支援技術へどの子項目をアクティブとして伝えるかを分けて観察する。",
+    "semantic_cluster": "aria-virtual-active-descendant-focus-reference",
+    "nearest_terms": [
+      "roving-tabindex",
+      "focus-order",
+      "accessible-name"
+    ],
+    "semantic_distance": "B",
+    "difference_from_nearest": "ロービングtabindexは子項目のtabindexを切り替えてDOMフォーカス自体を移動させる。フォーカス順は移動の順序、アクセシブルネームは要素の名称。aria-activedescendantはDOMフォーカスを保持したまま支援技術へアクティブ子要素をID参照で伝える。",
+    "related": [
+      "roving-tabindex",
+      "focus-order",
+      "accessible-name"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/wai-aria-1.3/#aria-activedescendant",
+      "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant"
+    ],
+    "instruction": "コンボボックスで入力欄のDOMフォーカスを維持し、矢印キーで候補を切り替えるたびにaria-activedescendantを有効な候補IDへ更新してください。候補の可視位置、視覚的強調、スクリーンリーダーでの読み上げも検証してください。",
+    "status": "seed"
+  },
+  {
+    "id": "svg-non-scaling-stroke",
+    "term": "SVG Non-Scaling Stroke",
+    "ja": "拡大しても線幅を保つ描画（SVG non-scaling-stroke）",
+    "aliases": [
+      "非スケーリングストローク",
+      "vector-effect: non-scaling-stroke"
+    ],
+    "fields": [
+      "Graphic Design",
+      "Web",
+      "SVG"
+    ],
+    "one_liner": "SVGの図形を拡大縮小しても輪郭線の見かけの太さを一定に保つ描画指定。",
+    "description": "SVGのvector-effect: non-scaling-strokeは、パスなどの線を描く際、要素の拡大縮小・変形に応じて線幅まで変化する通常の振る舞いを変更し、画面上の線幅を維持する。地図・ネットワーク図・アイコンなどで、ズーム後に線が過度に太くなる問題を避けられる。図形そのものの寸法や文字サイズを一定にする機能ではない。",
+    "why_selected": "制作Frontierを文字の視覚サイズや余白から離し、座標変換と線の描画規則という実装可能な独立軸へ拡張する。",
+    "feelings": [
+      "拡大できる路線図で道路の輪郭線だけが異様に太くなる。"
+    ],
+    "before": "図形を4倍にすると線幅も4倍になるのは仕方ない？",
+    "after": "線の描画だけvector-effect: non-scaling-strokeで拡大縮小から切り離せる？",
+    "observation_axis": "図形の座標変換による形状の拡大と、輪郭線の画面上の太さの変化を独立して制御できるかを見る。",
+    "semantic_cluster": "svg-stroke-width-invariance-under-transform",
+    "nearest_terms": [
+      "optical-size",
+      "gamut-mapping",
+      "premultiplied-alpha"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "オプティカルサイズは文字形状の視覚サイズ最適化、色域マッピングは再現可能な色への変換、乗算済みアルファは色と透明度の合成表現。非スケーリングストロークはSVG座標変換と線幅の連動を切る描画規則。",
+    "related": [
+      "optical-size",
+      "premultiplied-alpha",
+      "chroma-subsampling"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/SVG2/painting.html#VectorEffects",
+      "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/vector-effect"
+    ],
+    "instruction": "拡大縮小するSVGの道路・境界線にvector-effect=\"non-scaling-stroke\"を適用し、ズーム前後で線幅が維持されるか確認してください。図形サイズや文字サイズは別途設計してください。",
+    "status": "seed"
+  },
+  {
+    "id": "bioturbation",
+    "term": "Bioturbation",
+    "ja": "生物攪拌（バイオターベーション）",
+    "aliases": [
+      "生物擾乱",
+      "生物による堆積物の攪拌"
+    ],
+    "fields": [
+      "Sedimentology",
+      "Ecology",
+      "Geochemistry"
+    ],
+    "one_liner": "底生動物などが穴を掘り移動・摂食することで、堆積物の層と物質分布を混ぜ替える。",
+    "description": "生物攪拌は、底生生物などが堆積物を掘る・移動する・摂食し排出する活動によって粒子が再配分され、層理や年代指標、酸素・栄養塩・汚染物質の分布が変化する過程。堆積物の表面に残った痕跡だけでなく、内部の輸送や混合速度を分析する。堆積物の全ての乱れが生物起源とは限らず、波・流れなどと区別が必要。",
+    "why_selected": "直近の素材物理・植物間相互作用と異なり、生物の行動が地質記録の保存と物質輸送を変えるという遠距離の因果軸。",
+    "feelings": [
+      "海底の泥を採取すると、年代順に積もったはずの粒子が深さ方向に混ざっている。"
+    ],
+    "before": "堆積層は古いものほど下にあり、混ざらずに保存される？",
+    "after": "底生動物の掘削・排泄で堆積物が上下に運ばれ、年代記録が混ざっていない？",
+    "observation_axis": "堆積物の移動を水流だけで説明せず、生物の掘削・摂食行動が粒子輸送と地層の混合に与える寄与を測る。",
+    "semantic_cluster": "organism-driven-sediment-reworking-and-mixing",
+    "nearest_terms": [
+      "taphonomy",
+      "ecological-succession",
+      "solifluction"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "タフォノミーは遺骸や化石記録が保存・変質する過程、遷移は生物群集の時間変化、ソリフラクションは土壌の緩慢な斜面移動。生物攪拌は生物の活動が堆積物そのものを移送・混合する過程。",
+    "related": [
+      "taphonomy",
+      "ecological-succession",
+      "solifluction"
+    ],
+    "sources": [
+      "https://pubs.usgs.gov/publication/70001404",
+      "https://www.usgs.gov/publications/bioturbation-depths-rates-and-processes-massachusetts-bay-sediments-inferred-modeling",
+      "https://doi.org/10.1021/acs.est.6b01704"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "ekman-transport",
+    "term": "Ekman Transport",
+    "ja": "エクマン輸送（風向きとずれる海水の正味移動）",
+    "aliases": [
+      "エクマン流輸送",
+      "Ekman Mass Transport"
+    ],
+    "fields": [
+      "Physical Oceanography",
+      "Geophysics",
+      "Fluid Dynamics"
+    ],
+    "one_liner": "風応力と地球自転の影響により、表層の海水全体の正味輸送が風向きから横にずれる。",
+    "description": "風が海面に応力を与えると、海水の各深さで摩擦とコリオリ効果の釣合いが異なり、流向と流速が深さによって変わる。理想化した定常的なエクマン層では、深さ方向に積分した正味の輸送は北半球で風の進行方向から右へ約90度、南半球で左へ約90度となる。表面の流速ベクトルそのものが90度を向くという意味ではなく、浅海・沿岸・時間変動などでは理想値から外れる。",
+    "why_selected": "直近の海洋語であるキャベリングは混合による密度変化、死水現象は密度成層による船の抵抗。今回は風と自転が作る海水の横方向輸送へ因果を切り替える。",
+    "feelings": [
+      "海岸に沿って風が吹いているのに、表層の水が岸から離れ、冷たい深層水が湧き上がる。"
+    ],
+    "before": "風が東へ吹けば海水もそのまま東へ運ばれる？",
+    "after": "風応力と地球自転の影響で、表層全体の正味輸送が横向きになっていない？",
+    "observation_axis": "海水の密度差や船の抵抗ではなく、風応力とコリオリ効果が深さ積分の正味輸送方向をどう決めるかを見る。",
+    "semantic_cluster": "wind-stress-coriolis-depth-integrated-ocean-transport",
+    "nearest_terms": [
+      "cabbeling",
+      "dead-water-phenomenon",
+      "biological-carbon-pump"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "キャベリングは異なる水塊の混合による密度増加、死水現象は密度成層と内部波による船の抵抗、生物炭素ポンプは生物活動を介した炭素の鉛直輸送。エクマン輸送は風応力と自転が決める表層海水の正味水平輸送。",
+    "related": [
+      "cabbeling",
+      "dead-water-phenomenon",
+      "biological-carbon-pump"
+    ],
+    "sources": [
+      "https://scied.ucar.edu/learning-zone/earth-system/how-ocean-moves-ekman-transport",
+      "https://oceanservice.noaa.gov/education/tutorial_currents/04currents4.html"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "joking-relationship",
+    "term": "Joking Relationship",
+    "ja": "冗談関係（儀礼化されたからかいを許す社会関係）",
+    "aliases": [
+      "冗談親族関係",
+      "Joking Kinship"
+    ],
+    "fields": [
+      "Social Anthropology",
+      "Kinship Studies",
+      "Sociology"
+    ],
+    "one_liner": "親族・集団間の特定の関係で、からかいや冗談が慣習として許容・期待される。",
+    "description": "社会人類学の冗談関係は、特定の親族・集団間でからかいや挑発的な言動が慣習として許され、ときには期待される関係。ラドクリフ＝ブラウンは1940年の研究で、親族関係における親密さと社会的距離の緊張、回避関係との対照として分析した。単に仲が良い人同士の冗談一般ではなく、社会関係ごとに認められる行為と境界が制度化されている点が重要。地域や関係により対称性・許容範囲は異なる。",
+    "why_selected": "最近の会話・制作・材料・経済の主軸から離れ、何が言えるかを個人の性格ではなく親族関係の制度として読む遠距離の社会人類学語。",
+    "feelings": [
+      "普段なら失礼な冗談が、特定の親族間では慣習的に許され、逆に別の親族には慎むことが求められる。"
+    ],
+    "before": "失礼な冗談を言えるのは単に親しいから？",
+    "after": "誰と誰の関係に、冗談を許す規範や逆に回避を求める規範がある？",
+    "observation_axis": "個人のユーモア能力ではなく、特定の親族・集団関係に制度化されたからかいの許容と義務が緊張をどう調整するかを見る。",
+    "semantic_cluster": "ritualized-kinship-teasing-permission-obligation",
+    "nearest_terms": [
+      "segmentary-lineage-system",
+      "schismogenesis",
+      "proxemics"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "分節的出自体系は対立相手に応じた親族集団の連帯、分裂生成は相互行動による関係差の増幅、近接学は身体的距離の社会的意味。冗談関係は特定の親族関係でからかいが慣習として許容・要求される規範を扱う。",
+    "related": [
+      "segmentary-lineage-system",
+      "schismogenesis",
+      "proxemics"
+    ],
+    "sources": [
+      "https://doi.org/10.2307/1156093",
+      "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/54B2C4D1B466B9ECB3DD36DD4CF98766/S0001972000003570a.pdf/on_joking_relationships.pdf"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "matrix-effect-analytical-chemistry",
+    "term": "Matrix Effect (Analytical Chemistry)",
+    "ja": "マトリックス効果（試料成分による測定への干渉）",
+    "aliases": [
+      "試料マトリックス効果",
+      "Matrix Effect in Chemical Analysis"
+    ],
+    "fields": [
+      "Analytical Chemistry",
+      "Metrology",
+      "Laboratory Science"
+    ],
+    "one_liner": "測りたい成分以外の試料中の物質が、同じ成分量に対する測定信号を変化させる。",
+    "description": "IUPACの定義では、分析対象成分以外の試料成分全体が測定量へ及ぼす効果。例えば質量分析で同じ濃度の対象物質を測っても、試料中の塩や他成分がイオン化を抑制・増強して応答が変わることがある。特定成分が原因と分かる場合は干渉と呼ぶ。標準液で正しい値が出ても、実試料で同じ精度・正確さが保証されるわけではない。",
+    "why_selected": "測定の信頼性Frontier。直近の検出限界は信号と背景の識別、標準物質の可換性は複数測定法間での標準物質と実試料の関係。今回は試料の共存成分が信号生成を変える直接原因へ進む。",
+    "feelings": [
+      "純水に溶かした標準試料では正しく測れるのに、実際の血液や海水では同じ濃度でも信号が弱い。"
+    ],
+    "before": "標準液で校正した測定器なら、どんな試料でも同じ濃度は同じ信号になる？",
+    "after": "分析対象以外の試料成分がイオン化や検出応答を抑制・増強していない？",
+    "observation_axis": "測定器の校正や検出限界だけでなく、分析対象以外の試料共存成分が同じ濃度に対する信号応答を変えていないかを調べる。",
+    "semantic_cluster": "sample-matrix-coexisting-component-signal-interference",
+    "nearest_terms": [
+      "reference-material-commutability",
+      "limit-of-detection",
+      "measurement-invariance"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "標準物質の可換性は複数測定手順間で標準物質と実試料の関係が一致するか、検出限界は背景から対象を識別できる下限、測定不変性は集団間で同一の潜在概念を測る性質。マトリックス効果は試料中の共存成分が測定応答を変える直接的な分析化学上の作用。",
+    "related": [
+      "reference-material-commutability",
+      "limit-of-detection",
+      "metrological-traceability"
+    ],
+    "sources": [
+      "https://goldbook.iupac.org/terms/view/M03759",
+      "https://doi.org/10.1351/goldbook.M03759"
+    ],
+    "status": "seed"
+  }
+]

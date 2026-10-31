@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-01",
+  "batch": "20261101-morning",
+  "term_annotations": {
+    "aria-activedescendant": {
+      "axis": "キーボード操作中にDOMフォーカスをどこへ置くかと、支援技術へどの子項目をアクティブとして伝えるかを分けて観察する。",
+      "nearest_terms": [
+        "roving-tabindex",
+        "focus-order",
+        "accessible-name"
+      ],
+      "distance": "B",
+      "difference_from_nearest": "ロービングtabindexは子項目のtabindexを切り替えてDOMフォーカス自体を移動させる。フォーカス順は移動の順序、アクセシブルネームは要素の名称。aria-activedescendantはDOMフォーカスを保持したまま支援技術へアクティブ子要素をID参照で伝える。",
+      "new_axis": true
+    },
+    "svg-non-scaling-stroke": {
+      "axis": "図形の座標変換による形状の拡大と、輪郭線の画面上の太さの変化を独立して制御できるかを見る。",
+      "nearest_terms": [
+        "optical-size",
+        "gamut-mapping",
+        "premultiplied-alpha"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "オプティカルサイズは文字形状の視覚サイズ最適化、色域マッピングは再現可能な色への変換、乗算済みアルファは色と透明度の合成表現。非スケーリングストロークはSVG座標変換と線幅の連動を切る描画規則。",
+      "new_axis": true
+    },
+    "bioturbation": {
+      "axis": "堆積物の移動を水流だけで説明せず、生物の掘削・摂食行動が粒子輸送と地層の混合に与える寄与を測る。",
+      "nearest_terms": [
+        "taphonomy",
+        "ecological-succession",
+        "solifluction"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "タフォノミーは遺骸や化石記録が保存・変質する過程、遷移は生物群集の時間変化、ソリフラクションは土壌の緩慢な斜面移動。生物攪拌は生物の活動が堆積物そのものを移送・混合する過程。",
+      "new_axis": true
+    },
+    "ekman-transport": {
+      "axis": "海水の密度差や船の抵抗ではなく、風応力とコリオリ効果が深さ積分の正味輸送方向をどう決めるかを見る。",
+      "nearest_terms": [
+        "cabbeling",
+        "dead-water-phenomenon",
+        "biological-carbon-pump"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "キャベリングは異なる水塊の混合による密度増加、死水現象は密度成層と内部波による船の抵抗、生物炭素ポンプは生物活動を介した炭素の鉛直輸送。エクマン輸送は風応力と自転が決める表層海水の正味水平輸送。",
+      "new_axis": true
+    },
+    "joking-relationship": {
+      "axis": "個人のユーモア能力ではなく、特定の親族・集団関係に制度化されたからかいの許容と義務が緊張をどう調整するかを見る。",
+      "nearest_terms": [
+        "segmentary-lineage-system",
+        "schismogenesis",
+        "proxemics"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "分節的出自体系は対立相手に応じた親族集団の連帯、分裂生成は相互行動による関係差の増幅、近接学は身体的距離の社会的意味。冗談関係は特定の親族関係でからかいが慣習として許容・要求される規範を扱う。",
+      "new_axis": true
+    },
+    "matrix-effect-analytical-chemistry": {
+      "axis": "測定器の校正や検出限界だけでなく、分析対象以外の試料共存成分が同じ濃度に対する信号応答を変えていないかを調べる。",
+      "nearest_terms": [
+        "reference-material-commutability",
+        "limit-of-detection",
+        "measurement-invariance"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "標準物質の可換性は複数測定手順間で標準物質と実試料の関係が一致するか、検出限界は背景から対象を識別できる下限、測定不変性は集団間で同一の潜在概念を測る性質。マトリックス効果は試料中の共存成分が測定応答を変える直接的な分析化学上の作用。",
+      "new_axis": true
+    }
+  }
+}
