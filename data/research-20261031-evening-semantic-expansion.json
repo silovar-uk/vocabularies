@@ -1,0 +1,254 @@
+[
+  {
+    "id": "css-animation-composition",
+    "term": "CSS Animation Composition",
+    "ja": "アニメーション効果の合成（CSS animation-composition）",
+    "aliases": [
+      "animation-composition",
+      "CSSアニメーション合成"
+    ],
+    "fields": [
+      "Web",
+      "CSS",
+      "Motion Design"
+    ],
+    "one_liner": "同じCSSプロパティに重なるアニメーションを、置換・追加・累積のどの演算で合成するか決める。",
+    "description": "CSSのanimation-compositionは、アニメーションの効果値を基底のプロパティ値や他の効果とどのように組み合わせるかを指定する。replaceは置換、addは合成的な追加、accumulateは型に応じた累積を行う。例えば元のtransformの回転を維持したまま移動を追加できる場合があるが、変換関数の順序や値の型で結果が変わる。アニメーションの速さを指定する機能ではない。",
+    "why_selected": "20時のWeb・制作枠。朝のcontent-visibilityが画面外の描画処理を扱ったのに対し、複数の動きが同一要素のプロパティへどう合成されるかという制作上の独立した判断を追加する。",
+    "feelings": [
+      "回転したカードを上下に揺らすと、既存の回転が消えて不自然に見える。"
+    ],
+    "before": "同じ要素に動きを重ねると、元の変形が消えるのは仕方ない？",
+    "after": "アニメーションの合成方式がreplaceになっており、addやaccumulateで元の変形を残せない？",
+    "observation_axis": "動きの速度や開始時刻ではなく、複数のアニメーション効果が同じプロパティ値へ重なるときの合成演算と順序を確認する。",
+    "semantic_cluster": "css-keyframe-effect-compositing-operation",
+    "nearest_terms": [
+      "easing-function",
+      "css-starting-style",
+      "animation-from-interactions"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "イージングは速度曲線、@starting-styleは初回表示時の開始値、インタラクション起因アニメーションは操作と動きの対応。animation-compositionは効果値同士の置換・追加・累積という合成演算を扱う。",
+    "related": [
+      "easing-function",
+      "css-starting-style",
+      "frame-pacing"
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-composition",
+      "https://drafts.csswg.org/css-animations-2/"
+    ],
+    "instruction": "既存のtransformを保ったまま揺れや移動を重ねる箇所でanimation-composition: addを試し、replace・accumulateと見比べてください。変換順序、ブラウザー差、prefers-reduced-motion: reduceの代替表示も確認してください。",
+    "status": "seed"
+  },
+  {
+    "id": "kirkendall-effect",
+    "term": "Kirkendall Effect",
+    "ja": "カーケンドール効果（異種原子の拡散速度差）",
+    "aliases": [
+      "カークエンダル効果",
+      "カーケンドール・ボイド",
+      "Kirkendall Marker Shift"
+    ],
+    "fields": [
+      "Materials Science",
+      "Metallurgy",
+      "Manufacturing"
+    ],
+    "one_liner": "接合した金属で成分ごとの拡散速度が異なると、目印の位置が移動し、条件によって界面に空孔が集積する。",
+    "description": "異なる金属・合金を接触させて熱処理すると、各成分の固体内拡散速度は等しいとは限らない。銅と黄銅の拡散対で不溶性マーカーの位置移動が観察された歴史的実験は、原子空孔を介した拡散機構を支持した。空孔が集積すればカーケンドール・ボイドが形成され接合信頼性に影響する場合があるが、マーカー移動と空孔形成は同義ではない。",
+    "why_selected": "素材Frontierの近距離深掘り。直近のクレージング（引張応力）や光退色（光化学）から離れ、異種原子の拡散速度差と空孔収支という材料内部の輸送を観察する。",
+    "feelings": [
+      "金属接合部は外見が滑らかなのに、加熱後に界面付近の微小空隙が増える。"
+    ],
+    "before": "金属を加熱すると双方の原子は同じ速さで混ざる？",
+    "after": "元素ごとの拡散速度差でマーカーが移動し、空孔が局所的に集まっていない？",
+    "observation_axis": "材料の応力破壊や表面腐食ではなく、異種原子の拡散流束の非対称性が界面位置と空孔分布をどう変えるかを見る。",
+    "semantic_cluster": "unequal-solid-interdiffusion-marker-vacancy-flux",
+    "nearest_terms": [
+      "galvanic-corrosion",
+      "delamination",
+      "isotope-fractionation"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "異種金属接触腐食は電気化学的な腐食、層間剥離は接合面の機械的分離、同位体分別は同位体比の偏り。カーケンドール効果は固体拡散の速度差とマーカー移動・空孔流束を扱う。",
+    "related": [
+      "galvanic-corrosion",
+      "delamination",
+      "material-fatigue"
+    ],
+    "sources": [
+      "https://www.tms.org/pubs/journals/jom/9706/nakajima-9706.html"
+    ],
+    "instruction": "異種金属の接合・熱処理で空隙が疑われる場合は、温度と保持時間、各元素の濃度プロファイル、界面のマーカー移動、空孔・ボイド分布を別々に評価してください。単なる層間剥離や腐食と混同しないでください。",
+    "status": "seed"
+  },
+  {
+    "id": "double-marginalization",
+    "term": "Double Marginalization",
+    "ja": "二重限界化（流通段階ごとの独立した上乗せ価格）",
+    "aliases": [
+      "二重マージン問題",
+      "Double Markup Problem",
+      "二重マージナライゼーション"
+    ],
+    "fields": [
+      "Industrial Organization",
+      "Economics",
+      "Distribution"
+    ],
+    "one_liner": "メーカーと小売など上下流の企業がそれぞれ市場支配力を持ち、独立に価格を上乗せすると、最終価格が高くなり販売量が減りうる。",
+    "description": "上流企業が限界費用を上回る卸価格を設定し、下流企業も自社の利益最大化のために価格を上乗せすると、統合して共同利益を最大化する場合より最終価格が高く、販売量が少なくなることがある。各社が自社の利幅を最大化するため、他段階の利幅減少を十分内部化しない。競争状況・契約形態・需要曲線によって効果は異なり、垂直統合が常に望ましいという結論ではない。",
+    "why_selected": "制度・インセンティブFrontierを、契約後の交渉リスクや救済期待から、サプライチェーンの連続する価格決定という別の原因・分析単位へ進める。",
+    "feelings": [
+      "メーカーも販売店も利益を増やそうとしているのに、合計利益も顧客の購入量も小さくなる。"
+    ],
+    "before": "流通各社がそれぞれ最適な値付けをすれば、全体も最適になる？",
+    "after": "上下流が独立に上乗せ価格を決めることで、共同利益を減らしていない？",
+    "observation_axis": "契約の不履行や予算救済ではなく、上下流それぞれの市場支配力による独立したマークアップが最終価格・販売量・共同利益へ及ぼす作用を見る。",
+    "semantic_cluster": "successive-market-power-vertical-double-markup",
+    "nearest_terms": [
+      "hold-up-problem",
+      "moral-hazard",
+      "soft-budget-constraint"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "ホールドアップは関係特殊的投資後の交渉、モラルハザードは観測しにくい行動の誘因、ソフトな予算制約は救済期待。二重限界化は連続する取引段階の独立した価格上乗せによる数量・利益の歪みを扱う。",
+    "related": [
+      "hold-up-problem",
+      "principal-agent-problem",
+      "baumol-cost-disease"
+    ],
+    "sources": [
+      "https://ocw.mit.edu/courses/15-010-economic-analysis-for-business-decisions-fall-2004/resources/double_margin/",
+      "https://doi.org/10.1086/256964",
+      "https://economics.ubc.ca/wp-content/uploads/sites/38/2018/07/JELpaper_Slade_May07-June2018.pdf"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "brazil-nut-effect",
+    "term": "Brazil Nut Effect",
+    "ja": "ブラジルナッツ効果（振動による粒径分離）",
+    "aliases": [
+      "ブラジルナッツ現象",
+      "Vibration-Induced Granular Segregation"
+    ],
+    "fields": [
+      "Granular Physics",
+      "Powder Technology",
+      "Manufacturing"
+    ],
+    "one_liner": "大きさの異なる粒子を振動させると、条件によって大きな粒子が上方へ移動する現象。",
+    "description": "大粒子が小粒子の層から上へ現れるブラジルナッツ効果は、粉粒体の振動・攪拌による粒径分離の一例。小粒子の空隙への落下、対流、粒子間の衝突や密度差など複数の機構が提案され、容器形状や振動条件によって結果は変わる。常に大粒子が上へ行く普遍法則ではなく、逆方向の分離もある。",
+    "why_selected": "物理・粉体Frontier。直近のオストワルド熟成は溶解・再析出による粒径変化だが、こちらは粒子サイズ自体を変えず、振動によって集団内の位置が分かれる。",
+    "feelings": [
+      "ミックスナッツの袋を振ったら、大きなナッツが上に集まって見える。"
+    ],
+    "before": "振れば粉や粒は均一に混ざっていく？",
+    "after": "振動条件によって粒子がサイズ別に上下へ分離していない？",
+    "observation_axis": "粒子の成長や化学変化ではなく、粒径・密度・振動・容器条件が粒子集団の鉛直方向の選別をどう生むかを見る。",
+    "semantic_cluster": "vibration-induced-granular-size-segregation",
+    "nearest_terms": [
+      "percolation-threshold",
+      "ostwald-ripening",
+      "solifluction"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "パーコレーション閾値は連結経路の成立条件、オストワルド熟成は溶解再析出による粒径変化、ソリフラクションは地盤の緩慢な流動。ブラジルナッツ効果は振動した粒子集団の位置・粒径分離を扱う。",
+    "related": [
+      "percolation-threshold",
+      "ostwald-ripening",
+      "anisotropy"
+    ],
+    "sources": [
+      "https://doi.org/10.1103/PhysRevE.86.050301",
+      "https://www.jstage.jst.go.jp/article/sptj/62/10/62_62.573/_article/-char/en",
+      "https://www.jstage.jst.go.jp/article/kona/33/0/33_2016020/_article/-char/en"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "allelopathy",
+    "term": "Allelopathy",
+    "ja": "アレロパシー（植物間の化学的相互作用）",
+    "aliases": [
+      "他感作用",
+      "Allelopathic Interference"
+    ],
+    "fields": [
+      "Plant Ecology",
+      "Chemical Ecology",
+      "Agronomy"
+    ],
+    "one_liner": "植物が放出する化学物質が、周囲の植物などの発芽・生育に影響する現象。",
+    "description": "アレロパシーは植物が根からの分泌、葉の溶脱、落葉の分解などを通じて放出する化学物質が、他の生物の発芽や成長へ作用することを指す。抑制が典型例だが、効果は濃度・土壌・微生物・相手種などの条件に依存する。隣の植物が育たない原因をアレロパシーと断定するには、水・光・栄養の競争などと切り分けた検証が必要。",
+    "why_selected": "植物・生態Frontierを、朝の葉序（器官の配置）や一斉結実（年次同期）から、植物が周囲へ放出する化学物質を介した個体間作用へ切り替える。",
+    "feelings": [
+      "同じ土壌に植えた植物でも、隣に何が生えているかで発芽率が変わる。"
+    ],
+    "before": "隣の植物が育たないのは日陰や養分の取り合いだけ？",
+    "after": "根の分泌物や落葉由来の化学物質が生育を変えていない？",
+    "observation_axis": "光・水・養分の直接競争ではなく、植物由来の化学物質が別の植物の発芽・成長に与える条件依存の作用を調べる。",
+    "semantic_cluster": "plant-derived-chemical-neighbor-growth-effects",
+    "nearest_terms": [
+      "apparent-competition",
+      "ecological-trap",
+      "niche-construction"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "見かけの競争は共通の自然敵を介する間接作用、生態学的罠は環境手掛かりと生存適応度のずれ、ニッチ構築は環境の改変全般。アレロパシーは植物由来の化学物質を介した生育への作用。",
+    "related": [
+      "apparent-competition",
+      "niche-construction",
+      "ecological-stoichiometry"
+    ],
+    "sources": [
+      "https://research.fs.usda.gov/treesearch/34153",
+      "https://doi.org/10.1002/ps.1320"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "light-echo",
+    "term": "Light Echo",
+    "ja": "光のこだま（ライトエコー）",
+    "aliases": [
+      "光エコー",
+      "Astronomical Light Echo"
+    ],
+    "fields": [
+      "Astronomy",
+      "Astrophysics",
+      "Optics"
+    ],
+    "one_liner": "天体の一時的な増光が周囲の塵に反射・散乱・吸収再放射され、遠回りした光が時間差で届く現象。",
+    "description": "恒星の爆発的な増光などの光が周囲の星間塵へ届き、散乱した可視光や吸収後に再放射された赤外光が、直接光より遅れて観測者へ届く。異なる位置の塵が順に明るくなるため、光の輪が外へ広がるように見えることがある。これは必ずしも物質がその速度で膨張していることを意味しない。時間遅延と光路の幾何から周囲の塵の分布を調べられる。",
+    "why_selected": "20時の遠距離探索。朝の光退色が照射で分子の発光能力が失われる現象だったのに対し、光源から観測者までの経路差が遅れた光像を生むという天体規模の時間幾何を加える。",
+    "feelings": [
+      "何年も前の星の閃光が、周囲の塵の別の場所を順番に照らし続けているように見える。"
+    ],
+    "before": "星の周りの明るい輪が広がるなら、物質が高速で飛び散った？",
+    "after": "光が異なる経路を通って時間差で届くため、見かけの輪が動いている？",
+    "observation_axis": "天体の自転や実際の物質移動ではなく、閃光が塵を経由する光路差によって生じる遅延した明るさの空間変化を見る。",
+    "semantic_cluster": "stellar-flash-dust-path-delay-illumination",
+    "nearest_terms": [
+      "tidal-locking",
+      "rolling-shutter",
+      "acoustic-shadow"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "潮汐固定は潮汐散逸による自転・公転同期、ローリングシャッターは撮像素子の行別読出しによる時間差、音響陰影は音波の遮蔽。光のこだまは天体光が星間塵を経由する光路差と散乱・再放射による時間遅延を扱う。",
+    "related": [
+      "tidal-locking",
+      "rolling-shutter",
+      "spectral-leakage"
+    ],
+    "sources": [
+      "https://science.nasa.gov/missions/hubble/echoes-of-light/",
+      "https://www.jpl.nasa.gov/images/pia10723-dissecting-a-light-echo/",
+      "https://science.nasa.gov/asset/hubble/lrll-54361-light-echo-hubble/"
+    ],
+    "status": "seed"
+  }
+]

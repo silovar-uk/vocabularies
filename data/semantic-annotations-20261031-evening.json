@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-31",
+  "batch": "20261031-evening",
+  "term_annotations": {
+    "css-animation-composition": {
+      "axis": "動きの速度や開始時刻ではなく、複数のアニメーション効果が同じプロパティ値へ重なるときの合成演算と順序を確認する。",
+      "nearest_terms": [
+        "easing-function",
+        "css-starting-style",
+        "animation-from-interactions"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "イージングは速度曲線、@starting-styleは初回表示時の開始値、インタラクション起因アニメーションは操作と動きの対応。animation-compositionは効果値同士の置換・追加・累積という合成演算を扱う。",
+      "new_axis": true
+    },
+    "kirkendall-effect": {
+      "axis": "材料の応力破壊や表面腐食ではなく、異種原子の拡散流束の非対称性が界面位置と空孔分布をどう変えるかを見る。",
+      "nearest_terms": [
+        "galvanic-corrosion",
+        "delamination",
+        "isotope-fractionation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "異種金属接触腐食は電気化学的な腐食、層間剥離は接合面の機械的分離、同位体分別は同位体比の偏り。カーケンドール効果は固体拡散の速度差とマーカー移動・空孔流束を扱う。",
+      "new_axis": true
+    },
+    "double-marginalization": {
+      "axis": "契約の不履行や予算救済ではなく、上下流それぞれの市場支配力による独立したマークアップが最終価格・販売量・共同利益へ及ぼす作用を見る。",
+      "nearest_terms": [
+        "hold-up-problem",
+        "moral-hazard",
+        "soft-budget-constraint"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ホールドアップは関係特殊的投資後の交渉、モラルハザードは観測しにくい行動の誘因、ソフトな予算制約は救済期待。二重限界化は連続する取引段階の独立した価格上乗せによる数量・利益の歪みを扱う。",
+      "new_axis": true
+    },
+    "brazil-nut-effect": {
+      "axis": "粒子の成長や化学変化ではなく、粒径・密度・振動・容器条件が粒子集団の鉛直方向の選別をどう生むかを見る。",
+      "nearest_terms": [
+        "percolation-threshold",
+        "ostwald-ripening",
+        "solifluction"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "パーコレーション閾値は連結経路の成立条件、オストワルド熟成は溶解再析出による粒径変化、ソリフラクションは地盤の緩慢な流動。ブラジルナッツ効果は振動した粒子集団の位置・粒径分離を扱う。",
+      "new_axis": true
+    },
+    "allelopathy": {
+      "axis": "光・水・養分の直接競争ではなく、植物由来の化学物質が別の植物の発芽・成長に与える条件依存の作用を調べる。",
+      "nearest_terms": [
+        "apparent-competition",
+        "ecological-trap",
+        "niche-construction"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "見かけの競争は共通の自然敵を介する間接作用、生態学的罠は環境手掛かりと生存適応度のずれ、ニッチ構築は環境の改変全般。アレロパシーは植物由来の化学物質を介した生育への作用。",
+      "new_axis": true
+    },
+    "light-echo": {
+      "axis": "天体の自転や実際の物質移動ではなく、閃光が塵を経由する光路差によって生じる遅延した明るさの空間変化を見る。",
+      "nearest_terms": [
+        "tidal-locking",
+        "rolling-shutter",
+        "acoustic-shadow"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "潮汐固定は潮汐散逸による自転・公転同期、ローリングシャッターは撮像素子の行別読出しによる時間差、音響陰影は音波の遮蔽。光のこだまは天体光が星間塵を経由する光路差と散乱・再放射による時間遅延を扱う。",
+      "new_axis": true
+    }
+  }
+}
