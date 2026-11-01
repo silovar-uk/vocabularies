@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-02",
+  "batch": "20261102-morning",
+  "term_annotations": {
+    "anagnorisis": {
+      "axis": "読者と人物の知識差ではなく、登場人物自身が重大な事実を認知する前後で関係と行為の意味がどう変わるかを見る。",
+      "nearest_terms": [
+        "dramatic-irony",
+        "point-of-no-return",
+        "unreliable-narrator"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "劇的アイロニーは観客と登場人物の知識差、帰還不能点は行為の選択肢が閉じる筋の転換、信頼できない語り手は語りの信用性。アナグノリシスは人物自身が知らなかった重大事実を知る認知の転換。",
+      "new_axis": true
+    },
+    "myrmecochory": {
+      "axis": "植物同士の直接競争ではなく、種子の付属体とアリの採餌行動が散布距離・着地点をどう変えるかを見る。",
+      "nearest_terms": [
+        "allelopathy",
+        "ecological-succession",
+        "fission-fusion-dynamics"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "アレロパシーは植物由来化学物質が隣接植物へ作用する現象、生態遷移は群集構成の長期変化、離合集散型の群れ動態は動物集団の分裂・合流。アリ散布は植物とアリの相互作用が種子の位置を変える輸送過程。",
+      "new_axis": true
+    },
+    "dendrochronological-crossdating": {
+      "axis": "単一試料の年輪本数ではなく、独立した複数試料の年輪変動パターンを照合して各輪の暦年対応を確かめる。",
+      "nearest_terms": [
+        "archaeological-seriation",
+        "archaeomagnetic-dating",
+        "metrological-traceability"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "遺物型式編年は遺物の型式頻度から相対的な順序を推定し、考古地磁気年代測定は過去の地磁気方向などを利用する。計量トレーサビリティは測定結果を基準へ連結する性質。年輪照合は年輪幅の特徴的な時系列パターンを独立試料間で一致させ、形成暦年を決める。",
+      "new_axis": true
+    },
+    "hydraulic-jump": {
+      "axis": "水がどちらへ輸送されるかではなく、自由表面流の速度と水深の組が臨界状態を越えるときの急激な流況転換とエネルギー散逸を見る。",
+      "nearest_terms": [
+        "dead-water-phenomenon",
+        "ekman-transport",
+        "river-avulsion"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "死水現象は成層流体の内部波による船舶抵抗、エクマン輸送は風応力と自転に伴う海水の正味輸送、河道変遷は河川の流路位置の急な移動。跳水は同一水路内の局所的な射流から常流への転換とエネルギー散逸。",
+      "new_axis": true
+    },
+    "vernalization": {
+      "axis": "現在の季節や葉の形成位置ではなく、過去の持続的な低温曝露が遺伝子発現状態を変え、その後の開花能力をどう規定するかを見る。",
+      "nearest_terms": [
+        "phenology",
+        "phyllotaxis",
+        "mast-seeding"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "生物季節学は開花などの季節的な時期の観測、葉序は茎頂での器官配置、一斉結実は個体群の繁殖量の同期。春化は過去の低温曝露によって将来の開花能力が変わる生理的な記憶過程。",
+      "new_axis": true
+    },
+    "video-frame-callback": {
+      "axis": "ディスプレイの描画周期や映像の見た目ではなく、再生動画フレームが合成処理へ渡される時点とそのメタデータを処理の基準にできるかを見る。",
+      "nearest_terms": [
+        "frame-pacing",
+        "rolling-shutter",
+        "webvtt-timed-text"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "フレームペーシングは表示フレーム間隔の安定性、ローリングシャッターは撮像時の画素読み出し差、WebVTTは時刻同期した文字トラック。requestVideoFrameCallbackは再生動画のフレーム単位の合成通知と時刻メタデータを提供するAPI。",
+      "new_axis": true
+    }
+  }
+}
