@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-01",
+  "batch": "20261101-evening",
+  "term_annotations": {
+    "web-audio-convolver-node": {
+      "axis": "音が物語世界の内外に属するかではなく、空間のインパルス応答という時間的な伝達特性を入力音声に適用して響きを再現できるかを見る。",
+      "nearest_terms": [
+        "acoustic-impedance-mismatch",
+        "diegetic-sound",
+        "auditory-masking"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "音響インピーダンス不整合は実際の媒質境界での反射・透過、劇中音は音源の物語世界への所属、聴覚マスキングは別の音による聞き取り阻害。ConvolverNodeは測定・生成された時間応答をデジタル信号へ畳み込む音声制作・処理機構。",
+      "new_axis": true
+    },
+    "acoustic-emission-materials": {
+      "axis": "材料へ検査用エネルギーを送り込むのではなく、内部の急激なひずみエネルギー解放が発する弾性波を受動的に検出して活動中の損傷を調べる。",
+      "nearest_terms": [
+        "fracture-toughness",
+        "polymer-crazing",
+        "triboluminescence"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "破壊靱性はき裂進展への抵抗を表す材料特性、クレージングは高分子内部の微小空隙・フィブリル形成、トライボルミネセンスは摩擦・破壊に伴う光の放出。AEは内部の急激なエネルギー解放による弾性波を測る受動的な検査信号。",
+      "new_axis": true
+    },
+    "capillary-condensation": {
+      "axis": "周囲の湿度だけで結露を判断せず、細孔の大きさと気液界面の曲率が蒸気の凝縮条件をどう変えるかを見る。",
+      "nearest_terms": [
+        "hysteresis",
+        "marangoni-effect",
+        "outgassing"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ヒステリシスは履歴による状態差一般、マランゴニ効果は表面張力勾配による液体流動、アウトガスは材料からの揮発性物質の放出。毛管凝縮は細孔内の曲がった気液界面と吸着が凝縮条件を変える相転移。",
+      "new_axis": true
+    },
+    "immortal-time-bias": {
+      "axis": "観測件数や交絡だけでなく、曝露開始時刻と追跡開始時刻のずれによってイベント不能期間がどの群へ計上されているかを確認する。",
+      "nearest_terms": [
+        "pseudoreplication",
+        "collider-bias",
+        "negative-control"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "擬似反復は独立でない観測を独立反復として扱う誤り、コライダーバイアスは共通結果への条件づけによる関連の歪み、負の対照は交絡などを診断する手法。不死時間バイアスは曝露群を将来の治療開始で定義し、開始前のイベント不能時間を誤分類する追跡時間の偏り。",
+      "new_axis": true
+    },
+    "countercurrent-heat-exchange": {
+      "axis": "体温調節を単なる断熱や血圧反射で説明せず、隣接する逆向きの血流間で熱が交換される血管配置と温度勾配を見る。",
+      "nearest_terms": [
+        "thermal-bridging",
+        "baroreflex",
+        "hydraulic-redistribution"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "熱橋は建物の断熱層を迂回する熱伝導、圧受容器反射は血圧変化への神経性フィードバック、水理的再分配は植物の根を介した土壌間の水移動。対向流熱交換は隣接する逆方向の血流の温度差を利用して熱を回収する。",
+      "new_axis": true
+    },
+    "virga": {
+      "axis": "雲の下に見える降水の存在と地表に到達する降水量を分け、落下中の蒸発・昇華がどの高さで粒子を消すかを見る。",
+      "nearest_terms": [
+        "ekman-transport",
+        "isotope-fractionation",
+        "river-avulsion"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "エクマン輸送は風と自転による海水の正味水平移動、同位体分別は相変化などによる同位体比の変化、河道変遷は河川流路の急な移動。バージャは雲から落下する降水が地表到達前に蒸発・昇華して消える大気中の鉛直過程。",
+      "new_axis": true
+    }
+  }
+}

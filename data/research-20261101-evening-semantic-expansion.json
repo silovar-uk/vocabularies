@@ -1,0 +1,255 @@
+[
+  {
+    "id": "web-audio-convolver-node",
+    "term": "Web Audio ConvolverNode",
+    "ja": "空間の響きを畳み込む音声処理（Web Audio ConvolverNode）",
+    "aliases": [
+      "コンボルバーノード",
+      "インパルス応答による畳み込みリバーブ"
+    ],
+    "fields": [
+      "Web",
+      "Audio Engineering",
+      "Sound Design"
+    ],
+    "one_liner": "実測・生成したインパルス応答を音声に畳み込み、空間の残響などの特性を再現するWeb Audioの処理ノード。",
+    "description": "Web Audio APIのConvolverNodeは、入力音声にインパルス応答（短い刺激に対する空間・システムの時間的応答）を用いた線形畳み込みを適用する。例えば乾いたナレーションにホールのインパルス応答を適用すると、その空間に似た残響を付加できる。実際の音源位置や室内音響を完全に再現するわけではなく、使用する応答データ、チャンネル構成、正規化、乾音と処理音の混合によって結果が変わる。",
+    "why_selected": "夜の制作・Web枠。直近のCSSアニメーション合成やSVGの線幅制御から離れ、空間の音響特性を測定した時間応答として音声へ移植する制作上の独立した観察軸を加える。",
+    "feelings": [
+      "小さな録音ブースで録った声なのに、再生すると広いホールで話しているように響く。"
+    ],
+    "before": "声に残響を付けるには、エコーの遅延時間を感覚的に調整するしかない？",
+    "after": "実際の空間のインパルス応答を読み込めば、その反射・減衰の時間的特徴を音声に畳み込める？",
+    "observation_axis": "音が物語世界の内外に属するかではなく、空間のインパルス応答という時間的な伝達特性を入力音声に適用して響きを再現できるかを見る。",
+    "semantic_cluster": "impulse-response-convolution-audio-spatial-reverberation",
+    "nearest_terms": [
+      "acoustic-impedance-mismatch",
+      "diegetic-sound",
+      "auditory-masking"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "音響インピーダンス不整合は実際の媒質境界での反射・透過、劇中音は音源の物語世界への所属、聴覚マスキングは別の音による聞き取り阻害。ConvolverNodeは測定・生成された時間応答をデジタル信号へ畳み込む音声制作・処理機構。",
+    "related": [
+      "acoustic-impedance-mismatch",
+      "diegetic-sound",
+      "auditory-masking",
+      "webvtt-timed-text"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/webaudio/#ConvolverNode",
+      "https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode"
+    ],
+    "instruction": "ナレーションの乾いた音と、ホールのインパルス応答を読み込んだConvolverNodeの処理音を比較してください。乾音と処理音の混合比、残響の長さ、音量正規化、台詞の聞き取りやすさを確認してください。",
+    "status": "seed"
+  },
+  {
+    "id": "acoustic-emission-materials",
+    "term": "Acoustic Emission (Materials)",
+    "ja": "アコースティック・エミッション（材料内部からの弾性波）",
+    "aliases": [
+      "AE法",
+      "音響放出",
+      "アコースティックエミッション"
+    ],
+    "fields": [
+      "Materials Science",
+      "Nondestructive Testing",
+      "Structural Engineering"
+    ],
+    "one_liner": "材料内部のき裂進展などでひずみエネルギーが急に解放されるときに生じる過渡的な弾性波を検知する。",
+    "description": "アコースティック・エミッション（AE）は、荷重や変形を受けた材料・構造物の内部で急激なエネルギー解放が起きた際に発生する弾性波。センサーでその波を受動的に検知する非破壊検査では、荷重下で進行中のき裂や変形活動の兆候を監視できる。ただしAE信号だけで損傷の種類や大きさを断定できず、摩擦・外乱ノイズの除去、発生位置の推定、別検査との照合が必要。",
+    "why_selected": "素材・物理挙動の探索。直近のカーケンドール効果は原子の拡散差、クレージングは樹脂内部の微細構造、光退色は観測光による変化。今回は材料が損傷活動中に自ら放つ弾性波という受動観測の軸へ移る。",
+    "feelings": [
+      "外観に割れが見えないタンクから、加圧中だけ微小な弾性波信号が検出される。"
+    ],
+    "before": "材料が壊れたかは、外から音波を当てたり表面の傷を見たりしないと分からない？",
+    "after": "材料自身が荷重下で放つ過渡的な弾性波から、内部で進行している変化を監視できる？",
+    "observation_axis": "材料へ検査用エネルギーを送り込むのではなく、内部の急激なひずみエネルギー解放が発する弾性波を受動的に検出して活動中の損傷を調べる。",
+    "semantic_cluster": "stress-release-transient-elastic-wave-passive-damage-monitoring",
+    "nearest_terms": [
+      "fracture-toughness",
+      "polymer-crazing",
+      "triboluminescence"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "破壊靱性はき裂進展への抵抗を表す材料特性、クレージングは高分子内部の微小空隙・フィブリル形成、トライボルミネセンスは摩擦・破壊に伴う光の放出。AEは内部の急激なエネルギー解放による弾性波を測る受動的な検査信号。",
+    "related": [
+      "fracture-toughness",
+      "polymer-crazing",
+      "triboluminescence",
+      "material-fatigue"
+    ],
+    "sources": [
+      "https://www.asnt.org/what-is-nondestructive-testing/methods/acoustic-emission-testing"
+    ],
+    "instruction": "構造物の加圧・荷重試験中にAEセンサーで信号発生時刻・振幅・位置推定を記録してください。摩擦や外部振動のノイズを除き、超音波検査など別の方法で損傷の有無と位置を照合してください。",
+    "status": "seed"
+  },
+  {
+    "id": "capillary-condensation",
+    "term": "Capillary Condensation",
+    "ja": "毛管凝縮（細孔内で進む蒸気の液化）",
+    "aliases": [
+      "毛細管凝縮",
+      "細孔凝縮"
+    ],
+    "fields": [
+      "Physical Chemistry",
+      "Surface Science",
+      "Porous Materials"
+    ],
+    "one_liner": "多孔質材料の小さな孔で、蒸気の吸着が進み、気液界面を伴う液体で孔が満たされる現象。",
+    "description": "毛管凝縮は、蒸気が多孔質固体へ多層吸着した後、孔内にメニスカス（曲がった気液界面）を持つ液体が形成されて孔を満たす現象。界面の曲率により、平らな液面での飽和蒸気圧より低い相対圧力でも凝縮が生じうる。吸着・脱着でヒステリシスを示すことがあるが、極端に小さな孔では通常のメニスカス概念が適用しにくい。",
+    "why_selected": "素材の挙動を強度・損傷・粒径から離し、細孔という幾何学的な閉じ込めが気液相転移の条件を変える観察軸を加える。",
+    "feelings": [
+      "部屋の空気は飽和していないのに、多孔質材料の微細な孔の内部に水分がたまる。"
+    ],
+    "before": "水蒸気は相対湿度100%にならなければ液体にならない？",
+    "after": "孔の大きさと曲がった気液界面によって、飽和前でも孔内に液体が生じていない？",
+    "observation_axis": "周囲の湿度だけで結露を判断せず、細孔の大きさと気液界面の曲率が蒸気の凝縮条件をどう変えるかを見る。",
+    "semantic_cluster": "pore-curvature-vapor-liquid-capillary-condensation",
+    "nearest_terms": [
+      "hysteresis",
+      "marangoni-effect",
+      "outgassing"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "ヒステリシスは履歴による状態差一般、マランゴニ効果は表面張力勾配による液体流動、アウトガスは材料からの揮発性物質の放出。毛管凝縮は細孔内の曲がった気液界面と吸着が凝縮条件を変える相転移。",
+    "related": [
+      "hysteresis",
+      "marangoni-effect",
+      "outgassing",
+      "thermal-bridging"
+    ],
+    "sources": [
+      "https://goldbook.iupac.org/terms/view/C00794",
+      "https://doi.org/10.1351/goldbook.C00794"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "immortal-time-bias",
+    "term": "Immortal Time Bias",
+    "ja": "不死時間バイアス（曝露前の追跡時間の誤分類）",
+    "aliases": [
+      "immortal time bias",
+      "イモータルタイムバイアス"
+    ],
+    "fields": [
+      "Epidemiology",
+      "Causal Inference",
+      "Statistics"
+    ],
+    "one_liner": "介入を受けるまで生存・無イベントである必要がある期間を誤って介入群へ算入し、介入の効果を過大に見せる偏り。",
+    "description": "観察研究で、治療を開始した人を追跡開始時点から『治療群』と分類すると、実際に治療を開始するまで生存しイベントが起きていなかった時間が、治療による安全な時間として誤って算入されることがある。この不死時間バイアスは治療群の死亡・発症率を見かけ上低くしうる。追跡開始と曝露定義の整合、時間依存曝露の扱い、ターゲットトライアル・エミュレーションなどで対処を検討する。すべての追跡研究に生じるわけではない。",
+    "why_selected": "統計の既存語『擬似反復』が独立した実験単位の数を問うのに対し、今回はイベントを起こさず生存しなければ群に入れない時間の誤分類という、時間軸そのものの設計上の偏りを加える。",
+    "feelings": [
+      "薬を飲み始めた人ほど長生きしているように見えるが、薬を開始するまで生存できた人だけを治療群にしていた。"
+    ],
+    "before": "治療を受けた人の死亡率が低いから、その治療には効果がある？",
+    "after": "治療開始まで生き延びた期間を、誤って治療群の追跡時間に含めていない？",
+    "observation_axis": "観測件数や交絡だけでなく、曝露開始時刻と追跡開始時刻のずれによってイベント不能期間がどの群へ計上されているかを確認する。",
+    "semantic_cluster": "exposure-classification-event-free-person-time-bias",
+    "nearest_terms": [
+      "pseudoreplication",
+      "collider-bias",
+      "negative-control"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "擬似反復は独立でない観測を独立反復として扱う誤り、コライダーバイアスは共通結果への条件づけによる関連の歪み、負の対照は交絡などを診断する手法。不死時間バイアスは曝露群を将来の治療開始で定義し、開始前のイベント不能時間を誤分類する追跡時間の偏り。",
+    "related": [
+      "pseudoreplication",
+      "collider-bias",
+      "negative-control",
+      "equivalence-testing"
+    ],
+    "sources": [
+      "https://www.bmj.com/content/340/bmj.b5087",
+      "https://www.bmj.com/content/340/bmj.b5087.abstract"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "countercurrent-heat-exchange",
+    "term": "Countercurrent Heat Exchange",
+    "ja": "対向流熱交換（逆向きの血流で熱を回収する仕組み）",
+    "aliases": [
+      "向流熱交換",
+      "対向流熱交換機構"
+    ],
+    "fields": [
+      "Comparative Physiology",
+      "Biophysics",
+      "Thermoregulation"
+    ],
+    "one_liner": "温かい血液と冷たい血液を隣接して逆方向へ流し、熱を受け渡して末端からの熱損失を抑える仕組み。",
+    "description": "一部の鳥類などでは、脚へ向かう温かい動脈血と体幹へ戻る冷たい静脈血が近接して逆方向に流れる。両者の温度差によって動脈から静脈へ熱が移り、体幹へ熱を戻す一方、末端へ送る血液は冷やされ、寒冷環境での熱損失を抑えられる。血流量の調節や血管の配置によって作用は変わり、すべての生物・部位で同じ程度に働くわけではない。",
+    "why_selected": "最近の圧受容器反射は血圧を制御する神経反射、熱橋は建材の熱伝導経路。今回は逆方向の流体配置そのものが熱交換効率を変える生理・輸送の独立軸。",
+    "feelings": [
+      "冷たい水に立つ鳥の脚は冷えているのに、体の中心部の熱は比較的保たれている。"
+    ],
+    "before": "脚に温かい血を送り続けたら、体の熱が大量に逃げるだけ？",
+    "after": "行きと帰りの血管を近づけて熱を受け渡し、体幹へ熱を戻していない？",
+    "observation_axis": "体温調節を単なる断熱や血圧反射で説明せず、隣接する逆向きの血流間で熱が交換される血管配置と温度勾配を見る。",
+    "semantic_cluster": "opposing-blood-flow-vascular-heat-recovery",
+    "nearest_terms": [
+      "thermal-bridging",
+      "baroreflex",
+      "hydraulic-redistribution"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "熱橋は建物の断熱層を迂回する熱伝導、圧受容器反射は血圧変化への神経性フィードバック、水理的再分配は植物の根を介した土壌間の水移動。対向流熱交換は隣接する逆方向の血流の温度差を利用して熱を回収する。",
+    "related": [
+      "thermal-bridging",
+      "baroreflex",
+      "hydraulic-redistribution"
+    ],
+    "sources": [
+      "https://ocean.si.edu/ocean-life/seabirds/penguins",
+      "https://doi.org/10.1111/j.1469-7998.1975.tb01398.x"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "virga",
+    "term": "Virga",
+    "ja": "尾流雲・バージャ（地表に届かない降水）",
+    "aliases": [
+      "尾流雲",
+      "バージャ",
+      "降水の蒸発尾"
+    ],
+    "fields": [
+      "Meteorology",
+      "Atmospheric Science",
+      "Cloud Physics"
+    ],
+    "one_liner": "雲から落ちる雨や雪が、地面に届く前に蒸発・昇華して消えることで見える降水の筋。",
+    "description": "バージャ（virga）は、雲から落下する降水粒子が地表へ到達する前に蒸発・昇華し、空中で途切れて見える現象。雲の下に細い筋や尾が伸びているのに地上では雨が降らないことがある。降水粒子が消える高さは下層大気の湿度・温度などに依存する。状況によっては蒸発冷却に伴う下降流と関連するが、見た目だけでマイクロバーストの発生を断定できない。",
+    "why_selected": "朝の海洋輸送や堆積物移動とは別に、目に見える降水と地表での実際の降水が一致しないという大気中の相変化・鉛直輸送の新しい観察軸を追加する。",
+    "feelings": [
+      "雲の下に雨のカーテンが見えるのに、歩いている場所は乾いたまま。"
+    ],
+    "before": "雲から雨の筋が垂れていれば、地面まで雨が降っている？",
+    "after": "落下中に乾いた空気で蒸発し、地表へ届く前に消えていない？",
+    "observation_axis": "雲の下に見える降水の存在と地表に到達する降水量を分け、落下中の蒸発・昇華がどの高さで粒子を消すかを見る。",
+    "semantic_cluster": "subcloud-precipitation-evaporation-before-surface",
+    "nearest_terms": [
+      "ekman-transport",
+      "isotope-fractionation",
+      "river-avulsion"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "エクマン輸送は風と自転による海水の正味水平移動、同位体分別は相変化などによる同位体比の変化、河道変遷は河川流路の急な移動。バージャは雲から落下する降水が地表到達前に蒸発・昇華して消える大気中の鉛直過程。",
+    "related": [
+      "ekman-transport",
+      "isotope-fractionation",
+      "river-avulsion"
+    ],
+    "sources": [
+      "https://forecast.weather.gov/glossary.php?word=VIRGA",
+      "https://www.weather.gov/ggw/GlossaryV"
+    ],
+    "status": "seed"
+  }
+]
