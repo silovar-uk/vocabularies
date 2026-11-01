@@ -1,0 +1,254 @@
+[
+  {
+    "id": "anagnorisis",
+    "term": "Anagnorisis",
+    "ja": "認知・発見（アナグノリシス）",
+    "aliases": [
+      "アナグノリシス",
+      "認知（詩学）",
+      "発見（悲劇）"
+    ],
+    "fields": [
+      "Narratology",
+      "Drama",
+      "Classical Poetics"
+    ],
+    "one_liner": "登場人物が重大な事実を知らない状態から知る状態へ移り、人間関係や運命の理解が変わる劇的な認知。",
+    "description": "アリストテレス『詩学』で論じられるアナグノリシスは、登場人物が無知から知へ移る認知・発見の転換。『オイディプス王』では主人公が自らの出生と行為の真相を知る。単に観客へ新情報を示すことではなく、物語世界の登場人物の知識状態と関係が変わる点が重要。逆転（ペリペテイア）と結び付くことはあるが、同義ではない。",
+    "why_selected": "物語の視点・情報制御のFrontierから。既存の焦点化、物語頻度、劇的アイロニー、信頼できない語り手が扱う情報配分と異なり、登場人物の知識状態が不可逆的に変わる瞬間を観察する。",
+    "feelings": [
+      "ずっと信じていた家族関係が一通の手紙で覆り、それまでの行動の意味が一気に変わる。"
+    ],
+    "before": "読者が真相を知る場面なら、どれも同じ『どんでん返し』？",
+    "after": "誰の無知がどの事実によって知へ変わり、人物同士の関係がどう変化した？",
+    "observation_axis": "読者と人物の知識差ではなく、登場人物自身が重大な事実を認知する前後で関係と行為の意味がどう変わるかを見る。",
+    "semantic_cluster": "character-ignorance-to-knowledge-dramatic-recognition",
+    "nearest_terms": [
+      "dramatic-irony",
+      "point-of-no-return",
+      "unreliable-narrator"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "劇的アイロニーは観客と登場人物の知識差、帰還不能点は行為の選択肢が閉じる筋の転換、信頼できない語り手は語りの信用性。アナグノリシスは人物自身が知らなかった重大事実を知る認知の転換。",
+    "related": [
+      "dramatic-irony",
+      "point-of-no-return",
+      "focalization"
+    ],
+    "sources": [
+      "https://www.sparknotes.com/philosophy/poetics/full-text/chapter-xi/",
+      "https://sententiaeantiquae.com/2020/06/10/reversal-and-recognition-oedipus-is-just-the-best/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "myrmecochory",
+    "term": "Myrmecochory",
+    "ja": "アリ散布（ミルメココリー）",
+    "aliases": [
+      "アリによる種子散布",
+      "蟻散布",
+      "ミルメココリー"
+    ],
+    "fields": [
+      "Ecology",
+      "Botany",
+      "Mutualism"
+    ],
+    "one_liner": "アリが植物の種子を運ぶことで、植物の種子散布を担う生態的な相互作用。",
+    "description": "アリ散布（myrmecochory）は、アリが植物の種子を運搬する散布様式。多くの対象植物では種子に付いたエライオソームという餌となる付属体がアリを引きつけ、アリが巣へ運んで付属体を利用した後に種子を残す。種子の移動先や捕食回避に影響しうるが、すべてのアリ散布植物が同じ機構や利益を持つわけではない。",
+    "why_selected": "直近のアレロパシーが植物から隣の植物への化学的作用だったのに対し、植物が動物の運搬行動を利用して子孫の位置を変える別の因果・空間軸を追加。",
+    "feelings": [
+      "落ちた種子をアリが餌として運んだはずなのに、食べ残された種子が巣の近くで芽を出す。"
+    ],
+    "before": "植物の種は風か鳥が運ぶもの？",
+    "after": "種子の付属体がアリの採餌行動を引き起こし、散布先を変えていない？",
+    "observation_axis": "植物同士の直接競争ではなく、種子の付属体とアリの採餌行動が散布距離・着地点をどう変えるかを見る。",
+    "semantic_cluster": "ant-mediated-elaiosome-seed-transport-dispersal",
+    "nearest_terms": [
+      "allelopathy",
+      "ecological-succession",
+      "fission-fusion-dynamics"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "アレロパシーは植物由来化学物質が隣接植物へ作用する現象、生態遷移は群集構成の長期変化、離合集散型の群れ動態は動物集団の分裂・合流。アリ散布は植物とアリの相互作用が種子の位置を変える輸送過程。",
+    "related": [
+      "allelopathy",
+      "ecological-succession",
+      "fission-fusion-dynamics"
+    ],
+    "sources": [
+      "https://www.journals.uchicago.edu/doi/full/10.1086/730787",
+      "https://onlinelibrary.wiley.com/doi/abs/10.1111/ens.12110"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "dendrochronological-crossdating",
+    "term": "Dendrochronological Crossdating",
+    "ja": "年輪の照合年代決定（クロスデーティング）",
+    "aliases": [
+      "年輪クロスデーティング",
+      "年輪照合法",
+      "年輪照合"
+    ],
+    "fields": [
+      "Dendrochronology",
+      "Archaeology",
+      "Paleoclimatology"
+    ],
+    "one_liner": "複数の木材の年輪幅パターンを照合し、各年輪が形成された暦年を確定する方法。",
+    "description": "年輪のクロスデーティングは、生育環境の変動によって現れる広い・狭い年輪の並びを複数の木の間で照合し、年輪を暦年へ対応づける手続き。生木と古い木材の重なるパターンをつなぐことで長い年代系列を作れる。年輪を単純に数えるだけでは見落としや偽年輪が起こりうるため、独立した試料間の照合が重要。地域や樹種によって適用可能性が異なる。",
+    "why_selected": "測定の信頼性・年代測定のFrontier。考古地磁気年代測定や遺物型式編年とは別に、複数試料の共有パターンで暦年の位置を校正する観察軸を加える。",
+    "feelings": [
+      "出土した古い梁の年輪の太さの並びが、年代既知の木の並びと一致して製材年代の手掛かりになる。"
+    ],
+    "before": "年輪が120本なら、その木材の年齢を120年と数えれば十分？",
+    "after": "欠落・偽年輪を点検し、別の木の特徴的な並びと照合して暦年を特定できる？",
+    "observation_axis": "単一試料の年輪本数ではなく、独立した複数試料の年輪変動パターンを照合して各輪の暦年対応を確かめる。",
+    "semantic_cluster": "tree-ring-pattern-matching-calendar-year-crossdating",
+    "nearest_terms": [
+      "archaeological-seriation",
+      "archaeomagnetic-dating",
+      "metrological-traceability"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "遺物型式編年は遺物の型式頻度から相対的な順序を推定し、考古地磁気年代測定は過去の地磁気方向などを利用する。計量トレーサビリティは測定結果を基準へ連結する性質。年輪照合は年輪幅の特徴的な時系列パターンを独立試料間で一致させ、形成暦年を決める。",
+    "related": [
+      "archaeological-seriation",
+      "archaeomagnetic-dating",
+      "taphonomy"
+    ],
+    "sources": [
+      "https://www.nps.gov/articles/archeology-dendrochronology.htm",
+      "https://research.fs.usda.gov/treesearch/52559"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "hydraulic-jump",
+    "term": "Hydraulic Jump",
+    "ja": "跳水（ハイドロリックジャンプ）",
+    "aliases": [
+      "跳水現象",
+      "ハイドロリックジャンプ"
+    ],
+    "fields": [
+      "Fluid Mechanics",
+      "Hydraulic Engineering",
+      "Physics"
+    ],
+    "one_liner": "浅く速い開水路の流れが、深く遅い流れへ急に移り、乱れとともにエネルギーを散逸する現象。",
+    "description": "跳水は、水路などの自由表面を持つ流れで、射流（フルード数が1を超える浅く速い流れ）が常流（フルード数が1未満の深く遅い流れ）へ急変し、水深が跳ね上がる現象。通常は乱流混合によりエネルギーが失われ、堰や放水路での減勢にも利用される。条件によって波状跳水など異なる形態がある。蛇口から流れた水が洗面台上で輪状に厚くなる現象は関連するが、三次元の薄膜流で単純な開水路モデルをそのまま当てはめない。",
+    "why_selected": "材料・物理挙動の探索。エクマン輸送は風と地球自転による正味の海水移動、死水現象は密度成層中の内部波抵抗。跳水は流速と水深が急変して運動エネルギーが散逸する局所的な流況遷移を扱う。",
+    "feelings": [
+      "水路を勢いよく流れる浅い水が、ある地点で突然泡立ち、深くゆっくりした流れに変わる。"
+    ],
+    "before": "流れが急に盛り上がるのは、底の段差だけが原因？",
+    "after": "流速・水深とフルード数の変化によって射流から常流へ遷移していない？",
+    "observation_axis": "水がどちらへ輸送されるかではなく、自由表面流の速度と水深の組が臨界状態を越えるときの急激な流況転換とエネルギー散逸を見る。",
+    "semantic_cluster": "supercritical-to-subcritical-open-channel-energy-dissipation",
+    "nearest_terms": [
+      "dead-water-phenomenon",
+      "ekman-transport",
+      "river-avulsion"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "死水現象は成層流体の内部波による船舶抵抗、エクマン輸送は風応力と自転に伴う海水の正味輸送、河道変遷は河川の流路位置の急な移動。跳水は同一水路内の局所的な射流から常流への転換とエネルギー散逸。",
+    "related": [
+      "dead-water-phenomenon",
+      "ekman-transport",
+      "river-avulsion"
+    ],
+    "sources": [
+      "https://www.txdot.gov/manuals/des/hyd/chapter-8--culverts/section-3--hydraulic-operation-of-culverts/hydraulic-jump-in-culverts.html",
+      "https://pubs.usgs.gov/publication/70274560"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "vernalization",
+    "term": "Vernalization",
+    "ja": "春化（バーナリゼーション）",
+    "aliases": [
+      "春化処理",
+      "低温春化",
+      "バーナリゼーション"
+    ],
+    "fields": [
+      "Plant Physiology",
+      "Developmental Biology",
+      "Epigenetics"
+    ],
+    "one_liner": "植物が一定期間の低温を経験することで、その後の開花能力を獲得・促進する生理的過程。",
+    "description": "春化は、冬型一年草や二年草などの一部の植物が長期間の低温を経験することで、後の温暖な条件下で花を咲かせる能力を得る過程。シロイヌナズナの一部の系統では低温が開花抑制因子FLCの発現を長く抑えるクロマチン状態をもたらし、温度が戻っても低温経験が保持される。春化は低温中に必ず開花するという意味ではなく、植物種によって分子機構が異なる。",
+    "why_selected": "植物の空間配置（葉序）や季節的観察（生物季節学）とは別に、過去の低温経験が将来の発達可能性を変える時間的記憶の軸を加える。",
+    "feelings": [
+      "同じ暖かい温室に置いても、冬の寒さを十分に経験した株だけが花をつける。"
+    ],
+    "before": "植物が咲くかどうかは、いまの気温と日照だけで決まる？",
+    "after": "過去にどれほど長く低温を経験したかが、開花できる状態を変えていない？",
+    "observation_axis": "現在の季節や葉の形成位置ではなく、過去の持続的な低温曝露が遺伝子発現状態を変え、その後の開花能力をどう規定するかを見る。",
+    "semantic_cluster": "prolonged-cold-exposure-epigenetic-flowering-competence",
+    "nearest_terms": [
+      "phenology",
+      "phyllotaxis",
+      "mast-seeding"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "生物季節学は開花などの季節的な時期の観測、葉序は茎頂での器官配置、一斉結実は個体群の繁殖量の同期。春化は過去の低温曝露によって将来の開花能力が変わる生理的な記憶過程。",
+    "related": [
+      "phenology",
+      "phyllotaxis",
+      "mast-seeding"
+    ],
+    "sources": [
+      "https://pubmed.ncbi.nlm.nih.gov/14732435/",
+      "https://www.nature.com/articles/s41477-018-0301-z"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "video-frame-callback",
+    "term": "HTMLVideoElement.requestVideoFrameCallback()",
+    "ja": "動画フレーム単位の描画通知（requestVideoFrameCallback）",
+    "aliases": [
+      "requestVideoFrameCallback",
+      "動画フレームコールバック",
+      "映像フレームコールバック"
+    ],
+    "fields": [
+      "Web",
+      "Video Engineering",
+      "JavaScript"
+    ],
+    "one_liner": "動画の新しいフレームが合成処理へ渡されるタイミングに合わせ、フレーム情報付きの処理を予約するWeb API。",
+    "description": "HTMLVideoElementのrequestVideoFrameCallback()は、動画フレームが合成処理へ送られるタイミングでコールバックを呼び、mediaTimeやpresentedFramesなどのメタデータを渡す。動画上への描画・分析・キャンバス同期に利用できる。画面の再描画周期に合わせるrequestAnimationFrameとは異なり動画フレームに対応するが、全ソースフレームの処理や厳密な同期を保証せず、処理は主スレッドで遅延しうる。",
+    "why_selected": "Web制作の実務語。既存のフレームペーシングは表示間隔の均一性、ローリングシャッターは撮像時の走査歪み。今回は再生フレームごとのイベントとメタデータを利用して映像処理のタイミングを決める軸を追加。",
+    "feelings": [
+      "動画の動きに合わせて図形を重ねたいのに、画面更新のタイマーでは映像のコマと少しずれる。"
+    ],
+    "before": "動画の各コマを処理するなら60fpsのタイマーを回せばいい？",
+    "after": "実際に合成へ渡される動画フレームの時刻とメタデータに合わせて処理を予約できる？",
+    "observation_axis": "ディスプレイの描画周期や映像の見た目ではなく、再生動画フレームが合成処理へ渡される時点とそのメタデータを処理の基準にできるかを見る。",
+    "semantic_cluster": "video-compositor-frame-callback-metadata-timing",
+    "nearest_terms": [
+      "frame-pacing",
+      "rolling-shutter",
+      "webvtt-timed-text"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "フレームペーシングは表示フレーム間隔の安定性、ローリングシャッターは撮像時の画素読み出し差、WebVTTは時刻同期した文字トラック。requestVideoFrameCallbackは再生動画のフレーム単位の合成通知と時刻メタデータを提供するAPI。",
+    "related": [
+      "frame-pacing",
+      "rolling-shutter",
+      "webvtt-timed-text"
+    ],
+    "sources": [
+      "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback",
+      "https://developer.mozilla.org/ja/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback"
+    ],
+    "instruction": "動画にCanvasの注釈を重ねる際、setIntervalではなくvideo.requestVideoFrameCallback()で次のフレームを処理し、metadata.mediaTimeとpresentedFramesを記録してください。未対応ブラウザーでは代替処理を用意し、同期ずれ・処理遅延を実機で確認してください。",
+    "status": "seed"
+  }
+]
