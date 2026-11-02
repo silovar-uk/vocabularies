@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-03",
+  "batch": "20261103-morning",
+  "term_annotations": {
+    "aria-error-message-association": {
+      "axis": "エラーの発生通知一般ではなく、無効なフォーム項目と具体的な修正説明が意味的に関連付いているかを検証する。",
+      "nearest_terms": [
+        "status-message",
+        "live-region",
+        "aria-activedescendant"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ステータスメッセージは画面の状態報告、ライブリージョンは更新内容の通知、aria-activedescendantは仮想的なアクティブ項目の指定。aria-errormessageは無効な特定の入力項目とエラー説明文の対応を伝える。",
+      "new_axis": true
+    },
+    "standard-additions-method": {
+      "axis": "測定信号が歪む原因そのものではなく、未知試料に既知量を添加したときの信号増分を使って定量値を校正する方法を見る。",
+      "nearest_terms": [
+        "matrix-effect-analytical-chemistry",
+        "reference-material-commutability",
+        "metrological-traceability"
+      ],
+      "distance": "B",
+      "difference_from_nearest": "マトリックス効果は共存物質による信号の変化、標準物質のコミュータビリティは標準物質と実試料の測定法間のふるまい、トレーサビリティは校正の基準連鎖。標準添加法は未知試料へ既知量を添加する実験操作と濃度推定の手順。",
+      "new_axis": true
+    },
+    "otolith-organs": {
+      "axis": "筋や関節の位置感覚、視線を安定させる反射ではなく、内耳の耳石膜の変位から重力方向と直線加速度を検出する仕組みを見る。",
+      "nearest_terms": [
+        "vestibulo-ocular-reflex",
+        "proprioception",
+        "interoception"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "前庭動眼反射は頭の運動時に眼球を補償運動させる出力反射、固有受容感覚は筋・関節由来の身体位置情報、内受容感覚は内臓などの内部状態。耳石器は重力と直線加速度を感知する末梢の感覚器官。",
+      "new_axis": true
+    },
+    "geosmin": {
+      "axis": "人間が感じる匂いの快不快ではなく、微生物が放出する化合物が土壌小動物の誘引と胞子散布にどう関わるかを見る。",
+      "nearest_terms": [
+        "myrmecochory",
+        "aposematism",
+        "allelopathy"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "アリ散布は種子の付属物を餌とするアリによる種子移動、警告色は捕食者に対する視覚的警告、アレロパシーは植物間の化学的作用。ゲオスミンは微生物由来の揮発性化合物と嗅覚を介した行動・胞子散布の関係。",
+      "new_axis": true
+    },
+    "flocculation-colloids": {
+      "axis": "粒子が溶解・成長する過程や振動による分級ではなく、分散微粒子の相互作用で集合体が形成される条件と構造を見る。",
+      "nearest_terms": [
+        "ostwald-ripening",
+        "brazil-nut-effect",
+        "thixotropy"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "オストワルド熟成は小粒子から大粒子への物質移動、ブラジルナッツ効果は振動下の粒子分離、チキソトロピーはせん断による粘度変化。フロック形成は分散粒子同士の集合とネットワーク化。",
+      "new_axis": true
+    },
+    "alloparenting": {
+      "axis": "群れの分離・再結合や親族間の言葉の規範ではなく、実親以外の個体による子の養育行動とその費用・利益を調べる。",
+      "nearest_terms": [
+        "fission-fusion-dynamics",
+        "segmentary-lineage-system",
+        "joking-relationship"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "離合集散型群れ動態は群れの構成変化、分節的出自体系は親族集団の連帯構造、冗談関係は関係ごとに許される言語行動。親以外による養育は実際の育児行動とその担い手・費用を扱う。",
+      "new_axis": true
+    }
+  }
+}
