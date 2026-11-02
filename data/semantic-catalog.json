@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-11-02",
+  "updated_at": "2026-11-03",
   "cluster_registry": "data/semantic-clusters.json",
   "annotation_datasets": [
     "data/semantic-annotations-20260907-core.json",
@@ -44,7 +44,8 @@
     "data/semantic-annotations-20261101-morning.json",
     "data/semantic-annotations-20261101-evening.json",
     "data/semantic-annotations-20261102-morning.json",
-    "data/semantic-annotations-20261102-evening.json"
+    "data/semantic-annotations-20261102-evening.json",
+    "data/semantic-annotations-20261103-morning.json"
   ],
   "addition_gate": {
     "enabled": true,
