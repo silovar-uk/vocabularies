@@ -1,0 +1,247 @@
+[
+  {
+    "id": "pointer-coalesced-events",
+    "term": "PointerEvent.getCoalescedEvents()",
+    "ja": "統合されたポインター移動点の取得（getCoalescedEvents）",
+    "aliases": [
+      "ポインターイベントの統合前座標",
+      "合成ポインターイベントの詳細取得"
+    ],
+    "fields": [
+      "Web",
+      "Interactive Design",
+      "Pointer Input"
+    ],
+    "one_liner": "ブラウザーがまとめて通知したポインター移動から、統合前の細かな座標列を取得するWeb API。",
+    "description": "ブラウザーは処理負荷を抑えるため、複数の移動を一つのpointermoveイベントにまとめる場合がある。getCoalescedEvents()は、まとめられた個々のPointerEventを返し、ペン入力や手描き線の細かな軌跡を再現しやすくする。HTTPSなどの安全なコンテキストが必要で、対応ブラウザーに差がある。統合前のイベントと親イベントを二重描画しないようにする。",
+    "why_selected": "前回の動画フレーム処理は再生映像の合成タイミング、ポインターキャプチャはドラッグ中のイベント送信先。今回は同一イベントにまとめられた入力の時空間分解能という制作の独立した軸。",
+    "feelings": [
+      "速くペンを走らせると描画線が角ばる。通知間隔ではなく統合前の点を調べると、曲線の軌跡が細かくなる。"
+    ],
+    "before": "pointermoveが届くたび、その座標一つだけを描けば十分？",
+    "after": "ブラウザーが複数の移動点を一つにまとめていないか。統合前の点を取り出せる？",
+    "observation_axis": "ドラッグイベントの宛先や画面の更新頻度ではなく、一回の通知に隠れた入力座標列の粒度を復元して描画精度を検証する。",
+    "semantic_cluster": "pointer-event-coalescing-raw-sample-recovery",
+    "nearest_terms": [
+      "pointer-capture",
+      "pointer-cancellation",
+      "frame-pacing"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "ポインターキャプチャはドラッグのイベント送信先の固定、ポインター操作の取消しは誤操作の確定時点、フレームペーシングは表示間隔の均一性。統合イベント取得は一つに束ねられた移動サンプルを復元する。",
+    "related": [
+      "pointer-capture",
+      "pointer-cancellation",
+      "frame-pacing"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/pointerevents3/",
+      "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/getCoalescedEvents"
+    ],
+    "instruction": "Canvasのpointermoveでe.getCoalescedEvents?.()を取得し、対応時はその座標列のみ、非対応時は[e]を描画してください。高DPI・高速入力・ペン端末で線の滑らかさを比較し、HTTPSとブラウザー対応を確認してください。",
+    "status": "seed"
+  },
+  {
+    "id": "prefers-reduced-transparency",
+    "term": "CSS prefers-reduced-transparency",
+    "ja": "透明効果を減らす利用者設定への対応（prefers-reduced-transparency）",
+    "aliases": [
+      "透明度低減のメディア特性",
+      "透明効果の軽減設定"
+    ],
+    "fields": [
+      "Web Accessibility",
+      "CSS",
+      "Interface Design"
+    ],
+    "one_liner": "OSで透明・半透明効果の低減を希望した利用者に、より不透明な表示を提供するCSSメディア特性。",
+    "description": "@media (prefers-reduced-transparency: reduce)は、利用者が端末側で透明・半透明効果を減らす設定を有効にした場合に適用される。ぼかしガラス風のパネルなどを不透明にして文字の視認性を改善できる。2026年時点では実験的で対応ブラウザーが限定的なので、メディア特性が無効でも読みやすい基本スタイルを必須とする。",
+    "why_selected": "既存の強制配色モードはOSによる配色の上書き、感覚的特徴への依存は色・形・位置などによる説明不足。今回は透過レイヤーの読みづらさと利用者の透明度設定を結ぶ別の観察軸。",
+    "feelings": [
+      "背後の写真が透けるカードの文字が読みにくい。透明効果を減らす設定で背景を不透明にすると判読しやすくなる。"
+    ],
+    "before": "半透明のカードは全員に同じ見た目で提供する？",
+    "after": "透明効果を減らしたい利用者の設定を検出し、背景を不透明にできる？",
+    "observation_axis": "強制配色の有無や色だけではなく、背後の情報が透ける程度と利用者の透明度低減設定の関係を調べる。",
+    "semantic_cluster": "user-preference-reduced-translucency-media-feature",
+    "nearest_terms": [
+      "forced-colors-mode",
+      "sensory-characteristics",
+      "aria-activedescendant"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "強制配色モードは使用色をシステムが上書きし、感覚的特徴への依存は操作説明の非視覚的代替、aria-activedescendantは支援技術上のアクティブ項目。透明度低減は背景透過という描画特性を利用者設定に応じて切り替える。",
+    "related": [
+      "forced-colors-mode",
+      "sensory-characteristics"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/mediaqueries-5/",
+      "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/%40media/prefers-reduced-transparency"
+    ],
+    "instruction": "通常表示の時点で十分な文字コントラストを確保し、@media (prefers-reduced-transparency: reduce)内で半透明背景とbackdrop-filterを不透明な背景へ置き換えてください。対応環境と非対応環境の両方で検証してください。",
+    "status": "seed"
+  },
+  {
+    "id": "soret-effect",
+    "term": "Soret Effect (Thermodiffusion)",
+    "ja": "ソレー効果（熱拡散）",
+    "aliases": [
+      "熱拡散効果",
+      "温度勾配による成分移動"
+    ],
+    "fields": [
+      "Nonequilibrium Thermodynamics",
+      "Physical Chemistry",
+      "Transport Phenomena"
+    ],
+    "one_liner": "混合物に温度勾配があると、成分の濃度分布が熱拡散によって変化しうる現象。",
+    "description": "ソレー効果は、気体・液体・固体の混合系で温度勾配が成分の拡散流を生む熱拡散現象。通常の濃度勾配による拡散に加えて働き、条件によって成分が高温側または低温側へ偏る。移動方向や強さは混合物に依存し、単純に『必ず冷たい側へ集まる』とはいえない。",
+    "why_selected": "直近のカーケンドール効果は異種原子の拡散速度差、マランゴニ効果は界面張力の勾配が生む流れ。ソレー効果は温度勾配そのものが混合成分の濃度分布を変える別の駆動力を示す。",
+    "feelings": [
+      "温度差のある液体混合物を静置したところ、温度の違う場所で成分濃度が偏る。"
+    ],
+    "before": "混合物の成分は濃度の高い場所から低い場所へ広がるだけ？",
+    "after": "濃度差が小さくても温度勾配が成分移動を起こしていない？",
+    "observation_axis": "界面張力や異種原子間の移動速度差ではなく、混合物内部の温度勾配が成分ごとの拡散流と濃度分布をどう変えるかを見る。",
+    "semantic_cluster": "thermal-gradient-driven-species-separation-soret-effect",
+    "nearest_terms": [
+      "marangoni-effect",
+      "kirkendall-effect",
+      "capillary-condensation"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "マランゴニ効果は表面張力勾配による界面沿いの流れ、カーケンドール効果は異種原子の相互拡散速度差、毛管凝縮は細孔の曲率による気液相変化。ソレー効果は温度勾配を駆動力とする混合成分の移動。",
+    "related": [
+      "marangoni-effect",
+      "kirkendall-effect"
+    ],
+    "sources": [
+      "https://doi.org/10.1515/jnet-2016-0024",
+      "https://cir.nii.ac.jp/crid/1361699993423357696"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "coarticulation",
+    "term": "Coarticulation",
+    "ja": "調音結合（コアーティキュレーション）",
+    "aliases": [
+      "共調音",
+      "協調調音",
+      "調音の重なり"
+    ],
+    "fields": [
+      "Phonetics",
+      "Speech Science",
+      "Linguistics"
+    ],
+    "one_liner": "前後の音を発する口・舌などの動きが時間的に重なり、ある音の発音が隣接音の影響を受ける現象。",
+    "description": "調音結合は、発話で個々の音の調音運動が独立した区間に収まらず、前後の音の影響を受ける現象。次に発する母音のために唇が先に丸まり始める予測的な調音や、前の音の動きが次の音へ残る持ち越しがある。言語・音環境・調音器官によって程度は異なる。",
+    "why_selected": "韻律は抑揚・リズムなどの超分節的な特徴、補充法は語形の歴史的な異根の組合せ。調音結合は音素間で口・舌の運動が時間的に重なるという身体運動の観察軸を加える。",
+    "feelings": [
+      "『す』の後に『う』が来るときと『あ』が来るときで、次の母音を準備する唇の形が微妙に変わる。"
+    ],
+    "before": "一音ずつ口の形を完成させてから次の音を発している？",
+    "after": "次の音の準備が、まだ前の音を発している途中に始まっていない？",
+    "observation_axis": "抑揚や語形変化ではなく、隣接する音を作る舌・唇などの調音運動が時間的に重なり音響的特徴をどう変えるかを見る。",
+    "semantic_cluster": "overlapping-speech-articulatory-gestures-coarticulation",
+    "nearest_terms": [
+      "prosody",
+      "suppletion",
+      "evidentiality"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "韻律は抑揚・強勢・リズム、補充法は語の活用形に別の語根が現れる形態論、証拠性は情報源の文法的表示。調音結合は隣接音の運動制御と音響的な相互作用。",
+    "related": [
+      "prosody",
+      "suppletion"
+    ],
+    "sources": [
+      "https://www.jstage.jst.go.jp/article/ast/25/5/25_5_318/_article",
+      "https://discovery.ucl.ac.uk/id/eprint/10118764/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "pulsar-timing-array",
+    "term": "Pulsar Timing Array",
+    "ja": "パルサー・タイミング・アレイ（パルサー到来時刻の観測網）",
+    "aliases": [
+      "パルサー時刻測定網",
+      "PTA",
+      "パルサータイミングアレイ"
+    ],
+    "fields": [
+      "Astronomy",
+      "Gravitational-Wave Physics",
+      "Precision Measurement"
+    ],
+    "one_liner": "多数のパルサーの電波パルス到来時刻を長期間比較し、極低周波の重力波の兆候を調べる観測手法。",
+    "description": "高速で規則的に回転するミリ秒パルサーの電波パルスを長年観測し、予測到来時刻との差（タイミング残差）を複数の天体で比較する。重力波による時空のゆがみは残差に相関したパターンを生みうる。NANOGravは2023年、15年分・68天体の観測からナノヘルツ帯の重力波背景と整合する証拠を発表した。個別パルサーの周期ずれだけで重力波と断定しない。",
+    "why_selected": "直近の光のこだまは散乱光の光路差、ロッシュ限界は潮汐破壊の距離。こちらは多数の自然の時計を組み合わせて極低周波の時空変動を推定する測定信頼性の軸。",
+    "feelings": [
+      "離れた複数の星のパルス到来時刻に、長い年月をかけて似たずれ方が現れる。"
+    ],
+    "before": "一つのパルサーの周期がずれたら、その星が不規則になっただけ？",
+    "after": "複数のパルサーで空間配置に応じた相関があり、共通の時空のゆがみを示していない？",
+    "observation_axis": "個別天体の明るさや軌道ではなく、独立した複数のパルサーのパルス到来時刻の相関から長周期の重力波信号を探す。",
+    "semantic_cluster": "cross-pulsar-correlated-arrival-time-gravitational-wave-inference",
+    "nearest_terms": [
+      "light-echo",
+      "roche-limit",
+      "metrological-traceability"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "光のこだまは散乱光の経路差による到達遅延、ロッシュ限界は潮汐破壊の距離、計量トレーサビリティは測定の基準連鎖。パルサー・タイミング・アレイは複数天体の時刻残差の相関を重力波検出に使う。",
+    "related": [
+      "light-echo",
+      "roche-limit",
+      "metrological-traceability"
+    ],
+    "sources": [
+      "https://nanograv.org/news/15yrRelease",
+      "https://eprints.ncl.ac.uk/292341"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "condorcet-paradox",
+    "term": "Condorcet Paradox",
+    "ja": "コンドルセの逆説（多数決の循環）",
+    "aliases": [
+      "投票の逆説",
+      "コンドルセ・パラドックス",
+      "多数派選好の循環"
+    ],
+    "fields": [
+      "Social Choice Theory",
+      "Political Science",
+      "Decision Science"
+    ],
+    "one_liner": "個人の選好がそれぞれ一貫していても、集団の多数決ではAがBに勝ち、BがCに勝ち、CがAに勝つ循環が起こりうる。",
+    "description": "コンドルセの逆説は、選択肢が三つ以上あるとき、各人の順位付けが推移的でも、二者間多数決を集計した集団の順位が循環する場合があることを示す。例えば3人がそれぞれA>B>C、B>C>A、C>A>Bと選べば、二者比較でA>B、B>C、C>Aとなり、全選択肢に勝つ候補が存在しない。多数決が常に一意の整合的順位を与えるわけではない。",
+    "why_selected": "戦略的操作不能性は制度で正直な選好申告が最善になるか、二重限界化は流通各段階の価格決定。コンドルセの逆説は、正直な個人選好を集めるだけでも集団の順序が循環しうる別の問題を扱う。",
+    "feelings": [
+      "三つの案をペアで比較すると、AがBに勝ち、BがCに勝つのに、CがAに勝ってしまう。"
+    ],
+    "before": "全員の好みが筋の通った順位なら、多数決でも筋の通った順位が決まる？",
+    "after": "個々の順位が整合していても、集団のペア比較に循環が生じていない？",
+    "observation_axis": "投票者が戦略的に嘘をつくかではなく、正直で一貫した個人順位を多数決で集計したときの選好関係の循環を調べる。",
+    "semantic_cluster": "pairwise-majority-preference-cycle-condorcet-paradox",
+    "nearest_terms": [
+      "strategy-proofness",
+      "double-marginalization"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "戦略的操作不能性は投票者に正直な申告を促す制度特性、二重限界化は上下流の価格設定による非効率。コンドルセの逆説は誠実な個人順位の多数決集計でも循環が起きる構造。",
+    "related": [
+      "strategy-proofness",
+      "double-marginalization"
+    ],
+    "sources": [
+      "https://plato.stanford.edu/entries/social-choice/"
+    ],
+    "status": "seed"
+  }
+]
