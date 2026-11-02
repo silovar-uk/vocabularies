@@ -1,0 +1,254 @@
+[
+  {
+    "id": "aria-error-message-association",
+    "term": "ARIA aria-errormessage",
+    "ja": "エラー文への関連付け（aria-errormessage）",
+    "aliases": [
+      "ARIAエラーメッセージ参照",
+      "フォームエラーの意味的関連付け"
+    ],
+    "fields": [
+      "Web Accessibility",
+      "ARIA",
+      "Form Design"
+    ],
+    "one_liner": "入力エラーが起きた項目と、修正方法を説明するエラー文を支援技術にも分かる形で結びつけるARIA属性。",
+    "description": "aria-errormessageは、入力項目が無効な状態になったとき、その項目に対応するエラー説明要素のIDを参照する。aria-invalid=trueとの併用が必要で、エラー文は利用者に見える状態にする。正しい状態ではエラー文を隠すか参照を外す。表示直後に伝える必要がある場合はライブリージョンを検討する。赤い枠だけでは何が間違いか分からないという問題を、具体的な修正説明と意味的関連付けで扱う。",
+    "why_selected": "アクセシビリティ意味層の探索負債から選抜。既存のステータスメッセージ、ライブリージョン、アクティブ項目の通知と異なり、特定の無効な入力と修正説明の参照関係を観察する。",
+    "feelings": [
+      "メールアドレス欄が赤くなったが理由が分からない。欄に戻ると、誤りと修正方法が読み上げられる。"
+    ],
+    "before": "入力欄を赤くして『エラー』と表示すれば、全員に伝わる？",
+    "after": "どの入力項目がなぜ無効で、どう直せるかを支援技術からもたどれる？",
+    "observation_axis": "エラーの発生通知一般ではなく、無効なフォーム項目と具体的な修正説明が意味的に関連付いているかを検証する。",
+    "semantic_cluster": "form-invalid-field-specific-error-description-reference",
+    "nearest_terms": [
+      "status-message",
+      "live-region",
+      "aria-activedescendant"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "ステータスメッセージは画面の状態報告、ライブリージョンは更新内容の通知、aria-activedescendantは仮想的なアクティブ項目の指定。aria-errormessageは無効な特定の入力項目とエラー説明文の対応を伝える。",
+    "related": [
+      "status-message",
+      "live-region",
+      "accessible-name"
+    ],
+    "sources": [
+      "https://www.w3.org/TR/wai-aria-1.2/#aria-errormessage",
+      "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage"
+    ],
+    "instruction": "フォーム検証後に無効な入力へaria-invalid=\"true\"を設定し、表示した具体的な修正説明のidをaria-errormessageに指定してください。修正後はエラー表示を解除し、キーボードとスクリーンリーダーで確認してください。",
+    "status": "seed"
+  },
+  {
+    "id": "standard-additions-method",
+    "term": "Method of Standard Additions",
+    "ja": "標準添加法（Method of Standard Additions）",
+    "aliases": [
+      "標準添加",
+      "Standard Addition",
+      "既知量添加法"
+    ],
+    "fields": [
+      "Analytical Chemistry",
+      "Metrology",
+      "Calibration"
+    ],
+    "one_liner": "未知試料そのものに測定対象の既知量を段階的に加え、信号の変化から元の濃度を求める定量分析法。",
+    "description": "標準添加法では、同じ試料を分取して既知量の分析対象物を加え、加える前後の測定信号の関係から元の含有量を推定する。純粋な標準液と実試料で感度が異なるマトリックス効果を抑える目的で用いられる。ただし線形性、ブランク、試料量や希釈条件などの前提を確認する必要があり、あらゆる干渉を補正できるわけではない。",
+    "why_selected": "測定の信頼性の探索負債から選抜。直近のマトリックス効果は共存成分が信号を歪める原因、標準添加法は同じ試料内で既知量を加えて校正する対処手順。原因の記述と測定方法を区別する。",
+    "feelings": [
+      "純水で作った標準液では正しく測れたのに、海水の試料では信号がずれる。同じ海水試料に既知量を足して測り直す。"
+    ],
+    "before": "純水で校正した装置なら、複雑な試料の濃度もそのまま読める？",
+    "after": "未知試料そのものに既知量を加え、信号の増分から元の濃度を推定できる？",
+    "observation_axis": "測定信号が歪む原因そのものではなく、未知試料に既知量を添加したときの信号増分を使って定量値を校正する方法を見る。",
+    "semantic_cluster": "within-sample-analyte-spiking-calibration-standard-additions",
+    "nearest_terms": [
+      "matrix-effect-analytical-chemistry",
+      "reference-material-commutability",
+      "metrological-traceability"
+    ],
+    "semantic_distance": "B",
+    "difference_from_nearest": "マトリックス効果は共存物質による信号の変化、標準物質のコミュータビリティは標準物質と実試料の測定法間のふるまい、トレーサビリティは校正の基準連鎖。標準添加法は未知試料へ既知量を添加する実験操作と濃度推定の手順。",
+    "related": [
+      "matrix-effect-analytical-chemistry",
+      "metrological-traceability",
+      "measurement-uncertainty"
+    ],
+    "sources": [
+      "https://www.nist.gov/publications/gravimetric-approach-standard-addition-method-instrumental-analysis-1",
+      "https://icp-oes.help.agilent.com/en/HowTo/Software/More_StdAdds.htm"
+    ],
+    "instruction": "同一試料を複数に分け、分析対象物の既知量を0・少量・中量・多量と添加して同条件で測定してください。信号と添加量の直線性、ブランク、希釈条件を確認し、外部標準法と結果を比較してください。",
+    "status": "seed"
+  },
+  {
+    "id": "otolith-organs",
+    "term": "Otolith Organs",
+    "ja": "耳石器（Otolith Organs）",
+    "aliases": [
+      "卵形嚢と球形嚢",
+      "耳石器官",
+      "Utricle and Saccule"
+    ],
+    "fields": [
+      "Neuroscience",
+      "Vestibular Physiology",
+      "Anatomy"
+    ],
+    "one_liner": "内耳で頭の傾きや直線加速度を検知する、卵形嚢と球形嚢からなる感覚器官。",
+    "description": "耳石器は卵形嚢と球形嚢で構成され、感覚毛の上にある膜と炭酸カルシウムの微小結晶（耳石）の慣性や重力によるずれを通じて、頭部の傾きと直線加速度を検知する。半規管が主に回転加速度を検知するのと役割が異なる。視覚が乏しい状況では、傾きと直線加速度の感覚信号が似る場合がある。",
+    "why_selected": "身体の向き・位置の探索負債から。既存の前庭動眼反射は視線安定化の反射、固有受容感覚は筋・関節の状態。耳石器は重力と直線加速度を検知する内耳の具体的な入力装置を観察する。",
+    "feelings": [
+      "目を閉じたエレベーターで、上下の加速や停止を感じる。頭を傾けたときにも内耳が重力方向の変化を検知する。"
+    ],
+    "before": "身体の上下や傾きは、目と筋肉だけで判断している？",
+    "after": "内耳の耳石器が、重力と直線加速度をどのように検知している？",
+    "observation_axis": "筋や関節の位置感覚、視線を安定させる反射ではなく、内耳の耳石膜の変位から重力方向と直線加速度を検出する仕組みを見る。",
+    "semantic_cluster": "inner-ear-otoconia-gravity-linear-acceleration-sensing",
+    "nearest_terms": [
+      "vestibulo-ocular-reflex",
+      "proprioception",
+      "interoception"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "前庭動眼反射は頭の運動時に眼球を補償運動させる出力反射、固有受容感覚は筋・関節由来の身体位置情報、内受容感覚は内臓などの内部状態。耳石器は重力と直線加速度を感知する末梢の感覚器官。",
+    "related": [
+      "vestibulo-ocular-reflex",
+      "proprioception",
+      "body-schema"
+    ],
+    "sources": [
+      "https://www.nidcd.nih.gov/health/balance-disorders",
+      "https://www.ncbi.nlm.nih.gov/books/NBK10792/"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "geosmin",
+    "term": "Geosmin",
+    "ja": "ゲオスミン（Geosmin）",
+    "aliases": [
+      "土臭素",
+      "土の匂いの原因物質"
+    ],
+    "fields": [
+      "Microbial Ecology",
+      "Chemical Ecology",
+      "Environmental Chemistry"
+    ],
+    "one_liner": "土や水の独特な土臭さに関わる、微生物などが産生する揮発性の有機化合物。",
+    "description": "ゲオスミンは、放線菌などの微生物や一部の藍藻などが作る、非常に低濃度でも土臭く感じられる有機化合物。雨上がりの土の匂いに寄与するが、雨の匂いすべてがゲオスミンというわけではない。2020年の研究では、ストレプトマイセス属の菌が胞子形成時に放出するゲオスミン等がトビムシを引きつけ、胞子の分散に役立つことが示された。",
+    "why_selected": "最近の映像・経済・材料研究とは離れた微生物の化学生態から選抜。土の匂いを単なる感覚ではなく、微生物と小動物を結ぶ化学信号として観察する。",
+    "feelings": [
+      "乾いた土に雨が落ちたときの匂い。その一部が微生物由来の化学物質で、別の小動物にとっては行動の手掛かりになる。"
+    ],
+    "before": "雨上がりの土の匂いは、土そのものが濡れた匂い？",
+    "after": "どの微生物がどの化学物質を出し、その匂いが他の生物の行動を変えていない？",
+    "observation_axis": "人間が感じる匂いの快不快ではなく、微生物が放出する化合物が土壌小動物の誘引と胞子散布にどう関わるかを見る。",
+    "semantic_cluster": "microbial-geosmin-odor-chemical-arthropod-spore-dispersal",
+    "nearest_terms": [
+      "myrmecochory",
+      "aposematism",
+      "allelopathy"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "アリ散布は種子の付属物を餌とするアリによる種子移動、警告色は捕食者に対する視覚的警告、アレロパシーは植物間の化学的作用。ゲオスミンは微生物由来の揮発性化合物と嗅覚を介した行動・胞子散布の関係。",
+    "related": [
+      "myrmecochory",
+      "aposematism",
+      "allelopathy"
+    ],
+    "sources": [
+      "https://www.nature.com/articles/s41564-020-0697-x",
+      "https://www.lunduniversity.lu.se/article/story-behind-earthy-smell-spring"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "flocculation-colloids",
+    "term": "Flocculation (Colloid Chemistry)",
+    "ja": "フロック形成・凝集（Flocculation）",
+    "aliases": [
+      "フロキュレーション",
+      "凝集（コロイド）",
+      "フロック化"
+    ],
+    "fields": [
+      "Colloid Chemistry",
+      "Materials Science",
+      "Water Treatment"
+    ],
+    "one_liner": "液体などに分散した微粒子が集まり、比較的大きな凝集体（フロック）を形成する現象。",
+    "description": "コロイド系が不安定になると分散粒子が集まって凝集体を作る。国際純正・応用化学連合の用語集では凝結とフロック形成を同義に使う場合もある一方、後者を疎で開いたネットワーク状の凝集体に限定する用法もある。水処理では凝集剤を使って小粒子を集め、沈降やろ過を容易にすることがあるが、凝集体が必ず沈むとは限らない。",
+    "why_selected": "材料挙動の探索負債から。既存のオストワルド熟成は粒子の溶解・再析出による粗大化、ブラジルナッツ効果は振動下の粒径分離。フロック形成は分散粒子同士が集合して構造を作る現象。",
+    "feelings": [
+      "濁った水に処理剤を加えると、見えないほど細かな粒子がふわふわした塊になって現れる。"
+    ],
+    "before": "濁りは細かな粒子を一つずつ取り除くしかない？",
+    "after": "粒子同士を集合させて、分離しやすい大きさのフロックを作れる？",
+    "observation_axis": "粒子が溶解・成長する過程や振動による分級ではなく、分散微粒子の相互作用で集合体が形成される条件と構造を見る。",
+    "semantic_cluster": "colloid-dispersed-particle-aggregation-floc-formation",
+    "nearest_terms": [
+      "ostwald-ripening",
+      "brazil-nut-effect",
+      "thixotropy"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "オストワルド熟成は小粒子から大粒子への物質移動、ブラジルナッツ効果は振動下の粒子分離、チキソトロピーはせん断による粘度変化。フロック形成は分散粒子同士の集合とネットワーク化。",
+    "related": [
+      "ostwald-ripening",
+      "thixotropy",
+      "capillary-condensation"
+    ],
+    "sources": [
+      "https://goldbook.iupac.org/terms/view/F02428",
+      "https://media.iupac.org/reports/2001/colloid_2001/manual_of_s_and_t/node35.html"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "alloparenting",
+    "term": "Alloparenting",
+    "ja": "親以外による養育（Alloparenting）",
+    "aliases": [
+      "アロペアレンティング",
+      "アロペアレンタルケア",
+      "非親養育"
+    ],
+    "fields": [
+      "Behavioral Ecology",
+      "Evolutionary Biology",
+      "Anthropology"
+    ],
+    "one_liner": "親ではない個体が子どもや幼獣の世話をする行動で、親族・非親族による養育支援を含む。",
+    "description": "親以外による養育は、実親ではない個体が子の保護、運搬、給餌、見守りなどを担う行動を指す。ヒトだけでなく複数の哺乳類・鳥類で研究される。血縁による包括適応度、養育経験、相互利益など複数の進化的説明があり、どの事例も純粋な利他性と決めつけることはできない。共同繁殖と関連するが同義ではない。",
+    "why_selected": "動物行動と社会関係の遠距離探索から。直近の離合集散型群れ動態は集団の分離と再結合、冗談関係は許容される社会的な振る舞い。こちらは親ではない個体が子を実際に世話する行動の担い手を観察する。",
+    "feelings": [
+      "群れの幼獣を母親以外の個体が運んだり、見守ったりしている。誰が養育を担っているのかを数える。"
+    ],
+    "before": "子育ては生物学上の親だけが担う行動？",
+    "after": "親以外の個体がどんな世話を担い、その行動がどんな利益や費用を生む？",
+    "observation_axis": "群れの分離・再結合や親族間の言葉の規範ではなく、実親以外の個体による子の養育行動とその費用・利益を調べる。",
+    "semantic_cluster": "nonparent-offspring-care-alloparental-behavior",
+    "nearest_terms": [
+      "fission-fusion-dynamics",
+      "segmentary-lineage-system",
+      "joking-relationship"
+    ],
+    "semantic_distance": "A",
+    "difference_from_nearest": "離合集散型群れ動態は群れの構成変化、分節的出自体系は親族集団の連帯構造、冗談関係は関係ごとに許される言語行動。親以外による養育は実際の育児行動とその担い手・費用を扱う。",
+    "related": [
+      "fission-fusion-dynamics",
+      "joking-relationship",
+      "segmentary-lineage-system"
+    ],
+    "sources": [
+      "https://onlinelibrary.wiley.com/doi/abs/10.1002/dneu.22465",
+      "https://www.journals.uchicago.edu/doi/abs/10.1086/412936"
+    ],
+    "status": "seed"
+  }
+]
