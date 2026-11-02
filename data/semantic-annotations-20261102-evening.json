@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-02",
+  "batch": "20261102-evening",
+  "term_annotations": {
+    "pointer-coalesced-events": {
+      "axis": "ドラッグイベントの宛先や画面の更新頻度ではなく、一回の通知に隠れた入力座標列の粒度を復元して描画精度を検証する。",
+      "nearest_terms": [
+        "pointer-capture",
+        "pointer-cancellation",
+        "frame-pacing"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "ポインターキャプチャはドラッグのイベント送信先の固定、ポインター操作の取消しは誤操作の確定時点、フレームペーシングは表示間隔の均一性。統合イベント取得は一つに束ねられた移動サンプルを復元する。",
+      "new_axis": true
+    },
+    "prefers-reduced-transparency": {
+      "axis": "強制配色の有無や色だけではなく、背後の情報が透ける程度と利用者の透明度低減設定の関係を調べる。",
+      "nearest_terms": [
+        "forced-colors-mode",
+        "sensory-characteristics",
+        "aria-activedescendant"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "強制配色モードは使用色をシステムが上書きし、感覚的特徴への依存は操作説明の非視覚的代替、aria-activedescendantは支援技術上のアクティブ項目。透明度低減は背景透過という描画特性を利用者設定に応じて切り替える。",
+      "new_axis": true
+    },
+    "soret-effect": {
+      "axis": "界面張力や異種原子間の移動速度差ではなく、混合物内部の温度勾配が成分ごとの拡散流と濃度分布をどう変えるかを見る。",
+      "nearest_terms": [
+        "marangoni-effect",
+        "kirkendall-effect",
+        "capillary-condensation"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "マランゴニ効果は表面張力勾配による界面沿いの流れ、カーケンドール効果は異種原子の相互拡散速度差、毛管凝縮は細孔の曲率による気液相変化。ソレー効果は温度勾配を駆動力とする混合成分の移動。",
+      "new_axis": true
+    },
+    "coarticulation": {
+      "axis": "抑揚や語形変化ではなく、隣接する音を作る舌・唇などの調音運動が時間的に重なり音響的特徴をどう変えるかを見る。",
+      "nearest_terms": [
+        "prosody",
+        "suppletion",
+        "evidentiality"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "韻律は抑揚・強勢・リズム、補充法は語の活用形に別の語根が現れる形態論、証拠性は情報源の文法的表示。調音結合は隣接音の運動制御と音響的な相互作用。",
+      "new_axis": true
+    },
+    "pulsar-timing-array": {
+      "axis": "個別天体の明るさや軌道ではなく、独立した複数のパルサーのパルス到来時刻の相関から長周期の重力波信号を探す。",
+      "nearest_terms": [
+        "light-echo",
+        "roche-limit",
+        "metrological-traceability"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "光のこだまは散乱光の経路差による到達遅延、ロッシュ限界は潮汐破壊の距離、計量トレーサビリティは測定の基準連鎖。パルサー・タイミング・アレイは複数天体の時刻残差の相関を重力波検出に使う。",
+      "new_axis": true
+    },
+    "condorcet-paradox": {
+      "axis": "投票者が戦略的に嘘をつくかではなく、正直で一貫した個人順位を多数決で集計したときの選好関係の循環を調べる。",
+      "nearest_terms": [
+        "strategy-proofness",
+        "double-marginalization"
+      ],
+      "distance": "A",
+      "difference_from_nearest": "戦略的操作不能性は投票者に正直な申告を促す制度特性、二重限界化は上下流の価格設定による非効率。コンドルセの逆説は誠実な個人順位の多数決集計でも循環が起きる構造。",
+      "new_axis": true
+    }
+  }
+}
